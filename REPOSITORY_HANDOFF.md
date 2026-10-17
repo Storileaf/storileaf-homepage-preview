@@ -16,11 +16,11 @@ Contains the actual product implementation, public Next.js website, customer and
 
 Holds only a static user-interface snapshot for visual reviews on GitHub Pages, including HTML, CSS, JavaScript, approved public imagery and its setup workflow. No backend, API, customer records, authentication or payments belong here.
 
-**Expected GitHub Pages location**
+**Live GitHub Pages location, browser-verified 16 October 2026**
 
 https://storileaf.github.io/storileaf-homepage-preview/
 
-Do not claim that it is live until the published URL has been opened and tested.
+The site is **LIVE**: the homepage and a bundled cover image returned HTTP 200; a real browser loaded the page, book tabs and mobile navigation. Recheck after future updates.
 
 ## Exact boundaries
 
@@ -36,7 +36,7 @@ Do not claim that it is live until the published URL has been opened and tested.
 
 The `main` branch deployment is initially filled by the [Bootstrap standalone frontend workflow](.github/workflows/bootstrap-frontend.yml), which downloads a SHA-256-verified ZIP of the already browser-tested homepage and commits the static files. The archive was prepared as a Macaly-independent UI build with **seven book covers hosted locally in the preview**, no Macaly Bridge and no backend application source.
 
-After the workflow succeeds, enable GitHub Pages under repository **Settings → Pages → Deploy from a branch → main → /(root)**.
+The bootstrap completed successfully. GitHub Pages is configured at repository **Settings → Pages → Deploy from a branch → main → /(root)**. The first Pages build was triggered by a README-only push and [completed successfully](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/38987374849).
 
 To update design later, regenerate or replace the static UI deliberately, capture and inspect desktop/mobile screenshots, then record changes against the approved homepage brief. Do not treat the bootstrap snapshot as an automatically maintained codebase.
 
@@ -44,4 +44,4 @@ To update design later, regenerate or replace the static UI deliberately, captur
 
 ## Status
 
-Created 16 October 2026. Initial GitHub Pages deployment is not yet confirmed. Treat technical work as pending until the workflow, Pages settings and live browser check succeed.
+Created and first published 16 October 2026. **Deployment verified live** at https://storileaf.github.io/storileaf-homepage-preview/. GitHub Pages workflow passed. Desktop and mobile browser checks confirmed working cover images, tabs, mobile navigation and no page-wide overflow at 1440px and 390px. The real product repo and production site were not changed.
