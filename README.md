@@ -2,7 +2,7 @@
 
 A standalone **frontend-only** design preview for StoriLeaf. It is not the production website or customer application.
 
-**Expected GitHub Pages address once enabled**
+**Live GitHub Pages homepage preview (verified 16 October 2026)**
 
 https://storileaf.github.io/storileaf-homepage-preview/
 
@@ -25,12 +25,12 @@ The current export shows the homepage and a pricing **UI-only** mock-up. Some li
 
 This preview is public and marked `noindex`, but anyone with the link may view it. The actual StoriLeaf domain and live code are unchanged.
 
-## First-time publishing
+## Pages status and setup
 
 A one-time GitHub Actions job pulls the verified static UI archive and commits its frontend assets to this repository's `main` branch. See [Bootstrap standalone frontend](.github/workflows/bootstrap-frontend.yml) and [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md).
 
-When the UI files appear, open [Settings → Pages](https://github.com/Storileaf/storileaf-homepage-preview/settings/pages) and select **Deploy from a branch**, **main**, **/(root)**. Save, then wait for GitHub Pages to report that the site is live. Do not assume the address is working until it has been tested.
+Pages is configured to deploy from **main → /(root)**. The [successful GitHub Pages deployment](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/38987374849) completed after an explicit README-only commit triggered the site's first Pages build. The live homepage, bundled cover thumbnails, six interactive book tabs and mobile navigation were tested in a browser; no document-wide overflow was observed at 1440px and 390px. This is a visual prototype, not a production release.
 
 Future edits should update the UI deliberately, test the rendered design and record approval/QA, rather than modifying the production repository to experiment.
 
-<!-- GitHub Pages publication retry: 2026-10-16. The static frontend is unchanged; this README update triggers a fresh branch build. -->
+<!-- Initial Pages deployment completed successfully after a README-only push on 16 October 2026. -->
