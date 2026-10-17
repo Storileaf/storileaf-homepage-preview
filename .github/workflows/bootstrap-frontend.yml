@@ -1,0 +1,61 @@
+name: Bootstrap standalone StoriLeaf frontend
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/bootstrap-frontend.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-static-ui:
+    name: Import verified frontend-only files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out public UI repository
+        uses: actions/checkout@v4
+
+      - name: Download and verify static UI
+        env:
+          UI_ZIP: https://assets.macaly-user-data.dev/zdxoj4hpj03470rlppjmizl6/qcx8qibycrjhsu3gv7vr1spg/2bh8nDHWj4MX_4vMwPFYX/storileaf-homepage-verified-frontend-Yu8hhrZS.zip
+          UI_SHA256: 102e81191491fd2e4bfac7f84b65620b73f4e4dd9dcba3ac6ccfba43fb4add33
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$UI_ZIP" -o /tmp/storileaf-ui.zip
+          echo "$UI_SHA256  /tmp/storileaf-ui.zip" | sha256sum --check -
+          mkdir -p /tmp/storileaf-static
+          unzip -q /tmp/storileaf-ui.zip -d /tmp/storileaf-static
+          test -f /tmp/storileaf-static/index.html
+          test -f /tmp/storileaf-static/.nojekyll
+          test -d /tmp/storileaf-static/covers
+          test "$(find /tmp/storileaf-static/covers -name '*.jpg' | wc -l)" -eq 7
+          test ! -d /tmp/storileaf-static/src
+          test ! -d /tmp/storileaf-static/convex
+          test ! -d /tmp/storileaf-static/api
+          grep -q '/storileaf-homepage-preview/assets/' /tmp/storileaf-static/index.html
+          grep -q 'noindex,nofollow,noarchive' /tmp/storileaf-static/index.html
+
+      - name: Commit static site to preview repository
+        run: |
+          set -euo pipefail
+          src=/tmp/storileaf-static
+          for dir in assets covers pricing; do
+            rm -rf "$dir"
+            cp -a "$src/$dir" "$dir"
+          done
+          for file in index.html 404.html favicon.svg logo192.png logo512.png manifest.json robots.txt .nojekyll; do
+            cp "$src/$file" "$file"
+          done
+          git add -A -- assets covers pricing index.html 404.html favicon.svg logo192.png logo512.png manifest.json robots.txt .nojekyll
+          if git diff --cached --quiet; then
+            echo "Frontend preview is already current."
+            exit 0
+          fi
+          git config user.name "StoriLeaf UI Preview Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "build(ui): add standalone static homepage with local cover assets"
+          git push origin HEAD:main
