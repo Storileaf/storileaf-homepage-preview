@@ -32,3 +32,5 @@ A one-time GitHub Actions job pulls the verified static UI archive and commits i
 When the UI files appear, open [Settings → Pages](https://github.com/Storileaf/storileaf-homepage-preview/settings/pages) and select **Deploy from a branch**, **main**, **/(root)**. Save, then wait for GitHub Pages to report that the site is live. Do not assume the address is working until it has been tested.
 
 Future edits should update the UI deliberately, test the rendered design and record approval/QA, rather than modifying the production repository to experiment.
+
+<!-- GitHub Pages publication retry: 2026-10-16. The static frontend is unchanged; this README update triggers a fresh branch build. -->
