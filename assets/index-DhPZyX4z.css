@@ -11613,3 +11613,10 @@ section[id] {
   .samples-section .book-craft-slideshow > .book-craft-slide { transition:none; }
   .samples-section .book-craft-indicator > span { transition:none; }
 }
+
+/* 18 October. Tighten space between each book-craft heading and its description.
+   Preserve title-aligned descriptions and the four-photo slideshow. */
+.samples-section .book-craft-detail-description { margin-top:0; }
+@media (max-width:720px) {
+  .samples-section .book-craft-detail-description { margin-top:0; }
+}

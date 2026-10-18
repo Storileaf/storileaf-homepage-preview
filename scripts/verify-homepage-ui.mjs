@@ -254,6 +254,7 @@ try {
           headingCentreDifference:Math.abs(middle(icon)-middle(title)),
           descriptionLeftDifference:Math.abs(desc.getBoundingClientRect().left-title.getBoundingClientRect().left),
           descriptionBelowHeading:desc.getBoundingClientRect().top >= heading.getBoundingClientRect().bottom,
+          headingDescriptionGap:Math.round((desc.getBoundingClientRect().top-title.getBoundingClientRect().bottom)*10)/10,
           display:getComputedStyle(row).display,
           borderBottom:getComputedStyle(row).borderBottomWidth
         }
@@ -266,16 +267,18 @@ try {
   })
   observations.physicalBookSingleCTA = physicalBook
   check(physicalBook.imageCount === 4 && physicalBook.indicatorCount === 4 && physicalBook.initialActiveSlide === '0', 'Physical-book slideshow must contain four slides and four indicators')
+  check(await desktop.locator('.book-craft-image-label').count()===0 && await desktop.getByText('The finished book',{exact:true}).count()===0,
+    'Rejected slideshow label remains visible')
   check(JSON.stringify(physicalBook.detailLabels) === JSON.stringify(['Printed copy','Binding and finish','Before print']), 'Physical details were changed')
   check(JSON.stringify(physicalBook.detailDescriptions) === JSON.stringify([
-    'Included with every package.',
-    'Package specific. Selected options include a jacketed book, premium paper or embossing.',
-    'You review the prepared draft first.'
-  ]), 'Approved physical book descriptions changed')
+      "Your story becomes a finished printed book to keep and return to. One copy is included with every package.",
+      "The binding and finish depend on your package. Selected options include a book jacket, premium paper or embossing.",
+      "Review the prepared pages of your book before the final version goes to print."
+    ]), 'Founder-refined physical book descriptions changed')
   check(physicalBook.iconCount === 3, 'Each physical book detail must have one icon')
   check(physicalBook.detailLayout.every(x => x.display === 'block' && x.borderBottom === '0px'), 'Old tabular details formatting remains')
-  check(physicalBook.detailLayout.every(x => x.headingCentreDifference <= 2 && x.descriptionLeftDifference <= 1 && x.descriptionBelowHeading),
-    'Desktop icon, heading or description geometry is misaligned')
+  check(physicalBook.detailLayout.every(x => x.headingCentreDifference <= 2 && x.descriptionLeftDifference <= 1 && x.descriptionBelowHeading &&
+    x.headingDescriptionGap >= 0 && x.headingDescriptionGap <= 14), 'Desktop heading and descriptions have excessive spacing or misalignment')
   observations.craftSlideshowGeometry=physicalBook.slideshowLayout
   check(Math.abs(physicalBook.slideshowLayout.photoTop-physicalBook.slideshowLayout.textTop)<=2 &&
     Math.abs(physicalBook.slideshowLayout.photoBottom-physicalBook.slideshowLayout.textBottom)<=3 &&
@@ -584,30 +587,33 @@ try {
       titleCentreDifference:Math.abs((icon.top+icon.bottom-heading.top-heading.bottom)/2),
       descriptionLeftDifference:Math.abs(heading.left-paragraph.left),
       descriptionBelowHeading:paragraph.top>=heading.bottom,
-      fits:paragraph.right<=document.documentElement.clientWidth+1
+      fits:paragraph.right<=document.documentElement.clientWidth+1,
+      headingDescriptionGap:Math.round((paragraph.top-heading.bottom)*10)/10
     }
   }))
   observations.mobileBookIcons=mobileIconLayout
   check(mobileIconLayout.length === 3 && mobileIconLayout.every(x=>x.iconCount === 1 &&
     x.titleCentreDifference <= 2 && x.descriptionLeftDifference <= 1 &&
-    x.descriptionBelowHeading && x.fits), 'Mobile detail icon and copy alignment failed')
+    x.descriptionBelowHeading && x.fits && x.headingDescriptionGap >= 0 &&
+    x.headingDescriptionGap <= 14), 'Mobile detail icon, copy spacing or alignment failed')
   const mobileSlides=await desktop.locator('.book-craft-slideshow').evaluate(el=>{
     const box=el.getBoundingClientRect()
     const control=el.querySelector('.book-craft-indicators').getBoundingClientRect()
-    const label=el.querySelector('.book-craft-image-label').getBoundingClientRect()
+    const indicators=el.querySelector('.book-craft-indicators')
     return {
       slideCount:el.querySelectorAll('.book-craft-slide').length,
       dotCount:el.querySelectorAll('.book-craft-indicator').length,
       imageHeight:Math.round(box.height),
       dotsCentred:Math.abs((control.left+control.right-box.left-box.right)/2)<=2,
-      dotsBelowCaption:control.top>=label.bottom+5,
+      dotsClearOfContent:!indicators.querySelector('.book-craft-image-label'),
       imgFullyInside:control.bottom<=box.bottom+1
     }
   })
   observations.mobileCraftSlideshow=mobileSlides
   check(mobileSlides.slideCount===4&&mobileSlides.dotCount===4&&mobileSlides.imageHeight>=230 &&
-    mobileSlides.dotsCentred&&mobileSlides.dotsBelowCaption&&mobileSlides.imgFullyInside,
-    'Mobile craft slideshow image or dots overlap')
+    mobileSlides.dotsCentred&&mobileSlides.imgFullyInside,
+    'Mobile craft slideshow image or indicators do not fit correctly')
+  check(await desktop.locator('.book-craft-image-label').count()===0, 'Rejected slideshow label present on mobile')
   await desktop.locator('.book-craft-slideshow').getByRole('button',{name:'Show book image 4 of 4'}).click()
   check(await desktop.locator('.book-craft-slideshow').getAttribute('data-active-slide')==='3','Mobile slide indicator failed to select final image')
   await desktop.locator('.book-craft-slideshow').screenshot({path:path.join(folder,'physical-book-slideshow-mobile.png'),animations:'disabled'})

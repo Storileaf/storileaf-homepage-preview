@@ -151,7 +151,7 @@ function CraftPhotoSlideshow() {
 				loading:index===0?"eager":"lazy",
 				decoding:"async"
 			},index)),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span",{className:"book-craft-image-label",children:"The finished book"}),
+			
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div",{
 				className:"book-craft-indicators",
 				role:"group",
@@ -290,7 +290,7 @@ function SampleGallery() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Printed copy" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "book-craft-detail-description",
-									children: "Included with every package."
+									children: "Your story becomes a finished printed book to keep and return to. One copy is included with every package."
 								})]
 							}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -308,7 +308,7 @@ function SampleGallery() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Binding and finish" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "book-craft-detail-description",
-									children: "Package specific. Selected options include a jacketed book, premium paper or embossing."
+									children: "The binding and finish depend on your package. Selected options include a book jacket, premium paper or embossing."
 								})]
 							}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -326,7 +326,7 @@ function SampleGallery() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Before print" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "book-craft-detail-description",
-									children: "You review the prepared draft first."
+									children: "Review the prepared pages of your book before the final version goes to print."
 								})]
 							})
 							]
