@@ -479,6 +479,7 @@ try {
   check(await mobileTitle()==='Life Story', 'Mobile rightward swipe should return to previous book')
   await mobileViewer.getByRole('button',{name:'Close book image'}).click()
   await mobileViewer.waitFor({state:'hidden'})
+  await desktop.waitForTimeout(200)
   check(await desktop.locator('[data-testid="sample-life-story"]').evaluate(el=>document.activeElement===el), 'Mobile viewer close did not restore focus')
   await desktop.locator('#samples').screenshot({path:path.join(folder,'six-book-gallery-mobile.png'),animations:'disabled'})
   observations.mobileBookGallery={swipeForward:true,swipeBack:true,focusReturn:true}
