@@ -196,8 +196,32 @@ try {
       })))
     observations.resourceMenuLinks = resourceLinks
     check(resourceLinks.length >= 3 && resourceLinks.every(link => link.direction === 'row'), 'Resources menu links lost their horizontal alignment')
+    const menuAlignment = await desktop.evaluate(() => {
+      const trigger = document.querySelector('.header-nav-item .header-nav-trigger[data-state="open"]')
+      const panel = document.querySelector('.resources-dropdown')
+      return Math.round((panel.getBoundingClientRect().left - trigger.getBoundingClientRect().left)*10)/10
+    })
+    observations.resourcesPanelLeftOffset = menuAlignment
+    check(Math.abs(menuAlignment) <= 1, 'Resources dropdown has shifted horizontally from its trigger')
+    await desktop.screenshot({ path:path.join(folder,'resources-menu-open-desktop.png'), animations:'disabled' })
   }
 
+  const multiWidthAlignment = {}
+  for (const width of [1280,1440]) {
+    await desktop.setViewportSize({width,height:900})
+    const diffs = await desktop.evaluate(() => {
+      const controls = [...document.querySelectorAll('.desktop-nav-list > li > .header-nav-trigger, .desktop-nav-list > li > .header-simple-link')]
+      return controls.map(el => {
+        const text = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim())
+        const range = document.createRange()
+        range.selectNodeContents(text)
+        return range.getBoundingClientRect().top
+      })
+    })
+    multiWidthAlignment[width] = Math.round((Math.max(...diffs) - Math.min(...diffs))*10)/10
+    check(multiWidthAlignment[width] <= 0.8, 'Navigation label alignment regressed at '+width+'px')
+  }
+  observations.headerTextOffsetByWidth = multiWidthAlignment
   const widths=[320,360,390,430,768,820,1024,1280,1440]
   for(const width of widths) {
     await desktop.setViewportSize({width,height:900})
