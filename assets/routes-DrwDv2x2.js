@@ -290,7 +290,7 @@ function SampleGallery() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Printed copy" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "book-craft-detail-description",
-									children: "Your story becomes a finished printed book to keep and return to. One copy is included with every package."
+									children: "Your words and memories come together in a beautifully printed book, thoughtfully designed to be held, shared and revisited for years."
 								})]
 							}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -308,7 +308,7 @@ function SampleGallery() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Binding and finish" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "book-craft-detail-description",
-									children: "The binding and finish depend on your package. Selected options include a book jacket, premium paper or embossing."
+									children: "A premium hardcover with a cover design chosen by you, personalised with the photographs and details that make the story yours."
 								})]
 							}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -326,7 +326,7 @@ function SampleGallery() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Before print" })]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "book-craft-detail-description",
-									children: "Review the prepared pages of your book before the final version goes to print."
+									children: "Our editorial team carefully prepares and checks every book. You then review and approve the draft before it goes to print."
 								})]
 							})
 							]

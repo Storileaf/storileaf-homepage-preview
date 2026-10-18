@@ -271,9 +271,9 @@ try {
     'Rejected slideshow label remains visible')
   check(JSON.stringify(physicalBook.detailLabels) === JSON.stringify(['Printed copy','Binding and finish','Before print']), 'Physical details were changed')
   check(JSON.stringify(physicalBook.detailDescriptions) === JSON.stringify([
-      "Your story becomes a finished printed book to keep and return to. One copy is included with every package.",
-      "The binding and finish depend on your package. Selected options include a book jacket, premium paper or embossing.",
-      "Review the prepared pages of your book before the final version goes to print."
+      "Your words and memories come together in a beautifully printed book, thoughtfully designed to be held, shared and revisited for years.",
+      "A premium hardcover with a cover design chosen by you, personalised with the photographs and details that make the story yours.",
+      "Our editorial team carefully prepares and checks every book. You then review and approve the draft before it goes to print."
     ]), 'Founder-refined physical book descriptions changed')
   check(physicalBook.iconCount === 3, 'Each physical book detail must have one icon')
   check(physicalBook.detailLayout.every(x => x.display === 'block' && x.borderBottom === '0px'), 'Old tabular details formatting remains')
