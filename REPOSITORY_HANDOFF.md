@@ -1,5 +1,13 @@
 # Repository handoff for StoriLeaf UI work
 
+## Header navigation vertical alignment correction, 18 October 2026
+
+**Implemented and Chromium verified in the public frontend preview.** The desktop navigation labels were not on the same text baseline. The books and Resources are Radix dropdown buttons, while See inside, How it works and Pricing are Radix links with an inherited `flex-col` layout. Although all five controls had matching 44px boxes, the three ordinary links were displayed **4.2px higher** than the two dropdown labels. This had been missed by previous menu edge and link arrangement tests.
+
+The narrowly scoped CSS correction sets the five desktop nav controls to the same horizontal flex arrangement and centres their content; it also removes the chevrons' unnecessary 1px vertical offset. **Measured text midpoint variation is now 0px at both 1280px and 1440px**. Existing book and resource hover dropdowns, item destinations, text and left edge alignment are preserved. Chromium screenshots of the actual header and both expanded menus were inspected. New regression tests and captures are in `qa/screenshots/header-navigation-aligned.png`, `books-menu-desktop.png`, `resources-menu-open-desktop.png` and `qa/homepage-qa-report.json`.
+
+The GitHub Pages preview deployment succeeded. **No production `main`, customer application, backend, commercial flow or other homepage section changed**. The page remains pending founder visual approval.
+
 ## Hero book orbit density review, 18 October 2026
 
 **Founder requested and implemented in the public frontend preview only.** The hero background now contains **14 visible cover elements** rather than seven, split into **6 inner and 8 outer positions**. The same seven genuine, locally bundled StoriLeaf cover thumbnails are each used exactly twice. Repeated images are intentional placeholders and may be replaced individually in a later authorised visual pass. No additional cover assets were invented or imported.
