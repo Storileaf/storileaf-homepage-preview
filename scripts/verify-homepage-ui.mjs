@@ -504,6 +504,22 @@ try {
   check(footerJoin.newsletterBorder==='0px' && footerJoin.newsletterFill==='rgba(0, 0, 0, 0)' && footerJoin.footerFill==='rgba(0, 0, 0, 0)', 'Newsletter/footer boundary still separates the units')
   check(footerJoin.copyrightFont===footerJoin.legalFont && footerJoin.copyrightLineHeight===footerJoin.legalLineHeight, 'Copyright typography does not match legal links')
   check(footerJoin.contactText==='Get in touch' && footerJoin.contactArrowCount===0 && footerJoin.contactHref==='https://storileaf.com/contact/', 'Footer contact arrow or target incorrect')
+  const desktopFooterBounds = await desktop.locator('.newsletter-footer-unit').evaluate(el => {
+    const copyright=el.querySelector('.footer-bottom > span')
+    const bottom=el.querySelector('.footer-bottom')
+    const footer=el.querySelector('footer')
+    const box = element => {
+      const r=element.getBoundingClientRect()
+      return {top:Math.round(r.top),bottom:Math.round(r.bottom),height:Math.round(r.height)}
+    }
+    return {unit:box(el),newsletter:box(el.querySelector('.newsletter-strip')),
+      footer:box(footer),bottom:box(bottom),copyright:box(copyright),
+      newsletterBackground:getComputedStyle(el.querySelector('.newsletter-strip')).backgroundColor,
+      footerOverflow:getComputedStyle(footer).overflow,unitOverflow:getComputedStyle(el).overflow}
+  })
+  observations.desktopFooterBounds=desktopFooterBounds
+  check(desktopFooterBounds.copyright.bottom<=desktopFooterBounds.unit.bottom+2, 'Footer copyright clipped by newsletter unit')
+  await desktop.locator('.footer-bottom').screenshot({path:path.join(folder,'footer-bottom-desktop.png'),animations:'disabled'})
   await desktop.locator('.newsletter-footer-unit').screenshot({ path:path.join(folder,'newsletter-footer-desktop.png'), animations:'disabled' })
   const booksTrigger = desktop.getByRole('button', {name:'The books', exact:true}).first()
   await booksTrigger.hover()
