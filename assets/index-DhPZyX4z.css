@@ -11620,3 +11620,160 @@ section[id] {
 @media (max-width:720px) {
   .samples-section .book-craft-detail-description { margin-top:0; }
 }
+
+
+/* Homepage process refinement and photographic newsletter, 18 October 2026.
+   Preserve the scroll-linked stages, copy and CTA destinations. */
+.process-section .process-steps li {
+  box-sizing:border-box;
+  padding-block:5px;
+}
+.process-section .process-steps .step-number {
+  box-sizing:border-box;
+  width:38px;
+  height:38px;
+  min-width:38px;
+  aspect-ratio:1;
+  border-radius:50%;
+  justify-self:center;
+  align-self:center;
+  flex:0 0 38px;
+  padding:0;
+  display:grid;
+  place-items:center;
+}
+@media (min-width:901px) {
+  .process-section .process-steps .process-step { padding-block:4px; }
+}
+@media (max-width:720px) {
+  .process-section .process-steps .step-number {
+    width:36px;
+    height:36px;
+    min-width:36px;
+    flex-basis:36px;
+  }
+}
+
+.newsletter-strip {
+  isolation:isolate;
+  position:relative;
+  overflow:hidden;
+  padding:clamp(82px,7.5vw,116px) 0;
+  border-top:0;
+  border-bottom:1px solid rgba(255,255,255,.2);
+  background:#253526;
+  color:#fff;
+}
+.newsletter-strip::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-image:url("https://storileaf.com/images/brand/brand/storileaf-family-archive-books-hero-1440.webp");
+  background-size:cover;
+  background-position:center 46%;
+  background-repeat:no-repeat;
+  filter:saturate(.76);
+}
+.newsletter-strip::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(100deg,rgba(23,41,29,.94) 0%,rgba(23,41,29,.88) 43%,rgba(23,41,29,.72) 100%);
+}
+.newsletter-strip .newsletter-layout {
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
+  gap:clamp(35px,5vw,78px);
+  align-items:center;
+}
+.newsletter-strip .newsletter-layout h2 {
+  color:#fff;
+  max-width:660px;
+  font-size:clamp(42px,4.25vw,61px);
+  line-height:1.09;
+  letter-spacing:-.018em;
+}
+.newsletter-strip .newsletter-layout h2 em { color:#D7B67E; }
+.newsletter-strip .newsletter-layout > div:first-child > p:last-child {
+  margin-top:20px;
+  max-width:530px;
+  color:rgba(250,248,244,.87);
+  font-size:clamp(15px,1.3vw,17px);
+  line-height:1.7;
+}
+.newsletter-strip .newsletter-form-area { width:100%; min-width:0; }
+.newsletter-strip .newsletter-inline-preview {
+  display:flex;
+  gap:12px;
+  align-items:stretch;
+  width:100%;
+}
+.newsletter-strip .newsletter-inline-preview input {
+  box-sizing:border-box;
+  min-height:58px;
+  min-width:0;
+  flex:1 1 170px;
+  padding:15px 19px;
+  background:rgba(251,250,247,.97);
+  border:1px solid rgba(255,255,255,.64);
+  border-radius:9px;
+  color:#253526;
+  font-size:15px;
+  line-height:1.35;
+  -webkit-text-fill-color:#253526;
+}
+.newsletter-strip .newsletter-inline-preview input::placeholder { color:#677468; opacity:1; }
+.newsletter-strip .newsletter-inline-preview input:focus-visible {
+  outline:3px solid #D7B67E;
+  outline-offset:3px;
+  border-color:#fff;
+}
+.newsletter-strip .newsletter-inline-preview .button {
+  box-sizing:border-box;
+  display:inline-flex;
+  min-height:58px;
+  flex:0 0 auto;
+  align-items:center;
+  justify-content:center;
+  padding:14px 23px;
+  border:1px solid #D7B67E;
+  border-radius:9px;
+  background:#D7B67E;
+  color:#253526;
+  font-size:15px;
+  font-weight:700;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.newsletter-strip .newsletter-inline-preview .button:hover {
+  border-color:#E9CB93;
+  background:#E9CB93;
+  color:#253526;
+}
+.newsletter-strip .newsletter-inline-preview .button:focus-visible {
+  outline:3px solid #fff;
+  outline-offset:3px;
+}
+@media (max-width:900px) {
+  .newsletter-strip { padding:clamp(70px,10vw,93px) 0; }
+  .newsletter-strip .newsletter-layout {
+    grid-template-columns:minmax(0,1fr);
+    gap:31px;
+  }
+  .newsletter-strip .newsletter-form-area { max-width:600px; }
+  .newsletter-strip::after {
+    background:linear-gradient(115deg,rgba(23,41,29,.93),rgba(23,41,29,.78));
+  }
+}
+@media (max-width:480px) {
+  .newsletter-strip { padding:68px 0 74px; }
+  .newsletter-strip .newsletter-layout h2 { font-size:clamp(39px,10vw,49px); }
+  .newsletter-strip .newsletter-inline-preview { flex-direction:column; gap:12px; }
+  .newsletter-strip .newsletter-inline-preview input { flex-basis:auto; width:100%; }
+  .newsletter-strip .newsletter-inline-preview .button { width:100%; }
+  .newsletter-strip::before { background-position:58% center; }
+  .newsletter-strip::after {
+    background:linear-gradient(180deg,rgba(23,41,29,.87),rgba(23,41,29,.92));
+  }
+}

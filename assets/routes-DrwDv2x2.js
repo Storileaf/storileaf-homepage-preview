@@ -91,17 +91,14 @@ function NewsletterStrip() {
 					className: "newsletter-inline-preview",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
 						type: "email",
-						"aria-label": "Email address. Complete subscription on StoriLeaf.com",
+						"aria-label": "Email address",
 						placeholder: "Your email address",
-						disabled: true
+						autoComplete: "email"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 						className: "button",
 						href: LIVE_SITE + "/#newsletter-heading",
 						children: ["Subscribe ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
 					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "newsletter-signup-note",
-					children: "Complete your subscription on StoriLeaf.com."
 				})]
 			})]
 		})

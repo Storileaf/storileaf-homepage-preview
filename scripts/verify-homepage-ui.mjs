@@ -349,9 +349,33 @@ try {
   check(await desktop.locator('.final-invitation-intro').innerText() === 'One question is enough to begin.', 'Missing original FAQ CTA line')
   check((await desktop.locator('.final-invitation a').getAttribute('href'))?.includes('#books'), 'Restored CTA target incorrect')
   check(await desktop.evaluate(() => Boolean(document.querySelector('.final-invitation').compareDocumentPosition(document.querySelector('.newsletter-strip')) & Node.DOCUMENT_POSITION_FOLLOWING)), 'CTA must be before newsletter')
-  check(await desktop.locator('.newsletter-inline-preview input:disabled').count() === 1, 'Newsletter email field should be visibly disabled')
+  check(await desktop.locator('.newsletter-inline-preview input:not(:disabled)').count() === 1, 'Newsletter email field should be editable')
+  await desktop.locator('.newsletter-inline-preview input').fill('story@example.com')
+  check(await desktop.locator('.newsletter-inline-preview input').inputValue() === 'story@example.com', 'Newsletter field does not accept input')
+  await desktop.locator('.newsletter-inline-preview input').fill('')
+  check(await desktop.locator('.newsletter-signup-note').count() === 0, 'Preview-only newsletter instruction should be removed')
+  const newsletterVisual = await desktop.locator('.newsletter-strip').evaluate(el => {
+    const before=getComputedStyle(el,'::before'), after=getComputedStyle(el,'::after')
+    const s=getComputedStyle(el),input=el.querySelector('input')
+    return {image:before.backgroundImage,overlay:after.backgroundImage,background:s.backgroundColor,inputDisabled:input.disabled}
+  })
+  observations.newsletterVisual=newsletterVisual
+  check(newsletterVisual.image.includes('storileaf-family-archive-books-hero-1440.webp') && newsletterVisual.overlay.includes('gradient'), 'Newsletter photographic overlay missing')
   check((await desktop.locator('.newsletter-inline-preview a').getAttribute('href')) === 'https://storileaf.com/#newsletter-heading', 'Newsletter link incorrect')
 
+  const markers = await desktop.locator('.process-steps li').evaluateAll(rows => rows.map(row => {
+    const circle=row.querySelector('.step-number').getBoundingClientRect(),
+          button=row.querySelector('.process-step').getBoundingClientRect(),
+          item=row.getBoundingClientRect()
+    return {
+      width:Math.round(circle.width),height:Math.round(circle.height),
+      gapBefore:Math.round((button.top-item.top)*10)/10,
+      gapAfter:Math.round((item.bottom-button.bottom)*10)/10
+    }
+  }))
+  observations.processMarkerGeometry=markers
+  check(markers.length===4 && markers.every(x => Math.abs(x.width-x.height)<=1), 'Process number markers must be circular')
+  check(markers.every(x => x.gapBefore>=4 && x.gapAfter>=4), 'Process divider lines too close to cards')
   for (let i = 0; i < 4; i++) {
     await desktop.locator('.process-step').nth(i).click()
     await desktop.waitForTimeout(130)
@@ -639,6 +663,15 @@ try {
   await desktop.locator('.final-invitation').screenshot({ path:path.join(folder,'faq-final-invitation-mobile.png'), animations:'disabled' })
   await desktop.locator('.newsletter-strip').scrollIntoViewIfNeeded()
   await desktop.locator('.newsletter-strip').screenshot({ path:path.join(folder,'newsletter-mobile.png'), animations:'disabled' })
+  const mobileNewsletter = await desktop.locator('.newsletter-strip').evaluate(el => {
+    const input=el.querySelector('input').getBoundingClientRect(),
+          button=el.querySelector('.newsletter-inline-preview .button').getBoundingClientRect(),
+          width=el.getBoundingClientRect().width;
+    return {editable:!el.querySelector('input').disabled,
+      stacked:button.top>=input.bottom, withinWidth:input.right<=width+1&&button.right<=width+1}
+  })
+  observations.mobileNewsletter=mobileNewsletter
+  check(mobileNewsletter.editable && mobileNewsletter.stacked && mobileNewsletter.withinWidth, 'Mobile newsletter layout or input failed')
   const mobileMenu=desktop.getByRole('button',{name:/Open navigation/i}).first()
   if(await mobileMenu.count()) {
     await mobileMenu.click()
