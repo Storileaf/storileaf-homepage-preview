@@ -13,3 +13,8 @@ The prior private production Design System v1.1 specifies Georgia/Lato and predo
 The public GitHub Pages preview deploys from main and repository root. The new frontend/ React workspace is an isolated migration foundation, not yet the source of the existing published homepage. Replacing the root static assets requires separately verified visual and functional parity. No Macaly development, backend or private production edits are authorised by these rules.
 
 Do not treat successful CI, a proposal, an approved design, a working preview and a production release as interchangeable.
+
+## Implementation references
+
+- [Component migration inventory](COMPONENT_INVENTORY.md) keeps published versus editable source states distinct.
+- [Content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) captures verified claims, exact copy approvals and destination status.

@@ -46,3 +46,9 @@ Never imply the buyer can access a gifted recipient's private responses without 
 Pass for drafting only after source and duplication checks. Founder approved means precise copy may be implemented, not that implementation has happened. Live means the exact behaviour and real destination were verified. Otherwise record the blocker and keep it out of public release.
 
 This gate is complemented by the private Content Gate, Copy Ledger and official product documentation. Avoid maintaining two contradictory versions of product facts in these files.
+
+## Operational source checks
+
+New source pages must use identified ledger entries for approved customer-facing copy and must not invent resource/activity URLs. CI verifies copy provenance, approval states, ID references and verified HTTPS destinations. It does **not** independently determine whether a promise is factually true. A human review against the official private product implementation and this proposal template remains mandatory.
+
+Use the [content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) to document the exact old and new copy and link it from the page's decision record. Do not increase duplicate documentation by pasting entire product terms into the public repository.

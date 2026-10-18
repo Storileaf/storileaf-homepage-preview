@@ -18,15 +18,15 @@ Use Node 22.
     npm run build
     npm run preview
 
-The source validation GitHub Action runs typechecking, the content approval and destination gate, protected-root comparison, component tests and a Vite build. It retains an npm lockfile and attaches the built component reference as an artifact.
+The source validation GitHub Action runs typechecking, the content approval and destination gate, protected-root comparison, component tests and a Vite build. It uses the committed lockfile, read-only repository permissions and attaches the built component reference as an artifact.
 
 ## Files
 
 - src/styles/tokens.css defines public website colours, typography names, responsive gutters and component shape roles.
 - src/styles/components.css provides scoped reference styling without touching published CSS.
-- src/components contains typed components that may grow into the shared public UI library.
+- src/components contains typed components with verified whole-card link semantics and a reusable dimension-preserving ResponsiveImage.
 - content/ledger.json records exact approved strings, source and whether actions point to real pages.
-- scripts/check-content.mjs rejects unapproved or provenance-free publish-marked copy and false future-page links.
+- scripts/check-content.mjs validates copy provenance, approval states, source ID references and verified HTTPS destinations; unknown or unbuilt destinations cannot silently be linked.
 - scripts/guard-published.mjs prevents accidental overwriting of existing root static assets.
 - scripts/foundation.test.mjs checks token and content conventions.
 

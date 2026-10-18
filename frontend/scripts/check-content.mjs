@@ -1,14 +1,63 @@
-import { readFileSync } from 'node:fs'
-const records=JSON.parse(readFileSync(new URL('../content/ledger.json',import.meta.url),'utf8')).records
+import { readFileSync, readdirSync } from 'node:fs'
+import { join, resolve } from 'node:path'
+
+const root=resolve(import.meta.dirname, '..')
+const records=JSON.parse(readFileSync(join(root,'content/ledger.json'),'utf8')).records
 const ids=new Set()
-let bad=false
+const index=new Map()
+const problems=[]
+const allowedStatuses=new Set(['proposed','founder_approved','implemented_verified','existing_verified','superseded'])
+const allowedDestinations=new Set(['existing_verified','unbuilt'])
+
 for(const record of records){
-  if(!record.id||ids.has(record.id)){ console.error('Duplicate content ID',record.id);bad=true }
+  if(!record.id || !/^[a-z][a-z0-9_.-]+$/.test(record.id) || ids.has(record.id)){
+    problems.push('Invalid/duplicate content ID '+String(record.id))
+  }
   ids.add(record.id)
-  if(!record.copy?.trim()||!record.source?.trim()){console.error('Content/source missing',record.id);bad=true}
-  if(record.public&&!['founder_approved','implemented_verified'].includes(record.status)){console.error('Public copy not approved',record.id);bad=true}
-  if(record.destination_state==='unbuilt'&&record.href){console.error('Unbuilt destination linked',record.id);bad=true}
-  if(record.destination_state==='existing_verified'&&!record.href?.startsWith('https://')){console.error('Verified destination missing',record.id);bad=true}
+  index.set(record.id,record)
+  if(!record.copy?.trim() || !record.source?.trim())problems.push('Missing exact copy/provenance for '+record.id)
+  if(!allowedStatuses.has(record.status))problems.push('Unknown approval status '+record.id)
+  if(record.public && !['founder_approved','implemented_verified','existing_verified'].includes(record.status)){
+    problems.push('Unapproved copy marked public '+record.id)
+  }
+  if(record.destination_state && !allowedDestinations.has(record.destination_state)){
+    problems.push('Unknown destination status '+record.id)
+  }
+  if(record.destination_state==='unbuilt' && record.href != null){
+    problems.push('Unbuilt destination must not have href '+record.id)
+  }
+  if(record.destination_state==='existing_verified'){
+    let safe=false
+    try{
+      const target=new URL(record.href)
+      safe=target.protocol==='https:' && !!target.hostname && target.hostname!=='localhost'
+    }catch{}
+    if(!safe)problems.push('Existing destination must be a verified HTTPS URL '+record.id)
+  }
+  if(record.href && !record.destination_state)problems.push('Href without destination state '+record.id)
 }
-if(bad)process.exitCode=1
-else console.log('Content approval and destination gate passed')
+
+const scan=(dir)=>{
+  for(const item of readdirSync(dir,{withFileTypes:true})){
+    const full=join(dir,item.name)
+    if(item.isDirectory()){scan(full);continue}
+    if(!/\.(tsx?|jsx?)$/.test(item.name))continue
+    const text=readFileSync(full,'utf8')
+    const references=[...text.matchAll(/\b(approvedCopy|verifiedHref)\(\s*['"]([^'"]+)['"]\s*\)/g)]
+    for(const [,method,id] of references){
+      const record=index.get(id)
+      if(!record)problems.push('Unknown ledger ID in source '+id+' ('+item.name+')')
+      if(method==='verifiedHref' && record && !record.destination_state){
+        problems.push('verifiedHref used for non-destination '+id)
+      }
+    }
+  }
+}
+scan(join(root,'src'))
+
+if(problems.length){
+  problems.forEach(problem=>console.error(problem))
+  process.exitCode=1
+}else{
+  console.log('Content, approval provenance, source references and destination gate passed')
+}

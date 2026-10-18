@@ -44,3 +44,9 @@ Use project-level status words consistently. Proposed, founder-approved, impleme
 ## Repository boundaries
 
 Do not run the old Macaly bootstrap importer. Do not commit API secrets, paid fonts, customer data, authentication, database, payment handlers or private app code to the public frontend. Do not modify the official private production main branch.
+
+## Source component parity and CI safety
+
+Reusable components should expose structured props for type, image dimensions, semantics and destination state. A card is a whole-card link only when a genuine destination exists. Static editorial images reserve space and use lazy loading by default; measured LCP images may opt into eager loading. Do not add generic skeletons to static photography.
+
+The isolated React source validator installs from a committed npm lockfile with read-only repository access. It must never push generated files or replace the GitHub Pages root. The content gate validates exact copy provenance, approved public states, use of ledger IDs and verified destinations. Browser QA and founder sign-off remain separate requirements for publishing any regenerated homepage.

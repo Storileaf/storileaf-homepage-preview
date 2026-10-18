@@ -24,3 +24,23 @@ test('planned activity and overview destinations are not made-up URLs',()=>{
     assert.equal(record?.href,null)
   }
 })
+
+test('responsive editorial images require dimensions and default to lazy loading',()=>{
+  const source=readFileSync(new URL('../src/components/ResponsiveImage.tsx',import.meta.url),'utf8')
+  assert.ok(source.includes('width: number'))
+  assert.ok(source.includes('height: number'))
+  assert.ok(source.includes("loading = 'lazy'"))
+  assert.ok(source.includes('sizes={sizes}'))
+})
+test('resource cards use one whole-card link only for existing pages',()=>{
+  const source=readFileSync(new URL('../src/components/ResourceCategoryCard.tsx',import.meta.url),'utf8')
+  assert.ok(source.includes('href={href}>{content}</a>'))
+  assert.ok(source.includes('<div className="sl-resource-link">{content}</div>'))
+  assert.ok(!source.includes('<button'))
+})
+test('font loading is explicit in the source preview',()=>{
+  const html=readFileSync(new URL('../index.html',import.meta.url),'utf8')
+  assert.ok(html.includes('fonts.googleapis.com/css2'))
+  assert.ok(html.includes('family=Newsreader:'))
+  assert.ok(html.includes('family=Manrope:'))
+})
