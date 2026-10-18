@@ -1,5 +1,13 @@
 # Repository handoff for StoriLeaf UI work
 
+## Hero book orbit density review, 18 October 2026
+
+**Founder requested and implemented in the public frontend preview only.** The hero background now contains **14 visible cover elements** rather than seven, split into **6 inner and 8 outer positions**. The same seven genuine, locally bundled StoriLeaf cover thumbnails are each used exactly twice. Repeated images are intentional placeholders and may be replaced individually in a later authorised visual pass. No additional cover assets were invented or imported.
+
+The **outer orbit radius is 10% larger** at every existing responsive radius, from 605px to 665.5px on desktop, 465px to 511.5px at the tablet breakpoint and 375px to 412.5px on narrow screens. The inner ring size, rotation direction and speed, fades, hero headline, gallery, ticker, controls and layout remain unchanged. Existing mobile and reduced-motion handling remains.
+
+**Source and verification.** Only the public static frontend SSR snapshot (`index.html` and `404.html`), compiled orbit component, stylesheet and its browser QA checks were changed. The Chromium QA action passed, confirming 14 images, exactly two instances of each of the seven originals, all images loaded, the expected radii and no page overflow at nine widths. Actual screenshots are in `qa/screenshots/hero-fourteen-covers-desktop.png` and `hero-fourteen-covers-mobile.png`. The site has deployed successfully via GitHub Pages. These are prototype density and radius settings for founder visual review, **not final visual approval**. Production code and backend remain untouched.
+
 ## Final stage scroll hold corrected, 18 October 2026
 
 **Public frontend preview only.** Founder feedback requested the fourth How it works stage, **Share what matters**, to remain highlighted and visibly pinned for roughly the same scrolling distance as the earlier stages. The existing CSS scroll runway was extended from 430px to 525px, without changing the four stage thresholds, row heights, text, CTA links, photograph choices or mobile layout.

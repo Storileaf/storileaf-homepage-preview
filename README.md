@@ -1,5 +1,8 @@
 # StoriLeaf homepage UI preview
 
+**Hero orbit density update, 18 October 2026.** The hero uses 14 cover positions (6 inner, 8 outer), with the original seven local cover images intentionally repeated twice. The outer ring radius is 10% larger; rotation speeds and hero content remain unchanged. The change is live on GitHub Pages and pending founder visual review. Real desktop/mobile screenshots and QA results are in `qa/`. The separate Books overview page has not been built.
+
+
 **Current homepage preview, 18 October 2026.** The compact four-step process pins below the header, with its photograph aligned alongside the steps and no divider above the first or beneath the fourth. The 94px desktop rows still change independently as the visitor scrolls. The FAQ invitation and newsletter remain present. See the QA screenshots and report under `qa/`.
 
 **Earlier homepage preview, 18 October 2026.** The How it works stages are compact and use an independent scroll runway. The original FAQ final invitation has been restored before the newsletter. The future six-book overview page remains unbuilt. See [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md) and `qa/homepage-qa-report.json` for the specific implementation and QA results.
