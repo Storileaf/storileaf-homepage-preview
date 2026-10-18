@@ -95,6 +95,29 @@ try {
   check(pinnedGeometry.photo.bottom >= pinnedGeometry.last.bottom, 'Photograph does not cover the four-step group')
   check(pinnedGeometry.photo.bottom <= pinnedGeometry.actions.bottom + 10, 'Photograph extends beyond the bottom actions')
   await desktop.screenshot({ path:path.join(folder,'process-stage-four-desktop.png'), animations:'disabled' })
+  // Stage 04 should hold like stages 01–03, rather than releasing immediately.
+  const fourthBefore = await desktop.evaluate(() => ({
+    scrollY, top:document.querySelector('.process-grid').getBoundingClientRect().top,
+    photo:document.querySelector('.process-photo').getAttribute('src')
+  }))
+  await desktop.evaluate(() => window.scrollBy({ top:100, behavior:'instant' }))
+  await desktop.waitForTimeout(220)
+  const fourthAfter = await desktop.evaluate(() => ({
+    scrollY, top:document.querySelector('.process-grid').getBoundingClientRect().top,
+    photo:document.querySelector('.process-photo').getAttribute('src'),
+    selected:document.querySelector('.process-steps li.is-active')?.dataset.stepIndex
+  }))
+  observations.fourthStageHold = {
+    scrollDistance:Math.round(fourthAfter.scrollY - fourthBefore.scrollY),
+    pinnedTopBefore:Math.round(fourthBefore.top),
+    pinnedTopAfter:Math.round(fourthAfter.top),
+    selected:fourthAfter.selected,
+    photoUnchanged:fourthBefore.photo === fourthAfter.photo
+  }
+  check(observations.fourthStageHold.scrollDistance >= 99, 'Final stage did not advance through its 100px hold interval')
+  check(Math.abs(fourthAfter.top - fourthBefore.top) <= 2, 'Final stage becomes unpinned too soon')
+  check(fourthAfter.selected === '3' && fourthBefore.photo === fourthAfter.photo, 'Final step or photograph does not remain active')
+  await desktop.screenshot({ path:path.join(folder,'process-stage-four-held-desktop.png'), animations:'disabled' })
   const reverseStages = []
   for (let i = 3; i >= 0; i--) {
     await desktop.evaluate(index => {

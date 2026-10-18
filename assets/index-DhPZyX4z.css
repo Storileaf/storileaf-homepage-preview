@@ -11289,7 +11289,7 @@ section[id] {
   .process-bottom-actions { padding-top:21px; }
 }
 @media (min-width:901px) and (min-height:731px) and (prefers-reduced-motion:no-preference) {
-  .process-section { --process-runway:430px; padding-block:63px 52px; min-height:0; overflow:visible; }
+  .process-section { --process-runway:525px; padding-block:63px 52px; min-height:0; overflow:visible; }
   .process-section::after { content:""; display:block; height:var(--process-runway); }
   .process-grid { position:sticky; top:82px; min-height:0; align-items:start; }
   .process-visual { position:relative; top:auto; height:min(62vh,550px); min-height:470px; }
