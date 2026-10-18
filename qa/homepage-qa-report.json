@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T18:44:39.690Z",
-  "commit": "bea6c8708e18d3d5a5971d48b8fbd1120659b5dd",
+  "date": "2026-10-18T18:45:49.756Z",
+  "commit": "81575813f571d648955a673a9c1e7415e124e25b",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -414,7 +414,5 @@
     },
     "prefersReducedMotion": true
   },
-  "problems": [
-    "Mobile viewer close did not restore focus"
-  ]
+  "problems": []
 }
