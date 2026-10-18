@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T04:02:37.919Z",
-  "commit": "cfc53296ceac15e4c40518f28859e2217737696e",
+  "date": "2026-10-18T04:04:23.893Z",
+  "commit": "6ad872eecc2c1d33ddeddabffa55b5a7c955dd0a",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -18,13 +18,13 @@
         "paddingTop": "8px",
         "paddingBottom": "8px",
         "transform": "none",
-        "svgCentre": 56
+        "svgCentre": 55
       },
       {
         "label": "See inside",
         "type": "A",
-        "textTop": 41,
-        "textCentre": 50.5,
+        "textTop": 45.2,
+        "textCentre": 54.7,
         "elementTop": 33,
         "elementCentre": 55,
         "height": 44,
@@ -39,8 +39,8 @@
       {
         "label": "How it works",
         "type": "A",
-        "textTop": 41,
-        "textCentre": 50.5,
+        "textTop": 45.2,
+        "textCentre": 54.7,
         "elementTop": 33,
         "elementCentre": 55,
         "height": 44,
@@ -66,13 +66,13 @@
         "paddingTop": "8px",
         "paddingBottom": "8px",
         "transform": "none",
-        "svgCentre": 56
+        "svgCentre": 55
       },
       {
         "label": "Pricing",
         "type": "A",
-        "textTop": 41,
-        "textCentre": 50.5,
+        "textTop": 45.2,
+        "textCentre": 54.7,
         "elementTop": 33,
         "elementCentre": 55,
         "height": 44,
@@ -85,6 +85,7 @@
         "svgCentre": null
       }
     ],
+    "headerMaxTextOffset": 0,
     "heroCovers": {
       "inner": 6,
       "outer": 8,
@@ -184,6 +185,21 @@
       "0"
     ],
     "bookMenuVisible": true,
+    "resourceMenuVisible": true,
+    "resourceMenuLinks": [
+      {
+        "direction": "row",
+        "label": "All resources"
+      },
+      {
+        "direction": "row",
+        "label": "Activities and games"
+      },
+      {
+        "direction": "row",
+        "label": "Blog & guides"
+      }
+    ],
     "checkedWidths": [
       320,
       360,
