@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "updated": "2026-10-18",
+  "note": "Existing official public StoriLeaf imagery used in the isolated component exercise. Recheck rights and final asset approval before production.",
+  "assets": [
+    {
+      "id": "home.resources.activities.photo",
+      "src": "https://storileaf.com/images/brand/collections/life-story/life-story-family-sharing-memories-1200.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "An adult daughter and her father sharing memories over family photographs",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "home.resources.guides.photo",
+      "src": "https://storileaf.com/images/brand/collections/relationship-memoir/storileaf-relationship-memoir-hands-photographs-cafe-square-800.webp",
+      "width": 800,
+      "height": 800,
+      "alt": "Photographs on a café table beside two people's hands",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check"
+    }
+  ]
+}

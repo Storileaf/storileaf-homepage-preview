@@ -17,8 +17,14 @@ for(const record of records){
   index.set(record.id,record)
   if(!record.copy?.trim() || !record.source?.trim())problems.push('Missing exact copy/provenance for '+record.id)
   if(!allowedStatuses.has(record.status))problems.push('Unknown approval status '+record.id)
-  if(record.public && !['founder_approved','implemented_verified','existing_verified'].includes(record.status)){
+  if(record.public && record.status !== 'founder_approved'){
     problems.push('Unapproved copy marked public '+record.id)
+  }
+  if(record.public && (!record.approved_on || !record.approval_reference?.startsWith('https://github.com/Storileaf/'))){
+    problems.push('Founder approval evidence missing for public copy '+record.id)
+  }
+  if(record.destination_state==='existing_verified' && !record.destination_verified_on){
+    problems.push('Date of destination check missing '+record.id)
   }
   if(record.destination_state && !allowedDestinations.has(record.destination_state)){
     problems.push('Unknown destination status '+record.id)
@@ -54,6 +60,22 @@ const scan=(dir)=>{
   }
 }
 scan(join(root,'src'))
+
+const imageAssets=JSON.parse(readFileSync(join(root,'content/images.json'),'utf8')).assets
+const seenImages=new Set()
+for(const item of imageAssets){
+  if(!item.id || seenImages.has(item.id))problems.push('Missing or repeated image ID '+item.id)
+  seenImages.add(item.id)
+  if(typeof item.src!=='string' || !item.src.startsWith('https://storileaf.com/images/brand/'))
+    problems.push('Unverified photo origin '+item.id)
+  if(!Number.isInteger(item.width)||item.width<=0||!Number.isInteger(item.height)||item.height<=0)
+    problems.push('Intrinsic image dimensions missing '+item.id)
+  if(item.role==='informative'&&!item.alt?.trim())
+    problems.push('Informative image lacks alt text '+item.id)
+  if(!item.origin||!item.rights_review)
+    problems.push('Image origin/rights review state missing '+item.id)
+}
+
 
 if(problems.length){
   problems.forEach(problem=>console.error(problem))
