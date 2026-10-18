@@ -9,7 +9,9 @@
     "preview": "vite preview --host 0.0.0.0",
     "typecheck": "tsc --noEmit",
     "test": "node --test scripts/*.test.mjs",
-    "check": "npm run typecheck && npm run test"
+    "check": "npm run typecheck && npm run content:gate && npm run guard:published && npm test",
+    "content:gate": "node scripts/check-content.mjs",
+    "guard:published": "node scripts/guard-published.mjs"
   },
   "dependencies": {
     "react": "19.2.4",
