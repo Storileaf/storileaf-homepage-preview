@@ -1,8 +1,25 @@
 {
-  "date": "2026-10-18T02:28:34.827Z",
-  "commit": "b5313bef1f964b00cfbaa28791f8229f353d7f18",
+  "date": "2026-10-18T03:30:26.467Z",
+  "commit": "4d3a8def165936df3bd50667cf527f84e18ad00e",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
+    "heroCovers": {
+      "inner": 6,
+      "outer": 8,
+      "distinct": 7,
+      "counts": {
+        "cover-01.jpg": 2,
+        "cover-02.jpg": 2,
+        "cover-03.jpg": 2,
+        "cover-04.jpg": 2,
+        "cover-05.jpg": 2,
+        "cover-06.jpg": 2,
+        "cover-07.jpg": 2
+      },
+      "outerRadius": "665.5px",
+      "innerRadius": "345px",
+      "failedImages": 0
+    },
     "desktopStepHeights": [
       94,
       94,
@@ -96,6 +113,10 @@
       1280,
       1440
     ],
+    "mobileHero": {
+      "count": 14,
+      "outerRadius": "412.5px"
+    },
     "mobileDividers": {
       "first": "0px",
       "last": "0px",
