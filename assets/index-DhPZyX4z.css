@@ -11398,3 +11398,16 @@ section[id] {
 /* Founder-approved physical book link simplification, 18 October 2026. */
 .samples-section { padding-bottom:80px; }
 @media (max-width:720px) { .samples-section { padding-bottom:66px; } }
+
+
+/* Founder-approved six-book heading composition, 18 October 2026.
+   Keep the supporting paragraph beside the heading, closer and top aligned.
+   The existing one-column layout below 1131px is preserved. */
+@media (min-width:1131px) {
+  .book-discovery-section .discovery-heading {
+    grid-template-columns:minmax(0,1.18fr) minmax(285px,1fr);
+    column-gap:clamp(24px,2.7vw,44px);
+    align-items:start;
+  }
+  .book-discovery-section .discovery-description { align-self:start; margin-top:0; }
+}

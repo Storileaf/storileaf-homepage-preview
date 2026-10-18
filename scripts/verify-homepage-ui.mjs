@@ -62,6 +62,45 @@ try {
   check(coverState.outerRadius === '665.5px' && coverState.innerRadius === '345px', 'Outer orbit radius must increase by 10%, while inner stays unchanged')
   await desktop.locator('.hero').screenshot({ path:path.join(folder,'hero-fourteen-covers-desktop.png'), animations:'disabled' })
 
+  // Discovery heading and its supporting paragraph must form a connected editorial pair.
+  const discoveryHeadings = {}
+  for (const width of [1024,1280,1440,1920]) {
+    await desktop.setViewportSize({width,height:900})
+    await desktop.waitForTimeout(120)
+    const heading = await desktop.locator('.discovery-heading').evaluate(el => {
+      const title=el.querySelector('.discovery-title'),description=el.querySelector('.discovery-description')
+      const a=title.getBoundingClientRect(),b=description.getBoundingClientRect(),s=getComputedStyle(el)
+      const titleStyle=getComputedStyle(title)
+      return {
+        columns:s.gridTemplateColumns,
+        align:s.alignItems,
+        titleTop:Math.round(a.top*10)/10,
+        descTop:Math.round(b.top*10)/10,
+        titleLeft:Math.round(a.left*10)/10,
+        titleRight:Math.round(a.right*10)/10,
+        descLeft:Math.round(b.left*10)/10,
+        titleHeight:Math.round(a.height*10)/10,
+        titleLineHeight:titleStyle.lineHeight,
+        introText:description.textContent.trim(),
+        titleText:title.textContent.trim()
+      }
+    })
+    discoveryHeadings[width]=heading
+    check(heading.introText === 'Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.', 'Six-book supporting paragraph was changed')
+    check(heading.titleText === 'Which part of life would you like to tell?', 'Six-book heading was changed')
+    if (width>1130) {
+      check(heading.align==='start' && Math.abs(heading.titleTop-heading.descTop)<=2, 'Desktop book heading and description are not top aligned at '+width+'px')
+      check(heading.descLeft-heading.titleRight >= 20 && heading.descLeft-heading.titleRight <= 50, 'Desktop book heading columns have excessive or insufficient gap at '+width+'px')
+    } else {
+      check(heading.descTop >= heading.titleTop+heading.titleHeight, 'Tablet book paragraph should remain beneath the heading')
+    }
+    await desktop.locator('.book-discovery-section').screenshot({
+      path:path.join(folder,'book-discovery-heading-'+width+'px.png'),animations:'disabled'})
+  }
+  observations.discoveryHeadings=discoveryHeadings
+  await desktop.setViewportSize({width:1440,height:900})
+  await desktop.waitForTimeout(150)
+
   // The founder-approved book introductions and points are displayed for all six tabs.
   // Desktop copies share the exact top-left start and bottom-left CTA position.
   const bookCopyExpected = [{"slug":"life-story","description":"A personal memoir of the people, places and experiences that shaped a life.","points":["Childhood, family and the places you called home","Choices, relationships and defining moments","Reflections, values and lessons worth passing on"]},{"slug":"travel-memoir","description":"A book about the journeys you remember for more than the places you visited.","points":["How each journey began and what drew you there","Unexpected detours, discoveries and people you met","The experiences that changed how you saw the world"]},{"slug":"relationship-memoir","description":"A memoir of your shared years, from how you met to the life you've built together.","points":["The early days and memories that brought you closer","Shared traditions, milestones and ordinary moments","The changes, challenges and joys you've experienced together"]},{"slug":"founders-memoir","description":"The personal story behind building a business, beyond the milestones others see.","points":["The original idea, purpose and people who helped you begin","Important decisions, turning points and moments of growth","Lessons, reflections and the values behind your work"]},{"slug":"parent-to-child-letters","description":"A collection of personal letters with the stories and guidance you want your child to have.","points":["Experiences and lessons from your own life","Advice about work, money and relationships","Hopes and words of reassurance for the years ahead"]},{"slug":"celebrating-occasions","description":"A book about one meaningful celebration and the people and moments that made it special.","points":["The planning, anticipation and details behind the occasion","Speeches, surprises and moments from the day","Memories and reflections from the people involved"]}];
@@ -308,6 +347,16 @@ try {
   await desktop.setViewportSize({ width:390, height:844 })
   await desktop.goto(base,{waitUntil:'domcontentloaded'})
   await desktop.waitForTimeout(1100)
+  const mobileDiscovery = await desktop.locator('.discovery-heading').evaluate(el => {
+    const h=el.querySelector('.discovery-title').getBoundingClientRect()
+    const p=el.querySelector('.discovery-description').getBoundingClientRect()
+    return {textBelowHeading:p.top>=h.bottom,sideGap:Math.round(p.left-h.left),separation:Math.round(p.top-h.bottom)}
+  })
+  observations.mobileDiscoveryHeading=mobileDiscovery
+  check(mobileDiscovery.textBelowHeading && Math.abs(mobileDiscovery.sideGap)<=2 && mobileDiscovery.separation<=25,
+    'Phone heading and supporting paragraph must be stacked and left aligned')
+  await desktop.locator('.discovery-heading').screenshot({path:path.join(folder,'book-discovery-heading-mobile.png'),animations:'disabled'})
+
   const mobileCovers = await desktop.locator('.hero-orbit-square').count()
   const mobileOuterRadius = await desktop.locator('.hero-orbit-outer').evaluate(el => getComputedStyle(el).getPropertyValue('--orbit-radius').trim())
   observations.mobileHero = {count:mobileCovers,outerRadius:mobileOuterRadius}
