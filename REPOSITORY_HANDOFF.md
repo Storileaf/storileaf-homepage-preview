@@ -1,6 +1,16 @@
 # Repository handoff for StoriLeaf UI work
 
-## Corrective homepage pass, 18 October 2026
+## Process alignment refinement, 18 October 2026
+
+**Current public frontend preview, browser checked and deployed.** The founder requested a lower, more comfortably centred sticky position for the How it works composition, a photograph positioned beside the four steps rather than the headline, slightly tighter stage rows, and removal of the outer divider rules. The four approved descriptions, existing photographs and both CTAs remain unchanged.
+
+At the reviewed desktop size (1440 × 900), the pinned heading begins at **144px from the viewport top**, below the 91px header bottom. The four steps are **94px high each**, with dividers only *between* steps. The photograph begins exactly level with the first row and extends down to the CTA line, no longer sitting beside the heading. Stage progression remains independent of row height, advancing through four photographs at approximately 112px scroll intervals. Clicking or reversing scroll still works.
+
+**Browser QA:** The public `Verify homepage visuals` workflow passed at this revision. It checked the header/title separation, stage/photo alignment, desktop sticky positions (144px for all four stages), inner versus outer dividers, four photographs, forward and reverse stage activation, stage clicks, mobile divider removal, nine responsive widths and reduced motion. Actual screenshots and `qa/homepage-qa-report.json` are committed under `qa/`. Final founder visual acceptance and full device/accessibility audits remain open.
+
+The planned `/books/` overview is **not built**. The newsletter is a frontend-only presentation without email processing. No private application or production deployment changed.
+
+
 
 **Frontend preview implemented, not production.** The removed final FAQ invitation has been restored between the FAQ questions and newsletter, preserving **“One question is enough to begin.”**, **“Let’s find your book.”**, and **“Explore the books”**. Its action leads to the existing homepage `#books` selector. No new page or backend was added.
 

@@ -1,6 +1,8 @@
 # StoriLeaf homepage UI preview
 
-**Current homepage preview, 18 October 2026.** The How it works stages are compact and use an independent scroll runway. The original FAQ final invitation has been restored before the newsletter. The future six-book overview page remains unbuilt. See [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md) and `qa/homepage-qa-report.json` for the specific implementation and QA results.
+**Current homepage preview, 18 October 2026.** The compact four-step process pins below the header, with its photograph aligned alongside the steps and no divider above the first or beneath the fourth. The 94px desktop rows still change independently as the visitor scrolls. The FAQ invitation and newsletter remain present. See the QA screenshots and report under `qa/`.
+
+**Earlier homepage preview, 18 October 2026.** The How it works stages are compact and use an independent scroll runway. The original FAQ final invitation has been restored before the newsletter. The future six-book overview page remains unbuilt. See [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md) and `qa/homepage-qa-report.json` for the specific implementation and QA results.
 
 
 
