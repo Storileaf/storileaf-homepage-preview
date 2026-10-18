@@ -1,5 +1,14 @@
 # Repository handoff for StoriLeaf UI work
 
+## Six-book discovery heading and paragraph alignment, 18 October 2026
+
+**Founder-approved adjustment, implemented and Chromium verified in the PUBLIC GitHub Pages preview.** The heading **“Which part of life would you like to tell?”** and its complete original supporting paragraph **“Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.”** are preserved unchanged. The founder found the paragraph visually detached because the two-column grid used a wide 1.5fr / .75fr split and `align-items:center`.
+
+At widths **1131px and above only**, the book discovery heading grid now uses `minmax(0,1.18fr) minmax(285px,1fr)`, a restrained 24–44px column gap and **top alignment**. No other homepage heading arrangements were modified. At 1130px and below, the previously approved single-column heading and paragraph remain stacked, with the original small row gap.
+
+**Verification:** The browser QA passed after checking the exact existing text, zero top-edge difference and 34–44px column gaps at 1280, 1440 and 1920px, plus tablet/mobile stacked reading order. Actual screenshots: `qa/screenshots/book-discovery-heading-1024px.png`, `book-discovery-heading-1280px.png`, `book-discovery-heading-1440px.png`, `book-discovery-heading-1920px.png`, `book-discovery-heading-mobile.png`. All six book descriptions, tabs, photographs and CTAs remain unchanged. Founder final visual acceptance and complete accessibility/device QA remain open. No production application or backend source changed.
+
+
 ## One CTA in the finished book section, 18 October 2026
 
 **Founder-approved and implemented in the public GitHub Pages frontend preview.** The lower-right detached link **“See more inside the books”** was explicitly rejected and removed from the book samples and physical details section. The existing **“See package details”** text link stays directly below the three physical book details in the right column and continues to `https://storileaf.com/pricing/`. The details **Printed copy**, **Binding and finish** and **Before print**, the binding photograph, the sample carousel, the sample dialog, exact current copy and the other sections were preserved. No replacement link was added.
