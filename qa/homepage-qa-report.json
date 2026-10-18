@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T18:45:49.756Z",
-  "commit": "81575813f571d648955a673a9c1e7415e124e25b",
+  "date": "2026-10-18T18:58:07.517Z",
+  "commit": "c13a09b169b4ea159025e16d181cbec5c980023c",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -185,7 +185,7 @@
       "photographTopVariation": 0
     },
     "physicalBookSingleCTA": {
-      "imageCount": 1,
+      "imageCount": 4,
       "detailLabels": [
         "Printed copy",
         "Binding and finish",
@@ -200,21 +200,21 @@
       "detailLayout": [
         {
           "headingCentreDifference": 0,
-          "descriptionLeftDifference": 0,
+          "descriptionLeftDifference": 61,
           "descriptionBelowHeading": true,
           "display": "block",
           "borderBottom": "0px"
         },
         {
           "headingCentreDifference": 0,
-          "descriptionLeftDifference": 0,
+          "descriptionLeftDifference": 61,
           "descriptionBelowHeading": true,
           "display": "block",
           "borderBottom": "0px"
         },
         {
           "headingCentreDifference": 0,
-          "descriptionLeftDifference": 0,
+          "descriptionLeftDifference": 61,
           "descriptionBelowHeading": true,
           "display": "block",
           "borderBottom": "0px"
@@ -361,48 +361,48 @@
     },
     "mobileCraftGeometry": {
       "craft": {
-        "top": -965,
+        "top": -990,
         "bottom": -104,
-        "height": 861
+        "height": 886
       },
       "copy": {
-        "top": -634,
+        "top": -659,
         "bottom": -104,
-        "height": 531
+        "height": 556
       },
       "link": {
         "top": -126,
-        "bottom": -105,
+        "bottom": -106,
         "height": 21
       },
       "visible": true,
       "display": "inline-flex",
       "overflow": "visible",
       "section": {
-        "top": -1624,
+        "top": -1649,
         "bottom": -38,
-        "height": 1586
+        "height": 1611
       }
     },
     "mobileBookIcons": [
       {
         "iconCount": 1,
         "titleCentreDifference": 0,
-        "descriptionLeftDifference": 0,
+        "descriptionLeftDifference": 55,
         "descriptionBelowHeading": true,
         "fits": true
       },
       {
         "iconCount": 1,
         "titleCentreDifference": 0,
-        "descriptionLeftDifference": 0,
+        "descriptionLeftDifference": 55,
         "descriptionBelowHeading": true,
         "fits": true
       },
       {
         "iconCount": 1,
         "titleCentreDifference": 0,
-        "descriptionLeftDifference": 0,
+        "descriptionLeftDifference": 55,
         "descriptionBelowHeading": true,
         "fits": true
       }
@@ -414,5 +414,9 @@
     },
     "prefersReducedMotion": true
   },
-  "problems": []
+  "problems": [
+    "Physical book image was removed",
+    "Desktop icon, heading or description geometry is misaligned",
+    "Mobile detail icon and copy alignment failed"
+  ]
 }
