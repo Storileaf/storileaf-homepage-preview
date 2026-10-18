@@ -21,13 +21,20 @@ try {
   const steps = desktop.locator('.process-steps li')
   const heights = await steps.evaluateAll(els => els.map(el => Math.round(el.getBoundingClientRect().height)))
   observations.desktopStepHeights = heights
-  check(heights.length === 4 && heights.every(h => h >= 120 && h <= 200), 'Desktop process steps not condensed')
-  observations.processVisualPosition = await desktop.locator('.process-visual').evaluate(el => getComputedStyle(el).position)
-  check(observations.processVisualPosition === 'sticky', 'Sticky process photograph missing on desktop')
+  check(heights.length === 4 && heights.every(h => h >= 96 && h <= 135), 'Desktop process steps not condensed')
+  observations.processGridPosition = await desktop.locator('.process-grid').evaluate(el => getComputedStyle(el).position)
+  check(observations.processGridPosition === 'sticky', 'Sticky process grid missing')
+  observations.processRunwayHeight = await desktop.locator('.process-section').evaluate(el =>
+    Math.round(el.getBoundingClientRect().height - el.querySelector('.process-grid').getBoundingClientRect().height))
+  check(observations.processRunwayHeight >= 450, 'Independent scroll runway missing')
   check(await desktop.getByRole('link', { name: /Choose a book/i }).count() >= 1, 'Choose a book CTA missing')
   check(await desktop.getByRole('link', { name: /Explore gifting/i }).count() >= 1, 'Explore gifting CTA missing')
   check((await desktop.locator('.process-bottom-actions a').first().getAttribute('href'))?.includes('#books'), 'Temporary Choose a book destination broken')
   check((await desktop.locator('.process-bottom-actions a').nth(1).getAttribute('href'))?.includes('/gift/'), 'Gifting destination broken')
+  check(await desktop.locator('.final-invitation h2').innerText() === 'Let’s find your book.', 'Missing FAQ CTA heading')
+  check(await desktop.locator('.final-invitation-intro').innerText() === 'One question is enough to begin.', 'Missing original FAQ CTA line')
+  check((await desktop.locator('.final-invitation a').getAttribute('href'))?.includes('#books'), 'Restored CTA target incorrect')
+  check(await desktop.evaluate(() => Boolean(document.querySelector('.final-invitation').compareDocumentPosition(document.querySelector('.newsletter-strip')) & Node.DOCUMENT_POSITION_FOLLOWING)), 'CTA must be before newsletter')
   check(await desktop.locator('.newsletter-inline-preview input:disabled').count() === 1, 'Newsletter email field should be visibly disabled')
   check((await desktop.locator('.newsletter-inline-preview a').getAttribute('href')) === 'https://storileaf.com/#newsletter-heading', 'Newsletter link incorrect')
 
@@ -47,18 +54,33 @@ try {
   await desktop.waitForTimeout(200)
   await desktop.locator('#how-it-works').screenshot({ path:path.join(folder,'process-desktop.png'), animations:'disabled' })
   const scrollStages = []
+  const photoChanges = []
   for (let i = 0; i < 4; i++) {
     await desktop.evaluate(index => {
-      const el = document.querySelectorAll('.process-step')[index]
-      const r = el.getBoundingClientRect()
-      window.scrollTo({ top: Math.max(0,scrollY + r.top + r.height * .38 - innerHeight * .41), behavior:'instant' })
+      const rect = document.querySelector('.process-section').getBoundingClientRect()
+      window.scrollTo({ top: Math.max(0, scrollY + rect.top - 20 + index * 112 + 6), behavior:'instant' })
     }, i)
-    await desktop.waitForTimeout(250)
+    await desktop.waitForTimeout(220)
     scrollStages.push(await desktop.locator('.process-steps li.is-active').getAttribute('data-step-index'))
+    photoChanges.push(await desktop.locator('.process-photo').getAttribute('src'))
   }
   observations.desktopScrollStages = scrollStages
-  check(scrollStages.join(',') === '0,1,2,3', 'Scroll activation is not following all four steps')
+  check(scrollStages.join(',') === '0,1,2,3', 'Independent scroll activation failed')
+  check(new Set(photoChanges).size === 4, 'All four process photographs must change')
+  const reverseStages = []
+  for (let i = 3; i >= 0; i--) {
+    await desktop.evaluate(index => {
+      const rect = document.querySelector('.process-section').getBoundingClientRect()
+      window.scrollTo({ top: Math.max(0, scrollY + rect.top - 20 + index * 112 + 6), behavior:'instant' })
+    }, i)
+    await desktop.waitForTimeout(160)
+    reverseStages.push(await desktop.locator('.process-steps li.is-active').getAttribute('data-step-index'))
+  }
+  observations.reverseScrollStages = reverseStages
+  check(reverseStages.join(',') === '3,2,1,0', 'Reverse scrolling through stages failed')
   await desktop.screenshot({ path:path.join(folder,'process-stage-four-desktop.png'), animations:'disabled' })
+  await desktop.locator('.final-invitation').scrollIntoViewIfNeeded()
+  await desktop.locator('.faq-section').screenshot({ path:path.join(folder,'faq-final-invitation-desktop.png'), animations:'disabled' })
   await desktop.locator('.newsletter-strip').scrollIntoViewIfNeeded()
   await desktop.locator('.newsletter-strip').screenshot({ path:path.join(folder,'newsletter-desktop.png'), animations:'disabled' })
   const booksTrigger = desktop.getByRole('button', {name:'The books', exact:true}).first()
@@ -82,6 +104,8 @@ try {
   await desktop.waitForTimeout(1100)
   await desktop.locator('#how-it-works').scrollIntoViewIfNeeded()
   await desktop.locator('#how-it-works').screenshot({ path:path.join(folder,'process-mobile.png'), animations:'disabled' })
+  await desktop.locator('.final-invitation').scrollIntoViewIfNeeded()
+  await desktop.locator('.final-invitation').screenshot({ path:path.join(folder,'faq-final-invitation-mobile.png'), animations:'disabled' })
   await desktop.locator('.newsletter-strip').scrollIntoViewIfNeeded()
   await desktop.locator('.newsletter-strip').screenshot({ path:path.join(folder,'newsletter-mobile.png'), animations:'disabled' })
   const mobileMenu=desktop.getByRole('button',{name:/Open navigation/i}).first()

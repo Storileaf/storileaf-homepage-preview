@@ -8019,18 +8019,10 @@ function Process() {
 			if (!media.matches || !root.current) return;
 			const frame = root.current.getBoundingClientRect();
 			if (frame.top > window.innerHeight * .7 || frame.bottom < window.innerHeight * .35) return;
-			const steps = Array.from(root.current.querySelectorAll(".process-step"));
-			const focusLine = window.innerHeight * .41;
-			let closest = 0;
-			let distance = Infinity;
-			steps.forEach((step, index) => {
-				const box = step.getBoundingClientRect();
-				const difference = Math.abs(box.top + box.height * .38 - focusLine);
-				if (difference < distance) {
-					distance = difference;
-					closest = index;
-				}
-			});
+			// Deliberately independent of the displayed row heights.
+			const distancePerStage = 112;
+			const progress = Math.max(0, 20 - frame.top);
+			const closest = Math.min(3, Math.floor(progress / distancePerStage));
 			setActive((current) => current === closest ? current : closest);
 		}
 		function schedule() {
@@ -8078,15 +8070,13 @@ function Process() {
 								"aria-controls": "process-visual",
 								onClick: () => {
 									setActive(index);
-									if (typeof window.matchMedia === "function" && window.matchMedia("(min-width: 901px) and (min-height: 731px) and (prefers-reduced-motion: no-preference)").matches) {
-										const selected = root.current?.querySelectorAll(".process-step")[index];
-										if (selected) {
-											const box = selected.getBoundingClientRect();
-											window.scrollTo({
-												top: window.scrollY + box.top + box.height * .38 - window.innerHeight * .41,
-												behavior: "instant"
-											});
-										}
+									if (typeof window.matchMedia === "function" &&
+										window.matchMedia("(min-width: 901px) and (min-height: 731px) and (prefers-reduced-motion: no-preference)").matches && root.current) {
+										const frame = root.current.getBoundingClientRect();
+										window.scrollTo({
+											top: window.scrollY + frame.top - 20 + index * 112 + 6,
+											behavior: "instant"
+										});
 									}
 								},
 								"data-testid": "process-step-" + (index + 1),
@@ -8173,9 +8163,9 @@ function FAQSection() {
 		className: "faq-section",
 		id: "questions",
 		"aria-labelledby": "faq-title",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "page-width",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "faq-grid",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "faq-intro",
@@ -8215,7 +8205,22 @@ function FAQSection() {
 						})]
 					}, item.question))
 				})]
-			})
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "final-invitation",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "final-invitation-intro",
+						children: "One question is enough to begin."
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+						children: "Let’s find your book."
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link$1, {
+					to: "/",
+					hash: "books",
+					className: "button",
+					children: ["Explore the books ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+				})]
+			})]
 		})
 	});
 }

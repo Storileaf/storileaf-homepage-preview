@@ -11277,3 +11277,30 @@ section[id] {
   .newsletter-inline-preview input { flex-basis:100%; }
   .newsletter-inline-preview .button { width:100%; }
 }
+
+
+/* 18 October. Compact steps have an independent scroll runway, not row-height-based activation. */
+@media (min-width:901px) {
+  .process-steps { margin-top:24px; }
+  .process-steps li { min-height:110px; }
+  .process-step { gap:16px; padding:10px 12px; }
+  .process-step .step-text strong { font-size:17.5px; line-height:1.32; margin-bottom:6px; }
+  .process-step .step-text > span { font-size:15px; line-height:1.5; }
+  .process-bottom-actions { padding-top:21px; }
+}
+@media (min-width:901px) and (min-height:731px) and (prefers-reduced-motion:no-preference) {
+  .process-section { --process-runway:430px; padding-block:63px 52px; min-height:0; overflow:visible; }
+  .process-section::after { content:""; display:block; height:var(--process-runway); }
+  .process-grid { position:sticky; top:82px; min-height:0; align-items:start; }
+  .process-visual { position:relative; top:auto; height:min(62vh,550px); min-height:470px; }
+}
+@media (max-width:900px) {
+  .process-steps { margin-top:22px; }
+  .process-steps li { min-height:0; }
+  .process-step { min-height:0; padding-block:12px; }
+  .process-step .step-text strong { margin-bottom:6px; }
+  .process-step .step-text > span { line-height:1.5; }
+}
+/* Retain original FAQ invitation copy without decorative overline styling. */
+.final-invitation-intro { font-size:15px; line-height:1.55; color:hsl(var(--ink-soft)); letter-spacing:normal; }
+.final-invitation h2 { margin-top:8px; }
