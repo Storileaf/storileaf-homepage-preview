@@ -1,5 +1,11 @@
 # Repository handoff for StoriLeaf UI work
 
+## Final stage scroll hold corrected, 18 October 2026
+
+**Public frontend preview only.** Founder feedback requested the fourth How it works stage, **Share what matters**, to remain highlighted and visibly pinned for roughly the same scrolling distance as the earlier stages. The existing CSS scroll runway was extended from 430px to 525px, without changing the four stage thresholds, row heights, text, CTA links, photograph choices or mobile layout.
+
+The Chromium browser QA checked another **100px of scrolling while step 04 remained active**, with the corresponding photograph unchanged and the pinned stage top still at 144px. Forward and reverse transitions through all four steps also passed. A real screenshot was captured as `qa/screenshots/process-stage-four-held-desktop.png`. This is tested frontend behaviour, not final founder visual sign-off. Production and backend systems remain untouched.
+
 ## Process alignment refinement, 18 October 2026
 
 **Current public frontend preview, browser checked and deployed.** The founder requested a lower, more comfortably centred sticky position for the How it works composition, a photograph positioned beside the four steps rather than the headline, slightly tighter stage rows, and removal of the outer divider rules. The four approved descriptions, existing photographs and both CTAs remain unchanged.
