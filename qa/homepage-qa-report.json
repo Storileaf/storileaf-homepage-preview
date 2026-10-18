@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T21:02:48.527Z",
-  "commit": "4e466926c2eedee81e68071e252631583a545184",
+  "date": "2026-10-18T21:12:22.664Z",
+  "commit": "ba66cd63825d84a0112c89152c8420e3dd47e1a7",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -162,6 +162,7 @@
       "intro": "Explore thoughtful questions, simple activities and practical guides to help memories become stories.",
       "titleCentreOffset": 0,
       "introCentreOffset": 0,
+      "overviewCentreOffset": 0,
       "labels": [
         "Activities and games",
         "Blog & guides"
@@ -505,6 +506,7 @@
       "withinViewport": true,
       "imagesLoaded": true,
       "overviewBelow": true,
+      "overviewCentreOffset": 0,
       "headingCentreOffset": 0
     },
     "mobileDiscoveryHeading": {
