@@ -637,10 +637,15 @@ function Homepage() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FAQSection, {})
 				]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(NewsletterStrip, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {
-				currency,
-				onCurrencyChange: changeCurrency
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "newsletter-footer-unit",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(NewsletterStrip, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {
+						currency,
+						onCurrencyChange: changeCurrency
+					})
+				]
 			})
 		]
 	});

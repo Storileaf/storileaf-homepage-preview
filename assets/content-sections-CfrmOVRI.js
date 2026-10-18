@@ -8362,12 +8362,9 @@ function Footer({ currency, onCurrencyChange }) {
 						href: LIVE_SITE + "/terms-conditions/",
 						children: "Terms"
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href: LIVE_SITE + "/contact/",
-						children: ["Get in touch ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							"aria-hidden": "true",
-							children: "↗"
-						})]
+						children: "Get in touch"
 					})
 				] })]
 			})]

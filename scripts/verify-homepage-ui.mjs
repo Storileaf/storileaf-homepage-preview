@@ -474,6 +474,36 @@ try {
   observations.newsletterImageLoaded=newsletterImageLoaded
   check(newsletterImageLoaded,'Newsletter background photograph did not load')
   await desktop.locator('.newsletter-strip').screenshot({ path:path.join(folder,'newsletter-desktop.png'), animations:'disabled' })
+  const footerJoin = await desktop.locator('.newsletter-footer-unit').evaluate(el => {
+    const newsletter=el.querySelector(':scope > .newsletter-strip')
+    const footer=el.querySelector(':scope > .site-footer')
+    const bottom=footer?.querySelector('.footer-bottom')
+    const copyright=bottom?.querySelector(':scope > span')
+    const legal=bottom?.querySelector('a[href$="/privacy/"]')
+    const touch=bottom?.querySelector('a[href$="/contact/"]')
+    return {
+      childCount:el.children.length,
+      image:getComputedStyle(el,'::before').backgroundImage,
+      fade:getComputedStyle(el,'::after').backgroundImage,
+      newsletterBorder:getComputedStyle(newsletter).borderBottomWidth,
+      newsletterFill:getComputedStyle(newsletter).backgroundColor,
+      footerFill:getComputedStyle(footer).backgroundColor,
+      copyrightFont:getComputedStyle(copyright).fontSize,
+      legalFont:getComputedStyle(legal).fontSize,
+      copyrightLineHeight:getComputedStyle(copyright).lineHeight,
+      legalLineHeight:getComputedStyle(legal).lineHeight,
+      contactText:touch?.textContent.trim(),
+      contactArrowCount:touch?.querySelectorAll('svg,span').length ?? -1,
+      contactHref:touch?.getAttribute('href')
+    }
+  })
+  observations.newsletterFooterJoin = footerJoin
+  check(footerJoin.childCount===2 && footerJoin.image.includes('storileaf-family-archive-books-hero-1440.webp'), 'Newsletter and footer must share a photographic parent')
+  check(footerJoin.fade.includes('linear-gradient') && footerJoin.fade.includes('rgb(37, 53, 38)'), 'Continuous photo-to-forest fade is missing')
+  check(footerJoin.newsletterBorder==='0px' && footerJoin.newsletterFill==='rgba(0, 0, 0, 0)' && footerJoin.footerFill==='rgba(0, 0, 0, 0)', 'Newsletter/footer boundary still separates the units')
+  check(footerJoin.copyrightFont===footerJoin.legalFont && footerJoin.copyrightLineHeight===footerJoin.legalLineHeight, 'Copyright typography does not match legal links')
+  check(footerJoin.contactText==='Get in touch' && footerJoin.contactArrowCount===0 && footerJoin.contactHref==='https://storileaf.com/contact/', 'Footer contact arrow or target incorrect')
+  await desktop.locator('.newsletter-footer-unit').screenshot({ path:path.join(folder,'newsletter-footer-desktop.png'), animations:'disabled' })
   const booksTrigger = desktop.getByRole('button', {name:'The books', exact:true}).first()
   await booksTrigger.hover()
   await desktop.waitForTimeout(320)
@@ -677,6 +707,28 @@ try {
   await desktop.locator('.final-invitation').screenshot({ path:path.join(folder,'faq-final-invitation-mobile.png'), animations:'disabled' })
   await desktop.locator('.newsletter-strip').scrollIntoViewIfNeeded()
   await desktop.locator('.newsletter-strip').screenshot({ path:path.join(folder,'newsletter-mobile.png'), animations:'disabled' })
+  await desktop.locator('.newsletter-footer-unit').screenshot({path:path.join(folder,'newsletter-footer-mobile.png'),animations:'disabled'})
+  const mobileFooterJoin = await desktop.locator('.newsletter-footer-unit').evaluate(el => {
+    const footer=el.querySelector('footer')
+    const input=el.querySelector('input[type="email"]')
+    const bottom=footer?.querySelector('.footer-bottom')
+    const contact=bottom?.querySelector('a[href$="/contact/"]')
+    return {
+      wrapperWidth:el.getBoundingClientRect().width,
+      newsletterWidth:el.querySelector('.newsletter-strip').getBoundingClientRect().width,
+      footerWidth:footer.getBoundingClientRect().width,
+      contact:contact?.textContent.trim(),
+      copyrightFont:getComputedStyle(bottom.querySelector(':scope > span')).fontSize,
+      legalFont:getComputedStyle(bottom.querySelector('a[href$="/privacy/"]')).fontSize,
+      editable:!input.disabled
+    }
+  })
+  observations.mobileFooterJoin=mobileFooterJoin
+  check(mobileFooterJoin.newsletterWidth===mobileFooterJoin.wrapperWidth &&
+    mobileFooterJoin.footerWidth===mobileFooterJoin.wrapperWidth &&
+    mobileFooterJoin.contact==='Get in touch' &&
+    mobileFooterJoin.copyrightFont===mobileFooterJoin.legalFont &&
+    mobileFooterJoin.editable,'Mobile combined footer layout or typography changed')
   const mobileNewsletter = await desktop.locator('.newsletter-strip').evaluate(el => {
     const input=el.querySelector('input').getBoundingClientRect(),
           button=el.querySelector('.newsletter-inline-preview .button').getBoundingClientRect(),
