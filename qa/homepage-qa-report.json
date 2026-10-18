@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T04:07:00.165Z",
-  "commit": "590107299280ebb37dc58e3a45285cffc061cf9b",
+  "date": "2026-10-18T15:38:24.074Z",
+  "commit": "2225c3ce5d419bad991874024a12bf871daa0959",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -102,130 +102,9 @@
       "outerRadius": "665.5px",
       "innerRadius": "345px",
       "failedImages": 0
-    },
-    "desktopStepHeights": [
-      94,
-      94,
-      94,
-      94
-    ],
-    "processLayout": {
-      "copyDisplay": "contents",
-      "photoRow": "2",
-      "firstBorder": "0px",
-      "lastBorder": "0px",
-      "middleBorder": "1px"
-    },
-    "processGridPosition": "sticky",
-    "processRunwayHeight": 640,
-    "activeNumber": {
-      "color": "rgb(255, 255, 255)",
-      "background": "rgb(12, 103, 83)"
-    },
-    "desktopScrollStages": [
-      "0",
-      "1",
-      "2",
-      "3"
-    ],
-    "processPinnedTopPositions": [
-      144,
-      144,
-      144,
-      144
-    ],
-    "desktopPinnedGeometry": {
-      "header": {
-        "top": 15,
-        "bottom": 91,
-        "height": 76
-      },
-      "title": {
-        "top": 144,
-        "bottom": 279.875,
-        "height": 135.875
-      },
-      "first": {
-        "top": 301.875,
-        "bottom": 395.875,
-        "height": 94
-      },
-      "last": {
-        "top": 583.875,
-        "bottom": 677.875,
-        "height": 94
-      },
-      "photo": {
-        "top": 301.875,
-        "bottom": 742.875,
-        "height": 441
-      },
-      "grid": {
-        "top": 144,
-        "bottom": 742.875,
-        "height": 598.875
-      },
-      "actions": {
-        "top": 677.875,
-        "bottom": 742.875,
-        "height": 65
-      }
-    },
-    "fourthStageHold": {
-      "scrollDistance": 100,
-      "pinnedTopBefore": 144,
-      "pinnedTopAfter": 144,
-      "selected": "3",
-      "photoUnchanged": true
-    },
-    "reverseScrollStages": [
-      "3",
-      "2",
-      "1",
-      "0"
-    ],
-    "bookMenuVisible": true,
-    "resourceMenuVisible": true,
-    "resourceMenuLinks": [
-      {
-        "direction": "row",
-        "label": "All resources"
-      },
-      {
-        "direction": "row",
-        "label": "Activities and games"
-      },
-      {
-        "direction": "row",
-        "label": "Blog & guides"
-      }
-    ],
-    "resourcesPanelLeftOffset": 0,
-    "headerTextOffsetByWidth": {
-      "1280": 0,
-      "1440": 0
-    },
-    "checkedWidths": [
-      320,
-      360,
-      390,
-      430,
-      768,
-      820,
-      1024,
-      1280,
-      1440
-    ],
-    "mobileHero": {
-      "count": 14,
-      "outerRadius": "412.5px"
-    },
-    "mobileDividers": {
-      "first": "0px",
-      "last": "0px",
-      "middle": "1px"
-    },
-    "prefersReducedMotion": true
+    }
   },
-  "problems": []
+  "problems": [
+    "Test execution error: Error: locator.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')\n    at rect (eval at evaluate (:290:30), <anonymous>:2:67)\n    at eval (eval at evaluate (:290:30), <anonymous>:7:25)\n    at UtilityScript.evaluate (<anonymous>:292:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  ]
 }
