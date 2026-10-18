@@ -34,3 +34,7 @@ Pages is configured to deploy from **main → /(root)**. The [successful GitHub 
 Future edits should update the UI deliberately, test the rendered design and record approval/QA, rather than modifying the production repository to experiment.
 
 <!-- Initial Pages deployment completed successfully after a README-only push on 16 October 2026. -->
+
+## Latest homepage preview adjustment
+
+The How it works steps are condensed and their active numbers remain legible. The CTAs are **Choose a book** (temporarily returns to the on-page six-book selector) and **Explore gifting** (existing gift page). The inline newsletter layout is visible again, but email collection is not connected in this frontend-only preview; the subscription action points to the existing public site. The future `/books/` overview and corresponding header navigation are documented in [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md), **not built**.

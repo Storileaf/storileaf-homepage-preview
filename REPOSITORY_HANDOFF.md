@@ -45,3 +45,15 @@ To update design later, regenerate or replace the static UI deliberately, captur
 ## Status
 
 Created and first published 16 October 2026. **Deployment verified live** at https://storileaf.github.io/storileaf-homepage-preview/. GitHub Pages workflow passed. Desktop and mobile browser checks confirmed working cover images, tabs, mobile navigation and no page-wide overflow at 1440px and 390px. The real product repo and production site were not changed.
+
+## Approved homepage refinement and future Books page, 17 October 2026
+
+**Implemented in public static preview only:** The four-step "How it works" scroll sequence is more compact on desktop; active step numbers have readable contrast; the existing scroll-activated photography, all four exact descriptions and mobile layout are preserved. The lower CTAs now say **Choose a book** and **Explore gifting**. Gift links to the existing public gifting page.
+
+**Interim destination:** Until a Books overview page is explicitly authorised and built, **Choose a book** continues to the homepage's working `#books` selector. Do not link to a nonexistent route.
+
+**Documented future page. NOT BUILT:** A public `/books/` overview will introduce all six StoriLeaf books. When separately authorised, the **Choose a book** button should link to that overview. The desktop header parent **The books** label should also provide navigation to the overview while retaining the present hover-open menu and its six book links plus gift entry. Mobile navigation must retain its existing operable disclosure. The design, exact copy and construction of `/books/` are still for a future brief.
+
+**Newsletter presentation:** The inline email-field layout has been restored visually on the homepage. The field is **disabled** because this is a frontend-only public preview, not a working subscription service. Its **Subscribe** action opens the existing public StoriLeaf newsletter heading. No addresses are captured in this repository, and successful subscription delivery is not claimed. Integrating an inline subscription form remains outside scope.
+
+**Source workflow:** This is a narrowly scoped adjustment to the compiled frontend snapshot. The repository still needs a maintainable frontend-only source and build workflow before extensive further redesign. The official private production repository and application are unchanged.

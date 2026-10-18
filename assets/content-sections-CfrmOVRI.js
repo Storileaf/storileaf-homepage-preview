@@ -8094,11 +8094,11 @@ function Process() {
 							className: "button",
 							to: "/",
 							hash: "books",
-							children: ["For myself ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+							children: ["Choose a book ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 							className: "button button-outline",
 							href: LIVE_SITE + "/gift/",
-							children: ["As a gift ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+							children: ["Explore gifting ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
 						})]
 					})
 				]
