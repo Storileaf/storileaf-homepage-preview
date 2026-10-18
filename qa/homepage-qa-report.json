@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T18:59:37.799Z",
-  "commit": "39a8165e8205160a9332a9192b0c84fc7f671030",
+  "date": "2026-10-18T19:08:34.393Z",
+  "commit": "78b63f0073fe59ef321ccf73c144e338bc63f8d2",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -191,9 +191,9 @@
       "slideshowLayout": {
         "photoTop": 1904,
         "textTop": 1904,
-        "photoBottom": 2493,
-        "textBottom": 2493,
-        "photoHeight": 589,
+        "photoBottom": 2513,
+        "textBottom": 2513,
+        "photoHeight": 609,
         "controlHorizontalOffset": 0,
         "controlNearBottom": true
       },
@@ -203,9 +203,9 @@
         "Before print"
       ],
       "detailDescriptions": [
-        "Included with every package.",
-        "Package specific. Selected options include a jacketed book, premium paper or embossing.",
-        "You review the prepared draft first."
+        "Your story becomes a finished printed book to keep and return to. One copy is included with every package.",
+        "The binding and finish depend on your package. Selected options include a book jacket, premium paper or embossing.",
+        "Review the prepared pages of your book before the final version goes to print."
       ],
       "iconCount": 3,
       "detailLayout": [
@@ -213,6 +213,7 @@
           "headingCentreDifference": 0,
           "descriptionLeftDifference": 0,
           "descriptionBelowHeading": true,
+          "headingDescriptionGap": 8.7,
           "display": "block",
           "borderBottom": "0px"
         },
@@ -220,6 +221,7 @@
           "headingCentreDifference": 0,
           "descriptionLeftDifference": 0,
           "descriptionBelowHeading": true,
+          "headingDescriptionGap": 8.7,
           "display": "block",
           "borderBottom": "0px"
         },
@@ -227,6 +229,7 @@
           "headingCentreDifference": 0,
           "descriptionLeftDifference": 0,
           "descriptionBelowHeading": true,
+          "headingDescriptionGap": 8.7,
           "display": "block",
           "borderBottom": "0px"
         }
@@ -240,9 +243,9 @@
     "craftSlideshowGeometry": {
       "photoTop": 1904,
       "textTop": 1904,
-      "photoBottom": 2493,
-      "textBottom": 2493,
-      "photoHeight": 589,
+      "photoBottom": 2513,
+      "textBottom": 2513,
+      "photoHeight": 609,
       "controlHorizontalOffset": 0,
       "controlNearBottom": true
     },
@@ -389,27 +392,27 @@
     },
     "mobileCraftGeometry": {
       "craft": {
-        "top": -990,
+        "top": -1037,
         "bottom": -104,
-        "height": 886
+        "height": 933
       },
       "copy": {
-        "top": -659,
+        "top": -706,
         "bottom": -104,
-        "height": 556
+        "height": 603
       },
       "link": {
         "top": -126,
-        "bottom": -106,
+        "bottom": -105,
         "height": 21
       },
       "visible": true,
       "display": "inline-flex",
       "overflow": "visible",
       "section": {
-        "top": -1649,
+        "top": -1696,
         "bottom": -38,
-        "height": 1611
+        "height": 1658
       }
     },
     "mobileBookIcons": [
@@ -418,21 +421,24 @@
         "titleCentreDifference": 0,
         "descriptionLeftDifference": 0,
         "descriptionBelowHeading": true,
-        "fits": true
+        "fits": true,
+        "headingDescriptionGap": 8.4
       },
       {
         "iconCount": 1,
         "titleCentreDifference": 0,
         "descriptionLeftDifference": 0,
         "descriptionBelowHeading": true,
-        "fits": true
+        "fits": true,
+        "headingDescriptionGap": 8.4
       },
       {
         "iconCount": 1,
         "titleCentreDifference": 0,
         "descriptionLeftDifference": 0,
         "descriptionBelowHeading": true,
-        "fits": true
+        "fits": true,
+        "headingDescriptionGap": 8.4
       }
     ],
     "mobileCraftSlideshow": {
@@ -440,7 +446,7 @@
       "dotCount": 4,
       "imageHeight": 259,
       "dotsCentred": true,
-      "dotsBelowCaption": true,
+      "dotsClearOfContent": true,
       "imgFullyInside": true
     },
     "mobileDividers": {
