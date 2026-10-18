@@ -351,7 +351,10 @@ try {
   })
   check(observations.mobileCraftGeometry.visible, 'Mobile Pricing CTA is not displayed')
   check(observations.mobileCraftGeometry.link.bottom <= observations.mobileCraftGeometry.craft.bottom + 2, 'Mobile Pricing CTA extends beyond the book-craft panel')
+  await desktop.locator('.book-craft').scrollIntoViewIfNeeded()
+  await desktop.waitForTimeout(150)
   await desktop.locator('.book-craft').screenshot({path:path.join(folder,'physical-book-single-cta-mobile.png'),animations:'disabled'})
+  await desktop.locator('.book-craft-copy').screenshot({path:path.join(folder,'physical-book-copy-and-cta-mobile.png'),animations:'disabled'})
   await desktop.locator('.samples-section').screenshot({path:path.join(folder,'samples-section-one-cta-mobile.png'),animations:'disabled'})
     const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
     first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,
