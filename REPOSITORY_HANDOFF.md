@@ -1,5 +1,18 @@
 # Repository handoff for StoriLeaf UI work
 
+## Six-book image gallery and lightbox, 18 October 2026
+
+**Implemented in the public GitHub Pages frontend preview following explicit founder approval.** The `See what your stories can become.` sample gallery no longer displays the three invented text/book spread examples. It now shows **exactly six landscape image placeholders**, one for each official book in this order: Life Story, Travel Memoir, Relationship Memoir, Founder's Memoir, Parent to Child Letters and Celebrating Occasions. Captions under each image show **only the book name**. All `Sample story`, `Read this example`, enlarge icon and invented page-text elements were removed from the gallery.
+
+The gallery remains a horizontal snap-scrolling image rail. The previous arrow now uses an **explicit left-pointing SVG path** rather than relying on CSS rotation of a right-pointing arrow; the next arrow points right. They disable at the ends, without looping or autoplay. Clicking any image opens a dark overlay **image lightbox**. Within the lightbox, previous/next buttons, keyboard left/right arrows, mobile left/right swipe gestures and Escape to close work across all six book images. The close button is always present and focus returns to the triggering image button. The modal deliberately shows one image at a time, not multiple pages within one book.
+
+**Replaceable images:** The six distinct files at `gallery/<book-slug>-open-book-placeholder.svg` are clearly **illustrative SVG placeholders, not genuine open-book product photography**. Each book has a dedicated source path in `assets/content-sections-CfrmOVRI.js` for later founder-supplied photograph replacement. The `gallery/README.md` maps the images and replacement method. Do not add real customer material to this public repository without authorisation.
+
+**Preserved:** Exact section heading and supporting sentence, forest green background, the complete adjacent physical-book photography and three printed book details, and the remaining `See package details` Pricing link. No other page, process, production repo or backend integration was changed.
+
+**Verification:** The successful public Chromium QA workflow checked six captions and six locally loaded SVGs, original image aspect ratios, distinct left/right arrow path directions, image-rail scrolling both ways, lightbox previous/next through all six images, keyboard navigation, Escape closure with focus return, mobile swipes in both directions, close button and responsive geometry. Real screenshots are under `qa/screenshots/six-book-gallery-desktop.png`, `six-book-gallery-mobile.png`, `six-book-lightbox-first-desktop.png`, `six-book-lightbox-sixth-desktop.png` and `six-book-lightbox-mobile.png`. First QA attempt exposed a missing gallery asset directory in the isolated test server; this was corrected in `.github/workflows/verify-homepage-ui.yml` and the final run passed. The deployed preview is awaiting founder final visual approval and actual replacement photographs. Full device and accessibility testing remain pending.
+
+
 ## Six-book discovery heading and paragraph alignment, 18 October 2026
 
 **Founder-approved adjustment, implemented and Chromium verified in the PUBLIC GitHub Pages preview.** The heading **“Which part of life would you like to tell?”** and its complete original supporting paragraph **“Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.”** are preserved unchanged. The founder found the paragraph visually detached because the two-column grid used a wide 1.5fr / .75fr split and `align-items:center`.
