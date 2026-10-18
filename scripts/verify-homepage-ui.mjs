@@ -160,7 +160,10 @@ try {
   }
   await desktop.keyboard.press('Escape')
   await viewer.waitFor({state:'hidden'})
-  check(await firstGalleryButton.evaluate(el=>document.activeElement===el), 'Closing the lightbox should restore focus to its gallery image')
+  await desktop.waitForTimeout(200)
+  const focusReturned = await firstGalleryButton.evaluate(el=>document.activeElement===el)
+  observations.galleryEscapeFocusReturned=focusReturned
+  check(focusReturned, 'Closing the lightbox should restore focus to its gallery image')
   observations.bookGallery={cards:6,localImages:6,captionOnly:true,leftArrow:arrows.left,rightArrow:arrows.right,
     railBefore:initialScroll,railAfterNext:forwardScroll,railAfterPrevious:reverseScroll,
     navigatedBothDirections:true,keyboardNavigation:true,escapeFocusReturn:true}

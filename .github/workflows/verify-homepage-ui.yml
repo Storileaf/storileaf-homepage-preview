@@ -6,6 +6,7 @@ on:
       - 'index.html'
       - '404.html'
       - 'assets/**'
+      - 'gallery/**'
       - '.github/workflows/verify-homepage-ui.yml'
       - 'scripts/verify-homepage-ui.mjs'
   workflow_dispatch:
@@ -29,7 +30,7 @@ jobs:
       - name: Serve the exact committed static frontend
         run: |
           mkdir -p /tmp/storileaf-qa/storileaf-homepage-preview
-          cp -a index.html 404.html assets covers /tmp/storileaf-qa/storileaf-homepage-preview/
+          cp -a index.html 404.html assets covers gallery /tmp/storileaf-qa/storileaf-homepage-preview/
           python3 -m http.server 4173 --directory /tmp/storileaf-qa > /tmp/storileaf-qa.log 2>&1 &
           sleep 2
       - name: Check interactions and capture actual Chromium screenshots
