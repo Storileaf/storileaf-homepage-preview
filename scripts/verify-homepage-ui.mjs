@@ -55,6 +55,7 @@ try {
   await desktop.locator('#how-it-works').screenshot({ path:path.join(folder,'process-desktop.png'), animations:'disabled' })
   const scrollStages = []
   const photoChanges = []
+  const pinnedTopPositions = []
   for (let i = 0; i < 4; i++) {
     await desktop.evaluate(index => {
       const rect = document.querySelector('.process-section').getBoundingClientRect()
@@ -63,10 +64,14 @@ try {
     await desktop.waitForTimeout(220)
     scrollStages.push(await desktop.locator('.process-steps li.is-active').getAttribute('data-step-index'))
     photoChanges.push(await desktop.locator('.process-photo').getAttribute('src'))
+    pinnedTopPositions.push(await desktop.locator('.process-grid').evaluate(el => Math.round(el.getBoundingClientRect().top)))
   }
   observations.desktopScrollStages = scrollStages
   check(scrollStages.join(',') === '0,1,2,3', 'Independent scroll activation failed')
   check(new Set(photoChanges).size === 4, 'All four process photographs must change')
+  observations.processPinnedTopPositions = pinnedTopPositions
+  check(Math.max(...pinnedTopPositions) - Math.min(...pinnedTopPositions) <= 2, 'The compact stages should remain pinned while the photos advance')
+  await desktop.screenshot({ path:path.join(folder,'process-stage-four-desktop.png'), animations:'disabled' })
   const reverseStages = []
   for (let i = 3; i >= 0; i--) {
     await desktop.evaluate(index => {
@@ -78,7 +83,6 @@ try {
   }
   observations.reverseScrollStages = reverseStages
   check(reverseStages.join(',') === '3,2,1,0', 'Reverse scrolling through stages failed')
-  await desktop.screenshot({ path:path.join(folder,'process-stage-four-desktop.png'), animations:'disabled' })
   await desktop.locator('.final-invitation').scrollIntoViewIfNeeded()
   await desktop.locator('.faq-section').screenshot({ path:path.join(folder,'faq-final-invitation-desktop.png'), animations:'disabled' })
   await desktop.locator('.newsletter-strip').scrollIntoViewIfNeeded()
