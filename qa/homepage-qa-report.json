@@ -1,14 +1,21 @@
 {
-  "date": "2026-10-18T00:42:54.782Z",
-  "commit": "42bcf484d2580cacfb2b10a6c9881a505462e5e7",
+  "date": "2026-10-18T02:17:24.442Z",
+  "commit": "0e14b9c0262aaae38082a0b373d11e670d323dfc",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "desktopStepHeights": [
-      110,
-      110,
-      110,
-      110
+      94,
+      94,
+      94,
+      94
     ],
+    "processLayout": {
+      "copyDisplay": "contents",
+      "photoRow": "2",
+      "firstBorder": "0px",
+      "lastBorder": "0px",
+      "middleBorder": "1px"
+    },
     "processGridPosition": "sticky",
     "processRunwayHeight": 545,
     "activeNumber": {
@@ -22,11 +29,48 @@
       "3"
     ],
     "processPinnedTopPositions": [
-      82,
-      82,
-      82,
-      82
+      144,
+      144,
+      144,
+      144
     ],
+    "desktopPinnedGeometry": {
+      "header": {
+        "top": 15,
+        "bottom": 91,
+        "height": 76
+      },
+      "title": {
+        "top": 144,
+        "bottom": 279.875,
+        "height": 135.875
+      },
+      "first": {
+        "top": 301.875,
+        "bottom": 395.875,
+        "height": 94
+      },
+      "last": {
+        "top": 583.875,
+        "bottom": 677.875,
+        "height": 94
+      },
+      "photo": {
+        "top": 301.875,
+        "bottom": 742.875,
+        "height": 441
+      },
+      "grid": {
+        "top": 144,
+        "bottom": 742.875,
+        "height": 598.875
+      },
+      "actions": {
+        "top": 677.875,
+        "bottom": 742.875,
+        "height": 65
+      }
+    },
     "reverseScrollStages": [
       "3",
       "2",
