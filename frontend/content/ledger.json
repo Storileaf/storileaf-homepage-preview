@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "updated": "2026-10-18",
+  "records": [
+    {
+      "id": "home.resources.title",
+      "copy": "A little curiosity can go a long way.",
+      "status": "founder_approved",
+      "source": "Homepage master brief, founder Resources decision 18 October 2026",
+      "public": true
+    },
+    {
+      "id": "home.resources.intro",
+      "copy": "Explore thoughtful questions, simple activities and practical guides to help memories become stories.",
+      "status": "founder_approved",
+      "source": "Homepage master brief, Resources intro",
+      "public": true
+    },
+    {
+      "id": "home.resources.activities.title",
+      "copy": "Activities and games",
+      "status": "founder_approved",
+      "source": "Founder accepted two category layout",
+      "public": true
+    },
+    {
+      "id": "home.resources.activities.description",
+      "copy": "Questions and playful activities that bring out stories worth sharing.",
+      "status": "founder_approved",
+      "source": "Homepage Resources copy",
+      "public": true
+    },
+    {
+      "id": "home.resources.activities.cta",
+      "copy": "Explore activities",
+      "status": "founder_approved",
+      "source": "Homepage Resources copy",
+      "public": true,
+      "destination_state": "unbuilt",
+      "href": null
+    },
+    {
+      "id": "home.resources.guides.title",
+      "copy": "Blog & guides",
+      "status": "founder_approved",
+      "source": "Homepage Resources copy",
+      "public": true
+    },
+    {
+      "id": "home.resources.guides.description",
+      "copy": "Thoughtful advice and practical ideas for capturing life's meaningful moments.",
+      "status": "founder_approved",
+      "source": "Homepage Resources copy",
+      "public": true
+    },
+    {
+      "id": "home.resources.guides.cta",
+      "copy": "Explore guides",
+      "status": "founder_approved",
+      "source": "Homepage Resources copy",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/blog/"
+    },
+    {
+      "id": "home.resources.all.cta",
+      "copy": "Browse all resources",
+      "status": "founder_approved",
+      "source": "Founder approved centred Resources action",
+      "public": true,
+      "destination_state": "unbuilt",
+      "href": null
+    }
+  ]
+}
