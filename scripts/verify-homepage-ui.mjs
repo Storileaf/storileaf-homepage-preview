@@ -74,7 +74,7 @@ try {
     const panel = desktop.locator('.book-detail-stage[data-state="active"]')
     check(await panel.count() === 1, 'One selected book panel must be visible')
     const result = await panel.evaluate((el) => {
-      const rect = selector => {const r=el.querySelector(selector).getBoundingClientRect();return {top:r.top,left:r.left,bottom:r.bottom,height:r.height}}
+      const rect = selector => {const r=(selector === ':scope' ? el : el.querySelector(selector)).getBoundingClientRect();return {top:r.top+scrollY,left:r.left,bottom:r.bottom+scrollY,height:r.height}}
       return {
         intro:el.querySelector('.book-detail-intro')?.textContent ?? '',
         points:[...el.querySelectorAll('.book-detail-points li')].map(li => li.textContent),
