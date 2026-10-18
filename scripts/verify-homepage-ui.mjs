@@ -224,7 +224,23 @@ try {
     const link = el.querySelector('.book-craft-copy > a.text-link')
     const details = [...el.querySelectorAll('.book-craft-detail')]
     return {
-      imageCount:el.querySelectorAll('.book-craft-image img').length,
+      imageCount:el.querySelectorAll('.book-craft-image .book-craft-slide').length,
+      indicatorCount:el.querySelectorAll('.book-craft-indicator').length,
+      initialActiveSlide:el.querySelector('.book-craft-slideshow')?.getAttribute('data-active-slide'),
+      slideshowLayout:(()=>{
+        const image=el.querySelector('.book-craft-slideshow').getBoundingClientRect()
+        const copy=el.querySelector('.book-craft-copy').getBoundingClientRect()
+        const control=el.querySelector('.book-craft-indicators').getBoundingClientRect()
+        return {
+          photoTop:Math.round(image.top),
+          textTop:Math.round(copy.top),
+          photoBottom:Math.round(image.bottom),
+          textBottom:Math.round(copy.bottom),
+          photoHeight:Math.round(image.height),
+          controlHorizontalOffset:Math.round((control.left+control.right-image.left-image.right)/2),
+          controlNearBottom:control.bottom<=image.bottom && control.bottom>=image.bottom-45
+        }
+      })(),
       detailLabels:details.map(row => row.querySelector('h4')?.textContent.trim()),
       detailDescriptions:details.map(row => row.querySelector('.book-craft-detail-description')?.textContent.trim()),
       iconCount:el.querySelectorAll('.book-craft-detail-icon svg').length,
@@ -236,7 +252,7 @@ try {
               middle=element=>{const r=element.getBoundingClientRect();return (r.top+r.bottom)/2};
         return {
           headingCentreDifference:Math.abs(middle(icon)-middle(title)),
-          descriptionLeftDifference:Math.abs(desc.getBoundingClientRect().left-icon.getBoundingClientRect().left),
+          descriptionLeftDifference:Math.abs(desc.getBoundingClientRect().left-title.getBoundingClientRect().left),
           descriptionBelowHeading:desc.getBoundingClientRect().top >= heading.getBoundingClientRect().bottom,
           display:getComputedStyle(row).display,
           borderBottom:getComputedStyle(row).borderBottomWidth
@@ -249,7 +265,7 @@ try {
     }
   })
   observations.physicalBookSingleCTA = physicalBook
-  check(physicalBook.imageCount === 1, 'Physical book image was removed')
+  check(physicalBook.imageCount === 4 && physicalBook.indicatorCount === 4 && physicalBook.initialActiveSlide === '0', 'Physical-book slideshow must contain four slides and four indicators')
   check(JSON.stringify(physicalBook.detailLabels) === JSON.stringify(['Printed copy','Binding and finish','Before print']), 'Physical details were changed')
   check(JSON.stringify(physicalBook.detailDescriptions) === JSON.stringify([
     'Included with every package.',
@@ -260,6 +276,38 @@ try {
   check(physicalBook.detailLayout.every(x => x.display === 'block' && x.borderBottom === '0px'), 'Old tabular details formatting remains')
   check(physicalBook.detailLayout.every(x => x.headingCentreDifference <= 2 && x.descriptionLeftDifference <= 1 && x.descriptionBelowHeading),
     'Desktop icon, heading or description geometry is misaligned')
+  observations.craftSlideshowGeometry=physicalBook.slideshowLayout
+  check(Math.abs(physicalBook.slideshowLayout.photoTop-physicalBook.slideshowLayout.textTop)<=2 &&
+    Math.abs(physicalBook.slideshowLayout.photoBottom-physicalBook.slideshowLayout.textBottom)<=3 &&
+    physicalBook.slideshowLayout.photoHeight>=520,
+    'Desktop slideshow image does not match the full right-hand content height')
+  check(Math.abs(physicalBook.slideshowLayout.controlHorizontalOffset)<=2 &&
+    physicalBook.slideshowLayout.controlNearBottom, 'Slide indicator is not centred at the bottom of the image')
+  const slideshow=desktop.locator('.book-craft-slideshow')
+  const slideImageSources=await slideshow.locator('.book-craft-slide').evaluateAll(imgs=>imgs.map(img=>img.getAttribute('src')))
+  check(slideImageSources.length===4 && new Set(slideImageSources).size===4, 'Slideshow must contain four distinct temporary StoriLeaf images')
+  for(let i=0;i<4;i++){
+    await slideshow.getByRole('button',{name:'Show book image '+(i+1)+' of 4'}).click()
+    check(await slideshow.getAttribute('data-active-slide')===String(i), 'Slide indicator did not select image '+(i+1))
+    check(await slideshow.locator('.book-craft-slide.is-active').count()===1, 'There must be exactly one active image')
+    const press=await slideshow.locator('.book-craft-indicator').evaluateAll(items=>items.map(el=>el.getAttribute('aria-pressed')))
+    check(press.filter(x=>x==='true').length===1&&press[i]==='true','Slide active indicator is inaccurate')
+  }
+  await slideshow.getByRole('button',{name:'Show book image 1 of 4'}).click()
+  await slideshow.scrollIntoViewIfNeeded()
+  await desktop.waitForTimeout(800)
+  await slideshow.screenshot({path:path.join(folder,'physical-book-slideshow-first-desktop.png'),animations:'disabled'})
+  await slideshow.getByRole('button',{name:'Show book image 2 of 4'}).click()
+  await slideshow.screenshot({path:path.join(folder,'physical-book-slideshow-second-desktop.png'),animations:'disabled'})
+  await slideshow.getByRole('button',{name:'Show book image 1 of 4'}).click()
+  // Verify that the fourth image slot is reachable and autoplay advances when visible.
+  await desktop.waitForTimeout(6750)
+  const autoSlide=await slideshow.getAttribute('data-active-slide')
+  observations.craftAutoplayAdvanced=autoSlide==='1'
+  check(autoSlide==='1', 'Craft slideshow should advance automatically while visible')
+  await slideshow.getByRole('button',{name:'Show book image 1 of 4'}).click()
+  observations.craftSlideshow={slots:4,indicatorCount:4,uniqueSources:4,manualNavigation:true,autoAdvance:autoSlide==='1'}
+
   await desktop.locator('.book-craft-copy').screenshot({
     path:path.join(folder,'physical-book-icon-details-desktop.png'),animations:'disabled'
   })
@@ -534,7 +582,7 @@ try {
     return {
       iconCount:row.querySelectorAll('.book-craft-detail-icon svg').length,
       titleCentreDifference:Math.abs((icon.top+icon.bottom-heading.top-heading.bottom)/2),
-      descriptionLeftDifference:Math.abs(icon.left-paragraph.left),
+      descriptionLeftDifference:Math.abs(heading.left-paragraph.left),
       descriptionBelowHeading:paragraph.top>=heading.bottom,
       fits:paragraph.right<=document.documentElement.clientWidth+1
     }
@@ -543,6 +591,28 @@ try {
   check(mobileIconLayout.length === 3 && mobileIconLayout.every(x=>x.iconCount === 1 &&
     x.titleCentreDifference <= 2 && x.descriptionLeftDifference <= 1 &&
     x.descriptionBelowHeading && x.fits), 'Mobile detail icon and copy alignment failed')
+  const mobileSlides=await desktop.locator('.book-craft-slideshow').evaluate(el=>{
+    const box=el.getBoundingClientRect()
+    const control=el.querySelector('.book-craft-indicators').getBoundingClientRect()
+    const label=el.querySelector('.book-craft-image-label').getBoundingClientRect()
+    return {
+      slideCount:el.querySelectorAll('.book-craft-slide').length,
+      dotCount:el.querySelectorAll('.book-craft-indicator').length,
+      imageHeight:Math.round(box.height),
+      dotsCentred:Math.abs((control.left+control.right-box.left-box.right)/2)<=2,
+      dotsBelowCaption:control.top>=label.bottom+5,
+      imgFullyInside:control.bottom<=box.bottom+1
+    }
+  })
+  observations.mobileCraftSlideshow=mobileSlides
+  check(mobileSlides.slideCount===4&&mobileSlides.dotCount===4&&mobileSlides.imageHeight>=230 &&
+    mobileSlides.dotsCentred&&mobileSlides.dotsBelowCaption&&mobileSlides.imgFullyInside,
+    'Mobile craft slideshow image or dots overlap')
+  await desktop.locator('.book-craft-slideshow').getByRole('button',{name:'Show book image 4 of 4'}).click()
+  check(await desktop.locator('.book-craft-slideshow').getAttribute('data-active-slide')==='3','Mobile slide indicator failed to select final image')
+  await desktop.locator('.book-craft-slideshow').screenshot({path:path.join(folder,'physical-book-slideshow-mobile.png'),animations:'disabled'})
+  await desktop.locator('.book-craft-slideshow').getByRole('button',{name:'Show book image 1 of 4'}).click()
+
 
   await desktop.locator('.book-craft').scrollIntoViewIfNeeded()
   await desktop.waitForTimeout(150)
