@@ -1,5 +1,8 @@
 # StoriLeaf homepage UI preview
 
+**Physical book details update, 18 October 2026.** The three specifications below the finished-book photograph now use an icon followed by a sentence-case title, with the original description on the following line aligned to the icon's left edge. The old tabular columns and divider lines are removed. The photograph, section heading and Pricing link remain unchanged. Desktop/mobile screenshots and successful browser QA are in `qa/`. Private production code is untouched.
+
+
 **Open-book gallery, 18 October 2026.** The sample section now contains six replaceable local SVG image placeholders, one per official book, with captions showing only the book name. Clicking an image opens a lightbox with previous/next buttons, keyboard arrows, swipe gestures on touch devices and Escape to close. The previous carousel arrow has a real left-pointing path. The fictional written sample pages have been removed. All six actual open-book photographs are still to be supplied by the founder. See `gallery/README.md` for replacement instructions and `qa/` for screenshot and browser verification.
 
 

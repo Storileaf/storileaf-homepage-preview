@@ -1,5 +1,16 @@
 # Repository handoff for StoriLeaf UI work
 
+## Icon-led physical book specifications, 18 October 2026
+
+**Founder-requested and implemented on the public GitHub Pages homepage preview only.** In the existing **“A book you can come back to.”** section, the three physical-book facts no longer appear as table-like uppercase labels beside separate values. Each now appears as a vertical item consisting of a small warm-paper icon tile and a sentence-case heading **on the same line and vertically centred**, with the **existing exact description below, aligned to the icon's left edge**. There are no internal table dividers. The three items remain in their original order.
+
+The icon subjects are a book for **Printed copy**, layered sheets for **Binding and finish** and a document with a check mark for **Before print**. Icons are decorative and hidden from screen readers. All three captions remain verbatim: **“Included with every package.”**, **“Package specific. Selected options include a jacketed book, premium paper or embossing.”** and **“You review the prepared draft first.”**. No specifications or package capabilities from the founder's reference image were copied.
+
+The existing forest green section, full photographic binding detail, headline, introductory paragraph and the sole Pricing text action **“See package details”** were preserved. No updates to the four-step **How it works** block immediately below were authorised or made. The visual change is scoped to `.samples-section .book-craft-detail*` CSS plus the corresponding compiled sample-gallery component and static `index.html`/`404.html` markup. The public repository still contains compiled assets, so the future frontend source workflow remains outstanding.
+
+**Verification:** Chromium browser QA passed after checking all three decorative icons, exact labels/descriptions, zero icon-to-title vertical-centre difference, description left-edge matching the icon, removal of table borders, mobile no-clipping, and unchanged photograph and Pricing link. Actual renderings are at `qa/screenshots/physical-book-icon-details-desktop.png`, `physical-book-icon-details-mobile.png` and `physical-book-single-cta-desktop.png`. A transient HTML hydration mismatch was corrected in the two static pages before successful QA. Physical device, detailed accessibility and final founder visual acceptance remain outstanding. No private production code or backend systems were changed.
+
+
 ## Six-book image gallery and lightbox, 18 October 2026
 
 **Implemented in the public GitHub Pages frontend preview following explicit founder approval.** The `See what your stories can become.` sample gallery no longer displays the three invented text/book spread examples. It now shows **exactly six landscape image placeholders**, one for each official book in this order: Life Story, Travel Memoir, Relationship Memoir, Founder's Memoir, Parent to Child Letters and Celebrating Occasions. Captions under each image show **only the book name**. All `Sample story`, `Read this example`, enlarge icon and invented page-text elements were removed from the gallery.
