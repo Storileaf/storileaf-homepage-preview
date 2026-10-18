@@ -54,7 +54,7 @@ The current interface deliberately uses restrained shapes, not universal pills. 
 
 Shared SiteHeader with original gold logo on forest, Books/Resources accessible dropdowns, mobile navigation and exact Start your story action.
 
-Shared NewsletterFooter as one photographic field gradually fading to forest. This is the approved standard ending on all future public pages, though it is not deployed on those pages yet.
+Shared NewsletterFooter as one photographic field gradually fading to forest. A typed React reference now exists in frontend/src/components/NewsletterFooter.tsx, with caller-provided internal routes and currency selection, but it has NOT replaced the approved live footer. This is the standard ending intended for all future public pages, subject to parity and production form integration later.
 
 EditorialSectionHeading with centred and split layouts, no mandatory italic formula. Primary/outline/gold-on-dark/text Action components with consistent feedback and accessible targets.
 
@@ -93,3 +93,7 @@ The later authenticated workspace, Storyteller/contributor and admin interfaces 
 Actual open-book photography, trust-band first phrase/placement, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
 
 The current deployed static homepage remains the visual baseline until the editable source reproduces it faithfully.
+
+## Implementation maturity
+
+The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity and founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.

@@ -1,5 +1,15 @@
 # Repository handoff for StoriLeaf UI work
 
+## React source foundation hardening, 18 October 2026
+
+The public frontend now has typed `ResponsiveImage` with intrinsic dimensions, responsive `sizes`, accessible `alt`, lazy default and an explicit eager option for measured above-the-fold assets; `ResourceCategoryCard` gives verified destinations **one whole-card semantic link** without nesting actions, while unbuilt destinations remain visual treatments only. The source reference now includes `NewsletterFooter`, using the approved photo-to-forest composition, currency and page-route props, the original StoriLeaf logo and verified existing external destinations.
+
+The approved screenshot-driven public root has **not** been modified. This new React reference is isolated in `frontend/`, and it is **not yet the complete editable equivalent of the published homepage**. The header, book selector, gallery, printed-book craft, process, device showcase, gifting, FAQ and pricing route still need migration and parity checks.
+
+Content validation now checks approval/provenance evidence, source references, verified destination URLs and image origin/dimensions; shared newsletter/footer copy was added to the ledger with the current founder-approved homepage brief as its approval reference. CI installs committed locked dependencies with **read-only GitHub permissions**. After correcting ledger identifiers and approval metadata, [the latest source check](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39178534954) passed typecheck, content gate, protected-root guard, component tests and isolated Vite build. GitHub Pages deployment passed separately and continues to render the unchanged current homepage.
+
+Performance optimisation remains deferred until the full public website is built. Good foundations are implemented now, without altering the current homepage's fourteen cover instances, animations or provisional photography. Current site accessibility issues such as excessive `aria-current="page"` remain in the root baseline and must be corrected in the parity migration under founder-reviewed visual QA, not silently patched in source-only work.
+
 ## Writing practice CTA and deferred standalone page, 18 October 2026
 
 **Founder-approved immediate change:** On the existing **“Write a little. Come back when you are ready.”** homepage section, rename **Try a writing prompt** to **Try answering a question**. This was implemented in commit `44640b27ad26550403226cdc84c2775e2caa076f` in `index.html`, `404.html` and the compiled `assets/routes-DrwDv2x2.js`. The exact-label and modal regression checks were added in `scripts/verify-homepage-ui.mjs`. The [Chromium QA workflow](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39167703251) passed with `problems: []`, and the working dialog screenshot is `qa/screenshots/writing-practice-dialog-desktop.png`.

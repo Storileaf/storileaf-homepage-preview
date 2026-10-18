@@ -39,3 +39,7 @@ The source workspace must be expanded to include the actual current header, hero
 Require source build, full browser interaction parity, keyboard/touch/reduced-motion tests and side-by-side screenshots at nine responsive widths before proposing any deployment cutover. The founder will approve that switch separately.
 
 The HTML source reference may use temporary system fallback fonts until the final font loading/parity step is confirmed. The published homepage already uses Newsreader and Manrope correctly; do not interpret this isolated component exercise as final visual acceptance.
+
+## Shared component staging
+
+The source preview now includes the approved newsletter/footer's visual composition as a typed shared React component with explicit per-page routes and currency state. This is a **reference**, not a replacement for the current compiled homepage footer or a working newsletter backend. The original public root is guarded against unreviewed regeneration. The source remains incomplete until every homepage section and pricing/navigation interaction is migrated and visually compared.

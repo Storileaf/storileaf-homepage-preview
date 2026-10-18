@@ -24,4 +24,8 @@ Deferred public pages include the Books overview, the Resources hub and Activiti
 
 ## Current migration stage
 
-The isolated frontend/ React foundation is being established. The old homepage is still published as compiled root assets and cannot be replaced until editable React source reaches founder-reviewed functional and visual parity. Preserve the existing static output during migration.
+The isolated frontend/ React foundation is established and passing CI as an isolated component build. The whole homepage has not been migrated. The old homepage is still published as compiled root assets and cannot be replaced until editable React source reaches founder-reviewed functional and visual parity. Preserve the existing static output during migration.
+
+## Source hardening milestone
+
+The isolated React reference now includes a shared NewsletterFooter with currency and route props, responsive image dimensions and lazy loading, semantic verified whole-card links and expanded content provenance checks. The root GitHub Pages homepage is unchanged. Full homepage source parity remains an open migration stage, not a completed conversion.

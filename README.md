@@ -22,7 +22,7 @@ The official private repository Storileaf/storiYoceFj6IRAleaf remains authoritat
 
 ## Editable React source
 
-The new [frontend/](frontend/) workspace is a Vite, React and TypeScript source foundation for reusable components and future public pages. It includes a content approval ledger, design tokens, typed components, tests and an isolated build. The [source build workflow](.github/workflows/validate-public-source.yml) checks these without changing published root assets.
+The new [frontend/](frontend/) workspace is a Vite, React and TypeScript source foundation for reusable components and future public pages. It includes a provenance-aware content ledger, design tokens, typed editorial and image components, a shared NewsletterFooter source reference, tests and an isolated build. The [source build workflow](.github/workflows/validate-public-source.yml) checks these without changing published root assets.
 
 **Migration status:** this source workspace is NOT yet a complete replacement for the approved homepage. The source-driven component reference is an initial slice of the page's design. Before moving the published homepage to editable React, all sections, wording, interactions, browser states and screenshots must match the approved static baseline. The build output stays under frontend/dist and is not published automatically.
 

@@ -8,7 +8,7 @@ The active design authority is [Public Design System](PUBLIC_DESIGN_SYSTEM.md).
 | Editorial headings | Approved layout | Typed EditorialHeading reference | Compare typography across section roles |
 | Action styles | Approved homepage buttons and text links | ActionLink variants | Validate focus, target size and link destinations |
 | Photographic resource cards | Two approved equal Resources cards | ResourceCategoryCard, full-card link only for verified destinations | Pixel and keyboard parity |
-| Responsive image | Existing per-section image rules | ResponsiveImage with dimensions, alt, sizes and lazy default | Document srcset/crop per asset |
+| Responsive image | Existing per-section image rules | ResponsiveImage with dimensions, alt, sizes and lazy default; source compile validated | Document srcset/crop per asset and confirm visible parity |
 | Header and navigation | Published static bundled interaction | Not yet migrated | Keyboard, hover, touch, current-page semantics, 9 widths |
 | Six-book discovery | Published working tabs | Not yet migrated | Exact copy, photo, tabs and stable CTA parity |
 | Book gallery | Published with modal, keyboard and swipe | Not yet migrated | Six images, lightbox and focus parity |

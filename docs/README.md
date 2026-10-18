@@ -18,3 +18,5 @@ Do not treat successful CI, a proposal, an approved design, a working preview an
 
 - [Component migration inventory](COMPONENT_INVENTORY.md) keeps published versus editable source states distinct.
 - [Content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) captures verified claims, exact copy approvals and destination status.
+
+- [Reusable public page design and release template](PAGE_SPEC_TEMPLATE.md) records source-backed copy, visual decisions, responsive behaviour and implementation proof before publishing more pages.
