@@ -1,5 +1,27 @@
 # Repository handoff for StoriLeaf UI work
 
+## Homepage Resources becomes a two-category introduction, 18 October 2026
+
+**Latest founder-authorised design pass, implemented in the public GitHub Pages homepage preview only.** The founder clarified that the old Resources block was incorrectly running **One Question, One Story** on the homepage next to one featured blog article. The homepage must instead introduce the Resources collection and lead visitors towards its own resource pages. The founder approved **two equally prominent editorial photograph-led category panels** with the existing title **“A little curiosity can go a long way.”** **centred** above them, a short centred introduction, and a restrained **Browse all resources** text treatment.
+
+**Current exact new public preview copy**
+
+- Centred title: **A little curiosity can go a long way.**
+- Introduction: **Explore thoughtful questions, simple activities and practical guides to help memories become stories.**
+- **Activities and games:** “Questions and playful activities that bring out stories worth sharing.” Action label **Explore activities**.
+- **Blog & guides:** “Thoughtful advice and practical ideas for capturing life's meaningful moments.” Action label **Explore guides**.
+- Lower text treatment: **Browse all resources**.
+
+The two panels are the same desktop width and height, with large landscape imagery and restrained warm-paper text surfaces. The selected interim photographs are existing published StoriLeaf assets, respectively `images/brand/collections/life-story/life-story-family-sharing-memories-1200.webp` and `images/brand/collections/relationship-memoir/storileaf-relationship-memoir-hands-photographs-cafe-square-800.webp`. Images may be replaced after the composition is approved. Mobile stacks the full-width panels; the title and introduction remain centred. No separate cards, decorative category overlines, actual random question widget, blog-specific featured story title, or fake printable were added.
+
+**Destinations and scope:** The complete **Blog & guides** card links to the already published `https://storileaf.com/blog/`. The **Activities and games** destination page and **All resources** hub do **not** exist yet; their labels are displayed as design treatments only, not links that would lead to 404 pages. Existing desktop Resources menu entries **All resources** and **Activities and games** still target the valid homepage `#resources` and `#resources-activity` anchors. Those should change to the real section pages when they are separately designed and authorised, not beforehand. The existing blog destination is preserved. No new resources pages, activities, downloads or backend services were created.
+
+**Public implementation:** Commit `d7b16b78af99ee210aeda8de889a8a95f350de51` changed only `assets/routes-DrwDv2x2.js` (homepage Resources component), both static `index.html`/`404.html` SSR pages, scoped homepage CSS `assets/index-DhPZyX4z.css`, and the browser QA script. Test-only change `4e466926c2eedee81e68071e252631583a545184` improved the mobile full-section screenshot by keeping the fixed header/keyboard skip link out of that section-only capture without modifying the live UI.
+
+**Actual browser verification:** The final Chromium workflow [passed](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39166005156) with `problems: []` and preserved prior homepage regressions across nine widths 320px–1440px. At desktop 1440px, the headline and intro both had **0px centring offset**, and two image-loaded cards were **577px wide and 563px high** with matching top edges. At mobile 390px, both photos loaded, the cards stacked without overflow, and the Browse all resources treatment sat beneath them. Real screenshots were captured and independently reviewed at `qa/screenshots/resources-categories-desktop.png` and `resources-categories-mobile.png`. The QA bot committed the updated report/screenshots at `f279ce990c40768b37c0846902b0890922227cc8`. The initial preview implementation and subsequent screenshot-only update both triggered successful Pages deployments. The founder has not yet given final visual sign-off on this revised section; broad homepage review and design-system consolidation remain deferred.
+
+**Boundaries:** All other homepage sections, header/dropdowns, newsletter/footer design, printed-book copy, customer app, private production source, login, payments and backend integrations were left unchanged.
+
 ## Unified newsletter and footer with a continuous photograph, 18 October 2026
 
 **Founder-authorised public homepage revision, implemented and browser-tested.** The previous newsletter photo ended at a sharp horizontal boundary before the solid forest footer. They now sit in one shared `newsletter-footer-unit` wrapper, with **one background image spanning the two sections** and a continuous overlay gradient that fades to solid forest by the lower footer. The divider **between** newsletter and footer was removed. The existing **internal** separator above the footer's legal row remains. Newsletter copy, editable email field, Subscribe destination, footer logo, navigation columns, currency selector and legal links remain.
