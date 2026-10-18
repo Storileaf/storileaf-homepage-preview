@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T18:33:39.816Z",
-  "commit": "77e4a81c54350dab829d6982e55748179ff87592",
+  "date": "2026-10-18T18:43:06.317Z",
+  "commit": "bae680f47d8c678034f548ae4928a6e83147af17",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -191,6 +191,35 @@
         "Binding and finish",
         "Before print"
       ],
+      "detailDescriptions": [
+        "Included with every package.",
+        "Package specific. Selected options include a jacketed book, premium paper or embossing.",
+        "You review the prepared draft first."
+      ],
+      "iconCount": 3,
+      "detailLayout": [
+        {
+          "headingCentreDifference": 0,
+          "descriptionLeftDifference": 0,
+          "descriptionBelowHeading": true,
+          "display": "block",
+          "borderBottom": "0px"
+        },
+        {
+          "headingCentreDifference": 0,
+          "descriptionLeftDifference": 0,
+          "descriptionBelowHeading": true,
+          "display": "block",
+          "borderBottom": "0px"
+        },
+        {
+          "headingCentreDifference": 0,
+          "descriptionLeftDifference": 0,
+          "descriptionBelowHeading": true,
+          "display": "block",
+          "borderBottom": "0px"
+        }
+      ],
       "ctaText": "See package details",
       "ctaHref": "https://storileaf.com/pricing/",
       "detachedLinks": 0,
@@ -332,29 +361,52 @@
     },
     "mobileCraftGeometry": {
       "craft": {
-        "top": -919,
+        "top": -965,
         "bottom": -104,
-        "height": 815
+        "height": 861
       },
       "copy": {
-        "top": -588,
+        "top": -634,
         "bottom": -104,
-        "height": 485
+        "height": 531
       },
       "link": {
         "top": -126,
-        "bottom": -106,
+        "bottom": -105,
         "height": 21
       },
       "visible": true,
       "display": "inline-flex",
       "overflow": "visible",
       "section": {
-        "top": -1578,
+        "top": -1624,
         "bottom": -38,
-        "height": 1540
+        "height": 1586
       }
     },
+    "mobileBookIcons": [
+      {
+        "iconCount": 1,
+        "titleCentreDifference": 0,
+        "descriptionLeftDifference": 0,
+        "descriptionBelowHeading": true,
+        "fits": true
+      },
+      {
+        "iconCount": 1,
+        "titleCentreDifference": 0,
+        "descriptionLeftDifference": 0,
+        "descriptionBelowHeading": true,
+        "fits": true
+      },
+      {
+        "iconCount": 1,
+        "titleCentreDifference": 0,
+        "descriptionLeftDifference": 0,
+        "descriptionBelowHeading": true,
+        "fits": true
+      }
+    ],
     "mobileDividers": {
       "first": "0px",
       "last": "0px",
@@ -362,5 +414,8 @@
     },
     "prefersReducedMotion": true
   },
-  "problems": []
+  "problems": [
+    "Browser error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+    "Browser error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+  ]
 }
