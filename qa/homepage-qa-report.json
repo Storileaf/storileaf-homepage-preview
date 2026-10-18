@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T02:20:14.160Z",
-  "commit": "7ba076dd26eccbff500ffc20f737b62746fe7d72",
+  "date": "2026-10-18T02:28:34.827Z",
+  "commit": "b5313bef1f964b00cfbaa28791f8229f353d7f18",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "desktopStepHeights": [
@@ -17,7 +17,7 @@
       "middleBorder": "1px"
     },
     "processGridPosition": "sticky",
-    "processRunwayHeight": 545,
+    "processRunwayHeight": 640,
     "activeNumber": {
       "color": "rgb(255, 255, 255)",
       "background": "rgb(12, 103, 83)"
@@ -70,6 +70,13 @@
         "bottom": 742.875,
         "height": 65
       }
+    },
+    "fourthStageHold": {
+      "scrollDistance": 100,
+      "pinnedTopBefore": 144,
+      "pinnedTopAfter": 144,
+      "selected": "3",
+      "photoUnchanged": true
     },
     "reverseScrollStages": [
       "3",
