@@ -101,6 +101,70 @@ try {
   await desktop.setViewportSize({width:1440,height:900})
   await desktop.waitForTimeout(150)
 
+
+  const galleryNames = ['Life Story','Travel Memoir','Relationship Memoir',"Founder's Memoir",'Parent to Child Letters','Celebrating Occasions']
+  const gallerySlugs = ['life-story','travel-memoir','relationship-memoir','founders-memoir','parent-to-child-letters','celebrating-occasions']
+  const galleryCards = desktop.locator('.sample-rail .sample-card')
+  check(await galleryCards.count() === 6, 'Gallery must have exactly six clickable book images')
+  const captions = await galleryCards.locator('.sample-card-caption').allTextContents()
+  check(JSON.stringify(captions.map(s=>s.trim())) === JSON.stringify(galleryNames), 'Gallery captions must show only the six formal book names')
+  check(await desktop.locator('.sample-rail .book-spread,.sample-rail .sample-excerpt,.sample-rail .sample-read-action,.sample-rail .sample-card-caption small').count() === 0, 'Legacy sample pages or Read this example controls remain')
+  const arrows = await desktop.locator('.gallery-controls').evaluate(el => ({
+    left:el.querySelector('[aria-label="Previous book image"] svg path')?.getAttribute('d'),
+    right:el.querySelector('[aria-label="Next book image"] svg path')?.getAttribute('d')
+  }))
+  observations.galleryArrowPaths = arrows
+  check(arrows.left?.startsWith('M20 12H5') && arrows.right?.startsWith('M4 12h15'), 'Carousel arrows do not face opposite directions')
+  for (let i=0; i<6; i++) {
+    const card=galleryCards.nth(i)
+    await card.scrollIntoViewIfNeeded()
+    const image=card.locator('img')
+    await image.evaluate(img => img.complete ? true : new Promise(resolve => {img.addEventListener('load',()=>resolve(true),{once:true});img.addEventListener('error',()=>resolve(false),{once:true})}))
+    const data=await image.evaluate(el=>({src:el.getAttribute('src'),width:el.naturalWidth,ratio:el.naturalWidth/(el.naturalHeight||1)}))
+    check(data.src?.includes(gallerySlugs[i]+'-open-book-placeholder.svg') && data.width>0, 'Local placeholder image failed to load for '+gallerySlugs[i])
+    check(Math.abs(data.ratio-1.5)<0.01, 'Placeholder image ratio must remain 3:2 for '+gallerySlugs[i])
+  }
+  await galleryCards.first().scrollIntoViewIfNeeded()
+  await desktop.locator('#samples').screenshot({path:path.join(folder,'six-book-gallery-desktop.png'),animations:'disabled'})
+  const rail=desktop.locator('.sample-rail')
+  const initialScroll=await rail.evaluate(el=>el.scrollLeft)
+  await desktop.getByRole('button',{name:'Next book image'}).click()
+  await desktop.waitForTimeout(700)
+  const forwardScroll=await rail.evaluate(el=>el.scrollLeft)
+  check(forwardScroll>initialScroll+30, 'Gallery next arrow did not scroll the image rail')
+  await desktop.getByRole('button',{name:'Previous book image'}).click()
+  await desktop.waitForTimeout(700)
+  const reverseScroll=await rail.evaluate(el=>el.scrollLeft)
+  check(reverseScroll<forwardScroll-30, 'Gallery previous arrow did not scroll the image rail')
+  const firstGalleryButton=desktop.locator('[data-testid="sample-life-story"]')
+  await firstGalleryButton.click()
+  const viewer=desktop.locator('[role="dialog"].sample-lightbox')
+  await viewer.waitFor({state:'visible'})
+  const viewerTitle=()=>viewer.locator('.sample-lightbox-title').innerText()
+  check(await viewerTitle()==='Life Story', 'Clicked gallery item did not open matching lightbox')
+  check(await viewer.getByRole('button',{name:'Previous book'}).isDisabled(), 'Previous lightbox arrow should be disabled on first book')
+  await viewer.screenshot({path:path.join(folder,'six-book-lightbox-first-desktop.png'),animations:'disabled'})
+  await desktop.keyboard.press('ArrowRight')
+  check(await viewerTitle()==='Travel Memoir', 'Right keyboard arrow did not change lightbox image')
+  await desktop.keyboard.press('ArrowLeft')
+  check(await viewerTitle()==='Life Story', 'Left keyboard arrow did not change lightbox image')
+  for(let i=1;i<6;i++){
+    await viewer.getByRole('button',{name:'Next book'}).click()
+    check(await viewerTitle()===galleryNames[i], 'Lightbox next arrow failed at book '+i)
+  }
+  check(await viewer.getByRole('button',{name:'Next book'}).isDisabled(), 'Final lightbox image should disable the next arrow')
+  await viewer.screenshot({path:path.join(folder,'six-book-lightbox-sixth-desktop.png'),animations:'disabled'})
+  for(let i=4;i>=0;i--){
+    await viewer.getByRole('button',{name:'Previous book'}).click()
+    check(await viewerTitle()===galleryNames[i], 'Lightbox previous arrow failed at book '+i)
+  }
+  await desktop.keyboard.press('Escape')
+  await viewer.waitFor({state:'hidden'})
+  check(await firstGalleryButton.evaluate(el=>document.activeElement===el), 'Closing the lightbox should restore focus to its gallery image')
+  observations.bookGallery={cards:6,localImages:6,captionOnly:true,leftArrow:arrows.left,rightArrow:arrows.right,
+    railBefore:initialScroll,railAfterNext:forwardScroll,railAfterPrevious:reverseScroll,
+    navigatedBothDirections:true,keyboardNavigation:true,escapeFocusReturn:true}
+
   // The founder-approved book introductions and points are displayed for all six tabs.
   // Desktop copies share the exact top-left start and bottom-left CTA position.
   const bookCopyExpected = [{"slug":"life-story","description":"A personal memoir of the people, places and experiences that shaped a life.","points":["Childhood, family and the places you called home","Choices, relationships and defining moments","Reflections, values and lessons worth passing on"]},{"slug":"travel-memoir","description":"A book about the journeys you remember for more than the places you visited.","points":["How each journey began and what drew you there","Unexpected detours, discoveries and people you met","The experiences that changed how you saw the world"]},{"slug":"relationship-memoir","description":"A memoir of your shared years, from how you met to the life you've built together.","points":["The early days and memories that brought you closer","Shared traditions, milestones and ordinary moments","The changes, challenges and joys you've experienced together"]},{"slug":"founders-memoir","description":"The personal story behind building a business, beyond the milestones others see.","points":["The original idea, purpose and people who helped you begin","Important decisions, turning points and moments of growth","Lessons, reflections and the values behind your work"]},{"slug":"parent-to-child-letters","description":"A collection of personal letters with the stories and guidance you want your child to have.","points":["Experiences and lessons from your own life","Advice about work, money and relationships","Hopes and words of reassurance for the years ahead"]},{"slug":"celebrating-occasions","description":"A book about one meaningful celebration and the people and moments that made it special.","points":["The planning, anticipation and details behind the occasion","Speeches, surprises and moments from the day","Memories and reflections from the people involved"]}];
@@ -356,6 +420,36 @@ try {
   check(mobileDiscovery.textBelowHeading && Math.abs(mobileDiscovery.sideGap)<=2 && mobileDiscovery.separation<=25,
     'Phone heading and supporting paragraph must be stacked and left aligned')
   await desktop.locator('.discovery-heading').screenshot({path:path.join(folder,'book-discovery-heading-mobile.png'),animations:'disabled'})
+
+
+  await desktop.locator('[data-testid="sample-life-story"]').click()
+  const mobileViewer=desktop.locator('[role="dialog"].sample-lightbox')
+  await mobileViewer.waitFor({state:'visible'})
+  await mobileViewer.screenshot({path:path.join(folder,'six-book-lightbox-mobile.png'),animations:'disabled'})
+  const mobileTitle=()=>mobileViewer.locator('.sample-lightbox-title').innerText()
+  await desktop.evaluate(()=>{
+    const stage=document.querySelector('.sample-lightbox-stage')
+    const begin=new Touch({identifier:1,target:stage,clientX:300,clientY:220})
+    const finish=new Touch({identifier:1,target:stage,clientX:75,clientY:228})
+    stage.dispatchEvent(new TouchEvent('touchstart',{bubbles:true,touches:[begin],changedTouches:[begin],targetTouches:[begin]}))
+    stage.dispatchEvent(new TouchEvent('touchend',{bubbles:true,touches:[],changedTouches:[finish],targetTouches:[]}))
+  })
+  await desktop.waitForTimeout(80)
+  check(await mobileTitle()==='Travel Memoir', 'Mobile leftward swipe should advance to next book')
+  await desktop.evaluate(()=>{
+    const stage=document.querySelector('.sample-lightbox-stage')
+    const begin=new Touch({identifier:2,target:stage,clientX:70,clientY:220})
+    const finish=new Touch({identifier:2,target:stage,clientX:302,clientY:230})
+    stage.dispatchEvent(new TouchEvent('touchstart',{bubbles:true,touches:[begin],changedTouches:[begin],targetTouches:[begin]}))
+    stage.dispatchEvent(new TouchEvent('touchend',{bubbles:true,touches:[],changedTouches:[finish],targetTouches:[]}))
+  })
+  await desktop.waitForTimeout(80)
+  check(await mobileTitle()==='Life Story', 'Mobile rightward swipe should return to previous book')
+  await mobileViewer.getByRole('button',{name:'Close book image'}).click()
+  await mobileViewer.waitFor({state:'hidden'})
+  check(await desktop.locator('[data-testid="sample-life-story"]').evaluate(el=>document.activeElement===el), 'Mobile viewer close did not restore focus')
+  await desktop.locator('#samples').screenshot({path:path.join(folder,'six-book-gallery-mobile.png'),animations:'disabled'})
+  observations.mobileBookGallery={swipeForward:true,swipeBack:true,focusReturn:true}
 
   const mobileCovers = await desktop.locator('.hero-orbit-square').count()
   const mobileOuterRadius = await desktop.locator('.hero-orbit-outer').evaluate(el => getComputedStyle(el).getPropertyValue('--orbit-radius').trim())
