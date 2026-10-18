@@ -1,5 +1,11 @@
 # Repository handoff for StoriLeaf UI work
 
+## Founder correction to Browse all resources alignment, 18 October 2026
+
+The founder asked for **Browse all resources** to be **centred directly beneath the two Resources category cards on both desktop and mobile**. A previously implemented desktop `justify-content:flex-end` left it on the right, contradicting the intended centred composition. This was identified and corrected. It **supersedes** the prior instruction suggesting or documenting bottom-right alignment.
+
+Only the desktop `.resources-section .resource-overview-cta` `justify-content` value changed to `center` in the public `assets/index-DhPZyX4z.css`. The existing mobile-centred setting was preserved. QA checks were strengthened to measure the actual label's centre against the Resources section at **1440px desktop and 390px mobile** and require a maximum 2px offset. The resulting Chromium QA [passed](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39166717668) with **no problems**, measured **0px offset on both**, and refreshed `qa/screenshots/resources-categories-desktop.png` and `resources-categories-mobile.png`. The founder-approved heading, cards, images, wording, hover, destinations and rest of homepage remain unchanged. Original correction commit `ba66cd63825d84a0112c89152c8420e3dd47e1a7`. Full-page visual sign-off remains with the founder.
+
 ## Homepage Resources becomes a two-category introduction, 18 October 2026
 
 **Latest founder-authorised design pass, implemented in the public GitHub Pages homepage preview only.** The founder clarified that the old Resources block was incorrectly running **One Question, One Story** on the homepage next to one featured blog article. The homepage must instead introduce the Resources collection and lead visitors towards its own resource pages. The founder approved **two equally prominent editorial photograph-led category panels** with the existing title **“A little curiosity can go a long way.”** **centred** above them, a short centred introduction, and a restrained **Browse all resources** text treatment.
