@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T18:43:06.317Z",
-  "commit": "bae680f47d8c678034f548ae4928a6e83147af17",
+  "date": "2026-10-18T18:44:39.690Z",
+  "commit": "bea6c8708e18d3d5a5971d48b8fbd1120659b5dd",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -415,7 +415,6 @@
     "prefersReducedMotion": true
   },
   "problems": [
-    "Browser error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
-    "Browser error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    "Mobile viewer close did not restore focus"
   ]
 }
