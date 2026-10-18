@@ -656,7 +656,12 @@ try {
   check(resourcesMobile.stacked && resourcesMobile.withinViewport &&
     resourcesMobile.imagesLoaded && resourcesMobile.overviewBelow &&
     resourcesMobile.headingCentreOffset<=2, 'Mobile Resources entry panels overflow or do not stack properly')
+  // Capture the whole editorial section without the fixed site header or the
+  // keyboard-only skip link obscuring the cards in a tall element screenshot.
+  // Those controls remain unchanged in the actual page and are tested separately.
+  const sectionCaptureStyle=await desktop.addStyleTag({content:'.site-header,.skip-link{visibility:hidden!important}'})
   await desktop.locator('#resources').screenshot({path:path.join(folder,'resources-categories-mobile.png'),animations:'disabled'})
+  await sectionCaptureStyle.evaluate(style=>style.remove())
   const mobileDiscovery = await desktop.locator('.discovery-heading').evaluate(el => {
     const h=el.querySelector('.discovery-title').getBoundingClientRect()
     const p=el.querySelector('.discovery-description').getBoundingClientRect()
