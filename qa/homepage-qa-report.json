@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T18:30:17.991Z",
-  "commit": "64f9385d3d904ad83a7102841f4c354b788b662d",
+  "date": "2026-10-18T18:31:37.600Z",
+  "commit": "453ac4c44b57eb6d3ada9258db9ec75df286eb06",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -157,6 +157,23 @@
         "titleText": "Which part of life would you like to tell?"
       }
     },
+    "galleryArrowPaths": {
+      "left": "M20 12H5M11 5l-7 7 7 7",
+      "right": "M4 12h15M13 5l7 7-7 7"
+    },
+    "bookGallery": {
+      "cards": 6,
+      "localImages": 6,
+      "captionOnly": true,
+      "leftArrow": "M20 12H5M11 5l-7 7 7 7",
+      "rightArrow": "M4 12h15M13 5l7 7-7 7",
+      "railBefore": 0,
+      "railAfterNext": 588,
+      "railAfterPrevious": 0,
+      "navigatedBothDirections": true,
+      "keyboardNavigation": true,
+      "escapeFocusReturn": true
+    },
     "bookDiscovery": {
       "descriptionsVerified": 6,
       "introTopVariation": 0,
@@ -297,6 +314,11 @@
       "sideGap": 0,
       "separation": 16
     },
+    "mobileBookGallery": {
+      "swipeForward": true,
+      "swipeBack": true,
+      "focusReturn": true
+    },
     "mobileHero": {
       "count": 14,
       "outerRadius": "412.5px"
@@ -339,5 +361,19 @@
     },
     "prefersReducedMotion": true
   },
-  "problems": []
+  "problems": [
+    "Local placeholder image failed to load for life-story",
+    "Placeholder image ratio must remain 3:2 for life-story",
+    "Local placeholder image failed to load for travel-memoir",
+    "Placeholder image ratio must remain 3:2 for travel-memoir",
+    "Local placeholder image failed to load for relationship-memoir",
+    "Placeholder image ratio must remain 3:2 for relationship-memoir",
+    "Local placeholder image failed to load for founders-memoir",
+    "Placeholder image ratio must remain 3:2 for founders-memoir",
+    "Local placeholder image failed to load for parent-to-child-letters",
+    "Placeholder image ratio must remain 3:2 for parent-to-child-letters",
+    "Local placeholder image failed to load for celebrating-occasions",
+    "Placeholder image ratio must remain 3:2 for celebrating-occasions",
+    "Closing the lightbox should restore focus to its gallery image"
+  ]
 }
