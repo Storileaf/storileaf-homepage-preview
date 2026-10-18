@@ -1,4 +1,16 @@
 # Repository handoff for StoriLeaf UI work
+## Six-book discovery copy and layout, 18 October 2026
+
+**Founder-approved copy and layout, implemented in the PUBLIC static homepage preview.** All six selectable book panels now start with one short subject-specific description followed by the three exact bullet points reviewed and approved in the conversation. No repeated product title or decorative overline was added. The **Explore this book** CTA and all six existing product destinations remain unchanged.
+
+**Desktop layout:** Descriptions begin at the same top-left starting point, above their subject-specific bullet lists. The CTA is anchored to the bottom left rather than vertically centred with the text. The active text-and-photo panel uses a stable minimum height of 520px at widths greater than 720px, so switching between books does not move the button, panel boundary or photograph. Description space accommodates wrapping; the bullet component supports varying point counts in a future separately approved copy revision, although exactly three per book are approved now.
+
+**Mobile layout:** The photograph remains above the text. Copy flows naturally, without forcing a desktop-sized panel or clipping longer descriptions.
+
+**QA and source:** The compiled `assets/content-sections-CfrmOVRI.js` has separate `bookPanelIntroductions` and `bookPoints` records for all six books, and the CSS is scoped to the discovery section. The initial active Life Story SSR panel is synchronised in `index.html` and `404.html`. Chromium QA verified all six descriptions and their three bullet points word for word, valid product destinations, panel stability, top-left start and anchored bottom CTA. At 1440px, text-top, text-left, button-bottom, button-left, panel-height and image-top variations were **0px** across six tabs. All six mobile panels were checked for overlap and clipping, with nine overall responsive widths checked for page overflow. Real screenshots of all six desktop panels and the Parent to Child Letters mobile panel are in `qa/screenshots/`. The QA run passed and GitHub Pages deployment succeeded. Final founder visual approval and full physical-device/accessibility testing remain open.
+
+The private production code, backend, pricing and gift/application behaviour were not changed. The future `/books/` overview remains unbuilt.
+
 
 ## Header navigation vertical alignment correction, 18 October 2026
 

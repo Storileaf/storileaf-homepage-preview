@@ -1,5 +1,7 @@
 # StoriLeaf homepage UI preview
 
+**Six book discovery update, 18 October 2026.** Founder-approved descriptions and three bullets per book are now shown above a consistently bottom-aligned Explore this book button. The text starts at a fixed top-left position on desktop; mobile panels flow naturally. All six existing book links, images and Radix tabs remain intact. Chromium QA and the Pages deployment passed. Evidence is in `qa/`. See `REPOSITORY_HANDOFF.md` for details.
+
 **Hero orbit density update, 18 October 2026.** The hero uses 14 cover positions (6 inner, 8 outer), with the original seven local cover images intentionally repeated twice. The outer ring radius is 10% larger; rotation speeds and hero content remain unchanged. The change is live on GitHub Pages and pending founder visual review. Real desktop/mobile screenshots and QA results are in `qa/`. The separate Books overview page has not been built.
 
 
