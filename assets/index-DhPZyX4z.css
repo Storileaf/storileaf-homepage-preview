@@ -10909,7 +10909,7 @@ section[id] {
 .hero-orbit-stage { position:absolute; inset:0 0 auto; height:830px; }
 .hero-orbit-ring { position:absolute; width:0; height:0; left:50%; top:38%; transform-origin:center; will-change:transform; }
 .hero-orbit-inner { --orbit-radius:345px; animation:orbit-clockwise 160s linear infinite; }
-.hero-orbit-outer { --orbit-radius:605px; animation:orbit-anticlockwise 220s linear infinite; }
+.hero-orbit-outer { --orbit-radius:665.5px; animation:orbit-anticlockwise 220s linear infinite; }
 .hero-orbit-position { position:absolute; top:0; left:0; transform:rotate(var(--tile-angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--tile-angle))); }
 .hero-orbit-face { position:absolute; display:block; width:106px; height:106px; margin:-53px 0 0 -53px; will-change:transform; }
 .hero-orbit-inner .hero-orbit-face { animation:orbit-anticlockwise 160s linear infinite; }
@@ -11092,7 +11092,7 @@ section[id] {
   .hero-window { width:calc(100% - 46px); }
   .hero-image-frame { height:clamp(340px,51vw,480px); }
   .hero-orbit-inner { --orbit-radius:285px; }
-  .hero-orbit-outer { --orbit-radius:465px; }
+  .hero-orbit-outer { --orbit-radius:511.5px; }
   .hero-orbit-face { width:82px; height:82px; margin:-41px 0 0 -41px; }
   .book-discovery-section { padding:81px 0 84px; }
   .book-tabs-list { width:max-content; min-width:100%; }
@@ -11137,7 +11137,7 @@ section[id] {
   .hero-orbit-layer { opacity:.26; }
   .hero-orbit-stage { height:570px; }
   .hero-orbit-inner { --orbit-radius:230px; top:31%; }
-  .hero-orbit-outer { --orbit-radius:375px; top:31%; }
+  .hero-orbit-outer { --orbit-radius:412.5px; top:31%; }
   .hero-orbit-face { width:68px; height:68px; margin:-34px 0 0 -34px; }
   .hero-orbit-fade { background:linear-gradient(to bottom,var(--hero-sage),transparent 28%,var(--hero-sage) 84%),radial-gradient(ellipse 66% 52% at 50% 28%,var(--hero-sage),transparent); }
   .hero-outro { padding-top:25px; }

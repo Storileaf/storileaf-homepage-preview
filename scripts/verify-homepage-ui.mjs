@@ -18,6 +18,23 @@ try {
   await desktop.waitForTimeout(1300)
   observations.title = await desktop.title()
   check(await desktop.getByRole('heading', { name: /The stories of your life/i }).count() > 0, 'Homepage hero absent')
+  const coverState = await desktop.evaluate(() => {
+    const inner = document.querySelectorAll('.hero-orbit-inner .hero-orbit-square');
+    const outer = document.querySelectorAll('.hero-orbit-outer .hero-orbit-square');
+    const combined = [...inner, ...outer];
+    const names = combined.map(el => el.getAttribute('src').split('/').pop());
+    const counts = Object.fromEntries([...new Set(names)].map(name => [name, names.filter(value => value === name).length]));
+    const radius = selector => getComputedStyle(document.querySelector(selector)).getPropertyValue('--orbit-radius').trim();
+    const failedImages = combined.filter(img => !img.complete || img.naturalWidth === 0).length;
+    return { inner:inner.length,outer:outer.length,distinct:new Set(names).size,counts,
+      outerRadius:radius('.hero-orbit-outer'),innerRadius:radius('.hero-orbit-inner'),failedImages };
+  })
+  observations.heroCovers = coverState
+  check(coverState.inner === 6 && coverState.outer === 8, 'Hero orbit must have 6 inner and 8 outer covers')
+  check(coverState.distinct === 7 && Object.values(coverState.counts).every(n => n === 2), 'The original seven covers must each appear exactly twice')
+  check(coverState.failedImages === 0, 'A local hero cover image is missing or broken')
+  check(coverState.outerRadius === '665.5px' && coverState.innerRadius === '345px', 'Outer orbit radius must increase by 10%, while inner stays unchanged')
+  await desktop.locator('.hero').screenshot({ path:path.join(folder,'hero-fourteen-covers-desktop.png'), animations:'disabled' })
   const steps = desktop.locator('.process-steps li')
   const heights = await steps.evaluateAll(els => els.map(el => Math.round(el.getBoundingClientRect().height)))
   observations.desktopStepHeights = heights
@@ -152,6 +169,11 @@ try {
   await desktop.setViewportSize({ width:390, height:844 })
   await desktop.goto(base,{waitUntil:'domcontentloaded'})
   await desktop.waitForTimeout(1100)
+  const mobileCovers = await desktop.locator('.hero-orbit-square').count()
+  const mobileOuterRadius = await desktop.locator('.hero-orbit-outer').evaluate(el => getComputedStyle(el).getPropertyValue('--orbit-radius').trim())
+  observations.mobileHero = {count:mobileCovers,outerRadius:mobileOuterRadius}
+  check(mobileCovers === 14 && mobileOuterRadius === '412.5px', 'Mobile hero must retain all fourteen covers and the 10% wider outer radius')
+  await desktop.locator('.hero').screenshot({ path:path.join(folder,'hero-fourteen-covers-mobile.png'), animations:'disabled' })
   await desktop.locator('#how-it-works').scrollIntoViewIfNeeded()
   const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
     first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,

@@ -7485,15 +7485,23 @@ var orbitCoverImages = [
 ];
 var innerTileAngles = [
 	0,
+	60,
 	120,
-	240
+	180,
+	240,
+	300
 ];
 var outerTileAngles = [
-	28,
-	118,
-	208,
-	298
+	22.5,
+	67.5,
+	112.5,
+	157.5,
+	202.5,
+	247.5,
+	292.5,
+	337.5
 ];
+var outerTileCoverIndices = [6, 0, 1, 2, 6, 3, 4, 5];
 function HeroCoverOrbits({ paused }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "hero-orbit-layer",
@@ -7526,10 +7534,10 @@ function HeroCoverOrbits({ paused }) {
 					className: "hero-orbit-position",
 					style: { "--tile-angle": String(angle) + "deg" },
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "hero-orbit-face orbit-shade-" + (i + 3),
+						className: "hero-orbit-face orbit-shade-" + outerTileCoverIndices[i],
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							className: "hero-orbit-square",
-							src: orbitCoverImages[i + 3],
+							src: orbitCoverImages[outerTileCoverIndices[i]],
 							alt: "",
 							width: "240",
 							height: "240",
