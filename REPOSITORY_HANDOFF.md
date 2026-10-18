@@ -1,5 +1,19 @@
 # Repository handoff for StoriLeaf UI work
 
+## Founder-approved physical-book section and final wording, 18 October 2026
+
+**Visual approval:** The founder approved the existing **“A book you can come back to.”** section composition, proportions, spacing, icon treatment, heading-to-description alignment and four-image slideshow presentation. **The four photograph choices remain temporary and may be replaced later.** This approval applies to this homepage section only, not the full homepage or final photography.
+
+**Founder-approved exact wording**, superseding the provisional descriptions recorded in older entries below:
+
+- **Printed copy:** “Your words and memories come together in a beautifully printed book, thoughtfully designed to be held, shared and revisited for years.”
+- **Binding and finish:** “A premium hardcover with a cover design chosen by you, personalised with the photographs and details that make the story yours.”
+- **Before print:** “Our editorial team carefully prepares and checks every book. You then review and approve the draft before it goes to print.”
+
+The wording was changed in public `index.html`, `404.html` and the corresponding compiled component `assets/routes-DrwDv2x2.js`; the exact-copy assertions in `scripts/verify-homepage-ui.mjs` were updated. **No copy outside these three descriptions, CSS, layout, slideshow mechanics, photography, CTA or destination changed.** The founder separately requested that the eventual full-homepage review and design-system consolidation wait until the homepage has been approved section by section.
+
+The public change is commit `1906eb73bcd4282da465ff061e84a0f150f5b6f4`. GitHub Pages deployment passed, and the complete Chromium QA workflow [passed](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39161032368) with no problems. The new QA report at `qa/homepage-qa-report.json` confirmed the exact descriptions, a matching 609px desktop image/text height, four image slots, indicators, manual selection, timed progression and mobile fit across the existing nine-width regression. Fresh screenshot files were committed by the QA workflow as `f5512e97df09b30ffea46d20659c3ea41811f394`. This automated verification is not a fresh founder review of the images or broader accessibility/physical-device sign-off.
+
 ## Latest finished-book copy and caption refinement, 18 October 2026
 
 The founder asked for less vertical space between the three specification headings and their descriptions, better wording, and removal of the overlay text **“The finished book”** from the four-image slideshow. These changes are **implemented in the public GitHub Pages frontend preview**. The icon and heading stay horizontally aligned, the description remains aligned with the heading's left edge, and the CSS paragraph top margin is now 0 instead of 10px desktop and 9px mobile. Chromium measured a visible heading-to-description gap of about **8.7px desktop and 8.4px mobile**, down from the earlier layout. There is no visible book slideshow caption. All four images, centred pill/dot controls, autoplay and reduced-motion behaviour remain.
