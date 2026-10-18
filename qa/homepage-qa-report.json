@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T00:40:10.853Z",
-  "commit": "8ec6b12201d6642b523660df19082d936b9d5e30",
+  "date": "2026-10-18T00:42:54.782Z",
+  "commit": "42bcf484d2580cacfb2b10a6c9881a505462e5e7",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "desktopStepHeights": [
@@ -20,6 +20,12 @@
       "1",
       "2",
       "3"
+    ],
+    "processPinnedTopPositions": [
+      82,
+      82,
+      82,
+      82
     ],
     "reverseScrollStages": [
       "3",
