@@ -1,80 +1,108 @@
 import { G as require_react, o as require_jsx_runtime, q as __toESM } from "./useStore-DY_dpydU.js";
 import { t as Link } from "./link-CrvydYrW.js";
-import { C as DialogTitle, S as DialogPortal, _ as Dialog, a as BookDiscovery, b as DialogDescription, c as Hero, d as useVisualEntrance, f as LIVE_SITE, g as samples, h as logo, i as Process, l as Icon, m as images, n as Footer, o as TrustBand, p as guides, r as GiftSection, s as Header, t as FAQSection, u as useReducedMotion, v as DialogClose, w as DialogTrigger, x as DialogOverlay, y as DialogContent } from "./content-sections-CfrmOVRI.js";
+import { C as DialogTitle, S as DialogPortal, _ as Dialog, a as BookDiscovery, b as DialogDescription, c as Hero, d as useVisualEntrance, f as LIVE_SITE, g as samples, h as logo, i as Process, l as Icon, m as images, n as Footer, o as TrustBand, r as GiftSection, s as Header, t as FAQSection, u as useReducedMotion, v as DialogClose, w as DialogTrigger, x as DialogOverlay, y as DialogContent } from "./content-sections-CfrmOVRI.js";
 //#region src/components/storileaf/resources-newsletter.tsx
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var exampleQuestions = [
-	"What is one small family tradition that you still remember?",
-	"Which journey took an unexpected turn for the better?",
-	"What is something you and a friend remember differently?",
-	"Is there a photograph you would love to know more about?"
-];
 function ResourceSection() {
-	const [questionIndex, setQuestionIndex] = (0, import_react.useState)(0);
-	const guide = guides[0];
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		className: "resources-section section-space",
-		id: "resources",
-		"aria-labelledby": "resources-title",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "page-width",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
-				id: "resources-title",
-				className: "resources-title",
-				children: ["A little curiosity ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "can go a long way." })]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "resources-layout",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-					className: "resource-question-feature",
-					id: "resources-activity",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "One Question, One Story" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "resource-illustrative-question",
-							"aria-live": "polite",
-							"aria-atomic": "true",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "resource-question-asterisk",
-								"aria-hidden": "true",
-								children: "✳"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("blockquote", { children: exampleQuestions[questionIndex] }, questionIndex)]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-							type: "button",
-							className: "button button-outline",
-							onClick: () => setQuestionIndex((i) => (i + 1) % exampleQuestions.length),
-							"data-testid": "next-resource-question",
-							children: ["Another question ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
-						})
-					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("article", {
-					className: "resource-guide-card",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: LIVE_SITE + guide.href,
-						className: "resource-guide-link",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "resource-guide-photo",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								src: guide.image,
-								alt: guide.alt,
-								width: "620",
-								height: "520",
-								loading: "lazy",
-								decoding: "async"
-							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "resource-guide-body",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: guide.title }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-								className: "resource-card-link",
-								children: ["Read the guide ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
-							})]
-						})]
-					})
-				})]
-			})]
-		})
-	});
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+    className: "resources-section section-space",
+    id: "resources",
+    "aria-labelledby": "resources-title",
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+      className: "page-width",
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+          className: "resource-section-heading",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+              id: "resources-title",
+              className: "resources-title",
+              children: ["A little curiosity ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "can go a long way." })]
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+              className: "resources-intro",
+              children: "Explore thoughtful questions, simple activities and practical guides to help memories become stories."
+            })
+          ]
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+          className: "resources-layout",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("article", {
+              className: "resource-category-card",
+              id: "resources-activity",
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+                className: "resource-category-visual",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+                    className: "resource-category-photo",
+                    children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+                      src: "https://storileaf.com/images/brand/collections/life-story/life-story-family-sharing-memories-1200.webp",
+                      alt: "An adult daughter and her father sharing memories over family photographs",
+                      width: "1200",
+                      height: "800",
+                      loading: "lazy",
+                      decoding: "async"
+                    })
+                  }),
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+                    className: "resource-category-body",
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Activities and games" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Questions and playful activities that bring out stories worth sharing." }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+                        className: "resource-card-link",
+                        children: ["Explore activities ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+                      })
+                    ]
+                  })
+                ]
+              })
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)("article", {
+              className: "resource-category-card",
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+                href: LIVE_SITE + "/blog/",
+                className: "resource-category-visual resource-category-link",
+                children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+                    className: "resource-category-photo",
+                    children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+                      src: "https://storileaf.com/images/brand/collections/relationship-memoir/storileaf-relationship-memoir-hands-photographs-cafe-square-800.webp",
+                      alt: "Photographs on a cafe table beside two people's hands",
+                      width: "800",
+                      height: "800",
+                      loading: "lazy",
+                      decoding: "async"
+                    })
+                  }),
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+                    className: "resource-category-body",
+                    children: [
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "Blog & guides" }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Thoughtful advice and practical ideas for capturing life's meaningful moments." }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+                        className: "resource-card-link",
+                        children: ["Explore guides ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+                      })
+                    ]
+                  })
+                ]
+              })
+            })
+          ]
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+          className: "resource-overview-cta",
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+            className: "resource-all-link",
+            children: ["Browse all resources ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+          })
+        })
+      ]
+    })
+  });
 }
 function NewsletterStrip() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {

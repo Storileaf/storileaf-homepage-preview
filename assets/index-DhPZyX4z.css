@@ -11845,3 +11845,160 @@ section[id] {
       #253526 100%);
   }
 }
+
+
+/* Homepage Resources discovery. Two equal editorial entry panels.
+   The Activities and hub routes are not yet built, so their labels remain
+   static in this public frontend preview rather than linking to a 404 page. */
+.resources-section .resource-section-heading {
+  max-width:900px;
+  margin:0 auto 43px;
+  text-align:center;
+}
+.resources-section .resources-title {
+  margin:0 auto;
+  max-width:900px;
+  text-align:center;
+  font-size:clamp(44px,4.75vw,65px);
+  line-height:1.085;
+  text-wrap:balance;
+}
+.resources-section .resources-title em {
+  display:block;
+  font-weight:420;
+}
+.resources-section .resources-intro {
+  max-width:660px;
+  margin:19px auto 0;
+  color:hsl(var(--ink-soft));
+  font:400 clamp(15px,1.35vw,17px)/1.67 var(--font-sans);
+  text-wrap:pretty;
+}
+.resources-section .resources-layout {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(19px,2.4vw,30px);
+  align-items:stretch;
+}
+.resources-section .resource-category-card {
+  min-width:0;
+  overflow:hidden;
+  border:1px solid hsl(var(--foreground) / .055);
+  border-radius:20px;
+  background:hsl(var(--paper));
+}
+.resources-section .resource-category-visual {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  color:hsl(var(--foreground));
+  text-decoration:none;
+}
+.resources-section .resource-category-photo {
+  width:100%;
+  aspect-ratio:1.68;
+  overflow:hidden;
+  background:hsl(var(--sage));
+}
+.resources-section .resource-category-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  transition:transform 360ms ease;
+}
+.resources-section .resource-category-body {
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  align-items:flex-start;
+  min-height:205px;
+  padding:clamp(24px,2.8vw,36px);
+}
+.resources-section .resource-category-body h3 {
+  margin:0;
+  max-width:100%;
+  font-size:clamp(29px,2.65vw,36px);
+  font-weight:470;
+  line-height:1.16;
+}
+.resources-section .resource-category-body p {
+  margin-top:13px;
+  max-width:460px;
+  color:hsl(var(--ink-soft));
+  font:400 15.5px/1.7 var(--font-sans);
+}
+.resources-section .resource-card-link {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:auto;
+  padding-top:20px;
+  color:hsl(var(--primary));
+  font:700 14px/1.35 var(--font-sans);
+}
+.resources-section .resource-card-link svg {
+  width:17px;
+  height:17px;
+  transition:transform 220ms ease;
+}
+.resources-section .resource-category-link:hover img {
+  transform:scale(1.025);
+}
+.resources-section .resource-category-link:hover .resource-card-link svg {
+  transform:translateX(3px);
+}
+.resources-section .resource-category-link:focus-visible {
+  outline:3px solid hsl(var(--primary));
+  outline-offset:-5px;
+  border-radius:20px;
+}
+.resources-section .resource-overview-cta {
+  display:flex;
+  justify-content:flex-end;
+  margin-top:25px;
+}
+.resources-section .resource-all-link {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:hsl(var(--primary));
+  font:700 14px/1.35 var(--font-sans);
+}
+.resources-section .resource-all-link svg { width:17px; height:17px; }
+@media (max-width:900px) {
+  .resources-section .resource-section-heading { margin-bottom:30px; }
+  .resources-section .resources-layout {
+    grid-template-columns:minmax(0,1fr);
+    gap:22px;
+  }
+  .resources-section .resource-category-photo { aspect-ratio:1.78; }
+  .resources-section .resource-category-body { min-height:0; padding:28px 30px 30px; }
+  .resources-section .resource-card-link { margin-top:2px; }
+}
+@media (max-width:720px) {
+  .resources-section .resources-title {
+    font-size:clamp(40px,8.7vw,54px);
+    line-height:1.08;
+  }
+  .resources-section .resources-intro { font-size:15px; line-height:1.65; }
+  .resources-section .resource-category-photo { aspect-ratio:1.76; }
+  .resources-section .resource-category-body { padding:25px 25px 28px; }
+  .resources-section .resource-category-body h3 { font-size:clamp(27px,6.6vw,33px); }
+  .resources-section .resource-category-body p { font-size:15px; }
+  .resources-section .resource-overview-cta { justify-content:center; }
+}
+@media (max-width:480px) {
+  .resources-section .resource-section-heading { margin-bottom:26px; }
+  .resources-section .resources-title { font-size:clamp(38px,10vw,47px); }
+  .resources-section .resource-category-card { border-radius:17px; }
+  .resources-section .resource-category-photo { aspect-ratio:1.72; }
+  .resources-section .resource-category-body { padding:23px 23px 26px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .resources-section .resource-category-photo img,
+  .resources-section .resource-card-link svg { transition:none; }
+  .resources-section .resource-category-link:hover img { transform:none; }
+}

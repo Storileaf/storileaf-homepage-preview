@@ -102,6 +102,58 @@ try {
   await desktop.waitForTimeout(150)
 
 
+  // Resource homepage cards introduce two future library categories; there is no on-page question widget.
+  await desktop.locator('#resources').scrollIntoViewIfNeeded()
+  await desktop.locator('#resources .resource-category-photo img').evaluateAll(async imgs => {
+    await Promise.all(imgs.map(img => img.decode().catch(() => {})))
+  })
+  const resourcesDesktop=await desktop.locator('#resources').evaluate(section => {
+    const heading=section.querySelector('.resources-title'),
+          intro=section.querySelector('.resources-intro'),
+          cards=[...section.querySelectorAll('.resource-category-card')],
+          rect=element=>element.getBoundingClientRect(),
+          centre=element=>{const r=rect(element);return (r.left+r.right)/2}
+    return {
+      heading:heading?.textContent.trim(),
+      intro:intro?.textContent.trim(),
+      titleCentreOffset:Math.abs(centre(heading)-centre(section)),
+      introCentreOffset:Math.abs(centre(intro)-centre(section)),
+      labels:cards.map(card=>card.querySelector('h3')?.textContent.trim()),
+      descriptions:cards.map(card=>card.querySelector('.resource-category-body p')?.textContent.trim()),
+      cardWidths:cards.map(card=>Math.round(rect(card).width)),
+      cardHeights:cards.map(card=>Math.round(rect(card).height)),
+      cardTops:cards.map(card=>Math.round(rect(card).top)),
+      imageLoaded:cards.map(card=>card.querySelector('img')?.naturalWidth>0),
+      cardImages:cards.map(card=>card.querySelector('img')?.getAttribute('src')),
+      blogHref:cards[1]?.querySelector('a')?.getAttribute('href'),
+      activityAnchorId:cards[0]?.id,
+      activityHasLiveLink:!!cards[0]?.querySelector('a[href]'),
+      overviewLabel:section.querySelector('.resource-all-link')?.textContent.trim(),
+      overviewHasLiveLink:!!section.querySelector('.resource-overview-cta a[href]'),
+      oldInteractiveQuestion:section.querySelectorAll('.resource-illustrative-question, #next-resource-question, [data-testid="next-resource-question"]').length
+    }
+  })
+  observations.resourcesDesktop=resourcesDesktop
+  check(resourcesDesktop.heading==='A little curiosity can go a long way.' &&
+    resourcesDesktop.intro==='Explore thoughtful questions, simple activities and practical guides to help memories become stories.' &&
+    resourcesDesktop.titleCentreOffset<=2 && resourcesDesktop.introCentreOffset<=2,
+    'Resources heading and intro are not centred or wording changed')
+  check(JSON.stringify(resourcesDesktop.labels)===JSON.stringify(['Activities and games','Blog & guides']) &&
+    resourcesDesktop.cardWidths.length===2 && Math.abs(resourcesDesktop.cardWidths[0]-resourcesDesktop.cardWidths[1])<=2 &&
+    Math.abs(resourcesDesktop.cardHeights[0]-resourcesDesktop.cardHeights[1])<=2 &&
+    Math.abs(resourcesDesktop.cardTops[0]-resourcesDesktop.cardTops[1])<=2,
+    'Resource category cards must be equal-width side-by-side editorial panels')
+  check(resourcesDesktop.imageLoaded.every(Boolean) && resourcesDesktop.cardImages.every(src=>src.includes('/images/brand/')),
+    'Resource cards are missing approved StoriLeaf imagery')
+  check(resourcesDesktop.blogHref==='https://storileaf.com/blog/' && 
+    resourcesDesktop.activityAnchorId==='resources-activity' &&
+    !resourcesDesktop.activityHasLiveLink && 
+    resourcesDesktop.overviewLabel==='Browse all resources' && 
+    !resourcesDesktop.overviewHasLiveLink && 
+    resourcesDesktop.oldInteractiveQuestion===0,
+    'Resource destinations incorrectly presented as ready, or old question widget still present')
+  await desktop.locator('#resources').screenshot({path:path.join(folder,'resources-categories-desktop.png'),animations:'disabled'})
+
   const galleryNames = ['Life Story','Travel Memoir','Relationship Memoir',"Founder's Memoir",'Parent to Child Letters','Celebrating Occasions']
   const gallerySlugs = ['life-story','travel-memoir','relationship-memoir','founders-memoir','parent-to-child-letters','celebrating-occasions']
   const galleryCards = desktop.locator('.sample-rail .sample-card')
@@ -579,6 +631,32 @@ try {
   await desktop.setViewportSize({ width:390, height:844 })
   await desktop.goto(base,{waitUntil:'domcontentloaded'})
   await desktop.waitForTimeout(1100)
+  await desktop.locator('#resources').scrollIntoViewIfNeeded()
+  await desktop.locator('#resources .resource-category-photo img').evaluateAll(async imgs => {
+    await Promise.all(imgs.map(img => img.decode().catch(() => {})))
+  })
+  const resourcesMobile=await desktop.locator('#resources').evaluate(section => {
+    const cards=[...section.querySelectorAll('.resource-category-card')],
+          bounds=cards.map(el=>el.getBoundingClientRect()),
+          main=section.getBoundingClientRect(),
+          overview=section.querySelector('.resource-overview-cta').getBoundingClientRect()
+    return {
+      cardWidths:bounds.map(rect=>Math.round(rect.width)),
+      cardTops:bounds.map(rect=>Math.round(rect.top)),
+      cardBottoms:bounds.map(rect=>Math.round(rect.bottom)),
+      stacked:bounds.length===2 && bounds[1].top>=bounds[0].bottom+8,
+      withinViewport:bounds.every(rect=>rect.left>=-1 && rect.right<=innerWidth+1),
+      imagesLoaded:cards.every(c=>c.querySelector('img')?.naturalWidth>0),
+      overviewBelow:overview.top>=bounds[1].bottom,
+      headingCentreOffset:Math.abs((section.querySelector('.resources-title').getBoundingClientRect().left+
+        section.querySelector('.resources-title').getBoundingClientRect().right)/2-(main.left+main.right)/2)
+    }
+  })
+  observations.resourcesMobile=resourcesMobile
+  check(resourcesMobile.stacked && resourcesMobile.withinViewport &&
+    resourcesMobile.imagesLoaded && resourcesMobile.overviewBelow &&
+    resourcesMobile.headingCentreOffset<=2, 'Mobile Resources entry panels overflow or do not stack properly')
+  await desktop.locator('#resources').screenshot({path:path.join(folder,'resources-categories-mobile.png'),animations:'disabled'})
   const mobileDiscovery = await desktop.locator('.discovery-heading').evaluate(el => {
     const h=el.querySelector('.discovery-title').getBoundingClientRect()
     const p=el.querySelector('.discovery-description').getBoundingClientRect()
