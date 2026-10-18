@@ -461,7 +461,7 @@ try {
   await desktop.locator('.newsletter-inline-preview input').fill('')
   const newsletterImageLoaded = await desktop.locator('.newsletter-strip').evaluate(async el => {
     const imageCss=getComputedStyle(el,'::before').backgroundImage
-    const url=imageCss.match(/url\\([\\"']?(.*?)[\\"']?\\)/)?.[1]
+    const url=imageCss.startsWith('url("') ? imageCss.slice(5,-2) : null
     if(!url)return false
     return await new Promise(resolve => {
       const image=new Image()
