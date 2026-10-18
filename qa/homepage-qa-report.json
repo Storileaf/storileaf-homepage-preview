@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T15:39:11.853Z",
-  "commit": "4ae230796ee096d8d39ea7aabc14d763de4204ba",
+  "date": "2026-10-18T15:54:37.078Z",
+  "commit": "d8c9c8a360e089c6d437ca5030be345494e9a41a",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -111,6 +111,19 @@
       "buttonLeftVariation": 0,
       "panelHeightVariation": 0,
       "photographTopVariation": 0
+    },
+    "physicalBookSingleCTA": {
+      "imageCount": 1,
+      "detailLabels": [
+        "Printed copy",
+        "Binding and finish",
+        "Before print"
+      ],
+      "ctaText": "See package details",
+      "ctaHref": "https://storileaf.com/pricing/",
+      "detachedLinks": 0,
+      "detailsBeforeCTA": true,
+      "paddingBottom": "80px"
     },
     "desktopStepHeights": [
       94,
@@ -228,6 +241,12 @@
     "mobileHero": {
       "count": 14,
       "outerRadius": "412.5px"
+    },
+    "physicalBookMobile": {
+      "detached": 0,
+      "details": 3,
+      "cta": "https://storileaf.com/pricing/",
+      "paddingBottom": "66px"
     },
     "mobileDividers": {
       "first": "0px",
