@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T20:33:34.500Z",
-  "commit": "2f17c273050e4c77b109c956688b2e5daad27085",
+  "date": "2026-10-18T20:36:24.961Z",
+  "commit": "6e84e5558fb8231800c5d6ec2d223e74ecd887fe",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -385,6 +385,36 @@
       "contactText": "Get in touch",
       "contactArrowCount": 0,
       "contactHref": "https://storileaf.com/contact/"
+    },
+    "desktopFooterBounds": {
+      "unit": {
+        "top": 473,
+        "bottom": 1312,
+        "height": 839
+      },
+      "newsletter": {
+        "top": 473,
+        "bottom": 900,
+        "height": 427
+      },
+      "footer": {
+        "top": 900,
+        "bottom": 1312,
+        "height": 412
+      },
+      "bottom": {
+        "top": 1246,
+        "bottom": 1289,
+        "height": 43
+      },
+      "copyright": {
+        "top": 1269,
+        "bottom": 1289,
+        "height": 20
+      },
+      "newsletterBackground": "rgba(0, 0, 0, 0)",
+      "footerOverflow": "visible",
+      "unitOverflow": "hidden"
     },
     "bookMenuVisible": true,
     "resourceMenuVisible": true,
