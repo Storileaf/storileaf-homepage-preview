@@ -11411,3 +11411,69 @@ section[id] {
   }
   .book-discovery-section .discovery-description { align-self:start; margin-top:0; }
 }
+
+/* Six local open-book photo placeholders, one per book, with swipeable lightbox.
+   Scope all gallery changes so the physical book and other image sections remain intact. */
+.samples-section .sample-rail { gap:clamp(18px,2.2vw,28px); padding-top:14px; padding-bottom:22px; }
+.samples-section .sample-card { flex:0 0 clamp(320px,43vw,560px); scroll-snap-align:start; }
+.samples-section .sample-open { padding:0; cursor:pointer; }
+.samples-section .sample-open:focus-visible { outline:2px solid hsl(var(--secondary)); outline-offset:5px; border-radius:14px; }
+.samples-section .sample-photo-frame {
+  display:block; aspect-ratio:3 / 2; width:100%; overflow:hidden; border-radius:14px;
+  background:#dfe4da; border:1px solid hsl(var(--background) / .15);
+  box-shadow:0 16px 30px -22px hsl(var(--foreground) / .6);
+}
+.samples-section .sample-photo-frame img {
+  display:block; width:100%; height:100%; object-fit:cover;
+  transition:transform 220ms ease; user-select:none;
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .samples-section .sample-open:hover .sample-photo-frame img { transform:scale(1.015); }
+}
+.samples-section .sample-card-caption { display:block; margin:17px 2px 0; }
+.samples-section .sample-card-caption strong {
+  font-family:var(--font-sans); font-size:17px; font-weight:650;
+  color:hsl(var(--background)); line-height:1.45;
+}
+.samples-section .gallery-controls .icon-button { min-width:44px; min-height:44px; }
+.sample-lightbox-overlay.dialog-overlay { background:rgba(11,24,16,.86); }
+.sample-lightbox.dialog-content {
+  background:#203325; color:#F7F5EC; border:1px solid rgba(247,245,236,.17);
+  width:min(1180px,calc(100vw - 32px)); max-height:calc(100dvh - 24px);
+  padding:20px 24px 24px; display:flex; flex-direction:column; overflow:hidden; border-radius:16px;
+}
+.sample-lightbox-topline { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:12px; min-height:44px; }
+.sample-lightbox-title { color:#F7F5EC; font:600 18px/1.4 var(--font-sans); margin:0; }
+.sample-lightbox-close.icon-button { color:#F7F5EC; border:1px solid rgba(247,245,236,.34); width:42px; height:42px; }
+.sample-lightbox-close.icon-button:hover { background:rgba(247,245,236,.14); }
+.sample-lightbox-description { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+.sample-lightbox-stage {
+  display:grid; grid-template-columns:48px minmax(0,1fr) 48px;
+  gap:clamp(8px,2.4vw,25px); align-items:center; min-height:0; touch-action:pan-y;
+}
+.sample-lightbox-image {
+  width:100%; height:auto; max-height:calc(100dvh - 150px); min-height:0;
+  display:block; object-fit:contain; border-radius:9px; user-select:none;
+  box-shadow:0 16px 48px rgba(0,0,0,.16);
+}
+.sample-lightbox-arrow {
+  width:46px; height:46px; display:inline-flex; align-items:center; justify-content:center;
+  background:transparent; color:#F7F5EC; border:1px solid rgba(247,245,236,.48);
+  border-radius:50%; cursor:pointer;
+}
+.sample-lightbox-arrow:not(:disabled):hover { background:rgba(247,245,236,.14); }
+.sample-lightbox-arrow:disabled { opacity:.32; cursor:default; }
+.sample-lightbox-arrow:focus-visible,.sample-lightbox-close:focus-visible { outline:2px solid #D4B175; outline-offset:3px; }
+@media (max-width:900px) { .samples-section .sample-card { flex-basis:min(79vw,520px); } }
+@media (max-width:720px) {
+  .samples-section .sample-card { flex-basis:min(84vw,410px); }
+  .samples-section .sample-rail { gap:16px; }
+  .samples-section .sample-card-caption strong { font-size:16px; }
+  .sample-lightbox.dialog-content { width:calc(100vw - 16px); padding:12px 10px 16px; border-radius:12px; }
+  .sample-lightbox-topline { padding-inline:6px; margin-bottom:8px; }
+  .sample-lightbox-title { font-size:16px; }
+  .sample-lightbox-stage { grid-template-columns:35px minmax(0,1fr) 35px; gap:5px; }
+  .sample-lightbox-arrow { width:34px; height:40px; border:0; }
+  .sample-lightbox-image { max-height:calc(100dvh - 120px); }
+}
+@media (prefers-reduced-motion:reduce) { .samples-section .sample-photo-frame img { transition:none; } }

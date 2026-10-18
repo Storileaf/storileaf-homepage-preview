@@ -7019,53 +7019,43 @@ var currencies = [
 ];
 var samples = [
 	{
-		id: "home",
-		category: "Life story",
-		title: "There was always room.",
-		subtitle: "The home I grew up in",
-		product: "life-story",
-		paragraphs: [
-			"The kitchen was the smallest room in the house. Somehow, it was where everyone ended up.",
-			"On Sundays, my mother would pull another chair to the table before anyone had even knocked. There was no such thing as an unexpected guest. Only someone whose plate was not out yet.",
-			"I remember the sound of the radio, the newspaper folded beside my father, and how a conversation about lunch could become a conversation about everything.",
-			"I have lived in bigger houses since. But when someone says home, that is still the room I think of."
-		],
-		image: images.memories,
-		alt: "Photographs and personal objects being gathered around a table",
-		caption: "The little things we remember."
+		"id": "life-story",
+		"category": "Life Story",
+		"image": "/storileaf-homepage-preview/gallery/life-story-open-book-placeholder.svg",
+		"alt": "Placeholder for a photograph of an open Life Story book"
 	},
 	{
-		id: "journey",
-		category: "Travel stories",
-		title: "The day we took the slow road.",
-		subtitle: "A journey through the hills",
-		product: "travel-memoir",
-		paragraphs: [
-			"We had a plan for that morning. A very sensible plan, with a route saved on my phone and a place to be before lunch.",
-			"Then the road bent towards the lake. We stopped for five minutes, which became an hour. Someone brought tea. Someone else decided the photographs could wait.",
-			"By the time we left, we had missed the thing we had meant to see. For years afterwards, the lake was the part of the trip we kept talking about.",
-			"I cannot remember what was on the original plan. I remember that morning perfectly."
-		],
-		image: images.lake,
-		alt: "A rowboat beside a quiet lake in Kumaon",
-		caption: "Kumaon. A moment worth slowing down for."
+		"id": "travel-memoir",
+		"category": "Travel Memoir",
+		"image": "/storileaf-homepage-preview/gallery/travel-memoir-open-book-placeholder.svg",
+		"alt": "Placeholder for a photograph of an open Travel Memoir book"
 	},
 	{
-		id: "letter",
-		category: "Letters to your child",
-		title: "You can change your mind.",
-		subtitle: "A letter for the road ahead",
-		product: "parent-to-child-letters",
-		paragraphs: [
-			"My dear,",
-			"At your age, I thought everyone else had a plan. I tried very hard to look as though I did too.",
-			"What I wish someone had told me is that a decision does not have to be forever to be a good decision. You are allowed to try something, learn from it, and choose again.",
-			"There will be people with advice. There will be people with certainty. Listen to them, then leave a little room for your own voice.",
-			"You do not owe the world a perfectly straight path. I am looking forward to seeing where yours takes you.",
-			"With all my love"
-		]
+		"id": "relationship-memoir",
+		"category": "Relationship Memoir",
+		"image": "/storileaf-homepage-preview/gallery/relationship-memoir-open-book-placeholder.svg",
+		"alt": "Placeholder for a photograph of an open Relationship Memoir book"
+	},
+	{
+		"id": "founders-memoir",
+		"category": "Founder's Memoir",
+		"image": "/storileaf-homepage-preview/gallery/founders-memoir-open-book-placeholder.svg",
+		"alt": "Placeholder for a photograph of an open Founder's Memoir book"
+	},
+	{
+		"id": "parent-to-child-letters",
+		"category": "Parent to Child Letters",
+		"image": "/storileaf-homepage-preview/gallery/parent-to-child-letters-open-book-placeholder.svg",
+		"alt": "Placeholder for a photograph of an open Parent to Child Letters book"
+	},
+	{
+		"id": "celebrating-occasions",
+		"category": "Celebrating Occasions",
+		"image": "/storileaf-homepage-preview/gallery/celebrating-occasions-open-book-placeholder.svg",
+		"alt": "Placeholder for a photograph of an open Celebrating Occasions book"
 	}
 ];
+
 var guides = [
 	{
 		title: "5 tips for recording life stories with older parents",
@@ -7141,6 +7131,7 @@ function Icon({ name, ...props }) {
 		"aria-hidden": "true",
 		...props,
 		children: [
+			name === "arrow-left" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M20 12H5M11 5l-7 7 7 7" }),
 			name === "arrow" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M4 12h15M13 5l7 7-7 7" }) }),
 			name === "chevron" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "m8 4 8 8-8 8" }),
 			name === "chevron-left" && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "m16 4-8 8 8 8" }),

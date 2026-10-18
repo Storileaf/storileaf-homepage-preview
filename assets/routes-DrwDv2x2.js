@@ -109,87 +109,31 @@ function NewsletterStrip() {
 }
 //#endregion
 //#region src/components/storileaf/sample-gallery.tsx
-function BookSpread({ sample }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: `book-spread ${sample.id === "letter" ? "letter-spread" : ""}`,
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "sample-page sample-written-page",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "sample-chapter",
-						children: sample.subtitle
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: sample.title }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "sample-excerpt",
-						children: sample.paragraphs.slice(0, sample.id === "letter" ? 4 : 3).map((text, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: text }, index))
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "sample-page-number",
-						children: "12"
-					})
-				]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "sample-page sample-facing-page",
-				children: [sample.image ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					src: sample.image,
-					alt: sample.alt,
-					width: "420",
-					height: "510",
-					loading: "lazy",
-					decoding: "async"
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "sample-photo-caption",
-					children: sample.caption
-				})] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "letter-continuation",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "sample-chapter",
-							children: "For the road ahead"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: sample.paragraphs[4] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: sample.paragraphs[5] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "letter-rule" })
-					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "sample-page-number",
-					children: "13"
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "book-gutter",
-				"aria-hidden": "true"
-			})
-		]
-	});
-}
 function SampleGallery() {
 	const rail = (0, import_react.useRef)(null);
 	const lastTrigger = (0, import_react.useRef)(null);
+	const swipeStart = (0, import_react.useRef)(null);
 	const [position, setPosition] = (0, import_react.useState)(0);
-	const [opened, setOpened] = (0, import_react.useState)(null);
+	const [openedIndex, setOpenedIndex] = (0, import_react.useState)(null);
 	const reduced = useReducedMotion();
+	const active = openedIndex === null ? null : samples[openedIndex];
 	function move(next) {
 		const root = rail.current;
 		if (!root) return;
-		const bounded = Math.min(samples.length - 1, Math.max(0, next));
-		const child = root.children[bounded];
-		if (child) root.scrollTo({
-			left: child.offsetLeft - root.offsetLeft,
-			behavior: reduced ? "instant" : "smooth"
-		});
+		const bounded = Math.max(0, Math.min(samples.length - 1, next));
+		const card = root.children[bounded];
+		if (card) root.scrollTo({left:card.offsetLeft - root.offsetLeft,behavior:reduced ? "instant" : "smooth"});
 	}
 	function updatePosition() {
 		const root = rail.current;
 		if (!root) return;
-		const first = root.children[0];
-		const second = root.children[1];
-		const spacing = first && second ? second.offsetLeft - first.offsetLeft : 1;
+		const first = root.children[0], second = root.children[1];
+		const interval = first && second ? second.offsetLeft - first.offsetLeft : 1;
 		const atEnd = root.scrollLeft >= root.scrollWidth - root.clientWidth - 5;
-		setPosition(atEnd ? samples.length - 1 : Math.min(samples.length - 1, Math.round(root.scrollLeft / spacing)));
+		setPosition(atEnd ? samples.length - 1 : Math.min(samples.length - 1, Math.round(root.scrollLeft / interval)));
+	}
+	function changeLightbox(delta) {
+		setOpenedIndex(current => current === null ? null : Math.max(0, Math.min(samples.length - 1, current + delta)));
 	}
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "samples-section section-space",
@@ -200,77 +144,60 @@ function SampleGallery() {
 				className: "page-width samples-frame",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "section-heading-row samples-heading editorial-heading-row",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
-						id: "samples-title",
-						children: ["See what your stories can ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", { children: "become." })]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "section-lead",
-						children: "A closer look at the pages, photographs and finished book."
-					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "gallery-controls",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-							type: "button",
-							className: "icon-button bordered",
-							"aria-label": "Previous sample",
-							onClick: () => move(position - 1),
-							disabled: position === 0,
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
-								name: "arrow",
-								className: "rotate-180"
-							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
-							type: "button",
-							className: "icon-button bordered",
-							"data-testid": "sample-next",
-							"aria-label": "Next sample",
-							onClick: () => move(position + 1),
-							disabled: position === samples.length - 1,
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+							id: "samples-title",
+							children: ["See what your stories can ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("em", {children:"become."})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className:"section-lead",
+							children:"A closer look at the pages, photographs and finished book."
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className:"gallery-controls",
+						children:[/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							type:"button",className:"icon-button bordered",
+							"aria-label":"Previous book image",
+							onClick:()=>move(position-1),disabled:position===0,
+							children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon,{name:"arrow-left"})
+						}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button",{
+							type:"button",className:"icon-button bordered",
+							"data-testid":"sample-next","aria-label":"Next book image",
+							onClick:()=>move(position+1),disabled:position===samples.length-1,
+							children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon,{name:"arrow"})
 						})]
 					})]
 				})
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "sample-rail-outer",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "sample-rail",
-					ref: rail,
-					tabIndex: 0,
-					role: "region",
-					"aria-label": "Sample book pages",
-					onScroll: updatePosition,
-					onKeyDown: (event) => {
-						if (event.target !== event.currentTarget) return;
-						if (event.key === "ArrowRight") {
-							event.preventDefault();
-							move(position + 1);
-						}
-						if (event.key === "ArrowLeft") {
-							event.preventDefault();
-							move(position - 1);
-						}
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div",{
+				className:"sample-rail-outer",
+				children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div",{
+					className:"sample-rail",ref:rail,tabIndex:0,role:"region",
+					"aria-label":"Six StoriLeaf book images",
+					"data-testid":"sample-rail",
+					onScroll:updatePosition,
+					onKeyDown:event=>{
+						if(event.target!==event.currentTarget)return;
+						if(event.key==="ArrowRight"){event.preventDefault();move(position+1)}
+						if(event.key==="ArrowLeft"){event.preventDefault();move(position-1)}
 					},
-					"data-testid": "sample-rail",
-					children: samples.map((sample) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("article", {
-						className: `sample-card sample-card-${sample.id}`,
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-							type: "button",
-							className: "sample-open",
-							onClick: (event) => {
-								lastTrigger.current = event.currentTarget;
-								setOpened(sample);
-							},
-							"aria-label": `Read a ${sample.category.toLowerCase()} sample story`,
-							"data-testid": `sample-${sample.id}`,
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(BookSpread, { sample }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-								className: "sample-card-caption",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: sample.category }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("small", { children: "Sample story" })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-									className: "sample-read-action",
-									children: ["Read this example ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "expand" })]
-								})]
+					children:samples.map((sample,index)=>/* @__PURE__ */ (0, import_jsx_runtime.jsx)("article",{
+						className:"sample-card sample-card-"+sample.id,
+						children:/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button",{
+							type:"button",className:"sample-open",
+							"aria-label":"Open "+sample.category+" book image",
+							"data-testid":"sample-"+sample.id,
+							onClick:event=>{lastTrigger.current=event.currentTarget;setOpenedIndex(index)},
+							children:[/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span",{
+								className:"sample-photo-frame",
+								children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img",{
+									src:sample.image,alt:sample.alt,width:"1200",height:"800",loading:"lazy",decoding:"async"
+								})
+							}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span",{
+								className:"sample-card-caption",
+								children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong",{children:sample.category})
 							})]
 						})
-					}, sample.id))
+					},sample.id))
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -328,52 +255,61 @@ function SampleGallery() {
 					]
 				})]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog, {
-				open: opened !== null,
-				onOpenChange: (open) => {
-					if (!open) setOpened(null);
-				},
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, { className: "dialog-overlay" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogContent, {
-					className: "sample-dialog dialog-content",
-					onCloseAutoFocus: (event) => {
-						event.preventDefault();
-						lastTrigger.current?.focus();
-					},
-					"data-testid": "sample-dialog",
-					children: opened && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "dialog-topline",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "small-label",
-								children: opened.category
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogClose, {
-								className: "icon-button",
-								"aria-label": "Close sample",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "close" })
-							})]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
-							className: "sample-dialog-title",
-							children: opened.title
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, {
-							className: "dialog-description",
-							children: "A sample story, written to show how the pages can read."
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "sample-dialog-body",
-							children: opened.paragraphs.map((paragraph, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: paragraph }, index))
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "dialog-footer",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Every book begins with your own experiences." }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: `https://storileaf.com/${opened.product}/`,
-								className: "text-link",
-								children: ["Explore this book ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog,{
+				open:openedIndex!==null,
+				onOpenChange:open=>{if(!open)setOpenedIndex(null)},
+				children:/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal,{
+					children:[/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay,{
+						className:"dialog-overlay sample-lightbox-overlay"
+					}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogContent,{
+						className:"dialog-content sample-lightbox",
+						onCloseAutoFocus:event=>{event.preventDefault();lastTrigger.current?.focus()},
+						onKeyDown:event=>{
+							if(event.key==="ArrowLeft"){event.preventDefault();changeLightbox(-1)}
+							if(event.key==="ArrowRight"){event.preventDefault();changeLightbox(1)}
+						},
+						children:active&&/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment,{
+							children:[/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div",{
+								className:"sample-lightbox-topline",
+								children:[/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle,{
+									className:"sample-lightbox-title",children:active.category
+								}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogClose,{
+									className:"icon-button sample-lightbox-close",
+									"aria-label":"Close book image",
+									children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon,{name:"close"})
+								})]
+							}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription,{
+								className:"sample-lightbox-description",
+								children:"Browse the six book images with arrow keys, controls or touch gestures."
+							}),/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div",{
+								className:"sample-lightbox-stage",
+								onTouchStart:event=>{
+									if(event.touches.length===1)swipeStart.current={x:event.touches[0].clientX,y:event.touches[0].clientY};
+								},
+								onTouchEnd:event=>{
+									const start=swipeStart.current;swipeStart.current=null;
+									if(!start||event.changedTouches.length===0)return;
+									const dx=event.changedTouches[0].clientX-start.x,dy=event.changedTouches[0].clientY-start.y;
+									if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.25)changeLightbox(dx<0?1:-1);
+								},
+								children:[/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button",{
+									type:"button",className:"sample-lightbox-arrow",
+									"aria-label":"Previous book",
+									onClick:()=>changeLightbox(-1),disabled:openedIndex===0,
+									children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon,{name:"arrow-left"})
+								}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img",{
+									key:active.id,className:"sample-lightbox-image",src:active.image,
+									alt:active.alt,width:"1200",height:"800",draggable:false,decoding:"async"
+								}),/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button",{
+									type:"button",className:"sample-lightbox-arrow",
+									"aria-label":"Next book",
+									onClick:()=>changeLightbox(1),disabled:openedIndex===samples.length-1,
+									children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon,{name:"arrow"})
+								})]
 							})]
 						})
-					] })
-				})] })
+					})]
+				})
 			})
 		]
 	});
