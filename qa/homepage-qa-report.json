@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T19:57:24.009Z",
-  "commit": "1906eb73bcd4282da465ff061e84a0f150f5b6f4",
+  "date": "2026-10-18T20:19:00.533Z",
+  "commit": "f70e44c06d1b4a7aeaa67dfa499c5cbc6d94ed29",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -258,8 +258,8 @@
       "autoAdvance": true
     },
     "desktopStepHeights": [
-      94,
-      94,
+      95,
+      95,
       94,
       94
     ],
@@ -272,6 +272,38 @@
     },
     "processGridPosition": "sticky",
     "processRunwayHeight": 640,
+    "newsletterVisual": {
+      "image": "url(\"https://storileaf.com/images/brand/brand/storileaf-family-archive-books-hero-1440.webp\")",
+      "overlay": "linear-gradient(100deg, rgba(23, 41, 29, 0.94) 0%, rgba(23, 41, 29, 0.88) 43%, rgba(23, 41, 29, 0.72) 100%)",
+      "background": "rgb(37, 53, 38)",
+      "inputDisabled": false
+    },
+    "processMarkerGeometry": [
+      {
+        "width": 38,
+        "height": 38,
+        "gapBefore": 5,
+        "gapAfter": 6
+      },
+      {
+        "width": 38,
+        "height": 38,
+        "gapBefore": 5,
+        "gapAfter": 6
+      },
+      {
+        "width": 38,
+        "height": 38,
+        "gapBefore": 15.4,
+        "gapAfter": 16.4
+      },
+      {
+        "width": 38,
+        "height": 38,
+        "gapBefore": 5,
+        "gapAfter": 5
+      }
+    ],
     "activeNumber": {
       "color": "rgb(255, 255, 255)",
       "background": "rgb(12, 103, 83)"
@@ -301,27 +333,27 @@
       },
       "first": {
         "top": 301.875,
-        "bottom": 395.875,
-        "height": 94
+        "bottom": 397.34375,
+        "height": 95.46875
       },
       "last": {
-        "top": 583.875,
-        "bottom": 677.875,
-        "height": 94
+        "top": 586.8125,
+        "bottom": 681.28125,
+        "height": 94.46875
       },
       "photo": {
         "top": 301.875,
-        "bottom": 742.875,
-        "height": 441
+        "bottom": 746.28125,
+        "height": 444.40625
       },
       "grid": {
         "top": 144,
-        "bottom": 742.875,
-        "height": 598.875
+        "bottom": 746.28125,
+        "height": 602.28125
       },
       "actions": {
-        "top": 677.875,
-        "bottom": 742.875,
+        "top": 681.28125,
+        "bottom": 746.28125,
         "height": 65
       }
     },
@@ -392,26 +424,26 @@
     },
     "mobileCraftGeometry": {
       "craft": {
-        "top": -1111,
-        "bottom": -103,
+        "top": -1131,
+        "bottom": -123,
         "height": 1007
       },
       "copy": {
-        "top": -780,
-        "bottom": -103,
+        "top": -800,
+        "bottom": -123,
         "height": 677
       },
       "link": {
-        "top": -126,
-        "bottom": -105,
+        "top": -146,
+        "bottom": -125,
         "height": 21
       },
       "visible": true,
       "display": "inline-flex",
       "overflow": "visible",
       "section": {
-        "top": -1770,
-        "bottom": -37,
+        "top": -1790,
+        "bottom": -57,
         "height": 1732
       }
     },
@@ -454,7 +486,14 @@
       "last": "0px",
       "middle": "1px"
     },
+    "mobileNewsletter": {
+      "editable": true,
+      "stacked": true,
+      "withinWidth": true
+    },
     "prefersReducedMotion": true
   },
-  "problems": []
+  "problems": [
+    "Process step 1 click failed"
+  ]
 }
