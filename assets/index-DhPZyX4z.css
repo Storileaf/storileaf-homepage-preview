@@ -11514,3 +11514,102 @@ section[id] {
   .samples-section .book-craft-detail-heading h4 { font-size:21px; }
   .samples-section .book-craft-detail-description { margin-top:9px; font-size:15px; line-height:1.65; }
 }
+
+
+/* Book craft adjustment. Titles and icons align, descriptions start at title edge.
+   The full-height photograph is now a four-image slideshow with unobtrusive dots. */
+.samples-section .book-craft { align-items:stretch; }
+.samples-section .book-craft-detail-description {
+  margin-left:61px;
+  max-width:calc(100% - 61px);
+}
+.samples-section .book-craft-slideshow {
+  aspect-ratio:auto;
+  align-self:stretch;
+  min-height:520px;
+  height:auto;
+  isolation:isolate;
+}
+.samples-section .book-craft-slideshow > .book-craft-slide {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  z-index:0;
+  transition:opacity 900ms ease;
+  pointer-events:none;
+}
+.samples-section .book-craft-slideshow > .book-craft-slide.is-active {
+  opacity:1;
+  z-index:1;
+}
+.samples-section .book-craft-slideshow::after { z-index:2; }
+.samples-section .book-craft-image-label { z-index:3; }
+.samples-section .book-craft-indicators {
+  position:absolute;
+  z-index:4;
+  bottom:17px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:10px 14px;
+  background:rgba(28,46,33,.74);
+  border:1px solid rgba(244,244,234,.28);
+  border-radius:999px;
+  backdrop-filter:blur(9px);
+}
+.samples-section .book-craft-indicator {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  width:19px;
+  height:22px;
+  background:transparent;
+  border:0;
+  padding:0;
+  touch-action:manipulation;
+}
+.samples-section .book-craft-indicator > span {
+  display:block;
+  background:#E8EBE5;
+  width:8px;height:8px;
+  border-radius:999px;
+  opacity:.68;
+  transition:width .25s ease,opacity .25s ease;
+}
+.samples-section .book-craft-indicator.is-active { width:34px; }
+.samples-section .book-craft-indicator.is-active > span { width:34px;height:8px;opacity:1; }
+.samples-section .book-craft-indicator:focus-visible {
+  outline:2px solid #E3B971;
+  outline-offset:2px;
+  border-radius:8px;
+}
+@media(max-width:900px){
+  .samples-section .book-craft { align-items:start; }
+  .samples-section .book-craft-slideshow {
+    min-height:0;
+    width:100%;
+    aspect-ratio:1.58;
+    align-self:auto;
+  }
+}
+@media(max-width:720px){
+  .samples-section .book-craft-detail-description {
+    margin-left:55px;
+    max-width:calc(100% - 55px);
+  }
+  .samples-section .book-craft-slideshow { aspect-ratio:1.35; }
+  .samples-section .book-craft-image-label { bottom:63px; left:18px; }
+  .samples-section .book-craft-indicators { bottom:14px; }
+}
+@media(prefers-reduced-motion:reduce){
+  .samples-section .book-craft-slideshow > .book-craft-slide { transition:none; }
+  .samples-section .book-craft-indicator > span { transition:none; }
+}

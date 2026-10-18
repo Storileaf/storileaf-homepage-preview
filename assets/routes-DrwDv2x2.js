@@ -109,6 +109,67 @@ function NewsletterStrip() {
 }
 //#endregion
 //#region src/components/storileaf/sample-gallery.tsx
+// Four existing StoriLeaf images act as temporary slideshow artwork.
+// Swap image sources only after the founder supplies approved replacements.
+const craftPhotoSlides = [
+	{src:images.binding,alt:"Close view of the binding and cream pages of a StoriLeaf hardcover book"},
+	{src:images.spread,alt:"An open StoriLeaf story book with text and a photograph across its pages"},
+	{src:images.life,alt:"An older woman and her daughter looking through an open Life Story book"},
+	{src:images.family,alt:"Family members reading an open personal story book together"}
+];
+function CraftPhotoSlideshow() {
+	const [active,setActive] = (0, import_react.useState)(0);
+	const [visible,setVisible] = (0, import_react.useState)(false);
+	const root = (0, import_react.useRef)(null);
+	const reduced = useReducedMotion();
+	(0, import_react.useEffect)(()=>{
+		const node=root.current;
+		if(!node)return;
+		if(typeof IntersectionObserver==="undefined"){setVisible(true);return;}
+		const observer=new IntersectionObserver(entries=>setVisible(!!entries[0]?.isIntersecting),{threshold:0.12});
+		observer.observe(node);
+		return ()=>observer.disconnect();
+	},[]);
+	(0, import_react.useEffect)(()=>{
+		if(reduced||!visible)return;
+		const timer=window.setInterval(()=>setActive(current=>(current+1)%craftPhotoSlides.length),6500);
+		return ()=>window.clearInterval(timer);
+	},[active,reduced,visible]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div",{
+		className:"book-craft-image book-craft-slideshow",
+		ref:root,
+		role:"group",
+		"aria-label":"Finished book photographs",
+		"data-active-slide":active,
+		children:[
+			...craftPhotoSlides.map((slide,index)=>/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img",{
+				className:"book-craft-slide"+(index===active?" is-active":""),
+				src:slide.src,
+				alt:index===active?slide.alt:"",
+				"aria-hidden":index!==active,
+				width:"1200",height:"800",
+				loading:index===0?"eager":"lazy",
+				decoding:"async"
+			},index)),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span",{className:"book-craft-image-label",children:"The finished book"}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div",{
+				className:"book-craft-indicators",
+				role:"group",
+				"aria-label":"Choose slideshow image",
+				children:craftPhotoSlides.map((_,index)=>/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button",{
+					type:"button",
+					className:"book-craft-indicator"+(index===active?" is-active":""),
+					"aria-label":"Show book image "+(index+1)+" of 4",
+					"aria-pressed":index===active,
+					"data-testid":"book-craft-slide-"+(index+1),
+					onClick:()=>setActive(index),
+					children:/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span",{"aria-hidden":"true"})
+				},index))
+			})
+		]
+	});
+}
+
 function SampleGallery() {
 	const rail = (0, import_react.useRef)(null);
 	const lastTrigger = (0, import_react.useRef)(null);
@@ -203,17 +264,7 @@ function SampleGallery() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "page-width samples-frame book-craft",
 				"aria-labelledby": "book-craft-title",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "book-craft-image",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-						src: images.binding,
-						alt: "Close view of the binding and pages of a StoriLeaf book",
-						width: "1200",
-						height: "800",
-						loading: "lazy",
-						decoding: "async"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "The finished book" })]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CraftPhotoSlideshow, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "book-craft-copy",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
