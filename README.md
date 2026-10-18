@@ -1,63 +1,51 @@
-# StoriLeaf homepage UI preview
+# StoriLeaf public website preview and frontend source
 
-**Physical book copy refinement, 18 October 2026.** The three detail descriptions have more concise spacing beneath their headings and provisional improved wording based only on already documented product facts. The visible “The finished book” image caption has been removed from the four-image slideshow, leaving the centred indicators. The slide motion and layout remain unchanged. See the current public `qa/` screenshots and `REPOSITORY_HANDOFF.md` for test evidence and exact provisional copy.
+Status 18 October 2026. Frontend design work only. This is not the production website or private customer application.
 
-
-**Finished-book slideshow update, 18 October 2026.** The three icon-led specifications now place their unchanged descriptions under each heading rather than under the icon. The left book photograph has become a four-image cross-fade slideshow, with four clickable pill/dot indicators centred at the bottom. The slideshow reuses four public StoriLeaf images temporarily, advances every 6.5 seconds while visible, and stops auto-rotation for reduced motion. The desktop photo matches the full height of the right content. See `REPOSITORY_HANDOFF.md` for the exact source images, tests and replacement details, with screenshot QA in `qa/`.
-
-
-**Physical book details update, 18 October 2026.** The three specifications below the finished-book photograph now use an icon followed by a sentence-case title, with the original description on the following line aligned to the icon's left edge. The old tabular columns and divider lines are removed. The photograph, section heading and Pricing link remain unchanged. Desktop/mobile screenshots and successful browser QA are in `qa/`. Private production code is untouched.
-
-
-**Open-book gallery, 18 October 2026.** The sample section now contains six replaceable local SVG image placeholders, one per official book, with captions showing only the book name. Clicking an image opens a lightbox with previous/next buttons, keyboard arrows, swipe gestures on touch devices and Escape to close. The previous carousel arrow has a real left-pointing path. The fictional written sample pages have been removed. All six actual open-book photographs are still to be supplied by the founder. See `gallery/README.md` for replacement instructions and `qa/` for screenshot and browser verification.
-
-
-**Six book discovery update, 18 October 2026.** Founder-approved descriptions and three bullets per book are now shown above a consistently bottom-aligned Explore this book button. The text starts at a fixed top-left position on desktop; mobile panels flow naturally. All six existing book links, images and Radix tabs remain intact. Chromium QA and the Pages deployment passed. Evidence is in `qa/`. See `REPOSITORY_HANDOFF.md` for details.
-
-**Hero orbit density update, 18 October 2026.** The hero uses 14 cover positions (6 inner, 8 outer), with the original seven local cover images intentionally repeated twice. The outer ring radius is 10% larger; rotation speeds and hero content remain unchanged. The change is live on GitHub Pages and pending founder visual review. Real desktop/mobile screenshots and QA results are in `qa/`. The separate Books overview page has not been built.
-
-
-**Current homepage preview, 18 October 2026.** The compact four-step process pins below the header, with its photograph aligned alongside the steps and no divider above the first or beneath the fourth. The 94px desktop rows still change independently as the visitor scrolls. The FAQ invitation and newsletter remain present. See the QA screenshots and report under `qa/`.
-
-**Earlier homepage preview, 18 October 2026.** The How it works stages are compact and use an independent scroll runway. The original FAQ final invitation has been restored before the newsletter. The future six-book overview page remains unbuilt. See [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md) and `qa/homepage-qa-report.json` for the specific implementation and QA results.
-
-
-
-A standalone **frontend-only** design preview for StoriLeaf. It is not the production website or customer application.
-
-**Live GitHub Pages homepage preview (verified 16 October 2026)**
-
+**Published homepage**  
 https://storileaf.github.io/storileaf-homepage-preview/
 
-## Which GitHub repository to use
+## Current authority
 
-| Repository | Purpose |
-| --- | --- |
-| [Storileaf/storiYoceFj6IRAleaf](https://github.com/Storileaf/storiYoceFj6IRAleaf) | Private official product/application repository, actual public website, product documentation and approved homepage UX decisions |
-| [Storileaf/storileaf-homepage-preview](https://github.com/Storileaf/storileaf-homepage-preview) | This public repository, containing only the static frontend design preview and its approved marketing images |
+The founder-approved homepage is the visual reference for the next generation of public website pages. Its current published version is still the root static HTML/CSS/JavaScript. Do not change its content, section order or interactions during design-system consolidation without a separately agreed correction.
 
-**The repositories do not synchronise automatically.** The approved homepage direction is documented in [the private repository's Homepage Master Brief](https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md). Product, package, pricing, purchase, login and private app capabilities must always be checked against the private official repository, not inferred from this prototype.
+The active [public design system](docs/PUBLIC_DESIGN_SYSTEM.md) replaces earlier Georgia/Lato and pill-only website styling with Newsreader, Manrope and the current warm editorial site direction.
 
-## Frontend-only boundary
+- [Public website documentation index](docs/README.md)
+- [Content creation and factual approval gate](docs/CONTENT_GATE.md)
+- [Development, parity and QA workflow](docs/WORKFLOW.md)
+- [Early performance foundations](docs/PERFORMANCE.md)
+- [Founder decisions and deferred work](docs/DECISIONS.md)
+- [Implementation handoff and historical decisions](REPOSITORY_HANDOFF.md)
 
-Only compiled HTML, CSS, JavaScript, approved public book-cover images and the static Pages deployment workflow belong here.
+The official private repository Storileaf/storiYoceFj6IRAleaf remains authoritative for actual product, packages, pricing, customer behaviour and production code. The private UX branch design/storileaf-website-ux records the approved public website copy and page decisions. These repositories do not automatically synchronise.
 
-**Do not add** backend/API code, database or customer data, authentication or billing implementation, secrets, checkout integrations, `convex/`, private app source or server configuration.
+## Editable React source
 
-The current export shows the homepage and a pricing **UI-only** mock-up. Some links open the existing public StoriLeaf site or separate application. They are navigation destinations, not backend implementation inside this repository.
+The new [frontend/](frontend/) workspace is a Vite, React and TypeScript source foundation for reusable components and future public pages. It includes a content approval ledger, design tokens, typed components, tests and an isolated build. The [source build workflow](.github/workflows/validate-public-source.yml) checks these without changing published root assets.
 
-This preview is public and marked `noindex`, but anyone with the link may view it. The actual StoriLeaf domain and live code are unchanged.
+**Migration status:** this source workspace is NOT yet a complete replacement for the approved homepage. The source-driven component reference is an initial slice of the page's design. Before moving the published homepage to editable React, all sections, wording, interactions, browser states and screenshots must match the approved static baseline. The build output stays under frontend/dist and is not published automatically.
 
-## Pages status and setup
+To develop the source locally, install Node 22 and run:
 
-A one-time GitHub Actions job pulls the verified static UI archive and commits its frontend assets to this repository's `main` branch. See [Bootstrap standalone frontend](.github/workflows/bootstrap-frontend.yml) and [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md).
+    cd frontend
+    npm ci
+    npm run check
+    npm run build
+    npm run dev
 
-Pages is configured to deploy from **main → /(root)**. The [successful GitHub Pages deployment](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/38987374849) completed after an explicit README-only commit triggered the site's first Pages build. The live homepage, bundled cover thumbnails, six interactive book tabs and mobile navigation were tested in a browser; no document-wide overflow was observed at 1440px and 390px. This is a visual prototype, not a production release.
+Current source validation uses the approved root baseline and nine-width static-site Chromium QA as a separate reference.
 
-Future edits should update the UI deliberately, test the rendered design and record approval/QA, rather than modifying the production repository to experiment.
+## Existing browser QA
 
-<!-- Initial Pages deployment completed successfully after a README-only push on 16 October 2026. -->
+The [homepage QA workflow](.github/workflows/verify-homepage-ui.yml) tests the published static UI and records screenshots under [qa/](qa/). Passing automated QA is not founder visual acceptance or full accessibility/physical-device certification.
 
-## Latest homepage preview adjustment
+Photo replacements for the six book gallery slots are documented in [gallery/README.md](gallery/README.md). Current homepage imagery includes approved temporary assets and visual placeholders.
 
-The How it works steps are condensed and their active numbers remain legible. The CTAs are **Choose a book** (temporarily returns to the on-page six-book selector) and **Explore gifting** (existing gift page). The inline newsletter layout is visible again, but email collection is not connected in this frontend-only preview; the subscription action points to the existing public site. The future `/books/` overview and corresponding header navigation are documented in [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md), **not built**.
+## Scope and safety
+
+Use the public repo for approved frontend work only. Do not commit customer data, private product code, credentials, payments, authentication, databases, unauthorised subscription integrations or proprietary font files. Do not use Macaly to implement further changes.
+
+Future account, Storyteller, contributor and admin pages will receive their own denser/dashboard-appropriate styling decisions later. The public website system is not a mandate to redesign those private applications.
+
+The older Macaly importer workflow has been retired so it cannot overwrite the current approved public homepage.
