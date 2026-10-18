@@ -1,5 +1,13 @@
 # Repository handoff for StoriLeaf UI work
 
+## Writing practice CTA and deferred standalone page, 18 October 2026
+
+**Founder-approved immediate change:** On the existing **“Write a little. Come back when you are ready.”** homepage section, rename **Try a writing prompt** to **Try answering a question**. This was implemented in commit `44640b27ad26550403226cdc84c2775e2caa076f` in `index.html`, `404.html` and the compiled `assets/routes-DrwDv2x2.js`. The exact-label and modal regression checks were added in `scripts/verify-homepage-ui.mjs`. The [Chromium QA workflow](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39167703251) passed with `problems: []`, and the working dialog screenshot is `qa/screenshots/writing-practice-dialog-desktop.png`.
+
+**Current interim interaction preserved:** The button still opens the existing local practice modal with the question **“What do you remember about the home you grew up in?”**. The visitor may type an answer and clear it; responses are not saved or submitted and are discarded when the dialog closes. Do not remove this existing working interaction until the replacement page is ready. The device visual, section layout, heading, supporting paragraph, all other copy, UI controls and destinations have not changed.
+
+**Explicit founder decision for later, not implemented now:** The intended final experience is a **separate public writing practice page instead of a pop-up**. Its path, final copy, detailed design and any integrations are reserved for later founder decisions. The conceptual working brief is in private design branch document `website-ux/docs/page-plans/17_standalone_writing_practice_page.md`, with status and master brief updated. It calls for a lightweight workspace-like single-question experience, preserving user authorship, unsaved practice text and suitable keyboard/mobile accessibility, without claiming an account, draft saving or customer application integration. This is an approved *direction*, not approval to build the new page. Do not create an unbuilt destination or silently change the CTA link. No private production files or backend systems were touched.
+
 ## Founder correction to Browse all resources alignment, 18 October 2026
 
 The founder asked for **Browse all resources** to be **centred directly beneath the two Resources category cards on both desktop and mobile**. A previously implemented desktop `justify-content:flex-end` left it on the right, contradicting the intended centred composition. This was identified and corrected. It **supersedes** the prior instruction suggesting or documenting bottom-right alignment.
