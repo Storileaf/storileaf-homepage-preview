@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T02:17:24.442Z",
-  "commit": "0e14b9c0262aaae38082a0b373d11e670d323dfc",
+  "date": "2026-10-18T02:20:14.160Z",
+  "commit": "7ba076dd26eccbff500ffc20f737b62746fe7d72",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "desktopStepHeights": [
@@ -89,6 +89,11 @@
       1280,
       1440
     ],
+    "mobileDividers": {
+      "first": "0px",
+      "last": "0px",
+      "middle": "1px"
+    },
     "prefersReducedMotion": true
   },
   "problems": []
