@@ -11957,7 +11957,7 @@ section[id] {
 }
 .resources-section .resource-overview-cta {
   display:flex;
-  justify-content:flex-end;
+  justify-content:center;
   margin-top:25px;
 }
 .resources-section .resource-all-link {

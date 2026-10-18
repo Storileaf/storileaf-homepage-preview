@@ -118,6 +118,7 @@ try {
       intro:intro?.textContent.trim(),
       titleCentreOffset:Math.abs(centre(heading)-centre(section)),
       introCentreOffset:Math.abs(centre(intro)-centre(section)),
+      overviewCentreOffset:Math.abs(centre(section.querySelector('.resource-all-link'))-centre(section)),
       labels:cards.map(card=>card.querySelector('h3')?.textContent.trim()),
       descriptions:cards.map(card=>card.querySelector('.resource-category-body p')?.textContent.trim()),
       cardWidths:cards.map(card=>Math.round(rect(card).width)),
@@ -134,6 +135,7 @@ try {
     }
   })
   observations.resourcesDesktop=resourcesDesktop
+  check(resourcesDesktop.overviewCentreOffset<=2, 'Browse all resources must be centred below the two desktop cards')
   check(resourcesDesktop.heading==='A little curiosity can go a long way.' &&
     resourcesDesktop.intro==='Explore thoughtful questions, simple activities and practical guides to help memories become stories.' &&
     resourcesDesktop.titleCentreOffset<=2 && resourcesDesktop.introCentreOffset<=2,
@@ -639,7 +641,8 @@ try {
     const cards=[...section.querySelectorAll('.resource-category-card')],
           bounds=cards.map(el=>el.getBoundingClientRect()),
           main=section.getBoundingClientRect(),
-          overview=section.querySelector('.resource-overview-cta').getBoundingClientRect()
+          overview=section.querySelector('.resource-overview-cta').getBoundingClientRect(),
+          overviewLink=section.querySelector('.resource-all-link').getBoundingClientRect()
     return {
       cardWidths:bounds.map(rect=>Math.round(rect.width)),
       cardTops:bounds.map(rect=>Math.round(rect.top)),
@@ -648,6 +651,7 @@ try {
       withinViewport:bounds.every(rect=>rect.left>=-1 && rect.right<=innerWidth+1),
       imagesLoaded:cards.every(c=>c.querySelector('img')?.naturalWidth>0),
       overviewBelow:overview.top>=bounds[1].bottom,
+      overviewCentreOffset:Math.abs((overviewLink.left+overviewLink.right)/2-(main.left+main.right)/2),
       headingCentreOffset:Math.abs((section.querySelector('.resources-title').getBoundingClientRect().left+
         section.querySelector('.resources-title').getBoundingClientRect().right)/2-(main.left+main.right)/2)
     }
@@ -655,7 +659,7 @@ try {
   observations.resourcesMobile=resourcesMobile
   check(resourcesMobile.stacked && resourcesMobile.withinViewport &&
     resourcesMobile.imagesLoaded && resourcesMobile.overviewBelow &&
-    resourcesMobile.headingCentreOffset<=2, 'Mobile Resources entry panels overflow or do not stack properly')
+    resourcesMobile.headingCentreOffset<=2 && resourcesMobile.overviewCentreOffset<=2, 'Mobile Resources entry panels overflow, misalign or do not stack properly')
   // Capture the whole editorial section without the fixed site header or the
   // keyboard-only skip link obscuring the cards in a tall element screenshot.
   // Those controls remain unchanged in the actual page and are tested separately.
