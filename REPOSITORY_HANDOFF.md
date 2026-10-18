@@ -1,4 +1,13 @@
 # Repository handoff for StoriLeaf UI work
+
+## One CTA in the finished book section, 18 October 2026
+
+**Founder-approved and implemented in the public GitHub Pages frontend preview.** The lower-right detached link **“See more inside the books”** was explicitly rejected and removed from the book samples and physical details section. The existing **“See package details”** text link stays directly below the three physical book details in the right column and continues to `https://storileaf.com/pricing/`. The details **Printed copy**, **Binding and finish** and **Before print**, the binding photograph, the sample carousel, the sample dialog, exact current copy and the other sections were preserved. No replacement link was added.
+
+With the disconnected footer link removed, the samples section's bottom padding was reduced to **80px on desktop** and **66px on narrow screens**. This is a scoped composition correction, not a redesign of the gallery or book craft panel.
+
+Chromium browser QA passed for the sole remaining CTA, destination, detail labels, layout order and both responsive padding values. Desktop and mobile screenshots are in `qa/screenshots/physical-book-single-cta-desktop.png` and `physical-book-single-cta-mobile.png`. Browser checks alone are not founder visual approval. No production system or other product page was changed.
+
 ## Six-book discovery copy and layout, 18 October 2026
 
 **Founder-approved copy and layout, implemented in the PUBLIC static homepage preview.** All six selectable book panels now start with one short subject-specific description followed by the three exact bullet points reviewed and approved in the conversation. No repeated product title or decorative overline was added. The **Explore this book** CTA and all six existing product destinations remain unchanged.
