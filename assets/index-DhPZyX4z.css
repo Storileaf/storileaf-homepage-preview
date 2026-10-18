@@ -11345,3 +11345,18 @@ section[id] {
 /* The outer dividers are omitted on phone and desktop alike. */
 .process-steps li:first-child { border-top:0; }
 .process-steps li:last-child { border-bottom:0; }
+
+
+/* Navigation alignment correction. Radix links retain an inherited flex-col,
+   which leaves their text above the vertically centred dropdown triggers. */
+.site-header .desktop-nav-list > li > .header-nav-trigger,
+.site-header .desktop-nav-list > li > .header-simple-link {
+  display:inline-flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+}
+.site-header .desktop-nav-list > li > .header-nav-trigger > svg {
+  top:0;
+  margin-left:0;
+}

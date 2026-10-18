@@ -35,7 +35,14 @@ try {
         transform:s.transform,svgCentre:icon?round(centre(icon.getBoundingClientRect())):null}
     })
   })
-  await desktop.locator('.site-header').screenshot({ path:path.join(folder,'header-before-alignment.png'), animations:'disabled' })
+  const centres = observations.headerAlignment.map(item => item.textCentre)
+  const maxTextOffset = Math.max(...centres) - Math.min(...centres)
+  observations.headerMaxTextOffset = Math.round(maxTextOffset * 10) / 10
+  check(maxTextOffset <= 0.8, 'Navigation label baselines differ across dropdown triggers and links')
+  const chevronOffsets = observations.headerAlignment.filter(item => item.svgCentre !== null)
+    .map(item => Math.abs(item.svgCentre - item.textCentre))
+  check(chevronOffsets.every(offset => offset <= 1.5), 'Dropdown chevrons are not centred with labels')
+  await desktop.locator('.site-header').screenshot({ path:path.join(folder,'header-navigation-aligned.png'), animations:'disabled' })
   check(await desktop.getByRole('heading', { name: /The stories of your life/i }).count() > 0, 'Homepage hero absent')
   const coverState = await desktop.evaluate(() => {
     const inner = document.querySelectorAll('.hero-orbit-inner .hero-orbit-square');
@@ -175,6 +182,21 @@ try {
   observations.bookMenuVisible = await desktop.locator('.books-dropdown').first().isVisible()
   check(observations.bookMenuVisible, 'Desktop Books hover dropdown not visible')
   if(observations.bookMenuVisible) await desktop.screenshot({ path:path.join(folder,'books-menu-desktop.png'), animations:'disabled' })
+  const resourcesTrigger = desktop.getByRole('button', {name:'Resources', exact:true}).first()
+  await resourcesTrigger.hover()
+  await desktop.waitForTimeout(360)
+  observations.resourceMenuVisible = await desktop.locator('.resources-dropdown').first().isVisible()
+  check(observations.resourceMenuVisible, 'Resources hover dropdown not visible after alignment correction')
+  if (observations.resourceMenuVisible) {
+    await desktop.locator('.site-header').screenshot({ path:path.join(folder,'resources-menu-aligned.png'), animations:'disabled' })
+    const resourceLinks = await desktop.locator('.resources-dropdown > a').evaluateAll(links =>
+      links.map(el => ({
+        direction:getComputedStyle(el).flexDirection,
+        label:el.textContent?.trim() ?? ''
+      })))
+    observations.resourceMenuLinks = resourceLinks
+    check(resourceLinks.length >= 3 && resourceLinks.every(link => link.direction === 'row'), 'Resources menu links lost their horizontal alignment')
+  }
 
   const widths=[320,360,390,430,768,820,1024,1280,1440]
   for(const width of widths) {
