@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T17:42:50.838Z",
-  "commit": "fb9870faee2245c832e8c6bfd954e7f0100d34ac",
+  "date": "2026-10-18T18:30:17.991Z",
+  "commit": "64f9385d3d904ad83a7102841f4c354b788b662d",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -309,7 +309,7 @@
     },
     "mobileCraftGeometry": {
       "craft": {
-        "top": -918,
+        "top": -919,
         "bottom": -104,
         "height": 815
       },
@@ -320,16 +320,16 @@
       },
       "link": {
         "top": -126,
-        "bottom": -105,
+        "bottom": -106,
         "height": 21
       },
       "visible": true,
       "display": "inline-flex",
       "overflow": "visible",
       "section": {
-        "top": -1751,
+        "top": -1578,
         "bottom": -38,
-        "height": 1713
+        "height": 1540
       }
     },
     "mobileDividers": {
