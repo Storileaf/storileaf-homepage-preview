@@ -296,7 +296,7 @@
       "href": "https://storileaf.com/terms-conditions/"
     },
     {
-      "id": "shared.footer.getInTouch",
+      "id": "shared.footer.get_in_touch",
       "copy": "Get in touch",
       "status": "implemented_verified",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
@@ -305,14 +305,14 @@
       "href": "https://storileaf.com/contact/"
     },
     {
-      "id": "shared.footer.internal.seeInside",
+      "id": "shared.footer.internal.see_inside",
       "copy": "See inside",
       "status": "implemented_verified",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true
     },
     {
-      "id": "shared.footer.internal.howItWorks",
+      "id": "shared.footer.internal.how_it_works",
       "copy": "How it works",
       "status": "implemented_verified",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",

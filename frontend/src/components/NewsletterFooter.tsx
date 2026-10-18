@@ -73,8 +73,8 @@ export function NewsletterFooter({routes,currency,onCurrencyChange}: Props) {
           </div>
           <div className="sl-footer-column">
             <h3>{words('explore.heading')}</h3>
-            <a href={routes.seeInside}>{words('internal.seeInside')}</a>
-            <a href={routes.howItWorks}>{words('internal.howItWorks')}</a>
+            <a href={routes.seeInside}>{words('internal.see_inside')}</a>
+            <a href={routes.howItWorks}>{words('internal.how_it_works')}</a>
             <a href={routes.pricing}>{words('internal.pricing')}</a>
             <a href={outward('gift')}>{words('gift')}</a>
             <a href={routes.resources}>{words('internal.resources')}</a>
@@ -94,7 +94,7 @@ export function NewsletterFooter({routes,currency,onCurrencyChange}: Props) {
           <div>
             <a href={outward('privacy')}>{words('privacy')}</a>
             <a href={outward('terms')}>{words('terms')}</a>
-            <a href={outward('getInTouch')}>{words('getInTouch')}</a>
+            <a href={outward('get_in_touch')}>{words('get_in_touch')}</a>
           </div>
         </div>
       </div>
