@@ -1,5 +1,21 @@
 # Repository handoff for StoriLeaf UI work
 
+## Latest finished-book copy and caption refinement, 18 October 2026
+
+The founder asked for less vertical space between the three specification headings and their descriptions, better wording, and removal of the overlay text **“The finished book”** from the four-image slideshow. These changes are **implemented in the public GitHub Pages frontend preview**. The icon and heading stay horizontally aligned, the description remains aligned with the heading's left edge, and the CSS paragraph top margin is now 0 instead of 10px desktop and 9px mobile. Chromium measured a visible heading-to-description gap of about **8.7px desktop and 8.4px mobile**, down from the earlier layout. There is no visible book slideshow caption. All four images, centred pill/dot controls, autoplay and reduced-motion behaviour remain.
+
+
+**Provisional refreshed descriptions in the public preview, subject to founder wording approval**
+- **Printed copy:** “Your story becomes a finished printed book to keep and return to. One copy is included with every package.”
+- **Binding and finish:** “The binding and finish depend on your package. Selected options include a book jacket, premium paper or embossing.”
+- **Before print:** “Review the prepared pages of your book before the final version goes to print.”
+
+These are restrained editorial revisions of facts already represented in the verified homepage copy. They **do not** adopt unverified archival paper, sewn binding, gold foil, protective slipcases or other claims from the founder's visual reference. The new sentences are **implemented for visual review, not recorded as final founder-approved exact copy**.
+
+
+The section's main title, introductory paragraph and sole **See package details** destination are unchanged. The four-stage How it works section and separate six-book gallery are unchanged. **Successful actual Chromium QA** checked copy, gaps, image label removal, icon/title centring, description x-alignment, desktop image/text equal-height composition, manual dots and timed image changes, and mobile layout. New screenshots are saved under `qa/screenshots/physical-book-single-cta-desktop.png` and `physical-book-copy-and-cta-mobile.png`, with geometry under `qa/homepage-qa-report.json`. Production application and backend were not modified. Full founder visual acceptance and physical-device/accessibility testing remain pending.
+
+
 ## Finished-book slideshow and text alignment, 18 October 2026
 
 **Latest founder-directed refinements, implemented and browser-tested in the PUBLIC GitHub Pages homepage preview only.** The three existing physical-book details remain icon-led, with the icon and heading sharing the same vertically centred line. The descriptions now start **beneath the heading text**, not at the icon's left edge. The description left margin is 61px on desktop (45px icon + 16px gap) and 55px on mobile (42px icon + 13px gap). The three descriptions and titles, headline, original explanatory paragraph, and sole **See package details** Pricing link remain verbatim and unchanged.

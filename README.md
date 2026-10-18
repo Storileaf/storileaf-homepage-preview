@@ -1,5 +1,8 @@
 # StoriLeaf homepage UI preview
 
+**Physical book copy refinement, 18 October 2026.** The three detail descriptions have more concise spacing beneath their headings and provisional improved wording based only on already documented product facts. The visible “The finished book” image caption has been removed from the four-image slideshow, leaving the centred indicators. The slide motion and layout remain unchanged. See the current public `qa/` screenshots and `REPOSITORY_HANDOFF.md` for test evidence and exact provisional copy.
+
+
 **Finished-book slideshow update, 18 October 2026.** The three icon-led specifications now place their unchanged descriptions under each heading rather than under the icon. The left book photograph has become a four-image cross-fade slideshow, with four clickable pill/dot indicators centred at the bottom. The slideshow reuses four public StoriLeaf images temporarily, advances every 6.5 seconds while visible, and stops auto-rotation for reduced motion. The desktop photo matches the full height of the right content. See `REPOSITORY_HANDOFF.md` for the exact source images, tests and replacement details, with screenshot QA in `qa/`.
 
 
