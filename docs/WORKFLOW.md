@@ -27,7 +27,7 @@ Private official repository main is read-only for this work and remains the sour
 
 From the frontend directory run npm install, npm run check, npm run build and npm run preview. The compiled result is an isolated component foundation, not the production root. A GitHub workflow checks this on code changes.
 
-For the existing static site, scripts/verify-homepage-ui.mjs remains the documented Chromium browser regression. The root files are protected by a SHA baseline in frontend/baseline/published-root.json while the migration proceeds. Changes to those files require an explicitly scoped approved edit and a deliberate baseline update with fresh screenshots.
+For the existing static site, scripts/verify-homepage-ui.mjs remains the documented Chromium browser regression. The root files are protected by the pinned approved release commit in frontend/scripts/guard-published.mjs, with context in frontend/baseline/README.md, while migration proceeds. Changes to those files require an explicitly scoped approved edit and a deliberate baseline update with fresh screenshots.
 
 ## Cutover criteria
 
