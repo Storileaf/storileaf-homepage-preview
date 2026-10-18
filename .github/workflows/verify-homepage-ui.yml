@@ -1,0 +1,55 @@
+name: Verify homepage visuals
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - '404.html'
+      - 'assets/**'
+      - '.github/workflows/verify-homepage-ui.yml'
+      - 'scripts/verify-homepage-ui.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  screenshot-and-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install isolated browser test dependency
+        run: |
+          npm init -y >/dev/null
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Serve the exact committed static frontend
+        run: |
+          mkdir -p /tmp/storileaf-qa/storileaf-homepage-preview
+          cp -a index.html 404.html assets covers /tmp/storileaf-qa/storileaf-homepage-preview/
+          python3 -m http.server 4173 --directory /tmp/storileaf-qa > /tmp/storileaf-qa.log 2>&1 &
+          sleep 2
+      - name: Check interactions and capture actual Chromium screenshots
+        run: node scripts/verify-homepage-ui.mjs
+      - name: Preserve screenshot QA record
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add qa/screenshots qa/homepage-qa-report.json || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Record homepage browser QA screenshots [skip ci]"
+            git push
+          fi
+      - name: Attach screenshots for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-visual-qa
+          path: |
+            qa/screenshots
+            qa/homepage-qa-report.json
+          if-no-files-found: warn
