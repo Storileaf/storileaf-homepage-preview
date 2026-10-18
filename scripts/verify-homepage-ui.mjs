@@ -350,9 +350,6 @@ try {
   check((await desktop.locator('.final-invitation a').getAttribute('href'))?.includes('#books'), 'Restored CTA target incorrect')
   check(await desktop.evaluate(() => Boolean(document.querySelector('.final-invitation').compareDocumentPosition(document.querySelector('.newsletter-strip')) & Node.DOCUMENT_POSITION_FOLLOWING)), 'CTA must be before newsletter')
   check(await desktop.locator('.newsletter-inline-preview input:not(:disabled)').count() === 1, 'Newsletter email field should be editable')
-  await desktop.locator('.newsletter-inline-preview input').fill('story@example.com')
-  check(await desktop.locator('.newsletter-inline-preview input').inputValue() === 'story@example.com', 'Newsletter field does not accept input')
-  await desktop.locator('.newsletter-inline-preview input').fill('')
   check(await desktop.locator('.newsletter-signup-note').count() === 0, 'Preview-only newsletter instruction should be removed')
   const newsletterVisual = await desktop.locator('.newsletter-strip').evaluate(el => {
     const before=getComputedStyle(el,'::before'), after=getComputedStyle(el,'::after')
@@ -459,6 +456,23 @@ try {
   await desktop.locator('.final-invitation').scrollIntoViewIfNeeded()
   await desktop.locator('.faq-section').screenshot({ path:path.join(folder,'faq-final-invitation-desktop.png'), animations:'disabled' })
   await desktop.locator('.newsletter-strip').scrollIntoViewIfNeeded()
+  await desktop.locator('.newsletter-inline-preview input').fill('story@example.com')
+  check(await desktop.locator('.newsletter-inline-preview input').inputValue() === 'story@example.com', 'Newsletter field does not accept input')
+  await desktop.locator('.newsletter-inline-preview input').fill('')
+  const newsletterImageLoaded = await desktop.locator('.newsletter-strip').evaluate(async el => {
+    const imageCss=getComputedStyle(el,'::before').backgroundImage
+    const url=imageCss.match(/url\\([\\"']?(.*?)[\\"']?\\)/)?.[1]
+    if(!url)return false
+    return await new Promise(resolve => {
+      const image=new Image()
+      const timeout=setTimeout(() => resolve(false),6000)
+      image.onload=() => {clearTimeout(timeout);resolve(image.naturalWidth>=800)}
+      image.onerror=() => {clearTimeout(timeout);resolve(false)}
+      image.src=url
+    })
+  })
+  observations.newsletterImageLoaded=newsletterImageLoaded
+  check(newsletterImageLoaded,'Newsletter background photograph did not load')
   await desktop.locator('.newsletter-strip').screenshot({ path:path.join(folder,'newsletter-desktop.png'), animations:'disabled' })
   const booksTrigger = desktop.getByRole('button', {name:'The books', exact:true}).first()
   await booksTrigger.hover()
