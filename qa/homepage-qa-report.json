@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T16:00:02.867Z",
-  "commit": "6d614c0e4be563801710cf458716ffc15094faf3",
+  "date": "2026-10-18T17:42:50.838Z",
+  "commit": "fb9870faee2245c832e8c6bfd954e7f0100d34ac",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -102,6 +102,60 @@
       "outerRadius": "665.5px",
       "innerRadius": "345px",
       "failedImages": 0
+    },
+    "discoveryHeadings": {
+      "1024": {
+        "columns": "928px",
+        "align": "center",
+        "titleTop": 1262.2,
+        "descTop": 1380.4,
+        "titleLeft": 48,
+        "titleRight": 908,
+        "descLeft": 48,
+        "titleHeight": 102.2,
+        "titleLineHeight": "51.1181px",
+        "introText": "Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.",
+        "titleText": "Which part of life would you like to tell?"
+      },
+      "1280": {
+        "columns": "622.172px 527.281px",
+        "align": "start",
+        "titleTop": 127.3,
+        "descTop": 127.3,
+        "titleLeft": 48,
+        "titleRight": 670.2,
+        "descLeft": 704.7,
+        "titleHeight": 127.8,
+        "titleLineHeight": "63.8976px",
+        "introText": "Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.",
+        "titleText": "Which part of life would you like to tell?"
+      },
+      "1440": {
+        "columns": "619.828px 525.297px",
+        "align": "start",
+        "titleTop": 127.4,
+        "descTop": 127.4,
+        "titleLeft": 128,
+        "titleRight": 747.8,
+        "descLeft": 786.7,
+        "titleHeight": 139.3,
+        "titleLineHeight": "69.68px",
+        "introText": "Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.",
+        "titleText": "Which part of life would you like to tell?"
+      },
+      "1920": {
+        "columns": "617.062px 522.938px",
+        "align": "start",
+        "titleTop": 127.5,
+        "descTop": 127.5,
+        "titleLeft": 368,
+        "titleRight": 985.1,
+        "descLeft": 1029.1,
+        "titleHeight": 139.3,
+        "titleLineHeight": "69.68px",
+        "introText": "Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.",
+        "titleText": "Which part of life would you like to tell?"
+      }
     },
     "bookDiscovery": {
       "descriptionsVerified": 6,
@@ -238,6 +292,11 @@
       1280,
       1440
     ],
+    "mobileDiscoveryHeading": {
+      "textBelowHeading": true,
+      "sideGap": 0,
+      "separation": 16
+    },
     "mobileHero": {
       "count": 14,
       "outerRadius": "412.5px"
