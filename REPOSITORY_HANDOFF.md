@@ -1,5 +1,17 @@
 # Repository handoff for StoriLeaf UI work
 
+## Corrective homepage pass, 18 October 2026
+
+**Frontend preview implemented, not production.** The removed final FAQ invitation has been restored between the FAQ questions and newsletter, preserving **“One question is enough to begin.”**, **“Let’s find your book.”**, and **“Explore the books”**. Its action leads to the existing homepage `#books` selector. No new page or backend was added.
+
+The four How it works stage rows are now compact, approximately 110px at the tested desktop width, while a separate scroll runway advances the stage and photograph at 112px intervals. The text and photograph remain pinned during supported desktop scrolling. Clicking stages and reversing scroll still work. All original step copy, mobile reading flow, and reduced-motion fallback are retained.
+
+**Verified evidence:** `qa/homepage-qa-report.json` and screenshots in `qa/screenshots/`. Browser QA passed for all four stage transitions in both directions, four distinct photographs, click controls, pinned stage position, restored invitation, Books dropdown, nine viewport widths, and reduced motion. Final visual acceptance, physical-device, and full accessibility checks remain open.
+
+The future `/books/` page remains documented but unbuilt. The newsletter field in this public static preview cannot collect email addresses.
+
+
+
 Read this at the beginning of any future homepage design, static preview or GitHub Pages task.
 
 ## Permanent repository references

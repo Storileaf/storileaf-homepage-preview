@@ -1,5 +1,9 @@
 # StoriLeaf homepage UI preview
 
+**Current homepage preview, 18 October 2026.** The How it works stages are compact and use an independent scroll runway. The original FAQ final invitation has been restored before the newsletter. The future six-book overview page remains unbuilt. See [REPOSITORY_HANDOFF.md](REPOSITORY_HANDOFF.md) and `qa/homepage-qa-report.json` for the specific implementation and QA results.
+
+
+
 A standalone **frontend-only** design preview for StoriLeaf. It is not the production website or customer application.
 
 **Live GitHub Pages homepage preview (verified 16 October 2026)**
