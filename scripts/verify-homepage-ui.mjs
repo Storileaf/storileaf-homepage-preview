@@ -61,6 +61,58 @@ try {
   check(coverState.failedImages === 0, 'A local hero cover image is missing or broken')
   check(coverState.outerRadius === '665.5px' && coverState.innerRadius === '345px', 'Outer orbit radius must increase by 10%, while inner stays unchanged')
   await desktop.locator('.hero').screenshot({ path:path.join(folder,'hero-fourteen-covers-desktop.png'), animations:'disabled' })
+
+  // The founder-approved book introductions and points are displayed for all six tabs.
+  // Desktop copies share the exact top-left start and bottom-left CTA position.
+  const bookCopyExpected = [{"slug":"life-story","description":"A personal memoir of the people, places and experiences that shaped a life.","points":["Childhood, family and the places you called home","Choices, relationships and defining moments","Reflections, values and lessons worth passing on"]},{"slug":"travel-memoir","description":"A book about the journeys you remember for more than the places you visited.","points":["How each journey began and what drew you there","Unexpected detours, discoveries and people you met","The experiences that changed how you saw the world"]},{"slug":"relationship-memoir","description":"A memoir of your shared years, from how you met to the life you've built together.","points":["The early days and memories that brought you closer","Shared traditions, milestones and ordinary moments","The changes, challenges and joys you've experienced together"]},{"slug":"founders-memoir","description":"The personal story behind building a business, beyond the milestones others see.","points":["The original idea, purpose and people who helped you begin","Important decisions, turning points and moments of growth","Lessons, reflections and the values behind your work"]},{"slug":"parent-to-child-letters","description":"A collection of personal letters with the stories and guidance you want your child to have.","points":["Experiences and lessons from your own life","Advice about work, money and relationships","Hopes and words of reassurance for the years ahead"]},{"slug":"celebrating-occasions","description":"A book about one meaningful celebration and the people and moments that made it special.","points":["The planning, anticipation and details behind the occasion","Speeches, surprises and moments from the day","Memories and reflections from the people involved"]}];
+  const desktopBookGeometry = []
+  const bookTabs = desktop.locator('.book-tab-trigger')
+  check(await bookTabs.count() === 6, 'Discovery tab count should remain six')
+  for (const book of bookCopyExpected) {
+    await desktop.locator('[data-testid="book-' + book.slug + '"]').click()
+    await desktop.waitForTimeout(170)
+    const panel = desktop.locator('.book-detail-stage[data-state="active"]')
+    check(await panel.count() === 1, 'One selected book panel must be visible')
+    const result = await panel.evaluate((el) => {
+      const rect = selector => {const r=el.querySelector(selector).getBoundingClientRect();return {top:r.top,left:r.left,bottom:r.bottom,height:r.height}}
+      return {
+        intro:el.querySelector('.book-detail-intro')?.textContent ?? '',
+        points:[...el.querySelectorAll('.book-detail-points li')].map(li => li.textContent),
+        link:el.querySelector('.book-detail-copy .button')?.getAttribute('href'),
+        geometry:{panel:rect(':scope'),intro:rect('.book-detail-intro'),list:rect('.book-detail-points'),button:rect('.book-detail-copy .button'),photo:rect('.book-detail-visual')},
+        buttonText:el.querySelector('.book-detail-copy .button')?.textContent.trim() ?? '',
+        copyStyle:getComputedStyle(el.querySelector('.book-detail-copy')).justifyContent
+      }
+    })
+    check(result.intro === book.description, 'Description mismatch in '+book.slug)
+    check(JSON.stringify(result.points) === JSON.stringify(book.points), 'Bullet points mismatch in '+book.slug)
+    check(result.points.length >= 2 && result.points.length <= 4, 'Book panel should support two to four bullets')
+    check(result.link === 'https://storileaf.com/'+book.slug+'/', 'Book destination changed for '+book.slug)
+    check(result.buttonText.includes('Explore this book'), 'CTA label changed for '+book.slug)
+    check(result.copyStyle === 'flex-start', 'Book text remains vertically centred for '+book.slug)
+    check(result.geometry.button.bottom < result.geometry.panel.bottom-8, 'Book CTA outside panel in '+book.slug)
+    check(result.geometry.list.bottom < result.geometry.button.top, 'Book copy overlaps CTA in '+book.slug)
+    check(result.geometry.intro.top < result.geometry.list.top, 'Book description must appear above bullets in '+book.slug)
+    check(result.geometry.list.bottom < result.geometry.panel.bottom, 'Book text is clipped in '+book.slug)
+    desktopBookGeometry.push({slug:book.slug,...result.geometry})
+    await panel.screenshot({path:path.join(folder,'book-discovery-'+book.slug+'-desktop.png'),animations:'disabled'})
+  }
+
+  const spread = get => Math.round((Math.max(...desktopBookGeometry.map(get))-Math.min(...desktopBookGeometry.map(get)))*10)/10
+  observations.bookDiscovery = {
+    descriptionsVerified:desktopBookGeometry.length,
+    introTopVariation:spread(row=>row.intro.top),
+    introLeftVariation:spread(row=>row.intro.left),
+    buttonBottomVariation:spread(row=>row.button.bottom),
+    buttonLeftVariation:spread(row=>row.button.left),
+    panelHeightVariation:spread(row=>row.panel.height),
+    photographTopVariation:spread(row=>row.photo.top)
+  }
+  check(observations.bookDiscovery.introTopVariation <= 1 && observations.bookDiscovery.introLeftVariation <= 1, 'Book text starting position shifts across tabs')
+  check(observations.bookDiscovery.buttonBottomVariation <= 1 && observations.bookDiscovery.buttonLeftVariation <= 1, 'Book CTA position shifts across tabs')
+  check(observations.bookDiscovery.panelHeightVariation <= 1 && observations.bookDiscovery.photographTopVariation <= 1, 'Book panel or photograph size shifts between tabs')
+  await desktop.locator('[data-testid="book-life-story"]').click()
+
   const steps = desktop.locator('.process-steps li')
   const heights = await steps.evaluateAll(els => els.map(el => Math.round(el.getBoundingClientRect().height)))
   observations.desktopStepHeights = heights
@@ -239,6 +291,21 @@ try {
   observations.mobileHero = {count:mobileCovers,outerRadius:mobileOuterRadius}
   check(mobileCovers === 14 && mobileOuterRadius === '412.5px', 'Mobile hero must retain all fourteen covers and the 10% wider outer radius')
   await desktop.locator('.hero').screenshot({ path:path.join(folder,'hero-fourteen-covers-mobile.png'), animations:'disabled' })
+  for (const book of bookCopyExpected) {
+    await desktop.locator('[data-testid="book-' + book.slug + '"]').click()
+    await desktop.waitForTimeout(75)
+    const el = desktop.locator('.book-detail-stage[data-state="active"]')
+    const metrics = await el.evaluate(panel => {
+      const description = panel.querySelector('.book-detail-intro').getBoundingClientRect()
+      const points = panel.querySelector('.book-detail-points').getBoundingClientRect()
+      const button = panel.querySelector('.button').getBoundingClientRect()
+      const panelRect = panel.getBoundingClientRect()
+      return {descriptionTop:description.top,pointsTop:points.top,pointsBottom:points.bottom,buttonTop:button.top,buttonBottom:button.bottom,panelBottom:panelRect.bottom}
+    })
+    check(metrics.descriptionTop < metrics.pointsTop && metrics.pointsBottom < metrics.buttonTop && metrics.buttonBottom <= metrics.panelBottom, 'Mobile book layout overlaps or clips '+book.slug)
+  }
+  await desktop.locator('[data-testid="book-parent-to-child-letters"]').click()
+  await desktop.locator('.book-detail-stage[data-state="active"]').screenshot({path:path.join(folder,'book-discovery-parent-to-child-letters-mobile.png'),animations:'disabled'})
   await desktop.locator('#how-it-works').scrollIntoViewIfNeeded()
   const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
     first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,

@@ -7833,36 +7833,44 @@ function TabsContent({ className, ...props }) {
 }
 //#endregion
 //#region src/components/storileaf/book-discovery.tsx
+var bookPanelIntroductions = {
+	"life-story": "A personal memoir of the people, places and experiences that shaped a life.",
+	"travel-memoir": "A book about the journeys you remember for more than the places you visited.",
+	"relationship-memoir": "A memoir of your shared years, from how you met to the life you've built together.",
+	"founders-memoir": "The personal story behind building a business, beyond the milestones others see.",
+	"parent-to-child-letters": "A collection of personal letters with the stories and guidance you want your child to have.",
+	"celebrating-occasions": "A book about one meaningful celebration and the people and moments that made it special."
+};
 var bookPoints = {
 	"life-story": [
-		"The people and places that shaped your early years",
-		"The choices and turning points along the way",
-		"The everyday moments you want to remember"
+		"Childhood, family and the places you called home",
+		"Choices, relationships and defining moments",
+		"Reflections, values and lessons worth passing on"
 	],
 	"travel-memoir": [
-		"The journeys that stayed with you",
-		"The people, places and unexpected detours",
-		"The experiences behind your favourite photographs"
+		"How each journey began and what drew you there",
+		"Unexpected detours, discoveries and people you met",
+		"The experiences that changed how you saw the world"
 	],
 	"relationship-memoir": [
-		"How you met and the memories you share",
-		"The changes and challenges you navigated together",
-		"The ordinary moments that became your story"
+		"The early days and memories that brought you closer",
+		"Shared traditions, milestones and ordinary moments",
+		"The changes, challenges and joys you've experienced together"
 	],
 	"founders-memoir": [
-		"What first made you begin",
-		"The people and decisions that shaped your journey",
-		"The turning points and lessons that stayed with you"
+		"The original idea, purpose and people who helped you begin",
+		"Important decisions, turning points and moments of growth",
+		"Lessons, reflections and the values behind your work"
 	],
 	"parent-to-child-letters": [
-		"The memories you want to pass on",
-		"The things you have learnt along the way",
-		"The words you want your child to return to"
+		"Experiences and lessons from your own life",
+		"Advice about work, money and relationships",
+		"Hopes and words of reassurance for the years ahead"
 	],
 	"celebrating-occasions": [
-		"The occasion that brought everyone together",
-		"The people and perspectives behind the day",
-		"The moments worth holding on to afterwards"
+		"The planning, anticipation and details behind the occasion",
+		"Speeches, surprises and moments from the day",
+		"Memories and reflections from the people involved"
 	]
 };
 function TrustBand() {
@@ -7954,7 +7962,10 @@ function BookDiscovery({ currency: _currency }) {
 					"data-testid": "book-detail-stage",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "book-detail-copy",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "book-detail-intro",
+							children: bookPanelIntroductions[book.slug]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 							className: "book-detail-points",
 							children: bookPoints[book.slug]?.map((point) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: point }, point))
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
