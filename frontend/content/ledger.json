@@ -93,251 +93,329 @@
     {
       "id": "shared.newsletter.title.prefix",
       "copy": "A good question,",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.newsletter.title.emphasis",
       "copy": "now and then.",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.newsletter.description",
       "copy": "Story prompts, thoughtful ideas and occasional notes from StoriLeaf.",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.newsletter.email.label",
       "copy": "Email address",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.newsletter.email.placeholder",
       "copy": "Your email address",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.newsletter.subscribe",
       "copy": "Subscribe",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/#newsletter-heading"
+      "href": "https://storileaf.com/#newsletter-heading",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.brand.description",
       "copy": "Real stories, made into books to keep and share.",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.books.heading",
       "copy": "The books",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.explore.heading",
       "copy": "Explore",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.help.heading",
       "copy": "Here to help",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.copyright",
       "copy": "© 2026 StoriLeaf",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.books.life",
       "copy": "Life Story",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/life-story/"
+      "href": "https://storileaf.com/life-story/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.books.travel",
       "copy": "Travel Memoir",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/travel-memoir/"
+      "href": "https://storileaf.com/travel-memoir/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.books.relationship",
       "copy": "Relationship Memoir",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/relationship-memoir/"
+      "href": "https://storileaf.com/relationship-memoir/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.books.founder",
       "copy": "Founder's Memoir",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/founders-memoir/"
+      "href": "https://storileaf.com/founders-memoir/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.books.letters",
       "copy": "Parent to Child Letters",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/parent-to-child-letters/"
+      "href": "https://storileaf.com/parent-to-child-letters/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.books.occasions",
       "copy": "Celebrating Occasions",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/celebrating-occasions/"
+      "href": "https://storileaf.com/celebrating-occasions/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.gift",
       "copy": "Gift a book",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/gift/"
+      "href": "https://storileaf.com/gift/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.blog",
       "copy": "Blog & guides",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/blog/"
+      "href": "https://storileaf.com/blog/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.about",
       "copy": "Our story",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/about/"
+      "href": "https://storileaf.com/about/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.contact",
       "copy": "Contact us",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/contact/"
+      "href": "https://storileaf.com/contact/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.shipping",
       "copy": "Shipping and returns",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/shipping-returns/"
+      "href": "https://storileaf.com/shipping-returns/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.login",
       "copy": "Log in",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://app.storileaf.com/login"
+      "href": "https://app.storileaf.com/login",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.privacy",
       "copy": "Privacy",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/privacy/"
+      "href": "https://storileaf.com/privacy/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.terms",
       "copy": "Terms",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/terms-conditions/"
+      "href": "https://storileaf.com/terms-conditions/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.get_in_touch",
       "copy": "Get in touch",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
       "public": true,
       "destination_state": "existing_verified",
-      "href": "https://storileaf.com/contact/"
+      "href": "https://storileaf.com/contact/",
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "destination_verified_on": "2026-10-18"
     },
     {
       "id": "shared.footer.internal.see_inside",
       "copy": "See inside",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.internal.how_it_works",
       "copy": "How it works",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.internal.pricing",
       "copy": "Pricing",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.internal.resources",
       "copy": "Resources",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     },
     {
       "id": "shared.footer.internal.questions",
       "copy": "Common questions",
-      "status": "implemented_verified",
+      "status": "founder_approved",
       "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
-      "public": true
+      "public": true,
+      "approved_on": "2026-10-18",
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
     }
   ]
 }
