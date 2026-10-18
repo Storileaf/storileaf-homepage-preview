@@ -11341,3 +11341,7 @@ section[id] {
 @media (min-width:901px) and (max-width:1100px) and (min-height:731px) and (prefers-reduced-motion:no-preference) {
   .process-grid { top:120px; }
 }
+
+/* The outer dividers are omitted on phone and desktop alike. */
+.process-steps li:first-child { border-top:0; }
+.process-steps li:last-child { border-bottom:0; }

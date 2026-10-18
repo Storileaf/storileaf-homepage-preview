@@ -130,6 +130,13 @@ try {
   await desktop.goto(base,{waitUntil:'domcontentloaded'})
   await desktop.waitForTimeout(1100)
   await desktop.locator('#how-it-works').scrollIntoViewIfNeeded()
+  const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
+    first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,
+    last:getComputedStyle(el.querySelector('li:last-child')).borderBottomWidth,
+    middle:getComputedStyle(el.querySelector('li:nth-child(2)')).borderBottomWidth
+  }))
+  observations.mobileDividers = mobileDividers
+  check(mobileDividers.first === '0px' && mobileDividers.last === '0px' && mobileDividers.middle !== '0px', 'Mobile outer dividers should be removed, inner dividers retained')
   check(await desktop.locator('.process-copy').evaluate(el => getComputedStyle(el).display) !== 'contents', 'Mobile should retain normal process reading order')
   await desktop.locator('#how-it-works').screenshot({ path:path.join(folder,'process-mobile.png'), animations:'disabled' })
   await desktop.locator('.final-invitation').scrollIntoViewIfNeeded()
