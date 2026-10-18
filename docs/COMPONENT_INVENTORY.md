@@ -17,7 +17,7 @@ The active design authority is [Public Design System](PUBLIC_DESIGN_SYSTEM.md).
 | Writing showcase | Published device display and interim dialog | Not yet migrated | Keep current interim action until separate page |
 | Gifting | Published editorial invitation | Not yet migrated | Exact buyer/Storyteller distinction |
 | FAQs | Published interactive disclosure | Not yet migrated | Copy, focus, open/close, typography review |
-| Newsletter and footer | Approved combined image-to-forest unit | Not yet migrated | Build shared sitewide component, preserve external destination |
+| Newsletter and footer | Approved combined image-to-forest unit | Source reference NewsletterFooter with typed route/currency props; not yet parity accepted | Compare full desktop/mobile geometry and interactions before cutover |
 | Pricing | Published protected preview route | Not yet migrated | Validate currency-aware route and source facts before any cutover |
 
 **Rule.** Do not describe a component as migrated because a React reference has a similar appearance. Only the original published homepage is live. Keep new source builds isolated until exact static/interactive parity and founder approval.

@@ -89,6 +89,255 @@
       "href": null,
       "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
       "approved_on": "2026-10-18"
+    },
+    {
+      "id": "shared.newsletter.title.prefix",
+      "copy": "A good question,",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.newsletter.title.emphasis",
+      "copy": "now and then.",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.newsletter.description",
+      "copy": "Story prompts, thoughtful ideas and occasional notes from StoriLeaf.",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.newsletter.email.label",
+      "copy": "Email address",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.newsletter.email.placeholder",
+      "copy": "Your email address",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.newsletter.subscribe",
+      "copy": "Subscribe",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/#newsletter-heading"
+    },
+    {
+      "id": "shared.footer.brand.description",
+      "copy": "Real stories, made into books to keep and share.",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.books.heading",
+      "copy": "The books",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.explore.heading",
+      "copy": "Explore",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.help.heading",
+      "copy": "Here to help",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.copyright",
+      "copy": "© 2026 StoriLeaf",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.books.life",
+      "copy": "Life Story",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/life-story/"
+    },
+    {
+      "id": "shared.footer.books.travel",
+      "copy": "Travel Memoir",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/travel-memoir/"
+    },
+    {
+      "id": "shared.footer.books.relationship",
+      "copy": "Relationship Memoir",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/relationship-memoir/"
+    },
+    {
+      "id": "shared.footer.books.founder",
+      "copy": "Founder's Memoir",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/founders-memoir/"
+    },
+    {
+      "id": "shared.footer.books.letters",
+      "copy": "Parent to Child Letters",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/parent-to-child-letters/"
+    },
+    {
+      "id": "shared.footer.books.occasions",
+      "copy": "Celebrating Occasions",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/celebrating-occasions/"
+    },
+    {
+      "id": "shared.footer.gift",
+      "copy": "Gift a book",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/gift/"
+    },
+    {
+      "id": "shared.footer.blog",
+      "copy": "Blog & guides",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/blog/"
+    },
+    {
+      "id": "shared.footer.about",
+      "copy": "Our story",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/about/"
+    },
+    {
+      "id": "shared.footer.contact",
+      "copy": "Contact us",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/contact/"
+    },
+    {
+      "id": "shared.footer.shipping",
+      "copy": "Shipping and returns",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/shipping-returns/"
+    },
+    {
+      "id": "shared.footer.login",
+      "copy": "Log in",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://app.storileaf.com/login"
+    },
+    {
+      "id": "shared.footer.privacy",
+      "copy": "Privacy",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/privacy/"
+    },
+    {
+      "id": "shared.footer.terms",
+      "copy": "Terms",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/terms-conditions/"
+    },
+    {
+      "id": "shared.footer.getInTouch",
+      "copy": "Get in touch",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true,
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/contact/"
+    },
+    {
+      "id": "shared.footer.internal.seeInside",
+      "copy": "See inside",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.internal.howItWorks",
+      "copy": "How it works",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.internal.pricing",
+      "copy": "Pricing",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.internal.resources",
+      "copy": "Resources",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
+    },
+    {
+      "id": "shared.footer.internal.questions",
+      "copy": "Common questions",
+      "status": "implemented_verified",
+      "source": "Current published StoriLeaf homepage at approved static baseline 99acdf7 (18 October 2026)",
+      "public": true
     }
   ]
 }

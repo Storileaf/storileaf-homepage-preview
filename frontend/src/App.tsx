@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { NewsletterFooter, type Currency } from './components/NewsletterFooter'
 import { EditorialHeading } from './components/EditorialHeading'
 import { ResourceCategoryCard } from './components/ResourceCategoryCard'
 import { ActionLink } from './components/ActionLink'
@@ -6,6 +8,7 @@ import { approvedCopy, verifiedHref } from './content'
 // This is a source-driven component reference, NOT the full published homepage.
 // Do not deploy this in place of the current GitHub Pages root until parity.
 export function App() {
+  const [currency,setCurrency]=useState<Currency>('inr')
   return <div className="sl-site"><main id="main-content"><section className="sl-reference-section" aria-labelledby="sl-resources-title"><div className="sl-container">
     <EditorialHeading id="sl-resources-title" title="A little curiosity" emphasis="can go a long way." introduction={approvedCopy('home.resources.intro')} />
     <div className="sl-resources-grid">
@@ -13,5 +16,14 @@ export function App() {
       <ResourceCategoryCard title={approvedCopy('home.resources.guides.title')} description={approvedCopy('home.resources.guides.description')} action={approvedCopy('home.resources.guides.cta')} href={verifiedHref('home.resources.guides.cta')} image="https://storileaf.com/images/brand/collections/relationship-memoir/storileaf-relationship-memoir-hands-photographs-cafe-square-800.webp" alt="Photographs on a café table beside two people's hands" imageWidth={800} imageHeight={800} />
     </div>
     <div className="sl-centred-action"><ActionLink>{approvedCopy('home.resources.all.cta')}</ActionLink></div>
-  </div></section></main></div>
+  </div></section></main>
+    <NewsletterFooter currency={currency} onCurrencyChange={setCurrency} routes={{
+      home:'https://storileaf.github.io/storileaf-homepage-preview/#top',
+      seeInside:'https://storileaf.github.io/storileaf-homepage-preview/#samples',
+      howItWorks:'https://storileaf.github.io/storileaf-homepage-preview/#how-it-works',
+      pricing:'https://storileaf.github.io/storileaf-homepage-preview/pricing/inr',
+      resources:'https://storileaf.github.io/storileaf-homepage-preview/#resources',
+      questions:'https://storileaf.github.io/storileaf-homepage-preview/#questions',
+    }} />
+  </div>
 }

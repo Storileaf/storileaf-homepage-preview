@@ -44,3 +44,13 @@ test('font loading is explicit in the source preview',()=>{
   assert.ok(html.includes('family=Newsreader:'))
   assert.ok(html.includes('family=Manrope:'))
 })
+
+test('shared newsletter and footer use one photo field with verified CTAs',()=>{
+  const source=readFileSync(new URL('../src/components/NewsletterFooter.tsx',import.meta.url),'utf8')
+  const styles=readFileSync(new URL('../src/styles/components.css',import.meta.url),'utf8')
+  assert.ok(source.includes('className="sl-newsletter-footer"'))
+  assert.ok(source.includes("verifiedHref('shared.newsletter.subscribe')"))
+  assert.ok(source.includes('routes: FooterRoutes'))
+  assert.ok(styles.includes('.sl-newsletter-footer::before'))
+  assert.ok(styles.includes('.sl-newsletter-footer::after'))
+})
