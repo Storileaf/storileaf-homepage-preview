@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T20:19:00.533Z",
-  "commit": "f70e44c06d1b4a7aeaa67dfa499c5cbc6d94ed29",
+  "date": "2026-10-18T20:21:29.114Z",
+  "commit": "3fdb5fb43c042b01bca972709488419c4a96803b",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -370,6 +370,7 @@
       "1",
       "0"
     ],
+    "newsletterImageLoaded": true,
     "bookMenuVisible": true,
     "resourceMenuVisible": true,
     "resourceMenuLinks": [
@@ -493,7 +494,5 @@
     },
     "prefersReducedMotion": true
   },
-  "problems": [
-    "Process step 1 click failed"
-  ]
+  "problems": []
 }
