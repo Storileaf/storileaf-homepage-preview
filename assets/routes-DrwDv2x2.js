@@ -328,14 +328,6 @@ function SampleGallery() {
 					]
 				})]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "page-width samples-frame samples-bottom",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: `${LIVE_SITE}/book-preview/`,
-					className: "text-link",
-					children: ["See more inside the books ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
-				})
-			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog, {
 				open: opened !== null,
 				onOpenChange: (open) => {

@@ -113,6 +113,28 @@ try {
   check(observations.bookDiscovery.panelHeightVariation <= 1 && observations.bookDiscovery.photographTopVariation <= 1, 'Book panel or photograph size shifts between tabs')
   await desktop.locator('[data-testid="book-life-story"]').click()
 
+  const physicalBook = await desktop.locator('.book-craft').evaluate(el => {
+    const section = el.closest('.samples-section')
+    const link = el.querySelector('.book-craft-copy > a.text-link')
+    const details = [...el.querySelectorAll('.book-craft-detail')]
+    return {
+      imageCount:el.querySelectorAll('.book-craft-image img').length,
+      detailLabels:details.map(row => row.querySelector('.small-label')?.textContent.trim()),
+      ctaText:link?.textContent.trim(),ctaHref:link?.getAttribute('href'),
+      detachedLinks:section.querySelectorAll('.samples-bottom').length,
+      detailsBeforeCTA:details.at(-1).getBoundingClientRect().bottom < link.getBoundingClientRect().top,
+      paddingBottom:getComputedStyle(section).paddingBottom
+    }
+  })
+  observations.physicalBookSingleCTA = physicalBook
+  check(physicalBook.imageCount === 1, 'Physical book image was removed')
+  check(JSON.stringify(physicalBook.detailLabels) === JSON.stringify(['Printed copy','Binding and finish','Before print']), 'Physical details were changed')
+  check(physicalBook.ctaHref === 'https://storileaf.com/pricing/' && physicalBook.ctaText.includes('See package details'), 'Pricing CTA changed')
+  check(physicalBook.detachedLinks === 0 && await desktop.getByText('See more inside the books').count() === 0, 'Rejected extra CTA still appears')
+  check(physicalBook.detailsBeforeCTA && physicalBook.paddingBottom === '80px', 'Desktop CTA placement or lower spacing incorrect')
+  await desktop.locator('.book-craft').screenshot({path:path.join(folder,'physical-book-single-cta-desktop.png'),animations:'disabled'})
+  await desktop.locator('.samples-section').screenshot({path:path.join(folder,'samples-section-one-cta-desktop.png'),animations:'disabled'})
+
   const steps = desktop.locator('.process-steps li')
   const heights = await steps.evaluateAll(els => els.map(el => Math.round(el.getBoundingClientRect().height)))
   observations.desktopStepHeights = heights
@@ -307,7 +329,20 @@ try {
   await desktop.locator('[data-testid="book-parent-to-child-letters"]').click()
   await desktop.locator('.book-detail-stage[data-state="active"]').screenshot({path:path.join(folder,'book-discovery-parent-to-child-letters-mobile.png'),animations:'disabled'})
   await desktop.locator('#how-it-works').scrollIntoViewIfNeeded()
-  const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
+  const physicalBookMobile = await desktop.locator('.book-craft').evaluate(el => {
+    const section=el.closest('.samples-section')
+    return {
+      detached:section.querySelectorAll('.samples-bottom').length,
+      details:el.querySelectorAll('.book-craft-detail').length,
+      cta:el.querySelector('.book-craft-copy > a.text-link')?.getAttribute('href'),
+      paddingBottom:getComputedStyle(section).paddingBottom
+    }
+  })
+  observations.physicalBookMobile = physicalBookMobile
+  check(physicalBookMobile.detached === 0 && physicalBookMobile.details === 3, 'Mobile physical book section incomplete')
+  check(physicalBookMobile.cta === 'https://storileaf.com/pricing/' && physicalBookMobile.paddingBottom === '66px', 'Mobile pricing CTA or bottom spacing changed')
+  await desktop.locator('.book-craft').screenshot({path:path.join(folder,'physical-book-single-cta-mobile.png'),animations:'disabled'})
+    const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
     first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,
     last:getComputedStyle(el.querySelector('li:last-child')).borderBottomWidth,
     middle:getComputedStyle(el.querySelector('li:nth-child(2)')).borderBottomWidth

@@ -11394,3 +11394,7 @@ section[id] {
   .book-detail-points li { line-height:1.5; }
   .book-detail-copy > .button { margin-top:6px; }
 }
+
+/* Founder-approved physical book link simplification, 18 October 2026. */
+.samples-section { padding-bottom:80px; }
+@media (max-width:720px) { .samples-section { padding-bottom:66px; } }
