@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T21:12:22.664Z",
-  "commit": "ba66cd63825d84a0112c89152c8420e3dd47e1a7",
+  "date": "2026-10-18T21:25:25.595Z",
+  "commit": "44640b27ad26550403226cdc84c2775e2caa076f",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -457,6 +457,11 @@
       "footerOverflow": "visible",
       "unitOverflow": "hidden"
     },
+    "writingPracticeCTA": {
+      "label": "Try answering a question",
+      "opensDialog": true,
+      "questionUnchanged": true
+    },
     "bookMenuVisible": true,
     "resourceMenuVisible": true,
     "resourceMenuLinks": [
@@ -495,12 +500,12 @@
         350
       ],
       "cardTops": [
-        -85,
-        327
+        173,
+        585
       ],
       "cardBottoms": [
-        305,
-        716
+        563,
+        974
       ],
       "stacked": true,
       "withinViewport": true,
