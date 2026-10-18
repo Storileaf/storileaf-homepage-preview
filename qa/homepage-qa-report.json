@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T20:21:29.114Z",
-  "commit": "3fdb5fb43c042b01bca972709488419c4a96803b",
+  "date": "2026-10-18T20:33:34.500Z",
+  "commit": "2f17c273050e4c77b109c956688b2e5daad27085",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -274,7 +274,7 @@
     "processRunwayHeight": 640,
     "newsletterVisual": {
       "image": "url(\"https://storileaf.com/images/brand/brand/storileaf-family-archive-books-hero-1440.webp\")",
-      "overlay": "linear-gradient(100deg, rgba(23, 41, 29, 0.94) 0%, rgba(23, 41, 29, 0.88) 43%, rgba(23, 41, 29, 0.72) 100%)",
+      "overlay": "linear-gradient(rgba(23, 41, 29, 0.83) 0%, rgba(23, 41, 29, 0.86) 34%, rgba(37, 53, 38, 0.87) 49%, rgba(37, 53, 38, 0.95) 67%, rgb(37, 53, 38) 84%, rgb(37, 53, 38) 100%)",
       "background": "rgb(37, 53, 38)",
       "inputDisabled": false
     },
@@ -371,6 +371,21 @@
       "0"
     ],
     "newsletterImageLoaded": true,
+    "newsletterFooterJoin": {
+      "childCount": 2,
+      "image": "url(\"https://storileaf.com/images/brand/brand/storileaf-family-archive-books-hero-1440.webp\")",
+      "fade": "linear-gradient(rgba(23, 41, 29, 0.83) 0%, rgba(23, 41, 29, 0.86) 34%, rgba(37, 53, 38, 0.87) 49%, rgba(37, 53, 38, 0.95) 67%, rgb(37, 53, 38) 84%, rgb(37, 53, 38) 100%)",
+      "newsletterBorder": "0px",
+      "newsletterFill": "rgba(0, 0, 0, 0)",
+      "footerFill": "rgba(0, 0, 0, 0)",
+      "copyrightFont": "13px",
+      "legalFont": "13px",
+      "copyrightLineHeight": "20.15px",
+      "legalLineHeight": "20.15px",
+      "contactText": "Get in touch",
+      "contactArrowCount": 0,
+      "contactHref": "https://storileaf.com/contact/"
+    },
     "bookMenuVisible": true,
     "resourceMenuVisible": true,
     "resourceMenuLinks": [
@@ -486,6 +501,15 @@
       "first": "0px",
       "last": "0px",
       "middle": "1px"
+    },
+    "mobileFooterJoin": {
+      "wrapperWidth": 390,
+      "newsletterWidth": 390,
+      "footerWidth": 390,
+      "contact": "Get in touch",
+      "copyrightFont": "13px",
+      "legalFont": "13px",
+      "editable": true
     },
     "mobileNewsletter": {
       "editable": true,
