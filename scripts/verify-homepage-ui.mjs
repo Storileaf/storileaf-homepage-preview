@@ -17,6 +17,25 @@ try {
   await desktop.goto(base, { waitUntil: 'domcontentloaded' })
   await desktop.waitForTimeout(1300)
   observations.title = await desktop.title()
+  observations.headerAlignment = await desktop.evaluate(() => {
+    const nav = document.querySelector('.desktop-nav-list')
+    const centre = r => (r.top + r.bottom) / 2
+    const round = n => Math.round(n * 10) / 10
+    const controls = [...nav.querySelectorAll(':scope > li > .header-nav-trigger, :scope > li > .header-simple-link')]
+    return controls.map(el => {
+      const content = [...el.childNodes].find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim())
+      const textRange = document.createRange()
+      textRange.selectNodeContents(content)
+      const glyph = textRange.getBoundingClientRect(), control = el.getBoundingClientRect()
+      const parent = el.parentElement.getBoundingClientRect(), s = getComputedStyle(el)
+      const icon = el.querySelector('svg')
+      return {label:el.textContent.trim(),type:el.tagName, textTop:round(glyph.top), textCentre:round(centre(glyph)),
+        elementTop:round(control.top),elementCentre:round(centre(control)),height:round(control.height),
+        parentCentre:round(centre(parent)),font:s.font,lineHeight:s.lineHeight,paddingTop:s.paddingTop,paddingBottom:s.paddingBottom,
+        transform:s.transform,svgCentre:icon?round(centre(icon.getBoundingClientRect())):null}
+    })
+  })
+  await desktop.locator('.site-header').screenshot({ path:path.join(folder,'header-before-alignment.png'), animations:'disabled' })
   check(await desktop.getByRole('heading', { name: /The stories of your life/i }).count() > 0, 'Homepage hero absent')
   const coverState = await desktop.evaluate(() => {
     const inner = document.querySelectorAll('.hero-orbit-inner .hero-orbit-square');
