@@ -575,6 +575,17 @@ try {
   check(desktopFooterBounds.copyright.bottom<=desktopFooterBounds.unit.bottom+2, 'Footer copyright clipped by newsletter unit')
   await desktop.locator('.footer-bottom').screenshot({path:path.join(folder,'footer-bottom-desktop.png'),animations:'disabled'})
   await desktop.locator('.newsletter-footer-unit').screenshot({ path:path.join(folder,'newsletter-footer-desktop.png'), animations:'disabled' })
+  const writingCTA=desktop.locator('[data-testid="try-question"]')
+  check((await writingCTA.innerText()).trim()==='Try answering a question', 'Writing preview CTA wording incorrect')
+  await writingCTA.click()
+  const writingDialog=desktop.locator('.question-dialog')
+  check(await writingDialog.isVisible(), 'Existing writing practice dialog no longer opens')
+  check(await writingDialog.getByRole('heading',{name:'What do you remember about the home you grew up in?'}).count()===1,
+    'Existing writing practice question changed')
+  await writingDialog.screenshot({path:path.join(folder,'writing-practice-dialog-desktop.png'),animations:'disabled'})
+  await writingDialog.getByRole('button',{name:'Close',exact:true}).click()
+  check(await desktop.locator('.question-dialog').count()===0, 'Writing dialog did not close')
+  observations.writingPracticeCTA={label:'Try answering a question',opensDialog:true,questionUnchanged:true}
   const booksTrigger = desktop.getByRole('button', {name:'The books', exact:true}).first()
   await booksTrigger.hover()
   await desktop.waitForTimeout(320)

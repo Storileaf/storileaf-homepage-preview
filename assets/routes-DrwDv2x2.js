@@ -562,7 +562,7 @@ function DeviceShowcase() {
 								type: "button",
 								className: "button button-outline",
 								"data-testid": "try-question",
-								children: ["Try a writing prompt ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
+								children: ["Try answering a question ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { name: "arrow" })]
 							})
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogPortal, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogOverlay, { className: "dialog-overlay" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
 							className: "dialog-content question-dialog",
