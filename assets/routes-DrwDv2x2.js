@@ -225,26 +225,59 @@ function SampleGallery() {
 							className: "book-craft-details",
 							children: [
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "book-craft-detail",
+								className: "book-craft-detail",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "book-craft-detail-heading",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "small-label",
-										children: "Printed copy"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Included with every package." })]
-								}),
+										className: "book-craft-detail-icon",
+										"aria-hidden": "true",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+											width: "24", height: "24", viewBox: "0 0 24 24", fill: "none",
+											stroke: "currentColor", strokeWidth: "1.65", strokeLinecap: "round", strokeLinejoin: "round",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 7c-2.7-2.1-5.8-2.7-9-1.6V19c3.2-1 6.3-.4 9 1.8" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 7c2.7-2.1 5.8-2.7 9-1.6V19c-3.2-1-6.3-.4-9 1.8" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 7v13.8" })]
+										})
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Printed copy" })]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "book-craft-detail-description",
+									children: "Included with every package."
+								})]
+							}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "book-craft-detail",
+								className: "book-craft-detail",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "book-craft-detail-heading",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "small-label",
-										children: "Binding and finish"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Package specific. Selected options include a jacketed book, premium paper or embossing." })]
-								}),
+										className: "book-craft-detail-icon",
+										"aria-hidden": "true",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+											width: "24", height: "24", viewBox: "0 0 24 24", fill: "none",
+											stroke: "currentColor", strokeWidth: "1.65", strokeLinecap: "round", strokeLinejoin: "round",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "m12 3 9 6-9 6-9-6 9-6Z" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M3 14l9 6 9-6" })]
+										})
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Binding and finish" })]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "book-craft-detail-description",
+									children: "Package specific. Selected options include a jacketed book, premium paper or embossing."
+								})]
+							}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "book-craft-detail",
+								className: "book-craft-detail",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "book-craft-detail-heading",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "small-label",
-										children: "Before print"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "You review the prepared draft first." })]
-								})
+										className: "book-craft-detail-icon",
+										"aria-hidden": "true",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+											width: "24", height: "24", viewBox: "0 0 24 24", fill: "none",
+											stroke: "currentColor", strokeWidth: "1.65", strokeLinecap: "round", strokeLinejoin: "round",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M7 3h8l4 4v13a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M15 3v5h4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "m8.5 15 2.4 2.3 4.6-4.8" })]
+										})
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", { children: "Before print" })]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "book-craft-detail-description",
+									children: "You review the prepared draft first."
+								})]
+							})
 							]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {

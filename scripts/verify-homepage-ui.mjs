@@ -225,7 +225,23 @@ try {
     const details = [...el.querySelectorAll('.book-craft-detail')]
     return {
       imageCount:el.querySelectorAll('.book-craft-image img').length,
-      detailLabels:details.map(row => row.querySelector('.small-label')?.textContent.trim()),
+      detailLabels:details.map(row => row.querySelector('h4')?.textContent.trim()),
+      detailDescriptions:details.map(row => row.querySelector('.book-craft-detail-description')?.textContent.trim()),
+      iconCount:el.querySelectorAll('.book-craft-detail-icon svg').length,
+      detailLayout:details.map(row => {
+        const heading=row.querySelector('.book-craft-detail-heading'),
+              icon=row.querySelector('.book-craft-detail-icon'),
+              title=row.querySelector('h4'),
+              desc=row.querySelector('.book-craft-detail-description'),
+              middle=element=>{const r=element.getBoundingClientRect();return (r.top+r.bottom)/2};
+        return {
+          headingCentreDifference:Math.abs(middle(icon)-middle(title)),
+          descriptionLeftDifference:Math.abs(desc.getBoundingClientRect().left-icon.getBoundingClientRect().left),
+          descriptionBelowHeading:desc.getBoundingClientRect().top >= heading.getBoundingClientRect().bottom,
+          display:getComputedStyle(row).display,
+          borderBottom:getComputedStyle(row).borderBottomWidth
+        }
+      }),
       ctaText:link?.textContent.trim(),ctaHref:link?.getAttribute('href'),
       detachedLinks:section.querySelectorAll('.samples-bottom').length,
       detailsBeforeCTA:details.at(-1).getBoundingClientRect().bottom < link.getBoundingClientRect().top,
@@ -235,6 +251,19 @@ try {
   observations.physicalBookSingleCTA = physicalBook
   check(physicalBook.imageCount === 1, 'Physical book image was removed')
   check(JSON.stringify(physicalBook.detailLabels) === JSON.stringify(['Printed copy','Binding and finish','Before print']), 'Physical details were changed')
+  check(JSON.stringify(physicalBook.detailDescriptions) === JSON.stringify([
+    'Included with every package.',
+    'Package specific. Selected options include a jacketed book, premium paper or embossing.',
+    'You review the prepared draft first.'
+  ]), 'Approved physical book descriptions changed')
+  check(physicalBook.iconCount === 3, 'Each physical book detail must have one icon')
+  check(physicalBook.detailLayout.every(x => x.display === 'block' && x.borderBottom === '0px'), 'Old tabular details formatting remains')
+  check(physicalBook.detailLayout.every(x => x.headingCentreDifference <= 2 && x.descriptionLeftDifference <= 1 && x.descriptionBelowHeading),
+    'Desktop icon, heading or description geometry is misaligned')
+  await desktop.locator('.book-craft-copy').screenshot({
+    path:path.join(folder,'physical-book-icon-details-desktop.png'),animations:'disabled'
+  })
+
   check(physicalBook.ctaHref === 'https://storileaf.com/pricing/' && physicalBook.ctaText.includes('See package details'), 'Pricing CTA changed')
   check(physicalBook.detachedLinks === 0 && await desktop.getByText('See more inside the books').count() === 0, 'Rejected extra CTA still appears')
   check(physicalBook.detailsBeforeCTA && physicalBook.paddingBottom === '80px', 'Desktop CTA placement or lower spacing incorrect')
@@ -497,10 +526,28 @@ try {
   })
   check(observations.mobileCraftGeometry.visible, 'Mobile Pricing CTA is not displayed')
   check(observations.mobileCraftGeometry.link.bottom <= observations.mobileCraftGeometry.craft.bottom + 2, 'Mobile Pricing CTA extends beyond the book-craft panel')
+  const mobileIconLayout = await desktop.locator('.book-craft').evaluate(el=>[...el.querySelectorAll('.book-craft-detail')].map(row=>{
+    const icon=row.querySelector('.book-craft-detail-icon').getBoundingClientRect()
+    const heading=row.querySelector('h4').getBoundingClientRect()
+    const paragraph=row.querySelector('.book-craft-detail-description').getBoundingClientRect()
+    return {
+      iconCount:row.querySelectorAll('.book-craft-detail-icon svg').length,
+      titleCentreDifference:Math.abs((icon.top+icon.bottom-heading.top-heading.bottom)/2),
+      descriptionLeftDifference:Math.abs(icon.left-paragraph.left),
+      descriptionBelowHeading:paragraph.top>=heading.bottom,
+      fits:paragraph.right<=document.documentElement.clientWidth+1
+    }
+  }))
+  observations.mobileBookIcons=mobileIconLayout
+  check(mobileIconLayout.length === 3 && mobileIconLayout.every(x=>x.iconCount === 1 &&
+    x.titleCentreDifference <= 2 && x.descriptionLeftDifference <= 1 &&
+    x.descriptionBelowHeading && x.fits), 'Mobile detail icon and copy alignment failed')
+
   await desktop.locator('.book-craft').scrollIntoViewIfNeeded()
   await desktop.waitForTimeout(150)
   await desktop.locator('.book-craft').screenshot({path:path.join(folder,'physical-book-single-cta-mobile.png'),animations:'disabled'})
   await desktop.locator('.book-craft-copy').screenshot({path:path.join(folder,'physical-book-copy-and-cta-mobile.png'),animations:'disabled'})
+  await desktop.locator('.book-craft-copy').screenshot({path:path.join(folder,'physical-book-icon-details-mobile.png'),animations:'disabled'})
   await desktop.locator('.samples-section').screenshot({path:path.join(folder,'samples-section-one-cta-mobile.png'),animations:'disabled'})
     const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
     first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,

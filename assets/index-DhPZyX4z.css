@@ -11477,3 +11477,40 @@ section[id] {
   .sample-lightbox-image { max-height:calc(100dvh - 120px); }
 }
 @media (prefers-reduced-motion:reduce) { .samples-section .sample-photo-frame img { transition:none; } }
+
+
+/* Founder-approved icon-led physical book details, 18 October 2026.
+   Decorative icons and titles share a centred row, while each description starts
+   below at the same left edge as the icon. Remove only the prior table formatting. */
+.samples-section .book-craft-details { margin-top:30px; border-top:0; }
+.samples-section .book-craft-detail {
+  display:block; padding:0; border:0; margin:0;
+  grid-template-columns:none; gap:0;
+}
+.samples-section .book-craft-detail + .book-craft-detail { margin-top:24px; }
+.samples-section .book-craft-detail-heading { display:flex; align-items:center; gap:16px; min-width:0; }
+.samples-section .book-craft-detail-icon {
+  flex:0 0 45px; width:45px; height:45px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  color:#096C55; background:#F5F3EE;
+}
+.samples-section .book-craft-detail-icon svg { display:block; width:23px; height:23px; }
+.samples-section .book-craft-detail-heading h4 {
+  margin:0; color:hsl(var(--background)); font-family:var(--font-display);
+  font-weight:600; font-size:clamp(20px,1.8vw,23px); line-height:1.2;
+  letter-spacing:-.015em; text-transform:none;
+}
+.samples-section .book-craft-detail-description {
+  margin:10px 0 0; padding:0;
+  color:hsl(var(--background) / .8); font-size:15px; font-weight:400;
+  line-height:1.65; max-width:680px;
+}
+.samples-section .book-craft-copy > .text-link { margin-top:28px; }
+@media(max-width:720px) {
+  .samples-section .book-craft-details { margin-top:26px; }
+  .samples-section .book-craft-detail + .book-craft-detail { margin-top:23px; }
+  .samples-section .book-craft-detail-heading { gap:13px; }
+  .samples-section .book-craft-detail-icon { flex-basis:42px; width:42px; height:42px; }
+  .samples-section .book-craft-detail-heading h4 { font-size:21px; }
+  .samples-section .book-craft-detail-description { margin-top:9px; font-size:15px; line-height:1.65; }
+}
