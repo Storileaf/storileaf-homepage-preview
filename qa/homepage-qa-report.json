@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T20:36:24.961Z",
-  "commit": "6e84e5558fb8231800c5d6ec2d223e74ecd887fe",
+  "date": "2026-10-18T21:00:09.019Z",
+  "commit": "d7b16b78af99ee210aeda8de889a8a95f350de51",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -156,6 +156,46 @@
         "introText": "Think of a person, a journey, the years together or a moment that stayed with you. Choose a subject to see the book it could become.",
         "titleText": "Which part of life would you like to tell?"
       }
+    },
+    "resourcesDesktop": {
+      "heading": "A little curiosity can go a long way.",
+      "intro": "Explore thoughtful questions, simple activities and practical guides to help memories become stories.",
+      "titleCentreOffset": 0,
+      "introCentreOffset": 0,
+      "labels": [
+        "Activities and games",
+        "Blog & guides"
+      ],
+      "descriptions": [
+        "Questions and playful activities that bring out stories worth sharing.",
+        "Thoughtful advice and practical ideas for capturing life's meaningful moments."
+      ],
+      "cardWidths": [
+        577,
+        577
+      ],
+      "cardHeights": [
+        563,
+        563
+      ],
+      "cardTops": [
+        380,
+        380
+      ],
+      "imageLoaded": [
+        true,
+        true
+      ],
+      "cardImages": [
+        "https://storileaf.com/images/brand/collections/life-story/life-story-family-sharing-memories-1200.webp",
+        "https://storileaf.com/images/brand/collections/relationship-memoir/storileaf-relationship-memoir-hands-photographs-cafe-square-800.webp"
+      ],
+      "blogHref": "https://storileaf.com/blog/",
+      "activityAnchorId": "resources-activity",
+      "activityHasLiveLink": false,
+      "overviewLabel": "Browse all resources",
+      "overviewHasLiveLink": false,
+      "oldInteractiveQuestion": 0
     },
     "galleryArrowPaths": {
       "left": "M20 12H5M11 5l-7 7 7 7",
@@ -388,28 +428,28 @@
     },
     "desktopFooterBounds": {
       "unit": {
-        "top": 473,
-        "bottom": 1312,
+        "top": 286,
+        "bottom": 1126,
         "height": 839
       },
       "newsletter": {
-        "top": 473,
-        "bottom": 900,
+        "top": 286,
+        "bottom": 713,
         "height": 427
       },
       "footer": {
-        "top": 900,
-        "bottom": 1312,
+        "top": 713,
+        "bottom": 1126,
         "height": 412
       },
       "bottom": {
-        "top": 1246,
-        "bottom": 1289,
+        "top": 1059,
+        "bottom": 1103,
         "height": 43
       },
       "copyright": {
-        "top": 1269,
-        "bottom": 1289,
+        "top": 1082,
+        "bottom": 1103,
         "height": 20
       },
       "newsletterBackground": "rgba(0, 0, 0, 0)",
@@ -448,6 +488,25 @@
       1280,
       1440
     ],
+    "resourcesMobile": {
+      "cardWidths": [
+        350,
+        350
+      ],
+      "cardTops": [
+        -85,
+        327
+      ],
+      "cardBottoms": [
+        305,
+        716
+      ],
+      "stacked": true,
+      "withinViewport": true,
+      "imagesLoaded": true,
+      "overviewBelow": true,
+      "headingCentreOffset": 0
+    },
     "mobileDiscoveryHeading": {
       "textBelowHeading": true,
       "sideGap": 0,
