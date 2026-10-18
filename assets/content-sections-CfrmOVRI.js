@@ -8076,7 +8076,19 @@ function Process() {
 								className: "process-step",
 								"aria-pressed": active === index,
 								"aria-controls": "process-visual",
-								onClick: () => setActive(index),
+								onClick: () => {
+									setActive(index);
+									if (typeof window.matchMedia === "function" && window.matchMedia("(min-width: 901px) and (min-height: 731px) and (prefers-reduced-motion: no-preference)").matches) {
+										const selected = root.current?.querySelectorAll(".process-step")[index];
+										if (selected) {
+											const box = selected.getBoundingClientRect();
+											window.scrollTo({
+												top: window.scrollY + box.top + box.height * .38 - window.innerHeight * .41,
+												behavior: "instant"
+											});
+										}
+									}
+								},
 								"data-testid": "process-step-" + (index + 1),
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 									className: "step-number",
