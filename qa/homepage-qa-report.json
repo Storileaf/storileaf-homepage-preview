@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-18T04:04:23.893Z",
-  "commit": "6ad872eecc2c1d33ddeddabffa55b5a7c955dd0a",
+  "date": "2026-10-18T04:07:00.165Z",
+  "commit": "590107299280ebb37dc58e3a45285cffc061cf9b",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -200,6 +200,11 @@
         "label": "Blog & guides"
       }
     ],
+    "resourcesPanelLeftOffset": 0,
+    "headerTextOffsetByWidth": {
+      "1280": 0,
+      "1440": 0
+    },
     "checkedWidths": [
       320,
       360,
