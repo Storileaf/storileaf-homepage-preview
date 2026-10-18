@@ -21,8 +21,19 @@ try {
   const steps = desktop.locator('.process-steps li')
   const heights = await steps.evaluateAll(els => els.map(el => Math.round(el.getBoundingClientRect().height)))
   observations.desktopStepHeights = heights
-  check(heights.length === 4 && heights.every(h => h >= 96 && h <= 135), 'Desktop process steps not condensed')
-  observations.processGridPosition = await desktop.locator('.process-grid').evaluate(el => getComputedStyle(el).position)
+  check(heights.length === 4 && heights.every(h => h >= 85 && h <= 108), 'Desktop process steps not condensed')
+  const desktopSectionLayout = await desktop.locator('.process-grid').evaluate(el => ({
+    copyDisplay: getComputedStyle(el.querySelector('.process-copy')).display,
+    photoRow: getComputedStyle(el.querySelector('.process-visual')).gridRowStart,
+    firstBorder: getComputedStyle(el.querySelector('.process-steps li:first-child')).borderTopWidth,
+    lastBorder: getComputedStyle(el.querySelector('.process-steps li:last-child')).borderBottomWidth,
+    middleBorder: getComputedStyle(el.querySelector('.process-steps li:nth-child(2)')).borderBottomWidth
+  }))
+  observations.processLayout = desktopSectionLayout
+  check(desktopSectionLayout.copyDisplay === 'contents' && desktopSectionLayout.photoRow === '2', 'Photograph does not align with the list rows')
+  check(desktopSectionLayout.firstBorder === '0px' && desktopSectionLayout.lastBorder === '0px', 'Unwanted first or last divider')
+  check(desktopSectionLayout.middleBorder !== '0px', 'Internal divider was removed')
+    observations.processGridPosition = await desktop.locator('.process-grid').evaluate(el => getComputedStyle(el).position)
   check(observations.processGridPosition === 'sticky', 'Sticky process grid missing')
   observations.processRunwayHeight = await desktop.locator('.process-section').evaluate(el =>
     Math.round(el.getBoundingClientRect().height - el.querySelector('.process-grid').getBoundingClientRect().height))
@@ -71,6 +82,18 @@ try {
   check(new Set(photoChanges).size === 4, 'All four process photographs must change')
   observations.processPinnedTopPositions = pinnedTopPositions
   check(Math.max(...pinnedTopPositions) - Math.min(...pinnedTopPositions) <= 2, 'The compact stages should remain pinned while the photos advance')
+  const pinnedGeometry = await desktop.evaluate(() => {
+    const bounds = s => { const r = document.querySelector(s).getBoundingClientRect(); return { top:r.top, bottom:r.bottom, height:r.height } }
+    return { header:bounds('.site-header'), title:bounds('.process-copy h2'),
+      first:bounds('.process-steps li:first-child'), last:bounds('.process-steps li:last-child'),
+      photo:bounds('.process-visual'), grid:bounds('.process-grid'), actions:bounds('.process-bottom-actions') }
+  })
+  observations.desktopPinnedGeometry = pinnedGeometry
+  check(pinnedGeometry.title.top >= pinnedGeometry.header.bottom + 20, 'Heading still touches or hides behind header')
+  check(pinnedGeometry.grid.top >= 120 && pinnedGeometry.grid.top <= 175, 'The process does not pin at a comfortable viewport height')
+  check(Math.abs(pinnedGeometry.photo.top - pinnedGeometry.first.top) <= 5, 'Photograph top does not align with first step')
+  check(pinnedGeometry.photo.bottom >= pinnedGeometry.last.bottom, 'Photograph does not cover the four-step group')
+  check(pinnedGeometry.photo.bottom <= pinnedGeometry.actions.bottom + 10, 'Photograph extends beyond the bottom actions')
   await desktop.screenshot({ path:path.join(folder,'process-stage-four-desktop.png'), animations:'disabled' })
   const reverseStages = []
   for (let i = 3; i >= 0; i--) {
@@ -107,6 +130,7 @@ try {
   await desktop.goto(base,{waitUntil:'domcontentloaded'})
   await desktop.waitForTimeout(1100)
   await desktop.locator('#how-it-works').scrollIntoViewIfNeeded()
+  check(await desktop.locator('.process-copy').evaluate(el => getComputedStyle(el).display) !== 'contents', 'Mobile should retain normal process reading order')
   await desktop.locator('#how-it-works').screenshot({ path:path.join(folder,'process-mobile.png'), animations:'disabled' })
   await desktop.locator('.final-invitation').scrollIntoViewIfNeeded()
   await desktop.locator('.final-invitation').screenshot({ path:path.join(folder,'faq-final-invitation-mobile.png'), animations:'disabled' })

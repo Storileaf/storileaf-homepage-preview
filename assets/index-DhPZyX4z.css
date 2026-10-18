@@ -11304,3 +11304,40 @@ section[id] {
 /* Retain original FAQ invitation copy without decorative overline styling. */
 .final-invitation-intro { font-size:15px; line-height:1.55; color:hsl(var(--ink-soft)); letter-spacing:normal; }
 .final-invitation h2 { margin-top:8px; }
+
+
+/* 18 October 2026. Founder-directed process composition adjustment.
+   The photo shares the steps' grid rows, not the heading row.
+   Scroll stage progress remains independent of visual row height. */
+@media (min-width:901px) {
+  .process-grid {
+    grid-template-columns:minmax(0,.99fr) minmax(0,1.01fr);
+    grid-template-rows:auto auto auto;
+    row-gap:0;
+  }
+  .process-copy { display:contents; }
+  .process-copy h2 { grid-column:1; grid-row:1; }
+  .process-steps { grid-column:1; grid-row:2; margin-top:22px; }
+  .process-steps li { min-height:94px; }
+  .process-step { padding:8px 10px; gap:15px; }
+  .process-step .step-text strong { font-size:17.5px; margin-bottom:5px; }
+  .process-step .step-text > span { font-size:15px; line-height:1.48; }
+  .process-steps li:first-child { border-top:none; }
+  .process-steps li:last-child { border-bottom:none; }
+  .process-bottom-actions { grid-column:1; grid-row:3; padding-top:16px; }
+  .process-visual {
+    grid-column:2;
+    grid-row:2 / 4;
+    align-self:stretch;
+    height:auto;
+    min-height:0;
+    margin-top:22px;
+  }
+}
+@media (min-width:901px) and (min-height:731px) and (prefers-reduced-motion:no-preference) {
+  .process-grid { position:sticky; top:clamp(134px,16vh,160px); align-items:start; }
+  .process-visual { position:relative; top:auto; height:auto; min-height:0; }
+}
+@media (min-width:901px) and (max-width:1100px) and (min-height:731px) and (prefers-reduced-motion:no-preference) {
+  .process-grid { top:120px; }
+}
