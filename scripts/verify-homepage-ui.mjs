@@ -352,8 +352,9 @@ try {
   check(await desktop.locator('.newsletter-inline-preview input:not(:disabled)').count() === 1, 'Newsletter email field should be editable')
   check(await desktop.locator('.newsletter-signup-note').count() === 0, 'Preview-only newsletter instruction should be removed')
   const newsletterVisual = await desktop.locator('.newsletter-strip').evaluate(el => {
-    const before=getComputedStyle(el,'::before'), after=getComputedStyle(el,'::after')
-    const s=getComputedStyle(el),input=el.querySelector('input')
+    const unit=el.closest('.newsletter-footer-unit')
+    const before=getComputedStyle(unit,'::before'), after=getComputedStyle(unit,'::after')
+    const s=getComputedStyle(unit),input=el.querySelector('input')
     return {image:before.backgroundImage,overlay:after.backgroundImage,background:s.backgroundColor,inputDisabled:input.disabled}
   })
   observations.newsletterVisual=newsletterVisual
@@ -460,7 +461,7 @@ try {
   check(await desktop.locator('.newsletter-inline-preview input').inputValue() === 'story@example.com', 'Newsletter field does not accept input')
   await desktop.locator('.newsletter-inline-preview input').fill('')
   const newsletterImageLoaded = await desktop.locator('.newsletter-strip').evaluate(async el => {
-    const imageCss=getComputedStyle(el,'::before').backgroundImage
+    const imageCss=getComputedStyle(el.closest('.newsletter-footer-unit'),'::before').backgroundImage
     const url=imageCss.startsWith('url("') ? imageCss.slice(5,-2) : null
     if(!url)return false
     return await new Promise(resolve => {
