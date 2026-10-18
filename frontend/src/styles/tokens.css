@@ -1,0 +1,24 @@
+:root {
+  --sl-font-display: 'Newsreader', Georgia, serif;
+  --sl-font-ui: 'Manrope', Arial, sans-serif;
+  --sl-forest: #253526;
+  --sl-teal: #0c6753;
+  --sl-gold: #cca86b;
+  --sl-gold-action: #d7b67e;
+  --sl-paper: #f9f8f6;
+  --sl-paper-soft: #f3f2ef;
+  --sl-white: #ffffff;
+  --sl-ink-muted: #536154;
+  --sl-sage: #e9efeb;
+  --sl-border: #d9ded9;
+  --sl-content-width: 1184px;
+  --sl-total-gutter: 96px;
+  --sl-section-y: 94px;
+  --sl-radius-action: 6px;
+  --sl-radius-newsletter-control: 9px;
+  --sl-radius-card: 20px;
+  --sl-radius-media: 18px;
+  --sl-radius-panel: 22px;
+}
+@media(max-width:900px){:root{--sl-total-gutter:64px;--sl-section-y:70px;}}
+@media(max-width:480px){:root{--sl-total-gutter:40px;--sl-section-y:57px;}}
