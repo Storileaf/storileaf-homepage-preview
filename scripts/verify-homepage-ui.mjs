@@ -341,7 +341,18 @@ try {
   observations.physicalBookMobile = physicalBookMobile
   check(physicalBookMobile.detached === 0 && physicalBookMobile.details === 3, 'Mobile physical book section incomplete')
   check(physicalBookMobile.cta === 'https://storileaf.com/pricing/' && physicalBookMobile.paddingBottom === '66px', 'Mobile pricing CTA or bottom spacing changed')
+  observations.mobileCraftGeometry = await desktop.locator('.book-craft').evaluate(el => {
+    const link = el.querySelector('.book-craft-copy > a.text-link')
+    const r = x => { const q=x.getBoundingClientRect();return {top:Math.round(q.top),bottom:Math.round(q.bottom),height:Math.round(q.height)} }
+    return {craft:r(el),copy:r(el.querySelector('.book-craft-copy')),link:r(link),
+      visible:!!link.getClientRects().length,display:getComputedStyle(link).display,
+      overflow:getComputedStyle(el).overflow,
+      section:r(el.closest('.samples-section'))}
+  })
+  check(observations.mobileCraftGeometry.visible, 'Mobile Pricing CTA is not displayed')
+  check(observations.mobileCraftGeometry.link.bottom <= observations.mobileCraftGeometry.craft.bottom + 2, 'Mobile Pricing CTA extends beyond the book-craft panel')
   await desktop.locator('.book-craft').screenshot({path:path.join(folder,'physical-book-single-cta-mobile.png'),animations:'disabled'})
+  await desktop.locator('.samples-section').screenshot({path:path.join(folder,'samples-section-one-cta-mobile.png'),animations:'disabled'})
     const mobileDividers = await desktop.locator('.process-steps').evaluate(el => ({
     first:getComputedStyle(el.querySelector('li:first-child')).borderTopWidth,
     last:getComputedStyle(el.querySelector('li:last-child')).borderBottomWidth,
