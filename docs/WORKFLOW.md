@@ -47,6 +47,8 @@ A complex new interaction still needs substantial design and testing. Reuse redu
 
 ## Documentation strategy, effective now
 
+The founder clarified that leaner documentation means less overlap, not fewer details. Preserve all substantive requirements, rationale, approvals, diagnostics, measurements and open issues. Give each topic one authoritative home and use links elsewhere. Summaries are navigation aids, not replacements for detailed evidence. No word or page cap permits important information to be dropped.
+
 Keep one owner for each kind of information. Update the owner and link to it elsewhere instead of pasting the same account into several files.
 
 | Information | Authoritative location | Update trigger |
@@ -59,15 +61,15 @@ Keep one owner for each kind of information. Update the owner and link to it els
 | Detailed migration evidence | One review per batch plus its machine reports and Actions artifacts | The batch checkpoint or a material diagnostic correction |
 | Product facts and commercial behaviour | Official private main | Only through separately authorised product development, never copied into a competing public specification |
 | Founder website decisions | Existing private homepage master brief and relevant page plan | A new decision changes design, copy or scope |
-| Private project continuity | Private design branch handoff and STATUS.md | A short milestone summary and links to public authority |
+| Private project continuity | Private design branch handoff and STATUS.md | A milestone summary and links to public authority |
 
-Handoffs are current summaries, not cumulative test transcripts. Keep the active summary compact, usually within one page of prose. Include current scope, implemented versus verified status, outstanding decisions and links to the exact evidence. STATUS is a brief index rather than a duplicate handoff. Component inventory remains a status table. The design system describes design, not CI logs.
+Handoffs are current summaries, not cumulative test transcripts. Keep the active summary focused on current work. Move historical detail into a clearly labelled, linked archive with content preserved, rather than deleting it. Include current scope, implemented versus verified status, outstanding decisions and links to the exact evidence. STATUS is an index rather than a duplicate handoff. Component inventory remains a status table. The design system describes design, not CI logs.
 
 For routine fixes, a clear commit and an update to the affected record are sufficient. Do not create a new report for each small adjustment. For this media batch, one review with Gallery and Physical book checkpoints is sufficient. Store test counts, file hashes and detailed measurements once in machine readable evidence, and link from the review. Preserve representative screenshots and durable summaries in repository QA records when needed, because Actions artifacts expire. Avoid repeatedly committing complete capture sets or generating further documentation commits solely to restate the immediately previous head.
 
-Preserve prior approvals and failures through immutable commit links or a clearly labelled archive. Do not delete unique evidence or silently rewrite an old decision. Current instructions must explicitly supersede conflicting historical operational advice. Follow the newest specific decision rather than an older Macaly or Georgia/Lato brief. No bulk archive cleanup is required before gallery work. Compact current summaries as they are next updated and review remaining documentation duplication before the first new page.
+Preserve prior approvals and failures through immutable commit links or a clearly labelled archive. Do not delete unique evidence or silently rewrite an old decision. Current instructions must explicitly supersede conflicting historical operational advice. Follow the newest specific decision rather than an older Macaly or Georgia/Lato brief. No bulk archive cleanup is required before gallery work. Consolidate overlapping current summaries as they are next updated and review remaining documentation duplication before the first new page.
 
-Each checkpoint record needs only scope, implementation commit, comparison baseline, actual checks and environment, result, open findings, evidence links and separate acceptance/publication state. Do not invent a founder approval date or infer acceptance from a passing test. Keep proposed, authorised, implemented, browser verified, founder accepted and published distinct.
+Each checkpoint record must identify scope, implementation commit, comparison baseline, actual checks and environment, result, open findings, evidence links and separate acceptance/publication state. Include further detail whenever needed to reproduce, understand or maintain the work. Do not force substantive evidence into a short summary. Do not invent a founder approval date or infer acceptance from a passing test. Keep proposed, authorised, implemented, browser verified, founder accepted and published distinct.
 
 ## Content and navigation contracts
 
