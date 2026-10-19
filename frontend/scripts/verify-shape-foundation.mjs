@@ -27,7 +27,8 @@ for (const file of runtimeFiles) {
 check(report.staticReferences.length === 0, 'A runtime dependency on the retired preview vendor appeared')
 
 // Package 1 is now a semantic regression, not a prohibition on authorised source work.
-const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css'])
+// Approved 19 October editorial labels are 15px; earlier shape comparison is otherwise unchanged.
+const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css']) + '\n.sl-action--text { font-size:var(--sl-text-editorial-action); }'
 const originalTokens = git(['show', sourceBaseline + ':frontend/src/styles/tokens.css'])
 const tokens = await fs.readFile('src/styles/tokens.css', 'utf8')
 for (const alias of ['header-action', 'newsletter-control', 'gold-action']) {

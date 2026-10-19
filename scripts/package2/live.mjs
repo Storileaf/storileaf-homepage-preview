@@ -61,7 +61,7 @@ try {
     await page.waitForTimeout(350)
     row.answerSize=await page.locator('.faq-answer p').first().evaluate(el=>getComputedStyle(el).fontSize)
     row.linkSize=await page.locator('.faq-answer .text-link').first().evaluate(el=>getComputedStyle(el).fontSize)
-    check(row.answerSize==='15px'&&row.linkSize==='14px','Live answer and link roles differ at '+width)
+    check(row.answerSize==='15px'&&row.linkSize==='15px','Live answer and link roles differ at '+width)
     await page.keyboard.press('Space');check(!(await summary.evaluate(el=>el.parentElement.open)),'Live keyboard close failed at '+width)
     report.widths.push(row)
     if(width===390||width===1440){

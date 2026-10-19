@@ -37,3 +37,8 @@ The isolated React build now includes source-only SiteHeader and NewsletterFoote
 ## Package 2 typography and spacing
 
 The founder accepted the published Package 1 result, then authorised completion of Package 2 on the same visible-review basis. Reusable type, container and spacing foundations preserve distinct editorial sections. The bounded visible refinement raises FAQ questions to 15px and FAQ action links to 14px, with existing answer text and content retained. Implementation and final founder visual acceptance remain separate. See PACKAGE_2_REVIEW.md and the active public design system.
+
+
+## Editorial action sizing, 19 October 2026
+
+The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. Footer heading and currency readability is being reviewed separately, not silently changed. See EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.

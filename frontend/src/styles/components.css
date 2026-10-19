@@ -22,7 +22,7 @@ img { display:block; max-width:100%; }
 .sl-resource-copy h3 { margin:0; font:var(--sl-weight-card) var(--sl-type-card)/var(--sl-type-card-leading) var(--sl-font-display); }
 .sl-resource-copy p { margin:var(--sl-gap-card-copy) 0 0; color:var(--sl-ink-muted); font:var(--sl-weight-body) var(--sl-text-card)/var(--sl-leading-body) var(--sl-font-ui); max-width:var(--sl-measure-copy); }
 .sl-action { display:inline-flex; align-items:center; justify-content:center; gap:10px; font:var(--sl-weight-action) var(--sl-text-action)/var(--sl-leading-ui) var(--sl-font-ui); text-decoration:none; }
-.sl-action--text { color:var(--sl-teal); }
+.sl-action--text { color:var(--sl-teal); font-size:var(--sl-text-editorial-action); }
 .sl-action--primary { color:white; background:var(--sl-teal); padding:13px 20px; min-height:44px; border-radius:var(--sl-radius-action); }
 a.sl-action--primary:hover { background:var(--sl-teal-hover); }
 .sl-action--outline { color:var(--sl-forest); border:1px solid var(--sl-border); padding:13px 20px; min-height:44px; border-radius:var(--sl-radius-action); }

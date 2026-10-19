@@ -12,7 +12,7 @@ Implementation commit 90953da2753e948748695e677cdca1d51688dcee contains the veri
 
 The accepted baseline is 4b14b91b642795d2b466a0c018f84f3474d44991. The [initial live inventory](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39189545800) measured nine widths and preserved exact input files.
 
-FAQ questions were 13px. They now use 15px Manrope at weight 600 and 1.5 leading. Existing 20px or 21px row padding is retained. Questions wrap naturally without fixed heights. Links within FAQ answers change from 12px to the 14px action role. Answer paragraphs remain 15px with 1.75 leading. The separate Ask us a question-style introductory text action retains its existing published wording and styling; no copy is changed.
+FAQ questions were 13px. They now use 15px Manrope at weight 600 and 1.5 leading. Existing 20px or 21px row padding is retained. Questions wrap naturally without fixed heights. The initial Package 2 release changed links within FAQ answers from 12px to 14px. The subsequent founder-approved editorial refinement makes these 15px alongside other standalone editorial actions. See EDITORIAL_LINK_REVIEW.md for the separate scoped comparison. Answer paragraphs remain 15px with 1.75 leading. The separate Ask us a question-style introductory text action retains its existing published wording and styling; no copy is changed.
 
 The FAQ's natural height changes by about 25px at 390px and 2.5px at 1440px in the closed state. Downstream content moves accordingly. Heading, text, colour, imagery, destinations, disclosure icons and native details/summary behaviour remain intact.
 

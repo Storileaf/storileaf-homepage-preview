@@ -5111,11 +5111,14 @@ section[id] {
   color: hsl(var(--primary));
   align-items: center;
   gap: 15px;
-  font-size: 13px;
+  font-size: var(--sl-text-editorial-action,13px);
   font-weight: 650;
   line-height: 1.6;
   display: inline-flex;
 }
+
+/* Inline reading links use their paragraph size; footer and buttons are excluded. */
+#top[data-testid="storileaf-home"] main p a:not(.text-link):not(.button) { font-size:inherit; line-height:inherit; }
 
 .text-link:hover {
   text-underline-offset: 5px;
@@ -5695,7 +5698,7 @@ section[id] {
 
 .books-footnote .text-link {
   flex-shrink: 0;
-  font-size: 12px;
+  font-size: var(--sl-text-editorial-action,12px);
 }
 
 .process-section {
@@ -6841,7 +6844,7 @@ section[id] {
 
 .faq-answer .text-link {
   margin-top: 12px;
-  font-size:var(--sl-text-action,12px);
+  font-size:var(--sl-text-editorial-action,12px);
 }
 
 .final-invitation {
@@ -7965,7 +7968,7 @@ section[id] {
   }
 
   .process-copy > .text-link {
-    font-size: 12px;
+    font-size: var(--sl-text-editorial-action,12px);
   }
 
   .samples-heading {
@@ -10862,6 +10865,7 @@ body:has(#top[data-testid="storileaf-home"]) {
   --sl-text-meta: .8125rem;
   --sl-text-label: .6875rem;
   --sl-text-action: .875rem;
+  --sl-text-editorial-action: var(--sl-text-body);
   --sl-text-card: .96875rem;
   --sl-text-lead: clamp(.9375rem,1.35vw,1.0625rem);
   --sl-text-question: var(--sl-text-body);
@@ -12036,7 +12040,7 @@ body:has(#top[data-testid="storileaf-home"]) {
   margin-top:auto;
   padding-top:20px;
   color:hsl(var(--primary));
-  font:700 14px/1.35 var(--font-sans);
+  font:700 var(--sl-text-editorial-action,14px)/1.35 var(--font-sans);
 }
 .resources-section .resource-card-link svg {
   width:17px;
@@ -12064,7 +12068,7 @@ body:has(#top[data-testid="storileaf-home"]) {
   align-items:center;
   gap:10px;
   color:hsl(var(--primary));
-  font:700 14px/1.35 var(--font-sans);
+  font:700 var(--sl-text-editorial-action,14px)/1.35 var(--font-sans);
 }
 .resources-section .resource-all-link svg { width:17px; height:17px; }
 @media (max-width:900px) {

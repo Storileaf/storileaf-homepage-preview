@@ -14,6 +14,7 @@
   --sl-text-meta: .8125rem;
   --sl-text-label: .6875rem;
   --sl-text-action: .875rem;
+  --sl-text-editorial-action: var(--sl-text-body);
   --sl-text-card: .96875rem;
   --sl-text-lead: clamp(.9375rem,1.35vw,1.0625rem);
   --sl-text-question: var(--sl-text-body);

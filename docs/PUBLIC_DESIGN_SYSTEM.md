@@ -30,12 +30,15 @@ These are semantic CSS tokens, not fixed widths or permission to restyle existin
 | Body and FAQ answer | 15px, regular, leading 1.7 or answer 1.75 | Narrative text |
 | Lead | 15px to 17px, leading 1.67 by default | Introductory copy |
 | Supporting text | 14px, leading 1.55 | Secondary readable explanation |
-| Action text | 14px, bold, leading 1.35 | Ordinary actions and FAQ links |
+| Control action | Existing 14px default, component exceptions retained | Filled, outlined and gold buttons; not editorial text links |
+| Editorial text action | 15px Manrope, existing weight and leading retained | Standalone reading-section actions, resource labels and links below FAQ answers |
 | FAQ question | 15px, weight 600, leading 1.5 | Native disclosure summary |
 | Metadata | 13px, leading 1.55 | Legal and genuinely secondary information |
 | Compact label | 11px where already used | Footer grouping or utility labels, never paragraph copy |
 
 Preserve editorial distinctions such as the source card's existing 15.5px body, homepage gallery/writing lead at 16px, compact header action on phones, scaled device illustration text and existing footer legal typography. They have been evaluated rather than blindly resized. Future interface paragraphs should use the body/support roles, not illustration sizes. Disabled/loading behaviours belong to genuine controls and are not introduced by this package.
+
+The founder approved 15px standalone editorial text actions on 19 October 2026. `--sl-text-editorial-action` aliases the 15px body token, while `--sl-text-action` retains the ordinary control baseline. Inline paragraph links inherit their surrounding text size. Colours, weights, arrows, gaps and destinations are unchanged. Header navigation, footer utilities and button labels are excluded. Activities and Browse all resources remain non-interactive labels until their pages exist. Footer heading and currency sizing is under review, not approved for change. See [editorial link review](EDITORIAL_LINK_REVIEW.md).
 
 Text sizes in the canonical source use rem bounds at the normal browser root size. Do not fix the html font size, disable user zoom or introduce fixed text-box heights. Keep unitless leading. Desktop/mobile, text enlargement and spacing checks remain necessary because relative units alone do not prove accessibility.
 

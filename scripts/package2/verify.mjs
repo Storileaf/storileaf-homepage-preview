@@ -4,7 +4,10 @@ import { chromium } from 'playwright-core'
 
 const baseline = '4b14b91b642795d2b466a0c018f84f3474d44991'
 const cssPath = 'assets/index-DhPZyX4z.css'
-const before = execFileSync('git', ['show', baseline + ':' + cssPath], { encoding: 'utf8' })
+// Preserve Package 2's original comparison while accounting for the later approved editorial labels.
+const editorialScope = '#top[data-testid="storileaf-home"]'
+const editorialComparison = [ '.text-link', '.resource-card-link', '.resource-all-link' ].map(s => editorialScope + ' ' + s).join(',') + '{font-size:15px}'
+const before = execFileSync('git', ['show', baseline + ':' + cssPath], { encoding: 'utf8' }) + '\n' + editorialComparison
 const after = await fs.readFile(cssPath, 'utf8')
 const base = process.env.PACKAGE2_BASE_URL || 'http://127.0.0.1:4173/storileaf-homepage-preview/'
 const folder = 'qa/package2'
@@ -87,7 +90,7 @@ try {
     await page.waitForTimeout(350)
     const answer=await page.locator('.faq-answer p').first().evaluate(el=>({size:getComputedStyle(el).fontSize,line:getComputedStyle(el).lineHeight}))
     const link=await page.locator('.faq-answer .text-link').first().evaluate(el=>getComputedStyle(el).fontSize)
-    check(answer.size==='15px'&&answer.line==='26.25px'&&link==='14px','FAQ answer/link roles incorrect at '+width)
+    check(answer.size==='15px'&&answer.line==='26.25px'&&link==='15px','FAQ answer/link roles incorrect at '+width)
     check(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'Document overflow at '+width)
     await page.locator('.faq-item').first().evaluate(el=>el.open=false)
     await page.waitForTimeout(200)
@@ -109,7 +112,7 @@ try {
   report.checks.shortHeights=true
   // Explicit 200% text enlargement of the changed FAQ, not a claim of native browser zoom certification.
   await page.setViewportSize({width:320,height:900});await reset()
-  const enlargement=await page.addStyleTag({content:'.faq-item summary{font-size:30px!important;line-height:1.5!important}.faq-answer p{font-size:30px!important;line-height:1.75!important}.faq-answer .text-link{font-size:28px!important}'})
+  const enlargement=await page.addStyleTag({content:'.faq-item summary{font-size:30px!important;line-height:1.5!important}.faq-answer p{font-size:30px!important;line-height:1.75!important}.faq-answer .text-link{font-size:30px!important}'})
   await page.locator('.faq-item summary').first().click()
   await checkQuestions('200 percent FAQ text')
   check(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'200 percent FAQ text overflows')

@@ -7,6 +7,8 @@
 .sl-heading--card { font-size:var(--sl-type-card); line-height:var(--sl-type-card-leading); font-weight:var(--sl-weight-card); }
 .sl-heading--newsletter { font-size:var(--sl-type-newsletter); line-height:var(--sl-type-newsletter-leading); letter-spacing:-.018em; }
 .sl-copy { margin:0; font-family:var(--sl-font-ui); font-weight:var(--sl-weight-body); }
+/* Inline links retain their surrounding reading size, unlike standalone actions. */
+.sl-copy a:not(.sl-action) { font-size:inherit; line-height:inherit; }
 .sl-copy--body { font-size:var(--sl-text-body); line-height:var(--sl-leading-body); }
 .sl-copy--lead { font-size:var(--sl-text-lead); line-height:var(--sl-leading-lead); }
 .sl-copy--support { font-size:var(--sl-text-support); line-height:1.55; }

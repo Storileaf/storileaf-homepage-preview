@@ -39,3 +39,8 @@ Genuine gallery/craft photography, final hero motion and reassurance-band decisi
 Inspect latest branch heads and source before editing. Implement only founder-authorised scope. Keep factual copy verification separate from exact wording approval and visual acceptance. Use real desktop/mobile screenshots and relevant focus, keyboard, touch, reduced motion, zoom and short-height tests. Passing automation is not founder approval or full accessibility certification.
 
 Do not use Macaly. Tested public source and preview no longer depend on its runtime or build workflow. That does not prove all original project assets or attached settings are archived; preserve unique files and check attached services before deletion.
+
+
+## Editorial action sizing, 19 October 2026
+
+The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. Footer heading and currency readability is being reviewed separately, not silently changed. See docs/EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.
