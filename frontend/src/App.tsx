@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { NewsletterFooter, type Currency } from './components/NewsletterFooter'
+import { SiteHeader } from './components/SiteHeader'
+import { previewRoutes } from './siteRoutes'
 import { EditorialHeading } from './components/EditorialHeading'
 import { ResourceCategoryCard } from './components/ResourceCategoryCard'
 import { ActionLink } from './components/ActionLink'
@@ -9,7 +11,7 @@ import { approvedCopy, verifiedHref } from './content'
 // Do not deploy this in place of the current GitHub Pages root until parity.
 export function App() {
   const [currency,setCurrency]=useState<Currency>('inr')
-  return <div className="sl-site"><main id="main-content"><section className="sl-reference-section" aria-labelledby="sl-resources-title"><div className="sl-container">
+  return <div className="sl-site"><SiteHeader routes={previewRoutes} /><main id="main-content"><section className="sl-reference-section" aria-labelledby="sl-resources-title"><div className="sl-container">
     <EditorialHeading id="sl-resources-title" title="A little curiosity" emphasis="can go a long way." introduction={approvedCopy('home.resources.intro')} />
     <div className="sl-resources-grid">
       <ResourceCategoryCard title={approvedCopy('home.resources.activities.title')} description={approvedCopy('home.resources.activities.description')} action={approvedCopy('home.resources.activities.cta')} href={verifiedHref('home.resources.activities.cta')} image="https://storileaf.com/images/brand/collections/life-story/life-story-family-sharing-memories-1200.webp" alt="An adult daughter and her father sharing memories over family photographs" imageWidth={1200} imageHeight={800} />
@@ -17,13 +19,6 @@ export function App() {
     </div>
     <div className="sl-centred-action"><ActionLink>{approvedCopy('home.resources.all.cta')}</ActionLink></div>
   </div></section></main>
-    <NewsletterFooter currency={currency} onCurrencyChange={setCurrency} routes={{
-      home:'https://storileaf.github.io/storileaf-homepage-preview/#top',
-      seeInside:'https://storileaf.github.io/storileaf-homepage-preview/#samples',
-      howItWorks:'https://storileaf.github.io/storileaf-homepage-preview/#how-it-works',
-      pricing:'https://storileaf.github.io/storileaf-homepage-preview/pricing/inr',
-      resources:'https://storileaf.github.io/storileaf-homepage-preview/#resources',
-      questions:'https://storileaf.github.io/storileaf-homepage-preview/#questions',
-    }} />
+    <NewsletterFooter currency={currency} onCurrencyChange={setCurrency} routes={previewRoutes} />
   </div>
 }

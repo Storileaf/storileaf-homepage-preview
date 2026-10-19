@@ -54,3 +54,12 @@ test('shared newsletter and footer use one photo field with verified CTAs',()=>{
   assert.ok(styles.includes('.sl-newsletter-footer::before'))
   assert.ok(styles.includes('.sl-newsletter-footer::after'))
 })
+
+test('source header has hover, keyboard Escape and a native mobile dialog',()=>{
+  const file=readFileSync(new URL('../src/components/SiteHeader.tsx',import.meta.url),'utf8')
+  assert.ok(file.includes("onMouseEnter={()=>setOpenMenu('books')}"))
+  assert.ok(file.includes("event.key==='Escape'"))
+  assert.ok(file.includes('showModal()'))
+  assert.ok(file.includes('onClose={drawerClosed}'))
+  assert.ok(!file.includes('aria-current="page"'))
+})

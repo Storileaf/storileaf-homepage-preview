@@ -119,3 +119,50 @@ img { display:block; max-width:100%; }
   .sl-footer-bottom > div { gap:22px; flex-wrap:wrap; }
 }
 @media(prefers-reduced-motion:reduce) { .sl-newsletter-footer { scroll-behavior:auto; } }
+
+
+/* The isolated, editable public header reference. Not yet live root parity. */
+.sl-header { position:sticky; z-index:90; top:14px; width:calc(100% - 32px); max-width:1330px; margin:14px auto 0; background:var(--sl-forest); color:#fff; border-radius:18px; box-shadow:0 8px 24px rgba(0,0,0,.06); }
+.sl-header-inner { display:flex; align-items:center; min-height:74px; padding:10px 24px; gap:24px; }
+.sl-header-logo { width:151px; flex-shrink:0; display:block; }
+.sl-header-logo img { width:100%; height:auto; display:block; object-fit:contain; }
+.sl-header-desktop-nav { display:flex; align-items:center; justify-content:center; gap:27px; flex:1; min-width:0; }
+.sl-header-desktop-nav>a,.sl-header-desktop-nav button,.sl-header-actions>a { font:600 14px/1.5 var(--sl-font-ui); color:#fff; text-decoration:none; }
+.sl-header-desktop-nav button { border:0; padding:12px 0; background:transparent; cursor:pointer; display:flex; gap:7px; align-items:center; }
+.sl-header-desktop-nav a:hover,.sl-header-desktop-nav button:hover { color:var(--sl-gold-action); }
+.sl-header-dropdown { position:relative; }
+.sl-header-popup { position:absolute; top:100%; left:0; width:284px; padding:16px; border-radius:17px; background:var(--sl-paper); color:var(--sl-forest); box-shadow:0 16px 40px rgba(0,0,0,.13); display:flex; flex-direction:column; gap:3px; }
+.sl-header-popup a { display:flex; gap:10px; align-items:center; justify-content:space-between; padding:12px; color:var(--sl-forest); text-decoration:none; font:500 14px/1.5 var(--sl-font-ui); border-radius:8px; }
+.sl-header-popup a:hover,.sl-header-popup a:focus-visible { color:var(--sl-forest); background:var(--sl-sage); }
+.sl-header-popup a svg { width:16px; height:16px; }
+.sl-header-books-menu { width:470px; display:grid; grid-template-columns:1fr 1fr; }
+.sl-header-books-gift { grid-column:1/-1; border-top:1px solid var(--sl-border); margin-top:4px; }
+.sl-header-actions { display:flex; align-items:center; gap:24px; }
+.sl-header-actions .sl-header-primary { display:inline-flex; align-items:center; gap:15px; padding:12px 17px; border-radius:8px; background:var(--sl-teal); color:white; white-space:nowrap; min-height:46px; }
+.sl-header-actions .sl-header-primary:hover { background:#0b5848; }
+.sl-header-mobile-trigger { display:none; align-items:center; justify-content:center; width:44px; height:44px; background:transparent; color:white; border:0; border-radius:8px; cursor:pointer; }
+.sl-header :focus-visible { outline:2px solid var(--sl-gold-action); outline-offset:3px; }
+.sl-mobile-nav-dialog { position:fixed; z-index:120; inset:0 0 0 auto; width:min(380px,calc(100vw - 20px)); max-width:none; max-height:100dvh; height:100dvh; margin:0; padding:25px; border:0; background:var(--sl-paper); color:var(--sl-forest); overflow:auto; }
+.sl-mobile-nav-dialog::backdrop { background:rgba(24,38,26,.63); }
+.sl-mobile-nav-top { display:flex; justify-content:space-between; align-items:center; gap:15px; margin-bottom:22px; }
+.sl-mobile-nav-title { font:450 27px/1.2 var(--sl-font-display); }
+.sl-mobile-nav-top button { width:44px; height:44px; border:1px solid var(--sl-border); border-radius:9px; background:white; font-size:29px; cursor:pointer; }
+.sl-mobile-nav-dialog nav { display:flex; flex-direction:column; gap:0; }
+.sl-mobile-nav-dialog nav a { display:block; padding:13px 0; border-bottom:1px solid var(--sl-border); color:var(--sl-forest); text-decoration:none; font:600 15px/1.5 var(--sl-font-ui); }
+.sl-mobile-nav-dialog nav a:hover { color:var(--sl-teal); }
+@media(max-width:1130px) {
+  .sl-header-desktop-nav,.sl-header-actions>a:not(.sl-header-primary) { display:none; }
+  .sl-header-actions { margin-left:auto; }
+  .sl-header-mobile-trigger { display:flex; }
+}
+@media(max-width:480px) {
+  .sl-header { top:9px; margin-top:10px; width:calc(100% - 22px); border-radius:13px; }
+  .sl-header-inner { min-height:65px; padding:8px 12px; gap:10px; }
+  .sl-header-logo { width:114px; }
+  .sl-header-actions { gap:0; }
+  .sl-header-actions .sl-header-primary { padding:10px 12px; font-size:13px; min-height:43px; }
+  .sl-header-actions .sl-header-primary svg { display:none; }
+}
+@media(max-width:360px) {
+  .sl-header-actions .sl-header-primary { display:none; }
+}

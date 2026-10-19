@@ -416,6 +416,33 @@
       "public": true,
       "approved_on": "2026-10-18",
       "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md"
+    },
+    {
+      "id": "shared.header.start",
+      "copy": "Start your story",
+      "status": "founder_approved",
+      "source": "Current founder-approved public header 18 October 2026",
+      "public": true,
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "approved_on": "2026-10-18"
+    },
+    {
+      "id": "shared.header.open",
+      "copy": "Open navigation",
+      "status": "founder_approved",
+      "source": "Current founder-approved public header 18 October 2026",
+      "public": true,
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "approved_on": "2026-10-18"
+    },
+    {
+      "id": "shared.header.close",
+      "copy": "Close navigation",
+      "status": "founder_approved",
+      "source": "Current founder-approved public header 18 October 2026",
+      "public": true,
+      "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
+      "approved_on": "2026-10-18"
     }
   ]
 }

@@ -1,16 +1,10 @@
 import type { ChangeEvent } from 'react'
 import { approvedCopy, verifiedHref } from '../content'
 import { ResponsiveImage } from './ResponsiveImage'
+import type { PublicSiteRoutes } from '../siteRoutes'
 
 export type Currency = 'inr' | 'usd' | 'cad' | 'gbp'
-export type FooterRoutes = {
-  home: string
-  seeInside: string
-  howItWorks: string
-  pricing: string
-  resources: string
-  questions: string
-}
+export type FooterRoutes = PublicSiteRoutes
 
 type Props = {
   routes: FooterRoutes

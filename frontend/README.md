@@ -24,7 +24,7 @@ The source validation GitHub Action runs typechecking, the content approval and 
 
 - src/styles/tokens.css defines public website colours, typography names, responsive gutters and component shape roles.
 - src/styles/components.css provides scoped reference styling without touching published CSS.
-- src/components contains typed components with verified whole-card link semantics, a dimension-preserving ResponsiveImage and a source-only NewsletterFooter with currency and route props.
+- src/components contains typed components with verified whole-card link semantics, a dimension-preserving ResponsiveImage and a source-only NewsletterFooter with currency and route props, plus a typed SiteHeader reference for desktop and mobile.
 - content/ledger.json records exact approved strings, source and whether actions point to real pages.
 - scripts/check-content.mjs validates copy provenance, approval states, source ID references and verified HTTPS destinations; unknown or unbuilt destinations cannot silently be linked.
 - scripts/guard-published.mjs prevents accidental overwriting of existing root static assets.
