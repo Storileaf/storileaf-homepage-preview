@@ -1,0 +1,385 @@
+{
+  "createdAt": "2026-10-19T18:34:38.149Z",
+  "base": "https://storileaf.github.io/storileaf-homepage-preview/",
+  "unmodified": [
+    {
+      "phase": "direct",
+      "path": "pricing/?keepsake=travel-memoir",
+      "status": 200,
+      "htmlHash": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing?keepsake=travel-memoir",
+      "title": "StoriLeaf | Compare book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Travel Memoir",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at prepareToHydrateHostInstance (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2148:15)\n    at completeWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:5006:45)\n    at completeUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6875:15)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6821:19)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "reload",
+      "path": "pricing/?keepsake=travel-memoir",
+      "status": 200,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing?keepsake=travel-memoir",
+      "title": "StoriLeaf | Compare book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Travel Memoir",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at prepareToHydrateHostInstance (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2148:15)\n    at completeWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:5006:45)\n    at completeUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6875:15)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6821:19)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    }
+  ],
+  "instrumented": [
+    {
+      "path": "pricing/?keepsake=travel-memoir",
+      "status": 200,
+      "diagnosticOnly": true,
+      "originalBundleSha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "diagnostic": {
+        "findings": [
+          {
+            "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing?keepsake=travel-memoir",
+            "parents": [
+              {
+                "tag": 5,
+                "type": "p",
+                "props": {
+                  "className": "pricing-mini-label"
+                },
+                "memoized": {
+                  "className": "pricing-mini-label"
+                },
+                "node": "<p class=\"pricing-mini-label\">3 packages to compare</p>",
+                "children": "2 packages to compare"
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "className": "pricing-active-copy"
+                },
+                "memoized": {
+                  "className": "pricing-active-copy"
+                },
+                "node": "<div class=\"pricing-active-copy\"><p class=\"pricing-mini-label\">3 packages to compare</p><h2>Life Story</h2><p class=\"pricing-active-lead\">A life is made up of more than the big milestones.</p><p class=\"pricing-active-description\">From a focused collection of memories to a fuller family edition. Choose how much room, writing time and editorial support you want.</p></div>",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "className": "pricing-active-heading",
+                  "id": "pricing-packages",
+                  "aria-live": "polite",
+                  "aria-atomic": "true"
+                },
+                "memoized": {
+                  "className": "pricing-active-heading",
+                  "id": "pricing-packages",
+                  "aria-live": "polite",
+                  "aria-atomic": "true"
+                },
+                "node": "<div class=\"pricing-active-heading\" id=\"pricing-packages\" aria-live=\"polite\" aria-atomic=\"true\"><div class=\"pricing-active-copy\"><p class=\"pricing-mini-label\">3 packages to compare</p><h2>Life Story</h2><p class=\"pricing-active-lead\">A life is made up of more than the big milestones.</p><p class=\"pricing-active-description\">From a focused collection of memories to a fuller family edition. Choose how much room, writing time and editorial support you want.</p></div><div class=\"pricing-active-controls\"><label class=\"pricing-currency-control\" for=\"pricing-currency-select\"><span>View prices in</span><span class=\"pricing-select-frame\"><select id=\"pricing-currency-select\" data-testid=\"pricing-currency\"><option value=\"inr\" selected=\"\">INR · ₹</option><option value=\"usd\">USD · US$</option><option value=\"cad\">CAD · C$</option><option value=\"gbp\">GBP · £</option></select><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 4 8 8-8 8\"></path></svg></span></label><p>Currency changes prices, not delivery location.</p></div></div>",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "className": "page-width"
+                },
+                "memoized": {
+                  "className": "page-width"
+                },
+                "node": "<div class=\"page-width\"><div class=\"pricing-section-intro\"><div><h2 id=\"pricing-choose-heading\">Start with <em>your book.</em></h2><p>Choose one of the six books below. You can change your mind without losing the currency you selected.</p></div><a class=\"pricing-gift-link\" href=\"https://storileaf.com/gift/\">Buying as a gift? <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5l7 7-7 7\"></path></svg></a></div><div class=\"pricing-book-choices\" role=\"group\" aria-label=\"Choose a StoriLeaf book\" data-testid=\"pricing-book-choices\"><button type=\"button\" class=\"pricing-book-choice is-selected\" aria-pressed=\"true\" data-testid=\"pricing-book-life-story\"><span class=\"pricing-book-thumbnail\"><img src=\"https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp\" alt=\"\" width=\"350\" height=\"220\" loading=\"lazy\" decoding=\"async\"></span><span class=\"pricing-book-choice-label\">Life Story</span><span class=\"pricing-book-choice-dot\" aria-hidden=\"true\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 4 4 10-10\"></path></svg></span></button><button type=\"button\" class=\"pricing-book-choice\" aria-pressed=\"false\" data-testid=\"pricing-book-travel-memoir\"><span class=\"pricing-book-thumbnail\"><img src=\"https://storileaf.com/images/brand/collections/travel-memoir/storileaf-travel-memoir-young-friends-western-ghats-road-trip-card-800.webp\" alt=\"\" width=\"350\" height=\"220\" loading=\"lazy\" decoding=\"async\"></span><span class=\"pricing-book-choice-label\">Travel Memoir</span><span class=\"pricing-book-choice-dot\" aria-hidden=\"true\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "section",
+                "props": {
+                  "className": "pricing-explorer-section",
+                  "id": "choose-book",
+                  "aria-labelledby": "pricing-choose-heading"
+                },
+                "memoized": {
+                  "className": "pricing-explorer-section",
+                  "id": "choose-book",
+                  "aria-labelledby": "pricing-choose-heading"
+                },
+                "node": "<section class=\"pricing-explorer-section\" id=\"choose-book\" aria-labelledby=\"pricing-choose-heading\"><div class=\"page-width\"><div class=\"pricing-section-intro\"><div><h2 id=\"pricing-choose-heading\">Start with <em>your book.</em></h2><p>Choose one of the six books below. You can change your mind without losing the currency you selected.</p></div><a class=\"pricing-gift-link\" href=\"https://storileaf.com/gift/\">Buying as a gift? <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5l7 7-7 7\"></path></svg></a></div><div class=\"pricing-book-choices\" role=\"group\" aria-label=\"Choose a StoriLeaf book\" data-testid=\"pricing-book-choices\"><button type=\"button\" class=\"pricing-book-choice is-selected\" aria-pressed=\"true\" data-testid=\"pricing-book-life-story\"><span class=\"pricing-book-thumbnail\"><img src=\"https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp\" alt=\"\" width=\"350\" height=\"220\" loading=\"lazy\" decoding=\"async\"></span><span class=\"pricing-book-choice-label\">Life Story</span><span class=\"pricing-book-choice-dot\" aria-hidden=\"true\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m5 12 4 4 10-10\"></path></svg></span></button><button type=\"button\" class=\"pricing-book-choice\" aria-pressed=\"false\" data-testid=\"pricing-book-travel-memoir\"><span class=\"pricing-book-thumbnail\"><img src=\"https://storileaf.com/images/brand/collections/travel-memoir/storileaf-travel-memoir-young-friends-western-ghats-road-trip-card-800.webp\" alt=\"\" width=\"350\" height=\"220\" loading=\"lazy\" decoding=\"async\"></span><span class=\"pricing-book-choice-label\">Travel Memoir</span><span class=\"pricing-book-choice-dot\" aria-hidden=\"true\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" s",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "main",
+                "props": {
+                  "id": "main-content"
+                },
+                "memoized": {
+                  "id": "main-content"
+                },
+                "node": "<main id=\"main-content\"><section class=\"pricing-intro\" aria-labelledby=\"pricing-title\"><div class=\"page-width pricing-intro-grid\"><div class=\"pricing-intro-copy\"><p class=\"pricing-mini-label\">StoriLeaf books and packages</p><h1 id=\"pricing-title\">Find your book.<br><em>Choose how it comes together.</em></h1><p>Six ways to tell a story. Start with the book, then compare the writing time, guidance, photographs and printed copies that come with it.</p><div class=\"pricing-intro-actions\"><a class=\"button\" href=\"#choose-book\">Explore the packages <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5l7 7-7 7\"></path></svg></a><a href=\"/storileaf-homepage-preview/#samples\" class=\"text-link\">See inside a book <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 5l7 7-7 7\"></path></svg></a></div><p class=\"pricing-preview-disclosure\">Design preview. No payment or purchase is available here.</p></div><div class=\"pricing-intro-visual\"><img src=\"https://storileaf.com/images/brand/craft/storileaf-square-hardcover-binding-detail-wide-1200.webp\" alt=\"Close view of the binding and page edges of a printed StoriLeaf hardcover\" width=\"1200\" height=\"800\" decoding=\"async\"><div class=\"pricing-intro-image-caption\"><span>From your words</span><em>to the printed page.</em></div></div></div></section><section class=\"pricing-explorer-section\" id=\"choose-book\" aria-labelledby=\"pricing-choose-heading\"><div class=\"page-width\"><div class=\"pricing-section-intro\"><div><h2 id=\"pricing-choose-heading\">Start with <em>your book.</em></h2><p>Choose one of the six books below. You can change your mind without losing the currency you selected.</p></div><a class=\"pricing-gift-link\" href=\"https://storileaf.com/gift/\">Buying as a gift? <svg wid",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "id": "top",
+                  "data-testid": "pricing-page",
+                  "data-state": "ready"
+                },
+                "memoized": {
+                  "id": "top",
+                  "data-testid": "pricing-page",
+                  "data-state": "ready"
+                },
+                "node": "<div id=\"top\" data-testid=\"pricing-page\" data-state=\"ready\"><a href=\"#main-content\" class=\"skip-link\">Skip to content</a><header class=\"site-header\"><div class=\"site-header-inner\"><a aria-label=\"StoriLeaf home\" href=\"/storileaf-homepage-preview/#top\" class=\"brand\"><img src=\"https://storileaf.com/logo.png\" width=\"500\" height=\"125\" alt=\"StoriLeaf\"></a><nav aria-label=\"Main navigation\" data-orientation=\"horizontal\" dir=\"ltr\" data-slot=\"navigation-menu\" data-viewport=\"false\" class=\"group/navigation-menu relative flex max-w-max flex-1 items-center justify-center desktop-nav-root\"><div style=\"position:relative\"><ul data-orientation=\"horizontal\" data-slot=\"navigation-menu-list\" class=\"group flex flex-1 list-none items-center justify-center gap-1 desktop-nav-list\" dir=\"ltr\"><li data-slot=\"navigation-menu-item\" class=\"relative header-nav-item\"><button id=\"radix-_R_29aq_-trigger-radix-_R_2q9aq_\" data-state=\"closed\" aria-expanded=\"false\" data-slot=\"navigation-menu-trigger\" class=\"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group header-nav-trigger\" data-radix-collection-item=\"\">The books<!-- --> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></li><li data-slot=\"navigation-menu-item\" class=\"relative\"><a d",
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "PricingPage",
+                "props": {
+                  "currency": "inr",
+                  "activeSlug": "travel-memoir",
+                  "onBookChange": "[function]",
+                  "onCurrencyChange": "[function]"
+                },
+                "memoized": {
+                  "currency": "inr",
+                  "activeSlug": "travel-memoir",
+                  "onBookChange": "[function]",
+                  "onCurrencyChange": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "PricingDefault",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "Lazy",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 15,
+                "type": "MatchInnerImpl",
+                "props": {
+                  "matchId": "/pricing//pricing/"
+                },
+                "memoized": {
+                  "matchId": "/pricing//pricing/"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {
+                  "fallback": "[function]"
+                },
+                "memoized": {
+                  "fallback": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 1,
+                "type": "CatchBoundaryImpl",
+                "props": {
+                  "getResetKey": "[function]",
+                  "onCatch": "[function]"
+                },
+                "memoized": {
+                  "getResetKey": "[function]",
+                  "onCatch": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "CatchBoundary",
+                "props": {
+                  "getResetKey": "[function]",
+                  "errorComponent": "[function]",
+                  "onCatch": "[function]"
+                },
+                "memoized": {
+                  "getResetKey": "[function]",
+                  "errorComponent": "[function]",
+                  "onCatch": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {
+                  "fallback": "[object]"
+                },
+                "memoized": {
+                  "fallback": "[object]"
+                },
+                "children": null
+              },
+              {
+                "tag": 10,
+                "type": "[object Object]",
+                "props": {
+                  "value": "/pricing//pricing/"
+                },
+                "memoized": {
+                  "value": "/pricing//pricing/"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "MatchView",
+                "props": {
+                  "router": "[object]",
+                  "matchId": "/pricing//pricing/",
+                  "resetKey": 1792434880621,
+                  "matchState": "[object]"
+                },
+                "memoized": {
+                  "router": "[object]",
+                  "matchId": "/pricing//pricing/",
+                  "resetKey": 1792434880621,
+                  "matchState": "[object]"
+                },
+                "children": null
+              }
+            ],
+            "nextNode": "<h2>Life Story</h2>",
+            "nextSibling": "<p class=\"pricing-active-lead\">A life is made up of more than the big milestones.</p>",
+            "hydrationParent": {
+              "tag": 5,
+              "type": "div",
+              "props": {
+                "className": "pricing-active-copy"
+              },
+              "memoized": {
+                "className": "pricing-active-copy"
+              },
+              "node": "<div class=\"pricing-active-copy\"><p class=\"pricing-mini-label\">3 packages to compare</p><h2>Life Story</h2><p class=\"pricing-active-lead\">A life is made up of more than the big milestones.</p><p class=\"pricing-active-description\">From a focused collection of memories to a fuller family edition. Choose how much room, writing time and editorial support you want.</p></div>",
+              "children": null
+            },
+            "stack": "Error\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2108:296)\n    at prepareToHydrateHostInstance (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2155:15)\n    at completeWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:5013:45)\n    at completeUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6882:15)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6828:19)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6823:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6806:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6472:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7279:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+          }
+        ]
+      },
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ],
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing?keepsake=travel-memoir",
+      "title": "StoriLeaf | Compare book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Travel Memoir",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready"
+    }
+  ],
+  "problems": [],
+  "browser": "155.0.8059.39",
+  "completedAt": "2026-10-19T18:34:40.978Z"
+}

@@ -22,26 +22,35 @@ function Arrow() {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" width="20" height="20"><path d="M4 12h15M13 5l7 7-7 7" /></svg>
 }
 
+function Globe() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" width="20" height="20"><circle cx="12" cy="12" r="8.5" /><ellipse cx="12" cy="12" rx="4" ry="8.5" /><path d="M4 9h16M4 15h16" /></svg>
+}
+
+function Chevron() {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" width="20" height="20"><path d="m8 4 8 8-8 8" /></svg>
+}
+
 /**
- * Founder-approved public-site ending. Shared photograph fades into forest.
- * The newsletter design mirrors the current preview; the link uses the real
- * existing newsletter destination until a separately approved form is wired.
- * Route props are supplied by each page, never fabricated by this component.
+ * Source migration of the published shared photograph-to-forest ending.
+ * The current newsletter is an editable input and an ordinary external link,
+ * not a submission form. Route and currency state belong to the page shell.
  */
 export function NewsletterFooter({routes,currency,onCurrencyChange}: Props) {
   const updateCurrency=(event: ChangeEvent<HTMLSelectElement>)=>{
     onCurrencyChange(event.target.value as Currency)
   }
   return <div className="sl-newsletter-footer">
-    <section className="sl-newsletter" aria-labelledby="sl-newsletter-title">
+    <section className="sl-newsletter" aria-labelledby="newsletter-title">
       <div className="sl-container sl-newsletter-layout">
         <div>
-          <h2 id="sl-newsletter-title">{approvedCopy('shared.newsletter.title.prefix')} <em>{approvedCopy('shared.newsletter.title.emphasis')}</em></h2>
+          <h2 id="newsletter-title">{approvedCopy('shared.newsletter.title.prefix')} <em>{approvedCopy('shared.newsletter.title.emphasis')}</em></h2>
           <p>{approvedCopy('shared.newsletter.description')}</p>
         </div>
-        <div className="sl-newsletter-controls">
-          <input type="email" aria-label={approvedCopy('shared.newsletter.email.label')} placeholder={approvedCopy('shared.newsletter.email.placeholder')} autoComplete="email" />
-          <a className="sl-newsletter-subscribe" href={verifiedHref('shared.newsletter.subscribe')}>{approvedCopy('shared.newsletter.subscribe')} <Arrow /></a>
+        <div className="sl-newsletter-form-area">
+          <div className="sl-newsletter-controls">
+            <input type="email" aria-label={approvedCopy('shared.newsletter.email.label')} placeholder={approvedCopy('shared.newsletter.email.placeholder')} autoComplete="email" />
+            <a className="sl-newsletter-subscribe" href={verifiedHref('shared.newsletter.subscribe')}>{approvedCopy('shared.newsletter.subscribe')} <Arrow /></a>
+          </div>
         </div>
       </div>
     </section>
@@ -49,16 +58,18 @@ export function NewsletterFooter({routes,currency,onCurrencyChange}: Props) {
       <div className="sl-container">
         <div className="sl-footer-grid">
           <div className="sl-footer-brand">
-            <a href={routes.home} aria-label="StoriLeaf home">
-              <ResponsiveImage src="https://storileaf.com/logo.png" alt="StoriLeaf" width={500} height={125} sizes="(max-width:480px) 114px, 151px" />
+            <a className="sl-footer-logo" href={routes.home} aria-label={approvedCopy('shared.header.home_label')}>
+              <ResponsiveImage src="https://storileaf.com/logo.png" alt="StoriLeaf" width={500} height={125} sizes="(max-width:360px) 105px, (max-width:480px) 114px, (max-width:720px) 130px, 151px" />
             </a>
             <p>{words('brand.description')}</p>
-            <div className="sl-footer-currency">
-              <span aria-hidden="true">◎</span>
+            <label className="sl-footer-currency">
+              <Globe />
+              <span className="sl-footer-currency-label">{words('currency_label')}</span>
               <select value={currency} onChange={updateCurrency} aria-label="Pricing currency">
                 {options.map(option=><option value={option.value} key={option.value}>{option.label}</option>)}
               </select>
-            </div>
+              <Chevron />
+            </label>
           </div>
           <div className="sl-footer-column">
             <h3>{words('books.heading')}</h3>

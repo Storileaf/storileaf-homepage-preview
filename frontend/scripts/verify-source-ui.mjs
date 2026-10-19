@@ -28,15 +28,18 @@ try {
     'Source must not copy incorrect current-page semantics')
   const books = page.locator('.sl-header-desktop-nav .sl-header-dropdown').first()
   await books.locator('button').hover()
-  check(await page.locator('#sl-books-menu a').count() === 7,
+  await page.locator('[data-testid="books-dropdown"]').waitFor({ state:'visible' })
+  check(await page.locator('[data-testid="books-dropdown"] a').count() === 7,
     'Desktop Books menu did not open with six books and gifting')
   const resources = page.locator('.sl-header-desktop-nav .sl-header-dropdown').last()
   await resources.locator('button').hover()
-  check(await page.locator('#sl-resources-menu a').count() === 3,
+  await page.locator('[data-testid="resources-dropdown"]').waitFor({ state:'visible' })
+  check(await page.locator('[data-testid="resources-dropdown"] a').count() === 3,
     'Desktop Resources menu did not open')
   await resources.locator('button').focus()
   await page.keyboard.press('Escape')
-  check(await page.locator('#sl-resources-menu').count() === 0,
+  await page.locator('[data-testid="resources-dropdown"]').waitFor({ state:'hidden' })
+  check(!await page.locator('[data-testid="resources-dropdown"]').isVisible(),
     'Desktop Resources Escape must dismiss menu')
 
   const cards=page.locator('.sl-resource-card')
@@ -95,9 +98,12 @@ try {
   const trigger=page.getByRole('button',{name:'Open navigation'})
   await trigger.click()
   const dialog=page.locator('.sl-mobile-nav-dialog')
-  check(await dialog.evaluate(el=>el.open),'Mobile navigation dialog did not open')
+  await dialog.waitFor({state:'visible'})
+  check(await dialog.getAttribute('role')==='dialog' && await dialog.getAttribute('data-state')==='open','Mobile navigation dialog did not open')
+  check(await dialog.locator('details').count()===2,'Mobile Books and Resources disclosures are missing')
   await dialog.getByRole('button',{name:'Close navigation'}).click()
-  check(!await dialog.evaluate(el=>el.open),'Mobile navigation did not close')
+  await dialog.waitFor({state:'hidden'})
+  check(!await dialog.isVisible(),'Mobile navigation did not close')
   check(await trigger.evaluate(el=>document.activeElement===el),
     'Closing mobile navigation failed to return keyboard focus')
   await page.screenshot({path:path.join(shotDir,'source-reference-mobile-390.png'),fullPage:true,animations:'disabled'})

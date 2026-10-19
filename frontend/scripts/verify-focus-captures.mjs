@@ -7,7 +7,9 @@ import { execFileSync } from 'node:child_process'
 // No screenshot CSS hides the header, changes assets or alters the production root.
 const out = 'qa/shape-foundation'
 const baseline = 'a80e7dfd0b5fa18acdfabe34c54ab75492e026da'
-const original = execFileSync('git', ['show', baseline + ':frontend/src/styles/components.css'], { cwd: '..', encoding: 'utf8' })
+// Preserve the historical Resource focus comparison without reapplying the
+// superseded approximate header/footer CSS to their authorised Group 3 migration.
+const original = execFileSync('git', ['show', baseline + ':frontend/src/styles/components.css'], { cwd: '..', encoding: 'utf8' }).split('/* Shared public site ending.')[0]
 const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', args: ['--no-sandbox'] })
 const observations = []
 await fs.mkdir(out, { recursive: true })

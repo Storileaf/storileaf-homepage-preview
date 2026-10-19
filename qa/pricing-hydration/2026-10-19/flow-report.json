@@ -1,0 +1,1404 @@
+{
+  "createdAt": "2026-10-19T18:33:38.697Z",
+  "base": "https://storileaf.github.io/storileaf-homepage-preview/",
+  "storage": [
+    {
+      "scenario": "homepage saved currency",
+      "seed": "usd",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "usd"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "usd",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "generic pricing ignores saved currency",
+      "seed": "usd",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": "usd",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "scenario": "explicit currency beats saved currency",
+      "seed": "usd",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": "usd",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "scenario": "homepage saved currency",
+      "seed": "cad",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "cad",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "homepage saved currency",
+      "seed": "gbp",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "gbp"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "gbp",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "homepage saved currency",
+      "seed": "not-a-currency",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "not-a-currency",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "homepage saved currency",
+      "seed": "blocked",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "blocked",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    }
+  ],
+  "flows": [
+    {
+      "scenario": "homepage selector update",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "gbp"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "gbp",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "homepage to pricing client navigation",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "gbp"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "gbp"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": "page"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": "gbp",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "documentPreserved": true,
+      "navigations": [
+        "https://storileaf.github.io/storileaf-homepage-preview/"
+      ],
+      "errors": []
+    },
+    {
+      "scenario": "pricing selector update",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=life-story",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": "cad",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "documentPreserved": true,
+      "errors": []
+    },
+    {
+      "scenario": "book selection preserves currency",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": "cad",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "shared pricing link clears keepsake",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": "cad",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "pricing to homepage anchor",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "cad",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "documentPreserved": true,
+      "targetTop": 216.28125,
+      "headerBottom": 91,
+      "errors": []
+    },
+    {
+      "scenario": "saved currency persists homepage reload",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+      "page": "storileaf-home",
+      "currencies": [
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": "page",
+          "targetPresent": true
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": "page",
+          "targetPresent": true
+        }
+      ],
+      "store": "cad",
+      "selectedBook": "Life Story",
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    }
+  ],
+  "diagnosticOnly": [
+    {
+      "scenario": "response only remove stale footer arrow",
+      "suffix": "pricing/",
+      "originalHtmlSha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+      "modifiedHtmlSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": null,
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": []
+    },
+    {
+      "scenario": "response only remove stale footer arrow",
+      "suffix": "pricing/?keepsake=travel-memoir",
+      "originalHtmlSha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+      "modifiedHtmlSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing?keepsake=travel-memoir",
+      "page": "pricing-page",
+      "currencies": [
+        {
+          "id": "pricing-currency-select",
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "id": "",
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "anchors": [
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Start your story",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#top",
+          "current": null,
+          "targetPresent": true
+        },
+        {
+          "text": "See inside",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "How it works",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#how-it-works",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Resources",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#resources",
+          "current": null,
+          "targetPresent": false
+        },
+        {
+          "text": "Common questions",
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/#questions",
+          "current": null,
+          "targetPresent": false
+        }
+      ],
+      "store": null,
+      "footerContact": "<a href=\"https://storileaf.com/contact/\">Get in touch</a>",
+      "mainPresent": true,
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    }
+  ],
+  "problems": [],
+  "storageCapturedAt": "2026-10-19T18:32:39.749Z",
+  "diagnosticHistory": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('tab').filter({ hasText: 'Travel' })\u001b[22m\n"
+  ],
+  "browser": "155.0.8059.39",
+  "completedAt": "2026-10-19T18:33:42.327Z"
+}

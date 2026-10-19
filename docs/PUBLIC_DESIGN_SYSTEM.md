@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for Package 3 source migration Groups 1 and 2. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for Package 3 source migration Groups 1, 2 and 3. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -90,7 +90,7 @@ Gifting retains its distinct photographic editorial composition, exact heading a
 
 Resources retains the published warm paper, muted ink and sage image bed HSL values in its scoped rules. Gifting retains its published sage gradient, forest panel, photographic veil and restrained image hover. These exact migration values remain local to the two sections and do not change the generic palette or other section defaults. Image sources, alt text and intrinsic dimensions remain together in the image manifest.
 
-The root scroll context is currently mirrored only for the isolated source composition. The later shared shell migration should own it without changing the effective anchor offsets. Group 1 measures programmatic section alignment using unique preserved IDs, computed scroll margins and root padding, document clamping, final position and visibility. Actual header navigation, URL fragments, router history and restoration require the later shell parity review.
+The source shared composition owns the root scroll context without changing effective section offsets. Group 1 measured programmatic alignment using unique preserved IDs, computed scroll margins and root padding, document clamping, final position and visibility. Group 3 extends this to actual shared navigation, URL fragments, router history and restoration. Only targets present in the partial composition resolve locally. See [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) for the route boundary and integrated verification.
 
 The source entry places Gifting before Resources, preserving their relative homepage order. Both section migrations need actual baseline/source screenshots and relevant interaction checks before parity can be recorded. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for scope and evidence, and keep style decisions in this document.
 
@@ -106,7 +106,7 @@ Use independent native details and summary elements. Preserve simultaneous expan
 
 The final invitation remains inside the questions section after the FAQ grid. It keeps its divider, supporting paragraph and separate heading, with the button alongside on wider screens and beneath at 480px and below. Its top margin is 69px, becoming 40px at 720px and below. Padding remains 48px above and 55px below, then 34px and 40px at 480px and below. The deliberately distinct heading is 42px with 1.12 leading, 36px at 720px and below and 37px at 480px and below. Do not replace these inherited values with a global normalisation.
 
-The invitation action keeps the shared 6px radius and approved teal hover, with its inherited 13px label, minimum 49px height, 20px icon gap and 12px/24px padding. Its books destination is unchanged. Omit inappropriate current page semantics in the new source. The root static anchor and other shared navigation remain separately scoped migration work.
+The invitation action keeps the shared 6px radius and approved teal hover, with its inherited 13px label, minimum 49px height, 20px icon gap and 12px/24px padding. Its published books destination is unchanged. Omit inappropriate current page semantics in the new source. Group 3 also corrects shared source navigation semantics while preserving the protected static markup.
 
 Warm paper, sage and muted ink values remain scoped to these sections. See [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) for implementation, inherited copy provenance and rendered evidence. This group introduces no new image assets or global identity tokens.
 
@@ -124,7 +124,7 @@ The founder subsequently authorised applying Package 1 to the existing published
 
 The earlier 9px header/newsletter/gold values were inherited implementation differences, not a necessary hierarchy. The homepage stylesheet mirrors the relevant source values through homepage-scoped custom properties, with existing fallbacks for the separate pricing preview. The pricing page's styling is not changed by this release.
 
-Preserve existing dimensions, typography, padding, labels and destinations. The mobile source and published header actions remain 45px high at 390px and 430px. Resource keyboard focus follows the parent card radius, retaining its 3px outline and 5px inset.
+Preserve existing dimensions, typography, padding, labels and destinations. Start your story remains 45px high at every width where the header action is visible. Resource keyboard focus follows the parent card radius, retaining its 3px outline and 5px inset.
 
 ### Approved feedback and semantics
 
@@ -136,19 +136,19 @@ The source primary/gold hover rules apply to real ActionLink anchors, not the no
 
 No disabled or loading API, asynchronous operation or newsletter subscription service was introduced. Document such states when an actual component needs them, with separate behaviour and content approval. Do not simulate working destinations or dim an entire control to manufacture a state catalogue.
 
-Existing source menu, header shell, icon and utility control values remain named tokens pending their own parity review. See the [Package 1 review and verification record](PACKAGE_1_REVIEW.md). Source references are not full homepage parity or accessibility certification.
+Group 3 reconstructs the published header shell, menu, icon and utility geometry in scoped component rules. Earlier experimental source geometry is not an independent design authority. Specialised navigation shapes remain separate from the 6px action family. See the [Package 1 review and verification record](PACKAGE_1_REVIEW.md) and [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md). Source implementation is not full homepage parity or accessibility certification.
 
 ## Reusable public components
 
-Shared SiteHeader with original gold logo on forest, Books/Resources accessible dropdowns, mobile navigation and exact Start your story action.
+Shared SiteHeader with original gold logo on forest, the published Radix Books and Resources menus, Radix mobile dialog with native nested disclosures, and exact Start your story action. Preserve the existing keyboard skip control, menu labels, book descriptions and destinations.
 
-Shared NewsletterFooter as one photographic field gradually fading to forest. A typed React reference exists in frontend/src/components/NewsletterFooter.tsx, with caller-provided internal routes and currency selection, but it has NOT replaced the approved live footer. This is the standard ending intended for all future public pages, subject to parity and production form integration later.
+Shared NewsletterFooter as one photographic field gradually fading to forest. Group 3 reconstructs frontend/src/components/NewsletterFooter.tsx with explicit route and currency props, the approved typography, grouping, link order and Get in touch without an arrow. It has not replaced the live footer. This remains the intended ending for future public pages, subject to complete parity and separate production form integration.
 
 EditorialSectionHeading with centred and split layouts, no mandatory italic formula. Primary/outline/gold-on-dark/text Action components with consistent feedback and accessible targets.
 
 BookSelector, BookGallery and PrintedBookDetail keep their separately approved behaviours and exact copy. The sticky four-stage ProcessStory is a specialised editorial feature, not a generic dashboard scroll primitive.
 
-ResourceCategoryCard keeps equal photographic panels and a centred Browse all resources treatment. The Activities and all-Resources destinations are unbuilt and cannot be presented as live.
+ResourceCategoryCard keeps equal photographic panels and a centred Browse all resources treatment. Activities and Browse all resources remain noninteractive section labels because their destination pages are unbuilt. Preserve the existing interim Resources and Activities header anchors.
 
 The existing homepage writing modal is an interim action. Its intended replacement is a dedicated public practice page, documented separately, not yet built.
 
@@ -164,7 +164,7 @@ Aim for at least 44px effective principal touch targets, sensible focus-visible 
 
 Respect prefers-reduced-motion. The founder explicitly rejected an extra prominent hero Pause movement button; do not add one. The existing hero cover orbit settings, carousel and ticker are visual trial settings. Do not change them under the guise of performance optimisation.
 
-Do not copy current static aria-current mistakes into new source. Distinguish a current route from an ordinary anchor and verify the hydrated state.
+Do not copy current static aria-current mistakes into new source. Group 3 shared section links and the skip control omit aria-current="page". Distinguish a current route from an ordinary anchor and verify the rendered state.
 
 ## Responsive QA
 
@@ -186,12 +186,14 @@ The deployed static homepage, including the completed Package 1 and Package 2 re
 
 ## Implementation maturity
 
-The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
+The public React source is deliberately staged. Groups 1 and 2 implement five editorial sections, and Group 3 reconstructs the shared header, newsletter, footer and navigation. This partial composition is not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
 
-Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. Group 2 is separately authorised below. This evidence does not approve a homepage redesign or publication of the partial React build.
+Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. Groups 2 and 3 are separately recorded below. This evidence does not approve a homepage redesign or publication of the partial React build.
 
 Group 2 adds ReassuranceBand, FaqSection and FinalInvitation to the isolated composition. Source remains as committed at 8cd289a, with the full local comparison verified and final CI passing at gate correction 6b5f983. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) owns the exact evidence, retained findings and editorial count correction history. The correction changes no style token or component rule. The band's preserved position remains an assembly requirement while hero and discovery are unmigrated. Founder visual acceptance and complete homepage cutover remain separate.
 
-## Source-only shared shell maturity
+## Shared component migration
 
-Typed SiteHeader and NewsletterFooter React references now exist, using caller-provided explicit routes and currency rather than hardcoding future unbuilt website pages. The source-only Chromium gate covers nine widths and fundamental interactions. The published Radix navigation, homepage and compiled CSS remain the migration reference. No React cutover has been approved; source references need complete side-by-side screenshots, tab/modal/slideshow parity and final founder acceptance before they can replace live assets.
+The founder authorised Group 3 shared header, newsletter, footer and navigation parity. Its source implementation and complete local visual and functional verification pass; committed CI evidence remains to be verified. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) owns the current evidence. The shared browser checks now exercise the actual Radix controls and compare their rendered geometry to the protected published implementation. Currency selection retains the published storage key and pricing route contract. The [pricing hydration investigation](PRICING_HYDRATION_REVIEW.md) identified three protected export mismatches; none is repaired by this source migration. No React cutover or founder acceptance is recorded.
+
+Group 3 targeted enlargement also records inherited footer label and currency control clipping at 320px and desktop navigation document overflow at 1440px with shared text doubled. These are open quality findings, not desired reusable behaviour or an enlargement acceptance. Propose bounded reflow corrections before visible implementation changes. The measured normal geometry and completed Packages 1 and 2 remain protected.

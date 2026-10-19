@@ -1,0 +1,1035 @@
+{
+  "createdAt": "2026-10-19T18:31:13.187Z",
+  "base": "https://storileaf.github.io/storileaf-homepage-preview/",
+  "unmodified": [
+    {
+      "phase": "direct",
+      "path": "",
+      "status": 200,
+      "htmlHash": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "title": "StoriLeaf | Your stories, made into a book",
+      "page": "storileaf-home",
+      "currency": [
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "The stories of your life,made into a book worth sharing.",
+        "Which part of life would you like to tell?",
+        "See what your stories can become.",
+        "From a first answer to the finished pages."
+      ],
+      "store": null,
+      "selectedBook": "Life Story",
+      "ready": "ready",
+      "errors": []
+    },
+    {
+      "phase": "reload",
+      "path": "",
+      "status": 200,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "title": "StoriLeaf | Your stories, made into a book",
+      "page": "storileaf-home",
+      "currency": [
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "The stories of your life,made into a book worth sharing.",
+        "Which part of life would you like to tell?",
+        "See what your stories can become.",
+        "From a first answer to the finished pages."
+      ],
+      "store": null,
+      "selectedBook": "Life Story",
+      "ready": "ready",
+      "errors": []
+    },
+    {
+      "phase": "direct",
+      "path": "pricing/",
+      "status": 200,
+      "htmlHash": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+      "title": "StoriLeaf | Compare book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at prepareToHydrateHostInstance (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2148:15)\n    at completeWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:5006:45)\n    at completeUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6875:15)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6821:19)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "reload",
+      "path": "pricing/",
+      "status": 200,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+      "title": "StoriLeaf | Compare book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at prepareToHydrateHostInstance (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2148:15)\n    at completeWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:5006:45)\n    at completeUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6875:15)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6821:19)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "direct",
+      "path": "pricing/inr",
+      "status": 404,
+      "htmlHash": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+      "title": "StoriLeaf | INR book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "reload",
+      "path": "pricing/inr",
+      "status": 404,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+      "title": "StoriLeaf | INR book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "direct",
+      "path": "pricing/usd",
+      "status": 404,
+      "htmlHash": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+      "title": "StoriLeaf | USD book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "usd"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "usd"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "reload",
+      "path": "pricing/usd",
+      "status": 404,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+      "title": "StoriLeaf | USD book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "usd"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "usd"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "direct",
+      "path": "pricing/cad",
+      "status": 404,
+      "htmlHash": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "title": "StoriLeaf | CAD book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "reload",
+      "path": "pricing/cad",
+      "status": 404,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "title": "StoriLeaf | CAD book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "direct",
+      "path": "pricing/gbp",
+      "status": 404,
+      "htmlHash": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+      "title": "StoriLeaf | GBP book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "gbp"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "gbp"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    },
+    {
+      "phase": "reload",
+      "path": "pricing/gbp",
+      "status": 404,
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+      "title": "StoriLeaf | GBP book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "gbp"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "gbp"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready",
+      "errors": [
+        {
+          "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "stack": "Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2104:50)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4545:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4885:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6819:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6816:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6799:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6465:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7272:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+        }
+      ]
+    }
+  ],
+  "instrumented": [
+    {
+      "path": "pricing/",
+      "status": 200,
+      "diagnosticOnly": true,
+      "originalBundleSha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "diagnostic": {
+        "findings": [
+          {
+            "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+            "parents": [
+              {
+                "tag": 5,
+                "type": "a",
+                "props": {
+                  "href": "https://storileaf.com/contact/"
+                },
+                "memoized": {
+                  "href": "https://storileaf.com/contact/"
+                },
+                "node": "<a href=\"https://storileaf.com/contact/\">Get in touch <span aria-hidden=\"true\">↗</span></a>",
+                "children": "Get in touch"
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {},
+                "memoized": {},
+                "node": "<div><a href=\"https://storileaf.com/privacy/\">Privacy</a><a href=\"https://storileaf.com/terms-conditions/\">Terms</a><a href=\"https://storileaf.com/contact/\">Get in touch <span aria-hidden=\"true\">↗</span></a></div>",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "className": "footer-bottom"
+                },
+                "memoized": {
+                  "className": "footer-bottom"
+                },
+                "node": "<div class=\"footer-bottom\"><span>© 2026 StoriLeaf</span><div><a href=\"https://storileaf.com/privacy/\">Privacy</a><a href=\"https://storileaf.com/terms-conditions/\">Terms</a><a href=\"https://storileaf.com/contact/\">Get in touch <span aria-hidden=\"true\">↗</span></a></div></div>",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "className": "page-width"
+                },
+                "memoized": {
+                  "className": "page-width"
+                },
+                "node": "<div class=\"page-width\"><div class=\"footer-grid\"><div class=\"footer-brand\"><a aria-label=\"StoriLeaf home\" href=\"/storileaf-homepage-preview/#top\" class=\"footer-logo\"><img src=\"https://storileaf.com/logo.png\" width=\"500\" height=\"125\" alt=\"StoriLeaf\" loading=\"lazy\"></a><p>Real stories, made into books to keep and share.</p><label class=\"currency-picker\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"></circle><ellipse cx=\"12\" cy=\"12\" rx=\"4\" ry=\"8.5\"></ellipse><path d=\"M4 9h16M4 15h16\"></path></svg><span class=\"sr-only\">Currency for the pricing page</span><select aria-label=\"Pricing currency\"><option value=\"inr\" selected=\"\">INR · ₹</option><option value=\"usd\">USD · US$</option><option value=\"cad\">CAD · C$</option><option value=\"gbp\">GBP · £</option></select><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 4 8 8-8 8\"></path></svg></label></div><div class=\"footer-column\"><h3>The books</h3><a href=\"https://storileaf.com/life-story/\">Life Story</a><a href=\"https://storileaf.com/travel-memoir/\">Travel Memoir</a><a href=\"https://storileaf.com/relationship-memoir/\">Relationship Memoir</a><a href=\"https://storileaf.com/founders-memoir/\">Founder's Memoir</a><a href=\"https://storileaf.com/parent-to-child-letters/\">Parent to Child Letters</a><a href=\"https://storileaf.com/celebrating-occasions/\">Celebrating Occasions</a></div><div class=\"footer-column\"><h3>Explore</h3><a href=\"/storileaf-homepage-preview/#samples\">See inside</a><a href=\"/storileaf-homepage-preview/#how-it-works\">How it works</a><a href=\"/storileaf-homepage-preview/pricing/inr\">Pricing</a><a href=\"https://storileaf.com/gift/\">Gift a book</a><a href=\"/storileaf-homepage-preview/#resources\">Resources</a><a href=\"https://storileaf.com/blog/\"",
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "footer",
+                "props": {
+                  "className": "site-footer"
+                },
+                "memoized": {
+                  "className": "site-footer"
+                },
+                "node": "<footer class=\"site-footer\"><div class=\"page-width\"><div class=\"footer-grid\"><div class=\"footer-brand\"><a aria-label=\"StoriLeaf home\" href=\"/storileaf-homepage-preview/#top\" class=\"footer-logo\"><img src=\"https://storileaf.com/logo.png\" width=\"500\" height=\"125\" alt=\"StoriLeaf\" loading=\"lazy\"></a><p>Real stories, made into books to keep and share.</p><label class=\"currency-picker\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"8.5\"></circle><ellipse cx=\"12\" cy=\"12\" rx=\"4\" ry=\"8.5\"></ellipse><path d=\"M4 9h16M4 15h16\"></path></svg><span class=\"sr-only\">Currency for the pricing page</span><select aria-label=\"Pricing currency\"><option value=\"inr\" selected=\"\">INR · ₹</option><option value=\"usd\">USD · US$</option><option value=\"cad\">CAD · C$</option><option value=\"gbp\">GBP · £</option></select><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m8 4 8 8-8 8\"></path></svg></label></div><div class=\"footer-column\"><h3>The books</h3><a href=\"https://storileaf.com/life-story/\">Life Story</a><a href=\"https://storileaf.com/travel-memoir/\">Travel Memoir</a><a href=\"https://storileaf.com/relationship-memoir/\">Relationship Memoir</a><a href=\"https://storileaf.com/founders-memoir/\">Founder's Memoir</a><a href=\"https://storileaf.com/parent-to-child-letters/\">Parent to Child Letters</a><a href=\"https://storileaf.com/celebrating-occasions/\">Celebrating Occasions</a></div><div class=\"footer-column\"><h3>Explore</h3><a href=\"/storileaf-homepage-preview/#samples\">See inside</a><a href=\"/storileaf-homepage-preview/#how-it-works\">How it works</a><a href=\"/storileaf-homepage-preview/pricing/inr\">Pricing</a><a href=\"https://storileaf.com/gift/\">Gift a book</a><a href=\"/storileaf-homepage-preview/#resources\">Resources</a><a href=\"",
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "Footer",
+                "props": {
+                  "currency": "inr",
+                  "onCurrencyChange": "[function]",
+                  "previewNote": "Pricing design preview. Prices are a static reference from the reviewed StoriLeaf catalogue. No purchase or payment can be made here. Book excerpts and writing interfaces elsewhere in this preview are illustrative."
+                },
+                "memoized": {
+                  "currency": "inr",
+                  "onCurrencyChange": "[function]",
+                  "previewNote": "Pricing design preview. Prices are a static reference from the reviewed StoriLeaf catalogue. No purchase or payment can be made here. Book excerpts and writing interfaces elsewhere in this preview are illustrative."
+                },
+                "children": null
+              },
+              {
+                "tag": 5,
+                "type": "div",
+                "props": {
+                  "id": "top",
+                  "data-testid": "pricing-page",
+                  "data-state": "ready"
+                },
+                "memoized": {
+                  "id": "top",
+                  "data-testid": "pricing-page",
+                  "data-state": "ready"
+                },
+                "node": "<div id=\"top\" data-testid=\"pricing-page\" data-state=\"ready\"><a href=\"#main-content\" class=\"skip-link\">Skip to content</a><header class=\"site-header\"><div class=\"site-header-inner\"><a aria-label=\"StoriLeaf home\" href=\"/storileaf-homepage-preview/#top\" class=\"brand\"><img src=\"https://storileaf.com/logo.png\" width=\"500\" height=\"125\" alt=\"StoriLeaf\"></a><nav aria-label=\"Main navigation\" data-orientation=\"horizontal\" dir=\"ltr\" data-slot=\"navigation-menu\" data-viewport=\"false\" class=\"group/navigation-menu relative flex max-w-max flex-1 items-center justify-center desktop-nav-root\"><div style=\"position:relative\"><ul data-orientation=\"horizontal\" data-slot=\"navigation-menu-list\" class=\"group flex flex-1 list-none items-center justify-center gap-1 desktop-nav-list\" dir=\"ltr\"><li data-slot=\"navigation-menu-item\" class=\"relative header-nav-item\"><button id=\"radix-_R_29aq_-trigger-radix-_R_2q9aq_\" data-state=\"closed\" aria-expanded=\"false\" data-slot=\"navigation-menu-trigger\" class=\"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group header-nav-trigger\" data-radix-collection-item=\"\">The books<!-- --> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></li><li data-slot=\"navigation-menu-item\" class=\"relative\"><a d",
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "PricingPage",
+                "props": {
+                  "currency": "inr",
+                  "activeSlug": "life-story",
+                  "onBookChange": "[function]",
+                  "onCurrencyChange": "[function]"
+                },
+                "memoized": {
+                  "currency": "inr",
+                  "activeSlug": "life-story",
+                  "onBookChange": "[function]",
+                  "onCurrencyChange": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "PricingDefault",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "Lazy",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 15,
+                "type": "MatchInnerImpl",
+                "props": {
+                  "matchId": "/pricing//pricing/"
+                },
+                "memoized": {
+                  "matchId": "/pricing//pricing/"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {
+                  "fallback": "[function]"
+                },
+                "memoized": {
+                  "fallback": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 1,
+                "type": "CatchBoundaryImpl",
+                "props": {
+                  "getResetKey": "[function]",
+                  "onCatch": "[function]"
+                },
+                "memoized": {
+                  "getResetKey": "[function]",
+                  "onCatch": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "CatchBoundary",
+                "props": {
+                  "getResetKey": "[function]",
+                  "errorComponent": "[function]",
+                  "onCatch": "[function]"
+                },
+                "memoized": {
+                  "getResetKey": "[function]",
+                  "errorComponent": "[function]",
+                  "onCatch": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {
+                  "fallback": "[object]"
+                },
+                "memoized": {
+                  "fallback": "[object]"
+                },
+                "children": null
+              },
+              {
+                "tag": 10,
+                "type": "[object Object]",
+                "props": {
+                  "value": "/pricing//pricing/"
+                },
+                "memoized": {
+                  "value": "/pricing//pricing/"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "MatchView",
+                "props": {
+                  "router": "[object]",
+                  "matchId": "/pricing//pricing/",
+                  "resetKey": 0,
+                  "matchState": "[object]"
+                },
+                "memoized": {
+                  "router": "[object]",
+                  "matchId": "/pricing//pricing/",
+                  "resetKey": 0,
+                  "matchState": "[object]"
+                },
+                "children": null
+              }
+            ],
+            "hydrationParent": {
+              "tag": 5,
+              "type": "div",
+              "props": {},
+              "memoized": {},
+              "node": "<div><a href=\"https://storileaf.com/privacy/\">Privacy</a><a href=\"https://storileaf.com/terms-conditions/\">Terms</a><a href=\"https://storileaf.com/contact/\">Get in touch <span aria-hidden=\"true\">↗</span></a></div>",
+              "children": null
+            },
+            "stack": "Error\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2108:296)\n    at prepareToHydrateHostInstance (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2155:15)\n    at completeWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:5013:45)\n    at completeUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6882:15)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6828:19)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6823:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6806:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6472:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7279:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+          }
+        ]
+      },
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ],
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+      "title": "StoriLeaf | Compare book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "inr"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "inr"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "current": null
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready"
+    },
+    {
+      "path": "pricing/cad",
+      "status": 404,
+      "diagnosticOnly": true,
+      "originalBundleSha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "diagnostic": {
+        "findings": [
+          {
+            "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+            "parents": [
+              {
+                "tag": 13,
+                "type": "null",
+                "props": {
+                  "fallback": "[object]"
+                },
+                "memoized": null,
+                "children": null
+              },
+              {
+                "tag": 10,
+                "type": "[object Object]",
+                "props": {
+                  "value": "/pricing/pricing"
+                },
+                "memoized": {
+                  "value": "/pricing/pricing"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "MatchView",
+                "props": {
+                  "router": "[object]",
+                  "matchId": "/pricing/pricing",
+                  "resetKey": 1792434690036,
+                  "matchState": "[object]"
+                },
+                "memoized": {
+                  "router": "[object]",
+                  "matchId": "/pricing/pricing",
+                  "resetKey": 1792434690036,
+                  "matchState": "[object]"
+                },
+                "children": null
+              },
+              {
+                "tag": 15,
+                "type": "MatchImpl",
+                "props": {
+                  "matchId": "/pricing/pricing"
+                },
+                "memoized": {
+                  "matchId": "/pricing/pricing"
+                },
+                "children": null
+              },
+              {
+                "tag": 22,
+                "type": "null",
+                "props": {
+                  "mode": "visible"
+                },
+                "memoized": {
+                  "mode": "visible"
+                },
+                "children": null
+              },
+              {
+                "tag": 13,
+                "type": "null",
+                "props": {
+                  "fallback": "[object]"
+                },
+                "memoized": {
+                  "fallback": "[object]"
+                },
+                "children": null
+              },
+              {
+                "tag": 15,
+                "type": "OutletImpl",
+                "props": {},
+                "memoized": {},
+                "children": null
+              },
+              {
+                "tag": 15,
+                "type": "MatchInnerImpl",
+                "props": {
+                  "matchId": "__root__/"
+                },
+                "memoized": {
+                  "matchId": "__root__/"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {
+                  "fallback": "[function]"
+                },
+                "memoized": {
+                  "fallback": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 1,
+                "type": "CatchBoundaryImpl",
+                "props": {
+                  "getResetKey": "[function]",
+                  "onCatch": "[function]"
+                },
+                "memoized": {
+                  "getResetKey": "[function]",
+                  "onCatch": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "CatchBoundary",
+                "props": {
+                  "getResetKey": "[function]",
+                  "errorComponent": "[function]",
+                  "onCatch": "[function]"
+                },
+                "memoized": {
+                  "getResetKey": "[function]",
+                  "errorComponent": "[function]",
+                  "onCatch": "[function]"
+                },
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "SafeFragment",
+                "props": {
+                  "fallback": "[object]"
+                },
+                "memoized": {
+                  "fallback": "[object]"
+                },
+                "children": null
+              },
+              {
+                "tag": 10,
+                "type": "[object Object]",
+                "props": {
+                  "value": "__root__/"
+                },
+                "memoized": {
+                  "value": "__root__/"
+                },
+                "children": null
+              },
+              {
+                "tag": 7,
+                "type": "null",
+                "props": {
+                  "0": "[object]",
+                  "1": "[object]"
+                },
+                "memoized": {
+                  "0": "[object]",
+                  "1": "[object]"
+                },
+                "children": null
+              },
+              {
+                "tag": 27,
+                "type": "body",
+                "props": {},
+                "memoized": {},
+                "node": "<body><!--$--><div id=\"top\" data-testid=\"storileaf-home\" data-state=\"ready\"><a class=\"skip-link active\" href=\"/storileaf-homepage-preview/#main-content\" data-status=\"active\" aria-current=\"page\">Skip to content</a><header class=\"site-header\"><div class=\"site-header-inner\"><a aria-label=\"StoriLeaf home\" class=\"brand active\" href=\"/storileaf-homepage-preview/#top\" data-status=\"active\" aria-current=\"page\"><img src=\"https://storileaf.com/logo.png\" width=\"500\" height=\"125\" alt=\"StoriLeaf\"></a><nav aria-label=\"Main navigation\" data-orientation=\"horizontal\" dir=\"ltr\" data-slot=\"navigation-menu\" data-viewport=\"false\" class=\"group/navigation-menu relative flex max-w-max flex-1 items-center justify-center desktop-nav-root\"><div style=\"position:relative\"><ul data-orientation=\"horizontal\" data-slot=\"navigation-menu-list\" class=\"group flex flex-1 list-none items-center justify-center gap-1 desktop-nav-list\" dir=\"ltr\"><li data-slot=\"navigation-menu-item\" class=\"relative header-nav-item\"><button id=\"radix-_R_iaq_-trigger-radix-_R_miaq_\" data-state=\"closed\" aria-expanded=\"false\" data-slot=\"navigation-menu-trigger\" class=\"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group header-nav-trigger\" data-radix-collection-item=\"\">The books<!-- --> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:r",
+                "children": null
+              },
+              {
+                "tag": 27,
+                "type": "html",
+                "props": {
+                  "lang": "en-GB"
+                },
+                "memoized": {
+                  "lang": "en-GB"
+                },
+                "node": "<html lang=\"en-GB\"><head><meta name=\"robots\" content=\"noindex,nofollow,noarchive\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"preload\" as=\"image\" href=\"https://storileaf.com/logo.png\"><link rel=\"preload\" as=\"image\" href=\"https://storileaf.com/images/brand/craft/storileaf-square-hardcover-binding-detail-wide-1200.webp\" fetchpriority=\"high\"><link rel=\"stylesheet\" href=\"/storileaf-homepage-preview/assets/index-DhPZyX4z.css\" data-precedence=\"default\"><title>StoriLeaf | CAD book packages</title><meta name=\"theme-color\" content=\"#0c6753\"><meta name=\"description\" content=\"Guided questions, thoughtful preparation and a printed book. Find the StoriLeaf book for your life story, travels, relationship, business, letters or celebration.\"><meta name=\"robots\" content=\"noindex, nofollow\"><meta property=\"og:title\" content=\"StoriLeaf | Your stories, made into a book\"><meta property=\"og:description\" content=\"Guided questions, thoughtful preparation and a printed book. Find the StoriLeaf book for your life story, travels, relationship, business, letters or celebration.\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:locale\" content=\"en_GB\"><meta property=\"og:image\" content=\"https://storileaf.com/images/brand/brand/storileaf-family-reading-open-memoir-home-hero-928.webp\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/index-DO3Vh6An.js\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/useStore-DY_dpydU.js\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/link-CrvydYrW.js\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/Match-CtmL2Hj_.js\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/matchContext-DFjqCKIt.js\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/routes-DrwDv2x2.js\"><link rel=\"modulepreload\" href=\"/storileaf-homepage-preview/assets/content-sections-CfrmOVRI.js\"><link rel=\"icon\" type=\"image/png\"",
+                "children": null
+              },
+              {
+                "tag": 0,
+                "type": "RootDocument",
+                "props": {},
+                "memoized": {},
+                "children": null
+              }
+            ],
+            "nextNode": "<div id=\"top\" data-testid=\"storileaf-home\" data-state=\"ready\"><a class=\"skip-link active\" href=\"/storileaf-homepage-preview/#main-content\" data-status=\"active\" aria-current=\"page\">Skip to content</a><header class=\"site-header\"><div class=\"site-header-inner\"><a aria-label=\"StoriLeaf home\" class=\"brand active\" href=\"/storileaf-homepage-preview/#top\" data-status=\"active\" aria-current=\"page\"><img src=\"https://storileaf.com/logo.png\" width=\"500\" height=\"125\" alt=\"StoriLeaf\"></a><nav aria-label=\"Main navigation\" data-orientation=\"horizontal\" dir=\"ltr\" data-slot=\"navigation-menu\" data-viewport=\"false\" class=\"group/navigation-menu relative flex max-w-max flex-1 items-center justify-center desktop-nav-root\"><div style=\"position:relative\"><ul data-orientation=\"horizontal\" data-slot=\"navigation-menu-list\" class=\"group flex flex-1 list-none items-center justify-center gap-1 desktop-nav-list\" dir=\"ltr\"><li data-slot=\"navigation-menu-item\" class=\"relative header-nav-item\"><button id=\"radix-_R_iaq_-trigger-radix-_R_miaq_\" data-state=\"closed\" aria-expanded=\"false\" data-slot=\"navigation-menu-trigger\" class=\"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group header-nav-trigger\" data-radix-collection-item=\"\">The books<!-- --> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></li><li data-slot=\"navigation-menu-item\" class=\"relative\"><a aria-current=\"page\" data-slot=\"navigation-menu-link\" data-radix-collection-item=\"\" class=\"flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground data-[active=true]:hover:bg-accent data-[active=true]:focus:bg-accent [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg:not([class*='text-'])]:text-muted-foreground header-simple-link active\" href=\"/storileaf-homepage-preview/#samples\" data-status=\"active\">See inside</a></li><li data-slot=\"navigation-menu-item\" class=\"relative\"><a aria-current=\"page\" data-slot=\"navigation-menu-link\" data-radix-collection-item=\"\" class=\"flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground data-[active=true]:hover:bg-accent data-[active=true]:focus:bg-accent [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg:not([class*='text-'])]:text-muted-foreground header-simple-link active\" href=\"/storileaf-homepage-preview/#how-it-works\" data-status=\"active\">How it works</a></li><li data-slot=\"navigation-menu-item\" class=\"relative header-nav-item\"><button id=\"radix-_R_iaq_-trigger-radix-_R_26iaq_\" data-state=\"closed\" aria-expanded=\"false\" data-slot=\"navigation-menu-trigger\" class=\"group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-[color,box-shadow] outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group header-nav-trigger\" data-radix-collection-item=\"\">Resources<!-- --> <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down relative top-[1px] ml-1 size-3 transition duration-300 group-data-[state=open]:rotate-180\" aria-hidden=\"true\"><path d=\"m6 9 6 6 6-6\"></path></svg></button></li><li data-slot=\"navigation-menu-item\" class=\"relative\"><a data-slot=\"navigation-menu-link\" data-radix-collection-item=\"\" href=\"/storileaf-homepage-preview/pricing/inr\" class=\"flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none hover:bg-accent hover:text-accent-foreground f",
+            "hydrationParent": {
+              "tag": 13,
+              "type": "null",
+              "props": {
+                "fallback": "[object]"
+              },
+              "memoized": {
+                "fallback": "[object]"
+              },
+              "children": null
+            },
+            "stack": "Error\n    at throwOnHydrationMismatch (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:2108:296)\n    at updateSuspenseComponent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4552:33)\n    at beginWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:4892:20)\n    at performUnitOfWork (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6826:14)\n    at workLoopConcurrentByScheduler (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6823:54)\n    at renderRootConcurrent (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6806:5)\n    at performWorkOnRoot (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:6472:188)\n    at performWorkOnRootViaSchedulerTask (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:7279:3)\n    at MessagePort.performWorkUntilDeadline (https://storileaf.github.io/storileaf-homepage-preview/assets/index-DO3Vh6An.js:115:37)"
+          }
+        ]
+      },
+      "errors": [
+        "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ],
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "title": "StoriLeaf | CAD book packages",
+      "page": "pricing-page",
+      "currency": [
+        {
+          "label": null,
+          "value": "cad"
+        },
+        {
+          "label": "Pricing currency",
+          "value": "cad"
+        }
+      ],
+      "pricingLinks": [
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        },
+        {
+          "href": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "current": "page"
+        }
+      ],
+      "headings": [
+        "Find your book.Choose how it comes together.",
+        "Start with your book.",
+        "Life Story",
+        "The details, without the guesswork."
+      ],
+      "store": null,
+      "ready": "ready"
+    }
+  ],
+  "problems": [],
+  "browser": "155.0.8059.39",
+  "completedAt": "2026-10-19T18:31:31.311Z"
+}

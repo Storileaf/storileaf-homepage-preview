@@ -47,7 +47,7 @@ test('font loading is explicit in the source preview',()=>{
 
 test('shared newsletter and footer use one photo field with verified CTAs',()=>{
   const source=readFileSync(new URL('../src/components/NewsletterFooter.tsx',import.meta.url),'utf8')
-  const styles=readFileSync(new URL('../src/styles/components.css',import.meta.url),'utf8')
+  const styles=readFileSync(new URL('../src/styles/shared-footer.css',import.meta.url),'utf8')
   assert.ok(source.includes('className="sl-newsletter-footer"'))
   assert.ok(source.includes("verifiedHref('shared.newsletter.subscribe')"))
   assert.ok(source.includes('routes: FooterRoutes'))
@@ -55,11 +55,6 @@ test('shared newsletter and footer use one photo field with verified CTAs',()=>{
   assert.ok(styles.includes('.sl-newsletter-footer::after'))
 })
 
-test('source header has hover, keyboard Escape and a native mobile dialog',()=>{
-  const file=readFileSync(new URL('../src/components/SiteHeader.tsx',import.meta.url),'utf8')
-  assert.ok(file.includes("onMouseEnter={()=>setOpenMenu('books')}"))
-  assert.ok(file.includes("event.key==='Escape'"))
-  assert.ok(file.includes('showModal()'))
-  assert.ok(file.includes('onClose={drawerClosed}'))
-  assert.ok(!file.includes('aria-current="page"'))
-})
+// Shared navigation behaviour now runs in verify-source-ui and verify-shared-parity
+// against actual Radix menus, focus and disclosure state. Looking for the former
+// handmade event-handler strings would not verify the migrated behaviour.

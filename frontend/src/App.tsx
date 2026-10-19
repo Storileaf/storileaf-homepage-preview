@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { NewsletterFooter, type Currency } from './components/NewsletterFooter'
+import { NewsletterFooter } from './components/NewsletterFooter'
 import { SiteHeader } from './components/SiteHeader'
 import { previewRoutesForCurrency } from './siteRoutes'
+import { usePreviewCurrency } from './usePreviewCurrency'
+import { approvedCopy } from './content'
 import { GiftingSection } from './sections/GiftingSection'
 import { ResourcesSection } from './sections/ResourcesSection'
 import { ReassuranceBand } from './sections/ReassuranceBand'
@@ -12,9 +13,11 @@ import './styles/homepage-questions.css'
 // This is a source-driven component reference, NOT the full published homepage.
 // Do not deploy this in place of the current GitHub Pages root until parity.
 export function App() {
-  const [currency, setCurrency] = useState<Currency>('inr')
-  const routes = previewRoutesForCurrency(currency)
-  return <div className="sl-site">
+  const [currency, setCurrency] = usePreviewCurrency()
+  // Only migrated, uniquely rendered targets can use local native anchors.
+  const routes = previewRoutesForCurrency(currency, ['top', 'main-content', 'resources', 'resources-activity', 'questions'])
+  return <div className="sl-site" id="top">
+    <a className="sl-skip-link" href={routes.mainContent}>{approvedCopy('shared.header.skip')}</a>
     <SiteHeader routes={routes} />
     <main id="main-content">
       {/* The hero precedes this band and book discovery follows it in the full homepage.

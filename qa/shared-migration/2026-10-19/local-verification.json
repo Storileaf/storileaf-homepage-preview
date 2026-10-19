@@ -1,0 +1,559 @@
+{
+  "createdAt": "2026-10-19T19:08:42.549Z",
+  "kind": "Local complete candidate verification before the Group 3 source commit",
+  "checkout": "e4458092ae64749350ac1339c97ac7f83c9ce65c",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "browser": "155.0.8059.39",
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    600,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "widthComparisons": 74,
+  "computedComparisons": 84,
+  "stateRecords": 41,
+  "targetCaptures": 132,
+  "screenshotPairs": 66,
+  "pngFiles": 210,
+  "maxRelativeGeometryCssPixels": 0,
+  "maxChangedPixelRatio": 0.002474090458219795,
+  "thresholds": {
+    "geometryCssPixels": 0.15,
+    "screenshotChannelDifference": 24,
+    "screenshotChangedRatio": 0.01
+  },
+  "completeWidthSet": true,
+  "enlargementMeasurementsComplete": true,
+  "problems": [],
+  "qualityFindings": [
+    {
+      "id": "shared-enlarged-text-320",
+      "status": "Inherited published limitation retained for a separately approved visible refinement.",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "published": {
+        "documentOverflow": false,
+        "clippedText": [
+          {
+            "group": "ending",
+            "text": "See inside",
+            "clippedLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Gift a book",
+            "clippedLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Resources",
+            "clippedLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Our story",
+            "clippedLines": 1
+          }
+        ],
+        "textOutsideViewport": [
+          {
+            "group": "ending",
+            "text": "See inside",
+            "outsideLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Gift a book",
+            "outsideLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Resources",
+            "outsideLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Our story",
+            "outsideLines": 1
+          }
+        ]
+      },
+      "source": {
+        "documentOverflow": false,
+        "clippedText": [
+          {
+            "group": "ending",
+            "text": "See inside",
+            "clippedLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Gift a book",
+            "clippedLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Resources",
+            "clippedLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Our story",
+            "clippedLines": 1
+          }
+        ],
+        "textOutsideViewport": [
+          {
+            "group": "ending",
+            "text": "See inside",
+            "outsideLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Gift a book",
+            "outsideLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Resources",
+            "outsideLines": 1
+          },
+          {
+            "group": "ending",
+            "text": "Our story",
+            "outsideLines": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "shared-enlarged-text-1440",
+      "status": "Inherited published limitation retained for a separately approved visible refinement.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "published": {
+        "documentOverflow": true,
+        "clippedText": [],
+        "textOutsideViewport": []
+      },
+      "source": {
+        "documentOverflow": true,
+        "clippedText": [],
+        "textOutsideViewport": []
+      }
+    }
+  ],
+  "additionalVisibleFinding": "At 320px with targeted shared text doubled, the currency control ends at 349.391px and is clipped by the ending. This control-edge observation is separate from the four clipped text ranges. Both source and published match.",
+  "inheritedNavigationFindings": [
+    {
+      "id": "published-touch-dialog-anchor-focus",
+      "status": "The protected published Dialog restores trigger focus after hash navigation and moves the target away from its intended offset in emulated touch. The source restores trigger focus with preventScroll and must retain the correct native hash position. The protected page is unchanged.",
+      "viewport": {
+        "width": 390,
+        "height": 700
+      },
+      "position": {
+        "settled": false,
+        "hash": "#resources-activity",
+        "targetCount": 1,
+        "targetTop": 543.28125,
+        "targetBottom": 934.15625,
+        "headerBottom": 76,
+        "scrollY": 6282,
+        "expectedScroll": 6629.28125,
+        "scrollMarginTop": "116px",
+        "rootScrollPaddingTop": "80px",
+        "targetVisible": true
+      },
+      "events": [
+        {
+          "event": "focusin",
+          "time": 542,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 6825.28125,
+          "documentHeight": 9850,
+          "focusLabel": "Open navigation"
+        },
+        {
+          "event": "focusin",
+          "time": 576.1000000014901,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 6825.28125,
+          "documentHeight": 9850,
+          "focusLabel": "Close navigation"
+        },
+        {
+          "event": "focusin",
+          "time": 639.3000000007451,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 6825.28125,
+          "documentHeight": 9850,
+          "focusLabel": null
+        },
+        {
+          "event": "scroll",
+          "time": 702.6000000014901,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 6825.28125,
+          "documentHeight": 9850,
+          "focusLabel": null
+        },
+        {
+          "event": "focusin",
+          "time": 705.8000000007451,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 6825.28125,
+          "documentHeight": 9850,
+          "focusLabel": null
+        },
+        {
+          "event": "focusin",
+          "time": 758.1000000014901,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 6825.28125,
+          "documentHeight": 9850,
+          "focusLabel": null
+        },
+        {
+          "event": "scroll",
+          "time": 799.4000000022352,
+          "hash": "#resources-activity",
+          "scrollY": 6629,
+          "targetTop": 196.28125,
+          "documentHeight": 9850,
+          "focusLabel": null
+        },
+        {
+          "event": "focusin",
+          "time": 809.2000000029802,
+          "hash": "#resources-activity",
+          "scrollY": 6282,
+          "targetTop": 543.28125,
+          "documentHeight": 9850,
+          "focusLabel": "Open navigation"
+        },
+        {
+          "event": "scroll",
+          "time": 822.2000000029802,
+          "hash": "#resources-activity",
+          "scrollY": 6282,
+          "targetTop": 543.28125,
+          "documentHeight": 9850,
+          "focusLabel": "Open navigation"
+        }
+      ]
+    }
+  ],
+  "sourceFiles": {
+    "src/App.tsx": "a5bdac2840d8818205fa35889aa92d7bb0dc76be8132f3e82cb28b24126ea520",
+    "src/components/ActionLink.tsx": "4d7b1374267b0fa627f9b542006e41066b113f778cdbda82504ed9b30ead1bba",
+    "src/components/EditorialHeading.tsx": "7bbda62ee6d411a7f77e3a37e915bb871faf128bdf6001314f8c6e9a85112cdb",
+    "src/components/Layout.tsx": "2c37f54870ac5a894abe809a09eaa1e74f773cd73a50adead97e515c0beb13d0",
+    "src/components/NewsletterFooter.tsx": "5e8f750e6ed6df253db605001f50630bd45867d124572f2f0ecf4c1fb78ca788",
+    "src/components/ResourceCategoryCard.tsx": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47",
+    "src/components/ResponsiveImage.tsx": "4d1e3181e30a63e6408c718ecc6ba9c6fa086b3d24b99011e4aba3f90f0df5fc",
+    "src/components/SiteHeader.tsx": "a4b349fab2cc692d4ac838b2761fa61c292848ea316091530742c8e30772b3e8",
+    "src/components/Typography.tsx": "e05b1008187370bf37b56a3fc4fc34f1b9100027614e6c7c9cb8634f62e9de33",
+    "src/content.ts": "371a96e49443a9af3cff4a9c7325e4cae1ebf6fe0278589776ee823c8dd0ba91",
+    "src/main.tsx": "23ece7a01f1627ad6c4c888abb9efbc8a13d271e55a813d398c5c8004a07d8d8",
+    "src/sections/FaqSection.tsx": "2b3f961ec7868efb5aa1c7f860655466c2557d8859cb96a31d2fa8b777f0c910",
+    "src/sections/FinalInvitation.tsx": "b35b95fe961b61904b2dba05ded9005080d8789323137834d751d3d22ac535e2",
+    "src/sections/GiftingSection.tsx": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6",
+    "src/sections/ReassuranceBand.tsx": "56febe6b3829e48ea5e22a5ac3cd2fc48fce26b2c371cb94b5900f07f6787242",
+    "src/sections/ResourcesSection.tsx": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403",
+    "src/sections/homepageEditorialContent.ts": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1",
+    "src/sections/homepageQuestionsContent.ts": "e660d3e75f4ea8b1dd344200260759c95d5e3d7c8f29367d81ba18d59213d65d",
+    "src/siteRoutes.ts": "5e714d61a0f4e50de472a0c65b76fe67936f043e935f63c4d88e53480051ba6e",
+    "src/styles/components.css": "c1dee5ba708a2cb87072de87e1f87c43e0f77d842e27a4b0c6cdd1d98106d971",
+    "src/styles/foundations.css": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268",
+    "src/styles/homepage-editorial.css": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a",
+    "src/styles/homepage-questions.css": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da",
+    "src/styles/shared-footer.css": "5c02e6ce6ffc3dc418e696f1474e31244fdfc4e811d6f1e16f3bea0a8e710467",
+    "src/styles/shared-header.css": "98dc7bf867dd848a16b7f51f27abcd4af16a1884e7b72b0554015cfc2f336464",
+    "src/styles/tokens.css": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081",
+    "src/styles/typography.css": "faf05e6601df7e528380f4f74a0e6232e0d2c216bb8fcd491f30a4112902e655",
+    "src/usePreviewCurrency.ts": "763fe027ed3e6ffcec144394be365dba0d343594e6028d655b3d826470b16ba4",
+    "content/images.json": "c4dee2b0b505f699b59c2e8a7b02d7146737399f7012d60ed274a621f321385b",
+    "content/ledger.json": "347545e4f49969220da296117bbc4f85b3de91f9ac2e79c0700eb68f608d5e02"
+  },
+  "publishedFiles": {
+    "index.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+    "assets/index-DhPZyX4z.css": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+    "assets/content-sections-CfrmOVRI.js": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+    "assets/routes-DrwDv2x2.js": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+    "pricing/index.html": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14"
+  },
+  "sourceBuildFiles": {
+    "index.html": "34c52b179524ddb26177a7c47dd9036b2075f2dd9f5ec6222176f31f3996800e",
+    "assets/index-BQc6tMnm.css": "8b4b0af975a1b2c5daefeb485adb4dc31e88b23b7ab8b494bc4cb5bd08e9b0b2",
+    "assets/index-CJtxcQS4.js": "4bb41d6eab5ee2e7de2795b23bda76ab2879f2cd72612c3dee4d1c8d508d2b6e"
+  },
+  "harnessSha256": "6bf2315e836d7cdd0990fe3c7bebd03f7d4c20b9f7b5bc8a93637725fba13646",
+  "reportSha256": "bd4ffadec6140f95b328c920f778782fbc9cdac061c28654e4212fd5e2faa1b9",
+  "sourceChecks": {
+    "typecheck": "pass",
+    "contentGate": "pass",
+    "ledgerRecords": 88,
+    "sourceTests": 21,
+    "protectedGuard": "pass",
+    "build": "pass"
+  },
+  "retained": {
+    "generatedAt": "2026-10-19T19:08:13.362253+00:00",
+    "buildUnchanged": true,
+    "bundleHashes": {
+      "dist/assets/index-BQc6tMnm.css": "8b4b0af975a1b2c5daefeb485adb4dc31e88b23b7ab8b494bc4cb5bd08e9b0b2",
+      "dist/assets/index-CJtxcQS4.js": "4bb41d6eab5ee2e7de2795b23bda76ab2879f2cd72612c3dee4d1c8d508d2b6e",
+      "dist/index.html": "34c52b179524ddb26177a7c47dd9036b2075f2dd9f5ec6222176f31f3996800e"
+    },
+    "suiteResults": [
+      {
+        "name": "source",
+        "exitCode": 0,
+        "seconds": 3.42,
+        "completedAt": "2026-10-19T19:05:23.604721+00:00"
+      },
+      {
+        "name": "shapes",
+        "exitCode": 0,
+        "seconds": 17.28,
+        "completedAt": "2026-10-19T19:05:40.888256+00:00"
+      },
+      {
+        "name": "focus",
+        "exitCode": 0,
+        "seconds": 3.18,
+        "completedAt": "2026-10-19T19:05:44.067566+00:00"
+      },
+      {
+        "name": "group1",
+        "exitCode": 0,
+        "seconds": 45.07,
+        "completedAt": "2026-10-19T19:06:29.139385+00:00"
+      },
+      {
+        "name": "group2",
+        "exitCode": 0,
+        "seconds": 63.8,
+        "completedAt": "2026-10-19T19:07:32.940208+00:00"
+      }
+    ],
+    "source": {
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "problems": []
+    },
+    "shape": {
+      "scannedFiles": 44,
+      "staticReferences": [],
+      "problems": [],
+      "browsers": [
+        {
+          "kind": "source",
+          "widths": [
+            320,
+            360,
+            390,
+            430,
+            768,
+            820,
+            1024,
+            1280,
+            1440
+          ],
+          "runtimeErrors": [],
+          "blockedVendorRequests": [],
+          "missingImages": [],
+          "stateRecords": 10,
+          "geometryUnchanged": true,
+          "tabCount": 0
+        },
+        {
+          "kind": "published",
+          "widths": [
+            320,
+            360,
+            390,
+            430,
+            768,
+            820,
+            1024,
+            1280,
+            1440
+          ],
+          "runtimeErrors": [],
+          "blockedVendorRequests": [],
+          "missingImages": [],
+          "stateRecords": 0,
+          "geometryUnchanged": true,
+          "tabCount": 6
+        }
+      ]
+    },
+    "focus": {
+      "observations": [
+        {
+          "width": 390,
+          "state": "before",
+          "top": 296.34375,
+          "bottom": 683.859375,
+          "headerBottom": 76,
+          "viewportHeight": 900,
+          "radius": "20px",
+          "focusVisible": true
+        },
+        {
+          "width": 390,
+          "state": "after",
+          "top": 295.703125,
+          "bottom": 684.578125,
+          "headerBottom": 76,
+          "viewportHeight": 900,
+          "radius": "17px",
+          "focusVisible": true
+        },
+        {
+          "width": 1440,
+          "state": "before",
+          "top": 220.0625,
+          "bottom": 780.640625,
+          "headerBottom": 91,
+          "viewportHeight": 900,
+          "radius": "20px",
+          "focusVisible": true
+        },
+        {
+          "width": 1440,
+          "state": "after",
+          "top": 219.0625,
+          "bottom": 781,
+          "headerBottom": 91,
+          "viewportHeight": 900,
+          "radius": "20px",
+          "focusVisible": true
+        }
+      ]
+    },
+    "groups": [
+      {
+        "group": "group1",
+        "browser": "155.0.8059.39",
+        "sourceCommit": "e4458092ae64749350ac1339c97ac7f83c9ce65c",
+        "completeWidthSet": true,
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          600,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "states": 19,
+        "captureAlignments": 48,
+        "pixelPairs": 20,
+        "maxChangedPixelRatio": 0.0003351206434316354,
+        "qualityFindings": [
+          {
+            "id": "gifting-enlarged-text-320",
+            "status": "Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement.",
+            "detail": "At 320px and targeted 200 percent section text, the Gifting grid expands within its clipped panel. Matching document overflow is not an enlargement quality pass.",
+            "published": [
+              {
+                "group": "gifting",
+                "tag": "H2",
+                "text": "Give someone the chance to make",
+                "clippedLines": 1
+              },
+              {
+                "group": "gifting",
+                "tag": "P",
+                "text": "You choose the book and package. They accept the invitation, tell their story in their own words and review the draft before printing.",
+                "clippedLines": 2
+              }
+            ],
+            "source": [
+              {
+                "group": "gifting",
+                "tag": "H2",
+                "text": "Give someone the chance to make",
+                "clippedLines": 1
+              },
+              {
+                "group": "gifting",
+                "tag": "P",
+                "text": "You choose the book and package. They accept the invitation, tell their story in their own words and review the draft before printing.",
+                "clippedLines": 2
+              }
+            ]
+          }
+        ],
+        "problems": []
+      },
+      {
+        "group": "group2",
+        "browser": "155.0.8059.39",
+        "sourceCommit": "e4458092ae64749350ac1339c97ac7f83c9ce65c",
+        "completeWidthSet": true,
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          600,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "states": 18,
+        "captureAlignments": 92,
+        "pixelPairs": 44,
+        "maxChangedPixelRatio": 0.0012052341597796144,
+        "qualityFindings": [],
+        "problems": [],
+        "enlargementMeasurementsComplete": true,
+        "individualExpandedComparisons": 60
+      }
+    ],
+    "reportHashes": {
+      "source-reference-qa.json": "645b67f0e90dccb858f4823d45a5defc2a8e4cc18c0c6571a041e0e941f062ab",
+      "shape-foundation/report.json": "95498e827ea83d3532c27f61aa302621da8f99ce245f38f4423979d32168384d",
+      "shape-foundation/focus-captures.json": "5b8f0981dc4ff859b8d413e56b60046bb5dcc0349816261c9e023d575d610ad5",
+      "group1/report.json": "686b192830c5edb41746e85eabdff5bf5b4c3542a8cb7725632b0eac90936b52",
+      "group2/report.json": "38bd8b985e1ccc68a53fb9e257c7a56ee9c5da793ddf366d2ffc41e21567323e"
+    }
+  },
+  "limits": "Chromium automation with emulated touch and targeted text enlargement. This is not native browser zoom, cross browser, physical device or accessibility certification. Pricing diagnostic evidence is kept separately; this workflow does not replace the protected pricing preview.",
+  "artifactNote": "The committed dedicated shared workflow will retain full report, screenshots and isolated preview artifacts. This local summary does not establish that a later CI run passed."
+}

@@ -1,10 +1,12 @@
 /**
  * Explicit routing contract for current and future PUBLIC site pages.
  * No invented /books or /resources route is allowed until those pages exist.
- * The isolated reference links to the already published homepage anchors.
+ * Unmigrated destinations stay on the published preview. The page shell may
+ * explicitly opt into local fragments only when their targets are rendered.
  */
 export type PublicSiteRoutes = {
   home: string
+  mainContent: string
   books: string
   seeInside: string
   howItWorks: string
@@ -18,6 +20,7 @@ export type PublicSiteRoutes = {
 
 export const previewRoutes: PublicSiteRoutes = {
   home:'https://storileaf.github.io/storileaf-homepage-preview/#top',
+  mainContent:'https://storileaf.github.io/storileaf-homepage-preview/#main-content',
   books:'https://storileaf.github.io/storileaf-homepage-preview/#books',
   seeInside:'https://storileaf.github.io/storileaf-homepage-preview/#samples',
   howItWorks:'https://storileaf.github.io/storileaf-homepage-preview/#how-it-works',
@@ -29,13 +32,29 @@ export const previewRoutes: PublicSiteRoutes = {
   login:'https://app.storileaf.com/login',
 }
 
-/** Currency follows the site-wide selector. Each URL remains explicit. */
-export function previewRoutesForCurrency(currency:'inr'|'usd'|'cad'|'gbp'): PublicSiteRoutes {
+const homepageAnchors = {
+  top: 'home',
+  'main-content': 'mainContent',
+  books: 'books',
+  samples: 'seeInside',
+  'how-it-works': 'howItWorks',
+  resources: 'resources',
+  'resources-activity': 'resourcesActivity',
+  questions: 'questions',
+} as const
+export type HomepageAnchor = keyof typeof homepageAnchors
+
+/** Currency changes the shared Pricing links and clears any book query.
+ * FAQ pricing actions retain their separately approved generic destination.
+ */
+export function previewRoutesForCurrency(currency:'inr'|'usd'|'cad'|'gbp', localAnchors: readonly HomepageAnchor[] = []): PublicSiteRoutes {
   const pricingByCurrency = {
     inr: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/inr',
     usd: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/usd',
     cad: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/cad',
     gbp: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp',
   }
-  return {...previewRoutes, pricing:pricingByCurrency[currency]}
+  const routes = {...previewRoutes, pricing:pricingByCurrency[currency]}
+  for (const anchor of localAnchors) routes[homepageAnchors[anchor]] = '#' + anchor
+  return routes
 }

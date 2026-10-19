@@ -1,6 +1,6 @@
 # StoriLeaf public website preview and frontend source
 
-Status 18 October 2026. Frontend design work only. This is not the production website or private customer application.
+Status 19 October 2026. Frontend design work only. This is not the production website or private customer application.
 
 **Published homepage**  
 https://storileaf.github.io/storileaf-homepage-preview/
@@ -22,9 +22,13 @@ The official private repository Storileaf/storiYoceFj6IRAleaf remains authoritat
 
 ## Editable React source
 
-The new [frontend/](frontend/) workspace is a Vite, React and TypeScript source foundation for reusable components and future public pages. It includes a provenance-aware content ledger, design tokens, typed editorial and image components, a shared NewsletterFooter source reference, tests and an isolated build. The [source build workflow](.github/workflows/validate-public-source.yml) checks these without changing published root assets.
+The [frontend/](frontend/) workspace uses Vite, React and TypeScript for the staged homepage migration. It includes the content ledger, design tokens, reusable editorial and image components, migrated sections, shared components, tests and an isolated build. The [source build workflow](.github/workflows/validate-public-source.yml) checks these without changing published root assets.
 
-**Migration status:** this source workspace is NOT yet a complete replacement for the approved homepage. The source-driven component reference is an initial slice of the page's design. Before moving the published homepage to editable React, all sections, wording, interactions, browser states and screenshots must match the approved static baseline. The build output stays under frontend/dist and is not published automatically.
+**Migration status**
+
+Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 and 2 implement Resources, Gifting, the reassurance band, FAQs and final invitation. The authorised Group 3 reconstructs the shared header, newsletter, footer and navigation, with complete local verification passing and committed CI evidence still to be verified. The [Group 3 review](docs/PACKAGE_3_GROUP_3_REVIEW.md) owns its current status, and the [component inventory](docs/COMPONENT_INVENTORY.md) identifies the remaining sections.
+
+The homepage migration remains incomplete. Before replacing the published homepage, all sections, wording, interactions, browser states and screenshots must match the approved static baseline and receive explicit founder approval. The build output stays under frontend/dist and is not published automatically.
 
 To develop the source locally, install Node 22 and run:
 
@@ -39,6 +43,8 @@ Current source validation uses the approved root baseline and nine-width static-
 ## Existing browser QA
 
 The [homepage QA workflow](.github/workflows/verify-homepage-ui.yml) tests the published static UI and records screenshots under [qa/](qa/). Passing automated QA is not founder visual acceptance or full accessibility/physical-device certification.
+
+The [Group 1](docs/PACKAGE_3_GROUP_1_REVIEW.md) and [Group 2](docs/PACKAGE_3_GROUP_2_REVIEW.md) reviews retain their completed evidence and open findings. The [pricing hydration investigation](docs/PRICING_HYDRATION_REVIEW.md) records three reproduced protected export mismatches and next options. The separate pricing preview is unchanged; diagnosis does not claim a runtime fix.
 
 Photo replacements for the six book gallery slots are documented in [gallery/README.md](gallery/README.md). Current homepage imagery includes approved temporary assets and visual placeholders.
 

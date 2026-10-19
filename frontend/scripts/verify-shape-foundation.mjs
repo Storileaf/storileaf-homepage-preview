@@ -27,8 +27,12 @@ for (const file of runtimeFiles) {
 check(report.staticReferences.length === 0, 'A runtime dependency on the retired preview vendor appeared')
 
 // Package 1 is now a semantic regression, not a prohibition on authorised source work.
-// Approved 19 October editorial labels are 15px; earlier shape comparison is otherwise unchanged.
-const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css']) + '\n.sl-action--text { font-size:var(--sl-text-editorial-action); }\n.sl-footer-column h3 { font-size:15px; line-height:1.4; } .sl-footer-currency select { font-size:13px; }'
+// The original generic primitives remain a valid comparison. The former shared
+// header/footer references never matched the published page. Group 3 replaces
+// them under authorisation and compares their geometry to the actual protected
+// homepage in verify-shared-parity, not to the obsolete source approximation.
+const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css']).split('/* Shared public site ending.')[0] + '\n.sl-action--text { font-size:var(--sl-text-editorial-action); }'
+report.sourceGeometryScope = 'Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate'
 const originalTokens = git(['show', sourceBaseline + ':frontend/src/styles/tokens.css'])
 const tokens = await fs.readFile('src/styles/tokens.css', 'utf8')
 for (const alias of ['header-action', 'newsletter-control', 'gold-action']) {
@@ -95,6 +99,23 @@ async function auditStates(page) {
   const selectors = ['.sl-header-primary', '.sl-newsletter-subscribe', ...['primary', 'outline', 'gold', 'text'].flatMap(v => ['#shape-probes a.sl-action--' + v, '#shape-probes span.sl-action--' + v])]
   for (const selector of selectors) {
     const el = page.locator(selector).first()
+    const planned = selector.includes('span.')
+    const primary = selector.includes('primary')
+    const gold = selector.includes('gold') || selector === '.sl-newsletter-subscribe'
+    const base = primary ? 'rgb(12, 103, 83)' : gold ? 'rgb(215, 182, 126)' : null
+    const target = planned ? base : primary ? 'rgb(11, 88, 72)' : gold ? 'rgb(233, 203, 147)' : null
+    // The migrated shared actions retain the published transitions. An event
+    // completing does not mean its paint or colour transition has completed.
+    // Observe the real pseudo-class and the existing exact palette, with a
+    // bounded failure, instead of sampling the start of the animation.
+    const waitState = async (background, hovered, pressed = false) => {
+      await page.bringToFront()
+      await page.waitForFunction(({ selector, background, hovered, pressed }) => {
+        const node = document.querySelector(selector)
+        return node.matches(':hover') === hovered && node.matches(':active') === pressed
+          && (background === null || getComputedStyle(node).backgroundColor === background)
+      }, { selector, background, hovered, pressed }, { timeout: 5000 })
+    }
     await el.scrollIntoViewIfNeeded()
     await page.evaluate(() => document.activeElement?.blur())
     await clearSelection(page)
@@ -103,29 +124,28 @@ async function auditStates(page) {
       const s = getComputedStyle(node), r = node.getBoundingClientRect()
       return { radius: s.borderTopLeftRadius, background: s.backgroundColor, colour: s.color, outline: s.outlineWidth, outlineColour: s.outlineColor, focusVisible: node.matches(':focus-visible'), width: r.width, height: r.height, transform: s.transform }
     })
+    await waitState(base, false)
     const normal = await read()
-    await el.hover(); const hover = await read()
-    await page.mouse.down(); const pressed = await read()
+    await el.hover(); await waitState(target, true); const hover = await read()
+    await page.mouse.down(); await waitState(target, true, true); const pressed = await read()
     // Release outside the control. Never navigate or submit the newsletter.
     await page.mouse.move(0, 0); await page.mouse.up()
     await clearSelection(page)
     const focusable = await el.evaluate(node => node.tabIndex >= 0)
     let focus = null
     if (focusable) {
-      await page.keyboard.press('Tab'); await el.focus(); focus = await read()
+      await page.keyboard.press('Tab'); await el.focus()
+      await waitState(base, false)
+      await page.waitForFunction(selector => document.querySelector(selector).matches(':focus-visible'), selector, { timeout: 5000 })
+      focus = await read()
       check(focus.focusVisible && focus.outline !== '0px', 'Missing keyboard focus in ' + selector)
     }
     result[selector] = { normal, hover, pressed, focus, disabled: 'Not part of ActionLink API', loading: 'No asynchronous operation added' }
     for (const state of [hover, pressed, ...(focus ? [focus] : [])]) {
       check(state.width === normal.width && state.height === normal.height && state.transform === normal.transform, 'State changes geometry in ' + selector)
     }
-    const planned = selector.includes('span.')
-    const primary = selector.includes('primary')
-    const gold = selector.includes('gold') || selector === '.sl-newsletter-subscribe'
     if (!selector.endsWith('--text')) check(normal.radius === '6px', 'Action radius must be 6px in ' + selector)
     if (primary || gold) {
-      const base = primary ? 'rgb(12, 103, 83)' : 'rgb(215, 182, 126)'
-      const target = planned ? base : primary ? 'rgb(11, 88, 72)' : 'rgb(233, 203, 147)'
       check(normal.background === base && hover.background === target && pressed.background === target, 'Incorrect normal/hover/pressed colours in ' + selector)
       check(normal.colour === (primary ? 'rgb(255, 255, 255)' : 'rgb(37, 53, 38)') && hover.colour === normal.colour, 'Action text colour changed in ' + selector)
     }
@@ -173,7 +193,7 @@ try {
       result.widths.push(row)
       if (kind === 'source') {
         for (const selector of changedCorners) check(measured[selector]?.radius === '6px', 'Unified source action radius incorrect at ' + width + ' ' + selector)
-        if (width > 360) check(measured['.sl-header-primary']?.height === (width <= 480 ? 45 : 46), 'Source header height changed at ' + width)
+        if (width > 360) check(measured['.sl-header-primary']?.height === 45, 'Source header must preserve the published 45px action at ' + width)
         const afterGeometry = await geometry(page)
         const priorStyle = await page.addStyleTag({ content: originalTokens + '\n' + original })
         await settleLayout(page)
@@ -182,7 +202,7 @@ try {
         const beforeGeometry = await geometry(page)
         row.geometryChanges = beforeGeometry.flatMap((before, index) => JSON.stringify(before) === JSON.stringify(afterGeometry[index]) ? [] : [{ index, before, after: afterGeometry[index] }])
         row.geometryUnchanged = beforeGeometry.length === afterGeometry.length && row.geometryChanges.length === 0
-        check(row.geometryUnchanged, 'Normal page geometry or typography changed at ' + width)
+        check(row.geometryUnchanged, 'Retained primitive styles changed normal page geometry or typography at ' + width)
         for (const selector of targets) {
           const b = { ...before[selector] }, a = { ...measured[selector] }
           if (changedCorners.has(selector)) {
