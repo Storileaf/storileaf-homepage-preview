@@ -13,11 +13,13 @@
     "content:gate": "node scripts/check-content.mjs",
     "guard:published": "node scripts/guard-published.mjs",
     "verify:group2": "node scripts/verify-group2-parity.mjs",
-    "verify:shared": "node scripts/verify-shared-parity.mjs"
+    "verify:shared": "node scripts/verify-shared-parity.mjs",
+    "verify:discovery": "node scripts/verify-discovery-parity.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.2.0",
     "@radix-ui/react-navigation-menu": "1.3.0",
+    "@radix-ui/react-tabs": "1.1.21",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },

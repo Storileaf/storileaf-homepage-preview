@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated": "2026-10-19",
   "note": "Exact existing public homepage imagery retained during React migration. Original asset rights and final production approval remain subject to the existing production check.",
   "assets": [
@@ -36,6 +36,84 @@
       "origin": "official_public_site",
       "rights_review": "pending_final_production_check",
       "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html"
+    },
+    {
+      "id": "home.discovery.life-story.image",
+      "src": "https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp",
+      "width": 850,
+      "height": 660,
+      "alt": "An older Indian woman and her daughter looking through a Life Story book",
+      "object_position": "50% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+      "dimension_note": "Retains the published img width and height attributes. Browser comparison records natural dimensions and loaded source separately."
+    },
+    {
+      "id": "home.discovery.travel-memoir.image",
+      "src": "https://storileaf.com/images/brand/collections/travel-memoir/storileaf-travel-memoir-young-friends-western-ghats-road-trip-card-800.webp",
+      "width": 850,
+      "height": 660,
+      "alt": "Friends sharing a spontaneous moment on a road trip through the Western Ghats",
+      "object_position": "50% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+      "dimension_note": "Retains the published img width and height attributes. Browser comparison records natural dimensions and loaded source separately."
+    },
+    {
+      "id": "home.discovery.relationship-memoir.image",
+      "src": "https://storileaf.com/images/brand/collections/relationship-memoir/storileaf-relationship-memoir-young-couple-home-dance-card-800.webp",
+      "width": 850,
+      "height": 660,
+      "alt": "A young couple dancing in their sunlit home",
+      "object_position": "50% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+      "dimension_note": "Retains the published img width and height attributes. Browser comparison records natural dimensions and loaded source separately."
+    },
+    {
+      "id": "home.discovery.founders-memoir.image",
+      "src": "https://storileaf.com/images/brand/collections/founders-memoir/storileaf-founders-memoir-modern-product-studio-founder-card-800.webp",
+      "width": 850,
+      "height": 660,
+      "alt": "A woman founder in her product design studio",
+      "object_position": "50% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+      "dimension_note": "Retains the published img width and height attributes. Browser comparison records natural dimensions and loaded source separately."
+    },
+    {
+      "id": "home.discovery.parent-to-child-letters.image",
+      "src": "https://storileaf.com/images/brand/collections/parent-to-child-letters/storileaf-parent-child-letters-university-gift-card-800.webp",
+      "width": 850,
+      "height": 660,
+      "alt": "A mother giving her adult daughter a book of letters",
+      "object_position": "50% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+      "dimension_note": "Retains the published img width and height attributes. Browser comparison records natural dimensions and loaded source separately."
+    },
+    {
+      "id": "home.discovery.celebrating-occasions.image",
+      "src": "https://storileaf.com/images/brand/collections/celebrating-occasions/storileaf-celebrating-occasions-young-friends-rooftop-celebration-card-800.webp",
+      "width": 850,
+      "height": 660,
+      "alt": "Friends celebrating together on a rooftop",
+      "object_position": "50% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+      "dimension_note": "Retains the published img width and height attributes. Browser comparison records natural dimensions and loaded source separately."
     }
   ]
 }

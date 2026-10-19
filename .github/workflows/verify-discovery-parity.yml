@@ -1,0 +1,107 @@
+name: Verify React six-book discovery parity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'scripts/**'
+      - '.github/workflows/verify-discovery-parity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate approved source and protect the published homepage
+        id: source_build
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Install isolated browser testing library
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Serve exact static files and the isolated React build
+        run: |
+          mkdir -p "$RUNNER_TEMP/storileaf-discovery/storileaf-homepage-preview"
+          cp -a index.html 404.html assets covers gallery pricing "$RUNNER_TEMP/storileaf-discovery/storileaf-homepage-preview/"
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/storileaf-discovery" > "$RUNNER_TEMP/storileaf-discovery-static.log" 2>&1 &
+          python3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > "$RUNNER_TEMP/storileaf-discovery-source.log" 2>&1 &
+          sleep 2
+      - name: Retain source navigation, action shapes and focus checks
+        working-directory: frontend
+        run: |
+          node scripts/verify-source-ui.mjs
+          node scripts/verify-shape-foundation.mjs
+          node scripts/verify-focus-captures.mjs
+      - name: Retain the complete static homepage regression
+        run: node scripts/verify-homepage-ui.mjs
+      - name: Retain the permanent Package 1 live control checks
+        run: node scripts/package1-published/live.mjs
+      - name: Retain Package 2 typography, FAQ and pricing comparison
+        run: node scripts/package2/verify.mjs
+      - name: Retain editorial action and footer typography comparisons
+        run: |
+          node scripts/editorial-links/verify.mjs
+          node scripts/footer-type/verify.mjs
+      - name: Retain Group 1 editorial section parity
+        if: ${{ !cancelled() && steps.source_build.outcome == 'success' }}
+        working-directory: frontend
+        run: node scripts/verify-group1-parity.mjs
+      - name: Retain Group 2 reassurance, FAQs and invitation parity
+        if: ${{ !cancelled() && steps.source_build.outcome == 'success' }}
+        working-directory: frontend
+        run: node scripts/verify-group2-parity.mjs
+      - name: Retain Group 3 shared components, navigation and currency parity
+        if: ${{ !cancelled() && steps.source_build.outcome == 'success' }}
+        working-directory: frontend
+        run: node scripts/verify-shared-parity.mjs
+      - name: Compare all six book panels, native tabs and Books anchor integration
+        if: ${{ !cancelled() && steps.source_build.outcome == 'success' }}
+        working-directory: frontend
+        run: node scripts/verify-discovery-parity.mjs
+      - name: Confirm the published baseline is still unchanged
+        if: always()
+        working-directory: frontend
+        run: npm run guard:published
+      - name: Attach discovery comparisons and interaction report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-discovery-parity
+          path: frontend/qa/discovery/
+          if-no-files-found: warn
+      - name: Attach retained regression evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-discovery-regressions
+          path: |
+            frontend/qa/source-screenshots/
+            frontend/qa/source-reference-qa.json
+            frontend/qa/shape-foundation/
+            frontend/qa/group1/
+            frontend/qa/group2/
+            frontend/qa/shared/
+            qa/screenshots/
+            qa/homepage-qa-report.json
+            qa/package1-live/
+            qa/package2/
+            qa/editorial-links/
+            qa/footer-type/
+          if-no-files-found: warn
+      - name: Attach isolated React preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-discovery-source-preview
+          path: frontend/dist/
+          if-no-files-found: error

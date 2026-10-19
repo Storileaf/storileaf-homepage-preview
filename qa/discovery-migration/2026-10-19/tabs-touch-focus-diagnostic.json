@@ -1,0 +1,760 @@
+{
+  "recordedOn": "2026-10-19",
+  "purpose": "Diagnose the initial Tabs 1.2.1 touch focus divergence before selecting the 1.1.21 parity dependency.",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "initialCandidate": "1.2.1",
+  "selectedCandidate": "1.1.21",
+  "initialBuildFiles": {
+    "assets/index-BAFLv38D.css": "f4cf49ee9beed9a76fe37e5fa318ce13c7677b38287c54d9cd21ea27820d80f3",
+    "assets/index-DsrYBwkq.js": "5d9e9039cb81ea062551b67a8132e9d6d40f5c5b227533d82c2637c6dfa26a76",
+    "index.html": "2d9b03ffb8d36a62842a24596d94442f36c66a8b81f54cc9d8dfd49aebbaecca"
+  },
+  "method": "Fresh equivalent Chromium touch contexts. The second pair first taps an ordinary heading. Event listeners record trusted input and focus modality. The observational focus wrapper delegates to the original method with unchanged arguments. No focus or navigation behaviour is replaced.",
+  "finding": "The protected tab receives native touch focus without a keyboard focus ring. Tabs 1.2.1 explicitly focuses inside mouse-down, so the resulting focus event has no touch source capability and matches focus-visible. The full final discovery gate retains strict touch focus equality.",
+  "selectedPackageSource": "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.21.tgz",
+  "selectedPackageIntegrity": "sha512-UKxJlZid7FVtsk/WTxj4i4uSEgj2Au+KBbS7SQyTlzMhhn+86Cz3tISZdTa87bfEfcuvZezf2ZsxD4xuEKtkog==",
+  "selectedInstalledModuleSha256": "a7c0122a499eedb63b76e9629f4d4d70d6ec83d8c34e370f7e136d66acc0a81c",
+  "originalTraceSha256": "379b087778148f39df301c90e1c71b4c0ce2fb5add4d9ce02802d53cfae88ee3",
+  "cases": [
+    {
+      "kind": "published",
+      "primed": false,
+      "errors": [],
+      "trace": [
+        {
+          "event": "pointerdown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "pointerdown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "focusin",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "focusin",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        }
+      ],
+      "active": "book-travel-memoir",
+      "focusVisible": false,
+      "tabs": [
+        {
+          "label": "Life Story",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Travel Memoir",
+          "focus": true,
+          "visible": false,
+          "outline": "rgb(12, 103, 83) none 3px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+        },
+        {
+          "label": "Relationship Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Founder's Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Parent to Child Letters",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Celebrating Occasions",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "primed": false,
+      "errors": [],
+      "trace": [
+        {
+          "event": "pointerdown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "pointerdown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "focus method before",
+          "target": "book-travel-memoir",
+          "args": []
+        },
+        {
+          "event": "focusin",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "focusin",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "focus method after",
+          "target": "book-travel-memoir",
+          "focusVisible": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        }
+      ],
+      "active": "book-travel-memoir",
+      "focusVisible": true,
+      "tabs": [
+        {
+          "label": "Life Story",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Travel Memoir",
+          "focus": true,
+          "visible": true,
+          "outline": "rgb(12, 103, 83) solid 2px",
+          "shadow": "oklab(0.459623 -0.0842993 0.0108957 / 0.5) 0px 0px 0px 3px"
+        },
+        {
+          "label": "Relationship Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Founder's Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Parent to Child Letters",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Celebrating Occasions",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        }
+      ]
+    },
+    {
+      "kind": "published",
+      "primed": true,
+      "errors": [],
+      "trace": [
+        {
+          "event": "pointerdown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "pointerdown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "focusin",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "focusin",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": false,
+          "trusted": true
+        }
+      ],
+      "active": "book-travel-memoir",
+      "focusVisible": false,
+      "tabs": [
+        {
+          "label": "Life Story",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Travel Memoir",
+          "focus": true,
+          "visible": false,
+          "outline": "rgb(12, 103, 83) none 3px",
+          "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px"
+        },
+        {
+          "label": "Relationship Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Founder's Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Parent to Child Letters",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Celebrating Occasions",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "primed": true,
+      "errors": [],
+      "trace": [
+        {
+          "event": "pointerdown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "pointerdown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchstart",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "touchend",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": null,
+          "focusVisible": false,
+          "trusted": true
+        },
+        {
+          "event": "focus method before",
+          "target": "book-travel-memoir",
+          "args": []
+        },
+        {
+          "event": "focusin",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "focusin",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "focus method after",
+          "target": "book-travel-memoir",
+          "focusVisible": true
+        },
+        {
+          "event": "mousedown",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "mouseup",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "capture",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        },
+        {
+          "event": "click",
+          "phase": "bubble",
+          "target": "book-travel-memoir",
+          "pointerType": "touch",
+          "touch": true,
+          "active": "book-travel-memoir",
+          "focusVisible": true,
+          "trusted": true
+        }
+      ],
+      "active": "book-travel-memoir",
+      "focusVisible": true,
+      "tabs": [
+        {
+          "label": "Life Story",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Travel Memoir",
+          "focus": true,
+          "visible": true,
+          "outline": "rgb(12, 103, 83) solid 2px",
+          "shadow": "oklab(0.459623 -0.0842993 0.0108957 / 0.5) 0px 0px 0px 3px"
+        },
+        {
+          "label": "Relationship Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Founder's Memoir",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Parent to Child Letters",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        },
+        {
+          "label": "Celebrating Occasions",
+          "focus": false,
+          "visible": false,
+          "outline": "rgb(37, 53, 38) none 3px",
+          "shadow": "none"
+        }
+      ]
+    }
+  ]
+}

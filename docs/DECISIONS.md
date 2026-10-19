@@ -4,13 +4,13 @@ Updated 19 October 2026.
 
 ## Active decisions
 
-The existing homepage is the approved VISUAL REFERENCE for all future public marketing/editorial website pages. No major layout or content changes during style consolidation; only small measured differences may be proposed or corrected.
+The existing published homepage is the approved VISUAL REFERENCE for future public marketing/editorial website pages. Packages 1 and 2 are complete. Migration may correct source differences to reproduce that approved baseline. Propose every further visible refinement and obtain founder approval before implementing it.
 
 Newsreader and Manrope, forest/teal/paper/sage/gold, restrained editorial control shapes and original wordmark on forest supersede older Georgia/Lato and blanket pill-control direction for the NEW PUBLIC WEBSITE.
 
 Use a shared photographic newsletter-to-footer composition across public pages. Content, consent and real subscription wiring still need separate decisions.
 
-Create a proper React source/build pipeline in the public preview, with source parity gates before replacing existing static root. Use the private official repository for factual claims and the new public Content Gate for approval tracking. The old site is a useful reference, not a mandatory design template.
+Create a proper React source/build pipeline in the public preview, with source parity gates before replacing existing static root. Use the private official repository for factual claims and the new public Content Gate for approval tracking. The historical private/Macaly site provides context. The current published homepage is the migration reference, with this public design system as its sole style authority.
 
 Create performance-conscious foundations, including image dimensions, selective lazy loading, font strategy and real asynchronous skeletons when needed. Final optimisation comes after the wider public site is built.
 
@@ -28,9 +28,9 @@ The isolated frontend/ React foundation is established. Packages 1 and 2 are imp
 
 The founder authorised Group 2 covering the reassurance band, six FAQs and final invitation, preserving the band's current wording and position, native independent disclosures and expanded layouts. Source, local rendered comparison and committed CI are verified. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) owns the evidence and inherited quality findings.
 
-The founder has now authorised Group 3 to bring the shared header, newsletter, footer and navigation into parity, including currency, anchors, current page semantics and investigation of the pricing warning. Source implementation, complete local rendered and functional verification, and the committed CI replay pass. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) records its scope and evidence separately from founder visual acceptance.
+The founder authorised Group 3 to bring the shared header, newsletter, footer and navigation into parity, including currency, anchors, current page semantics and investigation of the pricing warning. Source implementation, complete local rendered and functional verification, and the committed CI replay pass. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) records its scope and evidence separately from founder visual acceptance.
 
-The whole homepage has not been migrated. The current homepage remains published as compiled root assets and cannot be replaced until editable React source reaches complete visual and functional parity and receives explicit founder approval. Preserve the static output throughout Groups 1, 2 and 3. Work beyond the authorised shared group and a React publishing cutover require separate approval.
+The whole homepage has not been migrated. The current homepage remains published as compiled root assets and cannot be replaced until editable React source reaches complete visual and functional parity and receives explicit founder approval. Preserve the static output throughout Groups 1 through 4. Work beyond the authorised discovery group and a React publishing cutover require separate approval.
 
 ## Source hardening milestone
 
@@ -87,3 +87,11 @@ Retained source checks exercise actual Radix behaviour in the browser. Obsolete 
 The pricing warning investigation identified three mismatches in the protected export. Its saved default pricing footer contains a removed arrow, currency deep links receive a homepage fallback document, and a selected-book query begins with the default book document. The [pricing review](PRICING_HYDRATION_REVIEW.md) records diagnosis and bounded next options. Runtime repair needs a separate concrete proposal; Group 3 does not change pricing HTML, compiled bundles or the protected baseline. Gifting text clipping under enlargement remains a separate open quality finding.
 
 The completed local Group 3 comparison retains inherited footer label and currency control clipping at 320px and desktop navigation overflow at 1440px under targeted doubled text. These findings need a separate visible reflow proposal. Source native skip navigation continues within main, and mobile dialog focus restoration uses preventScroll to retain the chosen section position. The published skip and emulated touch focus limitations are recorded explicitly; matching those defects is not required.
+
+## Package 3 Group 4, 19 October 2026
+
+The founder approved six book discovery including the local Books navigation needed to reach it, with its own rendered and functional checkpoint. Implement the exact six panels, eighteen bullets, images, tabs and original individual book actions in isolated source. Place discovery directly after the reassurance band; the hero remains later work. Canonical content records and all completed foundation rules stay intact.
+
+Shared Books actions and the existing final invitation may resolve to the one rendered local Books target. Preserve all other destination contracts, proper native focus/history and current page semantics. Keep the source currency preference as a shared navigation regression; the original discovery component does not use currency or enter pricing.
+
+Implementation and the complete local comparison now pass. The [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) owns measured evidence and the native touch-focus reason for pinning Tabs to 1.1.21 while retaining every earlier package version. Targeted enlargement records four inherited Relationship Memoir/Celebrating Occasions label bounds issues at 320px and 1440px. Three separately evidenced protected mobile Books focus drifts do not relax the source anchor requirement. Pricing export repair, enlargement corrections, later sections, complete homepage acceptance and React publication remain separate. Historical group scope statements above do not supersede this newly authorised work.

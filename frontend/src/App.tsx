@@ -7,25 +7,27 @@ import { GiftingSection } from './sections/GiftingSection'
 import { ResourcesSection } from './sections/ResourcesSection'
 import { ReassuranceBand } from './sections/ReassuranceBand'
 import { FaqSection } from './sections/FaqSection'
+import { BookDiscovery } from './sections/BookDiscovery'
 import './styles/homepage-editorial.css'
 import './styles/homepage-questions.css'
+import './styles/homepage-discovery.css'
 
 // This is a source-driven component reference, NOT the full published homepage.
 // Do not deploy this in place of the current GitHub Pages root until parity.
 export function App() {
   const [currency, setCurrency] = usePreviewCurrency()
   // Only migrated, uniquely rendered targets can use local native anchors.
-  const routes = previewRoutesForCurrency(currency, ['top', 'main-content', 'resources', 'resources-activity', 'questions'])
+  const routes = previewRoutesForCurrency(currency, ['top', 'main-content', 'books', 'resources', 'resources-activity', 'questions'])
   return <div className="sl-site" id="top">
     <a className="sl-skip-link" href={routes.mainContent}>{approvedCopy('shared.header.skip')}</a>
     <SiteHeader routes={routes} />
     <main id="main-content">
-      {/* The hero precedes this band and book discovery follows it in the full homepage.
-          Their later migrations fill those positions without placeholder sections. */}
+      {/* The hero will precede this band when migrated; no placeholder section is inserted. */}
       <ReassuranceBand />
+      <BookDiscovery />
       <GiftingSection />
       <ResourcesSection />
-      <FaqSection />
+      <FaqSection booksHref={routes.books} />
     </main>
     <NewsletterFooter currency={currency} onCurrencyChange={setCurrency} routes={routes} />
   </div>

@@ -1,0 +1,783 @@
+{
+  "createdAt": "2026-10-19T21:50:23.567614+00:00",
+  "kind": "Complete local discovery verification before the Group 4 source commit",
+  "checkout": "68734585fa4834962c548d1f57993721a5a82782",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "browser": "155.0.8059.39",
+  "comparisonStartedAt": "2026-10-19T21:41:39.978Z",
+  "comparisonCompletedAt": "2026-10-19T21:44:52.058Z",
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    600,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "panelComparisons": 60,
+  "computedComparisons": 135,
+  "stateRecords": 30,
+  "targetCaptures": 168,
+  "pngFiles": 260,
+  "maxRelativeGeometryCssPixels": 0,
+  "pixelMeasurementKeys": [
+    "changedPixels",
+    "changedRatio",
+    "publishedSize",
+    "sourceSize"
+  ],
+  "thresholds": {
+    "geometryCssPixels": 0.15,
+    "screenshotChannelDifference": 24,
+    "screenshotChangedRatio": 0.01
+  },
+  "completeWidthSet": true,
+  "enlargementMeasurementsComplete": true,
+  "problems": [],
+  "qualityFindings": [
+    {
+      "id": "discovery-enlarged-320-relationship-memoir",
+      "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "slug": "relationship-memoir",
+      "published": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Relationship Memoir",
+            "lines": 1
+          }
+        ]
+      },
+      "source": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Relationship Memoir",
+            "lines": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "discovery-enlarged-320-celebrating-occasions",
+      "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "slug": "celebrating-occasions",
+      "published": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Celebrating Occasions",
+            "lines": 2
+          }
+        ]
+      },
+      "source": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Celebrating Occasions",
+            "lines": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "discovery-enlarged-1440-relationship-memoir",
+      "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "slug": "relationship-memoir",
+      "published": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Relationship Memoir",
+            "lines": 1
+          }
+        ]
+      },
+      "source": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Relationship Memoir",
+            "lines": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "discovery-enlarged-1440-celebrating-occasions",
+      "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "slug": "celebrating-occasions",
+      "published": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Celebrating Occasions",
+            "lines": 1
+          }
+        ]
+      },
+      "source": {
+        "documentOverflow": false,
+        "clippedText": [],
+        "textOutsideViewport": [],
+        "clippedControls": [],
+        "activeTabTextOutsideButton": [
+          {
+            "text": "Celebrating Occasions",
+            "lines": 1
+          }
+        ]
+      }
+    }
+  ],
+  "inheritedNavigationFindings": [
+    {
+      "id": "published-books-menu-focus-restore-320",
+      "status": "The protected mobile dialog initially reaches the Books anchor, then restoring trigger focus moves its scroll position. The source must retain its intended native anchor placement.",
+      "label": "Explore all books",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "position": {
+        "settled": false,
+        "hash": "#books",
+        "count": 1,
+        "targetTop": 456.515625,
+        "targetBottom": 1680.625,
+        "scrollY": 743,
+        "expectedScroll": 1023.515625,
+        "scrollMarginTop": "96px",
+        "rootScrollPaddingTop": "80px",
+        "visible": true
+      },
+      "trace": [
+        {
+          "event": "focusin",
+          "time": 400.80000000074506,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 1199.515625,
+          "expectedScroll": 1023.515625,
+          "focusLabel": null,
+          "focusTag": "A"
+        },
+        {
+          "event": "focusin",
+          "time": 443.80000000074506,
+          "hash": "#books",
+          "scrollY": 743,
+          "targetTop": 456.515625,
+          "expectedScroll": 1023.515625,
+          "focusLabel": "Open navigation",
+          "focusTag": "BUTTON"
+        },
+        {
+          "event": "scroll",
+          "time": 445.4000000022352,
+          "hash": "#books",
+          "scrollY": 743,
+          "targetTop": 456.515625,
+          "expectedScroll": 1023.515625,
+          "focusLabel": "Open navigation",
+          "focusTag": "BUTTON"
+        }
+      ],
+      "focusProbe": [
+        {
+          "phase": "before original focus",
+          "args": [],
+          "hash": "#books",
+          "scrollY": 1024,
+          "targetTop": 175.515625,
+          "expectedScroll": 1023.515625
+        },
+        {
+          "phase": "after original focus",
+          "args": [],
+          "hash": "#books",
+          "scrollY": 743,
+          "targetTop": 456.515625,
+          "expectedScroll": 1023.515625
+        }
+      ]
+    },
+    {
+      "id": "published-books-menu-focus-restore-390",
+      "status": "The protected mobile dialog initially reaches the Books anchor, then restoring trigger focus moves its scroll position. The source must retain its intended native anchor placement.",
+      "label": "Explore all books",
+      "viewport": {
+        "width": 390,
+        "height": 600
+      },
+      "position": {
+        "settled": false,
+        "hash": "#books",
+        "count": 1,
+        "targetTop": 472.71875,
+        "targetBottom": 1617.171875,
+        "scrollY": 631,
+        "expectedScroll": 927.71875,
+        "scrollMarginTop": "96px",
+        "rootScrollPaddingTop": "80px",
+        "visible": true
+      },
+      "trace": [
+        {
+          "event": "focusin",
+          "time": 416.80000000074506,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 1103.71875,
+          "expectedScroll": 927.71875,
+          "focusLabel": null,
+          "focusTag": "A"
+        },
+        {
+          "event": "focusin",
+          "time": 452,
+          "hash": "#books",
+          "scrollY": 631,
+          "targetTop": 472.71875,
+          "expectedScroll": 927.71875,
+          "focusLabel": "Open navigation",
+          "focusTag": "BUTTON"
+        },
+        {
+          "event": "scroll",
+          "time": 453.80000000074506,
+          "hash": "#books",
+          "scrollY": 631,
+          "targetTop": 472.71875,
+          "expectedScroll": 927.71875,
+          "focusLabel": "Open navigation",
+          "focusTag": "BUTTON"
+        }
+      ],
+      "focusProbe": [
+        {
+          "phase": "before original focus",
+          "args": [],
+          "hash": "#books",
+          "scrollY": 928,
+          "targetTop": 175.71875,
+          "expectedScroll": 927.71875
+        },
+        {
+          "phase": "after original focus",
+          "args": [],
+          "hash": "#books",
+          "scrollY": 631,
+          "targetTop": 472.71875,
+          "expectedScroll": 927.71875
+        }
+      ]
+    },
+    {
+      "id": "published-books-menu-focus-restore-820",
+      "status": "The protected mobile dialog initially reaches the Books anchor, then restoring trigger focus moves its scroll position. The source must retain its intended native anchor placement.",
+      "label": "Explore all books",
+      "viewport": {
+        "width": 820,
+        "height": 600
+      },
+      "position": {
+        "settled": false,
+        "hash": "#books",
+        "count": 1,
+        "targetTop": 513.21875,
+        "targetBottom": 1512.5625,
+        "scrollY": 666,
+        "expectedScroll": 963.21875,
+        "scrollMarginTop": "116px",
+        "rootScrollPaddingTop": "100px",
+        "visible": true
+      },
+      "trace": [
+        {
+          "event": "focusin",
+          "time": 417.5999999977648,
+          "hash": "",
+          "scrollY": 0,
+          "targetTop": 1179.21875,
+          "expectedScroll": 963.21875,
+          "focusLabel": null,
+          "focusTag": "A"
+        },
+        {
+          "event": "focusin",
+          "time": 456.5,
+          "hash": "#books",
+          "scrollY": 666,
+          "targetTop": 513.21875,
+          "expectedScroll": 963.21875,
+          "focusLabel": "Open navigation",
+          "focusTag": "BUTTON"
+        },
+        {
+          "event": "scroll",
+          "time": 458.5,
+          "hash": "#books",
+          "scrollY": 666,
+          "targetTop": 513.21875,
+          "expectedScroll": 963.21875,
+          "focusLabel": "Open navigation",
+          "focusTag": "BUTTON"
+        }
+      ],
+      "focusProbe": [
+        {
+          "phase": "before original focus",
+          "args": [],
+          "hash": "#books",
+          "scrollY": 963,
+          "targetTop": 216.21875,
+          "expectedScroll": 963.21875
+        },
+        {
+          "phase": "after original focus",
+          "args": [],
+          "hash": "#books",
+          "scrollY": 666,
+          "targetTop": 513.21875,
+          "expectedScroll": 963.21875
+        }
+      ]
+    }
+  ],
+  "sourceFiles": {
+    "src/App.tsx": "610a3da2f5adcf30a9ae3627b2a440c3c8b00f26d9411771a9e3ef85efe11022",
+    "src/components/ActionLink.tsx": "4d7b1374267b0fa627f9b542006e41066b113f778cdbda82504ed9b30ead1bba",
+    "src/components/EditorialHeading.tsx": "7bbda62ee6d411a7f77e3a37e915bb871faf128bdf6001314f8c6e9a85112cdb",
+    "src/components/Layout.tsx": "2c37f54870ac5a894abe809a09eaa1e74f773cd73a50adead97e515c0beb13d0",
+    "src/components/NewsletterFooter.tsx": "5e8f750e6ed6df253db605001f50630bd45867d124572f2f0ecf4c1fb78ca788",
+    "src/components/ResourceCategoryCard.tsx": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47",
+    "src/components/ResponsiveImage.tsx": "4d1e3181e30a63e6408c718ecc6ba9c6fa086b3d24b99011e4aba3f90f0df5fc",
+    "src/components/SiteHeader.tsx": "a4b349fab2cc692d4ac838b2761fa61c292848ea316091530742c8e30772b3e8",
+    "src/components/Typography.tsx": "e05b1008187370bf37b56a3fc4fc34f1b9100027614e6c7c9cb8634f62e9de33",
+    "src/content.ts": "371a96e49443a9af3cff4a9c7325e4cae1ebf6fe0278589776ee823c8dd0ba91",
+    "src/main.tsx": "23ece7a01f1627ad6c4c888abb9efbc8a13d271e55a813d398c5c8004a07d8d8",
+    "src/sections/BookDiscovery.tsx": "3f7eaea9e161e1428232976d44571077bcc055e0657b31babd0f36453d04b391",
+    "src/sections/FaqSection.tsx": "e645c8856c9b60e19751115a2504d90f6a79ff5ff4d292be1ee883b1f0705866",
+    "src/sections/FinalInvitation.tsx": "95f0c629bf4da5c39f2c8320ca0e5833f06c539621161c6207a4a2d95135eb2a",
+    "src/sections/GiftingSection.tsx": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6",
+    "src/sections/ReassuranceBand.tsx": "56febe6b3829e48ea5e22a5ac3cd2fc48fce26b2c371cb94b5900f07f6787242",
+    "src/sections/ResourcesSection.tsx": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403",
+    "src/sections/homepageDiscoveryContent.ts": "0344b2b251997a9faf387861e6b89d0f8975429fad68ba0cf1dc85f8e3d7524b",
+    "src/sections/homepageEditorialContent.ts": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1",
+    "src/sections/homepageQuestionsContent.ts": "e660d3e75f4ea8b1dd344200260759c95d5e3d7c8f29367d81ba18d59213d65d",
+    "src/siteRoutes.ts": "5e714d61a0f4e50de472a0c65b76fe67936f043e935f63c4d88e53480051ba6e",
+    "src/styles/components.css": "c1dee5ba708a2cb87072de87e1f87c43e0f77d842e27a4b0c6cdd1d98106d971",
+    "src/styles/foundations.css": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268",
+    "src/styles/homepage-discovery.css": "24bde0aee654721675b57d9c3b09cd26ef854f023dce188bdb9ed071b96f2efe",
+    "src/styles/homepage-editorial.css": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a",
+    "src/styles/homepage-questions.css": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da",
+    "src/styles/shared-footer.css": "5c02e6ce6ffc3dc418e696f1474e31244fdfc4e811d6f1e16f3bea0a8e710467",
+    "src/styles/shared-header.css": "98dc7bf867dd848a16b7f51f27abcd4af16a1884e7b72b0554015cfc2f336464",
+    "src/styles/tokens.css": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081",
+    "src/styles/typography.css": "faf05e6601df7e528380f4f74a0e6232e0d2c216bb8fcd491f30a4112902e655",
+    "src/usePreviewCurrency.ts": "763fe027ed3e6ffcec144394be365dba0d343594e6028d655b3d826470b16ba4",
+    "content/images.json": "3063a8d9ed41376682a1ff036b1ec7b93a9f5496ea724e5ff82b072512805426",
+    "content/ledger.json": "c00a403216cab6e5bebd3f5c81d3836a9f15a01c5a56d3bd56f437fca5952e58"
+  },
+  "publishedFiles": {
+    "index.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+    "assets/index-DhPZyX4z.css": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+    "assets/content-sections-CfrmOVRI.js": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+    "assets/routes-DrwDv2x2.js": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+    "pricing/index.html": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14"
+  },
+  "sourceBuildFiles": {
+    "index.html": "1826b056277f8c53d477eea40ce043e4f5f07deab1b0dd0b3956b384722aaeed",
+    "assets/index-BAFLv38D.css": "f4cf49ee9beed9a76fe37e5fa318ce13c7677b38287c54d9cd21ea27820d80f3",
+    "assets/index-C5wFq1LT.js": "7860b333f3f791d9a38ebebf8e71117cbfcdf30af49bc7b6e0f6c1a926da7802"
+  },
+  "packageFiles": {
+    "package.json": "3dd03f90f314331735e8e314c779b21320433290da7e17680a749f4b2f077f45",
+    "package-lock.json": "05b9dc82bd3a5d060b2f234e0b0ef8e13dde3298e7203ac4a8c4de7fcae7b672"
+  },
+  "dependencies": {
+    "declaredReactTabs": "1.1.21",
+    "lockedReactTabs": "1.1.21",
+    "installedReactTabs": "1.1.21",
+    "installedTabsModuleSha256": "a7c0122a499eedb63b76e9629f4d4d70d6ec83d8c34e370f7e136d66acc0a81c"
+  },
+  "harnessSha256": "2a40a722a73d3a59b3c99ab2cb0ae3e58efdbf768657f94ffef7d4a4e8a6f1d8",
+  "reportSha256": "3abad278fe178e13f217cdfaefc2e7798d3cd81f0820539c20839d89f8285202",
+  "sourceChecks": {
+    "typecheck": "pass",
+    "contentGate": "pass",
+    "ledgerRecords": 116,
+    "previousRecordsUnchanged": 88,
+    "sourceTests": 27,
+    "protectedGuard": "pass",
+    "build": "pass"
+  },
+  "limits": "Chromium automation, emulated touch and targeted discovery-text enlargement. This is not native browser zoom, cross-browser, physical-device or accessibility certification. Inherited enlargement findings remain distinct from migration parity. Pricing and external product behaviour are outside this bounded gate.",
+  "maxChangedPixelRatio": 0,
+  "screenshotPairs": 84,
+  "retainedLocal": {
+    "group1": {
+      "reportSha256": "04881ed61a728e5e1f0a929b99b0c81f7d5c65c907a9ce02653152161c0416da",
+      "completedAt": null,
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "stateRecords": 19,
+      "problems": [],
+      "qualityFindings": [
+        {
+          "id": "gifting-enlarged-text-320",
+          "status": "Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement.",
+          "detail": "At 320px and targeted 200 percent section text, the Gifting grid expands within its clipped panel. Matching document overflow is not an enlargement quality pass.",
+          "published": [
+            {
+              "group": "gifting",
+              "tag": "H2",
+              "text": "Give someone the chance to make",
+              "clippedLines": 1
+            },
+            {
+              "group": "gifting",
+              "tag": "P",
+              "text": "You choose the book and package. They accept the invitation, tell their story in their own words and review the draft before printing.",
+              "clippedLines": 2
+            }
+          ],
+          "source": [
+            {
+              "group": "gifting",
+              "tag": "H2",
+              "text": "Give someone the chance to make",
+              "clippedLines": 1
+            },
+            {
+              "group": "gifting",
+              "tag": "P",
+              "text": "You choose the book and package. They accept the invitation, tell their story in their own words and review the draft before printing.",
+              "clippedLines": 2
+            }
+          ]
+        }
+      ],
+      "buildScope": "Final local replay against the frozen Tabs 1.1.21 build. The committed discovery workflow also replays every retained gate against its exact committed build."
+    },
+    "group2": {
+      "reportSha256": "73782ac02708fc6dc14f1a7c45e7e368c65df955388fc96ffa0ec3ac9af94495",
+      "completedAt": "2026-10-19T21:42:10.795Z",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "stateRecords": 18,
+      "problems": [],
+      "qualityFindings": [],
+      "buildScope": "Final local replay against the frozen Tabs 1.1.21 build. The committed discovery workflow also replays every retained gate against its exact committed build."
+    },
+    "shared": {
+      "reportSha256": "472fc765925e44adb0b981c58a3faf8631fd67cc186010956fd36729d0254377",
+      "completedAt": "2026-10-19T21:41:40.675Z",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "stateRecords": 41,
+      "problems": [],
+      "qualityFindings": [
+        {
+          "id": "shared-enlarged-text-320",
+          "status": "Inherited published limitation retained for a separately approved visible refinement.",
+          "viewport": {
+            "width": 320,
+            "height": 568
+          },
+          "published": {
+            "documentOverflow": false,
+            "clippedText": [
+              {
+                "group": "ending",
+                "text": "See inside",
+                "clippedLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Gift a book",
+                "clippedLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Resources",
+                "clippedLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Our story",
+                "clippedLines": 1
+              }
+            ],
+            "textOutsideViewport": [
+              {
+                "group": "ending",
+                "text": "See inside",
+                "outsideLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Gift a book",
+                "outsideLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Resources",
+                "outsideLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Our story",
+                "outsideLines": 1
+              }
+            ]
+          },
+          "source": {
+            "documentOverflow": false,
+            "clippedText": [
+              {
+                "group": "ending",
+                "text": "See inside",
+                "clippedLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Gift a book",
+                "clippedLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Resources",
+                "clippedLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Our story",
+                "clippedLines": 1
+              }
+            ],
+            "textOutsideViewport": [
+              {
+                "group": "ending",
+                "text": "See inside",
+                "outsideLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Gift a book",
+                "outsideLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Resources",
+                "outsideLines": 1
+              },
+              {
+                "group": "ending",
+                "text": "Our story",
+                "outsideLines": 1
+              }
+            ]
+          }
+        },
+        {
+          "id": "shared-enlarged-text-1440",
+          "status": "Inherited published limitation retained for a separately approved visible refinement.",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "published": {
+            "documentOverflow": true,
+            "clippedText": [],
+            "textOutsideViewport": []
+          },
+          "source": {
+            "documentOverflow": true,
+            "clippedText": [],
+            "textOutsideViewport": []
+          }
+        }
+      ],
+      "buildScope": "Final local replay against the frozen Tabs 1.1.21 build. The committed discovery workflow also replays every retained gate against its exact committed build."
+    }
+  },
+  "retainedReplay": {
+    "records": [
+      {
+        "name": "source-check",
+        "exitCode": 0,
+        "seconds": 1.94,
+        "completedAt": "2026-10-19T21:39:57.079323+00:00"
+      },
+      {
+        "name": "source-ui",
+        "exitCode": 0,
+        "seconds": 3.25,
+        "completedAt": "2026-10-19T21:40:00.331590+00:00"
+      },
+      {
+        "name": "shape",
+        "exitCode": 0,
+        "seconds": 17.63,
+        "completedAt": "2026-10-19T21:40:17.963129+00:00"
+      },
+      {
+        "name": "focus",
+        "exitCode": 0,
+        "seconds": 3.54,
+        "completedAt": "2026-10-19T21:40:21.504671+00:00"
+      },
+      {
+        "name": "group1",
+        "exitCode": 0,
+        "seconds": 46.45,
+        "completedAt": "2026-10-19T21:41:07.954591+00:00"
+      },
+      {
+        "name": "group2",
+        "exitCode": 0,
+        "seconds": 63.12,
+        "completedAt": "2026-10-19T21:42:11.079625+00:00"
+      }
+    ],
+    "buildUnchanged": true,
+    "buildHashes": {
+      "assets/index-BAFLv38D.css": "f4cf49ee9beed9a76fe37e5fa318ce13c7677b38287c54d9cd21ea27820d80f3",
+      "assets/index-C5wFq1LT.js": "7860b333f3f791d9a38ebebf8e71117cbfcdf30af49bc7b6e0f6c1a926da7802",
+      "index.html": "1826b056277f8c53d477eea40ce043e4f5f07deab1b0dd0b3956b384722aaeed"
+    }
+  },
+  "manualVisualReview": {
+    "scope": "Representative final comparison pairs across all ten widths and all six book treatments, plus focus and the four inherited enlargement findings. This does not claim individual inspection of all 60 normal pairs.",
+    "result": "No visible source/published differences in the inspected pairs. Enlarged pairs confirm the separately recorded inherited tab-label limitations.",
+    "reviewedFilesByReviewer": {
+      "root": [
+        "comparison-820-parent-to-child-letters.png",
+        "comparison-1024-founders-memoir.png",
+        "comparison-1280-travel-memoir.png",
+        "comparison-keyboard-focus-reduce-390x320.png",
+        "comparison-keyboard-focus-no-preference-1440x900.png"
+      ],
+      "visual_review": [
+        "comparison-320-founders-memoir.png",
+        "comparison-360-travel-memoir.png",
+        "comparison-430-relationship-memoir.png",
+        "comparison-600-parent-to-child-letters.png",
+        "comparison-768-celebrating-occasions.png",
+        "comparison-768-life-story.png",
+        "comparison-enlarged-320-relationship-memoir.png",
+        "comparison-enlarged-320-celebrating-occasions.png",
+        "comparison-enlarged-1440-relationship-memoir.png",
+        "comparison-enlarged-1440-celebrating-occasions.png"
+      ],
+      "parity_review": [
+        "comparison-360-relationship-memoir.png",
+        "comparison-390-life-story.png",
+        "comparison-430-founders-memoir.png",
+        "comparison-1440-celebrating-occasions.png",
+        "comparison-control-action-focus-no-preference.png",
+        "comparison-enlarged-1440-celebrating-occasions.png"
+      ]
+    },
+    "uniquePairsViewed": 20,
+    "sha256": {
+      "comparison-1024-founders-memoir.png": "7232692ee5a7e7f5c72e8766a5186972430f76439e48616a0d748ab54c158e7a",
+      "comparison-1280-travel-memoir.png": "217744ce0d70ee10f64431add3a728e1150579b972587e214039438a864a555b",
+      "comparison-1440-celebrating-occasions.png": "02f3b486c3703b5d5c5ee7e2a061d41ab6429e930c8a5e5d14ed170f8caa679d",
+      "comparison-320-founders-memoir.png": "e17eb8089010a93854f6040a41448446c5ea37dea474010902c98a1160a3db20",
+      "comparison-360-relationship-memoir.png": "454b5080e30ac633c384cd6bc468a806806fb39a2aba047b916211d3e328f08d",
+      "comparison-360-travel-memoir.png": "211330c35216f4684cd59c32ca828f5ad94ebe72beebe568ae9ddb22b89f046e",
+      "comparison-390-life-story.png": "e12abb3e0bf92e41f833d8f57a8ef16e5e9867a674240c5ae1b7600126cffd89",
+      "comparison-430-founders-memoir.png": "cda4b850c915398a65dd7e4f2b30e572144aebc4c914e98bca4eb62f25548293",
+      "comparison-430-relationship-memoir.png": "182b424c43a7e775cc0d1c93fa91cb55798cf51b73212761cbc3b637d82ef1ef",
+      "comparison-600-parent-to-child-letters.png": "76b2c1660092b123dd1ff7461f6f48c3c974e4aa9179f137edd533a6753f51c0",
+      "comparison-768-celebrating-occasions.png": "29adc9effb0ab9de9168ef0a890405284c03a843f91feccb70d60e1903566548",
+      "comparison-768-life-story.png": "73c55cf1636084f9574ae5c4b45d34c1bfebe473eb2d988685c7d4c3d266e99c",
+      "comparison-820-parent-to-child-letters.png": "a11d276180e7c72cd6d76f40b334828972ca1fefb1215d1a033c7f8dcac07e40",
+      "comparison-control-action-focus-no-preference.png": "2973124286af27be27e59b30c157ce675d56e78376bf6aab8540a584e31373a3",
+      "comparison-enlarged-1440-celebrating-occasions.png": "ce0b7daccd2577422d93e37350d18b6e2cb5550745c13d80a5765b8481a09830",
+      "comparison-enlarged-1440-relationship-memoir.png": "1b80e982c5e1d357da75006faea72288c3bdff2ad264e3997922c5118accf0a6",
+      "comparison-enlarged-320-celebrating-occasions.png": "9bdfea7dfcff4a2aa96ef29cce53d012d30cdc7e64098bb425331c2752119f72",
+      "comparison-enlarged-320-relationship-memoir.png": "6e656623933972d478633fab343ca3f0a69b562e64759d2265c391cbf2523f2d",
+      "comparison-keyboard-focus-no-preference-1440x900.png": "f6d110a1de6f38c4abc102c9f963cfa84956a52148b676e9ef35883ef35a657b",
+      "comparison-keyboard-focus-reduce-390x320.png": "80f3c7dc4aeb4187316e093a9d37a7d750b190fca12604376574b32821be02e2"
+    }
+  }
+}

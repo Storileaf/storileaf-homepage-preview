@@ -11,8 +11,8 @@ The active design authority is [Public Design System](PUBLIC_DESIGN_SYSTEM.md).
 | Responsive image | Existing per-section image rules | ResponsiveImage with dimensions, alt, sizes and lazy default; source compile validated | Document srcset/crop per asset and confirm visible parity |
 | Header and navigation | Published Radix desktop menus and mobile navigation | Group 3 reconstruction implemented with Radix menus/dialog, native mobile disclosures, currency persistence and explicit owned anchors | Committed shared comparison verified; founder rendered review and enlargement reflow findings remain open |
 | Hero | Published photograph carousel, phrase ticker and fourteen rotating book covers | Not yet migrated | Preserve exact copy, imagery, crops, proportions, existing motion and responsive interactions; final motion settings remain deferred |
-| Reassurance band | Published three-part band with current wording and position retained by the Group 2 instruction | ReassuranceBand implemented with verified local and committed ten width parity | Founder rendered review; full surrounding hero/discovery composition remains later work |
-| Six-book discovery | Published working tabs | Not yet migrated | Exact copy, photo, tabs and stable CTA parity |
+| Reassurance band | Published three-part band with current wording and position retained by the Group 2 instruction | ReassuranceBand implemented with verified local and committed ten width parity; discovery follows it in Group 4 | Founder rendered review; full surrounding hero composition remains later work |
+| Six-book discovery | Published working tabs | Group 4 implemented with all six panels, exact content/images and local Books navigation; complete local ten width and functional comparison passes | Committed replay, founder rendered review and inherited enlarged tab-label findings |
 | Book gallery | Published with modal, keyboard and swipe | Not yet migrated | Six images, lightbox and focus parity |
 | Printed-book craft | Published four-image slideshow | Not yet migrated | Full-height image, indicator and motion parity |
 | How it works | Published pinned four-stage sequence | Not yet migrated | Pinned layout, fourth hold, reduced-motion parity |
@@ -45,9 +45,9 @@ Targeted 200 percent section text at 320px reveals matching Gifting clipping in 
 
 ## Package 3 Group 2
 
-The founder authorised the reassurance band, six FAQs and final invitation on 19 October 2026. Their current wording, native disclosure behaviour and section compositions are retained in source. Preserve the reassurance band's full homepage position immediately after the hero and ticker and before discovery. The partial source reserves these neighbours for later migration without fabricating visible placeholders.
+The founder authorised the reassurance band, six FAQs and final invitation on 19 October 2026. Their current wording, native disclosure behaviour and section compositions are retained in source. Preserve the reassurance band's full homepage position immediately after the hero and ticker and before discovery. Group 4 places discovery after the band while the hero remains pending, without fabricating visible placeholders.
 
-The isolated implementation and full local rendered comparison pass. Source remains as committed at 8cd289a; final Group 2 CI and retained regressions pass at verification correction 6b5f983. All ten widths have been visually reviewed. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) owns scope, inherited copy provenance, exact checkpoints, artifact verification and the editorial gate correction history. Founder visual acceptance, complete homepage parity and a React cutover remain separate gates. Group 1's inherited Gifting clipping and the pricing hydration warning remain open.
+The original isolated implementation and full local rendered comparison pass at source checkpoint 8cd289a; final Group 2 CI and retained regressions pass at verification correction 6b5f983. All ten widths have been visually reviewed. Group 4 subsequently adds the local Books route prop to FaqSection and FinalInvitation while preserving their content and styles. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) retains the original scope, inherited copy provenance, exact checkpoints, artifact verification and editorial gate correction history. Founder visual acceptance, complete homepage parity and a React cutover remain separate gates. Group 1's inherited Gifting clipping and the pricing hydration warning remain open.
 
 ## Package 3 Group 3
 
@@ -56,3 +56,9 @@ The founder authorised shared header, newsletter, footer and navigation parity o
 The [pricing investigation](PRICING_HYDRATION_REVIEW.md) identifies three protected export defects and records working client navigation separately. No protected pricing repair or React publication is authorised by this group. Gifting enlargement clipping remains separate, and founder visual acceptance of the reconstructed shared components remains a distinct gate.
 
 Shared targeted text enlargement retains two baseline quality limitations. Footer links and the currency control clip at 320px, and desktop navigation overflows the document at 1440px when shared text is doubled. They remain open alongside Gifting and require a bounded visible correction proposal. Matching the baseline is not an enlargement quality pass.
+
+## Package 3 Group 4
+
+The founder authorised six book discovery and its local Books navigation on 19 October 2026. Implementation and complete local verification pass; the committed replay is pending at this source checkpoint. The [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) owns the current evidence. All six panels are compared at ten widths, with actual keyboard, emulated touch, reduced motion, focus, anchor/history and twelve enlargement cases. The new section follows reassurance. Shared Books links and the final invitation target its one local section while individual book destinations remain exact.
+
+The four inherited enlarged-label findings concern Relationship Memoir and Celebrating Occasions at 320px and 1440px. Three protected mobile Books menu focus drifts are independently evidenced and kept separate from strict source anchor checks. These findings remain open alongside earlier Gifting/shared enlargement and pricing defects. The published runtime, other pending sections and founder acceptance remain separate.

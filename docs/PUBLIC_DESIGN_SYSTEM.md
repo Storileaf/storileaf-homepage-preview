@@ -1,12 +1,12 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for Package 3 source migration Groups 1, 2 and 3. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for Package 3 source migration Groups 1 through 4. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
 Book-centred, editorial, warm, personal, considered and commercially clear. The finished printed book is the outcome. Design should feel like an art-directed magazine or personal archive, not a generic SaaS dashboard or photo-book storefront.
 
-Preserve the existing approved homepage layout, content, interactions, photographs and CTA destinations. Consolidation permits only small measured placement, type or spacing changes, not broad redesign. Record any intentional page-specific variation, and obtain founder approval before materially altering an established section.
+Preserve the existing approved homepage layout, content, interactions, photographs and CTA destinations. Packages 1 and 2 are complete. Migration may correct source differences to reproduce the approved published baseline. Propose every additional visible refinement and obtain founder approval before implementing it. Keep existing intentional section variations scoped.
 
 ## Typography roles
 
@@ -96,7 +96,7 @@ The source entry places Gifting before Resources, preserving their relative home
 
 ### Reassurance, FAQ and final invitation exceptions
 
-Group 2 preserves the reassurance band's current wording, icons, dividers and responsive layout. Its required full homepage position is immediately after the hero and ticker and before book discovery. The partial source reserves these neighbours for later migration. Do not change the band's wording or position in this group or treat historical alternatives as active implementation instructions.
+Group 2 preserves the reassurance band's current wording, icons, dividers and responsive layout. Its required full homepage position is immediately after the hero and ticker and before book discovery. Group 4 now places discovery directly after it; the hero remains unmigrated. Do not change the band's wording or position in this group or treat historical alternatives as active implementation instructions.
 
 The band retains three equal columns above 720px and stacked rows at 720px and below. Its 27px vertical padding becomes 17px at that breakpoint. Text remains 17px on wide screens, 15px at 1130px and below, 16px at 720px and below, then the 15px body role at 480px and below. Its deliberate 700 weight and 1.45 leading remain. Icon roundels are 45px wide, becoming 41px at 1130px and below. These are retained section rules, not new defaults for body copy or controls.
 
@@ -190,10 +190,36 @@ The public React source is deliberately staged. Groups 1 and 2 implement five ed
 
 Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. Groups 2 and 3 are separately recorded below. This evidence does not approve a homepage redesign or publication of the partial React build.
 
-Group 2 adds ReassuranceBand, FaqSection and FinalInvitation to the isolated composition. Source remains as committed at 8cd289a, with the full local comparison verified and final CI passing at gate correction 6b5f983. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) owns the exact evidence, retained findings and editorial count correction history. The correction changes no style token or component rule. The band's preserved position remains an assembly requirement while hero and discovery are unmigrated. Founder visual acceptance and complete homepage cutover remain separate.
+Group 2 added ReassuranceBand, FaqSection and FinalInvitation at its original verified source checkpoint 8cd289a, with the full local comparison verified and final CI passing at gate correction 6b5f983. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) retains that evidence and correction history. Group 4 subsequently extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Discovery now follows the band; the hero remains unmigrated. Founder visual acceptance and complete homepage cutover remain separate.
 
 ## Shared component migration
 
 The founder authorised Group 3 shared header, newsletter, footer and navigation parity. Its source implementation, complete local visual and functional verification, and committed CI replay pass. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) owns the current evidence. The shared browser checks now exercise the actual Radix controls and compare their rendered geometry to the protected published implementation. Currency selection retains the published storage key and pricing route contract. The [pricing hydration investigation](PRICING_HYDRATION_REVIEW.md) identified three protected export mismatches; none is repaired by this source migration. No React cutover or founder acceptance is recorded.
 
 Group 3 targeted enlargement also records inherited footer label and currency control clipping at 320px and desktop navigation document overflow at 1440px with shared text doubled. These are open quality findings, not desired reusable behaviour or an enlargement acceptance. Propose bounded reflow corrections before visible implementation changes. The measured normal geometry and completed Packages 1 and 2 remain protected.
+
+## Group 4 discovery preservation
+
+The authorised six book discovery migration retains its own published heading scale, introduction, horizontal tab rail, panel proportions, text measures, list markers, image crop and stable action placement. Reuse the completed foundations while keeping these existing section exceptions scoped. This design system owns the retained rules below. The [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) records comparison methods, measurements and evidence.
+
+| Discovery element | Retained rule |
+| --- | --- |
+| Section | Existing 1184px container and foundation gutters. Top/bottom padding 94/101px above 900px and 81/84px at 900px and below. Scroll margin 116px, changing to 96px at 720px and below. |
+| Heading layout | Two columns in the ratio 1.18 to 1 with a 285px minimum second column and clamp(24px, 2.7vw, 44px) gap. One column at 1130px and below with a 16px row gap. |
+| Heading type | Newsreader, clamp(47px, 4.8vw, 67px), 1.04 leading and minus .032em tracking. At 720px and below use clamp(42px, 8vw, 57px); at 480px and below use clamp(38px, 9vw, 47px). Emphasis remains a separate teal line at weight 420. |
+| Supporting paragraph | Manrope 16px with 1.8 leading, 385px maximum width on the two column layout and 690px on the single column layout. Retain the existing muted ink. |
+| Tabs offset and rail | Tabs start 36px below the heading, changing to 27px at 720px and below. Retain horizontal overflow, 14px inline scroll padding, thin scrollbar and the existing right fade at 900px and below. |
+| Wide tabs | Six equal columns, 100px minimum height, 20/12/22px top/horizontal/bottom padding, weight 650, clamp(16px, 1.35vw, 19px) type, 1.35 leading and balanced labels. |
+| Narrow tabs | At 900px and below use 174px fixed tab widths, 84px minimum height, 15/16px padding and 17px type. At 480px and below use 158px widths and 16px type; at 360px and below use 147px widths. |
+| Active tab and focus | Teal text, retained sage tint and 3px underline inset 11px at both ends. Keyboard outline is 2px teal inset 4px, with the original 3px half opacity teal focus ring. Hover retains the lighter sage tint without selecting a different book. |
+| Panel | Starts 22px below the rail, minimum height 520px, 1px retained forest border tint, 20px corners and warm paper background. Text/photo ratio .88 to 1.12, changing to .9 to 1.1 at 900px and below. At 720px and below use one column, natural panel height and photograph first. |
+| Copy | Padding clamp(32px, 3.4vw, 52px), 18px flex gap and 470px reading measure. Padding becomes 29px at 720px and below, then 25px vertically and 23px horizontally at 480px and below. |
+| Panel introduction | Weight 600, clamp(16px, 1.32vw, 18px), 1.55 leading and 84px minimum height. At 720px and below use 17px, automatic minimum height and no maximum width. |
+| Panel list | Three 16px weight 500 points with 1.5 leading, 14px gap and 23px left inset. Gold circular markers are 7px, positioned .68em from the top. |
+| Panel action | Existing primary action, 6px corners, 49px minimum height, 12/24px padding, 20px icon gap and 17px arrow. Align to the bottom through automatic top margin on wide layouts; use 6px top margin and normal shrinking at 720px and below. Retain Package 1 hover and focus colours. |
+| Photograph | Original lazy decoded source, declared 850 by 660 dimensions, centred cover crop. Minimum visual height 445px, then 410px at 900px, 315px at 720px, 270px at 480px and 255px at 360px and below. |
+| Motion | Active indicator uses the existing 220ms transform/opacity transition. Photo entry lasts 350ms from .55 opacity and scale 1.016 to full opacity and scale 1. Reduced motion disables photo entry and makes other discovery transitions effectively instantaneous. |
+
+Preserve the original automatic Radix tab activation, active tab reveal and reduced motion behaviour. Retain the six individual book destinations, default Life Story selection and existing image sources. Discovery follows the reassurance band, with the hero still awaiting migration. Shared Books navigation and the final invitation may use the actual local section without changing their visual treatment or canonical content records. No new pricing selection, public page, hero motion decision or visible refinement is introduced by this migration.
+
+The complete Group 4 local comparison passes for the normal and interactive scope recorded in its review. Targeted text doubling reproduces inherited Relationship Memoir and Celebrating Occasions label bounds issues at 320px and 1440px. These are open reflow findings rather than desired reusable behaviour. Preserve the approved normal layout and propose a bounded visible correction before implementing an enlargement refinement. Parity does not establish enlargement acceptance or complete Package 4 quality.

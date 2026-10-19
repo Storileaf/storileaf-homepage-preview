@@ -28,6 +28,8 @@ The [frontend/](frontend/) workspace uses Vite, React and TypeScript for the sta
 
 Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 and 2 implement Resources, Gifting, the reassurance band, FAQs and final invitation. The authorised Group 3 reconstructs the shared header, newsletter, footer and navigation, with complete local verification and the committed CI replay passing. The [Group 3 review](docs/PACKAGE_3_GROUP_3_REVIEW.md) owns its current status, and the [component inventory](docs/COMPONENT_INVENTORY.md) identifies the remaining sections.
 
+Group 4 implements six book discovery and its local Books navigation. Complete local ten width rendered and functional verification passes; committed verification is pending at this source checkpoint. The [Group 4 review](docs/PACKAGE_3_GROUP_4_REVIEW.md) records evidence and inherited enlargement findings.
+
 The homepage migration remains incomplete. Before replacing the published homepage, all sections, wording, interactions, browser states and screenshots must match the approved static baseline and receive explicit founder approval. The build output stays under frontend/dist and is not published automatically.
 
 To develop the source locally, install Node 22 and run:

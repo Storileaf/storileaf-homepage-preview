@@ -169,6 +169,13 @@ function namedString(parsed, name) {
   return one(values, name + ' string declaration')
 }
 
+// Shared lexical helpers for another explicitly bounded migration gate. These
+// parse source as data; exporting them does not expand Group 3's permitted IDs.
+export const protectedSourceParsing = Object.freeze({
+  one, region, parseRegion, parts, properties, literal, namedFunction, jsxNodes,
+  property, inside, arrowLabel, namedDeclaration, namedString,
+})
+
 function htmlAttributes(source) {
   const attributes = new Map()
   const pattern = /\s+([A-Za-z][\w:-]*)\s*=\s*(?:"([^"]*)"|'([^']*)')/gy

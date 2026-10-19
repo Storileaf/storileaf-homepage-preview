@@ -30,13 +30,13 @@ const report = {
   equivalentRepresentations: [
     'Loaded primary font families must match; unused fallback family lists may differ.',
     'A zero width border may use solid or none. Visible borders remain compared.',
-    'Static relative links resolve against the real published origin. Source destinations use each actual element.href, so a source regression to a local fragment or pricing route fails. Both must match. Raw hrefs remain recorded. No test route substitution occurs.',
+    'Static relative links resolve against the real published origin. Source destinations use each actual element.href. The Group 4 final invitation alone may use the local #books fragment on the source homepage without a query and with exactly one rendered target. Its canonical destination must match the published Books URL. Other source destinations, including every FAQ action, remain exact. Raw and effective hrefs and the local target count remain recorded. No browser route substitution occurs.',
     'The source final invitation omits the incorrect static aria-current=page attribute. This deliberate semantic correction has no visual effect; the protected static runtime is unchanged.',
   ],
   captureMethod: 'Real pages measured after actual font readiness. Group 2 contains inline SVG icons and no raster images. Relevant header and hero image assets are decoded before context captures. Clean crops temporarily extend viewport height to contain the complete section, hide the unrelated sticky header and apply a recorded body padding adjustment of less than one CSS pixel based on the section document origin. Unchanged section dimensions and complete painting bounds are checked. Context captures retain the requested viewport and header without capture adjustments. No target section styles, assets, content or routes are substituted.',
   viewportReadinessMethod: 'A hidden fixed 100vw by 100vh probe must match the requested viewport within 0.01 CSS pixels, and innerWidth/innerHeight must match exactly. This bounded check waits for responsive CSS after a resize, followed by two foreground animation frames. The probe does not participate in document layout.',
   expandedStateMethod: 'Native details.open is set only to establish deterministic screenshot states. Separate real keyboard and emulated touch checks exercise the native summary activation and independent disclosure behaviour. The source must contain six HTMLDetailsElement elements with direct native summaries and no exclusive group name.',
-  positionScope: 'The protected published reassurance band remains immediately after the hero and before book discovery. The incomplete source stages it before the migrated later sections. Full rendered page position awaits hero and book migration. Section geometry is compared relative to each section origin. The final invitation must remain within #questions after the FAQ grid in all expanded layouts.',
+  positionScope: 'The protected published reassurance band remains immediately after the hero and before book discovery. Group 4 places discovery directly after the reassurance band in the incomplete source. Full rendered page position still awaits hero migration. Section geometry is compared relative to each section origin. The final invitation must remain within #questions after the FAQ grid in all expanded layouts.',
   limits: 'Chromium automation, emulated touch and targeted section text enlargement. Not full native browser zoom, cross browser, physical device or accessibility certification. Shared navigation, history and hydration work remain separately scoped.',
 }
 report.publishedFiles = {
@@ -255,7 +255,14 @@ async function snapshot(page, group) {
     const box = root.getBoundingClientRect()
     const number = value => Math.round(value * 1000) / 1000
     const normal = value => value.replace(/\s+/g, ' ').trim()
-    const destination = element => options.kind === 'source' ? element.href : new URL(element.getAttribute('href'), options.publishedOrigin).href
+    const route = element => {
+      const rawHref = element.getAttribute('href'), effectiveHref = element.href
+      const url = new URL(options.kind === 'source' ? effectiveHref : rawHref, options.publishedOrigin)
+      const source = new URL(options.sourceHome)
+      const local = options.kind === 'source' && element.matches('.sl-final-invitation > a') && url.origin === source.origin && url.pathname === source.pathname && !url.search && url.hash === '#books'
+      return { rawHref, effectiveHref, destination: local ? new URL('#books', options.publishedOrigin).href : url.href, local, localTargetCount: local ? document.querySelectorAll('[id="books"]').length : null }
+    }
+    const destination = element => route(element).destination
     const nodes = {}
     for (const [name, selector, index = 0] of options.nodes) {
       const element = selector === ':scope' ? root : root.querySelectorAll(selector)[index]
@@ -300,9 +307,9 @@ async function snapshot(page, group) {
           width: css.width, height: css.height, fill: css.fill, stroke: css.stroke,
         }
       }),
-      links: [...root.querySelectorAll('a')].map(link => ({ text: normal(link.textContent), rawHref: link.getAttribute('href'), destination: destination(link), ariaCurrent: link.getAttribute('aria-current') })),
+      links: [...root.querySelectorAll('a')].map(link => ({ text: normal(link.textContent), ...route(link), ariaCurrent: link.getAttribute('aria-current') })),
     }
-  }, { nodes: group.nodes, styles, publishedOrigin, kind: group.kind })
+  }, { nodes: group.nodes, styles, publishedOrigin, sourceHome: urls.source, kind: group.kind })
 }
 function compareSnapshots(before, after, label, { allowQualityOverflow = false } = {}) {
   const differences = []
@@ -324,6 +331,7 @@ function compareSnapshots(before, after, label, { allowQualityOverflow = false }
   }
   const links = value => value.links.map(({ text, destination }) => ({ text, destination }))
   if (JSON.stringify(links(before)) !== JSON.stringify(links(after))) differences.push('Resolved published destinations differ')
+  for (const link of after.links) if (link.local && link.localTargetCount !== 1) differences.push('Local final invitation must target exactly one rendered Books section')
   for (const key of ['details', 'images', 'icons', 'ariaLabel', 'labelledBy', 'invitationAfterGrid']) {
     if (JSON.stringify(before[key]) !== JSON.stringify(after[key])) differences.push(key + ' differs')
   }
@@ -385,7 +393,10 @@ try {
     const manifest = report.composition[kind]
     check(manifest.questionsPrevious === 'resources' && manifest.questionsLastInMain && manifest.invitationLastInQuestions, kind + ' questions or final invitation source order changed')
     if (kind === 'published') check(manifest.bandPrevious === 'hero' && manifest.bandNext === 'books', 'Published reassurance position changed')
-    else check(manifest.invitationCurrentPage === null, 'Source invitation current-page semantics incorrect')
+    else {
+      check(manifest.bandNext === 'books', 'Source discovery must directly follow the reassurance band')
+      check(manifest.invitationCurrentPage === null, 'Source invitation current-page semantics incorrect')
+    }
     const details = (await snapshot(page, groupsFor(kind).questions)).details
     check(details.length === 6 && details.every((item, index) => item.native && item.directSummary && item.name === null && item.summaryRole === null && item.summaryTabIndex === null && item.testId === 'faq-' + index && !item.open), kind + ' FAQs are not six closed independent native disclosures')
   }
@@ -470,17 +481,24 @@ try {
         }, { once: true }))
         await target.focus()
         await page.keyboard.press('Enter')
-        const value = await target.evaluate((element, { origin, kind }) => ({
-          rawHref: element.getAttribute('href'),
-          destination: kind === 'source' ? element.href : new URL(element.getAttribute('href'), origin).href,
-          activation: JSON.parse(element.dataset.qaKeyboardActivation || 'null'),
-        }), { origin: publishedOrigin, kind })
+        const value = await target.evaluate((element, { origin, kind, sourceHome }) => {
+          const rawHref = element.getAttribute('href'), effectiveHref = element.href
+          const url = new URL(kind === 'source' ? effectiveHref : rawHref, origin), source = new URL(sourceHome)
+          const local = kind === 'source' && element.matches('.sl-final-invitation > a') && url.origin === source.origin && url.pathname === source.pathname && !url.search && url.hash === '#books'
+          return {
+            rawHref, effectiveHref, local,
+            localTargetCount: local ? document.querySelectorAll('[id="books"]').length : null,
+            destination: local ? new URL('#books', origin).href : url.href,
+            activation: JSON.parse(element.dataset.qaKeyboardActivation || 'null'),
+          }
+        }, { origin: publishedOrigin, kind, sourceHome: urls.source })
         check(value.activation?.detail === 0 && value.activation?.trusted === true, kind + ' keyboard link activation ' + name)
+        if (kind === 'source' && name === 'invitationAction') check(value.local && value.localTargetCount === 1, 'Source keyboard invitation must retain the one real local Books target')
         activations.push({ name, ...value })
       }
       values[kind] = { firstFocused, secondFocused, answerLinkFocused, afterSpace, afterEnter, afterClose, focus, otherSummaries, activations }
     }
-    const activationParity = value => ({ ...value, activations: value.activations.map(({ rawHref, ...activation }) => activation) })
+    const activationParity = value => ({ ...value, activations: value.activations.map(({ rawHref, effectiveHref, local, localTargetCount, ...activation }) => activation) })
     check(JSON.stringify(activationParity(values.published)) === JSON.stringify(activationParity(values.source)), 'Keyboard state parity at ' + width)
     report.states.push({ state: 'native keyboard disclosure and link activation with navigation prevented', width, ...values })
   }

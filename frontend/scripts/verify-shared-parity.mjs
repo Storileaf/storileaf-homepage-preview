@@ -23,7 +23,7 @@ const report = {
   createdAt: new Date().toISOString(), urls, requestedWidths: widths, browser: '',
   widths: [], states: [], captures: [], qualityFindings: [], inheritedNavigationFindings: [], problems,
   thresholds: { geometryCssPixels: 0.15, screenshotChannelDifference: 24, screenshotChangedRatio: 0.01 },
-  routeContract: 'External and pricing links must retain their published destination. Source links to the existing top, main-content, Resources, Activities and Questions IDs may use the local homepage hash. They must resolve to the actual source origin and source homepage path, have no query string, and target one existing ID. Other homepage anchors must retain the exact absolute public destination until their sections are migrated. Canonical comparison maps only these explicitly permitted local hashes to the published URL; raw and effective hrefs remain recorded. Functional tests activate the actual source anchors and inspect URL fragments, history and settled scroll position.',
+  routeContract: 'External and pricing links must retain their published destination. Source links to the existing top, main-content, Books, Resources, Activities and Questions IDs may use the local homepage hash. Group 4 authorises the Books target when discovery is rendered. They must resolve to the actual source origin and source homepage path, have no query string, and target one existing ID. Other homepage anchors must retain the exact absolute public destination until their sections are migrated. Canonical comparison maps only these explicitly permitted local hashes to the published URL; raw and effective hrefs remain recorded. Functional tests activate the actual source anchors and inspect URL fragments, history and settled scroll position.',
   semanticCorrection: 'Homepage fragment links must not claim aria-current=page. Source scoped navigation contains no incorrect current page state. The restored skip link retains its focused appearance and actual main-content destination while native hash navigation correctly moves the next keyboard Tab into main. The published router keeps the skip link focused and the next Tab returns to the header; this inherited keyboard limitation is recorded explicitly rather than required in the React source. Published attributes and behaviour remain recorded as inherited evidence and are never edited by this gate.',
   equivalentRepresentations: [
     'The loaded first font family must match on rendered text. Unused fallback lists may differ.',
@@ -176,7 +176,7 @@ async function snapshot(page, group) {
   await settle(page)
   return page.locator(group.selector).evaluate((root, options) => {
     const rect = root.getBoundingClientRect(), normal = value => (value || '').replace(/\s+/g, ' ').trim(), rounded = value => Math.round(value * 1000) / 1000
-    const localHashes = new Set(['#top', '#main-content', '#resources', '#resources-activity', '#questions'])
+    const localHashes = new Set(['#top', '#main-content', '#books', '#resources', '#resources-activity', '#questions'])
     const destination = link => {
       const rawHref = link.getAttribute('href'), effectiveHref = link.href
       const url = new URL(options.kind === 'published' ? rawHref : effectiveHref, options.publicHome)

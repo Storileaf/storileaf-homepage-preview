@@ -12,7 +12,7 @@ function DisclosureIcon() {
   </svg>
 }
 
-export function FaqSection() {
+export function FaqSection({ booksHref }: { booksHref?: string } = {}) {
   const heading = editorialTitle('home.faq.title')
 
   return <Section id="questions" className="sl-home-faq" spacing="none" aria-labelledby="faq-title">
@@ -32,7 +32,7 @@ export function FaqSection() {
           </details>)}
         </div>
       </div>
-      <FinalInvitation />
+      <FinalInvitation booksHref={booksHref} />
     </Container>
   </Section>
 }

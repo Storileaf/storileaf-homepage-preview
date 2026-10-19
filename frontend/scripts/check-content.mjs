@@ -3,6 +3,8 @@ import { join, resolve } from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { inheritedHomepageBaseline, inheritedHomepageProblems } from './inherited-content.mjs'
 import { inheritedSharedBaseline, inheritedSharedBundlePath, inheritedSharedHtmlPath, inheritedSharedProblems } from './inherited-shared-content.mjs'
+import { inheritedDiscoveryBaseline, inheritedDiscoveryBundlePath, inheritedDiscoveryProblems, inheritedDiscoveryLedgerProblems } from './inherited-discovery-content.mjs'
+import { contentReferenceProblems } from './content-references.mjs'
 
 const root=resolve(import.meta.dirname, '..')
 const records=JSON.parse(readFileSync(join(root,'content/ledger.json'),'utf8')).records
@@ -13,6 +15,7 @@ const allowedStatuses=new Set(['proposed','founder_approved','implemented_verifi
 const allowedDestinations=new Set(['existing_verified','unbuilt'])
 let inheritedHomepageHtml
 let inheritedSharedSources
+let inheritedDiscoveryBundle
 
 if(records.some(record=>record.approval_kind==='inherited_published_homepage')){
   try{
@@ -33,6 +36,15 @@ if(records.some(record=>record.approval_kind==='inherited_published_shared')){
   }
 }
 
+if(records.some(record=>record.approval_kind==='inherited_published_discovery')){
+  try{
+    inheritedDiscoveryBundle=inheritedSharedSources?.bundle??execFileSync('git',['show',inheritedDiscoveryBaseline+':'+inheritedDiscoveryBundlePath],{cwd:resolve(root,'..'),encoding:'utf8'})
+    problems.push(...inheritedDiscoveryLedgerProblems(records,inheritedDiscoveryBundle))
+  }catch(error){
+    problems.push('Cannot read the immutable inherited discovery source ('+String(error.code??'git failure')+'); ensure complete history and Git read access')
+  }
+}
+
 for(const record of records){
   if(!record.id || !/^[a-z][a-z0-9_.-]+$/.test(record.id) || ids.has(record.id)){
     problems.push('Invalid/duplicate content ID '+String(record.id))
@@ -48,6 +60,8 @@ for(const record of records){
     problems.push(...inheritedHomepageProblems(record,inheritedHomepageHtml??''))
   }else if(record.approval_kind==='inherited_published_shared'){
     problems.push(...inheritedSharedProblems(record,inheritedSharedSources??{bundle:'',html:''}))
+  }else if(record.approval_kind==='inherited_published_discovery'){
+    problems.push(...inheritedDiscoveryProblems(record,inheritedDiscoveryBundle??''))
   }else if(record.public && (!record.approved_on || !record.approval_reference?.startsWith('https://github.com/Storileaf/'))){
     problems.push('Founder approval evidence missing for public copy '+record.id)
   }
@@ -77,17 +91,7 @@ const scan=(dir)=>{
     if(item.isDirectory()){scan(full);continue}
     if(!/\.(tsx?|jsx?)$/.test(item.name))continue
     const text=readFileSync(full,'utf8')
-    const references=[
-      ...text.matchAll(/\b(approvedCopy|verifiedHref)\(\s*['"]([^'"]+)['"]\s*\)/g),
-      ...text.matchAll(/\b(copyId|questionId|answerId|actionId)\s*:\s*['"]([^'"]+)['"]/g),
-    ]
-    for(const [,method,id] of references){
-      const record=index.get(id)
-      if(!record)problems.push('Unknown ledger ID in source '+id+' ('+item.name+')')
-      if((method==='verifiedHref' || method==='actionId') && record && !record.destination_state){
-        problems.push('Action reference used for non-destination '+id)
-      }
-    }
+    problems.push(...contentReferenceProblems(text,index,item.name))
   }
 }
 scan(join(root,'src'))
