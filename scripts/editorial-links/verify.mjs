@@ -68,7 +68,18 @@ try {
   check(!(await page.evaluate(()=>document.documentElement.scrollWidth>321)),'Enlarged editorial text creates document overflow');await large.evaluate(e=>e.remove())
   report.textEnlargement=true
   const sp=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});sp.on('pageerror',e=>report.problems.push('Source '+e.message));await sp.goto('http://127.0.0.1:4180/',{waitUntil:'networkidle'});await fonts(sp)
-  for(const width of [320,360,390,430,768,820,1024,1280,1440]){await sp.setViewportSize({width,height:1000});const sizes=await sp.locator('.sl-action--text').evaluateAll(items=>items.map(e=>getComputedStyle(e).fontSize));check(sizes.length===3&&sizes.every(s=>s==='15px'),'Source editorial role differs at '+width);report.source.push({width,sizes});check(!(await sp.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'Source overflow at '+width)}
+  for(const width of [320,360,390,430,768,820,1024,1280,1440]){
+   await sp.setViewportSize({width,height:1000})
+   const sizes=await sp.locator('.sl-action--text').evaluateAll(items=>items.map(e=>getComputedStyle(e).fontSize))
+   // Retain the original Resources count within its section as later groups add actions.
+   const resources=await sp.locator('.sl-home-resources .sl-action--text').count()
+   const faq=await sp.locator('.sl-home-faq .sl-action--text').count()
+   check(resources===3,'Source Resources editorial count differs at '+width)
+   check(faq===5,'Source FAQ editorial count differs at '+width)
+   check(sizes.length>=resources+faq&&sizes.every(s=>s==='15px'),'Source editorial role differs at '+width)
+   report.source.push({width,sizes,resources,faq})
+   check(!(await sp.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'Source overflow at '+width)
+  }
   // Test-only fixtures, removed before screenshots. No new copy or working destination is published.
   const fixtures=await sp.evaluate(()=>{const el=document.createElement('div');el.id='editorial-fixtures';el.innerHTML='<a class="sl-action sl-action--primary">Primary</a><a class="sl-action sl-action--outline">Outline</a><a class="sl-action sl-action--gold">Gold</a><p class="sl-copy sl-copy--body">Text <a>inline</a></p><p class="sl-copy sl-copy--lead">Lead <a>inline</a></p>';document.body.append(el);const result={buttons:[...el.querySelectorAll('.sl-action')].map(a=>getComputedStyle(a).fontSize),inline:[...el.querySelectorAll('p a')].map(a=>({child:getComputedStyle(a).fontSize,parent:getComputedStyle(a.parentElement).fontSize}))};el.remove();return result});check(fixtures.buttons.every(s=>s==='14px'),'Filled/outline/gold source button labels changed');check(fixtures.inline.every(x=>x.child===x.parent),'Inline source links do not inherit');report.fixtures=fixtures;await sp.close()
  }
