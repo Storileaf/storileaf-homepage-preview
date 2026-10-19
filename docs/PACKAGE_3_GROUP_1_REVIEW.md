@@ -1,6 +1,6 @@
 # Package 3 Group 1 review
 
-19 October 2026. Resources and Gifting are implemented in the isolated React source. Local source validation, retained regressions and the full ten-width comparison pass. The source commit and retained GitHub workflows are verified below. The current corrected harness passes the complete local Chrome 155 matrix. Two earlier dedicated CI attempts remain as diagnostic evidence; final CI verification of the current harness is pending. An inherited Gifting text enlargement limitation remains open for Package 4. Founder acceptance and permission to publish React remain separate.
+19 October 2026. Resources and Gifting are implemented in the isolated React source, unchanged from source commit 22685299cb7912b38352875c3dd2b2f77fec6374. Local source validation and retained regressions pass. The current readiness/alignment harness, committed as 15d450003ed528b2fccf753e52aeddf99eafa52b, passes the complete local Chrome 155 matrix and the dedicated CI report/completed job log verification. Earlier failed attempts, the passing 981 CI and a later failed clean-a64 local replay remain diagnostic history. An inherited Gifting text enlargement limitation remains open for Package 4. Founder acceptance and permission to publish React remain separate.
 
 ## Scope and baseline
 
@@ -34,13 +34,19 @@ The main comparison uses a 1000px viewport height and device scale factor 1. Geo
 
 The gate compares exact normalised text, destinations, loaded image metadata, icon paths and effective styles, with a 0.15 CSS pixel geometry tolerance. Screenshot comparison permits at most 1 percent changed pixels using a 24-level colour channel threshold. Equivalent unused font fallbacks, invisible border styles and the identical warm paper underlay are explicitly recorded; visible borders and the rendered composite remain checked. These tolerances do not describe founder visual acceptance.
 
-Functional checks cover hover under both motion preferences, keyboard focus and tab order, noninteractive resource labels, and anchor landing at 390px, 600px and 1440px with a 600px viewport height. Each anchor uses one native hash change; the harness no longer clears the existing hash first. Pages are brought to the foreground before state sampling, with bounded waits and explicit hover diagnostics. Emulated touch checks use 390×700px and prevent navigation after detecting the real touch activation and preserved href. They do not claim an end-to-end visit to the external destination.
+Before measurement or section positioning, the current harness brings the page to the foreground and waits for responsive CSS readiness. A hidden fixed 100vw by 100vh probe must match the requested viewport within 0.01 CSS pixels, while innerWidth and innerHeight must match exactly. The wait is bounded to five seconds and followed by two foreground animation frames. The inert, hidden probe does not participate in document layout.
+
+Functional checks cover hover under both motion preferences, keyboard focus and tab order, noninteractive resource labels and programmatic section alignment at 390px, 600px and 1440px with a 600px viewport height. Native scrollIntoView targets the unique preserved Resources, Activities and Gifting IDs. The gate compares computed scroll margins and root padding, checks the target position after document-boundary clamping within one CSS pixel, and asserts final position and visibility. These are component alignment checks. They do not exercise shared header navigation, URL fragments, router history or restoration. The current shared source routes lead to the published preview or external Gifting page, so actual navigation remains part of later shell parity work.
+
+Hover sampling uses bounded waits and explicit diagnostics. Emulated touch checks use 390×700px and prevent navigation after detecting the real touch activation and preserved href. They do not claim an end-to-end visit to the external destination.
 
 Targeted text enlargement doubles the specified section text sizes at 320×568px. Before measuring, the current harness waits for all 14 selected and inherited text metrics on each page, including the heading emphasis, to reach doubled font size and line height. It does not directly restyle the emphasis element. This checks the settled enlarged layout and is not native browser zoom.
 
 ## Evidence gate
 
-The complete current local run used Chromium 155.0.8059.39 with actual downloaded fonts and images. It completed all ten widths and 19 state records with no reported problems. No measured geometry difference exceeded the 0.15 CSS pixel tolerance. The largest observed difference was 0.016 CSS pixels, in an inline emphasis position. The largest changed-pixel ratio was 0.0009425071, approximately 0.0943 percent, below the 1 percent threshold. The generated `frontend/qa/group1/report.json` records the full results, source hashes, icon checks, capture adjustments and the inherited quality finding. Its source hashes match the reviewed section source. An earlier complete local run passed in Chromium 141.0.7390.37. Final dedicated CI verification of the current harness and durable artifact references remain pending.
+The current dedicated CI evidence is [run 39281803940](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803940) at harness commit 15d450003ed528b2fccf753e52aeddf99eafa52b. Its downloaded report and completed job log were inspected. Chromium 155.0.8059.39 completed all ten widths and 19 state records with no reported problems, using actual fonts and images. All nine programmatic alignment records, comprising 18 target measurements, passed unique-ID, CSS viewport, final placement and visibility checks. All 48 captures retained section dimensions. All eight source hashes and both published-file hashes matched the reviewed files. No measured geometry difference exceeded the 0.15 CSS pixel tolerance; the largest was 0.016 CSS pixels. The maximum changed-pixel ratio was 0.0009425071, approximately 0.09425 percent, below the 1 percent threshold. All retained gates and both protected-runtime guards passed in the completed log.
+
+The matching working harness had already passed the same full local Chrome 155 matrix. That local report records sourceCommit a64c6a2948cda4ba4f2818f9bf1990d737d5defc because it preceded the harness commit. The final CI report records 15d directly and supplies the current immutable verification. Section implementation remains at 22685299cb7912b38352875c3dd2b2f77fec6374. An earlier full local run passed in Chromium 141.0.7390.37.
 
 | Check | Evidence | Current result |
 | --- | --- | --- |
@@ -50,9 +56,9 @@ The complete current local run used Chromium 155.0.8059.39 with actual downloade
 | Protected runtime | Published guard with unchanged root runtime and pricing files | Passed |
 | Width matrix | 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440px, plus targeted 600px intermediate check | Passed all ten widths |
 | Section geometry | Resource centring/equal cards and Gifting composition, exact copy, image/crop, typography, action geometry and destinations | No difference exceeds 0.15 CSS pixels; largest observed difference 0.016 CSS pixels |
-| Functional states | 19 states covering hover, keyboard/focus, inert labels, anchors, touch and targeted enlargement | Parity checks passed, with the inherited enlargement finding below |
-| Visual inspection | Actual baseline/source comparison images | All ten widths and detailed normal/state captures reviewed. Final capture completeness check passed, including rounded card bottoms and Browse all resources |
-| Source publication | Source commit, harness correction and retained GitHub workflow results below | Recorded; current harness passes locally. Final dedicated CI and artifact references pending |
+| Functional states | 19 states covering hover, keyboard/focus, inert labels, programmatic section alignment, touch and targeted enlargement | Passed locally and in current CI; all 18 target placements in position, with the inherited enlargement finding below |
+| Visual inspection | Actual baseline/source comparison images | Ten-width normal/state reviews retained for unchanged sections, including full Resources card bottoms and Browse all resources. Current local run passes all 48 capture geometry checks |
+| Source publication | Source commit, current harness, inspected CI report/completed log and durable artifacts below | Current dedicated CI verified; workflow/deployment observations at the evidence checkpoint are recorded below |
 
 Retained focus checks now wait for two animation frames after viewport or focus changes before reading effective outlines. Existing comparison assertions remain intact. The change resolves sampling of the previous painted state rather than relaxing a visual requirement.
 
@@ -60,17 +66,19 @@ Package 2 checks preserve the pricing preview's appearance and reproduce the sam
 
 ## GitHub evidence
 
-Source implementation is committed on public `main` as [22685299cb7912b38352875c3dd2b2f77fec6374](https://github.com/Storileaf/storileaf-homepage-preview/commit/22685299cb7912b38352875c3dd2b2f77fec6374). The published root remains protected at the approved footer baseline. Passing Pages deployment serves that unchanged static homepage; it does not deploy the isolated React build.
+Source implementation is committed on public `main` as [22685299cb7912b38352875c3dd2b2f77fec6374](https://github.com/Storileaf/storileaf-homepage-preview/commit/22685299cb7912b38352875c3dd2b2f77fec6374). The published root remains protected at the approved footer baseline. A successful Pages deployment serves that unchanged static homepage; it does not deploy the isolated React build.
 
-The current harness correction is [981016e6609733cc436cf7c74b0214dda53563a1](https://github.com/Storileaf/storileaf-homepage-preview/commit/981016e6609733cc436cf7c74b0214dda53563a1), following the first harness correction below. Section implementation remains unchanged from the source commit. The full local Chrome 155 run passes. The following workflows have been queued for this correction; their final verification and the dedicated comparison artifact remain pending.
+The current harness correction is [15d450003ed528b2fccf753e52aeddf99eafa52b](https://github.com/Storileaf/storileaf-homepage-preview/commit/15d450003ed528b2fccf753e52aeddf99eafa52b). Section implementation is unchanged. The dedicated comparison is verified from its downloaded report and completed job log. The summary endpoints still showed queued states after successful report/log evidence became available. Completed logs and artifacts establish the verification results below; this metadata delay is not a test failure or a rerun requirement. Pages status below is the observation at this evidence checkpoint, approximately 16:15 UTC on 19 October:
 
-| Current correction workflow | Verification status |
+| Current correction workflow | Result at the evidence checkpoint |
 | --- | --- |
-| [Group 1 comparison 39278591010](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278591010) | Pending |
-| [Source validation 39278590963](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278590963) | Pending |
-| [Package 2 review 39278590921](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278590921) | Pending |
-| [Footer review 39278591136](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278591136) | Pending |
-| [Pages deployment 39278588397](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278588397) | Pending |
+| [Group 1 comparison 39281803940](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803940) | Passed; inspected report and completed job log |
+| [Source validation 39281803642](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803642) | Passed; 16 tests, source UI/shape/vendor checks and artifact uploads |
+| [Package 2 review 39281803949](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803949) | Passed; candidate comparison and actual live stylesheet/font verification |
+| [Footer review 39281803694](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803694) | Passed; source/static comparison and actual live checks |
+| [Pages deployment 39281803239](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803239) | Not yet verified at approximately 16:15 UTC on 19 October; later documentation deployment outcomes belong in the resulting handoff checkpoint |
+
+Current verified artifacts are [parity 12201082262](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803940/artifacts/12201082262), [retained regressions 12200657570](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803940/artifacts/12200657570) and [isolated source preview 12200732346](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803940/artifacts/12200732346). The preview remains isolated and is not a Pages homepage release. Separate current workflow evidence is retained in [source QA artifact 12201350795](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803642/artifacts/12201350795), [Package 2 artifact 12200054108](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803949/artifacts/12200054108) and [footer artifact 12201211857](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39281803694/artifacts/12201211857).
 
 Earlier implementation and diagnostic evidence remains available:
 
@@ -81,20 +89,35 @@ Earlier implementation and diagnostic evidence remains available:
 | [Editorial action review 39273256518](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39273256518) | Passed |
 | [Footer review 39273256410](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39273256410) | Passed |
 | [Pages deployment 39273255653](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39273255653) | Passed |
-| [Initial Group 1 comparison 39273256620](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39273256620) | Failed three harness assertions; retained as diagnostic evidence |
-| [Group 1 comparison after first harness correction 39276953509](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39276953509) | Original three failures absent; failed published Resources anchor visibility at 1440px |
+| [Initial Group 1 comparison 39273256620](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39273256620) | Failed three harness assertions; diagnostic evidence |
+| [Group 1 comparison after first correction 39276953509](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39276953509) | Original three failures absent; failed published Resources anchor visibility at 1440px |
+| [Earlier 981 Group 1 comparison 39278591010](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278591010) | Passed all ten widths, 19 states and retained gates; predates the current readiness/alignment correction |
 
-### Dedicated CI followup
+The inspected passing 981 run retains [parity artifact 12199597134](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278591010/artifacts/12199597134), [regression artifact 12200121673](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278591010/artifacts/12200121673) and [source preview artifact 12200106633](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39278591010/artifacts/12200106633). These provide earlier verified evidence; they do not verify 15d.
 
-The initial Chrome 155 run completed all ten normal comparisons and 19 states, with a maximum normal screenshot change of approximately 0.0943 percent. It failed one published Gifting hover sample and two enlargement capture dimension assertions. [First harness correction 01d90af18537c92a8229fd5876302c7848a05a3e](https://github.com/Storileaf/storileaf-homepage-preview/commit/01d90af18537c92a8229fd5876302c7848a05a3e) added explicit foreground handling, bounded waits and hover/capture diagnostics. Run 39276953509 completed the same full matrix with the original three failures absent, but failed one published Resources anchor visibility assertion at 1440px.
+### Harness diagnosis and scope
 
-Exact Chrome 155 investigation identified delayed inherited typography in the enlarged heading. Its emphasis briefly remained 38px before reaching 76px, adding 79.03125px to heading height during capture preparation. The current harness waits for all selected and inherited text metrics to settle before measuring, without changing the emphasis styling.
+The initial Chrome 155 run completed all ten normal comparisons and 19 states but failed one published Gifting hover sample and two enlargement capture dimension assertions. [First correction 01d90af18537c92a8229fd5876302c7848a05a3e](https://github.com/Storileaf/storileaf-homepage-preview/commit/01d90af18537c92a8229fd5876302c7848a05a3e) added explicit foreground handling, bounded waits and diagnostics. Run 39276953509 completed the matrix with those three failures absent, then failed one published Resources anchor visibility assertion at 1440px.
 
-The anchor followup performed 36 measurements in the same browser, covering both the old and revised sequences. All passed. The old sequence generated two hash changes and the current harness generates one, matching a direct native anchor change. The earlier offscreen result was not reproduced, and its cause was not established. Removing the unnecessary preliminary hash clear is a harness correction, not proof of a persistent baseline fault or a confirmed router defect.
+Exact Chrome 155 investigation identified delayed inherited typography in the enlarged heading. Its emphasis briefly remained 38px before reaching 76px, adding 79.03125px to heading height during capture preparation. [Correction 981016e6609733cc436cf7c74b0214dda53563a1](https://github.com/Storileaf/storileaf-homepage-preview/commit/981016e6609733cc436cf7c74b0214dda53563a1) waits for all selected and inherited text metrics without changing emphasis styling. It also removed an unnecessary preliminary hash clear. The first 36 anchor followup measurements passed with both old and revised sequences, so they did not establish the cause of the earlier offscreen result. The full local run and CI 39278591010 subsequently passed.
 
-The current correction passed all ten widths and 19 states locally in Chrome 155. Its final dedicated CI result remains pending.
+A later local replay from clean documentation checkpoint [a64c6a2948cda4ba4f2818f9bf1990d737d5defc](https://github.com/Storileaf/storileaf-homepage-preview/commit/a64c6a2948cda4ba4f2818f9bf1990d737d5defc) completed all ten normal comparisons and 12 states, then timed out on the first published Resources target at 1440px. The focused Chrome 155 diagnostic reproduced stale responsive CSS after a resize from 600px to 1440px: innerWidth and matchMedia had updated, while the fixed 100vw probe and heading metrics still reflected 600px. Resources moved from documentTop 5193.515625px to 6538.3125px when CSS caught up. Native hash actions dispatched correctly; no cached scrollTo was observed. This demonstrates a viewport-readiness cause for the reproduced diagnostic failure and does not establish a runtime navigation defect.
 
-These corrections concern the test harness. Section source remains at the implementation in commit 22685299cb7912b38352875c3dd2b2f77fec6374, and the published runtime remains unchanged. The original comparison assertions are retained. Neither failed attempt is recorded as a successful dedicated CI gate.
+The bounded fixed-probe readiness wait then allowed all nine unchanged native-hash diagnostic checks to pass. Current correction 15d also makes the gate's component scope explicit: native scrollIntoView measures unique IDs, unchanged computed margins and root padding, document clamping, final position and visibility. The shared source routes currently point to published or external pages. Header navigation, URL fragment/history behaviour and router restoration therefore remain later shell migration work. No section source, published style or runtime navigation was changed to make these checks pass.
+
+The working harness matching 15d passed all ten widths and 19 states locally, all 48 capture geometry checks and all 18 final target placements. The final CI report and completed log independently confirm those results at commit 15d, with all retained gates and both protected-runtime guards passing. The visual, content, style and protected-runtime assertions remain intact; the current alignment checks retain offset/clamp/visibility requirements and add explicit unique-ID and final-position assertions. Failed attempts and successful earlier evidence remain distinct from current verification.
+
+### Live runtime byte check
+
+At approximately 16:05 UTC on 19 October, direct HTTPS requests returned status 200 and exact protected-file SHA256 matches for these live static files:
+
+| File | SHA256 |
+| --- | --- |
+| `index.html` | `76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81` |
+| `assets/index-DhPZyX4z.css` | `75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f` |
+| `pricing/index.html` | `9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14` |
+
+This verifies live HTTP bytes. It is not a new live browser check or confirmation that the current commit's Pages deployment has completed.
 
 ## Inherited quality finding
 
@@ -106,6 +129,6 @@ The checks use Chromium automation, emulated touch and targeted text enlargement
 
 ## Next gate
 
-Attach the final dedicated CI result and artifact evidence for the current harness correction before proposing the next migration group. Record implementation, measured verification, inherited quality findings and founder acceptance separately. The founder's positive final Package 2 response supports continuing the programme without reopening the foundation work. It is not a new formal acceptance record.
+Group 1 source implementation and its current dedicated evidence are ready for founder review. Verify each documentation deployment and keep the public/private handoffs in agreement. Then propose the next migration group for approval before editing it. Record implementation, measured verification, inherited quality findings and founder acceptance separately. The founder's positive final Package 2 response supports continuing the programme without reopening the foundation work. It is not a new formal acceptance record.
 
 Full homepage reconstruction and Package 4 parity remain ahead. Only explicit founder approval after complete visual and functional parity permits replacing the published homepage with React.

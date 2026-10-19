@@ -90,7 +90,7 @@ Gifting retains its distinct photographic editorial composition, exact heading a
 
 Resources retains the published warm paper, muted ink and sage image bed HSL values in its scoped rules. Gifting retains its published sage gradient, forest panel, photographic veil and restrained image hover. These exact migration values remain local to the two sections and do not change the generic palette or other section defaults. Image sources, alt text and intrinsic dimensions remain together in the image manifest.
 
-The root scroll context is currently mirrored only for the isolated source composition. The later shared shell migration should own it without changing the effective anchor offsets.
+The root scroll context is currently mirrored only for the isolated source composition. The later shared shell migration should own it without changing the effective anchor offsets. Group 1 measures programmatic section alignment using unique preserved IDs, computed scroll margins and root padding, document clamping, final position and visibility. Actual header navigation, URL fragments, router history and restoration require the later shell parity review.
 
 The source entry places Gifting before Resources, preserving their relative homepage order. Both section migrations need actual baseline/source screenshots and relevant interaction checks before parity can be recorded. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for scope and evidence, and keep style decisions in this document.
 
@@ -172,7 +172,7 @@ The deployed static homepage, including the completed Package 1 and Package 2 re
 
 The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
 
-Package 3 Group 1 has implemented Resources and Gifting in isolated source. Source validation, retained browser regressions and the full ten-width comparison pass locally, including the current corrected harness in Chrome 155. The source and harness commits, retained GitHub workflows and two earlier diagnostic CI attempts are recorded in the review. Final dedicated CI verification remains pending. The inherited text enlargement finding remains open. This does not approve later migration groups, a homepage redesign or publication of the partial React build.
+Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. This does not approve later migration groups, a homepage redesign or publication of the partial React build.
 
 ## Source-only shared shell maturity
 
