@@ -1,0 +1,61 @@
+name: Review Package 2 foundations
+on:
+  push:
+    paths:
+      - '.github/workflows/review-package2.yml'
+      - 'scripts/package2/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preserve exact public review inputs
+        run: |
+          mkdir -p qa/package2
+          git rev-parse HEAD > qa/package2/commit.txt
+          tar -cf qa/package2/inputs.tar docs frontend/src frontend/scripts frontend/content frontend/package.json frontend/package-lock.json frontend/tsconfig.json frontend/vite.config.ts frontend/index.html frontend/baseline .github/workflows scripts index.html 404.html assets REPOSITORY_HANDOFF.md
+      - name: Install isolated browser library
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Measure existing live typography and spacing
+        run: |
+          node --input-type=module <<'NODE'
+          import {chromium} from 'playwright-core';
+          import fs from 'node:fs/promises';
+          const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
+          const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
+          await page.goto('https://storileaf.github.io/storileaf-homepage-preview/',{waitUntil:'networkidle'});
+          await page.evaluate(()=>document.fonts.ready);
+          const results=[];
+          for(const width of [320,360,390,430,768,820,1024,1280,1440]) {
+            await page.setViewportSize({width,height:1000});
+            await page.evaluate(()=>{document.querySelectorAll('.faq-item').forEach(x=>x.open=true);scrollTo(0,0)});
+            await page.waitForTimeout(250);
+            const rows=await page.evaluate(()=>[...document.querySelectorAll('main h1,main h2,main h3,main .section-lead,main .hero-description,main summary,main .faq-answer p,main .book-detail-intro,main .book-detail-points li,main .step-text strong,main .step-text>span,main .resource-category-body p,main>section,main .page-width,.newsletter-strip,.newsletter-layout h2,.newsletter-layout p,.footer-brand p,.footer-bottom,.site-header')].map(el=>{
+              const s=getComputedStyle(el),r=el.getBoundingClientRect();
+              return {tag:el.tagName,cls:el.className,id:el.id,text:el.children.length>8?'':el.textContent.trim().slice(0,120),font:s.fontFamily,size:s.fontSize,weight:s.fontWeight,line:s.lineHeight,tracking:s.letterSpacing,width:r.width,height:r.height,x:r.x,y:r.y+scrollY,padding:[s.paddingTop,s.paddingRight,s.paddingBottom,s.paddingLeft],margin:[s.marginTop,s.marginRight,s.marginBottom,s.marginLeft],gap:s.gap,maxWidth:s.maxWidth};
+            }));
+            results.push({width,rows});
+            if([390,1440].includes(width)) {
+              await page.locator('.faq-section').screenshot({path:`qa/package2/faq-before-${width}.png`,animations:'disabled'});
+              await page.evaluate(()=>document.querySelectorAll('.faq-item').forEach(x=>x.open=false));
+              await page.screenshot({path:`qa/package2/page-before-${width}.png`,fullPage:true,animations:'disabled'});
+            }
+          }
+          await fs.writeFile('qa/package2/inventory.json',JSON.stringify(results,null,2));
+          await browser.close();
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: package2-foundation-review
+          path: qa/package2/
