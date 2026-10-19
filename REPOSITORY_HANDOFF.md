@@ -1,5 +1,13 @@
 # Repository handoff for StoriLeaf UI work
 
+## Shared public header source and isolated visual QA, 18 October 2026
+
+A typed `SiteHeader` source reference and shared `PublicSiteRoutes` binding were added in public commit `f01a73d28b0b08e41a19e3840754e9a49f9b9141`. The header reuses the original gold logo, the six verified book destinations, gifting, existing Resources and internal anchors, desktop hover/focus/click/Escape menus, and a native mobile dialog with focus restoration. It does **not** mean the approved root Radix header has been replaced. The source-only header needs a future direct geometry, keyboard and visual parity pass before cutover.
+
+The source CI was extended at `9a8622580ff3b65d326c8a117f34b57f2201f5e1` with a separate Chromium check for the experimental Vite build. The workflow runs the source checks, serves only `frontend/dist`, tests the desktop menus, mobile native drawer, currency selector, full-card Resources link semantics, shared photo-to-forest footer, and nine responsive widths from 320px through 1440px. It uploads its own screenshots and JSON QA report as **build artifacts**, never committing them to the published root. [The completed source CI and browser run](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39179173423) **passed**. The separately triggered [GitHub Pages deployment](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39179172662) also passed, but serves the **same unchanged static homepage**.
+
+The current shared public React foundation includes `SiteHeader`, `EditorialHeading`, `ResourceCategoryCard`, `ResponsiveImage`, `ActionLink` and `NewsletterFooter`, plus a provenance-checked content ledger and source/browser CI. These are **source-only references pending parity**, not evidence that the full homepage has been converted. Header/hero, book selection, gallery, craft details, process, writing showcase, gifting, FAQs, newsletter/footer and pricing still need migration/side-by-side acceptance as a whole. Customer accounts, Storyteller experiences, admin, private production and backend are not touched.
+
 ## React source foundation hardening, 18 October 2026
 
 The public frontend now has typed `ResponsiveImage` with intrinsic dimensions, responsive `sizes`, accessible `alt`, lazy default and an explicit eager option for measured above-the-fold assets; `ResourceCategoryCard` gives verified destinations **one whole-card semantic link** without nesting actions, while unbuilt destinations remain visual treatments only. The source reference now includes `NewsletterFooter`, using the approved photo-to-forest composition, currency and page-route props, the original StoriLeaf logo and verified existing external destinations.

@@ -97,3 +97,7 @@ The current deployed static homepage remains the visual baseline until the edita
 ## Implementation maturity
 
 The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity and founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
+
+## Source-only shared shell maturity
+
+Typed SiteHeader and NewsletterFooter React references now exist, using caller-provided explicit routes and currency rather than hardcoding future unbuilt website pages. The source-only Chromium gate passes nine widths and fundamental interactions. The published Radix navigation, homepage and compiled CSS are still the authoritative appearance. No React cutover has been approved; source references need exact side-by-side screenshots, tab/modal/slideshow parity and final founder acceptance before they can replace live assets.

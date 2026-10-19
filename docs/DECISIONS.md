@@ -29,3 +29,7 @@ The isolated frontend/ React foundation is established and passing CI as an isol
 ## Source hardening milestone
 
 The isolated React reference now includes a shared NewsletterFooter with currency and route props, responsive image dimensions and lazy loading, semantic verified whole-card links and expanded content provenance checks. The root GitHub Pages homepage is unchanged. Full homepage source parity remains an open migration stage, not a completed conversion.
+
+## Browser-checked shared source references
+
+The isolated React build now includes source-only SiteHeader and NewsletterFooter alongside the editorial heading, resource card and image primitives. Source CI runs a browser regression with nine responsive widths, native mobile dialog focus restoration, hover menus and shared-footer visual checks. The source build is NOT deployed at the Pages root. Whole-homepage React reconstruction remains a future staged implementation within the already authorised frontend programme; do not report it complete from these source-reference checks alone.
