@@ -1,43 +1,49 @@
 # Package 2 review
 
-19 October 2026 UTC, continuing the founder's 18 October session.
+19 October 2026 UTC, continuing the founder's 18 October session. Implementation complete for preview review. Final founder visual acceptance remains pending.
 
-## Approval and scope
+## Approval and publication scope
 
-The founder accepted the published Package 1 result and instructed completion of typography and spacing foundations, including evaluation of FAQ text and other outliers. The established review workflow applies restrained changes to the existing published homepage so the founder can inspect the result. This is not a redesign, complete React migration or private production release. Final visual acceptance of Package 2 remains with the founder.
+The founder accepted the published Package 1 result and instructed completion of typography and spacing foundations, including FAQ text and other outliers. The established workflow applies restrained refinements to the existing published homepage for inspection. It does not authorise redesign, complete React cutover or private production changes.
 
-## Measured baseline
+Implementation commit 90953da2753e948748695e677cdca1d51688dcee contains the verified readable source and static stylesheet. The static CSS blob is 06f404ffc81e7bd0f2810736c4c5b283277c24a8. Only that stylesheet changes among published runtime files. Root HTML, compiled JavaScript, imagery and pricing files remain unchanged. The protected-root guard is deliberately repinned, not disabled. Temporary candidate transport and its write-enabled review workflow are retired; permanent verification has read-only permissions.
 
-Public baseline is 4b14b91b642795d2b466a0c018f84f3474d44991. The live Chromium inventory measured all nine required widths. The original audit is [run 39189545800](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39189545800), with inventory and exact input files in its artifact.
+## Measured baseline and visible refinement
 
-FAQ questions were 13px at 390px and 1440px. Answer paragraphs were already 15px with 1.75 leading. FAQ action links were 12px. The hero measured 79.2px at 1440px, so the previous design document's approximate 65px maximum was stale. Body text was 15px. Container width was 1184px on desktop and 350px in a 390px viewport.
+The accepted baseline is 4b14b91b642795d2b466a0c018f84f3474d44991. The [initial live inventory](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39189545800) measured nine widths and preserved exact input files.
 
-## Implemented changes for visual review
+FAQ questions were 13px. They now use 15px Manrope at weight 600 and 1.5 leading. Existing 20px or 21px row padding is retained. Questions wrap naturally without fixed heights. Links within FAQ answers change from 12px to the 14px action role. Answer paragraphs remain 15px with 1.75 leading. The separate Ask us a question-style introductory text action retains its existing published wording and styling; no copy is changed.
 
-FAQ questions use 15px Manrope at weight 600 with 1.5 leading. Existing 20px or 21px row padding is retained. This raises legibility without unnecessarily expanding single-line rows. Questions may wrap naturally on narrow screens; no fixed heights truncate them. FAQ links use the 14px action role. Answers retain 15px and 1.75 leading. Wording, links, native details/summary behaviour, disclosure icons and final invitation are retained.
+The FAQ's natural height changes by about 25px at 390px and 2.5px at 1440px in the closed state. Downstream content moves accordingly. Heading, text, colour, imagery, destinations, disclosure icons and native details/summary behaviour remain intact.
 
-Canonical type/spacing tokens are in frontend/src/styles/foundations.css. Typed Heading/Text primitives separate visual roles from semantic heading level. Container/Section provide existing container and responsive spacing defaults. EditorialHeading and the existing React Resources reference consume the foundation without introducing new copy, wrappers or destinations.
+## Reusable foundations
 
-Existing effective homepage CSS declarations consume the same tokens in place. A bounded, homepage-scoped token mirror is generated from the canonical source and checked by sync-foundations.mjs and unit tests. The pricing preview keeps its original fallbacks. Existing identity/shape tokens are not changed. The source build remains isolated under frontend/dist.
+Canonical type and spacing tokens are in frontend/src/styles/foundations.css. Identity and accepted shape tokens remain in tokens.css. Typed Heading/Text primitives separate visual roles from semantic heading level. Container/Section provide native wrappers, content width and responsive spacing defaults. EditorialHeading and the existing React Resources reference consume those foundations without extra wrappers, new copy or destinations.
+
+Newsreader roles cover hero, feature, editorial, compact, card and newsletter headings. Manrope roles cover body, lead, support, action, FAQ question, metadata and compact labels. Rem-based text bounds and unitless leading preserve user scaling; the root font size is not fixed. Token details and usage rules belong to the sole [Public Design System](PUBLIC_DESIGN_SYSTEM.md), not a competing specification here.
+
+A bounded homepage-scoped token mirror in the existing static CSS is generated from the canonical source and checked by sync-foundations.mjs and unit tests. Effective declarations consume tokens in place. Original fallbacks preserve the separate pricing preview. The React build stays isolated in frontend/dist and is not the complete homepage replacement.
 
 ## Preserved editorial variation
 
-At 1440px, observed section padding includes discovery 94px/101px, gallery 93px/80px, writing showcase 112px/118px, gifting 76px/84px, Resources 97px/106px and FAQ 78px/0. At 390px, corresponding values are 81px/84px, 77px/66px, 84px/96px, 54px/54px, 77px/84px and 52px/0. These are retained, not normalised into equal blocks.
+The existing hero, discovery, gallery, physical book, process, writing, gifting, Resources, FAQ heading and newsletter sizes remain unchanged at normal browser text settings. The hero measures 79.2px at 1440px; the former approximate 65px maximum in the design document was stale and is corrected.
 
-The scroll-linked process has separate standard-motion, reduced-motion and short-height rules. The inventory used reduced motion for deterministic measurements; it is not the sole authority for the animated scroll geometry. The existing comprehensive homepage test continues to check the approved scroll sequence.
+The 1184px content maximum and 96px/64px/40px total gutters remain. Named section, heading, copy, grid and card-padding rules are reusable defaults, not a mandate to make every section equal. Asymmetric discovery, gallery/craft, writing, gifting, Resources, FAQ and photographic-ending spacing is preserved. The process scroll runway and reduced-motion/short-height rules are separate from ordinary padding.
 
-Discovery, gallery, physical book and process headings retain their distinct expressions. The Resources phone heading retains 1.08 leading and a 26px heading-to-content gap. The source reference retains its existing 30px narrow gap pending full parity. Device illustration microtype, footer group labels, legal text and compact phone actions are not resized as if they were paragraph copy. Existing body/lead differences at 14px, 15px, 15.5px and 16px are preserved where they belong to specific compositions.
+Distinct section leads, 15.5px source card text, the Resources 26px phone heading gap, footer labels, legal copy and device illustration microtype were evaluated and retained. The source Resources reference still has its previous 30px narrow gap pending full parity. No blanket text resize was applied.
 
-## Quality gates
+## Verified candidate evidence
 
-The Package 2 comparative browser test checks all nine widths, unchanged text and unrelated geometry, FAQ sizes, natural wrapping, native Enter/Space disclosure behaviour, keyboard focus, touch, short screen heights, 200 percent FAQ text enlargement and custom FAQ text spacing. Enlarging FAQ text is an automated component check, not a claim of complete manual browser zoom or physical-device certification. Keep wider cross-browser and zoom acceptance in the migration quality gate.
+[Candidate run 39192684082](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39192684082) passed before publication. Its [review artifact](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39192684082/artifacts/12160043763) contains readable candidate files, diffs, JSON reports and rendered screenshots.
 
-The existing homepage regression checks the hero, menus, six-book discovery, gallery/lightbox, slideshow, process, practice dialog, Resources and shared footer. Source checks retain type checking, content provenance, component tests and Package 1 action/focus states. The outdated source edit whitelist is replaced by semantic regressions, not by disabling published-root protection.
+All nine widths, 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440px, recorded zero measured unrelated geometry delta. Text, fonts, normal sizes, leading, weights, tracking, padding and margins were compared. FAQ questions measured 15px and 22.5px line height; answer paragraphs and links measured the intended values.
 
-The separate pricing entry has a previously documented hydration warning. The candidate comparison reproduces its baseline and verifies unchanged typography and layout rather than silently changing pricing code or claiming it is error-free.
+Native Enter/Space disclosure behaviour, visible keyboard focus, touch, short heights, 200 percent FAQ text enlargement and custom FAQ text spacing passed. Actual text bounds are checked separately from the plus icon's existing 45-degree rotation. Hidden details descendants are opened before answer-style checks. Automated FAQ enlargement is not full manual browser zoom or physical-device certification.
 
-Review the successful candidate and live workflow artifacts for the actual release commit. Publication requires a deliberate new protected baseline and a live stylesheet hash check. Passing tests does not substitute for the founder's visual acceptance.
+The existing comprehensive homepage regression and source checks passed, including hero, menus, six-book discovery, gallery/lightbox, craft slideshow, process, practice dialog, Resources, shared footer, types, content provenance, fourteen component/foundation tests and Package 1 shape/focus behaviour. The separate pricing entry retained its measured appearance and its independently reproduced pre-existing hydration warning. No pricing code was changed.
 
-## Completion boundary
+## Live verification and completion boundary
 
-Package 2 establishes reusable public typography and spacing foundations and submits the bounded published FAQ refinements for review. Remaining homepage reconstruction, exact React/static parity, genuine photo replacements, all other public pages, newsletter wiring and compact private application design remain separate work. No commercial claims, packages, prices, customer data or backend systems are changed.
+The permanent [Package 2 workflow](../.github/workflows/review-package2.yml) checks the committed source and compares the page against the accepted baseline. Its live stage waits for the actual deployed stylesheet hash, opens a fresh browser without injected styles or mocked requests, checks nine widths and records desktop/mobile FAQ and page screenshots. Confirm its result and GitHub Pages deployment for the actual branch head before claiming live success.
+
+Package 2 completes the bounded public typography and spacing foundation implementation and submits the visible result for founder review. Full homepage reconstruction, exact React/static parity, wider accessibility and browser testing, genuine photo replacements, other public pages, newsletter wiring and compact private application design remain separate. No commercial claims, prices, customer data or backend systems are changed.

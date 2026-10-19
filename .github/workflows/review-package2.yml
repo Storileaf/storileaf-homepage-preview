@@ -1,16 +1,20 @@
-name: Review Package 2 foundations
+name: Verify Package 2 foundations
 on:
   push:
     paths:
       - '.github/workflows/review-package2.yml'
       - 'scripts/package2/**'
+      - 'assets/**'
+      - 'frontend/src/**'
+      - 'frontend/scripts/**'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
   review:
+    if: github.repository == 'Storileaf/storileaf-homepage-preview' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,15 +23,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Check the accepted source and protected published baseline
+      - name: Check published protection, source types, content and shared foundations
         working-directory: frontend
-        run: npm ci --no-audit --no-fund && npm run check
-      - name: Prepare the reviewed candidate without publishing it
-        run: python3 scripts/package2/prepare.py
-      - name: Check candidate types, content, semantic components and token synchronisation
-        working-directory: frontend
-        run: npm run typecheck && npm run content:gate && npm test && npm run build
-      - name: Install isolated browser library and serve exact candidate files
+        run: npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Install isolated browser library and serve exact committed files
         run: |
           npm install --no-save --no-package-lock playwright-core@1.56.1
           mkdir -p /tmp/p2-review
@@ -35,40 +34,15 @@ jobs:
           python3 -m http.server 4173 --directory /tmp/p2-review > /tmp/p2-static.log 2>&1 &
           python3 -m http.server 4180 --directory frontend/dist > /tmp/p2-source.log 2>&1 &
           sleep 2
-      - name: Verify all existing homepage interactions
-        run: node scripts/verify-homepage-ui.mjs
-      - name: Verify source layout, shape, focus and navigation
-        working-directory: frontend
-        run: node scripts/verify-source-ui.mjs && node scripts/verify-shape-foundation.mjs && node scripts/verify-focus-captures.mjs
-      - name: Compare nine widths, FAQ states and text enlargement
+      - name: Compare typography, spacing, FAQ states and preserved pricing appearance
         run: node scripts/package2/verify.mjs
-      - name: Store verified readable files as unattached blobs only
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          python3 - <<'PY'
-          import os,json,base64,urllib.request,pathlib
-          folder=pathlib.Path('qa/package2');entries=[]
-          for name in json.loads((folder/'changed-files.json').read_text()):
-              path=pathlib.Path(name);content=path.read_bytes()
-              request=urllib.request.Request('https://api.github.com/repos/Storileaf/storileaf-homepage-preview/git/blobs',data=json.dumps({'content':base64.b64encode(content).decode(),'encoding':'base64'}).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'},method='POST')
-              with urllib.request.urlopen(request) as response: blob=json.load(response)
-              entries.append({'path':name,'mode':'100644','type':'blob','sha':blob['sha']})
-          (folder/'blobs.json').write_text(json.dumps(entries,indent=2))
-          print('Verified blobs prepared. No branch was moved.',len(entries))
-          PY
-      - name: Preserve readable candidate and comparison evidence
-        if: always()
-        run: |
-          mkdir -p qa/package2
-          git diff -- assets frontend docs REPOSITORY_HANDOFF.md .github/workflows/review-published-package1.yml > qa/package2/candidate.diff
-          tar -cf qa/package2/candidate-files.tar frontend/src frontend/scripts docs REPOSITORY_HANDOFF.md assets/index-DhPZyX4z.css scripts/package2/verify.mjs .github/workflows/review-published-package1.yml
+      - name: Verify actual deployed Pages styling and browser rendering
+        run: node scripts/package2/live.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: package2-candidate-review
+          name: package2-published-review
           path: |
             qa/package2/
-            qa/homepage-qa-report.json
-            frontend/qa/
+            qa/package2-live/
           if-no-files-found: warn

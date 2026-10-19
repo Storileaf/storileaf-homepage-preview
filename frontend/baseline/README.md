@@ -1,7 +1,9 @@
 # Protected published homepage baseline
 
-Reference commit fae8c1aa3640581906d430fdf1656f957da6dde6 contains the specifically authorised Package 1 styling release to the existing static homepage. It supersedes the former protected commit 99acdf7f14aceb3de20dca1fe8bbc4b18a27248d for this bounded edit only.
+Reference commit 90953da2753e948748695e677cdca1d51688dcee contains the authorised Package 2 typography and spacing foundation release. It supersedes the accepted Package 1 styling reference fae8c1aa3640581906d430fdf1656f957da6dde6 for this bounded refinement.
 
-The founder asked to see Package 1 on the published preview before giving final visual acceptance. Header and newsletter control corners are 6px, primary/gold hover treatments use the approved colours and resource focus follows its responsive card. Layout, copy, imagery, dimensions, interactions and pricing remain unchanged. See docs/PACKAGE_1_REVIEW.md for evidence and scope.
+The founder accepted the visible Package 1 result and requested completion of Package 2. FAQ questions become 15px with 1.5 leading and links within answers become 14px. Answers remain 15px. Existing heading sizes, section spacing, content, imagery and interactions remain unchanged apart from natural FAQ wrapping and downstream height changes. Canonical tokens are mirrored into the static stylesheet with original fallbacks for pricing.
 
-Root HTML, compiled CSS/JavaScript, pricing and photography remain protected against this new reference. A future explicit static correction needs its own review, browser evidence and deliberate baseline update. Do not bypass the guard or publish the incomplete frontend/dist build. This publication is not full React parity or founder acceptance of the finished design system.
+Candidate run 39192684082 passed the existing homepage regression, source checks, semantic component tests and nine-width comparative review before publication. See docs/PACKAGE_2_REVIEW.md for the exact scope and limitations. Final Package 2 visual acceptance remains with the founder.
+
+The root HTML, CSS, JavaScript, pricing and photography remain protected. Any further static refinement requires explicit scope, browser evidence and a deliberate baseline update. Never disable this guard or replace the homepage with the incomplete frontend/dist reference.
