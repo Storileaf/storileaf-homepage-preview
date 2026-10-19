@@ -1,0 +1,71 @@
+name: Review editorial link sizing
+on:
+  push:
+    paths:
+      - '.github/workflows/review-editorial-links.yml'
+      - 'scripts/editorial-links/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check current source and protected release
+        run: cd frontend && npm ci --no-audit --no-fund && npm run check
+      - name: Prepare only approved editorial text changes
+        run: python3 scripts/editorial-links/prepare.py
+      - name: Check candidate source without publishing it
+        run: cd frontend && npm run typecheck && npm run content:gate && npm test && npm run build
+      - name: Serve exact candidate and isolated source
+        run: |
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+          mkdir -p /tmp/editorial/storileaf-homepage-preview
+          cp -a index.html 404.html assets covers gallery pricing /tmp/editorial/storileaf-homepage-preview/
+          python3 -m http.server 4173 --directory /tmp/editorial > /tmp/editorial-static.log 2>&1 &
+          python3 -m http.server 4180 --directory frontend/dist > /tmp/editorial-source.log 2>&1 &
+          sleep 2
+      - name: Run homepage and source regressions
+        run: |
+          node scripts/verify-homepage-ui.mjs
+          (cd frontend && node scripts/verify-source-ui.mjs && node scripts/verify-shape-foundation.mjs)
+          node scripts/package2/verify.mjs
+      - name: Compare editorial links and inspect untouched footer
+        run: node scripts/editorial-links/verify.mjs
+      - name: Store verified readable file blobs without moving a branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json,os,urllib.request
+          from pathlib import Path
+          files=json.loads(Path('qa/editorial-links/changed-files.json').read_text());blobs={}
+          for name in files:
+              data=json.dumps({'content':Path(name).read_text(),'encoding':'utf-8'}).encode()
+              req=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs',data=data,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'},method='POST')
+              with urllib.request.urlopen(req) as r: blobs[name]=json.load(r)['sha']
+          Path('qa/editorial-links/blobs.json').write_text(json.dumps(blobs,indent=2))
+          PY
+      - name: Preserve candidate diff
+        if: always()
+        run: |
+          mkdir -p qa/editorial-links
+          git diff -- assets frontend docs REPOSITORY_HANDOFF.md scripts/package2 > qa/editorial-links/changes.diff
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: editorial-link-review
+          path: |
+            qa/editorial-links/
+            qa/homepage-qa-report.json
+            qa/package2/report.json
+            frontend/qa/shape-foundation/report.json
+          if-no-files-found: warn
