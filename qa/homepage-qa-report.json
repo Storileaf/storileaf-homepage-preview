@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-19T03:08:41.644Z",
-  "commit": "ac3c00866dfcac103fc6d1ce8f7fa0f472826c77",
+  "date": "2026-10-19T12:53:20.968Z",
+  "commit": "e877dca2ecd3a0c75e7cfc9384bf6eb7996ba90d",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -176,12 +176,12 @@
         577
       ],
       "cardHeights": [
-        563,
-        563
+        564,
+        564
       ],
       "cardTops": [
-        380,
-        380
+        379,
+        379
       ],
       "imageLoaded": [
         true,
@@ -232,9 +232,9 @@
       "slideshowLayout": {
         "photoTop": 1904,
         "textTop": 1904,
-        "photoBottom": 2513,
-        "textBottom": 2513,
-        "photoHeight": 609,
+        "photoBottom": 2515,
+        "textBottom": 2515,
+        "photoHeight": 611,
         "controlHorizontalOffset": 0,
         "controlNearBottom": true
       },
@@ -284,9 +284,9 @@
     "craftSlideshowGeometry": {
       "photoTop": 1904,
       "textTop": 1904,
-      "photoBottom": 2513,
-      "textBottom": 2513,
-      "photoHeight": 609,
+      "photoBottom": 2515,
+      "textBottom": 2515,
+      "photoHeight": 611,
       "controlHorizontalOffset": 0,
       "controlNearBottom": true
     },
@@ -429,28 +429,28 @@
     },
     "desktopFooterBounds": {
       "unit": {
-        "top": 473,
-        "bottom": 1312,
+        "top": 474,
+        "bottom": 1313,
         "height": 839
       },
       "newsletter": {
-        "top": 473,
+        "top": 474,
         "bottom": 900,
         "height": 427
       },
       "footer": {
         "top": 900,
-        "bottom": 1312,
+        "bottom": 1313,
         "height": 412
       },
       "bottom": {
-        "top": 1246,
-        "bottom": 1289,
+        "top": 1247,
+        "bottom": 1290,
         "height": 43
       },
       "copyright": {
-        "top": 1269,
-        "bottom": 1289,
+        "top": 1270,
+        "bottom": 1290,
         "height": 20
       },
       "newsletterBackground": "rgba(0, 0, 0, 0)",
@@ -500,12 +500,12 @@
         350
       ],
       "cardTops": [
-        173,
-        585
+        171,
+        584
       ],
       "cardBottoms": [
-        563,
-        974
+        562,
+        975
       ],
       "stacked": true,
       "withinViewport": true,
@@ -536,27 +536,27 @@
     },
     "mobileCraftGeometry": {
       "craft": {
-        "top": -1131,
+        "top": -1133,
         "bottom": -123,
-        "height": 1007
+        "height": 1009
       },
       "copy": {
-        "top": -800,
+        "top": -802,
         "bottom": -123,
-        "height": 677
+        "height": 679
       },
       "link": {
-        "top": -146,
-        "bottom": -125,
-        "height": 21
+        "top": -148,
+        "bottom": -124,
+        "height": 24
       },
       "visible": true,
       "display": "inline-flex",
       "overflow": "visible",
       "section": {
-        "top": -1790,
+        "top": -1792,
         "bottom": -57,
-        "height": 1732
+        "height": 1734
       }
     },
     "mobileBookIcons": [
