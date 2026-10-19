@@ -4,13 +4,17 @@ import { execFileSync } from 'node:child_process'
 import { inheritedHomepageBaseline, inheritedHomepageProblems } from './inherited-content.mjs'
 import { inheritedSharedBaseline, inheritedSharedBundlePath, inheritedSharedHtmlPath, inheritedSharedProblems } from './inherited-shared-content.mjs'
 import { inheritedDiscoveryBaseline, inheritedDiscoveryBundlePath, inheritedDiscoveryProblems, inheritedDiscoveryLedgerProblems } from './inherited-discovery-content.mjs'
+import { checkMediaContent } from './inherited-media-content.mjs'
 import { contentReferenceProblems } from './content-references.mjs'
 
 const root=resolve(import.meta.dirname, '..')
-const records=JSON.parse(readFileSync(join(root,'content/ledger.json'),'utf8')).records
+const originalRecords=JSON.parse(readFileSync(join(root,'content/ledger.json'),'utf8')).records
+const mediaLedger=JSON.parse(readFileSync(join(root,'content/media-ledger.json'),'utf8'))
+const mediaImages=JSON.parse(readFileSync(join(root,'content/media-images.json'),'utf8'))
+const records=[...originalRecords,...mediaLedger.records.map(record=>({...mediaLedger.provenance,...record}))]
 const ids=new Set()
 const index=new Map()
-const problems=[]
+const problems=checkMediaContent(mediaLedger,mediaImages,originalRecords)
 const allowedStatuses=new Set(['proposed','founder_approved','implemented_verified','existing_verified','superseded'])
 const allowedDestinations=new Set(['existing_verified','unbuilt'])
 let inheritedHomepageHtml
@@ -62,6 +66,8 @@ for(const record of records){
     problems.push(...inheritedSharedProblems(record,inheritedSharedSources??{bundle:'',html:''}))
   }else if(record.approval_kind==='inherited_published_discovery'){
     problems.push(...inheritedDiscoveryProblems(record,inheritedDiscoveryBundle??''))
+  }else if(record.approval_kind==='inherited_published_media'){
+    // Exact membership, wording, assets and provenance checked together above.
   }else if(record.public && (!record.approved_on || !record.approval_reference?.startsWith('https://github.com/Storileaf/'))){
     problems.push('Founder approval evidence missing for public copy '+record.id)
   }

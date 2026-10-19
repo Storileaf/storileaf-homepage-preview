@@ -56,12 +56,3 @@ jobs:
           name: homepage-media-source-preview
           path: frontend/dist/
           if-no-files-found: error
-      # Temporary acquisition checkpoint for the disconnected editing container.
-      # No protected output is regenerated and no artifact is published as a page.
-      - name: Capture public source workspace
-        run: tar --exclude='./frontend/qa' --exclude='./qa' -czf "$RUNNER_TEMP/media-workspace.tar.gz" .git frontend scripts assets covers gallery pricing index.html 404.html docs REPOSITORY_HANDOFF.md node_modules
-      - uses: actions/upload-artifact@v4
-        with:
-          name: media-editing-workspace
-          path: ${{ runner.temp }}/media-workspace.tar.gz
-          retention-days: 1

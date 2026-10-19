@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "updated": "2026-10-19",
+  "records": [
+    {"id":"home.gallery.title","copy":"See what your stories can become.","emphasis":"become.","source_fragment":"SampleGallery h2#samples-title children"},
+    {"id":"home.gallery.intro","copy":"A closer look at the pages, photographs and finished book.","source_fragment":"SampleGallery p.section-lead children"},
+    {"id":"home.gallery.rail","copy":"Six StoriLeaf book images","source_fragment":"SampleGallery .sample-rail aria-label"},
+    {"id":"home.gallery.instructions","copy":"Browse the six book images with arrow keys, controls or touch gestures.","source_fragment":"SampleGallery DialogDescription children"},
+    {"id":"home.gallery.previous","copy":"Previous book image","source_fragment":"SampleGallery Previous book image aria-label"},
+    {"id":"home.gallery.next","copy":"Next book image","source_fragment":"SampleGallery Next book image aria-label"},
+    {"id":"home.gallery.close","copy":"Close book image","source_fragment":"SampleGallery Close book image aria-label"},
+    {"id":"home.gallery.previous-book","copy":"Previous book","source_fragment":"SampleGallery Previous book aria-label"},
+    {"id":"home.gallery.next-book","copy":"Next book","source_fragment":"SampleGallery Next book aria-label"},
+    {"id":"home.gallery.open.life-story","copy":"Open Life Story book image","source_fragment":"SampleGallery sample-open aria-label for life-story"},
+    {"id":"home.gallery.open.travel-memoir","copy":"Open Travel Memoir book image","source_fragment":"SampleGallery sample-open aria-label for travel-memoir"},
+    {"id":"home.gallery.open.relationship-memoir","copy":"Open Relationship Memoir book image","source_fragment":"SampleGallery sample-open aria-label for relationship-memoir"},
+    {"id":"home.gallery.open.founders-memoir","copy":"Open Founder's Memoir book image","source_fragment":"SampleGallery sample-open aria-label for founders-memoir"},
+    {"id":"home.gallery.open.parent-to-child-letters","copy":"Open Parent to Child Letters book image","source_fragment":"SampleGallery sample-open aria-label for parent-to-child-letters"},
+    {"id":"home.gallery.open.celebrating-occasions","copy":"Open Celebrating Occasions book image","source_fragment":"SampleGallery sample-open aria-label for celebrating-occasions"}
+  ],
+  "provenance": {
+    "status": "founder_approved",
+    "public": true,
+    "approval_kind": "inherited_published_media",
+    "migration_group": 5,
+    "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/routes-DrwDv2x2.js",
+    "migration_recorded_on": "2026-10-19",
+    "source": "Protected published gallery and exact data at e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "approval_note": "Founder authorised unchanged gallery migration on 19 October 2026. This records retention, not a new original wording approval."
+  }
+}
