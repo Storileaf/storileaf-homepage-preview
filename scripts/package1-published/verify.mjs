@@ -81,8 +81,8 @@ try{
   await el.screenshot({path:`${folder}/action-${name}-focus.png`,animations:'disabled'})
   report.states[name]={normal,hover,pressed,focus}
  }
- // Shared CSS must retain the existing pricing route's layout and header.
- const pricingResponse=await page.goto(base+'pricing/inr/',{waitUntil:'networkidle'})
+ // Use the tracked static pricing entry, not an unserved currency subdirectory.
+ const pricingResponse=await page.goto(base+'pricing/',{waitUntil:'networkidle'})
  check(pricingResponse?.ok(),'Pricing HTTP request failed')
  await page.locator('.pricing-intro').waitFor()
  check(await page.locator('#top[data-testid="storileaf-home"]').count()===0,'Pricing resolved to the homepage')
