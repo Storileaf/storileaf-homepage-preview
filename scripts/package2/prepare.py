@@ -21,15 +21,14 @@ for name,spec in changes.items():
         result=original
         for start,end,replacement in reversed(spec['edits']): result=result[:start]+replacement+result[end:]
     prepared[name]=result
-# Use the installed Vite transformer for real component rendering tests.
 key='frontend/scripts/typography.test.mjs'
 s=prepared[key]
 s=s.replace("import ts from 'typescript'", "import { transformWithOxc } from 'vite'")
 s=s.replace("ts.transpileModule(source, { compilerOptions: { jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } })", "await transformWithOxc(source, name + '.tsx', { jsx: { runtime: 'automatic' } })")
 s=s.replace('result.outputText', 'result.code').replace("process.on('exit', () => {})\n",'')
 prepared[key]=s
-# Closed details descendants can retain skipped style values. Measure visible
-# answers after opening, and let existing transitions settle after test overrides.
+# Measure rendered answers and settled text. A rotating plus icon can extend
+# summary scrollWidth without clipping text; inspect actual text and icon bounds.
 key='scripts/package2/verify.mjs'
 s=prepared[key]
 s=s.replace("async function checkQuestions(label) {", "async function checkQuestions(label) {\n  await page.waitForTimeout(350)")
@@ -37,6 +36,8 @@ s=s.replace("  check(data.length===6", "  report.checks['questionMeasurements-'+
 s=s.replace("    const answer=await", "    await page.locator('.faq-item').first().evaluate(el=>el.open=true)\n    await page.waitForTimeout(350)\n    const answer=await")
 s=s.replace("    const summary=page.locator('.faq-item summary').first()", "    await page.locator('.faq-item').first().evaluate(el=>el.open=false)\n    await page.waitForTimeout(200)\n    const summary=page.locator('.faq-item summary').first()")
 s=s.replace("await enlargement.evaluate(el=>el.remove());report.checks", "await enlargement.evaluate(el=>el.remove());await page.waitForTimeout(350);report.checks")
+s=s.replace("    return {size:s.fontSize,leading:s.lineHeight,height:r.height,width:r.width,spanRight:span.right,right:r.right,scrollWidth:el.scrollWidth,clientWidth:el.clientWidth}", "    const range=document.createRange();range.selectNodeContents(el.querySelector('span'));const lines=[...range.getClientRects()];const icon=el.querySelector('svg').getBoundingClientRect()\n    return {size:s.fontSize,leading:s.lineHeight,height:r.height,width:r.width,spanRight:span.right,left:r.left,right:r.right,textRight:Math.max(...lines.map(x=>x.right)),textLeft:Math.min(...lines.map(x=>x.left)),textBottom:Math.max(...lines.map(x=>x.bottom)),bottom:r.bottom,iconRight:icon.right,viewport:innerWidth,scrollWidth:el.scrollWidth,clientWidth:el.clientWidth}")
+s=s.replace("x.scrollWidth<=x.clientWidth+1", "x.textRight<=x.right+.2 && x.textLeft>=x.left-.2 && x.textBottom<=x.bottom+.2 && x.iconRight<=x.viewport")
 prepared[key]=s
 for name,result in prepared.items():
     path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(result)
