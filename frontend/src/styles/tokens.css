@@ -3,8 +3,10 @@
   --sl-font-ui: 'Manrope', Arial, sans-serif;
   --sl-forest: #253526;
   --sl-teal: #0c6753;
+  --sl-teal-hover: #0b5848;
   --sl-gold: #cca86b;
   --sl-gold-action: #d7b67e;
+  --sl-gold-action-hover: #e9cb93;
   --sl-paper: #f9f8f6;
   --sl-paper-soft: #f3f2ef;
   --sl-white: #ffffff;
@@ -14,12 +16,12 @@
   --sl-content-width: 1184px;
   --sl-total-gutter: 96px;
   --sl-section-y: 94px;
-  /* Retained shape roles. Source references are not full homepage parity. */
+  /* Approved rectangular action family. Aliases keep one source of truth. */
   --sl-radius-action: 6px;
-  --sl-radius-header-action: 9px;
-  --sl-radius-newsletter-control: 9px;
-  /* Preserve the existing experimental gold variant, pending visual parity. */
-  --sl-radius-gold-action: 9px;
+  --sl-radius-header-action: var(--sl-radius-action);
+  --sl-radius-newsletter-control: var(--sl-radius-action);
+  --sl-radius-gold-action: var(--sl-radius-action);
+  /* Other shape families retain their existing values pending full parity. */
   --sl-radius-card: 20px;
   --sl-radius-card-compact: 17px;
   --sl-radius-media: 18px;

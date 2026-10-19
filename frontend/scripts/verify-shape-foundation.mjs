@@ -4,17 +4,18 @@ import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import http from 'node:http'
 
-// Read-only browser evidence. Neither source builds nor reports replace the Pages root.
+// Read-only checks. The experimental build never replaces the published root.
 const root = path.resolve('..')
 const baseline = '1433a413917a63df47e05f5c2d39283689624f37'
-const sourceBaseline = 'a80e7dfd0b5fa18acdfabe34c54ab75492e026da'
+const sourceBaseline = '29283c2223f9c88d5161a079d287edf30f724f72'
 const out = 'qa/shape-foundation'
 const problems = []
-const report = { baseline, sourceBaseline, scope: 'Two authorised source corrections; published root unchanged', staticReferences: [], browser: [], problems }
+const report = { baseline, sourceBaseline, scope: 'Approved 6px action family, forest outline text and existing primary/gold hover colours; source only', staticReferences: [], browser: [], problems }
 const check = (ok, message) => { if (!ok) problems.push(message) }
-const vendorPattern = /macaly|qcx8qibycrjhsu3gv7vr1spg/i
-await fs.mkdir(out, { recursive: true })
 const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8' })
+const vendorPattern = /macaly|qcx8qibycrjhsu3gv7vr1spg/i
+const widths = [320, 360, 390, 430, 768, 820, 1024, 1280, 1440]
+await fs.mkdir(out, { recursive: true })
 const files = git(['ls-files', '-z']).split('\0').filter(Boolean)
 const runtimeFiles = files.filter(f => /^(index\.html|404\.html|assets\/|pricing\/|frontend\/src\/|frontend\/index\.html|frontend\/package(?:-lock)?\.json|frontend\/vite\.config\.ts)/.test(f) && /\.(html|css|js|mjs|ts|tsx|json)$/.test(f))
 report.scannedFiles = runtimeFiles.length
@@ -23,16 +24,26 @@ for (const file of runtimeFiles) {
   const at = text.search(vendorPattern)
   if (at >= 0) report.staticReferences.push({ file, excerpt: text.slice(Math.max(0, at - 100), at + 180) })
 }
+check(report.staticReferences.length === 0, 'A runtime dependency on the retired preview vendor appeared')
 
-// Temporary package guard. A future authorised styling package must deliberately update it.
+// Bounded package guard. A later authorised package should replace this review boundary.
 const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css'])
-const oldFocus = '.sl-resource-link:focus-visible { outline:3px solid var(--sl-teal); outline-offset:-5px; border-radius:var(--sl-radius-card); }'
-const newFocus = '.sl-resource-link:focus-visible { outline:3px solid var(--sl-teal); outline-offset:-5px; border-radius:inherit; }'
-check(original.split(oldFocus).length === 2, 'Focus baseline must contain one exact reviewed rule')
-check(original.split('min-height:43px;').length === 2, 'Mobile action baseline must contain one 43px rule')
-const expected = original.replace(oldFocus, newFocus).replace('min-height:43px;', 'min-height:45px;')
-check(expected.trimEnd() === (await fs.readFile('src/styles/components.css', 'utf8')).trimEnd(), 'Changes exceed the two authorised source corrections')
-check(git(['show', sourceBaseline + ':frontend/src/styles/tokens.css']).trimEnd() === (await fs.readFile('src/styles/tokens.css', 'utf8')).trimEnd(), 'Radius unification has not been approved; retain existing tokens')
+const originalTokens = git(['show', sourceBaseline + ':frontend/src/styles/tokens.css'])
+const styles = await fs.readFile('src/styles/components.css', 'utf8')
+const tokens = await fs.readFile('src/styles/tokens.css', 'utf8')
+let expected = original.replace('.sl-action--outline { border:', '.sl-action--outline { color:var(--sl-forest); border:')
+expected = expected.replace('.sl-action--outline {', 'a.sl-action--primary:hover { background:var(--sl-teal-hover); }\n.sl-action--outline {')
+expected = expected.replace('.sl-action--planned {', 'a.sl-action--gold:hover { background:var(--sl-gold-action-hover); }\n.sl-action--planned {')
+expected = expected.replace('background:#0b5848;', 'background:var(--sl-teal-hover);').replace('background:#e9cb93;', 'background:var(--sl-gold-action-hover);')
+// Declaration order and whitespace alone are not visual changes.
+const normalise = text => text.replace(/\/\*[\s\S]*?\*\//g, '').replace(/([^{}]+)\{([^{}]*)\}/g, (_, selector, body) => selector + '{' + body.split(';').map(x => x.trim()).filter(Boolean).sort().join(';') + '}').replace(/\s+/g, '')
+check(normalise(expected) === normalise(styles), 'Styles exceed the approved action colour and hover changes')
+const tokenMap = text => Object.fromEntries([...text.matchAll(/(--sl-[\w-]+)\s*:\s*([^;]+);/g)].map(m => [m[1], m[2].trim()]))
+const expectedTokens = { ...tokenMap(originalTokens), '--sl-radius-header-action': 'var(--sl-radius-action)', '--sl-radius-newsletter-control': 'var(--sl-radius-action)', '--sl-radius-gold-action': 'var(--sl-radius-action)', '--sl-teal-hover': '#0b5848', '--sl-gold-action-hover': '#e9cb93' }
+const actualTokens = tokenMap(tokens)
+check(Object.keys(expectedTokens).length === Object.keys(actualTokens).length && Object.entries(expectedTokens).every(([k, v]) => actualTokens[k] === v), 'Unexpected token change beyond approved action aliases and hover colours')
+const sourceChanges = git(['diff', '--name-only', sourceBaseline, '--', 'frontend/src']).trim().split('\n').filter(Boolean)
+check(sourceChanges.every(file => ['frontend/src/styles/components.css', 'frontend/src/styles/tokens.css'].includes(file)), 'Component content or behaviour changed outside this styling approval')
 
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2' }
 const tracked = new Set(files)
@@ -47,31 +58,40 @@ const server = http.createServer(async (req, res) => {
 })
 await new Promise(resolve => server.listen(4181, '127.0.0.1', resolve))
 let browser
-const widths = [320, 360, 390, 430, 768, 820, 1024, 1280, 1440]
 const sourceSelectors = ['.sl-header', '.sl-header-primary', '.sl-newsletter-controls input', '.sl-newsletter-subscribe', '.sl-resource-card', '.sl-footer-currency']
+const changedCorners = new Set(['.sl-header-primary', '.sl-newsletter-controls input', '.sl-newsletter-subscribe'])
 const measure = (page, selectors) => page.evaluate(list => Object.fromEntries(list.map(selector => {
   const el = document.querySelector(selector)
   if (!el) return [selector, null]
   const s = getComputedStyle(el), r = el.getBoundingClientRect()
   return [selector, { radius: s.borderTopLeftRadius, width: r.width, height: r.height, fontSize: s.fontSize, lineHeight: s.lineHeight, display: s.display, background: s.backgroundColor, colour: s.color }]
 })), selectors)
+const geometry = page => page.evaluate(() => [...document.querySelectorAll('body *:not(script):not(style)')].map(el => {
+  const r = el.getBoundingClientRect(), s = getComputedStyle(el)
+  return [el.tagName, [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
+}))
 const focusMeasure = locator => locator.evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, parentRadius: getComputedStyle(el.parentElement).borderTopLeftRadius, visible: el.matches(':focus-visible'), outline: getComputedStyle(el).outlineWidth, offset: getComputedStyle(el).outlineOffset }))
+const shot = (page, name) => page.screenshot({ path: path.join(out, name + '.png'), animations: 'disabled' })
 
 async function auditStates(page) {
-  // Test-only markup probes ActionLink CSS variants. It is never committed as public copy.
+  // Test-only fixtures, never public copy and never a new working destination.
   await page.evaluate(() => {
     const section = document.createElement('section')
     section.id = 'shape-probes'
-    section.style.cssText = 'padding:60px;background:#f9f8f6;display:flex;gap:30px;'
+    section.style.cssText = 'padding:90px 24px;min-height:650px;background:#f9f8f6;display:flex;align-content:center;align-items:center;flex-wrap:wrap;gap:30px;'
     for (const variant of ['primary', 'outline', 'gold', 'text']) {
-      const a = document.createElement('a')
-      a.href = '#shape-probes'; a.className = 'sl-action sl-action--' + variant; a.textContent = 'Review action'
-      a.addEventListener('click', event => event.preventDefault()); section.append(a)
+      for (const planned of [false, true]) {
+        const el = document.createElement(planned ? 'span' : 'a')
+        if (!planned) el.href = '#shape-probes'
+        el.className = 'sl-action sl-action--' + variant + (planned ? ' sl-action--planned' : '')
+        el.textContent = planned ? 'Planned action' : 'Review action'
+        el.addEventListener('click', e => e.preventDefault()); section.append(el)
+      }
     }
     document.body.append(section)
   })
   const result = {}
-  const selectors = ['.sl-header-primary', '.sl-newsletter-subscribe', ...['primary', 'outline', 'gold', 'text'].map(v => '#shape-probes .sl-action--' + v)]
+  const selectors = ['.sl-header-primary', '.sl-newsletter-subscribe', ...['primary', 'outline', 'gold', 'text'].flatMap(v => ['#shape-probes a.sl-action--' + v, '#shape-probes span.sl-action--' + v])]
   for (const selector of selectors) {
     const el = page.locator(selector).first()
     await el.scrollIntoViewIfNeeded()
@@ -84,12 +104,40 @@ async function auditStates(page) {
     const normal = await read()
     await el.hover(); const hover = await read()
     await page.mouse.down(); const pressed = await read()
+    // Release outside the control. Never navigate or submit the newsletter.
     await page.mouse.move(0, 0); await page.mouse.up()
     const focusable = await el.evaluate(node => node.tabIndex >= 0)
     let focus = null
-    if (focusable) { await page.keyboard.press('Tab'); await el.focus(); focus = await read(); check(focus.focusVisible && focus.outline !== '0px', 'Missing keyboard focus in ' + selector) }
-    result[selector] = { normal, hover, pressed, focus, disabled: 'No disabled ActionLink API; do not simulate approval', loading: 'No asynchronous ActionLink API; not applicable to static links' }
+    if (focusable) {
+      await page.keyboard.press('Tab'); await el.focus(); focus = await read()
+      check(focus.focusVisible && focus.outline !== '0px', 'Missing keyboard focus in ' + selector)
+    }
+    result[selector] = { normal, hover, pressed, focus, disabled: 'Not part of ActionLink API', loading: 'No asynchronous operation added' }
+    for (const state of [hover, pressed, ...(focus ? [focus] : [])]) {
+      check(state.width === normal.width && state.height === normal.height && state.transform === normal.transform, 'State changes geometry in ' + selector)
+    }
+    const planned = selector.includes('span.')
+    const primary = selector.includes('primary')
+    const gold = selector.includes('gold') || selector === '.sl-newsletter-subscribe'
+    if (!selector.endsWith('--text')) check(normal.radius === '6px', 'Action radius must be 6px in ' + selector)
+    if (primary || gold) {
+      const base = primary ? 'rgb(12, 103, 83)' : 'rgb(215, 182, 126)'
+      const target = planned ? base : primary ? 'rgb(11, 88, 72)' : 'rgb(233, 203, 147)'
+      check(normal.background === base && hover.background === target && pressed.background === target, 'Incorrect normal/hover/pressed colours in ' + selector)
+      check(normal.colour === (primary ? 'rgb(255, 255, 255)' : 'rgb(37, 53, 38)') && hover.colour === normal.colour, 'Action text colour changed in ' + selector)
+    }
+    if (selector.includes('--outline')) check(normal.colour === 'rgb(37, 53, 38)' && hover.colour === normal.colour, 'Outlined action must use forest text')
+    if (planned) check(!focusable && normal.background === hover.background, 'Planned treatment must remain non-interactive')
   }
+  await page.locator('#shape-probes').scrollIntoViewIfNeeded()
+  await page.mouse.move(0, 0); await page.evaluate(() => document.activeElement?.blur())
+  await shot(page, 'action-states-normal-1440')
+  await page.locator('#shape-probes a.sl-action--primary').hover()
+  await shot(page, 'action-primary-hover-1440')
+  await page.locator('#shape-probes a.sl-action--gold').hover()
+  await shot(page, 'action-gold-hover-1440')
+  await page.mouse.move(0, 0); await page.keyboard.press('Tab'); await page.locator('#shape-probes a.sl-action--outline').focus()
+  await shot(page, 'action-outline-focus-1440')
   await page.locator('#shape-probes').evaluate(el => el.remove())
   return result
 }
@@ -115,51 +163,51 @@ try {
     const targets = kind === 'source' ? sourceSelectors : ['.site-header', '.header-find-book', '.hero .button', '.newsletter-inline-preview input']
     for (const width of widths) {
       await page.setViewportSize({ width, height: 900 })
+      await page.mouse.move(0, 0); await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0) })
       const measured = await measure(page, targets)
       const row = { width, controls: measured }
       result.widths.push(row)
       if (kind === 'source') {
-        check(measured['.sl-header-primary']?.radius === '9px', 'Source header radius changed at ' + width)
-        if (width > 360) check(measured['.sl-header-primary']?.height === (width <= 480 ? 45 : 46), 'Source header action height incorrect at ' + width)
-        check(measured['.sl-newsletter-controls input']?.radius === '9px' && measured['.sl-newsletter-subscribe']?.radius === '9px', 'Newsletter radius changed at ' + width)
-        const link = page.locator('a.sl-resource-link')
-        await page.keyboard.press('Tab'); await link.focus()
-        row.focusAfter = await focusMeasure(link)
-        check(row.focusAfter.visible && row.focusAfter.radius === row.focusAfter.parentRadius, 'Resource focus does not follow card radius at ' + width)
-        check(row.focusAfter.radius === (width <= 480 ? '17px' : '20px'), 'Unexpected responsive resource focus radius at ' + width)
-        if (width === 390 || width === 1440) {
-          await link.screenshot({ path: path.join(out, 'resource-focus-after-' + width + '.png'), animations: 'disabled' })
-          await page.evaluate(() => scrollTo(0, 0))
-          await page.locator('.sl-header').screenshot({ path: path.join(out, 'header-after-' + width + '.png'), animations: 'disabled' })
-        }
-        const priorStyle = await page.addStyleTag({ content: original })
+        for (const selector of changedCorners) check(measured[selector]?.radius === '6px', 'Unified source action radius incorrect at ' + width + ' ' + selector)
+        if (width > 360) check(measured['.sl-header-primary']?.height === (width <= 480 ? 45 : 46), 'Source header height changed at ' + width)
+        const afterGeometry = await geometry(page)
+        const priorStyle = await page.addStyleTag({ content: originalTokens + '\n' + original })
         const before = await measure(page, targets)
-        row.headerBefore = before['.sl-header-primary']
-        row.focusBefore = await focusMeasure(link)
+        row.before = before
+        row.geometryUnchanged = JSON.stringify(await geometry(page)) === JSON.stringify(afterGeometry)
+        check(row.geometryUnchanged, 'Normal page geometry or typography changed at ' + width)
         for (const selector of targets) {
           const b = { ...before[selector] }, a = { ...measured[selector] }
-          if (selector === '.sl-header-primary' && width > 360 && width <= 480) {
-            check(b.height === 43 && a.height === 45, 'Expected only the 43px to 45px mobile height correction')
-            delete b.height; delete a.height
+          if (changedCorners.has(selector)) {
+            check(b.radius === '9px' && a.radius === '6px', 'Expected only 9px to 6px corner change in ' + selector)
+            delete b.radius; delete a.radius
           }
-          check(JSON.stringify(b) === JSON.stringify(a), 'Unexpected geometry or style change in ' + selector + ' at ' + width)
+          check(JSON.stringify(b) === JSON.stringify(a), 'Unexpected normal style change in ' + selector + ' at ' + width)
         }
         if (width === 390 || width === 1440) {
           await page.locator('.sl-header').screenshot({ path: path.join(out, 'header-before-' + width + '.png'), animations: 'disabled' })
-          await link.screenshot({ path: path.join(out, 'resource-focus-before-' + width + '.png'), animations: 'disabled' })
+          await page.locator('.sl-newsletter-controls').screenshot({ path: path.join(out, 'newsletter-before-' + width + '.png'), animations: 'disabled' })
         }
         await priorStyle.evaluate(el => el.remove())
+        if (width === 390 || width === 1440) {
+          await page.evaluate(() => scrollTo(0, 0))
+          await page.locator('.sl-header').screenshot({ path: path.join(out, 'header-after-' + width + '.png'), animations: 'disabled' })
+          await page.locator('.sl-newsletter-controls').screenshot({ path: path.join(out, 'newsletter-after-' + width + '.png'), animations: 'disabled' })
+        }
+        const link = page.locator('a.sl-resource-link')
+        await page.keyboard.press('Tab'); await link.focus()
+        row.focusAfter = await focusMeasure(link)
+        check(row.focusAfter.visible && row.focusAfter.radius === row.focusAfter.parentRadius && row.focusAfter.radius === (width <= 480 ? '17px' : '20px'), 'Responsive resource focus regression at ' + width)
         await link.evaluate(el => el.blur())
       } else {
         check(measured['.header-find-book']?.radius === '9px', 'Published header baseline changed at ' + width)
-        if (width === 390 || width === 430) check(measured['.header-find-book']?.height === 45, 'Published mobile action is no longer 45px')
+        check(measured['.hero .button']?.radius === '6px' && measured['.newsletter-inline-preview input']?.radius === '9px', 'Published control baseline changed at ' + width)
       }
       check(!(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)), kind + ' overflows at ' + width)
     }
     await page.setViewportSize({ width: 1440, height: 900 })
     if (kind === 'source') result.states = await auditStates(page)
-    const tabs = page.getByRole('tab')
-    result.tabCount = await tabs.count()
+    const tabs = page.getByRole('tab'); result.tabCount = await tabs.count()
     for (let i = 0; i < result.tabCount; i++) if (await tabs.nth(i).isVisible()) { await tabs.nth(i).click(); await page.waitForTimeout(120) }
     const height = await page.evaluate(() => document.documentElement.scrollHeight)
     for (let y = 0; y < height; y += 650) { await page.evaluate(y => scrollTo(0, y), y); await page.waitForTimeout(60) }
@@ -169,12 +217,13 @@ try {
     await page.screenshot({ path: path.join(out, kind + '-desktop-1440.png'), fullPage: true, animations: 'disabled' })
     await page.setViewportSize({ width: 390, height: 844 })
     await page.screenshot({ path: path.join(out, kind + '-mobile-390.png'), fullPage: true, animations: 'disabled' })
-    result.requestHosts = [...hosts].sort()
-    report.browser.push(result)
-    check(result.runtimeErrors.length === 0, kind + ' runtime errors while vendor requests are blocked')
+    result.requestHosts = [...hosts].sort(); report.browser.push(result)
+    check(result.runtimeErrors.length === 0, kind + ' runtime errors')
+    check(result.blockedVendorRequests.length === 0, kind + ' requested the retired vendor')
+    check(result.missingImages.length === 0, kind + ' has missing images')
     await context.close()
   }
-} catch (error) { problems.push('Shape/dependency audit interrupted: ' + error.message) }
+} catch (error) { problems.push('Shape/state audit interrupted: ' + error.message) }
 finally { if (browser) await browser.close(); await new Promise(resolve => server.close(resolve)) }
 report.deletionAssessment = 'Evidence for tested public preview/source only; not unconditional permission to delete external projects or unique assets.'
 await fs.writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n')
