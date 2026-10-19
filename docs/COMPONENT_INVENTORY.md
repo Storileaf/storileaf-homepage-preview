@@ -21,3 +21,5 @@ The active design authority is [Public Design System](PUBLIC_DESIGN_SYSTEM.md).
 | Pricing | Published protected preview route | Not yet migrated | Validate currency-aware route and source facts before any cutover |
 
 **Rule.** Do not describe a component as migrated because a React reference has a similar appearance. Only the original published homepage is live. Keep new source builds isolated until exact static/interactive parity and founder approval.
+
+**Source-only QA:** [the isolated React workflow](../.github/workflows/validate-public-source.yml) exercises shared header navigation, the native mobile dialog, Resources links, newsletter/footer and nine responsive widths. It is not a substitute for full homepage parity tests.

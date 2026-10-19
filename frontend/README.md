@@ -43,3 +43,7 @@ The HTML source reference may use temporary system fallback fonts until the fina
 ## Shared component staging
 
 The source preview now includes the approved newsletter/footer's visual composition as a typed shared React component with explicit per-page routes and currency state. This is a **reference**, not a replacement for the current compiled homepage footer or a working newsletter backend. The original public root is guarded against unreviewed regeneration. The source remains incomplete until every homepage section and pricing/navigation interaction is migrated and visually compared.
+
+## Source-only browser QA
+
+The editable source CI now serves its isolated Vite build and tests Chrome rendering at the same nine viewport widths as the published homepage. It also checks dropdowns, mobile native-dialog focus restoration, Resources link semantics, shared photo footer and currency selection. The workflow uploads source-only screenshots and a JSON report as artifacts, without changing any published files. These screenshots verify the emerging COMPONENT REFERENCE, not visual equivalence with the approved homepage.

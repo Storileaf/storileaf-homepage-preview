@@ -54,3 +54,7 @@ The isolated React source validator installs from a committed npm lockfile with 
 ## Page ownership and migration status
 
 Use the [public page specification template](PAGE_SPEC_TEMPLATE.md) for each future page. Use the [component inventory](COMPONENT_INVENTORY.md) to avoid treating a source reference as a completed published component. No new page may assume that a placeholder Resources, Activities or practice destination is live. The shared NewsletterFooter source should be reused, with deliberate page-specific route props, after its final visual and interaction parity is accepted.
+
+## Source-only visual QA
+
+The isolated React source workflow additionally captures desktop/mobile screenshots and checks interactive components at nine widths. Keep that report distinct from the published homepage's existing Chromium QA and do not claim pixel parity until a side-by-side comparison against the protected root has actually been completed.

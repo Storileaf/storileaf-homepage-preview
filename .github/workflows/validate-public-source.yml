@@ -30,6 +30,23 @@ jobs:
       - name: Build isolated source preview
         working-directory: frontend
         run: npm run build
+      - name: Install isolated browser testing library
+        working-directory: frontend
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Serve isolated source build for browser checks
+        run: |
+          python3 -m http.server 4180 --directory frontend/dist > /tmp/storileaf-source-qa.log 2>&1 &
+          sleep 2
+      - name: Check source-only desktop and mobile layout, links and navigation
+        working-directory: frontend
+        run: node scripts/verify-source-ui.mjs
+      - name: Attach source-reference screenshots and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-frontend-source-browser-qa
+          path: frontend/qa/
+          if-no-files-found: warn
       - name: Attach source-driven preview for design review
         uses: actions/upload-artifact@v4
         with:
