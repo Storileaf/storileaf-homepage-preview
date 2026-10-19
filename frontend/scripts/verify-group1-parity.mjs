@@ -29,6 +29,8 @@ const report = {
     'Gifting uses the same warm paper underlay explicitly in React and inherited from the page in static HTML. Pixel comparisons verify the composite.',
   ],
   captureMethod: 'Real pages measured after fonts and images load. Clean crops temporarily extend viewport height to contain the complete section, hide the unrelated sticky header and apply a recorded body padding adjustment of less than one CSS pixel based on the section document origin. The report records the resulting document positions and verifies unchanged section geometry for both capture adjustments. This avoids clipped browser painting and limits raster differences caused by different preceding content in the incomplete React page. Context captures retain the original viewport and header without the capture adjustments. No target section styles, assets or responses are substituted.',
+  viewportReadinessMethod: 'Before measurement or section positioning, a hidden fixed 100vw by 100vh probe must match the requested viewport within 0.01 CSS pixels, and innerWidth/innerHeight must match exactly. This bounded check waits for responsive CSS after a resize, followed by two foreground animation frames. The probe does not participate in document layout.',
+  sectionAlignmentMethod: 'Programmatic native scrollIntoView checks unique preserved IDs, computed scroll margins and root padding, final document-clamped target placement and visibility. This does not exercise shared header navigation, URL fragments, router history or restoration.',
   limits: 'Chromium automation, emulated touch and targeted text enlargement. Not native browser zoom, physical device or cross browser certification.',
 }
 const check = (ok, message) => { if (!ok) problems.push(message) }
@@ -106,6 +108,23 @@ async function settle(page) {
   // Chrome may throttle animation frames and pointer updates in a background tab.
   // Read the real foreground state, with a bounded failure rather than a fallback.
   await page.bringToFront()
+  // Chrome 155 can update innerWidth before applying the new CSS viewport units
+  // and responsive typography. Two frames or matchMedia alone did not establish
+  // readiness in the reproduced 600 -> 1440 resize. Observe CSS layout itself.
+  await page.evaluate(() => {
+    if (document.querySelector('[data-qa-css-viewport]')) return
+    const probe = document.createElement('div')
+    probe.dataset.qaCssViewport = ''
+    probe.setAttribute('aria-hidden', 'true')
+    probe.inert = true
+    probe.style.cssText = 'all:initial;position:fixed;top:0;left:0;width:100vw;height:100vh;visibility:hidden;pointer-events:none;contain:strict;'
+    document.body.append(probe)
+  })
+  await page.waitForFunction(({ width, height }) => {
+    const box = document.querySelector('[data-qa-css-viewport]').getBoundingClientRect()
+    return innerWidth === width && innerHeight === height
+      && Math.abs(box.width - width) < 0.01 && Math.abs(box.height - height) < 0.01
+  }, page.viewportSize(), { timeout: 5000 })
   await within(page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))), 'Foreground frame settling')
 }
 async function ready(page, kind) {
@@ -401,37 +420,48 @@ try {
     report.states.push({ state: 'keyboard', width, ...values })
   }
 
-  // Check actual anchor offsets without changing the existing shared header routes.
+  // Check component positioning through the native element API. Shared header
+  // routes still point to the published preview or external Gifting page, so
+  // their navigation/history behaviour belongs to the later shell migration.
   for (const width of [390, 600, 1440]) {
     for (const id of ['resources', 'resources-activity', 'gifting']) {
       const values = {}
       for (const [kind, page] of Object.entries(pages)) {
         await page.setViewportSize({ width, height: 600 })
         await settle(page)
-        // Each target differs from the previous one. Use one native hash change,
-        // as a visitor would, without a spurious blank-hash route restoration.
-        await page.evaluate(id => { location.hash = id }, id)
+        const target = page.locator('#' + id)
+        const idCount = await target.count()
+        check(idCount === 1, kind + ' section ID is not unique ' + id + ' at ' + width)
+        await target.evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'instant' }))
         await page.waitForFunction(id => {
           const element = document.getElementById(id), bounds = element.getBoundingClientRect()
           const documentTop = bounds.top + scrollY
           const offset = parseFloat(getComputedStyle(element).scrollMarginTop) + parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)
-          const maximumScroll = document.documentElement.scrollHeight - innerHeight
+          const maximumScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight)
           const expectedTop = documentTop - Math.max(0, Math.min(documentTop - offset, maximumScroll))
           return Math.abs(bounds.top - expectedTop) <= 1
         }, id, { timeout: 5000 })
         await settle(page)
-        values[kind] = await page.locator('#' + id).evaluate(element => ({
-          hash: location.hash,
-          offset: getComputedStyle(element).scrollMarginTop,
-          rootPadding: getComputedStyle(document.documentElement).scrollPaddingTop,
-          top: Math.round(element.getBoundingClientRect().top),
-          visible: element.getBoundingClientRect().top >= 0 && element.getBoundingClientRect().top < innerHeight,
-        }))
-        check(values[kind].visible, kind + ' anchor not visible ' + id + ' at ' + width)
+        values[kind] = await target.evaluate((element, idCount) => {
+          const box = element.getBoundingClientRect(), documentTop = box.top + scrollY
+          const offset = getComputedStyle(element).scrollMarginTop
+          const rootPadding = getComputedStyle(document.documentElement).scrollPaddingTop
+          const maximumScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight)
+          const expectedTop = documentTop - Math.max(0, Math.min(documentTop - parseFloat(offset) - parseFloat(rootPadding), maximumScroll))
+          const viewport = document.querySelector('[data-qa-css-viewport]').getBoundingClientRect()
+          return {
+            idCount, offset, rootPadding, documentTop, scrollY, maximumScroll,
+            top: box.top, expectedTop, inPosition: Math.abs(box.top - expectedTop) <= 1,
+            visible: box.top >= 0 && box.top < innerHeight,
+            cssViewport: { width: viewport.width, height: viewport.height },
+          }
+        }, idCount)
+        check(values[kind].inPosition, kind + ' final section position differs ' + id + ' at ' + width)
+        check(values[kind].visible, kind + ' section target not visible ' + id + ' at ' + width)
       }
-      check(values.published.offset === values.source.offset, 'Anchor offset differs ' + id + ' at ' + width)
-      check(values.published.rootPadding === values.source.rootPadding, 'Root anchor padding differs ' + id + ' at ' + width)
-      report.states.push({ state: 'anchor', id, width, ...values })
+      check(values.published.offset === values.source.offset, 'Section scroll margin differs ' + id + ' at ' + width)
+      check(values.published.rootPadding === values.source.rootPadding, 'Root scroll padding differs ' + id + ' at ' + width)
+      report.states.push({ state: 'programmatic section alignment', id, width, height: 600, ...values })
     }
   }
 
