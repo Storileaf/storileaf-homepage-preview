@@ -40,6 +40,27 @@ jobs:
       - name: Check source-only desktop and mobile layout, links and navigation
         working-directory: frontend
         run: node scripts/verify-source-ui.mjs
+      - name: Verify retained shape roles and audit external preview dependencies
+        working-directory: frontend
+        run: node scripts/verify-shape-foundation.mjs | tee /tmp/storileaf-shape-audit.log
+      - name: Summarise shape and dependency evidence
+        if: always()
+        working-directory: frontend
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file='qa/shape-foundation/report.json';
+          if (!fs.existsSync(file)) { console.log('::warning::Shape audit did not produce a report'); process.exit(0); }
+          const r=JSON.parse(fs.readFileSync(file,'utf8'));
+          const summary={baseline:r.baseline,scannedFiles:r.scannedFiles,staticReferences:r.staticReferences,problems:r.problems,browser:r.browser.map(b=>({kind:b.kind,blockedVendorRequests:b.blockedVendorRequests,requestHosts:b.requestHosts,runtimeErrors:b.runtimeErrors,missingImages:b.missingImages,tabCount:b.tabCount,testedWidths:b.widths.map(w=>w.width),sourceCorrection:b.sourceCorrection,actionRadii:b.actionRadii})),deletionAssessment:r.deletionAssessment};
+          const escape=s=>s.replaceAll('%','%25').replaceAll('\r','%0D').replaceAll('\n','%0A');
+          console.log('::notice file=frontend/scripts/verify-shape-foundation.mjs,title=Shape foundation evidence::'+escape(JSON.stringify(summary)));
+          const log=fs.existsSync('/tmp/storileaf-shape-audit.log')?fs.readFileSync('/tmp/storileaf-shape-audit.log','utf8'):'';
+          for(const size of ['MOBILE','DESKTOP']) {
+            const match=log.match(new RegExp('SOURCE_HEADER_'+size+'_JPEG_BASE64 ([A-Za-z0-9+/=]+)'));
+            if(match) console.log('::notice file=frontend/scripts/verify-shape-foundation.mjs,title=Source header '+size.toLowerCase()+' screenshot JPEG base64::'+match[1]);
+          }
+          NODE
       - name: Attach source-reference screenshots and QA report
         if: always()
         uses: actions/upload-artifact@v4

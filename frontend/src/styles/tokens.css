@@ -14,11 +14,22 @@
   --sl-content-width: 1184px;
   --sl-total-gutter: 96px;
   --sl-section-y: 94px;
+  /* Retained shape roles. Source references are not full homepage parity. */
   --sl-radius-action: 6px;
+  --sl-radius-header-action: 9px;
   --sl-radius-newsletter-control: 9px;
+  /* Preserve the existing experimental gold variant, pending visual parity. */
+  --sl-radius-gold-action: 9px;
   --sl-radius-card: 20px;
+  --sl-radius-card-compact: 17px;
   --sl-radius-media: 18px;
   --sl-radius-panel: 22px;
+  --sl-radius-header: 18px;
+  --sl-radius-header-compact: 13px;
+  --sl-radius-menu: 17px;
+  --sl-radius-inset-control: 8px;
+  --sl-radius-dialog-close: 9px;
+  --sl-radius-utility-control: 5px;
 }
 @media(max-width:900px){:root{--sl-total-gutter:64px;--sl-section-y:70px;}}
 @media(max-width:480px){:root{--sl-total-gutter:40px;--sl-section-y:57px;}}
