@@ -45,6 +45,7 @@ jobs:
         run: |
           set -o pipefail
           node scripts/verify-shape-foundation.mjs | tee /tmp/storileaf-shape-audit.log
+          node scripts/verify-focus-captures.mjs
       - name: Summarise shape and dependency evidence
         if: always()
         working-directory: frontend
