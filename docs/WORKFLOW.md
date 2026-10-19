@@ -1,6 +1,6 @@
 # Frontend source, design and release workflow
 
-Updated 19 October 2026 for the first authorised Package 3 migration group. This replaces Macaly-dependent public UI work.
+Updated 19 October 2026 for authorised Package 3 migration Groups 1 and 2. This replaces Macaly-dependent public UI work.
 
 ## Two current states
 
@@ -20,13 +20,15 @@ Compare original and changed rendering before release. Update the protected base
 
 ## Package 3 migration groups
 
-The founder has authorised Group 1 only, covering Resources and Gifting in the isolated React source, their checks and supporting documentation. Packages 1 and 2 remain complete. The positive response to the final Package 2 release is continuity for the current work, not a new formal approval record or permission to publish incomplete React.
+Group 1 covers Resources and Gifting in the isolated React source. Its implementation and comparison evidence are recorded. The founder has now authorised Group 2, covering the reassurance band, six native FAQ disclosures and final invitation, their checks and supporting documentation. Preserve the reassurance band's current wording and position, the FAQ expanded layouts and the invitation beneath them. Packages 1 and 2 remain complete. The positive response to the final Package 2 release is continuity for the current work, not a new formal approval record or permission to publish incomplete React.
 
-Each group starts from the current published implementation and has a bounded source scope. Keep the root HTML, compiled assets, imagery and pricing preview protected throughout. Group 1 does not update the protected release or copy `frontend/dist` into the repository root. Use the existing unpublished source entry for review; it is not a replacement homepage or a new public page.
+Each group starts from the current published implementation and has a bounded source scope. Keep the root HTML, compiled assets, imagery and pricing preview protected throughout. Groups 1 and 2 do not update the protected release or copy `frontend/dist` into the repository root. Use the existing unpublished source entry for review; it is not a replacement homepage or a new public page.
 
 Before proceeding to another group, run the source and existing regression gates, compare actual baseline and source section screenshots at all nine required widths, exercise the group's relevant states, and inspect the captures. Record exact copy, image sources and crops, destinations, typography, spacing, behaviour and document overflow. Compare Resources hover and focus with the baseline and retain noninteractive labels for its unbuilt destinations. Preserve Gifting's action and image treatment.
 
-Record measured results and remaining limitations in [the Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md). A passing section gate establishes evidence for that scope only. Header/footer acceptance, the remaining homepage sections, complete Package 4 quality gates and explicit founder approval still precede a React publishing cutover. Obtain approval for the next migration group before editing it.
+Group 2 retains the reassurance band's full-homepage slot immediately after the hero and before book discovery. Its current wording and placement are carried forward without converting the earlier provisional design decision into final acceptance. While those neighbouring sections remain unmigrated, verify the static order and the correct relative order among the implemented source sections; do not claim complete surrounding composition or add placeholder sections to simulate it. Keep independent native details/summary behaviour, exact resolved link destinations and the final invitation inside the FAQ section beneath the disclosures. The new invitation must omit the static anchor's inappropriate current-page state while retaining its appearance and destination. Root navigation corrections remain separately scoped.
+
+Record measured results and remaining limitations in [the Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) and [the Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md). Group 2 checks closed, individual expanded and all-open layouts, keyboard and emulated touch activation, focus, hover, reduced motion, short screens, targeted text enlargement and overflow. A passing section gate establishes evidence for that scope only. Header/footer acceptance, the remaining homepage sections, complete Package 4 quality gates and explicit founder approval still precede a React publishing cutover. Obtain approval for the next migration group before editing it.
 
 Keep inherited quality limitations separate from successful parity. Group 1 found matching Gifting text clipping at 320px during targeted 200 percent section text enlargement, while Resources reflowed. No document overflow does not mean text remains readable within a clipped panel. Record this finding for Package 4 and obtain approval for a visible correction rather than silently redesigning the migrated section. Use the review record for the clean crop alignment method, context screenshots and precise browser limits.
 

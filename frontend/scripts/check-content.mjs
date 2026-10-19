@@ -62,12 +62,15 @@ const scan=(dir)=>{
     if(item.isDirectory()){scan(full);continue}
     if(!/\.(tsx?|jsx?)$/.test(item.name))continue
     const text=readFileSync(full,'utf8')
-    const references=[...text.matchAll(/\b(approvedCopy|verifiedHref)\(\s*['"]([^'"]+)['"]\s*\)/g)]
+    const references=[
+      ...text.matchAll(/\b(approvedCopy|verifiedHref)\(\s*['"]([^'"]+)['"]\s*\)/g),
+      ...text.matchAll(/\b(copyId|questionId|answerId|actionId)\s*:\s*['"]([^'"]+)['"]/g),
+    ]
     for(const [,method,id] of references){
       const record=index.get(id)
       if(!record)problems.push('Unknown ledger ID in source '+id+' ('+item.name+')')
-      if(method==='verifiedHref' && record && !record.destination_state){
-        problems.push('verifiedHref used for non-destination '+id)
+      if((method==='verifiedHref' || method==='actionId') && record && !record.destination_state){
+        problems.push('Action reference used for non-destination '+id)
       }
     }
   }

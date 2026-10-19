@@ -11,7 +11,8 @@
     "test": "node --test scripts/*.test.mjs",
     "check": "npm run typecheck && npm run content:gate && npm run guard:published && npm test",
     "content:gate": "node scripts/check-content.mjs",
-    "guard:published": "node scripts/guard-published.mjs"
+    "guard:published": "node scripts/guard-published.mjs",
+    "verify:group2": "node scripts/verify-group2-parity.mjs"
   },
   "dependencies": {
     "react": "19.2.4",

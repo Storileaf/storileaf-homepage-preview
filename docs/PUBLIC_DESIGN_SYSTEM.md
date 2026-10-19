@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for the first Package 3 source migration group. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for Package 3 source migration Groups 1 and 2. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -94,6 +94,22 @@ The root scroll context is currently mirrored only for the isolated source compo
 
 The source entry places Gifting before Resources, preserving their relative homepage order. Both section migrations need actual baseline/source screenshots and relevant interaction checks before parity can be recorded. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for scope and evidence, and keep style decisions in this document.
 
+### Reassurance, FAQ and final invitation exceptions
+
+Group 2 preserves the reassurance band's current wording, icons, dividers and responsive layout. Its required full homepage position is immediately after the hero and ticker and before book discovery. The partial source reserves these neighbours for later migration. Do not change the band's wording or position in this group or treat historical alternatives as active implementation instructions.
+
+The band retains three equal columns above 720px and stacked rows at 720px and below. Its 27px vertical padding becomes 17px at that breakpoint. Text remains 17px on wide screens, 15px at 1130px and below, 16px at 720px and below, then the 15px body role at 480px and below. Its deliberate 700 weight and 1.45 leading remain. Icon roundels are 45px wide, becoming 41px at 1130px and below. These are retained section rules, not new defaults for body copy or controls.
+
+The FAQ grid keeps its .8fr/1.2fr columns and 95px gap, then a 60px gap at 1120px and below. At 900px and below it becomes one column with a 34px gap. Top section padding is 78px, becoming 52px at 480px and below. The feature heading role and the original teal emphasis remain. The native summary keeps 15px Manrope, weight 600 and 1.5 leading. Row padding remains 21px vertically, then 20px at 480px and below. Answer paragraphs retain 15px and 1.75 leading. Editorial actions retain the 15px action role and their existing hover and focus treatment.
+
+Use independent native details and summary elements. Preserve simultaneous expanded answers, the disclosure icon's 45 degree rotation and natural answer height. Do not add an exclusive accordion, fixed answer heights or JavaScript keyboard substitution. The questions section retains its 116px scroll margin, becoming 96px at 720px and below, within the existing source scroll context.
+
+The final invitation remains inside the questions section after the FAQ grid. It keeps its divider, supporting paragraph and separate heading, with the button alongside on wider screens and beneath at 480px and below. Its top margin is 69px, becoming 40px at 720px and below. Padding remains 48px above and 55px below, then 34px and 40px at 480px and below. The deliberately distinct heading is 42px with 1.12 leading, 36px at 720px and below and 37px at 480px and below. Do not replace these inherited values with a global normalisation.
+
+The invitation action keeps the shared 6px radius and approved teal hover, with its inherited 13px label, minimum 49px height, 20px icon gap and 12px/24px padding. Its books destination is unchanged. Omit inappropriate current page semantics in the new source. The root static anchor and other shared navigation remain separately scoped migration work.
+
+Warm paper, sage and muted ink values remain scoped to these sections. See [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) for implementation, inherited copy provenance and rendered evidence. This group introduces no new image assets or global identity tokens.
+
 The source foundation tokens are mirrored into a bounded block in the existing homepage CSS, scoped to the homepage. `frontend/scripts/sync-foundations.mjs` checks exact agreement. It writes only when explicitly invoked with `--write` for an authorised release. Existing effective declarations consume tokens in place, with original fallbacks for the separate pricing preview. Do not append another stylesheet override layer or disable the published baseline guard.
 
 ## Shape hierarchy
@@ -162,7 +178,7 @@ The later authenticated workspace, Storyteller/contributor and admin interfaces 
 
 ## Open items
 
-Actual open-book photography, trust-band first phrase/placement, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
+Actual open-book photography, any later refinement of the retained reassurance band, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
 
 Group 1 identified an inherited text enlargement limitation. At 320×568px with the section text sizes targeted to 200 percent, both static and React Gifting clip heading and paragraph text inside the panel despite no document overflow. The button's right edge also extends into the clipped area; the Range report does not flag its label. Resources reflows. This remains an open Package 4 quality finding, not an accepted enlargement outcome or permission to change the visible composition. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for the measured capture method and scope.
 
@@ -172,7 +188,9 @@ The deployed static homepage, including the completed Package 1 and Package 2 re
 
 The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
 
-Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. This does not approve later migration groups, a homepage redesign or publication of the partial React build.
+Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. Group 2 is separately authorised below. This evidence does not approve a homepage redesign or publication of the partial React build.
+
+Group 2 adds ReassuranceBand, FaqSection and FinalInvitation to the isolated composition. The source and full local rendered comparison pass. Local retained source UI, shape and dependency, focus and full Group 1 checks pass. All ten reassurance and closed/all open FAQ widths have been visually inspected. New CI, remaining legacy workflow gates and deployment evidence remain under verification in the [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md). The preserved band position is an assembly requirement, not proof of full surrounding composition while hero and discovery remain unmigrated. Founder visual acceptance and complete homepage cutover remain separate.
 
 ## Source-only shared shell maturity
 
