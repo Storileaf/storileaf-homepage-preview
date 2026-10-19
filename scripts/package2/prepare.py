@@ -22,12 +22,21 @@ for name,spec in changes.items():
         for start,end,replacement in reversed(spec['edits']): result=result[:start]+replacement+result[end:]
     prepared[name]=result
 # Use the installed Vite transformer for real component rendering tests.
-# TypeScript 7's CLI is used for type checking, not the removed compiler SDK.
 key='frontend/scripts/typography.test.mjs'
 s=prepared[key]
 s=s.replace("import ts from 'typescript'", "import { transformWithOxc } from 'vite'")
 s=s.replace("ts.transpileModule(source, { compilerOptions: { jsx: ts.JsxEmit.ReactJSX, module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } })", "await transformWithOxc(source, name + '.tsx', { jsx: { runtime: 'automatic' } })")
 s=s.replace('result.outputText', 'result.code').replace("process.on('exit', () => {})\n",'')
+prepared[key]=s
+# Closed details descendants can retain skipped style values. Measure visible
+# answers after opening, and let existing transitions settle after test overrides.
+key='scripts/package2/verify.mjs'
+s=prepared[key]
+s=s.replace("async function checkQuestions(label) {", "async function checkQuestions(label) {\n  await page.waitForTimeout(350)")
+s=s.replace("  check(data.length===6", "  report.checks['questionMeasurements-'+label]=data\n  check(data.length===6")
+s=s.replace("    const answer=await", "    await page.locator('.faq-item').first().evaluate(el=>el.open=true)\n    await page.waitForTimeout(350)\n    const answer=await")
+s=s.replace("    const summary=page.locator('.faq-item summary').first()", "    await page.locator('.faq-item').first().evaluate(el=>el.open=false)\n    await page.waitForTimeout(200)\n    const summary=page.locator('.faq-item summary').first()")
+s=s.replace("await enlargement.evaluate(el=>el.remove());report.checks", "await enlargement.evaluate(el=>el.remove());await page.waitForTimeout(350);report.checks")
 prepared[key]=s
 for name,result in prepared.items():
     path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_text(result)
