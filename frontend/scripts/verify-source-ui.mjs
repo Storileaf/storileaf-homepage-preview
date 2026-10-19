@@ -63,6 +63,7 @@ try {
   const currency=page.locator('.sl-footer-currency select')
   await currency.selectOption('cad')
   check(await currency.inputValue()==='cad','Currency selector did not update')
+  check((await page.locator('.sl-header-desktop-nav a').last().getAttribute('href'))?.endsWith('/pricing/cad'), 'Pricing route did not follow the selected currency')
 
   const widths=[320,360,390,430,768,820,1024,1280,1440]
   const dimensions=[]

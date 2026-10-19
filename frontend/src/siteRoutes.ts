@@ -10,6 +10,7 @@ export type PublicSiteRoutes = {
   howItWorks: string
   pricing: string
   resources: string
+  resourcesActivity: string
   questions: string
   gift: string
   login: string
@@ -22,7 +23,19 @@ export const previewRoutes: PublicSiteRoutes = {
   howItWorks:'https://storileaf.github.io/storileaf-homepage-preview/#how-it-works',
   pricing:'https://storileaf.github.io/storileaf-homepage-preview/pricing/inr',
   resources:'https://storileaf.github.io/storileaf-homepage-preview/#resources',
+  resourcesActivity:'https://storileaf.github.io/storileaf-homepage-preview/#resources-activity',
   questions:'https://storileaf.github.io/storileaf-homepage-preview/#questions',
   gift:'https://storileaf.com/gift/',
   login:'https://app.storileaf.com/login',
+}
+
+/** Currency follows the site-wide selector. Each URL remains explicit. */
+export function previewRoutesForCurrency(currency:'inr'|'usd'|'cad'|'gbp'): PublicSiteRoutes {
+  const pricingByCurrency = {
+    inr: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/inr',
+    usd: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/usd',
+    cad: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/cad',
+    gbp: 'https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp',
+  }
+  return {...previewRoutes, pricing:pricingByCurrency[currency]}
 }

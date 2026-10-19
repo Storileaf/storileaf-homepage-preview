@@ -58,7 +58,7 @@ export function SiteHeader({ routes }: Props) {
             <button type="button" aria-expanded={openMenu==='resources'} aria-controls="sl-resources-menu" onClick={()=>toggle('resources')}>{copy('internal.resources')} <Chevron /></button>
             {openMenu==='resources' && <div id="sl-resources-menu" className="sl-header-popup">
               <a href={routes.resources}>All resources <Arrow /></a>
-              <a href={routes.resources+'-activity'}>Activities and games <Arrow /></a>
+              <a href={routes.resourcesActivity}>Activities and games <Arrow /></a>
               <a href={href('blog')}>{copy('blog')} <Arrow /></a>
             </div>}
           </div>
