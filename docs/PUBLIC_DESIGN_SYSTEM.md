@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for the first Package 3 source migration group. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -68,6 +68,31 @@ Colour tokens for NEW React components are in frontend/src/styles/tokens.css. Ne
 Named gaps connect title to copy (19px), card title to copy (13px), copy to following action (25px) and introductory heading group to content (43px desktop, 30px intermediate). Resources retains its specifically published 26px phone gap. Responsive card padding retains 24px to 36px fluid desktop, 28px/30px/30px intermediate, 25px/25px/28px smaller and 23px/23px/26px phone. Use small 8/12/16/20/24/32/40px spacing steps for ordinary component interiors, and named editorial exceptions where they already exist.
 
 The published homepage retains its asymmetric discovery, gallery/craft, devices, gifting, Resources, FAQ and photographic ending spacing. The process section's scroll runway, sticky alignment and reduced-motion/short-height variants are not ordinary section padding and must not be normalised. See the Package 2 measured inventory and review record before migrating them.
+
+### Homepage editorial section exceptions
+
+The authorised Group 1 migration carries Resources and Gifting into isolated source. Match their actual published rules after Packages 1 and 2. Shared primitives supply the reusable typography, spacing and action roles; scoped section rules retain the intentional composition. These are existing homepage exceptions, not new global defaults.
+
+Resources keeps a centred two-line editorial heading, its original introduction and the centred Browse all resources label beneath two equal photographic cards. Retain the published 26px phone heading gap rather than the earlier source reference's 30px gap. Preserve the published card text size, padding, responsive corners, image ratios and crops, arrow placement and hover treatment. Blog & guides remains a whole-card link with focus following the card corners. The Activities card and overview action remain noninteractive labels. Do not create controls to imitate those planned destinations.
+
+Gifting retains its distinct photographic editorial composition, exact heading and supporting copy, and existing gift action. Preserve its own heading scale, text measure, section spacing, image sizing/crop and responsive layout rather than assigning the generic Resources treatment. Its normal gold action uses the established antique gold #cca86b and the approved #e9cb93 hover, with the 6px action radius. Do not substitute the newsletter's different normal gold shade.
+
+| Existing section rule | Published value retained in Group 1 |
+| --- | --- |
+| Resources section padding | 97px above and 106px below; 77px and 84px at 720px and below |
+| Resources heading and card detail | Emphasis weight 420; card heading tracking -.015em; 15px card body at 720px and below |
+| Resources image and action | Centred crop; 1.76 ratio at 720px and below, then 1.72 at 480px and below; linked action arrow moves 3px on hover |
+| Gifting section and panel | 76px above and 84px below; 54px each at 720px and below. Panel radius 24px, then 18px at 720px and below |
+| Gifting columns and reading copy | .94fr/1.06fr desktop columns, equal columns at 900px and below, single column with image first at 720px and below. Body 16px with 1.76 leading, then 15px at 720px and below |
+| Gifting action | 13px text at weight 650 and 1.4 leading, minimum height 49px, 20px icon gap, 12px/24px padding and the shared 6px action radius |
+| Gifting photograph | Crop 52%/50%; minimum height 480px desktop and 460px at 900px and below; fixed 300px image height at 720px and below, then 250px at 480px and below |
+| Anchor landing | Root scroll padding 100px above 720px and 80px at 720px and below. Resources and Gifting section scroll margins 116px above 720px and 96px at 720px and below. The Activities target retains 116px at all widths |
+
+Resources retains the published warm paper, muted ink and sage image bed HSL values in its scoped rules. Gifting retains its published sage gradient, forest panel, photographic veil and restrained image hover. These exact migration values remain local to the two sections and do not change the generic palette or other section defaults. Image sources, alt text and intrinsic dimensions remain together in the image manifest.
+
+The root scroll context is currently mirrored only for the isolated source composition. The later shared shell migration should own it without changing the effective anchor offsets.
+
+The source entry places Gifting before Resources, preserving their relative homepage order. Both section migrations need actual baseline/source screenshots and relevant interaction checks before parity can be recorded. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for scope and evidence, and keep style decisions in this document.
 
 The source foundation tokens are mirrored into a bounded block in the existing homepage CSS, scoped to the homepage. `frontend/scripts/sync-foundations.mjs` checks exact agreement. It writes only when explicitly invoked with `--write` for an authorised release. Existing effective declarations consume tokens in place, with original fallbacks for the separate pricing preview. Do not append another stylesheet override layer or disable the published baseline guard.
 
@@ -139,11 +164,15 @@ The later authenticated workspace, Storyteller/contributor and admin interfaces 
 
 Actual open-book photography, trust-band first phrase/placement, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
 
-The deployed static homepage, including the specifically authorised Package 1 refinements submitted for review, remains the migration reference. Its approved layout, content and interactions must be reproduced faithfully.
+Group 1 identified an inherited text enlargement limitation. At 320×568px with the section text sizes targeted to 200 percent, both static and React Gifting clip heading, paragraph and button text inside the panel despite no document overflow. Resources reflows. This remains an open Package 4 quality finding, not an accepted enlargement outcome or permission to change the visible composition. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for the measured capture method and scope.
+
+The deployed static homepage, including the completed Package 1 and Package 2 refinements, remains the migration reference. Its approved layout, content and interactions must be reproduced faithfully. The founder's positive final Package 2 response allows the staged work to continue without reopening the foundation work or inventing a separate acceptance record.
 
 ## Implementation maturity
 
 The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
+
+Package 3 Group 1 has implemented Resources and Gifting in isolated source. Source validation, retained browser regressions and the full ten-width comparison pass locally. Final GitHub commit and CI evidence remain pending. The inherited text enlargement finding remains open. This does not approve later migration groups, a homepage redesign or publication of the partial React build.
 
 ## Source-only shared shell maturity
 

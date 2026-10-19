@@ -1,6 +1,6 @@
 # Public website decisions and future work
 
-18 October 2026.
+Updated 19 October 2026.
 
 ## Active decisions
 
@@ -24,7 +24,9 @@ Deferred public pages include the Books overview, the Resources hub and Activiti
 
 ## Current migration stage
 
-The isolated frontend/ React foundation is established and passing CI as an isolated component build. The whole homepage has not been migrated. The old homepage is still published as compiled root assets and cannot be replaced until editable React source reaches founder-reviewed functional and visual parity. Preserve the existing static output during migration.
+The isolated frontend/ React foundation is established. Packages 1 and 2 are implemented in source and the published homepage, and the founder responded positively to the final Package 2 release. The founder authorised Group 1 of Package 3, covering Resources and Gifting source migration, their checks and supporting documentation. Both sections are implemented. Source checks, all 16 tests, the build, retained browser regressions and the full ten-width comparison pass locally. Final GitHub commit and CI evidence remain pending. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md).
+
+The whole homepage has not been migrated. The current homepage remains published as compiled root assets and cannot be replaced until editable React source reaches complete visual and functional parity and receives explicit founder approval. Preserve the existing static output during Group 1. The group's approval does not authorise later groups or a React publishing cutover.
 
 ## Source hardening milestone
 
@@ -36,14 +38,22 @@ The isolated React build now includes source-only SiteHeader and NewsletterFoote
 
 ## Package 2 typography and spacing
 
-The founder accepted the published Package 1 result, then authorised completion of Package 2 on the same visible-review basis. Reusable type, container and spacing foundations preserve distinct editorial sections. The bounded visible refinement raises FAQ questions to 15px and FAQ action links to 14px, with existing answer text and content retained. Implementation and final founder visual acceptance remain separate. See PACKAGE_2_REVIEW.md and the active public design system.
+The founder accepted the published Package 1 result, then authorised completion of Package 2 on the same visible-review basis. Reusable type, container and spacing foundations preserve distinct editorial sections. FAQ questions use 15px. The initial 14px FAQ action treatment was superseded by the later 15px editorial action decision below. Existing answer text and content remain. See PACKAGE_2_REVIEW.md and the active public design system for the completed state.
 
 
 ## Editorial action sizing, 19 October 2026
 
-The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. Footer heading and currency readability is being reviewed separately, not silently changed. See EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.
+The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. Footer heading and currency readability was subsequently completed under the separate decision below. See EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.
 
 
 ## Footer typography and Package 2 completion, 19 October 2026
 
 The founder approved 15px column headings at weight 650 with 1.4 leading and 13px currency text on all screens. Menu links remain 14px regular, and legal text remains 13px. Preserve the shared photographic footer, grouping, gaps, wording, destinations and currency behaviour. This closes the bounded Package 2 implementation; final rendered acceptance remains distinct. Incorrect static current-page section-link semantics remain separately scoped navigation migration work. See FOOTER_TYPE_REVIEW.md.
+
+## Package 3 Group 1, 19 October 2026
+
+The approved scope is Resources and Gifting in the isolated source, with exact published content and rendered comparisons. Reuse the completed foundations and retain the two sections' published exceptions in the sole public design system. The existing source entry composes Gifting before Resources. New public routes, other homepage sections, source shell acceptance and publication of React remain outside this group.
+
+Keep Resources' unbuilt Activities and overview destinations noninteractive. Carry Gifting wording forward from the protected homepage without inventing a separate exact copy approval date. Record measured section parity before proposing the next group. Preserve historical package evidence and the protected root guard.
+
+The targeted 200 percent text check at 320px identified inherited Gifting clipping in both the published and React panels. Resources reflows. Carry the finding into Package 4 and propose any visible correction before implementing it. Equal clipping and no document overflow do not establish text enlargement quality.

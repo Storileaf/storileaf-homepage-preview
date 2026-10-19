@@ -52,7 +52,12 @@ try {
   check(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'Page overflow at '+width)
   const footer=await page.evaluate(()=>({width:innerWidth,headings:[...document.querySelectorAll('.footer-column h3')].map(el=>({text:el.textContent,size:getComputedStyle(el).fontSize,weight:getComputedStyle(el).fontWeight,line:getComputedStyle(el).lineHeight})),links:[...document.querySelectorAll('.footer-column a')].map(el=>({text:el.textContent,size:getComputedStyle(el).fontSize,weight:getComputedStyle(el).fontWeight})),currency:getComputedStyle(document.querySelector('.currency-picker select')).fontSize,legal:getComputedStyle(document.querySelector('.footer-bottom')).fontSize,currentPageLinks:[...document.querySelectorAll('.site-footer [aria-current]')].map(el=>({text:el.textContent,href:el.getAttribute('href'),current:el.getAttribute('aria-current')}))}))
   report.footer.push(footer);report.widths.push({width,labels:a,unchangedControls:live?null:JSON.stringify(cb)===JSON.stringify(ca)})
-  const ask=page.locator('.faq-intro .text-link');await page.keyboard.press('Tab');await ask.focus();check(await ask.evaluate(el=>el.matches(':focus-visible')&&getComputedStyle(el).outlineWidth!=='0px'),'Editorial focus absent at '+width)
+  const ask=page.locator('.faq-intro .text-link');await page.keyboard.press('Tab');await ask.focus()
+  // Allow the browser to paint the existing focus outline before measuring it.
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))
+  const editorialFocus=await ask.evaluate(el=>({active:document.activeElement===el,visible:el.matches(':focus-visible'),outline:getComputedStyle(el).outlineWidth}))
+  report.widths.at(-1).editorialFocus=editorialFocus
+  check(editorialFocus.visible&&editorialFocus.outline!=='0px','Editorial focus absent at '+width)
   if(width===390||width===1440)await shots(width,live?'live':'after')
  }
  if(!live){

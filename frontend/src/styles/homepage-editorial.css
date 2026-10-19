@@ -1,0 +1,248 @@
+/* Package 3, Group 1. These section variants preserve the approved published
+   composition at e9550069d91b5a9b48ade43fcfb0a71bbed2875b. Shared foundation,
+   reference action, header and footer rules remain independent.
+   Section-owned colours retain the exact published HSL values where they differ
+   from defaults for new public pages. They are not new global palette tokens. */
+/* The published homepage combines root scroll padding with each anchor margin.
+   Keep that context only while these migrated sections are mounted. The later
+   shared-shell migration can take ownership without changing the anchor offsets. */
+html:has(.sl-home-resources) {
+  scroll-padding-top: 100px;
+}
+
+.sl-home-resources,
+.sl-home-gifting {
+  -webkit-font-smoothing: antialiased;
+  scroll-margin-top: 116px;
+}
+
+.sl-home-resources svg,
+.sl-home-gifting svg {
+  flex-shrink: 0;
+  stroke-width: 1.6;
+}
+
+/* Resources retains its asymmetric editorial padding and specific phone gap. */
+.sl-home-resources.sl-reference-section[data-spacing="none"] {
+  --sl-resources-surface: hsl(40 23.077% 97.451%);
+  --sl-resources-muted-ink: hsl(130 7% 39%);
+  --sl-resources-image-bed: hsl(94 21% 90%);
+  padding: 97px 0 106px;
+  background: var(--sl-resources-surface);
+}
+
+.sl-home-resources .sl-editorial-heading .sl-heading em {
+  font-weight: 420;
+}
+
+.sl-home-resources .sl-editorial-heading p {
+  color: var(--sl-resources-muted-ink);
+  text-wrap: pretty;
+}
+
+.sl-home-resources .sl-resources-grid {
+  align-items: stretch;
+}
+
+.sl-home-resources .sl-resource-link {
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sl-home-resources .sl-action--planned { cursor: auto; }
+
+.sl-home-resources .sl-resource-image {
+  background: var(--sl-resources-image-bed);
+}
+
+.sl-home-resources .sl-resource-image img {
+  object-position: center center;
+}
+
+.sl-home-resources .sl-resource-copy {
+  flex: 1;
+  align-items: flex-start;
+}
+
+.sl-home-resources .sl-resource-copy h3 {
+  max-width: 100%;
+  letter-spacing: -.015em;
+  text-wrap: balance;
+}
+
+.sl-home-resources .sl-resource-copy p {
+  color: var(--sl-resources-muted-ink);
+}
+
+.sl-home-resources .sl-resource-copy .sl-action svg {
+  transition: transform 220ms ease;
+}
+
+.sl-home-resources .sl-resource-link:is(a):hover .sl-action svg {
+  transform: translateX(3px);
+}
+
+#resources-activity {
+  scroll-margin-top: 116px;
+}
+
+/* Gifting retains its forest panel, original antique gold and photographic veil. */
+.sl-home-gifting.sl-reference-section[data-spacing="none"] {
+  --sl-gifting-canvas: hsl(84 21% 93%);
+  --sl-gifting-sage: 94 21% 90%;
+  --sl-gifting-paper: 40 23.077% 97.451%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-block: 76px 84px;
+  background: linear-gradient(180deg, var(--sl-gifting-canvas) 0%, hsl(var(--sl-gifting-sage) / .68) 100%);
+  background-color: hsl(var(--sl-gifting-paper));
+}
+
+.sl-home-gifting::before {
+  content: '';
+  position: absolute;
+  width: 42vw;
+  aspect-ratio: 1;
+  right: -16vw;
+  top: -24vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(37.732 48.744% 60.98% / .16), transparent 70%);
+  pointer-events: none;
+}
+
+.sl-home-gifting > .sl-container {
+  position: relative;
+  z-index: 1;
+}
+
+.sl-home-gifting .sl-gift-panel {
+  display: grid;
+  grid-template-columns: .94fr 1.06fr;
+  overflow: hidden;
+  background: var(--sl-forest);
+  color: var(--sl-white);
+  border: 1px solid hsl(0 0% 100% / .07);
+  border-radius: 24px;
+  box-shadow: 0 38px 70px -48px hsl(123.75 17.778% 17.647% / .6);
+}
+
+.sl-home-gifting .sl-gift-copy {
+  padding: 60px 52px;
+}
+
+.sl-home-gifting .sl-gift-copy h2 {
+  max-width: 385px;
+}
+
+.sl-home-gifting .sl-gift-copy h2 em {
+  color: var(--sl-gold);
+  font-weight: 430;
+  font-style: italic;
+}
+
+.sl-home-gifting .sl-gift-copy > p {
+  max-width: 520px;
+  margin-top: 22px;
+  color: hsl(var(--sl-gifting-paper) / .85);
+  font-size: 16px;
+  line-height: 1.76;
+}
+
+.sl-home-gifting .sl-gift-copy .sl-action--gold {
+  gap: 20px;
+  min-height: 49px;
+  margin-top: 26px;
+  padding: 12px 24px;
+  border: 1px solid var(--sl-gold);
+  border-radius: var(--sl-radius-action);
+  background: var(--sl-gold);
+  color: var(--sl-forest);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+  transition: background .18s, border-color .18s, transform .18s, box-shadow .18s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sl-home-gifting .sl-gift-copy a.sl-action--gold:hover {
+  border-color: var(--sl-gold-action-hover);
+  background: var(--sl-gold-action-hover);
+  box-shadow: 0 4px 12px hsl(123.75 17.778% 17.647% / .08);
+}
+
+.sl-home-gifting .sl-gift-panel :focus-visible {
+  outline: 2px solid var(--sl-gold);
+  outline-offset: 4px;
+}
+
+.sl-home-gifting .sl-gift-image {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+.sl-home-gifting .sl-gift-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+  transition: transform 1.2s cubic-bezier(.22,.61,.36,1);
+}
+
+.sl-home-gifting .sl-gift-panel:hover .sl-gift-image img {
+  transform: scale(1.055);
+}
+
+.sl-home-gifting .sl-gift-image::after {
+  content: '';
+  position: absolute;
+  inset: 60% 0 0;
+  background: linear-gradient(transparent, hsl(123.75 17.778% 17.647% / .72));
+}
+
+@media (max-width: 1120px) {
+  .sl-home-gifting .sl-gift-copy { padding: 43px 35px; }
+}
+
+@media (max-width: 900px) {
+  .sl-home-resources .sl-resource-copy .sl-action { margin-top: 2px; }
+  .sl-home-gifting .sl-gift-panel { grid-template-columns: 1fr 1fr; }
+  .sl-home-gifting .sl-gift-copy { padding: 36px 30px; }
+  .sl-home-gifting .sl-gift-image { min-height: 460px; }
+}
+
+@media (max-width: 720px) {
+  html:has(.sl-home-resources) { scroll-padding-top: 80px; }
+  .sl-home-resources,
+  .sl-home-gifting { scroll-margin-top: 96px; }
+  .sl-home-resources.sl-reference-section[data-spacing="none"] { padding: 77px 0 84px; }
+  .sl-home-resources .sl-editorial-heading .sl-heading { line-height: 1.08; }
+  .sl-home-resources .sl-editorial-heading p { line-height: 1.65; }
+  .sl-home-resources .sl-resource-image { aspect-ratio: 1.76; }
+  .sl-home-resources .sl-resource-copy p { font-size: var(--sl-text-body); }
+  .sl-home-gifting.sl-reference-section[data-spacing="none"] { padding-block: 54px; }
+  .sl-home-gifting .sl-gift-panel { grid-template-columns: 1fr; border-radius: 18px; }
+  .sl-home-gifting .sl-gift-image { order: -1; height: 300px; min-height: 0; }
+  .sl-home-gifting .sl-gift-copy { padding: 36px; }
+  .sl-home-gifting .sl-gift-copy h2 { max-width: 460px; }
+  .sl-home-gifting .sl-gift-copy > p { font-size: var(--sl-text-body); }
+}
+
+@media (max-width: 480px) {
+  .sl-home-resources .sl-editorial-heading { margin-bottom: 26px; }
+  .sl-home-resources .sl-resource-image { aspect-ratio: 1.72; }
+  .sl-home-gifting .sl-gift-image { height: 250px; }
+  .sl-home-gifting .sl-gift-copy { padding: 32px 27px 36px; }
+  .sl-home-gifting .sl-gift-copy .sl-action--gold { margin-top: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-home-resources .sl-resource-copy .sl-action svg { transition: none; }
+  .sl-home-gifting *,
+  .sl-home-gifting::before,
+  .sl-home-gifting::after { transition-duration: .01ms !important; }
+}

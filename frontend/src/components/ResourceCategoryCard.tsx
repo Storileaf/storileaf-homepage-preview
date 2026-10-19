@@ -1,6 +1,7 @@
 import { ResponsiveImage } from './ResponsiveImage'
 
 type Props = {
+  id?: string
   title: string
   description: string
   image: string
@@ -20,7 +21,7 @@ function Arrow() {
  * Planned pages retain the visual treatment without invented or inert links.
  * A clickable card never contains a second link or button.
  */
-export function ResourceCategoryCard({ title, description, image, alt, imageWidth, imageHeight, action, href }: Props) {
+export function ResourceCategoryCard({ id, title, description, image, alt, imageWidth, imageHeight, action, href }: Props) {
   const content = <>
     <div className="sl-resource-image">
       <ResponsiveImage
@@ -28,7 +29,7 @@ export function ResourceCategoryCard({ title, description, image, alt, imageWidt
         alt={alt}
         width={imageWidth}
         height={imageHeight}
-        sizes="(max-width: 900px) calc(100vw - 40px), (max-width: 1280px) 46vw, 577px"
+        sizes="(max-width: 480px) calc(100vw - 42px), (max-width: 900px) calc(100vw - 66px), (max-width: 1249px) calc((100vw - 96px - 2.4vw) / 2 - 2px), (max-width: 1280px) calc((100vw - 126px) / 2 - 2px), 575px"
       />
     </div>
     <div className="sl-resource-copy">
@@ -38,7 +39,7 @@ export function ResourceCategoryCard({ title, description, image, alt, imageWidt
     </div>
   </>
 
-  return <article className="sl-resource-card">
+  return <article id={id} className="sl-resource-card">
     {href
       ? <a className="sl-resource-link" href={href}>{content}</a>
       : <div className="sl-resource-link">{content}</div>}

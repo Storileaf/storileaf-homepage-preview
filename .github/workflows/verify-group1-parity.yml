@@ -1,0 +1,92 @@
+name: Verify React homepage Group 1 parity
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - 'scripts/**'
+      - '.github/workflows/verify-group1-parity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate approved source and protect the published homepage
+        id: source_build
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Install isolated browser testing library
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Serve exact static files and the isolated React build
+        run: |
+          mkdir -p "$RUNNER_TEMP/storileaf-group1/storileaf-homepage-preview"
+          cp -a index.html 404.html assets covers gallery pricing "$RUNNER_TEMP/storileaf-group1/storileaf-homepage-preview/"
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/storileaf-group1" > "$RUNNER_TEMP/storileaf-group1-static.log" 2>&1 &
+          python3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > "$RUNNER_TEMP/storileaf-group1-source.log" 2>&1 &
+          sleep 2
+      - name: Check source navigation, action shapes and focus
+        working-directory: frontend
+        run: |
+          node scripts/verify-source-ui.mjs
+          node scripts/verify-shape-foundation.mjs
+          node scripts/verify-focus-captures.mjs
+      - name: Retain the complete static homepage regression
+        run: node scripts/verify-homepage-ui.mjs
+      - name: Retain the permanent Package 1 live control checks
+        run: node scripts/package1-published/live.mjs
+      - name: Retain Package 2 typography, FAQ and pricing comparison
+        run: node scripts/package2/verify.mjs
+      - name: Retain editorial action and footer typography comparisons
+        run: |
+          node scripts/editorial-links/verify.mjs
+          node scripts/footer-type/verify.mjs
+      - name: Compare Group 1 against the current static homepage
+        if: ${{ !cancelled() && steps.source_build.outcome == 'success' }}
+        working-directory: frontend
+        run: node scripts/verify-group1-parity.mjs
+      - name: Confirm the published baseline is still unchanged
+        if: always()
+        working-directory: frontend
+        run: npm run guard:published
+      - name: Attach Group 1 section comparisons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-group1-parity
+          path: frontend/qa/group1/
+          if-no-files-found: warn
+      - name: Attach retained regression evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-group1-regressions
+          path: |
+            frontend/qa/source-screenshots/
+            frontend/qa/source-reference-qa.json
+            frontend/qa/shape-foundation/
+            qa/screenshots/
+            qa/homepage-qa-report.json
+            qa/package1-live/
+            qa/package2/
+            qa/editorial-links/
+            qa/footer-type/
+          if-no-files-found: warn
+      - name: Attach isolated React preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-group1-source-preview
+          path: frontend/dist/
+          if-no-files-found: error

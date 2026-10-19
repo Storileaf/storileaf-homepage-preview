@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "updated": "2026-10-18",
+  "version": 3,
+  "updated": "2026-10-19",
   "records": [
     {
       "id": "home.resources.title",
@@ -9,7 +9,8 @@
       "source": "Homepage master brief, founder Resources decision 18 October 2026",
       "public": true,
       "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
-      "approved_on": "2026-10-18"
+      "approved_on": "2026-10-18",
+      "emphasis": "can go a long way."
     },
     {
       "id": "home.resources.intro",
@@ -443,6 +444,47 @@
       "public": true,
       "approval_reference": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/HOMEPAGE_MASTER_IMPLEMENTATION_BRIEF.md",
       "approved_on": "2026-10-18"
+    },
+    {
+      "id": "home.gifting.title",
+      "copy": "Give someone the chance to make their book.",
+      "emphasis": "their book.",
+      "status": "founder_approved",
+      "public": true,
+      "source": "Exact Gifting wording retained from the approved published homepage identified in the founder handoff of 19 October 2026.",
+      "approval_kind": "inherited_published_homepage",
+      "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html",
+      "migration_recorded_on": "2026-10-19",
+      "approval_note": "Existing words are carried forward unchanged under the founder handoff and Package 3 Group 1 migration approval. The original copy approval date is not separately asserted; this record does not create a new wording approval event."
+    },
+    {
+      "id": "home.gifting.description",
+      "copy": "You choose the book and package. They accept the invitation, tell their story in their own words and review the draft before printing.",
+      "status": "founder_approved",
+      "public": true,
+      "source": "Exact Gifting wording retained from the approved published homepage identified in the founder handoff of 19 October 2026.",
+      "approval_kind": "inherited_published_homepage",
+      "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html",
+      "migration_recorded_on": "2026-10-19",
+      "approval_note": "Existing words are carried forward unchanged under the founder handoff and Package 3 Group 1 migration approval. The original copy approval date is not separately asserted; this record does not create a new wording approval event."
+    },
+    {
+      "id": "home.gifting.cta",
+      "copy": "Explore gifting",
+      "status": "founder_approved",
+      "public": true,
+      "source": "Exact Gifting wording retained from the approved published homepage identified in the founder handoff of 19 October 2026.",
+      "approval_kind": "inherited_published_homepage",
+      "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html",
+      "migration_recorded_on": "2026-10-19",
+      "approval_note": "Existing words are carried forward unchanged under the founder handoff and Package 3 Group 1 migration approval. The original copy approval date is not separately asserted; this record does not create a new wording approval event.",
+      "destination_state": "existing_verified",
+      "href": "https://storileaf.com/gift/",
+      "destination_verified_on": "2026-10-18",
+      "destination_verification_reference": "Preserved existing destination also recorded as shared.footer.gift on 18 October 2026."
     }
   ]
 }

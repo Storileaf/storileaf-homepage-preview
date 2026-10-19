@@ -2,9 +2,11 @@
 
 ## Current milestone
 
-The founder accepted the published Package 1 result and requested completion of Package 2 typography and spacing foundations. Package 2 adds reusable Newsreader heading roles, Manrope text roles, responsive containers, section spacing and text gaps. The bounded visible refinement is FAQ questions at 15px with 1.5 leading and standalone editorial actions, including FAQ answer links, at 15px. Answers remain 15px. The founder approved the final footer correction of 15px column headings with 1.4 leading and 13px currency text at all widths. Package 2 implementation is complete for final rendered review. No Package 3 work or full React cutover is authorised.
+19 October 2026. Packages 1 and 2 are implemented in the isolated React source and the existing published homepage. The founder responded positively to the final Package 2 release and authorised Package 3 Group 1, covering Resources and Gifting in the editable source, their parity checks and supporting documentation. Both sections are implemented. Source validation, all 16 tests, the isolated build, retained browser regressions and full ten-width comparison pass locally. Final GitHub commit, CI and artifact references remain pending. See the [Group 1 review](docs/PACKAGE_3_GROUP_1_REVIEW.md) for precise results and limitations.
 
-The existing static homepage receives these refinements for review. Its layout, wording, photographs, section order, destinations, animations and other interactions remain the reference. Larger FAQ text can naturally wrap onto an additional line on phones; the final invitation and newsletter move down accordingly. This is not a redesign or a complete React cutover.
+Retain the completed Newsreader and Manrope roles, responsive containers and spacing, 15px FAQ questions with 1.5 leading, 15px standalone editorial actions, 15px footer column headings with 1.4 leading and 13px currency text at all widths. Answers remain 15px. The current source migration does not reopen Packages 1 or 2 or create a separate retrospective approval record.
+
+The existing static homepage remains the visual reference, including its completed foundation refinements. Preserve its exact wording, imagery, crops, proportions, layout, section order, destinations, animations and interactions. Group 1 leaves the published homepage and separate pricing preview unchanged. Later migration groups and a full React cutover require further founder approval.
 
 Earlier section approvals and exact copy decisions remain in [earlier handoff records](REPOSITORY_HANDOFF_HISTORY_29283c2.md) and Git history. Current status here supersedes older statements that Package 1 is unapproved or Package 2 has not begun.
 
@@ -12,7 +14,7 @@ Earlier section approvals and exact copy decisions remain in [earlier handoff re
 
 Public Storileaf/storileaf-homepage-preview main is the active frontend workspace. GitHub Pages serves the root static HTML, CSS and JavaScript. The isolated frontend directory contains an incomplete React, TypeScript and Vite source foundation building into frontend/dist. Do not publish the incomplete source over the homepage.
 
-The [Public Design System](docs/PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. Read [workflow](docs/WORKFLOW.md), [content gate](docs/CONTENT_GATE.md), [component inventory](docs/COMPONENT_INVENTORY.md), [Package 1 record](docs/PACKAGE_1_REVIEW.md) and [Package 2 record](docs/PACKAGE_2_REVIEW.md).
+The [Public Design System](docs/PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. Read [workflow](docs/WORKFLOW.md), [content gate](docs/CONTENT_GATE.md), [component inventory](docs/COMPONENT_INVENTORY.md), [Package 1 record](docs/PACKAGE_1_REVIEW.md), [Package 2 record](docs/PACKAGE_2_REVIEW.md) and the current [Group 1 review](docs/PACKAGE_3_GROUP_1_REVIEW.md).
 
 Private Storileaf/storiYoceFj6IRAleaf main remains authoritative for actual product capabilities, packages, pricing, commercial terms and customer behaviour. Approved website copy and plans are on design/storileaf-website-ux. These repositories do not synchronise automatically. Do not modify private production, authentication, payments, databases, customer data or backend systems.
 
@@ -28,11 +30,17 @@ The protected-root guard is deliberately repinned for the authorised static rele
 
 ## Remaining work
 
-Package 2 visual acceptance, complete React homepage reconstruction, exact nine-width parity, wider cross-browser/physical-device accessibility and full native zoom review remain separate. No new public page or asynchronous newsletter behaviour is introduced.
+Attach final GitHub source commit and CI evidence for the completed local Resources and Gifting verification before proposing the next migration group. The source reuses existing primitives and records section exceptions in the sole design system. Its composition keeps Gifting before Resources, with the existing source header and footer still treated as references awaiting their own parity work.
+
+Full React homepage reconstruction, complete nine-width visual and functional parity, broader browser and physical device checks, and full native zoom review remain pending. Group 1 evidence concerns its two sections only. The source build remains unpublished, and no new public page or asynchronous newsletter behaviour is introduced.
 
 Preserve the approved physical book presentation, circular process markers, equal photographic Resources cards, centred Browse all resources, and combined photographic newsletter/footer. Try answering a question still opens the existing unsaved practice dialog. Its future standalone page remains deferred.
 
 Genuine gallery/craft photography, final hero motion and reassurance-band decisions, Books/Resources/Activities pages, newsletter wiring and wider public pages remain deferred. Private account, Storyteller, contributor and admin interfaces need a separate compact system later.
+
+Incorrect static current-page semantics on homepage section links remain pending navigation migration work. The separate pricing preview retains a previously reproduced hydration warning. Group 1 must preserve that preview and must not claim the warning has been resolved without specific evidence.
+
+The targeted 200 percent section text experiment at 320×568px found Gifting heading, paragraph and button text clipped at the panel's right edge in both the published and React versions. Resources reflows. Keep this inherited Package 4 finding visible in the records. Matching document overflow and clipping do not constitute an enlargement quality pass. A visible correction needs a scoped proposal and founder approval.
 
 ## Working rules
 

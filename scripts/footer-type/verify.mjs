@@ -52,6 +52,7 @@ async function capture(p,a,width,stage,source=false){
 async function exercise(p,source=false){
  const q=selectors(source),select=p.locator(q.currency),initial=await select.inputValue()
  await p.keyboard.press('Tab');await select.focus()
+ await p.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))
  check(await select.evaluate(el=>el.matches(':focus-visible')&&getComputedStyle(el).outlineWidth!=='0px'),(source?'Source':'Static')+' currency keyboard focus absent')
  const opts=await select.locator('option').evaluateAll(items=>items.map(o=>o.value))
  for(const value of opts){await select.selectOption(value);await p.waitForTimeout(120);check(await select.inputValue()===value,'Currency selection failed '+value);assertResult(await read(p,source),'Selected '+value)}

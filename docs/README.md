@@ -1,6 +1,6 @@
 # StoriLeaf public website foundations
 
-Status 18 October 2026. These documents govern the NEW public website, not the existing account, Storyteller, contributor or admin applications.
+Updated 19 October 2026. These documents govern the NEW public website, not the existing account, Storyteller, contributor or admin applications.
 
 Read the active [public design system](PUBLIC_DESIGN_SYSTEM.md), [content gate](CONTENT_GATE.md), [frontend workflow](WORKFLOW.md), [performance foundations](PERFORMANCE.md) and [decision register](DECISIONS.md) before starting pages.
 
@@ -22,3 +22,5 @@ Do not treat successful CI, a proposal, an approved design, a working preview an
 - [Reusable public page design and release template](PAGE_SPEC_TEMPLATE.md) records source-backed copy, visual decisions, responsive behaviour and implementation proof before publishing more pages.
 
 Package 2 typography and spacing evidence is recorded in [Package 2 review](PACKAGE_2_REVIEW.md). PUBLIC_DESIGN_SYSTEM.md remains the sole public style authority.
+
+Package 3 Group 1 has implemented Resources and Gifting in isolated source. Its completed local source, regression and ten-width parity checks, pending final GitHub evidence and inherited text enlargement finding are in [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md). Later groups and a complete React publishing cutover require further approval.

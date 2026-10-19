@@ -1,6 +1,6 @@
 # Frontend source, design and release workflow
 
-Status 18 October 2026 founder session. This replaces Macaly-dependent public UI work.
+Updated 19 October 2026 for the first authorised Package 3 migration group. This replaces Macaly-dependent public UI work.
 
 ## Two current states
 
@@ -17,6 +17,18 @@ The founder asked to see styling packages on the existing published homepage bef
 For each package, state whether it is source-only, a bounded published correction or a replacement page. Obtain approval of exact scope. A small authorised correction may edit the relevant existing static CSS rule in place, without appending more override layers, reconstructing unrelated sections or deploying frontend/dist. Preserve approved content, images, destinations and interactions.
 
 Compare original and changed rendering before release. Update the protected baseline deliberately to the verified correction commit, never disable protection. Keep source tokens and public design documentation aligned. Verify Pages deployment and the actual live browser result, then request founder visual review. Implementation approval and final visual acceptance are distinct.
+
+## Package 3 migration groups
+
+The founder has authorised Group 1 only, covering Resources and Gifting in the isolated React source, their checks and supporting documentation. Packages 1 and 2 remain complete. The positive response to the final Package 2 release is continuity for the current work, not a new formal approval record or permission to publish incomplete React.
+
+Each group starts from the current published implementation and has a bounded source scope. Keep the root HTML, compiled assets, imagery and pricing preview protected throughout. Group 1 does not update the protected release or copy `frontend/dist` into the repository root. Use the existing unpublished source entry for review; it is not a replacement homepage or a new public page.
+
+Before proceeding to another group, run the source and existing regression gates, compare actual baseline and source section screenshots at all nine required widths, exercise the group's relevant states, and inspect the captures. Record exact copy, image sources and crops, destinations, typography, spacing, behaviour and document overflow. Compare Resources hover and focus with the baseline and retain noninteractive labels for its unbuilt destinations. Preserve Gifting's action and image treatment.
+
+Record measured results and remaining limitations in [the Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md). A passing section gate establishes evidence for that scope only. Header/footer acceptance, the remaining homepage sections, complete Package 4 quality gates and explicit founder approval still precede a React publishing cutover. Obtain approval for the next migration group before editing it.
+
+Keep inherited quality limitations separate from successful parity. Group 1 found matching Gifting text clipping at 320px during targeted 200 percent section text enlargement, while Resources reflowed. No document overflow does not mean text remains readable within a clipped panel. Record this finding for Package 4 and obtain approval for a visible correction rather than silently redesigning the migrated section. Use the review record for the clean crop alignment method, context screenshots and precise browser limits.
 
 ## Ordered workflow
 
@@ -41,9 +53,11 @@ The read-only review-published-package1 workflow retains live action, focus and 
 
 ## Cutover criteria
 
-The future Homepage must reproduce the actual published homepage, including copy, images, dropdowns, navigation, tabs, gallery/lightbox, sticky four-stage sequence, writing modal until its separately approved page, newsletter/footer and responsive states. Require deterministic static rendering or a reviewed strategy without hydration mismatch.
+The future Homepage must reproduce the actual published homepage, including the completed Package 1 and Package 2 refinements, copy, images, dropdowns, navigation, tabs, gallery/lightbox, sticky four-stage sequence, writing modal until its separately approved page, newsletter/footer and responsive states. Require deterministic static rendering or a reviewed strategy without hydration mismatch.
 
 Require screenshots at 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440px against the protected baseline. Compare fonts, colours, position and content, and test relevant expanded, hover, focus, keyboard, touch, reduced-motion, zoom and short-height states. Verify pricing/currency navigation and accessible labels. Only founder acceptance authorises the complete React cutover. Experimental dist is never automatically deployed.
+
+The separate pricing preview has a previously reproduced hydration warning. Preserve its routes, appearance and currency behaviour during migration. Investigate that warning when the relevant routing or shared components are migrated, and report its observed state accurately. Same-page homepage links must receive appropriate navigation semantics during their separately scoped migration.
 
 ## Maintainability and status
 

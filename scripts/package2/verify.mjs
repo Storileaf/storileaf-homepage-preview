@@ -98,6 +98,7 @@ try {
     const summary=page.locator('.faq-item summary').first()
     await page.keyboard.press('Tab');await summary.focus();await page.keyboard.press('Enter')
     check(await summary.evaluate(el=>el.parentElement.open),'Keyboard Enter failed at '+width)
+    await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))))
     check(await summary.evaluate(el=>el.matches(':focus-visible')&&getComputedStyle(el).outlineWidth!=='0px'),'FAQ focus absent at '+width)
     await page.keyboard.press('Space');check(!(await summary.evaluate(el=>el.parentElement.open)),'Keyboard Space failed at '+width)
     report.widths.push({width,largestUnrelatedDelta,faq,answer,link})

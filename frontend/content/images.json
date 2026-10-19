@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "updated": "2026-10-18",
-  "note": "Existing official public StoriLeaf imagery used in the isolated component exercise. Recheck rights and final asset approval before production.",
+  "version": 2,
+  "updated": "2026-10-19",
+  "note": "Exact existing public homepage imagery retained during React migration. Original asset rights and final production approval remain subject to the existing production check.",
   "assets": [
     {
       "id": "home.resources.activities.photo",
@@ -11,17 +11,31 @@
       "alt": "An adult daughter and her father sharing memories over family photographs",
       "role": "informative",
       "origin": "official_public_site",
-      "rights_review": "pending_final_production_check"
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html"
     },
     {
       "id": "home.resources.guides.photo",
       "src": "https://storileaf.com/images/brand/collections/relationship-memoir/storileaf-relationship-memoir-hands-photographs-cafe-square-800.webp",
       "width": 800,
       "height": 800,
-      "alt": "Photographs on a café table beside two people's hands",
+      "alt": "Photographs on a cafe table beside two people's hands",
       "role": "informative",
       "origin": "official_public_site",
-      "rights_review": "pending_final_production_check"
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html"
+    },
+    {
+      "id": "home.gifting.photo",
+      "src": "https://storileaf.com/images/brand/gifting/storileaf-story-book-gift-handover-wide-1200.webp",
+      "width": 1200,
+      "height": 800,
+      "alt": "An adult son sharing a printed story book with his father",
+      "object_position": "52% 50%",
+      "role": "informative",
+      "origin": "official_public_site",
+      "rights_review": "pending_final_production_check",
+      "published_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/index.html"
     }
   ]
 }

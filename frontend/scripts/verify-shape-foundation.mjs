@@ -60,10 +60,13 @@ const measure = (page, selectors) => page.evaluate(list => Object.fromEntries(li
 })), selectors)
 const geometry = page => page.evaluate(() => [...document.querySelectorAll('body *:not(script):not(style)')].map(el => {
   const r = el.getBoundingClientRect(), s = getComputedStyle(el)
-  return [el.tagName, [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
+  return [el.tagName, el.getAttribute('class'), [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
 }))
 const focusMeasure = locator => locator.evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, parentRadius: getComputedStyle(el.parentElement).borderTopLeftRadius, visible: el.matches(':focus-visible'), outline: getComputedStyle(el).outlineWidth, offset: getComputedStyle(el).outlineOffset }))
 const clearSelection = page => page.evaluate(() => window.getSelection()?.removeAllRanges())
+// Responsive viewport units and media queries can settle on the next frame.
+// Measure both styles only after layout has caught up with the requested width.
+const settleLayout = page => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
 const shot = async (page, name) => {
   // A pointer-held test can select text when released outside a control.
   // Clear only transient selection, preserving focus and all page styling.
@@ -163,6 +166,7 @@ try {
     const targets = kind === 'source' ? sourceSelectors : ['.site-header', '.header-find-book', '.hero .button', '.newsletter-inline-preview input']
     for (const width of widths) {
       await page.setViewportSize({ width, height: 900 })
+      await settleLayout(page)
       await page.mouse.move(0, 0); await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0) })
       const measured = await measure(page, targets)
       const row = { width, controls: measured }
@@ -172,9 +176,12 @@ try {
         if (width > 360) check(measured['.sl-header-primary']?.height === (width <= 480 ? 45 : 46), 'Source header height changed at ' + width)
         const afterGeometry = await geometry(page)
         const priorStyle = await page.addStyleTag({ content: originalTokens + '\n' + original })
+        await settleLayout(page)
         const before = await measure(page, targets)
         row.before = before
-        row.geometryUnchanged = JSON.stringify(await geometry(page)) === JSON.stringify(afterGeometry)
+        const beforeGeometry = await geometry(page)
+        row.geometryChanges = beforeGeometry.flatMap((before, index) => JSON.stringify(before) === JSON.stringify(afterGeometry[index]) ? [] : [{ index, before, after: afterGeometry[index] }])
+        row.geometryUnchanged = beforeGeometry.length === afterGeometry.length && row.geometryChanges.length === 0
         check(row.geometryUnchanged, 'Normal page geometry or typography changed at ' + width)
         for (const selector of targets) {
           const b = { ...before[selector] }, a = { ...measured[selector] }

@@ -1,5 +1,7 @@
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, resolve } from 'node:path'
+import { execFileSync } from 'node:child_process'
+import { inheritedHomepageBaseline, inheritedHomepageProblems } from './inherited-content.mjs'
 
 const root=resolve(import.meta.dirname, '..')
 const records=JSON.parse(readFileSync(join(root,'content/ledger.json'),'utf8')).records
@@ -8,6 +10,15 @@ const index=new Map()
 const problems=[]
 const allowedStatuses=new Set(['proposed','founder_approved','implemented_verified','existing_verified','superseded'])
 const allowedDestinations=new Set(['existing_verified','unbuilt'])
+let inheritedHomepageHtml
+
+if(records.some(record=>record.approval_kind==='inherited_published_homepage')){
+  try{
+    inheritedHomepageHtml=execFileSync('git',['show',inheritedHomepageBaseline+':index.html'],{cwd:resolve(root,'..'),encoding:'utf8'})
+  }catch(error){
+    problems.push('Cannot read the immutable inherited homepage ('+String(error.code??'git failure')+'); ensure complete history and Git read access')
+  }
+}
 
 for(const record of records){
   if(!record.id || !/^[a-z][a-z0-9_.-]+$/.test(record.id) || ids.has(record.id)){
@@ -20,7 +31,9 @@ for(const record of records){
   if(record.public && record.status !== 'founder_approved'){
     problems.push('Unapproved copy marked public '+record.id)
   }
-  if(record.public && (!record.approved_on || !record.approval_reference?.startsWith('https://github.com/Storileaf/'))){
+  if(record.approval_kind==='inherited_published_homepage'){
+    problems.push(...inheritedHomepageProblems(record,inheritedHomepageHtml??''))
+  }else if(record.public && (!record.approved_on || !record.approval_reference?.startsWith('https://github.com/Storileaf/'))){
     problems.push('Founder approval evidence missing for public copy '+record.id)
   }
   if(record.destination_state==='existing_verified' && !record.destination_verified_on){
