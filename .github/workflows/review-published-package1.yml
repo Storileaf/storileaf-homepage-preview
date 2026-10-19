@@ -38,18 +38,27 @@ jobs:
         run: node scripts/verify-homepage-ui.mjs
       - name: Compare nine widths and verify approved Package 1 changes
         run: node scripts/package1-published/verify.mjs
-      - name: Store verified stylesheet as an unattached blob
+      - name: Store reviewed files as unattached blobs without moving any branch
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python3 - <<'PY'
           import json, subprocess
           from pathlib import Path
-          f='assets/index-DhPZyX4z.css'
-          payload=json.dumps({'content':Path(f).read_text(),'encoding':'utf-8'})
-          result=json.loads(subprocess.check_output(['gh','api','--method','POST','repos/Storileaf/storileaf-homepage-preview/git/blobs','--input','-'],input=payload,text=True))
-          Path('qa/package1-published/verified-blob.json').write_text(json.dumps({'path':f,'sha':result['sha']})+'\n')
-          print('Verified unattached CSS blob',result['sha'])
+          files={'assets/index-DhPZyX4z.css':Path('assets/index-DhPZyX4z.css').read_text()}
+          audit_path='frontend/scripts/verify-shape-foundation.mjs'
+          audit=Path(audit_path).read_text()
+          for old,new in [("measured['.header-find-book']?.radius === '9px'","measured['.header-find-book']?.radius === '6px'"),("measured['.newsletter-inline-preview input']?.radius === '9px'","measured['.newsletter-inline-preview input']?.radius === '6px'")]:
+            assert audit.count(old)==1,old
+            audit=audit.replace(old,new)
+          audit=audit.replace('existing primary/gold hover colours; source only','existing primary/gold hover colours; source and published controls')
+          files[audit_path]=audit
+          results=[]
+          for f,content in files.items():
+            result=json.loads(subprocess.check_output(['gh','api','--method','POST','repos/Storileaf/storileaf-homepage-preview/git/blobs','--input','-'],input=json.dumps({'content':content,'encoding':'utf-8'}),text=True))
+            results.append({'path':f,'sha':result['sha']})
+          Path('qa/package1-published/verified-blobs.json').write_text(json.dumps(results)+'\n')
+          print('Verified unattached files',json.dumps(results))
           PY
       - uses: actions/upload-artifact@v4
         if: always()

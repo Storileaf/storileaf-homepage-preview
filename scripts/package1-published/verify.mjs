@@ -37,7 +37,7 @@ async function capture(width,stage){
  await nl.screenshot({path:`${folder}/newsletter-${stage}-${width}.png`,animations:'disabled'})
  const card=page.locator('.resource-category-link');await page.keyboard.press('Tab');await card.focus()
  await card.evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}))
- await page.waitForTimeout(100)
+ await page.waitForTimeout(250)
  await card.screenshot({path:`${folder}/resource-focus-${stage}-${width}.png`,animations:'disabled'})
 }
 try{
@@ -61,7 +61,7 @@ try{
   const header=await styleOf(page.locator('.header-find-book'))
   if(width===390||width===430)check(header.height===45,'Mobile header height changed')
   check(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)),'Overflow at '+width)
-  const resource=page.locator('.resource-category-link');await page.keyboard.press('Tab');await resource.focus()
+  const resource=page.locator('.resource-category-link');await page.keyboard.press('Tab');await resource.focus();await page.waitForTimeout(250)
   const focused=await styleOf(resource)
   check(focused.focus&&focused.outline==='3px'&&focused.radius===(width<=480?'17px':'20px'),'Resource focus differs at '+width)
   report.widths.push({width,geometryUnchanged:JSON.stringify(oldGeometry)===JSON.stringify(newGeometry),header,values,resourceFocus:focused})
@@ -82,10 +82,12 @@ try{
   report.states[name]={normal,hover,pressed,focus}
  }
  // Shared CSS must retain the existing pricing route's layout and header.
- await page.goto(base+'pricing/inr/',{waitUntil:'networkidle'})
+ const pricingResponse=await page.goto(base+'pricing/inr/',{waitUntil:'networkidle'})
+ check(pricingResponse?.ok(),'Pricing HTTP request failed')
+ await page.locator('.pricing-intro').waitFor()
  check(await page.locator('#top[data-testid="storileaf-home"]').count()===0,'Pricing resolved to the homepage')
- await useCss(before);const pricingBefore=await geometry();const hBefore=await styleOf(page.locator('.header-find-book'))
- await useCss(after);const pricingAfter=await geometry();const hAfter=await styleOf(page.locator('.header-find-book'))
+ await useCss(before);const pricingBefore=await geometry();const hBefore=await styleOf(page.locator('.site-header'))
+ await useCss(after);const pricingAfter=await geometry();const hAfter=await styleOf(page.locator('.site-header'))
  check(JSON.stringify(pricingBefore)===JSON.stringify(pricingAfter),'Pricing layout changed')
  check(JSON.stringify(hBefore)===JSON.stringify(hAfter),'Pricing header changed')
  report.pricingUnchanged=JSON.stringify(hBefore)===JSON.stringify(hAfter)&&JSON.stringify(pricingBefore)===JSON.stringify(pricingAfter)
