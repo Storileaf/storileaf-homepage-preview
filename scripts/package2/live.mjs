@@ -8,7 +8,7 @@ const cssPath='assets/index-DhPZyX4z.css'
 const folder='qa/package2-live'
 const hash=s=>createHash('sha256').update(s).digest('hex')
 const expected=hash(await fs.readFile(cssPath,'utf8'))
-const report={url:base,commit:process.env.GITHUB_SHA,expectedCssSha256:expected,widths:[],crops:{},problems:[]}
+const report={url:base,commit:process.env.GITHUB_SHA,expectedCssSha256:expected,widths:[],crops:{},fontRequests:[],problems:[]}
 const check=(ok,message)=>{if(!ok)report.problems.push(message)}
 await fs.mkdir(folder,{recursive:true})
 let browser
@@ -20,13 +20,23 @@ try {
   }
   if(!found)throw new Error('The expected Package 2 stylesheet is not deployed')
   browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox']})
-  const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce',extraHTTPHeaders:{'Cache-Control':'no-cache'}})
+  // A fresh browser has no stale cache. Do not add custom headers to cross-origin fonts.
+  const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'})
   page.on('pageerror',e=>report.problems.push(e.message))
+  page.on('requestfailed',r=>{if(/fonts\.(googleapis|gstatic)\.com/.test(r.url()))report.fontRequests.push({url:r.url(),failure:r.failure()?.errorText})})
+  page.on('response',r=>{if(/fonts\.(googleapis|gstatic)\.com/.test(r.url()))report.fontRequests.push({url:r.url(),status:r.status()})})
   const cssResponse=page.waitForResponse(r=>r.url().includes('/'+cssPath))
   check((await page.goto(base,{waitUntil:'networkidle'}))?.ok(),'Live homepage HTTP request failed')
   report.actualCssSha256=hash(await(await cssResponse).text())
   check(report.actualCssSha256===expected,'Browser loaded an older stylesheet')
-  await page.evaluate(()=>document.fonts.ready)
+  await page.evaluate(async()=>{
+    await document.fonts.ready
+    await Promise.all([document.fonts.load('600 15px Manrope'),document.fonts.load('450 64px Newsreader'),document.fonts.load('italic 400 64px Newsreader')])
+    await document.fonts.ready
+  })
+  report.fontFaces=await page.evaluate(()=>[...document.fonts].filter(f=>f.status==='loaded').map(f=>({family:f.family,weight:f.weight,style:f.style,status:f.status})))
+  for(const name of ['Manrope','Newsreader'])check(report.fontFaces.some(f=>f.family.includes(name)),'Brand font was not downloaded: '+name)
+  if(report.problems.length)throw new Error('Live font or stylesheet verification failed before screenshots')
   const height=await page.evaluate(()=>document.documentElement.scrollHeight)
   for(let y=0;y<height;y+=700){await page.evaluate(y=>scrollTo(0,y),y);await page.waitForTimeout(70)}
   await page.waitForTimeout(500)
@@ -70,5 +80,5 @@ try {
 } catch(error){report.problems.push(String(error))}
 finally{if(browser)await browser.close()}
 await fs.writeFile(folder+'/report.json',JSON.stringify(report,null,2)+'\n')
-console.log(JSON.stringify({widths:report.widths.map(x=>x.width),actualCssSha256:report.actualCssSha256,problems:report.problems}))
+console.log(JSON.stringify({widths:report.widths.map(x=>x.width),actualCssSha256:report.actualCssSha256,fontFaces:report.fontFaces,problems:report.problems}))
 if(report.problems.length)process.exitCode=1
