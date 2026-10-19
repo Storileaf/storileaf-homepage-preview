@@ -6,7 +6,7 @@ on:
       - 'scripts/package1-published/**'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   review:
     if: github.repository == 'Storileaf/storileaf-homepage-preview' && github.ref == 'refs/heads/main'
@@ -17,22 +17,46 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Export exact review inputs
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare only the approved stylesheet substitutions
         run: |
-          mkdir -p /tmp/package1-inputs
-          git archive HEAD assets/index-DhPZyX4z.css index.html 404.html frontend scripts docs REPOSITORY_HANDOFF.md .github > /tmp/package1-inputs/public-inputs.tar
-          git rev-parse HEAD > /tmp/package1-inputs/commit.txt
+          node scripts/package1-published/prepare.mjs
+          git diff -- assets/index-DhPZyX4z.css > qa/package1-published/changes.diff
+      - name: Install isolated browser test dependency
+        run: |
+          npm init -y >/dev/null
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Serve the candidate static homepage
+        run: |
+          mkdir -p /tmp/storileaf-qa/storileaf-homepage-preview
+          cp -a index.html 404.html assets covers gallery pricing /tmp/storileaf-qa/storileaf-homepage-preview/
+          python3 -m http.server 4173 --directory /tmp/storileaf-qa > /tmp/storileaf-qa.log 2>&1 &
+          sleep 2
+      - name: Run existing homepage interaction regression
+        run: node scripts/verify-homepage-ui.mjs
+      - name: Compare nine widths and verify approved Package 1 changes
+        run: node scripts/package1-published/verify.mjs
+      - name: Store verified stylesheet as an unattached blob
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
           python3 - <<'PY'
-          import re
+          import json, subprocess
           from pathlib import Path
-          css=Path('assets/index-DhPZyX4z.css').read_text()
-          for m in re.finditer(r'([^{}]+)\{([^{}]*)\}',css):
-            selector=m[1].strip()
-            if re.search(r'(^|[\s,])\.button(?=[\s.,:#\[]|$)|button-outline|button-gold',selector):
-              print('LINE',css[:m.start()].count('\n')+1,selector+' {'+m[2]+'}')
+          f='assets/index-DhPZyX4z.css'
+          payload=json.dumps({'content':Path(f).read_text(),'encoding':'utf-8'})
+          result=json.loads(subprocess.check_output(['gh','api','--method','POST','repos/Storileaf/storileaf-homepage-preview/git/blobs','--input','-'],input=payload,text=True))
+          Path('qa/package1-published/verified-blob.json').write_text(json.dumps({'path':f,'sha':result['sha']})+'\n')
+          print('Verified unattached CSS blob',result['sha'])
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: published-package1-inputs
-          path: /tmp/package1-inputs/
+          name: published-package1-review
+          path: |
+            qa/package1-published/
+            qa/homepage-qa-report.json
+            qa/screenshots/
           if-no-files-found: error
