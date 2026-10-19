@@ -6,7 +6,7 @@ on:
       - 'scripts/package2/**'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   review:
     runs-on: ubuntu-latest
@@ -19,43 +19,56 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Preserve exact public review inputs
+      - name: Check the accepted source and protected published baseline
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund && npm run check
+      - name: Prepare the reviewed candidate without publishing it
+        run: python3 scripts/package2/prepare.py
+      - name: Check candidate types, content, semantic components and token synchronisation
+        working-directory: frontend
+        run: npm run typecheck && npm run content:gate && npm test && npm run build
+      - name: Install isolated browser library and serve exact candidate files
+        run: |
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+          mkdir -p /tmp/p2-review
+          ln -s "$GITHUB_WORKSPACE" /tmp/p2-review/storileaf-homepage-preview
+          python3 -m http.server 4173 --directory /tmp/p2-review > /tmp/p2-static.log 2>&1 &
+          python3 -m http.server 4180 --directory frontend/dist > /tmp/p2-source.log 2>&1 &
+          sleep 2
+      - name: Verify all existing homepage interactions
+        run: node scripts/verify-homepage-ui.mjs
+      - name: Verify source layout, shape, focus and navigation
+        working-directory: frontend
+        run: node scripts/verify-source-ui.mjs && node scripts/verify-shape-foundation.mjs && node scripts/verify-focus-captures.mjs
+      - name: Compare nine widths, FAQ states and text enlargement
+        run: node scripts/package2/verify.mjs
+      - name: Store verified readable files as unattached blobs only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import os,json,base64,urllib.request,pathlib
+          folder=pathlib.Path('qa/package2');entries=[]
+          for name in json.loads((folder/'changed-files.json').read_text()):
+              path=pathlib.Path(name);content=path.read_bytes()
+              request=urllib.request.Request('https://api.github.com/repos/Storileaf/storileaf-homepage-preview/git/blobs',data=json.dumps({'content':base64.b64encode(content).decode(),'encoding':'base64'}).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'},method='POST')
+              with urllib.request.urlopen(request) as response: blob=json.load(response)
+              entries.append({'path':name,'mode':'100644','type':'blob','sha':blob['sha']})
+          (folder/'blobs.json').write_text(json.dumps(entries,indent=2))
+          print('Verified blobs prepared. No branch was moved.',len(entries))
+          PY
+      - name: Preserve readable candidate and comparison evidence
+        if: always()
         run: |
           mkdir -p qa/package2
-          git rev-parse HEAD > qa/package2/commit.txt
-          tar -cf qa/package2/inputs.tar docs frontend/src frontend/scripts frontend/content frontend/package.json frontend/package-lock.json frontend/tsconfig.json frontend/vite.config.ts frontend/index.html frontend/baseline .github/workflows scripts index.html 404.html assets REPOSITORY_HANDOFF.md
-      - name: Install isolated browser library
-        run: npm install --no-save --no-package-lock playwright-core@1.56.1
-      - name: Measure existing live typography and spacing
-        run: |
-          node --input-type=module <<'NODE'
-          import {chromium} from 'playwright-core';
-          import fs from 'node:fs/promises';
-          const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',args:['--no-sandbox']});
-          const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
-          await page.goto('https://storileaf.github.io/storileaf-homepage-preview/',{waitUntil:'networkidle'});
-          await page.evaluate(()=>document.fonts.ready);
-          const results=[];
-          for(const width of [320,360,390,430,768,820,1024,1280,1440]) {
-            await page.setViewportSize({width,height:1000});
-            await page.evaluate(()=>{document.querySelectorAll('.faq-item').forEach(x=>x.open=true);scrollTo(0,0)});
-            await page.waitForTimeout(250);
-            const rows=await page.evaluate(()=>[...document.querySelectorAll('main h1,main h2,main h3,main .section-lead,main .hero-description,main summary,main .faq-answer p,main .book-detail-intro,main .book-detail-points li,main .step-text strong,main .step-text>span,main .resource-category-body p,main>section,main .page-width,.newsletter-strip,.newsletter-layout h2,.newsletter-layout p,.footer-brand p,.footer-bottom,.site-header')].map(el=>{
-              const s=getComputedStyle(el),r=el.getBoundingClientRect();
-              return {tag:el.tagName,cls:el.className,id:el.id,text:el.children.length>8?'':el.textContent.trim().slice(0,120),font:s.fontFamily,size:s.fontSize,weight:s.fontWeight,line:s.lineHeight,tracking:s.letterSpacing,width:r.width,height:r.height,x:r.x,y:r.y+scrollY,padding:[s.paddingTop,s.paddingRight,s.paddingBottom,s.paddingLeft],margin:[s.marginTop,s.marginRight,s.marginBottom,s.marginLeft],gap:s.gap,maxWidth:s.maxWidth};
-            }));
-            results.push({width,rows});
-            if([390,1440].includes(width)) {
-              await page.locator('.faq-section').screenshot({path:`qa/package2/faq-before-${width}.png`,animations:'disabled'});
-              await page.evaluate(()=>document.querySelectorAll('.faq-item').forEach(x=>x.open=false));
-              await page.screenshot({path:`qa/package2/page-before-${width}.png`,fullPage:true,animations:'disabled'});
-            }
-          }
-          await fs.writeFile('qa/package2/inventory.json',JSON.stringify(results,null,2));
-          await browser.close();
-          NODE
+          git diff -- assets frontend docs REPOSITORY_HANDOFF.md .github/workflows/review-published-package1.yml > qa/package2/candidate.diff
+          tar -cf qa/package2/candidate-files.tar frontend/src frontend/scripts docs REPOSITORY_HANDOFF.md assets/index-DhPZyX4z.css scripts/package2/verify.mjs .github/workflows/review-published-package1.yml
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: package2-foundation-review
-          path: qa/package2/
+          name: package2-candidate-review
+          path: |
+            qa/package2/
+            qa/homepage-qa-report.json
+            frontend/qa/
+          if-no-files-found: warn
