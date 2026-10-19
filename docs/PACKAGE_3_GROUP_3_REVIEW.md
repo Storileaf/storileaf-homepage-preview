@@ -4,7 +4,7 @@
 
 On 19 October 2026 the founder authorised bringing the shared header, newsletter, footer and navigation references into parity. The scope includes desktop menus, mobile navigation, currency behaviour, anchor destinations, current page semantics and investigation of the pricing warning. It supersedes the earlier proposal to migrate six book discovery next.
 
-Implementation and complete local rendered and functional verification pass in the isolated React source. The exact committed Actions replay remains to be verified. This is not founder visual acceptance, complete homepage parity or permission to replace the published homepage with React. The [public design system](PUBLIC_DESIGN_SYSTEM.md) remains the sole style authority.
+Implementation, complete local rendered and functional verification, and the exact committed Actions replay pass in the isolated React source. This is not founder visual acceptance, complete homepage parity or permission to replace the published homepage with React. The [public design system](PUBLIC_DESIGN_SYSTEM.md) remains the sole style authority.
 
 The starting public checkpoint is [e4458092ae64749350ac1339c97ac7f83c9ce65c](https://github.com/Storileaf/storileaf-homepage-preview/commit/e4458092ae64749350ac1339c97ac7f83c9ce65c). The protected static baseline remains [e9550069d91b5a9b48ade43fcfb0a71bbed2875b](https://github.com/Storileaf/storileaf-homepage-preview/commit/e9550069d91b5a9b48ade43fcfb0a71bbed2875b). Root HTML, compiled assets, images, pricing export and the protected baseline stay unchanged. Private production and backend work are outside this group.
 
@@ -91,20 +91,38 @@ The first footer run [39309137336](https://github.com/Storileaf/storileaf-homepa
 
 The correction varies only the historical type roles within the migrated source shell. It extracts the heading's 11px size and 1.4 leading and the currency's 11px size from their exact named immutable rules, checks that those historical sizes are actually applied, then removes them and requires the current 15px heading with 21px leading and 13px currency. All frozen content and other styles, photograph and fade, outside section geometry, currency options, focus, fit and static comparisons remain in force. Complete source shell geometry is compared against the protected published implementation by the unchanged shared gate. No source component, CSS, shared harness, protected asset or baseline changed to resolve this test assumption.
 
-The corrected complete local footer gate passes all nine static and source widths, currency focus and selections, short screens, touch fit and the retained desktop zoom reflow equivalent. The [local correction record](../qa/shared-migration/2026-10-19/footer-gate-correction.json) preserves its script hash and results. The committed replay remains to be verified before recording final success.
+The corrected complete local footer gate passes all nine static and source widths, currency focus and selections, short screens, touch fit and the retained desktop zoom reflow equivalent. The [local correction record](../qa/shared-migration/2026-10-19/footer-gate-correction.json) preserves its script hash and results. The corrected committed replay and actual live footer verification now pass, as recorded below.
 
-## Committed evidence to finalise
+## Verified committed evidence
 
-| Evidence | Current record |
+The final dedicated [shared run 39310234409](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234409), job 118257598506, completed successfully at correction commit [9773c580a7525d3e02d4ab71d5d9d6f6ab704f0a](https://github.com/Storileaf/storileaf-homepage-preview/commit/9773c580a7525d3e02d4ab71d5d9d6f6ab704f0a). The implementation and shared harness remain unchanged from 443eb381. Every required job step, both protected guards and all artifact uploads passed. The completed job log and downloaded reports were inspected; this is not an inference from a queued run or a green summary alone.
+
+The shared comparison ran from 19:25:40.588 to 19:27:17.039 UTC on 19 October 2026. The workflow update at 19:27:30 UTC records success. The hosted runner used Chromium 155.0.8059.84, while the local comparison used 155.0.8059.39. The final report records the exact 9773c580 checkpoint, the unchanged shared harness hash, all 30 source/content hashes and five protected file hashes. Every hash matches its reviewed input. All three built preview files are byte identical to the reviewed local build.
+
+The final report completes the same ten widths, 74 normal width comparisons, 84 total computed comparisons, 41 state records, 132 target captures and 66 pixel pairs. All comparison differences and problems arrays are empty, every capture preserves component dimensions, and both enlargement scenarios complete their measurements. Maximum relative node geometry difference remains zero CSS pixels; maximum changed pixel ratio remains approximately 0.247409 percent. Inherited quality findings remain explicit below.
+
+All 132 target PNGs are byte identical to the manually reviewed local captures. Of 144 actual browser PNGs, 141 match byte for byte. Three informational full viewport captures differ within the unmigrated published hero area, outside the shared header. Their difference rectangles are recorded. No complete homepage identity is claimed. The artifact contains 210 PNGs in total, including 66 comparison canvases.
+
+| Artifact | Verified contents |
 | --- | --- |
-| Source and shared harness commit | 443eb38103be373369f67283c417857f197f7da9; retained footer gate correction follows separately |
-| Complete local width and state results | Completed as recorded above; no parity problems |
-| Retained local checks | Source UI, shape/vendor, focus, Group 1 and Group 2 pass on the same frozen build |
-| Committed Actions runs and artifacts | Pending completed run and downloaded artifact verification |
-| Final public head and Pages deployment | Pending final commit and deployment verification |
-| Private documentation checkpoint | Pending root handoff update |
+| [Shared parity, 12216650618](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234409/artifacts/12216650618) | Complete report, review page and 210 PNGs; exact source and harness identity verified |
+| [Retained regressions, 12215701283](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234409/artifacts/12215701283) | Source UI, shapes/focus, protected homepage, Package 1, Package 2, editorial, corrected footer, Group 1 and Group 2 evidence |
+| [Isolated React preview, 12216456051](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234409/artifacts/12216456051) | Three built files matching the reviewed local preview; not a published homepage replacement |
 
-Replace these entries with immutable checkpoints, actual widths and states, observed failures or corrections, and verified artifact references. Do not infer a pass from a build, a running job or an earlier group's results. The pricing investigation's already completed dated observations remain in its separate review and are not represented as new CI results here.
+All three archive digests match their GitHub metadata. The [durable committed verification record](../qa/shared-migration/2026-10-19/committed-verification.json) preserves digests, report identity, counts, source verification, screenshot correspondence, context differences, retained findings and browser limits. The final shared report SHA256 is `d64b3f56e38c9052e0050692e369cc5e34b75d06260a5dd5cf837c7cebb3d595`.
+
+Every retained report has an empty problems array. Group 1 retains Gifting clipping; Group 2 has no new quality finding. Package 2 explicitly retains identical React 418 warnings under baseline and current pricing styles, with pricingUnchanged true. The pricing diagnosis remains unresolved as described separately.
+
+| Additional committed gate | Verified result |
+| --- | --- |
+| [Corrected footer 39310234343](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234343) | All nine static/source widths passed at 19:22:08 UTC; actual live Pages passed at 19:22:21 UTC. Downloaded artifact 12215088420 contains both reports with no problems |
+| [Group 1 39310234238](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234238) | Full ten-width comparison and all retained steps passed; workflow updated successfully at 19:24:37 UTC |
+| [Group 2 39310234511](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310234511) | Ten widths, 18 states and 60 individual expanded FAQ comparisons passed with every retained step; workflow updated successfully at 19:27:00 UTC |
+| [Pages 39310231581](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39310231581) | Correction checkpoint 9773c580 deployed successfully, updated at 19:21:26 UTC; it serves the protected static root |
+
+The first Group 1 run 39309137044, Group 2 run 39309136926 and shared run 39309136994 all passed their own component comparisons but failed the retained obsolete footer experiment. Their final protected guards passed. Initial shared artifact 12214913641 was inspected and confirms ten widths, 41 states and 132 target captures with no shared problems. Those overall failed runs remain diagnostic history and are superseded by the successful corrected workflows above.
+
+Public documentation updates follow the verified source and gate checkpoints without changing runtime files. The permitted private design branch handoff and status carry the final public documentation head and its verified Pages deployment, avoiding a self-referential commit claim in this document. The private master brief and copy ledger receive dated Group 3 addenda while their earlier bodies remain intact. No retrospective founder acceptance record is created.
 
 ## Remaining limits
 

@@ -28,7 +28,7 @@ The isolated frontend/ React foundation is established. Packages 1 and 2 are imp
 
 The founder authorised Group 2 covering the reassurance band, six FAQs and final invitation, preserving the band's current wording and position, native independent disclosures and expanded layouts. Source, local rendered comparison and committed CI are verified. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) owns the evidence and inherited quality findings.
 
-The founder has now authorised Group 3 to bring the shared header, newsletter, footer and navigation into parity, including currency, anchors, current page semantics and investigation of the pricing warning. Source implementation and complete local rendered and functional verification pass; the committed CI replay remains to be verified. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) records its scope and evidence separately from founder visual acceptance.
+The founder has now authorised Group 3 to bring the shared header, newsletter, footer and navigation into parity, including currency, anchors, current page semantics and investigation of the pricing warning. Source implementation, complete local rendered and functional verification, and the committed CI replay pass. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) records its scope and evidence separately from founder visual acceptance.
 
 The whole homepage has not been migrated. The current homepage remains published as compiled root assets and cannot be replaced until editable React source reaches complete visual and functional parity and receives explicit founder approval. Preserve the static output throughout Groups 1, 2 and 3. Work beyond the authorised shared group and a React publishing cutover require separate approval.
 

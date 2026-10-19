@@ -26,7 +26,7 @@ The [frontend/](frontend/) workspace uses Vite, React and TypeScript for the sta
 
 **Migration status**
 
-Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 and 2 implement Resources, Gifting, the reassurance band, FAQs and final invitation. The authorised Group 3 reconstructs the shared header, newsletter, footer and navigation, with complete local verification passing and committed CI evidence still to be verified. The [Group 3 review](docs/PACKAGE_3_GROUP_3_REVIEW.md) owns its current status, and the [component inventory](docs/COMPONENT_INVENTORY.md) identifies the remaining sections.
+Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 and 2 implement Resources, Gifting, the reassurance band, FAQs and final invitation. The authorised Group 3 reconstructs the shared header, newsletter, footer and navigation, with complete local verification and the committed CI replay passing. The [Group 3 review](docs/PACKAGE_3_GROUP_3_REVIEW.md) owns its current status, and the [component inventory](docs/COMPONENT_INVENTORY.md) identifies the remaining sections.
 
 The homepage migration remains incomplete. Before replacing the published homepage, all sections, wording, interactions, browser states and screenshots must match the approved static baseline and receive explicit founder approval. The build output stays under frontend/dist and is not published automatically.
 
