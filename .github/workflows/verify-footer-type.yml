@@ -1,0 +1,80 @@
+name: Review final footer typography
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/footer-type/**
+      - .github/workflows/verify-footer-type.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the current source and protected release
+        run: cd frontend && npm ci --no-audit --no-fund && npm run check
+      - name: Prepare only the approved footer correction
+        run: python3 scripts/footer-type/prepare.py
+      - name: Validate candidate source without publishing
+        run: cd frontend && npm run typecheck && npm run content:gate && npm test && npm run build
+      - name: Serve exact candidate and isolated source
+        run: |
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+          mkdir -p /tmp/footer/storileaf-homepage-preview
+          cp -a index.html 404.html assets covers gallery pricing /tmp/footer/storileaf-homepage-preview/
+          python3 -m http.server 4173 --directory /tmp/footer > /tmp/footer-static.log 2>&1 &
+          python3 -m http.server 4180 --directory frontend/dist > /tmp/footer-source.log 2>&1 &
+          sleep 2
+      - name: Check all existing homepage and source behaviour
+        run: |
+          node scripts/verify-homepage-ui.mjs > qa/footer-type/homepage.log
+          (cd frontend && node scripts/verify-source-ui.mjs && node scripts/verify-shape-foundation.mjs) > qa/footer-type/source.log
+          node scripts/package2/verify.mjs > qa/footer-type/package2.log
+          node scripts/editorial-links/verify.mjs > qa/footer-type/editorial.log
+      - name: Compare footer typography and currency on nine widths
+        run: node scripts/footer-type/verify.mjs
+      - name: Store verified file blobs without moving a branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import os, json, hashlib, urllib.request, tarfile
+          from pathlib import Path
+          files=json.loads(Path('qa/footer-type/changed-files.json').read_text())
+          manifest=[]
+          with tarfile.open('qa/footer-type/reviewed-files.tar','w') as archive:
+            for path in files:
+              data=Path(path).read_bytes()
+              payload=json.dumps({'content':data.decode(),'encoding':'utf-8'}).encode()
+              request=urllib.request.Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/git/blobs',data=payload,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'},method='POST')
+              with urllib.request.urlopen(request) as response: result=json.load(response)
+              sha=hashlib.sha1(('blob '+str(len(data))+'\0').encode()+data).hexdigest()
+              assert result['sha']==sha
+              manifest.append({'path':path,'sha':sha,'sha256':hashlib.sha256(data).hexdigest()})
+              archive.add(path,arcname=path)
+          Path('qa/footer-type/blobs.json').write_text(json.dumps(manifest,indent=2))
+          PY
+      - name: Preserve exact candidate diff
+        if: always()
+        run: |
+          mkdir -p qa/footer-type
+          git diff -- assets frontend docs REPOSITORY_HANDOFF.md scripts/package2 scripts/editorial-links > qa/footer-type/changes.diff
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: footer-type-candidate-review
+          path: |
+            qa/footer-type/
+            qa/homepage-qa-report.json
+            qa/package2/report.json
+            qa/editorial-links/report.json
+            frontend/qa/shape-foundation/report.json
