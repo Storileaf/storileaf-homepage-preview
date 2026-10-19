@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-19T22:05:44.405865Z",
+  "title": "Group 4 retained Group 2 workflow attempt 1: closed FAQ geometry sampling difference",
+  "scope": "Read-only diagnosis of the recorded shape-foundation failure. No browser reproduction, test rerun, source modification or gate modification was performed by this reviewer.",
+  "run": {
+    "repository": "Storileaf/storileaf-homepage-preview",
+    "workflow": "Verify React homepage Group 2 parity",
+    "workflowPath": ".github/workflows/verify-group2-parity.yml",
+    "runId": 39331112950,
+    "runAttempt": 1,
+    "jobId": 118329226847,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39331112950/attempts/1",
+    "jobUrl": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39331112950/job/118329226847",
+    "headSha": "8279c9c236d4f582e0a88a6ae00108f4be40224c",
+    "headEvidence": "Matches the failed regression artifact Group 1 report sourceCommit and the local checked-out HEAD.",
+    "attempt1Outcome": "failure"
+  },
+  "artifact": {
+    "id": 12224731945,
+    "name": "homepage-group2-regressions",
+    "sha256": "650e4301545ddea083acb96e837b608fc6f1bec3d34358adcd9631c02229923b",
+    "digest": "sha256:650e4301545ddea083acb96e837b608fc6f1bec3d34358adcd9631c02229923b",
+    "sizeBytes": 70307162,
+    "digestEvidence": "Computed from the downloaded ZIP by this reviewer; parent independently reported successful artifact digest verification before extraction.",
+    "originalLocalZip": "/tmp/storileaf-g4-group2-attempt1.zip",
+    "extractedLocalDirectory": "/tmp/storileaf-g4-group2-attempt1",
+    "shapeReportPathInArtifact": "frontend/qa/shape-foundation/report.json",
+    "shapeReportSha256": "8177796bf90fc5f633e6f422ea2c8b31474df642cd04bc5e33b35a2899c85fc7"
+  },
+  "observedFacts": {
+    "reportProblems": [
+      "Retained primitive styles changed normal page geometry or typography at 768"
+    ],
+    "failingWidth": 768,
+    "precedingTestedWidth": 430,
+    "testedSourceWidths": [
+      320,
+      360,
+      390,
+      430,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "passingOtherSourceWidths": [
+      320,
+      360,
+      390,
+      430,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "changedRecordCount": 12,
+    "changedNodes": "Six .sl-faq-answer DIVs and their six P.sl-copy.sl-copy--body children only.",
+    "reportArrayFields": [
+      "tagName",
+      "classAttribute",
+      "rectXYWidthHeightRoundedTo2Decimals",
+      "fontFamily",
+      "fontSize",
+      "fontWeight",
+      "lineHeight",
+      "padding",
+      "margin"
+    ],
+    "sampleNames": {
+      "after": "Initial current-source CSS geometry, sampled before adding the original generic primitive stylesheet.",
+      "before": "Geometry sampled after adding original token and generic primitive CSS, then waiting two animation frames."
+    },
+    "paddingAndBounds": {
+      "answerRightPaddingInitialCurrentSamplePx": 10,
+      "answerRightPaddingAfterStylesheetInjectionPx": 24,
+      "answerElementWidthBothSamplesPx": 704,
+      "paragraphWidthInitialCurrentSamplePx": 694,
+      "paragraphWidthAfterStylesheetInjectionPx": 680,
+      "paragraphWidthDifferencePx": 14,
+      "answerElementXYAndHeightUnchanged": true,
+      "paragraphXYAndHeightUnchanged": true,
+      "fontFamilySizeWeightAndLineHeightUnchanged": true
+    },
+    "exactGeometryChanges": [
+      {
+        "index": 144,
+        "before": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            3805.19,
+            704,
+            74.5
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 24px 22px 0px",
+          "0px"
+        ],
+        "after": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            3805.19,
+            704,
+            74.5
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 10px 22px 0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 145,
+        "before": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            3805.19,
+            680,
+            52.5
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ],
+        "after": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            3805.19,
+            694,
+            52.5
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 151,
+        "before": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            3870.69,
+            704,
+            136.8
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 24px 22px 0px",
+          "0px"
+        ],
+        "after": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            3870.69,
+            704,
+            136.8
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 10px 22px 0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 152,
+        "before": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            3870.69,
+            680,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ],
+        "after": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            3870.69,
+            694,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 161,
+        "before": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            3936.19,
+            704,
+            136.8
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 24px 22px 0px",
+          "0px"
+        ],
+        "after": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            3936.19,
+            704,
+            136.8
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 10px 22px 0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 162,
+        "before": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            3936.19,
+            680,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ],
+        "after": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            3936.19,
+            694,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 171,
+        "before": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            4001.69,
+            704,
+            136.8
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 24px 22px 0px",
+          "0px"
+        ],
+        "after": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            4001.69,
+            704,
+            136.8
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 10px 22px 0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 172,
+        "before": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            4001.69,
+            680,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ],
+        "after": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            4001.69,
+            694,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 181,
+        "before": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            4067.19,
+            704,
+            100.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 24px 22px 0px",
+          "0px"
+        ],
+        "after": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            4067.19,
+            704,
+            100.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 10px 22px 0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 182,
+        "before": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            4067.19,
+            680,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ],
+        "after": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            4067.19,
+            694,
+            78.75
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 188,
+        "before": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            4132.69,
+            704,
+            110.55
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 24px 22px 0px",
+          "0px"
+        ],
+        "after": [
+          "DIV",
+          "sl-faq-answer",
+          [
+            32,
+            4132.69,
+            704,
+            110.55
+          ],
+          "Manrope, Arial, sans-serif",
+          "13px",
+          "400",
+          "24.05px",
+          "0px 10px 22px 0px",
+          "0px"
+        ]
+      },
+      {
+        "index": 189,
+        "before": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            4132.69,
+            680,
+            52.5
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ],
+        "after": [
+          "P",
+          "sl-copy sl-copy--body",
+          [
+            32,
+            4132.69,
+            694,
+            52.5
+          ],
+          "Manrope, Arial, sans-serif",
+          "15px",
+          "400",
+          "26.25px",
+          "0px",
+          "0px"
+        ]
+      }
+    ],
+    "trackedControlMeasurementsEqual": true,
+    "trackedControlSelectors": [
+      ".sl-header",
+      ".sl-header-primary",
+      ".sl-newsletter-controls input",
+      ".sl-newsletter-subscribe",
+      ".sl-resource-card",
+      ".sl-footer-currency"
+    ],
+    "sourceRuntimeErrors": [],
+    "publishedRuntimeErrors": [],
+    "sourceMissingImages": [],
+    "publishedMissingImages": [],
+    "retiredVendorStaticReferences": [],
+    "sourceBlockedVendorRequests": [],
+    "publishedBlockedVendorRequests": []
+  },
+  "sourceAndHarnessConditions": {
+    "faqSourcePath": "frontend/src/sections/FaqSection.tsx",
+    "faqSourceSha256": "e645c8856c9b60e19751115a2504d90f6a79ff5ff4d292be1ee883b1f0705866",
+    "nativeDisclosureState": {
+      "establishedFromSourceAndHarness": "Each FAQ is a native details element without an open attribute; the shape harness does not open FAQ disclosures before the width loop.",
+      "directOpenStateSnapshotAvailable": false,
+      "limitation": "The original report does not explicitly record details.open. Closed state is established from source initialization and the harness action sequence, not an independent browser-state capture."
+    },
+    "faqStylePath": "frontend/src/styles/homepage-questions.css",
+    "faqStyleSha256": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da",
+    "baseRule": ".sl-home-faq .sl-faq-answer { padding: 0 24px 22px 0; ... }",
+    "narrowRule": "@media (max-width: 480px) { .sl-home-faq .sl-faq-answer { padding-right: 10px; font-size: 13px; } }",
+    "correctRightPaddingAt768Px": 24,
+    "harnessPath": "frontend/scripts/verify-shape-foundation.mjs",
+    "harnessSha256": "da580116a09b7942965d1306700ddb527ff6a63aa9a5d61f94986e0601b0cc26",
+    "originalPrimitiveSourceCommit": "4b14b91b642795d2b466a0c018f84f3474d44991",
+    "injectedCssScope": "Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate",
+    "injectedOriginalCssContainsFaqPaddingOverride": false,
+    "geometrySelection": "All body descendants except script and style, including hidden descendants of closed native details.",
+    "initialSamplingSequence": [
+      "set viewport",
+      "wait two animation frames",
+      "move pointer to 0,0",
+      "blur active element and scroll to top",
+      "measure controls",
+      "take initial current-source geometry"
+    ],
+    "injectedSamplingSequence": [
+      "add original tokens and generic primitive CSS",
+      "wait two animation frames",
+      "measure controls",
+      "take second geometry"
+    ],
+    "thresholdsUnchanged": true
+  },
+  "inference": {
+    "classification": "Likely cached hidden-descendant breakpoint style/layout timing",
+    "status": "Inference from exact artifact values and source/harness conditions; no new browser reproduction or engine-level proof.",
+    "explanation": "At the first tested width above 480px, hidden FAQ descendants retained the preceding 430px padding value in the initial sample, then reported the correct 24px after stylesheet invalidation. The entire difference is six 14px paragraph width changes plus their six parent padding values; outer geometry and typography remain unchanged.",
+    "supportingFacts": [
+      "The initial value equals the exact max-width 480px padding rule.",
+      "The failing 768px iteration directly follows 430px.",
+      "The injected original generic primitive stylesheet has no FAQ padding rule.",
+      "The second sample follows stylesheet invalidation and another frame wait.",
+      "All other eight source widths pass this strict geometry assertion.",
+      "All tracked controls match exactly, and neither page records a runtime error."
+    ],
+    "notEstablished": [
+      "A persistent visible FAQ regression.",
+      "A legitimate primitive-CSS padding change.",
+      "A browser-engine defect proven independently.",
+      "General document overflow or a typography mismatch."
+    ],
+    "recommendedAction": "Keep source and exact gates unchanged for one rerun of the failed job. If repeated, diagnose repeated unchanged-CSS geometry samples and explicit native disclosure state before adjusting settling. Do not loosen tolerances or silently exclude hidden answers."
+  },
+  "attempt1WorkflowEvidence": {
+    "sourceUi": {
+      "outcome": "success",
+      "basis": "Parent verified completed job logs; shape report was produced after source UI in the same step."
+    },
+    "shapeFoundation": {
+      "outcome": "failure",
+      "basis": "This artifact report contains only the isolated 768px assertion."
+    },
+    "focusCaptures": {
+      "outcome": "not-run",
+      "basis": "The shell step stopped at the failing shape script before the subsequent focus script."
+    },
+    "group1Parity": {
+      "outcome": "success",
+      "basis": "Parent verified job logs; artifact frontend/qa/group1/report.json has problems:[] and sourceCommit equal to this run head.",
+      "completeWidthSet": true
+    },
+    "group2Parity": {
+      "outcome": "success",
+      "basis": "Parent verified completed job logs; this workflow attaches Group 2 comparison data as a separate artifact, not the retained regression ZIP analysed here."
+    },
+    "whyGroupsStillRan": "The Group 1 and Group 2 steps explicitly run when source_build succeeded and the job was not cancelled, despite an earlier retained gate failure.",
+    "skippedRetainedSteps": [
+      "Retain the complete static homepage regression",
+      "Retain the permanent Package 1 live control checks",
+      "Retain Package 2 typography, FAQ and pricing comparison",
+      "Retain editorial action and footer typography comparisons"
+    ],
+    "skippedStepEvidence": "Parent verified job logs and workflow default success conditions after the failed shape step.",
+    "staleCopiedEvidenceWarning": "qa/homepage-qa-report.json and qa/screenshots in this ZIP can be copied prior tracked data. Their presence is not evidence that the skipped static homepage regression ran in this attempt."
+  },
+  "rerunRequest": {
+    "action": "One unchanged failed-job rerun requested by parent through the connected GitHub app.",
+    "requestStatus": "accepted, as reported by parent",
+    "sameSourceHeadRequested": "8279c9c236d4f582e0a88a6ae00108f4be40224c",
+    "ciCompletionIndependentlyVerifiedByThisReviewer": false,
+    "note": "No attempt 2 success is asserted by this diagnosis; parent owns completed rerun evidence."
+  },
+  "changeBoundary": {
+    "sourceFilesEdited": false,
+    "testHarnessEdited": false,
+    "thresholdsRelaxed": false,
+    "gatesDisabledOrExcluded": false,
+    "browserTestsRunByReviewerForThisDiagnosis": false,
+    "repositoryFilesWrittenByReviewerForThisDiagnosis": false,
+    "onlyFileCreatedByReviewer": "/tmp/storileaf-g4-shape-attempt1-diagnostic.json"
+  },
+  "rerunResult": {
+    "run": 39331112950,
+    "attempt": 2,
+    "job": 118332844259,
+    "sourceCommit": "8279c9c236d4f582e0a88a6ae00108f4be40224c",
+    "status": "completed",
+    "conclusion": "success",
+    "updatedAt": "2026-10-19T22:08:11Z",
+    "sourceAndGateEdits": false,
+    "record": "committed-verification.json"
+  }
+}

@@ -1,0 +1,1797 @@
+{
+  "method": "Read-only decoded RGB comparison of existing CI and local PNGs. No browser rerun, source changes or image edits. The composite label band is the harness canvas area above y=38 and outside both compared target images. Cross-run identity is informational.",
+  "files": [
+    {
+      "filename": "comparison-1024-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1024-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1024-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1024-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1024-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1024-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1105,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1280-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1280-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1280-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1280-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1280-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1280-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1361,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1440-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1440-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1440-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1440-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1440-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-1440-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-320-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-320-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-320-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 916,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        643,
+        517
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 4,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-320-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-320-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-320-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 916,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        643,
+        517
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 4,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-360-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-360-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-360-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-360-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-360-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-360-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        441,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-390-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-390-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-390-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-390-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-390-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-390-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-430-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-430-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-430-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-430-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-430-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-430-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        511,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-600-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-600-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-600-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-600-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-600-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-600-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        681,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-768-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-768-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-768-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-768-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-768-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-768-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        849,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-820-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-820-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-820-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-820-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-820-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-820-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        901,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-control-action-focus-no-preference.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-control-action-focus-reduce.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-control-action-hover-no-preference.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-control-action-hover-reduce.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-control-inactive-tab-hover-no-preference.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-control-inactive-tab-hover-reduce.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-1440-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-1440-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-1440-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-1440-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-1440-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-1440-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-320-celebrating-occasions.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-320-founders-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-320-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-320-parent-to-child-letters.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-320-relationship-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-enlarged-320-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        401,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-keyboard-focus-no-preference-1440x900.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-keyboard-focus-no-preference-390x320.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-keyboard-focus-no-preference-390x844.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-keyboard-focus-reduce-1440x900.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        1521,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-keyboard-focus-reduce-390x320.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "comparison-keyboard-focus-reduce-390x844.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 912,
+      "changedPixelsAbove24": 758,
+      "maxChannelDifference": 218,
+      "differenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "above24DifferenceBox": [
+        13,
+        13,
+        471,
+        25
+      ],
+      "changedPixelsBelowCompositeLabelBand": 0,
+      "changedPixelsAbove24BelowCompositeLabelBand": 0
+    },
+    {
+      "filename": "source-320-life-story.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 4,
+      "changedPixelsAbove24": 0,
+      "maxChannelDifference": 1,
+      "differenceBox": [
+        21,
+        477,
+        299,
+        479
+      ],
+      "above24DifferenceBox": null
+    },
+    {
+      "filename": "source-320-travel-memoir.png",
+      "decodedRgbIdentical": false,
+      "changedPixelsAny": 4,
+      "changedPixelsAbove24": 0,
+      "maxChannelDifference": 1,
+      "differenceBox": [
+        21,
+        477,
+        299,
+        479
+      ],
+      "above24DifferenceBox": null
+    }
+  ]
+}
