@@ -48,15 +48,27 @@ Use three conceptual spacing roles. Section spacing separates independent narrat
 
 ## Shape hierarchy
 
-The current interface deliberately uses restrained shapes, not universal pills. Observed examples include 6px ordinary buttons, 9px newsletter controls, about 17–20px category cards, 18px media and 22px principal panels. Circular number/icon markers can remain round. Use named shape roles and document meaningful exceptions, rather than copying the old 40px-card/999px-pill standards.
+The interface uses restrained shapes, not universal pills. Rectangular public action buttons and paired newsletter controls share the approved 6px action radius. Larger category cards retain 20px or 17px on small screens, media 18px and principal panels 22px. Circular markers and specialised navigation controls remain separate families. Do not apply the action radius to every element with corners.
 
-### Retained button roles during migration
+### Approved action family
 
-Package 1 began on 18 October 2026. Preserve ordinary filled and outlined actions at 6px, the published Start your story header action at 9px, and paired newsletter controls at 9px. These are retained component roles, not a universal radius for all public controls. The source header now references its own 9px token instead of its earlier 8px literal. This correction does not alter the published homepage.
+The founder explicitly approved the remaining Package 1 source changes on 18 October 2026. Ordinary filled and outlined actions, the Start your story header action, gold actions and the paired newsletter input/action now share `--sl-radius-action` at 6px. The header, newsletter and gold token names are aliases of that single token, not independently maintained values.
 
-Existing source card, menu, header shell and utility control values now use named tokens in frontend/src/styles/tokens.css. Their other computed values are retained pending full component parity. The experimental gold ActionLink keeps its existing 9px radius under a separate token; this is not a rule that colour alone determines shape on future pages.
+The earlier 9px header/newsletter/gold values were inherited implementation differences, not a necessary hierarchy. The new rule supersedes their temporary retention in editable source. The published static homepage is deliberately unchanged and still retains its old 9px header/newsletter controls. Source approval is not permission to publish those refinements or replace the homepage.
 
-Full button state and touch-target consolidation is still open. See the [Package 1 review and verification record](PACKAGE_1_REVIEW.md) for measured evidence and proposals. Do not treat the source reference's geometry or an unreviewed state as automatically approved simply because it uses a token.
+Preserve existing dimensions, typography, padding, labels and destinations. The previously corrected mobile source header action remains 45px high at 390px and 430px. Resource keyboard focus follows the parent card radius, retaining its 3px outline and 5px inset.
+
+### Approved feedback and semantics
+
+Primary action links reuse the existing header hover background #0b5848 through `--sl-teal-hover`. Normal background remains #0c6753 and text remains white. Gold action links reuse the existing newsletter hover background #e9cb93 through `--sl-gold-action-hover`. Their normal background remains #d7b67e and text remains forest #253526. Header and newsletter hover rules reference the same colour tokens without a colour change.
+
+Outlined actions explicitly use forest #253526 rather than browser-default link blue. Their existing border and background are retained. Text actions retain their existing teal treatment. No additional outline/text hover palette was approved in this change.
+
+The new primary/gold hover rules apply to real ActionLink anchors, not the non-interactive spans used for planned destinations. Use links for navigation and buttons for local actions. Keep independently visible keyboard focus. Pointer-held appearances retain the hover colour without geometry changes or a new animation.
+
+No disabled or loading API, asynchronous operation or newsletter subscription service was introduced. Document such states when an actual component needs them, with separate behaviour and content approval. Do not simulate working destinations or dim an entire control to manufacture a state catalogue.
+
+Existing source menu, header shell, icon and utility control values remain named tokens pending their own parity review. See the [Package 1 review and verification record](PACKAGE_1_REVIEW.md). Source references are not full homepage parity or accessibility certification.
 
 ## Reusable public components
 
@@ -90,7 +102,7 @@ Do not copy current static aria-current mistakes into new source. Distinguish a 
 
 Every new public page must be intentionally designed and checked at widths 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440 CSS pixels, plus short-height, 200 percent zoom, keyboard, touch and reduced-motion states. Carousels may scroll intentionally but the whole document may not overflow.
 
-Keep both clean section screenshots and realistic sticky header/context captures. Automated passing checks do not equal founder visual approval.
+Keep both clean section screenshots and realistic sticky header/context captures. Automated passing checks do not equal founder visual approval. During migration, distinguish the protected static baseline from explicitly approved source refinements such as the 6px action family. All unapproved differences still require correction or founder review.
 
 ## Separation from future account dashboards
 
@@ -100,12 +112,12 @@ The later authenticated workspace, Storyteller/contributor and admin interfaces 
 
 Actual open-book photography, trust-band first phrase/placement, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
 
-The current deployed static homepage remains the visual baseline until the editable source reproduces it faithfully.
+The current deployed static homepage remains the visual baseline until the editable source reproduces it faithfully with the separately approved source refinements.
 
 ## Implementation maturity
 
-The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity and founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
+The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
 
 ## Source-only shared shell maturity
 
-Typed SiteHeader and NewsletterFooter React references now exist, using caller-provided explicit routes and currency rather than hardcoding future unbuilt website pages. The source-only Chromium gate passes nine widths and fundamental interactions. The published Radix navigation, homepage and compiled CSS are still the authoritative appearance. No React cutover has been approved; source references need exact side-by-side screenshots, tab/modal/slideshow parity and final founder acceptance before they can replace live assets.
+Typed SiteHeader and NewsletterFooter React references now exist, using caller-provided explicit routes and currency rather than hardcoding future unbuilt website pages. The source-only Chromium gate covers nine widths and fundamental interactions. The published Radix navigation, homepage and compiled CSS remain the migration reference. No React cutover has been approved; source references need complete side-by-side screenshots, tab/modal/slideshow parity and final founder acceptance before they can replace live assets.

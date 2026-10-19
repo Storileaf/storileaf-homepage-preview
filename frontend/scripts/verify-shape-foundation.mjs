@@ -71,7 +71,13 @@ const geometry = page => page.evaluate(() => [...document.querySelectorAll('body
   return [el.tagName, [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
 }))
 const focusMeasure = locator => locator.evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, parentRadius: getComputedStyle(el.parentElement).borderTopLeftRadius, visible: el.matches(':focus-visible'), outline: getComputedStyle(el).outlineWidth, offset: getComputedStyle(el).outlineOffset }))
-const shot = (page, name) => page.screenshot({ path: path.join(out, name + '.png'), animations: 'disabled' })
+const clearSelection = page => page.evaluate(() => window.getSelection()?.removeAllRanges())
+const shot = async (page, name) => {
+  // A pointer-held test can select text when released outside a control.
+  // Clear only transient selection, preserving focus and all page styling.
+  await clearSelection(page)
+  return page.screenshot({ path: path.join(out, name + '.png'), animations: 'disabled' })
+}
 
 async function auditStates(page) {
   // Test-only fixtures, never public copy and never a new working destination.
@@ -96,6 +102,7 @@ async function auditStates(page) {
     const el = page.locator(selector).first()
     await el.scrollIntoViewIfNeeded()
     await page.evaluate(() => document.activeElement?.blur())
+    await clearSelection(page)
     await page.mouse.move(0, 0)
     const read = () => el.evaluate(node => {
       const s = getComputedStyle(node), r = node.getBoundingClientRect()
@@ -106,6 +113,7 @@ async function auditStates(page) {
     await page.mouse.down(); const pressed = await read()
     // Release outside the control. Never navigate or submit the newsletter.
     await page.mouse.move(0, 0); await page.mouse.up()
+    await clearSelection(page)
     const focusable = await el.evaluate(node => node.tabIndex >= 0)
     let focus = null
     if (focusable) {
@@ -213,7 +221,7 @@ try {
     for (let y = 0; y < height; y += 650) { await page.evaluate(y => scrollTo(0, y), y); await page.waitForTimeout(60) }
     await page.waitForTimeout(1000)
     result.missingImages = await page.evaluate(() => [...document.images].filter(img => img.currentSrc && (!img.complete || !img.naturalWidth)).map(img => img.currentSrc))
-    await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0) })
+    await page.evaluate(() => { document.activeElement?.blur(); window.getSelection()?.removeAllRanges(); scrollTo(0, 0) })
     await page.screenshot({ path: path.join(out, kind + '-desktop-1440.png'), fullPage: true, animations: 'disabled' })
     await page.setViewportSize({ width: 390, height: 844 })
     await page.screenshot({ path: path.join(out, kind + '-mobile-390.png'), fullPage: true, animations: 'disabled' })
