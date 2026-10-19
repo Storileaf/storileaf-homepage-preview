@@ -2,7 +2,8 @@ import { spawnSync } from 'node:child_process'
 import { resolve } from 'node:path'
 
 const repo = resolve(import.meta.dirname, '../..')
-const baseline = '99acdf7f14aceb3de20dca1fe8bbc4b18a27248d'
+// Founder-authorised Package 1 publication. Full React cutover remains prohibited.
+const baseline = 'fae8c1aa3640581906d430fdf1656f957da6dde6'
 const protectedPaths = [
   'index.html', '404.html', 'assets/', 'covers/', 'gallery/', 'pricing/',
   'favicon.svg', 'manifest.json', 'logo192.png', 'logo512.png',

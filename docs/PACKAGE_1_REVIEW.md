@@ -1,49 +1,51 @@
 # Package 1 review
 
-18 October 2026. Approved source scope implemented. Published homepage unchanged.
+18 October 2026 founder session. Source implementation completed, then publication to the existing static homepage explicitly authorised for visual review. Final founder acceptance remains pending.
 
-The [Public Design System](PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. This file records approval, implementation and verification, not a competing specification. The complete earlier review is preserved unchanged in [Package 1 history](PACKAGE_1_REVIEW_HISTORY_29283c2.md).
+The [Public Design System](PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. This file records approval, implementation and verification, not a competing specification. Earlier analysis is preserved in [Package 1 history](PACKAGE_1_REVIEW_HISTORY_29283c2.md) and this file's Git history.
 
-## Founder approval
+## Latest founder instruction and publication
 
-After the two earlier source corrections, the founder explicitly answered yes to one 6px rectangular action family, explicit forest text for outlined actions and shared primary/gold hover feedback using the existing header and newsletter colours. The approval expressly left the published homepage untouched.
+The founder requested that Package 1 be applied to the existing published site so its visible effects can be inspected and approved. This supersedes the earlier instruction to retain changes only in editable source for this package. It does not authorise publishing the unfinished React component gallery or redesigning any section.
 
-This supersedes the temporary retention of separate 9px header, newsletter and gold values in editable source. Those differences were inherited implementation details, not a required design hierarchy.
+Published styling commit fae8c1aa3640581906d430fdf1656f957da6dde6 changes only assets/index-DhPZyX4z.css. The verified stylesheet blob is 63264460b41696c96dcd7bf5e3643986aa3b17d8. The previous CSS blob was 3c1a3051f8a3428197a261213012b99acafde249.
 
-## Implemented source changes
+The static header action and both newsletter controls now use 6px corners. Ordinary buttons already used 6px. Primary button hover is #0b5848. Gold button hover is #e9cb93, matching the newsletter's existing hover treatment. Normal gold colours remain as published, including antique gold on the gifting action. Resource focus inherits the parent card's 17px small-screen or 20px wider corner, preserving outline thickness and inset.
 
-Commit 9946f52804175998690af9c89cd6d09b957ad93a gives ordinary filled and outlined actions, the header action, gold actions and paired newsletter controls one 6px value. Existing component token names alias the action token so they cannot drift independently.
+The published outlined buttons already had forest text and the mobile header action already measured 45px, so no redundant text-colour or height edit was made. All layouts, typography, spacing, wording, images, destinations, animations and existing interactions are retained. Homepage-scoped properties with fallbacks preserve the separate pricing preview's appearance.
 
-Outlined actions now specify forest #253526. Interactive primary ActionLink anchors use #0b5848 on hover, matching the header. Interactive gold anchors use #e9cb93, matching the newsletter. The existing header and newsletter feedback now reads the shared colour tokens. Their normal colours and text colours are unchanged.
+The published homepage remains static HTML/CSS/JavaScript. Nothing from frontend/dist replaces it. The protected-root guard is repinned to the specifically authorised CSS commit, not disabled.
 
-New hover rules exclude planned ActionLink spans. No destination, copy, image, component behaviour, disabled/loading API or subscription integration changed. Outline and text hover palettes were not redesigned. Pointer-held appearances retain their hover treatment without geometry changes.
+## Prepublication verification
 
-Earlier approved corrections remain in place. The mobile source header action is 45px high at 390px and 430px. Resource focus follows its parent's 17px small-screen or 20px wider radius, retaining the existing outline thickness and inset. Other card, media, panel, icon, navigation and utility control shapes remain unchanged.
+[Candidate review run 39188384903](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39188384903) passed the existing comprehensive homepage browser regression and the Package 1 comparative checks before release. Its [artifact 12159027522](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39188384903/artifacts/12159027522) contains the exact CSS diff, original/candidate files, reports and actual desktop/mobile screenshots.
 
-## Verification evidence
+All nine required widths, 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440px, recorded unchanged measured geometry, text, typography, padding and margins. Header/newsletter corners measured 6px; source-matching 45px mobile action height was preserved. The responsive resource focus, normal/hover/held/focus action states and document overflow checks passed.
 
-[Source validation and Chromium run 39185486663](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39185486663) passed for the styling commit. It covered types, content provenance, protected published files, the existing nine foundation tests, isolated compilation, navigation, mobile dialog, currency routes, shared footer, shape and state checks.
+The original homepage regression verified the header menus, six-book tabs, gallery/lightbox, carousel and physical slideshow, four-stage process, writing practice, Resources composition and combined newsletter/footer. No external navigation or subscription submission was performed by the new tests.
 
-The shape report recorded no problems at 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440px. Normal source element geometry, typography, padding and margins were unchanged against source baseline 29283c2223f9c88d5161a079d287edf30f724f72 at all nine widths. Header and newsletter radii changed only from 9px to 6px. Responsive resource focus remained correct.
+The separate pricing preview retained identical measured appearance. Its existing React hydration error 418 was independently reproduced with both original and candidate stylesheets and recorded in the comparison report. It is a pre-existing pricing migration issue, not a new Package 1 regression or a claim of error-free pricing. No pricing code was changed.
 
-State checks exercised actual header/newsletter controls and test-only ActionLink fixtures. They verified normal, hover, pointer-held and keyboard focus states, explicit outline text and non-interactive planned spans. Fixtures are not new public copy. External navigation and newsletter submission were not invoked.
+The permanent read-only Package 1 workflow rechecks committed static files and the actual GitHub Pages URL. Its live stage waits for the deployed stylesheet hash, then opens a fresh browser without stylesheet injection or mocked requests, checks all nine widths and records live desktop/mobile images. Read the run for the actual final branch head before claiming successful deployment or live verification. Automated results are not final founder visual approval.
 
-A QA-only follow-up clears transient text selection left by pointer-held tests before review screenshots. It preserves focus and page styling. Both clean component captures and complete desktop/mobile source captures are produced by the [source workflow](../.github/workflows/validate-public-source.yml), with reports in its browser QA artifact. Read the run for the actual checked commit rather than assuming an earlier successful run covers later code.
+## Original source implementation
 
-## Published boundary
+The founder approved one 6px rectangular action family, explicit forest outlined-action text and shared primary/gold hover feedback. Source commit 9946f52804175998690af9c89cd6d09b957ad93a implemented these. Follow-up 870aadee138b989423a8ef1ffec7ce826f452943 documented them and improved review screenshots.
 
-The original static homepage, pricing routes, compiled bundles, covers and gallery remain protected. The static header and newsletter still retain 9px corners. The approved 6px source rule is an intentional migration refinement, not permission to publish a new homepage. Full reconstruction and founder acceptance remain required.
+Header, gold and newsletter source token names alias the ordinary 6px action token. Outlined source actions use forest #253526. Actual primary ActionLink anchors use #0b5848 on hover; gold anchors use #e9cb93. New hover rules exclude planned non-interactive spans. Existing source normal geometry and colours are otherwise retained.
 
-The source guard restricts this styling package to the approved token and CSS changes. A later authorised typography or migration package must deliberately update this temporary review boundary. Do not bypass published-root protection.
+Earlier approved source corrections remain. The mobile header action is 45px at 390px and 430px. Resource focus follows the parent card radius while retaining the 3px outline and 5px inset. Other card, media, panel, icon, navigation and utility shapes remain unchanged.
 
-## Completion and next work
+[Source run 39185486663](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39185486663) passed the original source checks. Later source regression expectations now recognise the specifically authorised published 6px header/newsletter update. Temporary source-edit guards still require deliberate updates for future authorised styling packages.
 
-The approved Package 1 source corrections and state rules are implemented. This is not a declaration of full homepage parity, finished accessibility certification or founder acceptance of the rendered replacement. Future genuine asynchronous controls need separate disabled/loading behaviour and content approval. Navigation and specialised controls still require their own migration parity checks.
+## Scope and next decision
 
-The next proposed package is measured typography and spacing foundations. Do not begin visible typography changes or migrate new sections without the corresponding founder instruction.
+Package 1's approved source and published refinements are implemented for founder review. Full React migration, complete visual parity, physical-device accessibility review and final design acceptance remain outstanding. The next proposed stage is measured typography and spacing. Do not begin Package 2 or another visible change without instruction.
 
-## Macaly boundary retained
+No copy, pricing, destination, disabled/loading API, asynchronous operation or subscription integration was added. Outline/text hover palettes were not redesigned. Future genuine asynchronous controls require separate behaviour and content approval. The current writing practice remains the existing unsaved dialog.
 
-The current public workflow no longer imports or builds from Macaly. Runtime/configuration scanning and browser checks recorded no Macaly references or attempted requests in the tested preview/source states. Historical references are preserved in the earlier review.
+## Macaly boundary
 
-This does not certify that every original project upload, source file, domain setting or integration is archived. Preserve unique source and assets and check attached services before deleting an external project. The private production platform was not modified or fully audited by this package.
+The current public workflow no longer imports or builds from Macaly. Runtime/configuration scans and tested preview/source states recorded no Macaly references or requests. Historical references are preserved.
+
+This does not certify that every original project upload, source file, domain setting or integration is archived. Preserve unique assets and check attached services before deleting an external project. Private production systems were not modified or fully audited by this package.

@@ -52,19 +52,21 @@ The interface uses restrained shapes, not universal pills. Rectangular public ac
 
 ### Approved action family
 
-The founder explicitly approved the remaining Package 1 source changes on 18 October 2026. Ordinary filled and outlined actions, the Start your story header action, gold actions and the paired newsletter input/action now share `--sl-radius-action` at 6px. The header, newsletter and gold token names are aliases of that single token, not independently maintained values.
+The founder explicitly approved the remaining Package 1 source changes on 18 October 2026. Ordinary filled and outlined actions, the Start your story header action, gold actions and the paired newsletter input/action share `--sl-radius-action` at 6px. The header, newsletter and gold source token names are aliases of that single token, not independently maintained values.
 
-The earlier 9px header/newsletter/gold values were inherited implementation differences, not a necessary hierarchy. The new rule supersedes their temporary retention in editable source. The published static homepage is deliberately unchanged and still retains its old 9px header/newsletter controls. Source approval is not permission to publish those refinements or replace the homepage.
+The founder subsequently authorised applying Package 1 to the existing published homepage so the visible result can be reviewed. The static homepage now uses the same 6px header/newsletter control corners, primary/gold hover colours and responsive resource focus treatment. This supersedes the former source-only publication boundary for this package. It does not authorise a complete React cutover, further visible changes or private production deployment. Final founder acceptance of the published result is a separate step.
 
-Preserve existing dimensions, typography, padding, labels and destinations. The previously corrected mobile source header action remains 45px high at 390px and 430px. Resource keyboard focus follows the parent card radius, retaining its 3px outline and 5px inset.
+The earlier 9px header/newsletter/gold values were inherited implementation differences, not a necessary hierarchy. The homepage stylesheet mirrors the relevant source values through homepage-scoped custom properties, with existing fallbacks for the separate pricing preview. The pricing page's styling is not changed by this release.
+
+Preserve existing dimensions, typography, padding, labels and destinations. The mobile source and published header actions remain 45px high at 390px and 430px. Resource keyboard focus follows the parent card radius, retaining its 3px outline and 5px inset.
 
 ### Approved feedback and semantics
 
-Primary action links reuse the existing header hover background #0b5848 through `--sl-teal-hover`. Normal background remains #0c6753 and text remains white. Gold action links reuse the existing newsletter hover background #e9cb93 through `--sl-gold-action-hover`. Their normal background remains #d7b67e and text remains forest #253526. Header and newsletter hover rules reference the same colour tokens without a colour change.
+Primary action links use hover background #0b5848 through `--sl-teal-hover`. Normal background remains #0c6753 and text remains white. Gold actions use hover background #e9cb93 through `--sl-gold-action-hover`. Existing normal colours are preserved. The published gifting action retains antique gold #cca86b, while the newsletter and experimental source gold ActionLink use #d7b67e. Text remains forest #253526. Package 1 does not unify those normal gold shades or change the existing newsletter hover appearance.
 
-Outlined actions explicitly use forest #253526 rather than browser-default link blue. Their existing border and background are retained. Text actions retain their existing teal treatment. No additional outline/text hover palette was approved in this change.
+Outlined actions explicitly use forest #253526. This corrected browser-default link blue in the source; the published outlined buttons already used forest, so their text colour needed no change. Existing border and background treatments are retained. Text actions retain their existing teal treatment. No additional outline/text hover palette was approved in this change.
 
-The new primary/gold hover rules apply to real ActionLink anchors, not the non-interactive spans used for planned destinations. Use links for navigation and buttons for local actions. Keep independently visible keyboard focus. Pointer-held appearances retain the hover colour without geometry changes or a new animation.
+The source primary/gold hover rules apply to real ActionLink anchors, not the non-interactive spans used for planned destinations. Use links for navigation and buttons for local actions. Keep independently visible keyboard focus. Pointer-held appearances retain the hover colour without geometry changes or a new animation.
 
 No disabled or loading API, asynchronous operation or newsletter subscription service was introduced. Document such states when an actual component needs them, with separate behaviour and content approval. Do not simulate working destinations or dim an entire control to manufacture a state catalogue.
 
@@ -74,7 +76,7 @@ Existing source menu, header shell, icon and utility control values remain named
 
 Shared SiteHeader with original gold logo on forest, Books/Resources accessible dropdowns, mobile navigation and exact Start your story action.
 
-Shared NewsletterFooter as one photographic field gradually fading to forest. A typed React reference now exists in frontend/src/components/NewsletterFooter.tsx, with caller-provided internal routes and currency selection, but it has NOT replaced the approved live footer. This is the standard ending intended for all future public pages, subject to parity and production form integration later.
+Shared NewsletterFooter as one photographic field gradually fading to forest. A typed React reference exists in frontend/src/components/NewsletterFooter.tsx, with caller-provided internal routes and currency selection, but it has NOT replaced the approved live footer. This is the standard ending intended for all future public pages, subject to parity and production form integration later.
 
 EditorialSectionHeading with centred and split layouts, no mandatory italic formula. Primary/outline/gold-on-dark/text Action components with consistent feedback and accessible targets.
 
@@ -102,7 +104,7 @@ Do not copy current static aria-current mistakes into new source. Distinguish a 
 
 Every new public page must be intentionally designed and checked at widths 320, 360, 390, 430, 768, 820, 1024, 1280 and 1440 CSS pixels, plus short-height, 200 percent zoom, keyboard, touch and reduced-motion states. Carousels may scroll intentionally but the whole document may not overflow.
 
-Keep both clean section screenshots and realistic sticky header/context captures. Automated passing checks do not equal founder visual approval. During migration, distinguish the protected static baseline from explicitly approved source refinements such as the 6px action family. All unapproved differences still require correction or founder review.
+Keep both clean section screenshots and realistic sticky header/context captures. Automated passing checks do not equal founder visual approval. During migration, distinguish the protected static baseline from explicitly approved source refinements. Package 1's published refinements are recorded in its release evidence. All other unapproved differences still require correction or founder review.
 
 ## Separation from future account dashboards
 
@@ -112,7 +114,7 @@ The later authenticated workspace, Storyteller/contributor and admin interfaces 
 
 Actual open-book photography, trust-band first phrase/placement, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
 
-The current deployed static homepage remains the visual baseline until the editable source reproduces it faithfully with the separately approved source refinements.
+The deployed static homepage, including the specifically authorised Package 1 refinements submitted for review, remains the migration reference. Its approved layout, content and interactions must be reproduced faithfully.
 
 ## Implementation maturity
 

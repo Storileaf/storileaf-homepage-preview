@@ -10,7 +10,7 @@ const baseline = '1433a413917a63df47e05f5c2d39283689624f37'
 const sourceBaseline = '29283c2223f9c88d5161a079d287edf30f724f72'
 const out = 'qa/shape-foundation'
 const problems = []
-const report = { baseline, sourceBaseline, scope: 'Approved 6px action family, forest outline text and existing primary/gold hover colours; source only', staticReferences: [], browser: [], problems }
+const report = { baseline, sourceBaseline, scope: 'Approved 6px action family, forest outline text and existing primary/gold hover colours; source and published controls', staticReferences: [], browser: [], problems }
 const check = (ok, message) => { if (!ok) problems.push(message) }
 const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8' })
 const vendorPattern = /macaly|qcx8qibycrjhsu3gv7vr1spg/i
@@ -208,8 +208,8 @@ try {
         check(row.focusAfter.visible && row.focusAfter.radius === row.focusAfter.parentRadius && row.focusAfter.radius === (width <= 480 ? '17px' : '20px'), 'Responsive resource focus regression at ' + width)
         await link.evaluate(el => el.blur())
       } else {
-        check(measured['.header-find-book']?.radius === '9px', 'Published header baseline changed at ' + width)
-        check(measured['.hero .button']?.radius === '6px' && measured['.newsletter-inline-preview input']?.radius === '9px', 'Published control baseline changed at ' + width)
+        check(measured['.header-find-book']?.radius === '6px', 'Published header baseline changed at ' + width)
+        check(measured['.hero .button']?.radius === '6px' && measured['.newsletter-inline-preview input']?.radius === '6px', 'Published control baseline changed at ' + width)
       }
       check(!(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)), kind + ' overflows at ' + width)
     }
