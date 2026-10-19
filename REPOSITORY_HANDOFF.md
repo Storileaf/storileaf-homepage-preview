@@ -2,7 +2,7 @@
 
 ## Current milestone
 
-19 October 2026. Packages 1 and 2 are implemented in the isolated React source and the existing published homepage. The founder responded positively to the final Package 2 release and authorised Package 3 Group 1, covering Resources and Gifting in the editable source, their parity checks and supporting documentation. Both sections are implemented. Source validation, all 16 tests, the isolated build, retained browser regressions and full ten-width comparison pass locally. Final GitHub commit, CI and artifact references remain pending. See the [Group 1 review](docs/PACKAGE_3_GROUP_1_REVIEW.md) for precise results and limitations.
+19 October 2026. Packages 1 and 2 are implemented in the isolated React source and the existing published homepage. The founder responded positively to the final Package 2 release and authorised Package 3 Group 1, covering Resources and Gifting in the editable source, their parity checks and supporting documentation. Both sections are implemented in public commit 22685299cb7912b38352875c3dd2b2f77fec6374. Source validation, all 16 tests, the isolated build, retained browser regressions and full ten-width comparison pass locally. Source, Package 2, editorial, footer and Pages workflows pass on GitHub. Corrected harness 981016e6609733cc436cf7c74b0214dda53563a1 passes the complete local Chrome 155 matrix. Two earlier CI attempts remain as diagnostic history; final dedicated CI verification is pending. See the [Group 1 review](docs/PACKAGE_3_GROUP_1_REVIEW.md) for precise results and limitations.
 
 Retain the completed Newsreader and Manrope roles, responsive containers and spacing, 15px FAQ questions with 1.5 leading, 15px standalone editorial actions, 15px footer column headings with 1.4 leading and 13px currency text at all widths. Answers remain 15px. The current source migration does not reopen Packages 1 or 2 or create a separate retrospective approval record.
 
@@ -30,7 +30,7 @@ The protected-root guard is deliberately repinned for the authorised static rele
 
 ## Remaining work
 
-Attach final GitHub source commit and CI evidence for the completed local Resources and Gifting verification before proposing the next migration group. The source reuses existing primitives and records section exceptions in the sole design system. Its composition keeps Gifting before Resources, with the existing source header and footer still treated as references awaiting their own parity work.
+Attach the final dedicated CI result and artifact evidence for the current corrected harness before proposing the next migration group. The source reuses existing primitives and records section exceptions in the sole design system. Its composition keeps Gifting before Resources, with the existing source header and footer still treated as references awaiting their own parity work.
 
 Full React homepage reconstruction, complete nine-width visual and functional parity, broader browser and physical device checks, and full native zoom review remain pending. Group 1 evidence concerns its two sections only. The source build remains unpublished, and no new public page or asynchronous newsletter behaviour is introduced.
 
@@ -40,7 +40,7 @@ Genuine gallery/craft photography, final hero motion and reassurance-band decisi
 
 Incorrect static current-page semantics on homepage section links remain pending navigation migration work. The separate pricing preview retains a previously reproduced hydration warning. Group 1 must preserve that preview and must not claim the warning has been resolved without specific evidence.
 
-The targeted 200 percent section text experiment at 320×568px found Gifting heading, paragraph and button text clipped at the panel's right edge in both the published and React versions. Resources reflows. Keep this inherited Package 4 finding visible in the records. Matching document overflow and clipping do not constitute an enlargement quality pass. A visible correction needs a scoped proposal and founder approval.
+The targeted 200 percent section text experiment at 320×568px found Gifting heading and paragraph text clipped at the panel's right edge in both the published and React versions. The button's right edge also extends into the clipped area; the Range report does not flag its label. Resources reflows. Keep this inherited Package 4 finding visible in the records. Matching document overflow and clipping do not constitute an enlargement quality pass. A visible correction needs a scoped proposal and founder approval.
 
 ## Working rules
 

@@ -23,4 +23,4 @@ Do not treat successful CI, a proposal, an approved design, a working preview an
 
 Package 2 typography and spacing evidence is recorded in [Package 2 review](PACKAGE_2_REVIEW.md). PUBLIC_DESIGN_SYSTEM.md remains the sole public style authority.
 
-Package 3 Group 1 has implemented Resources and Gifting in isolated source. Its completed local source, regression and ten-width parity checks, pending final GitHub evidence and inherited text enlargement finding are in [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md). Later groups and a complete React publishing cutover require further approval.
+Package 3 Group 1 has implemented Resources and Gifting in isolated source. Its completed local checks, source and harness commits, retained GitHub workflows, two earlier diagnostic CI attempts and inherited text enlargement finding are in [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md). The current corrected harness passes the full local Chrome 155 matrix; final dedicated CI verification remains pending. Later groups and a complete React publishing cutover require further approval.

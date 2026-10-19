@@ -164,7 +164,7 @@ The later authenticated workspace, Storyteller/contributor and admin interfaces 
 
 Actual open-book photography, trust-band first phrase/placement, hero motion settings, full physical accessibility review, resource destination pages, dedicated practice page, newsletter backend, real production performance measurement and parity-based React cutover. These remain recorded decisions to take later.
 
-Group 1 identified an inherited text enlargement limitation. At 320×568px with the section text sizes targeted to 200 percent, both static and React Gifting clip heading, paragraph and button text inside the panel despite no document overflow. Resources reflows. This remains an open Package 4 quality finding, not an accepted enlargement outcome or permission to change the visible composition. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for the measured capture method and scope.
+Group 1 identified an inherited text enlargement limitation. At 320×568px with the section text sizes targeted to 200 percent, both static and React Gifting clip heading and paragraph text inside the panel despite no document overflow. The button's right edge also extends into the clipped area; the Range report does not flag its label. Resources reflows. This remains an open Package 4 quality finding, not an accepted enlargement outcome or permission to change the visible composition. See [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) for the measured capture method and scope.
 
 The deployed static homepage, including the completed Package 1 and Package 2 refinements, remains the migration reference. Its approved layout, content and interactions must be reproduced faithfully. The founder's positive final Package 2 response allows the staged work to continue without reopening the foundation work or inventing a separate acceptance record.
 
@@ -172,7 +172,7 @@ The deployed static homepage, including the completed Package 1 and Package 2 re
 
 The public React source is deliberately staged. Typed ResourceCategoryCard, EditorialHeading, ActionLink, ResponsiveImage and NewsletterFooter references exist, but they are not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
 
-Package 3 Group 1 has implemented Resources and Gifting in isolated source. Source validation, retained browser regressions and the full ten-width comparison pass locally. Final GitHub commit and CI evidence remain pending. The inherited text enlargement finding remains open. This does not approve later migration groups, a homepage redesign or publication of the partial React build.
+Package 3 Group 1 has implemented Resources and Gifting in isolated source. Source validation, retained browser regressions and the full ten-width comparison pass locally, including the current corrected harness in Chrome 155. The source and harness commits, retained GitHub workflows and two earlier diagnostic CI attempts are recorded in the review. Final dedicated CI verification remains pending. The inherited text enlargement finding remains open. This does not approve later migration groups, a homepage redesign or publication of the partial React build.
 
 ## Source-only shared shell maturity
 
