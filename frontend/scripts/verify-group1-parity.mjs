@@ -91,27 +91,42 @@ for (const [kind, page] of Object.entries(pages)) {
 }
 const pixelPage = await context.newPage()
 
+async function within(promise, stage, timeout = 15000) {
+  let timer
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => { timer = setTimeout(() => reject(new Error(stage + ' timed out after ' + timeout + 'ms')), timeout) }),
+    ])
+  } finally {
+    clearTimeout(timer)
+  }
+}
 async function settle(page) {
-  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+  // Chrome may throttle animation frames and pointer updates in a background tab.
+  // Read the real foreground state, with a bounded failure rather than a fallback.
+  await page.bringToFront()
+  await within(page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))), 'Foreground frame settling')
 }
 async function ready(page, kind) {
+  await page.bringToFront()
   await page.goto(urls[kind], { waitUntil: 'domcontentloaded' })
   await page.locator('#resources article').last().waitFor()
-  const fontResult = await page.evaluate(async () => {
+  const fontResult = await within(page.evaluate(async () => {
     await Promise.all([document.fonts.load('450 40px Newsreader'), document.fonts.load('400 15px Manrope')])
     await document.fonts.ready
     return [...document.fonts].filter(face => face.status === 'loaded').map(face => face.family)
-  })
+  }), kind + ' actual font readiness', 45000)
   if (!fontResult.some(font => font.includes('Newsreader')) || !fontResult.some(font => font.includes('Manrope'))) {
     throw new Error(kind + ' did not load the actual Newsreader and Manrope fonts')
   }
   for (const name of Object.keys(groups)) {
     const photos = page.locator(groups[name].selector + ' img')
     for (let i = 0; i < await photos.count(); i++) await photos.nth(i).scrollIntoViewIfNeeded()
-    await photos.evaluateAll(async images => {
+    await within(photos.evaluateAll(async images => {
       await Promise.all(images.map(image => image.decode()))
       if (images.some(image => !image.complete || !image.naturalWidth)) throw new Error('Missing section image')
-    })
+    }), kind + ' ' + name + ' image decoding', 45000)
   }
   await page.mouse.move(0, 0)
   await settle(page)
@@ -197,7 +212,8 @@ function compareSnapshots(before, after, label) {
   return differences
 }
 async function pixelComparison(before, after, filename) {
-  const result = await pixelPage.evaluate(async ({ left, right }) => {
+  await pixelPage.bringToFront()
+  const result = await within(pixelPage.evaluate(async ({ left, right }) => {
     const load = data => new Promise((resolve, reject) => {
       const image = new Image(); image.onload = () => resolve(image); image.onerror = reject
       image.src = 'data:image/png;base64,' + data
@@ -225,12 +241,13 @@ async function pixelComparison(before, after, filename) {
       changedPixels: changed, changedRatio: ratio, channelTolerance: 24,
       comparison: canvas.toDataURL('image/png').split(',')[1],
     }
-  }, { left: before.toString('base64'), right: after.toString('base64') })
+  }, { left: before.toString('base64'), right: after.toString('base64') }), 'Pixel comparison ' + filename)
   await fs.writeFile(path.join(folder, filename), Buffer.from(result.comparison, 'base64'))
   delete result.comparison
   return result
 }
 async function capture(page, group, filename) {
+  await settle(page)
   const viewport = page.viewportSize()
   const original = await page.locator(group.selector).boundingBox()
   const captureHeight = Math.max(viewport.height, Math.ceil(original.height) + 400)
@@ -251,7 +268,12 @@ async function capture(page, group, filename) {
   const current = await page.locator(group.selector).boundingBox()
   const viewportGeometryUnchanged = Math.abs(original.width - current.width) <= 0.015 && Math.abs(original.height - current.height) <= 0.015
   check(alignment.delta >= 0 && alignment.delta < 1 && alignment.geometryUnchanged && viewportGeometryUnchanged, 'Capture alignment changed section geometry ' + filename)
-  report.captureAlignments.push({ filename, ...alignment, originalViewport: viewport, captureHeight, viewportGeometryUnchanged })
+  report.captureAlignments.push({
+    filename, ...alignment, originalViewport: viewport, captureHeight, viewportGeometryUnchanged,
+    originalDimensions: { width: original.width, height: original.height },
+    captureDimensions: { width: current.width, height: current.height },
+    dimensionChanges: { width: current.width - original.width, height: current.height - original.height },
+  })
   try {
     await page.locator(group.selector).evaluate(element => scrollTo({ top: scrollY + element.getBoundingClientRect().top - 10, behavior: 'instant' }))
     await settle(page)
@@ -278,7 +300,7 @@ async function stateMeasurement(page, group, selector) {
     return {
       background: css.backgroundColor, color: css.color, radius: css.borderRadius,
       outline: css.outlineWidth, outlineOffset: css.outlineOffset, outlineColor: css.outlineColor,
-      focused: element.matches(':focus-visible'),
+      focused: element.matches(':focus-visible'), hovered: element.matches(':hover'),
       imageTransform: image ? getComputedStyle(image).transform : null,
       arrowTransform: arrow ? getComputedStyle(arrow).transform : null,
     }
@@ -328,10 +350,12 @@ try {
     for (const [name, selector] of [['gifting', 'a'], ['resources', 'article a']]) {
       const values = {}
       for (const [kind, page] of Object.entries(pages)) {
+        await settle(page)
         const target = page.locator(groups[name].selector + ' ' + selector).first()
         await target.hover()
         await page.waitForTimeout(1400)
         values[kind] = await stateMeasurement(page, groups[name], selector)
+        check(values[kind].hovered, kind + ' ' + name + ' hover did not activate with ' + motion)
       }
       check(JSON.stringify(values.published) === JSON.stringify(values.source), name + ' hover differs with ' + motion)
       report.states.push({ state: 'hover', group: name, motion, ...values })
