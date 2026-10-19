@@ -28,7 +28,7 @@ const report = {
     'A zero width border may use solid or none. Visible borders remain compared.',
     'Gifting uses the same warm paper underlay explicitly in React and inherited from the page in static HTML. Pixel comparisons verify the composite.',
   ],
-  captureMethod: 'Real pages measured after fonts and images load. Clean crops temporarily extend viewport height to contain the complete section, hide the unrelated sticky header and add less than one CSS pixel to body padding to align the section document origin to a whole pixel. Both capture adjustments assert unchanged section geometry. This avoids clipped browser painting and raster differences caused by different preceding content in the incomplete React page. Context captures retain the original viewport, page position and header. No target section styles, assets or responses are substituted.',
+  captureMethod: 'Real pages measured after fonts and images load. Clean crops temporarily extend viewport height to contain the complete section, hide the unrelated sticky header and apply a recorded body padding adjustment of less than one CSS pixel based on the section document origin. The report records the resulting document positions and verifies unchanged section geometry for both capture adjustments. This avoids clipped browser painting and limits raster differences caused by different preceding content in the incomplete React page. Context captures retain the original viewport and header without the capture adjustments. No target section styles, assets or responses are substituted.',
   limits: 'Chromium automation, emulated touch and targeted text enlargement. Not native browser zoom, physical device or cross browser certification.',
 }
 const check = (ok, message) => { if (!ok) problems.push(message) }
@@ -408,7 +408,9 @@ try {
       for (const [kind, page] of Object.entries(pages)) {
         await page.setViewportSize({ width, height: 600 })
         await settle(page)
-        await page.evaluate(id => { location.hash = ''; location.hash = id }, id)
+        // Each target differs from the previous one. Use one native hash change,
+        // as a visitor would, without a spurious blank-hash route restoration.
+        await page.evaluate(id => { location.hash = id }, id)
         await page.waitForFunction(id => {
           const element = document.getElementById(id), bounds = element.getBoundingClientRect()
           const documentTop = bounds.top + scrollY
@@ -419,6 +421,7 @@ try {
         }, id, { timeout: 5000 })
         await settle(page)
         values[kind] = await page.locator('#' + id).evaluate(element => ({
+          hash: location.hash,
           offset: getComputedStyle(element).scrollMarginTop,
           rootPadding: getComputedStyle(document.documentElement).scrollPaddingTop,
           top: Math.round(element.getBoundingClientRect().top),
@@ -459,16 +462,42 @@ try {
   // Targeted enlargement is explicitly not native browser zoom. Document width
   // alone does not establish readability inside an overflow-hidden panel.
   const enlargement = {}
+  const enlargementTargets = '#gifting h2, #gifting p, #gifting a, #resources h2, #resources h3, #resources p, #resources article span, #resources > div > div:last-child span'
+  const enlargementReadinessTargets = enlargementTargets + ', #gifting h2 em, #resources h2 em'
   for (const [kind, page] of Object.entries(pages)) {
     await page.setViewportSize({ width: 320, height: 568 })
     await ready(page, kind)
-    await page.evaluate(() => {
+    const expectedTextMetrics = await page.evaluate(({ targets, readinessTargets }) => {
       document.activeElement?.blur()
-      const elements = [...document.querySelectorAll('#gifting h2, #gifting p, #gifting a, #resources h2, #resources h3, #resources p, #resources article span, #resources > div > div:last-child span')]
+      const expected = [...document.querySelectorAll(readinessTargets)].map(element => {
+        const css = getComputedStyle(element)
+        return {
+          tag: element.tagName, section: element.closest('section').id,
+          fontSize: parseFloat(css.fontSize) * 2,
+          lineHeight: Number.isFinite(parseFloat(css.lineHeight)) ? parseFloat(css.lineHeight) * 2 : null,
+        }
+      })
+      const elements = [...document.querySelectorAll(targets)]
       const sizes = elements.map(element => [element, parseFloat(getComputedStyle(element).fontSize) * 2])
       for (const [element, size] of sizes) element.style.fontSize = size + 'px'
-    })
+      return expected
+    }, { targets: enlargementTargets, readinessTargets: enlargementReadinessTargets })
+    // In Chrome 155 an emphasis descendant can briefly retain its old inherited
+    // font after its heading changes. Await the actual doubled typography before
+    // reading clipping or capture dimensions. The enlargement inputs stay intact.
+    await page.waitForFunction(({ selector, expected }) => {
+      const elements = [...document.querySelectorAll(selector)]
+      return elements.length === expected.length && elements.every((element, index) => {
+        const css = getComputedStyle(element), target = expected[index]
+        return Math.abs(parseFloat(css.fontSize) - target.fontSize) < 0.01
+          && (target.lineHeight === null || Math.abs(parseFloat(css.lineHeight) - target.lineHeight) < 0.01)
+      })
+    }, { selector: enlargementReadinessTargets, expected: expectedTextMetrics }, { timeout: 5000 })
     await settle(page)
+    const actualTextMetrics = await page.locator(enlargementReadinessTargets).evaluateAll(elements => elements.map(element => {
+      const css = getComputedStyle(element)
+      return { tag: element.tagName, section: element.closest('section').id, fontSize: parseFloat(css.fontSize), lineHeight: Number.isFinite(parseFloat(css.lineHeight)) ? parseFloat(css.lineHeight) : null }
+    }))
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)
     check(!overflow, kind + ' targeted 200 percent text overflow')
     const clippedText = await page.evaluate(() => {
@@ -495,7 +524,7 @@ try {
     for (const [name, group] of Object.entries(groups)) {
       await capture(page, group, name + '-text-enlargement-' + kind + '-320.png')
     }
-    report.states.push({ state: 'targeted 200 percent section text enlargement', kind, width: 320, height: 568, documentOverflow: overflow, clippedText })
+    report.states.push({ state: 'targeted 200 percent section text enlargement', kind, width: 320, height: 568, documentOverflow: overflow, expectedTextMetrics, actualTextMetrics, clippedText })
   }
   check(JSON.stringify(enlargement.published) === JSON.stringify(enlargement.source), 'Text enlargement clipping differs from the published baseline')
   if (enlargement.published?.length) report.qualityFindings.push({
