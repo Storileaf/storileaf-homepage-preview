@@ -7,7 +7,7 @@ import http from 'node:http'
 // Read-only checks. The experimental build never replaces the published root.
 const root = path.resolve('..')
 const baseline = '1433a413917a63df47e05f5c2d39283689624f37'
-const sourceBaseline = '29283c2223f9c88d5161a079d287edf30f724f72'
+const sourceBaseline = '4b14b91b642795d2b466a0c018f84f3474d44991'
 const out = 'qa/shape-foundation'
 const problems = []
 const report = { baseline, sourceBaseline, scope: 'Approved 6px action family, forest outline text and existing primary/gold hover colours; source and published controls', staticReferences: [], browser: [], problems }
@@ -26,24 +26,15 @@ for (const file of runtimeFiles) {
 }
 check(report.staticReferences.length === 0, 'A runtime dependency on the retired preview vendor appeared')
 
-// Bounded package guard. A later authorised package should replace this review boundary.
+// Package 1 is now a semantic regression, not a prohibition on authorised source work.
 const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css'])
 const originalTokens = git(['show', sourceBaseline + ':frontend/src/styles/tokens.css'])
-const styles = await fs.readFile('src/styles/components.css', 'utf8')
 const tokens = await fs.readFile('src/styles/tokens.css', 'utf8')
-let expected = original.replace('.sl-action--outline { border:', '.sl-action--outline { color:var(--sl-forest); border:')
-expected = expected.replace('.sl-action--outline {', 'a.sl-action--primary:hover { background:var(--sl-teal-hover); }\n.sl-action--outline {')
-expected = expected.replace('.sl-action--planned {', 'a.sl-action--gold:hover { background:var(--sl-gold-action-hover); }\n.sl-action--planned {')
-expected = expected.replace('background:#0b5848;', 'background:var(--sl-teal-hover);').replace('background:#e9cb93;', 'background:var(--sl-gold-action-hover);')
-// Declaration order and whitespace alone are not visual changes.
-const normalise = text => text.replace(/\/\*[\s\S]*?\*\//g, '').replace(/([^{}]+)\{([^{}]*)\}/g, (_, selector, body) => selector + '{' + body.split(';').map(x => x.trim()).filter(Boolean).sort().join(';') + '}').replace(/\s+/g, '')
-check(normalise(expected) === normalise(styles), 'Styles exceed the approved action colour and hover changes')
-const tokenMap = text => Object.fromEntries([...text.matchAll(/(--sl-[\w-]+)\s*:\s*([^;]+);/g)].map(m => [m[1], m[2].trim()]))
-const expectedTokens = { ...tokenMap(originalTokens), '--sl-radius-header-action': 'var(--sl-radius-action)', '--sl-radius-newsletter-control': 'var(--sl-radius-action)', '--sl-radius-gold-action': 'var(--sl-radius-action)', '--sl-teal-hover': '#0b5848', '--sl-gold-action-hover': '#e9cb93' }
-const actualTokens = tokenMap(tokens)
-check(Object.keys(expectedTokens).length === Object.keys(actualTokens).length && Object.entries(expectedTokens).every(([k, v]) => actualTokens[k] === v), 'Unexpected token change beyond approved action aliases and hover colours')
-const sourceChanges = git(['diff', '--name-only', sourceBaseline, '--', 'frontend/src']).trim().split('\n').filter(Boolean)
-check(sourceChanges.every(file => ['frontend/src/styles/components.css', 'frontend/src/styles/tokens.css'].includes(file)), 'Component content or behaviour changed outside this styling approval')
+for (const alias of ['header-action', 'newsletter-control', 'gold-action']) {
+  check(tokens.includes('--sl-radius-' + alias + ': var(--sl-radius-action)'), 'Action alias drifted: ' + alias)
+}
+check(tokens.includes('--sl-radius-action: 6px'), 'Approved 6px action value changed')
+check(tokens.includes('--sl-teal-hover: #0b5848') && tokens.includes('--sl-gold-action-hover: #e9cb93'), 'Approved hover palette changed')
 
 const mime = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.woff2': 'font/woff2' }
 const tracked = new Set(files)
@@ -187,7 +178,7 @@ try {
         for (const selector of targets) {
           const b = { ...before[selector] }, a = { ...measured[selector] }
           if (changedCorners.has(selector)) {
-            check(b.radius === '9px' && a.radius === '6px', 'Expected only 9px to 6px corner change in ' + selector)
+            check(b.radius === '6px' && a.radius === '6px', 'Retained 6px corner changed in ' + selector)
             delete b.radius; delete a.radius
           }
           check(JSON.stringify(b) === JSON.stringify(a), 'Unexpected normal style change in ' + selector + ' at ' + width)

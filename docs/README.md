@@ -20,3 +20,5 @@ Do not treat successful CI, a proposal, an approved design, a working preview an
 - [Content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) captures verified claims, exact copy approvals and destination status.
 
 - [Reusable public page design and release template](PAGE_SPEC_TEMPLATE.md) records source-backed copy, visual decisions, responsive behaviour and implementation proof before publishing more pages.
+
+Package 2 typography and spacing evidence is recorded in [Package 2 review](PACKAGE_2_REVIEW.md). PUBLIC_DESIGN_SYSTEM.md remains the sole public style authority.

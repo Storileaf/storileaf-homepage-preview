@@ -37,7 +37,7 @@ From frontend run npm ci, npm run check, npm run build and npm run preview. The 
 
 scripts/verify-homepage-ui.mjs is the existing static Chromium regression. frontend/scripts/guard-published.mjs pins the protected release, documented in frontend/baseline/README.md. Changes to protected files require a scoped approval, browser evidence and deliberate baseline update.
 
-The read-only review-published-package1 workflow compares approved Package 1 styling at all nine widths, checks interaction states and opens the actual Pages URL after its CSS matches the reviewed build. Candidate preparation code was retired after release. QA artifacts are evidence, not a second implementation. The existing homepage QA workflow may append a screenshot-only commit; verify its final deployment too.
+The read-only review-published-package1 workflow retains live action, focus and navigation checks at all nine widths. Its original before/after comparison is historical evidence, not a veto on later authorised typography. The Package 2 review owns the current typography and spacing comparison. Candidate preparation code was retired after release. QA artifacts are evidence, not a second implementation. The existing homepage QA workflow may append a screenshot-only commit; verify its final deployment too.
 
 ## Cutover criteria
 
@@ -64,3 +64,7 @@ Images reserve intrinsic dimensions, have meaningful alt text, appropriate crop/
 Do not run the retired Macaly importer. Do not commit secrets, proprietary fonts, customer data, authentication, payments, databases, private app code or unauthorised newsletter integrations to the public repo. Do not modify private production main.
 
 Account, Storyteller, contributor and admin interfaces remain a separate later design project. Passing source, static or live browser checks is not founder visual approval, physical-device certification or full accessibility certification.
+
+## Package 2 continuity
+
+Foundation CSS is the canonical type/spacing source and its homepage mirror is tested. Changes need corresponding source/static browser evidence and a deliberate protected-baseline update. Keep the earlier package history for audit, but replace temporary source edit whitelists with semantic regression checks when later work is authorised. Passing tests and publication for review remain distinct from final founder acceptance.

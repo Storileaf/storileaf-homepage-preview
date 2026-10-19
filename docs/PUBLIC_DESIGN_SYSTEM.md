@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.0 foundation. Established 18 October 2026. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -10,20 +10,34 @@ Preserve the existing approved homepage layout, content, interactions, photograp
 
 ## Typography roles
 
-Use Newsreader for display headings and selective meaningful italic emphasis. Use Manrope for body, navigation, controls, labels, secondary text and forms. Georgia and system sans are fallback families, not target typography. The StoriLeaf wordmark must remain an actual image, not recreated typography.
+Package 2 establishes reusable roles without making every section the same size. Newsreader is the display face. Manrope is the body and interface face. Georgia/Arial are fallbacks, not the public target. The older Georgia/Lato paragraph in the uploaded Brand DNA is superseded for this public website only. The logo remains an image.
 
-| Role | Working current homepage reference | Purpose |
+Canonical implementation is `frontend/src/styles/foundations.css`, with identity and shape tokens in `tokens.css`. `Typography.tsx` separates native heading level from visual variant. Select h1/h2/h3 according to document hierarchy, not the desired size. `EditorialHeading` retains an optional emphasis and introduction, centre/left alignment and h2 default. Do not add a compulsory overline or italic formula.
+
+| Reusable display role | Desktop size rule at a default 16px root | Narrow treatment | Leading and use |
+| --- | --- | --- | --- |
+| Hero | 49px to 80px, preferred 5.5vw | Existing 900/720/480/360px steps retained | 1.01, page entry |
+| Feature | 46px to 64px, preferred 4.7vw | 38px below 720px | 1.04, writing/FAQ style |
+| Editorial | 44px to 65px, preferred 4.75vw | 40px to 54px below 720px, 38px to 47px below 480px | 1.085, Resources style |
+| Compact | 40px to 55px, preferred 4vw | 38px below 720px | 1.04, narrower invitation |
+| Card | 29px to 36px, preferred 2.65vw | 27px to 33px below 720px | 1.16, editorial card |
+| Newsletter | 42px to 61px, preferred 4.25vw | 39px to 49px below 480px | 1.09, shared ending |
+
+These are semantic CSS tokens, not fixed widths or permission to restyle existing headings. At 1440px the actual hero is 79.2px, not the outdated approximate 65px maximum previously listed. The distinct discovery, gallery, physical book and process headings retain their existing section rules. Resources retains its existing 1.08 narrow-screen leading. Existing source references are still not full published parity.
+
+| Manrope role | Default | Use |
 | --- | --- | --- |
-| Hero display | About 42–65px, responsive | Main promise and page entry |
-| Large editorial title | About 44–67px, section dependent | Important sections |
-| Compact editorial title | About 36–46px | Narrow/secondary compositions |
-| Card title | About 29–36px | Resource, book and feature cards |
-| Main body | Baseline 15px | Narrative copy |
-| Lead copy | Usually 15–17px | Explanations beneath headings |
-| Navigation and actions | Mostly 13–15px | Interactive controls |
-| Fine metadata | Smaller only where legibility remains good | Genuine secondary details |
+| Body and FAQ answer | 15px, regular, leading 1.7 or answer 1.75 | Narrative text |
+| Lead | 15px to 17px, leading 1.67 by default | Introductory copy |
+| Supporting text | 14px, leading 1.55 | Secondary readable explanation |
+| Action text | 14px, bold, leading 1.35 | Ordinary actions and FAQ links |
+| FAQ question | 15px, weight 600, leading 1.5 | Native disclosure summary |
+| Metadata | 13px, leading 1.55 | Legal and genuinely secondary information |
+| Compact label | 11px where already used | Footer grouping or utility labels, never paragraph copy |
 
-These are OBSERVED starting ranges, not permission to resize the approved homepage globally. Final type tokens should follow real measured desktop and mobile comparisons. Prefer readable main text and sentence case. Never force an italic phrase or decorative overline into every future section. Functional form labels, statuses and accessible names are not decorative overlines.
+Preserve editorial distinctions such as the source card's existing 15.5px body, homepage gallery/writing lead at 16px, compact header action on phones, scaled device illustration text and existing footer legal typography. They have been evaluated rather than blindly resized. Future interface paragraphs should use the body/support roles, not illustration sizes. Disabled/loading behaviours belong to genuine controls and are not introduced by this package.
+
+Text sizes in the canonical source use rem bounds at the normal browser root size. Do not fix the html font size, disable user zoom or introduce fixed text-box heights. Keep unitless leading. Desktop/mobile, text enlargement and spacing checks remain necessary because relative units alone do not prove accessibility.
 
 ## Colour roles
 
@@ -42,9 +56,15 @@ Colour tokens for NEW React components are in frontend/src/styles/tokens.css. Ne
 
 ## Containers and spacing
 
-Approved homepage content width is 1184px. Current total inline gutters are 96px desktop, 64px intermediate and 40px narrow phone. Current base vertical section spacing is about 94px desktop, 70px tablet and 57px small phone, with justified section-specific exceptions. These are baseline rules to simplify, not authority for blind global replacements.
+`Container` uses the existing 1184px content maximum. Total inline gutters are 96px above 900px, 64px at 900px and below, and 40px at 480px and below. That means 48px, 32px and 20px per side before the maximum width adds more outside space. Header and hero media retain their own wider compositions.
 
-Use three conceptual spacing roles. Section spacing separates independent narratives. Component spacing defines panels, grids and photography. Text spacing keeps titles, descriptions and actions meaningfully connected. Do not pile section margins on section padding or use decorative whitespace without a role.
+`Section` supplies standard spacing of 94px, 70px and 57px at the same breakpoints. Compact spacing is 70px, 57px and 40px. A `none` option supports compositions that own their spacing. These are reusable defaults, not replacements for every homepage section's intentional top/bottom spacing.
+
+Named gaps connect title to copy (19px), card title to copy (13px), copy to following action (25px) and introductory heading group to content (43px desktop, 30px intermediate). Resources retains its specifically published 26px phone gap. Responsive card padding retains 24px to 36px fluid desktop, 28px/30px/30px intermediate, 25px/25px/28px smaller and 23px/23px/26px phone. Use small 8/12/16/20/24/32/40px spacing steps for ordinary component interiors, and named editorial exceptions where they already exist.
+
+The published homepage retains its asymmetric discovery, gallery/craft, devices, gifting, Resources, FAQ and photographic ending spacing. The process section's scroll runway, sticky alignment and reduced-motion/short-height variants are not ordinary section padding and must not be normalised. See the Package 2 measured inventory and review record before migrating them.
+
+The source foundation tokens are mirrored into a bounded block in the existing homepage CSS, scoped to the homepage. `frontend/scripts/sync-foundations.mjs` checks exact agreement. It writes only when explicitly invoked with `--write` for an authorised release. Existing effective declarations consume tokens in place, with original fallbacks for the separate pricing preview. Do not append another stylesheet override layer or disable the published baseline guard.
 
 ## Shape hierarchy
 
@@ -54,7 +74,7 @@ The interface uses restrained shapes, not universal pills. Rectangular public ac
 
 The founder explicitly approved the remaining Package 1 source changes on 18 October 2026. Ordinary filled and outlined actions, the Start your story header action, gold actions and the paired newsletter input/action share `--sl-radius-action` at 6px. The header, newsletter and gold source token names are aliases of that single token, not independently maintained values.
 
-The founder subsequently authorised applying Package 1 to the existing published homepage so the visible result can be reviewed. The static homepage now uses the same 6px header/newsletter control corners, primary/gold hover colours and responsive resource focus treatment. This supersedes the former source-only publication boundary for this package. It does not authorise a complete React cutover, further visible changes or private production deployment. Final founder acceptance of the published result is a separate step.
+The founder subsequently authorised applying Package 1 to the existing published homepage so the visible result can be reviewed. The static homepage now uses the same 6px header/newsletter control corners, primary/gold hover colours and responsive resource focus treatment. This supersedes the former source-only publication boundary for this package. It does not authorise a complete React cutover, further visible changes or private production deployment. The founder accepted the published Package 1 result before requesting Package 2.
 
 The earlier 9px header/newsletter/gold values were inherited implementation differences, not a necessary hierarchy. The homepage stylesheet mirrors the relevant source values through homepage-scoped custom properties, with existing fallbacks for the separate pricing preview. The pricing page's styling is not changed by this release.
 

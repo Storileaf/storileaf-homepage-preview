@@ -33,3 +33,7 @@ The isolated React reference now includes a shared NewsletterFooter with currenc
 ## Browser-checked shared source references
 
 The isolated React build now includes source-only SiteHeader and NewsletterFooter alongside the editorial heading, resource card and image primitives. Source CI runs a browser regression with nine responsive widths, native mobile dialog focus restoration, hover menus and shared-footer visual checks. The source build is NOT deployed at the Pages root. Whole-homepage React reconstruction remains a future staged implementation within the already authorised frontend programme; do not report it complete from these source-reference checks alone.
+
+## Package 2 typography and spacing
+
+The founder accepted the published Package 1 result, then authorised completion of Package 2 on the same visible-review basis. Reusable type, container and spacing foundations preserve distinct editorial sections. The bounded visible refinement raises FAQ questions to 15px and FAQ action links to 14px, with existing answer text and content retained. Implementation and final founder visual acceptance remain separate. See PACKAGE_2_REVIEW.md and the active public design system.

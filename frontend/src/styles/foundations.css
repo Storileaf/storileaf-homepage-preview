@@ -1,0 +1,88 @@
+/* Public typography and spacing. Newsreader/Manrope families live in tokens.css.
+   Sizes use rem at the browser's default 16px root. Do not set a fixed html font size.
+   This is the canonical token block mirrored into the static homepage during migration. */
+:root {
+  --sl-content-width: 1184px;
+  --sl-total-gutter: 96px;
+  --sl-section-y: 94px;
+  --sl-section-compact-y: 70px;
+  --sl-measure-heading: 900px;
+  --sl-measure-lead: 660px;
+  --sl-measure-copy: 460px;
+  --sl-text-body: .9375rem;
+  --sl-text-support: .875rem;
+  --sl-text-meta: .8125rem;
+  --sl-text-label: .6875rem;
+  --sl-text-action: .875rem;
+  --sl-text-card: .96875rem;
+  --sl-text-lead: clamp(.9375rem,1.35vw,1.0625rem);
+  --sl-text-question: var(--sl-text-body);
+  --sl-leading-body: 1.7;
+  --sl-leading-answer: 1.75;
+  --sl-leading-lead: 1.67;
+  --sl-leading-ui: 1.35;
+  --sl-leading-question: 1.5;
+  --sl-weight-body: 400;
+  --sl-weight-display: 450;
+  --sl-weight-card: 470;
+  --sl-weight-label: 600;
+  --sl-weight-action: 700;
+  --sl-type-hero: clamp(3.0625rem,5.5vw,5rem);
+  --sl-type-feature: clamp(2.875rem,4.7vw,4rem);
+  --sl-type-editorial: clamp(2.75rem,4.75vw,4.0625rem);
+  --sl-type-editorial-leading: 1.085;
+  --sl-type-editorial-tracking: -.032em;
+  --sl-type-compact: clamp(2.5rem,4vw,3.4375rem);
+  --sl-type-compact-leading: 1.04;
+  --sl-type-card: clamp(1.8125rem,2.65vw,2.25rem);
+  --sl-type-card-leading: 1.16;
+  --sl-type-newsletter: clamp(2.625rem,4.25vw,3.8125rem);
+  --sl-type-newsletter-leading: 1.09;
+  --sl-gap-heading-content: 43px;
+  --sl-gap-title-copy: 19px;
+  --sl-gap-card-copy: 13px;
+  --sl-gap-copy-action: 25px;
+  --sl-gap-grid: clamp(19px,2.4vw,30px);
+  --sl-pad-card: clamp(24px,2.8vw,36px);
+  --sl-space-2: 8px;
+  --sl-space-3: 12px;
+  --sl-space-4: 16px;
+  --sl-space-5: 20px;
+  --sl-space-6: 24px;
+  --sl-space-8: 32px;
+  --sl-space-10: 40px;
+}
+@media(max-width:900px) {
+  :root {
+    --sl-type-hero: clamp(2.9375rem,7vw,4rem);
+    --sl-total-gutter: 64px;
+    --sl-section-y: 70px;
+    --sl-section-compact-y: 57px;
+    --sl-gap-heading-content: 30px;
+    --sl-gap-grid: 22px;
+    --sl-pad-card: 28px 30px 30px;
+  }
+}
+@media(max-width:720px) {
+  :root {
+    --sl-type-hero: clamp(2.5rem,9.6vw,3.4375rem);
+    --sl-type-feature: 2.375rem;
+    --sl-type-editorial: clamp(2.5rem,8.7vw,3.375rem);
+    --sl-type-compact: 2.375rem;
+    --sl-type-card: clamp(1.6875rem,6.6vw,2.0625rem);
+    --sl-text-lead: .9375rem;
+    --sl-pad-card: 25px 25px 28px;
+  }
+}
+@media(max-width:480px) {
+  :root {
+    --sl-type-hero: clamp(2.375rem,10vw,2.875rem);
+    --sl-total-gutter: 40px;
+    --sl-section-y: 57px;
+    --sl-section-compact-y: 40px;
+    --sl-type-editorial: clamp(2.375rem,10vw,2.9375rem);
+    --sl-type-newsletter: clamp(2.4375rem,10vw,3.0625rem);
+    --sl-pad-card: 23px 23px 26px;
+  }
+}
+@media(max-width:360px) { :root { --sl-type-hero: 2.3125rem; } }

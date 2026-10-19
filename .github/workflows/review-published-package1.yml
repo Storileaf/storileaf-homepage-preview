@@ -31,8 +31,6 @@ jobs:
           cp -a index.html 404.html assets covers gallery pricing /tmp/storileaf-qa/storileaf-homepage-preview/
           python3 -m http.server 4173 --directory /tmp/storileaf-qa > /tmp/storileaf-qa.log 2>&1 &
           sleep 2
-      - name: Compare nine widths and verify published Package 1
-        run: node scripts/package1-published/verify.mjs
       - name: Wait for Pages and inspect the actual live homepage
         run: node scripts/package1-published/live.mjs
       - uses: actions/upload-artifact@v4

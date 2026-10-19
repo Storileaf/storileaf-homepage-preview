@@ -1,0 +1,15 @@
+/* Semantic type roles. Context controls colour and measure, not the heading level. */
+.sl-heading { margin:0; font-family:var(--sl-font-display); font-weight:var(--sl-weight-display); text-wrap:balance; }
+.sl-heading--hero { font-size:var(--sl-type-hero); line-height:1.01; letter-spacing:-.049em; }
+.sl-heading--feature { font-size:var(--sl-type-feature); line-height:1.04; letter-spacing:-.042em; }
+.sl-heading--editorial { font-size:var(--sl-type-editorial); line-height:var(--sl-type-editorial-leading); letter-spacing:var(--sl-type-editorial-tracking); }
+.sl-heading--compact { font-size:var(--sl-type-compact); line-height:var(--sl-type-compact-leading); letter-spacing:var(--sl-type-editorial-tracking); }
+.sl-heading--card { font-size:var(--sl-type-card); line-height:var(--sl-type-card-leading); font-weight:var(--sl-weight-card); }
+.sl-heading--newsletter { font-size:var(--sl-type-newsletter); line-height:var(--sl-type-newsletter-leading); letter-spacing:-.018em; }
+.sl-copy { margin:0; font-family:var(--sl-font-ui); font-weight:var(--sl-weight-body); }
+.sl-copy--body { font-size:var(--sl-text-body); line-height:var(--sl-leading-body); }
+.sl-copy--lead { font-size:var(--sl-text-lead); line-height:var(--sl-leading-lead); }
+.sl-copy--support { font-size:var(--sl-text-support); line-height:1.55; }
+.sl-copy--meta { font-size:var(--sl-text-meta); line-height:1.55; }
+.sl-reference-section[data-spacing=compact] { padding-block:var(--sl-section-compact-y); }
+.sl-reference-section[data-spacing=none] { padding-block:0; }

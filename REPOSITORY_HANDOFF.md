@@ -1,39 +1,41 @@
-# Repository handoff for StoriLeaf UI work
+# Repository handoff for StoriLeaf public website work
 
-18 October 2026 founder session. Package 1 is applied to the existing static homepage for founder visual review. Full previous handoff records remain in [earlier handoff records](REPOSITORY_HANDOFF_HISTORY_29283c2.md) and Git history. Preserve their section approvals and exact content unless explicitly superseded.
+## Current milestone
 
-## Current workspace and authority
+The founder accepted the published Package 1 result and requested completion of Package 2 typography and spacing foundations. Package 2 adds reusable Newsreader heading roles, Manrope text roles, responsive containers, section spacing and text gaps. The bounded visible refinement is FAQ questions at 15px with 1.5 leading and FAQ answer links at 14px. Answers remain 15px. Final founder visual acceptance of Package 2 remains pending.
 
-This public repository is the active frontend workspace. GitHub Pages serves the existing static homepage from main and the repository root. The editable React, TypeScript and Vite workspace under frontend builds separately into frontend/dist. That source remains an incomplete component reference, not the homepage replacement.
+The existing static homepage receives these refinements for review. Its layout, wording, photographs, section order, destinations, animations and other interactions remain the reference. Larger FAQ text can naturally wrap onto an additional line on phones; the final invitation and newsletter move down accordingly. This is not a redesign or a complete React cutover.
 
-The sole public styling authority is [Public Design System](docs/PUBLIC_DESIGN_SYSTEM.md). Read the [workflow](docs/WORKFLOW.md), [content gate](docs/CONTENT_GATE.md), [component inventory](docs/COMPONENT_INVENTORY.md) and [Package 1 record](docs/PACKAGE_1_REVIEW.md) before continuing.
+Earlier section approvals and exact copy decisions remain in [earlier handoff records](REPOSITORY_HANDOFF_HISTORY_29283c2.md) and Git history. Current status here supersedes older statements that Package 1 is unapproved or Package 2 has not begun.
 
-Private Storileaf/storiYoceFj6IRAleaf main remains authoritative for product capabilities, packages, commercial terms and customer behaviour. UX plans and approved copy live on design/storileaf-website-ux. Repositories do not synchronise automatically. Do not use Macaly or modify private production/backend systems.
+## Workspace and authority
 
-## Latest founder instruction and implementation
+Public Storileaf/storileaf-homepage-preview main is the active frontend workspace. GitHub Pages serves the root static HTML, CSS and JavaScript. The isolated frontend directory contains an incomplete React, TypeScript and Vite source foundation building into frontend/dist. Do not publish the incomplete source over the homepage.
 
-The founder explicitly asked to apply Package 1 to the existing published site so the visible result could be reviewed before acceptance. This supersedes the earlier source-only boundary for these specific corrections. Publishing an incomplete React homepage remains prohibited.
+The [Public Design System](docs/PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. Read [workflow](docs/WORKFLOW.md), [content gate](docs/CONTENT_GATE.md), [component inventory](docs/COMPONENT_INVENTORY.md), [Package 1 record](docs/PACKAGE_1_REVIEW.md) and [Package 2 record](docs/PACKAGE_2_REVIEW.md).
 
-Published stylesheet commit fae8c1aa3640581906d430fdf1656f957da6dde6 implements 6px header/newsletter control corners, the approved primary/gold hover colours and responsive resource focus corners. Ordinary buttons, forest outlined-button text and the 45px mobile action height already matched and were preserved. Only the existing compiled CSS changed in that release commit. Other layouts, content, images, destinations, interactions, typography and spacing were not modified.
+Private Storileaf/storiYoceFj6IRAleaf main remains authoritative for actual product capabilities, packages, pricing, commercial terms and customer behaviour. Approved website copy and plans are on design/storileaf-website-ux. These repositories do not synchronise automatically. Do not modify private production, authentication, payments, databases, customer data or backend systems.
 
-The shared stylesheet uses homepage-scoped properties with unchanged fallback values for the separate pricing preview. The protected-root guard now pins the explicitly authorised release instead of forbidding it. Do not disable that guard. The source implementation and canonical tokens remain intact.
+## Foundations and publication
 
-[Candidate review 39188384903](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39188384903) passed comprehensive homepage regression, nine-width shape/state checks and before/after geometry comparison. It recorded unchanged pricing appearance; a pre-existing pricing hydration warning was independently reproduced with both stylesheets and remains a separate migration issue. See the Package 1 record for the exact diff and screenshots. Confirm source CI, Pages deployment and live verification for the final branch head, rather than assuming an earlier passing candidate run is deployment evidence.
+Canonical typography and spacing tokens live in frontend/src/styles/foundations.css. Identity and the accepted 6px action family remain in tokens.css. Typography.tsx separates visual role from semantic heading level. Layout.tsx provides native Container and Section wrappers without introducing additional DOM layers. EditorialHeading and the existing source reference consume these foundations.
 
-## What still requires approval or implementation
+The bounded token mirror inside the static CSS is checked by sync-foundations.mjs and unit tests. Original fallbacks preserve the separate pricing preview. Existing effective CSS declarations consume tokens in place. Do not append more override layers or treat token extraction as permission for global resizing.
 
-Final founder visual acceptance of published Package 1 is pending. Package 2 typography and spacing has not started. Future package proposals must identify whether they change source only or the visible preview. The founder wants visible package reviews; each published scope must still be explicit.
+Retain distinct discovery, gallery, physical book, process and newsletter compositions. Standard spacing defaults do not replace intentional asymmetric section padding. The process scroll runway and reduced-motion/short-height treatments are not ordinary section spacing. Small device illustration labels are not paragraph text. The source remains a reference pending full component parity.
 
-Full editable homepage reconstruction, nine-width screenshot parity, complex interaction migration, account/dashboard design and final accessibility certification remain unfinished. Do not deploy frontend/dist over root. Source header/footer references do not establish full migration.
+The protected-root guard is deliberately repinned for the authorised static release, never disabled. Package 2 candidate and live checks distinguish original and revised styles, preserve content and unrelated geometry, exercise FAQ keyboard/touch/text enlargement, and confirm the actual Pages stylesheet hash. Review the successful workflow for the relevant commit before claiming deployment evidence. A QA-only bot commit can follow the existing homepage screenshot workflow.
 
-Preserve the approved physical book presentation, four circular process markers and spacing, two equal photographic Resources cards with centred heading and Browse all resources, and combined photographic newsletter/footer. Try answering a question still opens the unsaved practice dialog. A standalone practice page is a deferred plan, not a live route.
+## Remaining work
 
-Real gallery and craft photography, final hero motion and reassurance-band decisions, Books/Resources/Activities pages, newsletter integration and wider public pages remain deferred. Do not invent product capabilities, package inclusions, pricing, delivery promises or destinations.
+Package 2 visual acceptance, complete React homepage reconstruction, exact nine-width parity, wider cross-browser/physical-device accessibility and full native zoom review remain separate. No new public page or asynchronous newsletter behaviour is introduced.
 
-## Verification and working boundaries
+Preserve the approved physical book presentation, circular process markers, equal photographic Resources cards, centred Browse all resources, and combined photographic newsletter/footer. Try answering a question still opens the existing unsaved practice dialog. Its future standalone page remains deferred.
 
-Inspect the latest branch head before each change. Implement only the authorised scope. Keep exact wording approval separate from implementation and release approval. Use actual browser screenshots, responsive widths, keyboard/focus/touch and relevant motion/zoom/height checks. Passing automation is not founder visual approval.
+Genuine gallery/craft photography, final hero motion and reassurance-band decisions, Books/Resources/Activities pages, newsletter wiring and wider public pages remain deferred. Private account, Storyteller, contributor and admin interfaces need a separate compact system later.
 
-The read-only Package 1 workflow tests committed files and waits for the actual Pages stylesheet before live browser checks. It no longer prepares edits or writes blobs. The historical preparation helper has been retired. The existing homepage screenshot workflow may append a QA-only bot commit; check the final Pages head after it finishes.
+## Working rules
 
-Macaly is not part of the current tested frontend runtime or build workflow. That does not prove every unique old project upload or setting is archived. Preserve original assets and inspect attached services before deleting the external project.
+Inspect latest branch heads and source before editing. Implement only founder-authorised scope. Keep factual copy verification separate from exact wording approval and visual acceptance. Use real desktop/mobile screenshots and relevant focus, keyboard, touch, reduced motion, zoom and short-height tests. Passing automation is not founder approval or full accessibility certification.
+
+Do not use Macaly. Tested public source and preview no longer depend on its runtime or build workflow. That does not prove all original project assets or attached settings are archived; preserve unique files and check attached services before deletion.

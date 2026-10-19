@@ -13,9 +13,6 @@
   --sl-ink-muted: #536154;
   --sl-sage: #e9efeb;
   --sl-border: #d9ded9;
-  --sl-content-width: 1184px;
-  --sl-total-gutter: 96px;
-  --sl-section-y: 94px;
   /* Approved rectangular action family. Aliases keep one source of truth. */
   --sl-radius-action: 6px;
   --sl-radius-header-action: var(--sl-radius-action);
@@ -33,5 +30,3 @@
   --sl-radius-dialog-close: 9px;
   --sl-radius-utility-control: 5px;
 }
-@media(max-width:900px){:root{--sl-total-gutter:64px;--sl-section-y:70px;}}
-@media(max-width:480px){:root{--sl-total-gutter:40px;--sl-section-y:57px;}}

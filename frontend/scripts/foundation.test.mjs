@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 
-const tokens=readFileSync(new URL('../src/styles/tokens.css',import.meta.url),'utf8')
+const tokens=readFileSync(new URL('../src/styles/tokens.css',import.meta.url),'utf8') + readFileSync(new URL('../src/styles/foundations.css',import.meta.url),'utf8')
 const styles=readFileSync(new URL('../src/styles/components.css',import.meta.url),'utf8')
 const ledger=JSON.parse(readFileSync(new URL('../content/ledger.json',import.meta.url),'utf8'))
 
