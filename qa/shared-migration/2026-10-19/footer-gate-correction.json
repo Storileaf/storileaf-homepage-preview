@@ -1,0 +1,51 @@
+{
+  "completedAt": "2026-10-19T19:17:36.730829+00:00",
+  "kind": "Local retained footer gate correction after obsolete source shell injection failure",
+  "sourceCommit": "443eb38103be373369f67283c417857f197f7da9",
+  "sourceUnchanged": true,
+  "scriptSha256": "2c506d3eba181a213993578440256c80f7af71ec1b74b07a49befe04d51a1658",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "reportSha256": "ee159c879d77805ac54b3e1e4579ad890e71c462819fe13592fe9c14a0442fb2",
+  "sourceBaselineMethod": {
+    "baseline": "898958276bb82c8c7c5b2c9839456a26f8cf0591",
+    "headingRule": "margin:0 0 10px; color:var(--sl-gold-action); font:650 11px/1.4 var(--sl-font-ui);",
+    "currencyRule": "appearance:none; border:0; background:transparent; color:#fff; font-size:11px; cursor:pointer;",
+    "injectedTypeOnly": ".sl-footer-column h3 { font-size:11px; line-height:1.4; } .sl-footer-currency select { font-size:11px; }",
+    "scope": "Only the historical heading size/leading and currency size are applied to the current migrated shell. All other frozen content/styles, photo/fade, outside section geometry, currency options, focus and fit remain checked. The dedicated shared gate owns complete comparison with the protected published shell."
+  },
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "sourceWidths": [
+    320,
+    360,
+    390,
+    430,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "checks": [
+    "Static currency focus and all four selections",
+    "Static currency focus and all four selections",
+    "Short screen heights with reduced motion",
+    "200% desktop zoom reflow equivalent at 720 CSS pixels",
+    "Source currency focus and all four selections",
+    "Source currency focus and all four selections",
+    "Touch control tap and fit"
+  ],
+  "problems": [],
+  "initialFailedRun": 39309137336,
+  "initialFailedJob": 118253900730,
+  "note": "Current source roles and all static checks passed on the initial run. The corrected experiment applies only the exact historical heading size/leading and currency size to the current migrated shell. The committed rerun remains to be verified."
+}

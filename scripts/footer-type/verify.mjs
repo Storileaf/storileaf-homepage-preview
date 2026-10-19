@@ -80,7 +80,18 @@ try{
   const sp=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});sp.on('pageerror',e=>report.problems.push('Source '+e.message));await sp.goto('http://127.0.0.1:4180/',{waitUntil:'networkidle'});await fonts(sp)
   const sh=await sp.evaluate(()=>document.documentElement.scrollHeight);for(let y=0;y<sh;y+=600){await sp.evaluate(y=>scrollTo(0,y),y);await sp.waitForTimeout(70)}await sp.waitForTimeout(350);await reset(sp)
   const originalSource=execFileSync('git',['show',baseline+':frontend/src/styles/components.css'],{encoding:'utf8'})
-  for(const width of widths){await sp.setViewportSize({width,height:1000});await reset(sp);const style=await sp.addStyleTag({content:originalSource});await reset(sp);const b=await read(sp,true);if([390,1440].includes(width))await capture(sp,b,width,'before',true);await style.evaluate(e=>e.remove());await reset(sp);const a=await read(sp,true);assertResult(a,'Source '+width);compare(b,a,'Source '+width);report.source.push({width,before:b,after:a});if([390,1440].includes(width)){await capture(sp,a,width,'after',true);await exercise(sp,true)}}
+  // Group 3 replaces the approximate source shell with the actual published
+  // composition. This retained Package 2 experiment varies only its two type
+  // roles; injecting the former shell would reintroduce superseded geometry,
+  // colours and mobile photo treatment. Full shell parity has its own gate.
+  const headingRule=originalSource.match(/\.sl-footer-column h3\s*\{([^}]+)\}/)?.[1]
+  const currencyRule=originalSource.match(/\.sl-footer-currency select\s*\{([^}]+)\}/)?.[1]
+  const headingType=headingRule?.match(/(?:^|;)\s*font\s*:\s*650\s+(\d+px)\/(1\.4)\s+var\(--sl-font-ui\)\s*;/)
+  const currencyType=currencyRule?.match(/(?:^|;)\s*font-size\s*:\s*(\d+px)\s*;/)
+  if(!headingType||!currencyType)throw new Error('Historical source footer type roles cannot be read from their exact named rules')
+  const originalSourceType=`.sl-footer-column h3 { font-size:${headingType[1]}; line-height:${headingType[2]}; } .sl-footer-currency select { font-size:${currencyType[1]}; }`
+  report.sourceBaselineMethod={baseline,headingRule:headingRule.trim(),currencyRule:currencyRule.trim(),injectedTypeOnly:originalSourceType,scope:'Only the historical heading size/leading and currency size are applied to the current migrated shell. All other frozen content/styles, photo/fade, outside section geometry, currency options, focus and fit remain checked. The dedicated shared gate owns complete comparison with the protected published shell.'}
+  for(const width of widths){await sp.setViewportSize({width,height:1000});await reset(sp);const style=await sp.addStyleTag({content:originalSourceType});await reset(sp);const b=await read(sp,true);check(b.headings.length===3&&b.headings.every(x=>x.size===headingType[1])&&b.currency.size===currencyType[1],'Source historical type roles not applied '+width);if([390,1440].includes(width))await capture(sp,b,width,'before',true);await style.evaluate(e=>e.remove());await reset(sp);const a=await read(sp,true);assertResult(a,'Source '+width);compare(b,a,'Source '+width);report.source.push({width,before:b,after:a});if([390,1440].includes(width)){await capture(sp,a,width,'after',true);await exercise(sp,true)}}
   await sp.close()
  }
  const touch=await browser.newPage({viewport:{width:390,height:844},hasTouch:true,isMobile:true,reducedMotion:'reduce'});await touch.goto(url,{waitUntil:'networkidle'});await fonts(touch);await touch.locator('.currency-picker select').scrollIntoViewIfNeeded();await touch.locator('.currency-picker select').tap();await touch.keyboard.press('Escape');assertResult(await read(touch),'Touch currency');report.checks.push('Touch control tap and fit');await touch.close()

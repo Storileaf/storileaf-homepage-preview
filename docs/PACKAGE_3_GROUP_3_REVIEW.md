@@ -83,11 +83,21 @@ All 21 source tests, TypeScript, the 88 record content gate, protected runtime g
 | `assets/index-BQc6tMnm.css` | `8b4b0af975a1b2c5daefeb485adb4dc31e88b23b7ab8b494bc4cb5bd08e9b0b2` |
 | `assets/index-CJtxcQS4.js` | `4bb41d6eab5ee2e7de2795b23bda76ab2879f2cd72612c3dee4d1c8d508d2b6e` |
 
+## Retained footer gate correction
+
+The Group 3 source and shared harness are committed at [443eb38103be373369f67283c417857f197f7da9](https://github.com/Storileaf/storileaf-homepage-preview/commit/443eb38103be373369f67283c417857f197f7da9). Standalone source validation [39309136906](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39309136906), Package 2 [39309137027](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39309137027) and editorial sizing [39309137399](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39309137399) completed successfully, with job steps and decoded logs inspected. Package 2 and editorial include successful actual live checks. The Package 2 report retains identical React 418 pricing warnings under original and current styles and records pricingUnchanged true.
+
+The first footer run [39309137336](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39309137336), job 118253900730, failed its historical source comparison at 19:14:08 UTC. It injected the entire former components.css from 8989582 into the reconstructed source shell. That restored obsolete geometry, colours and mobile photograph rules. All current source type, currency, focus and fit assertions and all static assertions passed; the unrelated source style, photo and geometry comparisons failed. The later live step was skipped. This remains failed diagnostic evidence, not a successful gate.
+
+The correction varies only the historical type roles within the migrated source shell. It extracts the heading's 11px size and 1.4 leading and the currency's 11px size from their exact named immutable rules, checks that those historical sizes are actually applied, then removes them and requires the current 15px heading with 21px leading and 13px currency. All frozen content and other styles, photograph and fade, outside section geometry, currency options, focus, fit and static comparisons remain in force. Complete source shell geometry is compared against the protected published implementation by the unchanged shared gate. No source component, CSS, shared harness, protected asset or baseline changed to resolve this test assumption.
+
+The corrected complete local footer gate passes all nine static and source widths, currency focus and selections, short screens, touch fit and the retained desktop zoom reflow equivalent. The [local correction record](../qa/shared-migration/2026-10-19/footer-gate-correction.json) preserves its script hash and results. The committed replay remains to be verified before recording final success.
+
 ## Committed evidence to finalise
 
 | Evidence | Current record |
 | --- | --- |
-| Final source and harness commit | Pending root checkpoint entry |
+| Source and shared harness commit | 443eb38103be373369f67283c417857f197f7da9; retained footer gate correction follows separately |
 | Complete local width and state results | Completed as recorded above; no parity problems |
 | Retained local checks | Source UI, shape/vendor, focus, Group 1 and Group 2 pass on the same frozen build |
 | Committed Actions runs and artifacts | Pending completed run and downloaded artifact verification |
