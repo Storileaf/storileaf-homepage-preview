@@ -50,6 +50,14 @@ Use three conceptual spacing roles. Section spacing separates independent narrat
 
 The current interface deliberately uses restrained shapes, not universal pills. Observed examples include 6px ordinary buttons, 9px newsletter controls, about 17–20px category cards, 18px media and 22px principal panels. Circular number/icon markers can remain round. Use named shape roles and document meaningful exceptions, rather than copying the old 40px-card/999px-pill standards.
 
+### Retained button roles during migration
+
+Package 1 began on 18 October 2026. Preserve ordinary filled and outlined actions at 6px, the published Start your story header action at 9px, and paired newsletter controls at 9px. These are retained component roles, not a universal radius for all public controls. The source header now references its own 9px token instead of its earlier 8px literal. This correction does not alter the published homepage.
+
+Existing source card, menu, header shell and utility control values now use named tokens in frontend/src/styles/tokens.css. Their other computed values are retained pending full component parity. The experimental gold ActionLink keeps its existing 9px radius under a separate token; this is not a rule that colour alone determines shape on future pages.
+
+Full button state and touch-target consolidation is still open. See the [Package 1 review and verification record](PACKAGE_1_REVIEW.md) for measured evidence and proposals. Do not treat the source reference's geometry or an unreviewed state as automatically approved simply because it uses a token.
+
 ## Reusable public components
 
 Shared SiteHeader with original gold logo on forest, Books/Resources accessible dropdowns, mobile navigation and exact Start your story action.

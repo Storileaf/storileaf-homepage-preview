@@ -42,7 +42,9 @@ jobs:
         run: node scripts/verify-source-ui.mjs
       - name: Verify retained shape roles and audit external preview dependencies
         working-directory: frontend
-        run: node scripts/verify-shape-foundation.mjs | tee /tmp/storileaf-shape-audit.log
+        run: |
+          set -o pipefail
+          node scripts/verify-shape-foundation.mjs | tee /tmp/storileaf-shape-audit.log
       - name: Summarise shape and dependency evidence
         if: always()
         working-directory: frontend

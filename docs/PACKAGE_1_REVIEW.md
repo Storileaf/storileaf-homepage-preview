@@ -28,7 +28,7 @@ Preserve existing hover and focus behaviour in this initial change. Full state c
 
 ## Findings requiring separate review
 
-The experimental mobile header action has a 43px minimum height at narrow widths. The public design target is at least 44px for principal touch targets. Propose 44px and compare the header before changing it. Do not change it in the corner-radius correction.
+The experimental mobile header action measures 43px high at 390px and 430px widths. The published action measures 45px at the same widths. The public design target is at least 44px for principal touch targets. Proposed next correction is to reproduce the actual 45px published target, rather than invent a 44px compromise. Compare the complete header before changing it. The initial radius correction does not alter height, font size or padding.
 
 The experimental resource card has a 17px small-screen corner while its focused link still references the 20px desktop card radius. Propose a shared responsive card/focus radius, with before/after focus screenshots. Do not silently change this state in the initial source alignment.
 
@@ -42,10 +42,22 @@ The read-only source workflow runs existing type, content, component, protected-
 
 A temporary narrow-change check permits only the reviewed corner substitutions against commit 1433a413917a63df47e05f5c2d39283689624f37. When a later styling package is separately authorised, replace this temporary edit whitelist with the relevant reviewed semantic checks. Do not treat it as a permanent prohibition on maintainable source development.
 
-Reports and screenshots are CI artifacts under frontend/qa/shape-foundation. They are not deployed to the published homepage. A passing check is not founder visual approval or full accessibility certification. Check the actual workflow result before claiming this package has passed.
+Reports and screenshots are CI artifacts under frontend/qa/shape-foundation. They are not deployed to the published homepage. A passing check is not founder visual approval or full accessibility certification.
+
+## Verified initial result
+
+Source commit f6620afef201100ff2bf6cc95b7ccd37b2e91765 passed [source validation and Chromium review](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39182164897). Type checking, approved content, protected-root validation, all nine foundation tests, isolated build, navigation and shared footer checks completed successfully. The shape report recorded no problems at the nine required widths. [GitHub Pages deployment](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39182164804) completed successfully and continued to serve the unchanged static homepage.
+
+The source header measured 171.28125px wide by 46px high on desktop before and after the change. Its radius changed from 8px to 9px; the measured size, typography and colours remained identical. Other selected controls retained their measured styles. Source primary/outline/gold test variants measured 6px, 6px and 9px respectively.
+
+Actual desktop and mobile screenshots are in [browser QA artifact 12156397153](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39182164897/artifacts/12156397153). This evidence is not full homepage parity. The broader Package 1 interaction-state review remains open.
 
 ## Macaly independence review
 
-The public workflow no longer imports or builds from the former Macaly project. The source dependency audit scans shipped HTML, JavaScript and CSS, editable source, package manifests and the lockfile. Browser checks block hosts containing Macaly and the old project identifier, then record requested hosts, errors and missing images while visiting the page and available tabs.
+The public workflow no longer imports or builds from the former Macaly project. The source dependency audit scanned 31 shipped or editable runtime/configuration files, including published HTML, JavaScript and CSS, source files, package manifests and the lockfile. It found no Macaly references or former project identifier in those files.
 
-This can establish evidence about the current public preview and isolated source. It does not inspect Macaly account settings, prove that original project files have been archived, or authorise deletion of an external project, domain or data. Historical mentions in documentation are not runtime dependencies. The production platform is a separate system and must not be modified for this audit.
+During the read-only Chromium check, Macaly hosts and the old project identifier were blocked. Neither the protected static homepage nor isolated React source attempted a Macaly request. Observed external hosts were storileaf.com, fonts.googleapis.com and fonts.gstatic.com. The pages showed no recorded runtime errors or missing images after scrolling and exercising the six published book tabs. No external destination or form submission was invoked.
+
+This establishes evidence for the tested public preview and isolated source states, not an unconditional guarantee about deleting an external project. Macaly account settings, original source exports, project-only uploads, domains and possible external integrations were not inspected. The complete editable React homepage is still unfinished. Preserve the old project source and any unique assets before deletion. Runtime independence does not establish that every useful project file or history item has already been archived elsewhere. Historical documentation mentions are not runtime dependencies.
+
+The production platform is a separate system and was not modified for this audit.
