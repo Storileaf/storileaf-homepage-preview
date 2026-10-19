@@ -1,0 +1,38 @@
+name: Review published Package 1
+on:
+  push:
+    paths:
+      - '.github/workflows/review-published-package1.yml'
+      - 'scripts/package1-published/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review:
+    if: github.repository == 'Storileaf/storileaf-homepage-preview' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Export exact review inputs
+        run: |
+          mkdir -p /tmp/package1-inputs
+          git archive HEAD assets/index-DhPZyX4z.css index.html 404.html frontend scripts docs REPOSITORY_HANDOFF.md .github > /tmp/package1-inputs/public-inputs.tar
+          git rev-parse HEAD > /tmp/package1-inputs/commit.txt
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          css=Path('assets/index-DhPZyX4z.css').read_text()
+          for m in re.finditer(r'([^{}]+)\{([^{}]*)\}',css):
+            selector=m[1].strip()
+            if re.search(r'(^|[\s,])\.button(?=[\s.,:#\[]|$)|button-outline|button-gold',selector):
+              print('LINE',css[:m.start()].count('\n')+1,selector+' {'+m[2]+'}')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: published-package1-inputs
+          path: /tmp/package1-inputs/
+          if-no-files-found: error
