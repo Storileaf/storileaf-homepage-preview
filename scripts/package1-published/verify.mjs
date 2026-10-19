@@ -10,10 +10,11 @@ const folder='qa/package1-published'
 await fs.mkdir(folder,{recursive:true})
 const problems=[]
 const check=(condition,message)=>{if(!condition)problems.push(message)}
-const report={baseline,base,commit:process.env.GITHUB_SHA||'',widths:[],states:{},problems}
+const report={baseline,base,commit:process.env.GITHUB_SHA||'',widths:[],states:{},pricingRuntimeErrors:[],problems}
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',args:['--no-sandbox']})
 const page=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'})
-page.on('pageerror',e=>problems.push(e.message))
+let phase='homepage'
+page.on('pageerror',e=>(phase==='pricing'?report.pricingRuntimeErrors:problems).push(e.message))
 const useCss=async css=>{
  await page.evaluate(css=>{
   const link=document.querySelector('link[href*="index-DhPZyX4z.css"]');if(link)link.disabled=true
@@ -81,7 +82,8 @@ try{
   await el.screenshot({path:`${folder}/action-${name}-focus.png`,animations:'disabled'})
   report.states[name]={normal,hover,pressed,focus}
  }
- // Use the tracked static pricing entry, not an unserved currency subdirectory.
+ // Compare the tracked pricing entry. Record and independently reproduce any baseline hydration warning.
+ phase='pricing'
  const pricingResponse=await page.goto(base+'pricing/',{waitUntil:'networkidle'})
  check(pricingResponse?.ok(),'Pricing HTTP request failed')
  await page.locator('.pricing-intro').waitFor()
@@ -91,7 +93,14 @@ try{
  check(JSON.stringify(pricingBefore)===JSON.stringify(pricingAfter),'Pricing layout changed')
  check(JSON.stringify(hBefore)===JSON.stringify(hAfter),'Pricing header changed')
  report.pricingUnchanged=JSON.stringify(hBefore)===JSON.stringify(hAfter)&&JSON.stringify(pricingBefore)===JSON.stringify(pricingAfter)
+ const oldPage=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'reduce'})
+ const oldErrors=[];oldPage.on('pageerror',error=>oldErrors.push(error.message))
+ await oldPage.route('**/'+cssPath,route=>route.fulfill({contentType:'text/css',body:before}))
+ await oldPage.goto(base+'pricing/',{waitUntil:'networkidle'});await oldPage.locator('.pricing-intro').waitFor();await oldPage.waitForTimeout(250)
+ report.pricingBaselineRuntimeErrors=oldErrors
+ check(JSON.stringify(oldErrors)===JSON.stringify(report.pricingRuntimeErrors),'Pricing runtime warnings differ from the original stylesheet baseline')
+ await oldPage.close()
 }catch(e){problems.push(String(e))}finally{await browser.close()}
 await fs.writeFile(`${folder}/report.json`,JSON.stringify(report,null,2)+'\n')
-console.log(JSON.stringify({testedWidths:report.widths.map(x=>x.width),pricingUnchanged:report.pricingUnchanged,problems}))
+console.log(JSON.stringify({testedWidths:report.widths.map(x=>x.width),pricingUnchanged:report.pricingUnchanged,pricingRuntimeErrors:report.pricingRuntimeErrors,pricingBaselineRuntimeErrors:report.pricingBaselineRuntimeErrors,problems}))
 if(problems.length)process.exitCode=1
