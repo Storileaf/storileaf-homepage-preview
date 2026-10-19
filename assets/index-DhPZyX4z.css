@@ -6911,8 +6911,9 @@ section[id] {
   font-family: var(--font-sans);
   color: hsl(var(--secondary));
   margin-bottom: 10px;
-  font-size: 11px;
+  font-size: var(--sl-text-footer-heading,11px);
   font-weight: 650;
+  line-height: var(--sl-leading-footer-heading,1.22);
 }
 
 .footer-column a {
@@ -6964,7 +6965,7 @@ section[id] {
   background: none;
   border: none;
   padding: 0 12px 0 5px;
-  font-size: 11px;
+  font-size: var(--sl-text-currency,11px);
   font-weight: 550;
 }
 
@@ -8294,7 +8295,7 @@ section[id] {
 
   .currency-picker select {
     padding-right: 3px;
-    font-size: 10px;
+    font-size: var(--sl-text-currency,10px);
   }
 
   .footer-brand > p {
@@ -10866,6 +10867,9 @@ body:has(#top[data-testid="storileaf-home"]) {
   --sl-text-label: .6875rem;
   --sl-text-action: .875rem;
   --sl-text-editorial-action: var(--sl-text-body);
+  --sl-text-footer-heading: var(--sl-text-body);
+  --sl-leading-footer-heading: 1.4;
+  --sl-text-currency: var(--sl-text-meta);
   --sl-text-card: .96875rem;
   --sl-text-lead: clamp(.9375rem,1.35vw,1.0625rem);
   --sl-text-question: var(--sl-text-body);

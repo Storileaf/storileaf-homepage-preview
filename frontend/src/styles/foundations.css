@@ -15,6 +15,9 @@
   --sl-text-label: .6875rem;
   --sl-text-action: .875rem;
   --sl-text-editorial-action: var(--sl-text-body);
+  --sl-text-footer-heading: var(--sl-text-body);
+  --sl-leading-footer-heading: 1.4;
+  --sl-text-currency: var(--sl-text-meta);
   --sl-text-card: .96875rem;
   --sl-text-lead: clamp(.9375rem,1.35vw,1.0625rem);
   --sl-text-question: var(--sl-text-body);

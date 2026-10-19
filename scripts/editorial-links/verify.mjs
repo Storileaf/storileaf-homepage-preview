@@ -5,7 +5,8 @@ import { chromium } from 'playwright-core'
 
 const baseline='66327e0fc83e48b7547c10e3ee58f4ddf89c4f39'
 const cssPath='assets/index-DhPZyX4z.css'
-const before=execFileSync('git',['show',baseline+':'+cssPath],{encoding:'utf8'})
+const footerComparison = '#top[data-testid="storileaf-home"] .site-footer .footer-column h3{font-size:15px;line-height:1.4}#top[data-testid="storileaf-home"] .site-footer .currency-picker select{font-size:13px}'
+const before=execFileSync('git',['show',baseline+':'+cssPath],{encoding:'utf8'})+'\n'+footerComparison
 const after=await fs.readFile(cssPath,'utf8')
 const live=process.argv.includes('--live')
 const base=live?'https://storileaf.github.io/storileaf-homepage-preview/':'http://127.0.0.1:4173/storileaf-homepage-preview/'

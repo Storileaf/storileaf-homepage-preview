@@ -34,11 +34,13 @@ These are semantic CSS tokens, not fixed widths or permission to restyle existin
 | Editorial text action | 15px Manrope, existing weight and leading retained | Standalone reading-section actions, resource labels and links below FAQ answers |
 | FAQ question | 15px, weight 600, leading 1.5 | Native disclosure summary |
 | Metadata | 13px, leading 1.55 | Legal and genuinely secondary information |
-| Compact label | 11px where already used | Footer grouping or utility labels, never paragraph copy |
+| Footer column heading | 15px, existing weight 650, leading 1.4 | Gold grouping headings above 14px regular navigation links |
+| Currency selector | 13px at all widths | Existing native currency control |
+| Compact label | 11px where specifically retained | Illustration or compact utility labels, never paragraph copy or footer column headings |
 
 Preserve editorial distinctions such as the source card's existing 15.5px body, homepage gallery/writing lead at 16px, compact header action on phones, scaled device illustration text and existing footer legal typography. They have been evaluated rather than blindly resized. Future interface paragraphs should use the body/support roles, not illustration sizes. Disabled/loading behaviours belong to genuine controls and are not introduced by this package.
 
-The founder approved 15px standalone editorial text actions on 19 October 2026. `--sl-text-editorial-action` aliases the 15px body token, while `--sl-text-action` retains the ordinary control baseline. Inline paragraph links inherit their surrounding text size. Colours, weights, arrows, gaps and destinations are unchanged. Header navigation, footer utilities and button labels are excluded. Activities and Browse all resources remain non-interactive labels until their pages exist. Footer heading and currency sizing is under review, not approved for change. See [editorial link review](EDITORIAL_LINK_REVIEW.md).
+The founder approved 15px standalone editorial text actions on 19 October 2026. `--sl-text-editorial-action` aliases the 15px body token, while `--sl-text-action` retains the ordinary control baseline. Inline paragraph links inherit their surrounding text size. Colours, weights, arrows, gaps and destinations are unchanged. Header navigation, footer utilities and button labels are excluded. Activities and Browse all resources remain non-interactive labels until their pages exist. The founder subsequently approved 15px footer column headings with 1.4 leading and 13px currency text at all widths. These now use dedicated aliases of the body and metadata tokens. Existing gold, weight 650, 14px menu links, 13px legal text, gaps, controls and photographic composition are retained. See [footer completion review](FOOTER_TYPE_REVIEW.md). See [editorial link review](EDITORIAL_LINK_REVIEW.md).
 
 Text sizes in the canonical source use rem bounds at the normal browser root size. Do not fix the html font size, disable user zoom or introduce fixed text-box heights. Keep unitless leading. Desktop/mobile, text enlargement and spacing checks remain necessary because relative units alone do not prove accessibility.
 

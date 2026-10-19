@@ -1,6 +1,6 @@
 # Package 2 review
 
-19 October 2026 UTC, continuing the founder's 18 October session. Implementation complete for preview review. Final founder visual acceptance remains pending.
+19 October 2026 UTC, continuing the founder's 18 October session. Package 2 implementation complete, including the subsequently approved 15px editorial links, 15px footer headings and 13px currency text. Final rendered acceptance remains with the founder. See FOOTER_TYPE_REVIEW.md for the final correction and verification boundary.
 
 ## Approval and publication scope
 
@@ -30,7 +30,7 @@ The existing hero, discovery, gallery, physical book, process, writing, gifting,
 
 The 1184px content maximum and 96px/64px/40px total gutters remain. Named section, heading, copy, grid and card-padding rules are reusable defaults, not a mandate to make every section equal. Asymmetric discovery, gallery/craft, writing, gifting, Resources, FAQ and photographic-ending spacing is preserved. The process scroll runway and reduced-motion/short-height rules are separate from ordinary padding.
 
-Distinct section leads, 15.5px source card text, the Resources 26px phone heading gap, footer labels, legal copy and device illustration microtype were evaluated and retained. The source Resources reference still has its previous 30px narrow gap pending full parity. No blanket text resize was applied.
+Distinct section leads, 15.5px source card text, the Resources 26px phone heading gap, legal copy and device illustration microtype were evaluated and retained. The initially retained footer headings and currency text were subsequently refined by explicit founder approval, as recorded in FOOTER_TYPE_REVIEW.md. The source Resources reference still has its previous 30px narrow gap pending full parity. No blanket text resize was applied.
 
 ## Verified candidate evidence
 

@@ -2,7 +2,7 @@
 
 ## Current milestone
 
-The founder accepted the published Package 1 result and requested completion of Package 2 typography and spacing foundations. Package 2 adds reusable Newsreader heading roles, Manrope text roles, responsive containers, section spacing and text gaps. The bounded visible refinement is FAQ questions at 15px with 1.5 leading and FAQ answer links at 14px. Answers remain 15px. Final founder visual acceptance of Package 2 remains pending.
+The founder accepted the published Package 1 result and requested completion of Package 2 typography and spacing foundations. Package 2 adds reusable Newsreader heading roles, Manrope text roles, responsive containers, section spacing and text gaps. The bounded visible refinement is FAQ questions at 15px with 1.5 leading and standalone editorial actions, including FAQ answer links, at 15px. Answers remain 15px. The founder approved the final footer correction of 15px column headings with 1.4 leading and 13px currency text at all widths. Package 2 implementation is complete for final rendered review. No Package 3 work or full React cutover is authorised.
 
 The existing static homepage receives these refinements for review. Its layout, wording, photographs, section order, destinations, animations and other interactions remain the reference. Larger FAQ text can naturally wrap onto an additional line on phones; the final invitation and newsletter move down accordingly. This is not a redesign or a complete React cutover.
 
@@ -43,4 +43,4 @@ Do not use Macaly. Tested public source and preview no longer depend on its runt
 
 ## Editorial action sizing, 19 October 2026
 
-The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. Footer heading and currency readability is being reviewed separately, not silently changed. See docs/EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.
+The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. The separately approved footer completion is now implemented in source and the static preview. Menu links remain 14px regular and legal text remains 13px. See docs/FOOTER_TYPE_REVIEW.md. See docs/EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.

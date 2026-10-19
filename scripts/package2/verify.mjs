@@ -7,7 +7,8 @@ const cssPath = 'assets/index-DhPZyX4z.css'
 // Preserve Package 2's original comparison while accounting for the later approved editorial labels.
 const editorialScope = '#top[data-testid="storileaf-home"]'
 const editorialComparison = [ '.text-link', '.resource-card-link', '.resource-all-link' ].map(s => editorialScope + ' ' + s).join(',') + '{font-size:15px}'
-const before = execFileSync('git', ['show', baseline + ':' + cssPath], { encoding: 'utf8' }) + '\n' + editorialComparison
+const footerComparison = '#top[data-testid="storileaf-home"] .site-footer .footer-column h3{font-size:15px;line-height:1.4}#top[data-testid="storileaf-home"] .site-footer .currency-picker select{font-size:13px}'
+const before = execFileSync('git', ['show', baseline + ':' + cssPath], { encoding: 'utf8' }) + '\n' + editorialComparison + '\n' + footerComparison
 const after = await fs.readFile(cssPath, 'utf8')
 const base = process.env.PACKAGE2_BASE_URL || 'http://127.0.0.1:4173/storileaf-homepage-preview/'
 const folder = 'qa/package2'

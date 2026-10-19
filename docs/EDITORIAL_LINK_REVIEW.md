@@ -24,10 +24,10 @@ The earlier Package 2 comparison normalises only the newly approved action sizes
 
 Permanent verification compares the committed homepage and then waits for the matching deployed stylesheet hash. Its live stage opens a fresh browser without CSS injection or mocked requests and checks actual Pages, all nine widths and downloaded brand fonts. Read the successful run and Pages deployment for the actual final head before claiming live verification.
 
-## Footer review, not implemented
+## Footer review and subsequent approved implementation
 
 Browser measurements confirm all three column headings use 11px Manrope at weight 650 and 13.42px line height. Menu links use 14px at weight 400. Currency text is 11px on desktop and 10px on phones. Copyright and legal links use 13px.
 
-The proposed correction is 15px column headings at their existing semibold weight, existing gold colour and explicit 1.4 line height. Keep menu links 14px regular. A separate useful refinement is 13px currency text at all widths. These remain proposals awaiting founder approval; no footer typography is changed in the editorial-link release.
+The proposed correction is 15px column headings at their existing semibold weight, existing gold colour and explicit 1.4 line height. Keep menu links 14px regular. A separate useful refinement is 13px currency text at all widths. The founder subsequently approved both refinements and requested completion of Package 2. They are implemented in the separate footer correction recorded in FOOTER_TYPE_REVIEW.md. The editorial-link release itself remains unchanged.
 
 The photograph, forest fade, footer grouping, link order, copyright and legal row remain the accepted composition. Several existing footer same-page section links still have aria-current=page in the hydrated static implementation. Their semantics need a separately scoped correction during navigation migration; no destination or behaviour has been changed here. Full React parity, broader accessibility and native-browser zoom checks remain separate work.

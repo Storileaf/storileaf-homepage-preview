@@ -42,3 +42,8 @@ The founder accepted the published Package 1 result, then authorised completion 
 ## Editorial action sizing, 19 October 2026
 
 The founder approved 15px standalone editorial text actions in the static homepage and React source. Inline reading links inherit paragraph size. Navigation, footer utilities and buttons are excluded. Footer heading and currency readability is being reviewed separately, not silently changed. See EDITORIAL_LINK_REVIEW.md for exact scope and verification. Implementation and final visual acceptance remain distinct.
+
+
+## Footer typography and Package 2 completion, 19 October 2026
+
+The founder approved 15px column headings at weight 650 with 1.4 leading and 13px currency text on all screens. Menu links remain 14px regular, and legal text remains 13px. Preserve the shared photographic footer, grouping, gaps, wording, destinations and currency behaviour. This closes the bounded Package 2 implementation; final rendered acceptance remains distinct. Incorrect static current-page section-link semantics remain separately scoped navigation migration work. See FOOTER_TYPE_REVIEW.md.
