@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-19T12:53:20.968Z",
-  "commit": "e877dca2ecd3a0c75e7cfc9384bf6eb7996ba90d",
+  "date": "2026-10-19T13:31:23.155Z",
+  "commit": "1bb87bbcd3e470d6a126399761ad1c73ad3cc325",
   "observations": {
     "title": "StoriLeaf | Your stories, made into a book",
     "headerAlignment": [
@@ -430,8 +430,8 @@
     "desktopFooterBounds": {
       "unit": {
         "top": 474,
-        "bottom": 1313,
-        "height": 839
+        "bottom": 1320,
+        "height": 847
       },
       "newsletter": {
         "top": 474,
@@ -440,17 +440,17 @@
       },
       "footer": {
         "top": 900,
-        "bottom": 1313,
-        "height": 412
+        "bottom": 1320,
+        "height": 420
       },
       "bottom": {
-        "top": 1247,
-        "bottom": 1290,
+        "top": 1254,
+        "bottom": 1297,
         "height": 43
       },
       "copyright": {
-        "top": 1270,
-        "bottom": 1290,
+        "top": 1277,
+        "bottom": 1297,
         "height": 20
       },
       "newsletterBackground": "rgba(0, 0, 0, 0)",
