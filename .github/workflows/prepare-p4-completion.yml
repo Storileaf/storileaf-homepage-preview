@@ -18,84 +18,109 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Verify and apply the inspected patch only in this runner
+      - name: Apply only the inspected discovery correction in the runner
         uses: actions/github-script@v7
         with:
           script: |
-            const fs = require('node:fs');
-            const path = require('node:path');
-            const crypto = require('node:crypto');
-            const zlib = require('node:zlib');
-            const cp = require('node:child_process');
-            const assert = require('node:assert/strict');
-            assert.equal(context.repo.owner, 'Storileaf');
-            assert.equal(context.repo.repo, 'storileaf-homepage-preview');
-            assert.equal(context.ref, 'refs/heads/main');
-            const git = (...args) => cp.execFileSync('git', args, {encoding:'utf8'}).trim();
-            assert.equal(git('rev-parse','HEAD:frontend'),git('rev-parse','19bec2a78620af0ea3894bc5b2cea891be526115:frontend'));
-            const expected = {
-              '.github/workflows/verify-p4-reflow.yml':'3116b1467ed02c53a1ffcce62bdf8b411d12151b',
-              'frontend/scripts/reflow-contract.mjs':null,
-              'frontend/scripts/reflow-contract.test.mjs':null,
-              'frontend/scripts/verify-discovery-parity.mjs':'8fef01d1edb47e7ce47200b4faa36a5670ae3952',
-              'frontend/scripts/verify-group1-parity.mjs':'c5273ef79c3b2e2a84f805549095e80df09ffa1b',
-              'frontend/scripts/verify-hero-parity.mjs':'76687cf49df7b94d9559424bfcae40caca6fc905',
-              'frontend/scripts/verify-shared-parity.mjs':'9b027fe578155c2ab4760fd0922bcd9ac5f1f9e4',
-              'frontend/src/styles/homepage-reflow.css':'c388df68586558995e44bec540f1d29e375b221b',
-              'scripts/p4-reflow/verify.mjs':'dc12032b67d1b7f8a544de0aac6dc40a0f865a61'
-            };
-            for(const [file,sha] of Object.entries(expected)) {
-              if(sha) assert.equal(git('rev-parse','HEAD:'+file),sha,file);
-              else assert(!fs.existsSync(file),file);
+            const fs=require('node:fs'), cp=require('node:child_process'), assert=require('node:assert/strict'), crypto=require('node:crypto');
+            assert.equal(context.repo.owner,'Storileaf');assert.equal(context.repo.repo,'storileaf-homepage-preview');assert.equal(context.ref,'refs/heads/main');
+            const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();
+            assert.equal(git('rev-parse','HEAD:frontend'),git('rev-parse','5094e6cc9f7cad145997344635a207c1c741a759:frontend'));
+            const replace=(file,from,to)=>{const text=fs.readFileSync(file,'utf8');assert.equal(text.split(from).length,2,file+' exact single replacement');fs.writeFileSync(file,text.replace(from,to));};
+            const hook=`import { useLayoutEffect, useRef } from 'react'
+            import { observeIntrinsicFit } from '../intrinsicTextFit'
+
+            /** Keep the selected tab visible after text changes its intrinsic width.
+             * Selection, keyboard handling and vertical page position are untouched. */
+            export function useDiscoveryTextFit() {
+              const ref = useRef<HTMLDivElement>(null)
+              useLayoutEffect(() => {
+                const rail = ref.current
+                if (!rail) return
+                const tabs = [...rail.querySelectorAll<HTMLElement>('[role="tab"]')]
+                let previous = ''
+                const measure = () => {
+                  const sizes = [rail.clientWidth, ...tabs.map(tab => tab.getBoundingClientRect().width)].join(',')
+                  const changed = previous !== '' && sizes !== previous
+                  previous = sizes
+                  if (!changed) return
+                  const active = tabs.find(tab => tab.getAttribute('aria-selected') === 'true')
+                  if (!active) return
+                  const outer = rail.getBoundingClientRect(), inner = active.getBoundingClientRect()
+                  const delta = inner.left < outer.left ? inner.left - outer.left
+                    : inner.right > outer.right ? inner.right - outer.right : 0
+                  if (Math.abs(delta) > .5) rail.scrollBy({ left: delta, behavior: 'instant' })
+                }
+                return observeIntrinsicFit([rail, ...tabs], measure)
+              }, [])
+              return ref
             }
-            const blob = (await github.rest.git.getBlob({...context.repo,file_sha:'fe5763bd5b1e7251e2e2055e2c4a03844550c5d0'})).data;
-            // Undo the one identified transcription character in transport.
-            // Both compressed and decoded hashes below must match the locally tested patch.
-            const transport = Buffer.from(blob.content,'base64').toString('base64');
-            assert.equal(transport.split('Je97ddfqOOns').length,2);
-            const compressed = Buffer.from(transport.replace('Je97ddfqOOns','Je97ddfqOns'),'base64');
-            const hash = b => crypto.createHash('sha256').update(b).digest('hex');
-            assert.equal(hash(compressed),'25e34c7daf9212110b3f33532e2aad3062f4d8fc90d41b189a77e8aefb5feb61');
-            const patch = zlib.gunzipSync(compressed,{maxOutputLength:100000});
-            assert.equal(hash(patch),'af20602ee8a01b174e08547d55e08672ac57269aa9662ada11f2dcc7e5d0e0e1');
-            const file = path.join(process.env.RUNNER_TEMP,'p4-completion.patch');
-            fs.writeFileSync(file,patch);
-            cp.execFileSync('git',['apply','--check','--unidiff-zero',file]);
-            cp.execFileSync('git',['apply','--index','--unidiff-zero',file]);
-            assert.deepEqual(git('diff','--cached','--name-only').split('\n').sort(),Object.keys(expected).sort());
-            cp.execFileSync('git',['diff','--cached','--check']);
+            `;
+            assert(!fs.existsSync('frontend/src/sections/useDiscoveryTextFit.ts'));
+            fs.writeFileSync('frontend/src/sections/useDiscoveryTextFit.ts',hook);
+            replace('frontend/src/sections/BookDiscovery.tsx',"import { useEffect, useRef, useState } from 'react'","import { useEffect, useState } from 'react'\nimport { useDiscoveryTextFit } from './useDiscoveryTextFit'");
+            replace('frontend/src/sections/BookDiscovery.tsx','const tabRail = useRef<HTMLDivElement>(null)','const tabRail = useDiscoveryTextFit()');
+            fs.appendFileSync('frontend/scripts/reflow-contract.mjs',String.raw`
+            /** The underline keeps its exact insets and tracks the authorised tab width. */
+            export function discoveryUnderlineWidthEquivalent(name, before, after) {
+              if (!/^tab[0-5]$/.test(name)) return false
+              const values = [before?.geometry?.width, after?.geometry?.width]
+              for (const node of [before, after]) {
+                const dimensions = ['width', 'left', 'right'].map(key => /^-?[\d.]+px$/.test(node?.pseudo?.[key]) ? parseFloat(node.pseudo[key]) : NaN)
+                values.push(...dimensions)
+                if (!dimensions.every(Number.isFinite) || Math.abs(dimensions[0] - (node.geometry.width - dimensions[1] - dimensions[2])) > .15) return false
+              }
+              return values.every(Number.isFinite) && before.pseudo.left === after.pseudo.left && before.pseudo.right === after.pseudo.right
+            }
+            `);
+            fs.appendFileSync('frontend/scripts/reflow-contract.test.mjs',`
+
+            test('discovery underline width must follow its own tab with unchanged insets', async () => {
+              const { discoveryUnderlineWidthEquivalent } = await import('./reflow-contract.mjs')
+              const before = { geometry: { width: 147 }, pseudo: { width: '125px', left: '11px', right: '11px' } }
+              const after = { geometry: { width: 216.563 }, pseudo: { width: '194.562px', left: '11px', right: '11px' } }
+              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, after), true)
+              assert.equal(discoveryUnderlineWidthEquivalent('photo', before, after), false)
+              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, { ...after, pseudo: { ...after.pseudo, width: '190px' } }), false)
+              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, { ...after, pseudo: { ...after.pseudo, left: '12px' } }), false)
+              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, null), false)
+            })
+            `);
+            replace('frontend/scripts/verify-discovery-parity.mjs','import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension }','import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension, discoveryUnderlineWidthEquivalent }');
+            replace('frontend/scripts/verify-discovery-parity.mjs',"if (b.pseudo && a.pseudo) for (const key of pseudoStyles) if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')",`if (b.pseudo && a.pseudo) for (const key of pseudoStyles) {
+                  if (enlarged && key === 'width' && discoveryUnderlineWidthEquivalent(name, b, a)) continue
+                  if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')
+                }`);
+            replace('frontend/scripts/verify-discovery-parity.mjs',"    check(JSON.stringify(values.published.quality) === JSON.stringify(values.source.quality), 'Enlarged discovery quality differs ' + viewport.width + ' ' + slug)","    // Retain the baseline measurements; the authorised source must eliminate clipping rather than reproduce it.");
+            const expected={
+              'frontend/src/sections/useDiscoveryTextFit.ts':'8ef8b7c7109d8d83c2adbe905e6268d0ad9213dd4e0198093c8a8f0d461d0473',
+              'frontend/src/sections/BookDiscovery.tsx':'352f712303cc3fd51a421fa2cb87238cf1fdf1f1430f11768d0e8e250d224f9c',
+              'frontend/scripts/reflow-contract.mjs':'b420b56364a49dc92378c7dcc3bd22b0ffebae45b0597eac03a6e352beae00de',
+              'frontend/scripts/reflow-contract.test.mjs':'b05c871393959b625676baf8c736a3d4c20cb30d9c4b9f9e23914436bb3c9d41',
+              'frontend/scripts/verify-discovery-parity.mjs':'7fb57bd7710c1b293f02ce2adb30c1ae15a8f5817c35191efcae07c55ad4f1f7'
+            };
+            for(const [file,expectedHash] of Object.entries(expected))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),expectedHash,file);
+            cp.execFileSync('git',['add','--',...Object.keys(expected)]);cp.execFileSync('git',['diff','--cached','--check']);
       - name: Validate types, content, protected files, regression tests and build
         run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
-      - name: Create an unreferenced candidate without advancing main
+      - name: Create an unreferenced source candidate without advancing main
         uses: actions/github-script@v7
         with:
           script: |
-            const fs = require('node:fs');
-            const path = require('node:path');
-            const cp = require('node:child_process');
-            const assert = require('node:assert/strict');
-            const git = (...args) => cp.execFileSync('git',args,{encoding:'utf8'}).trim();
-            const head=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
-            assert.equal(head,context.sha,'Refuse stale main');
+            const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict');
+            const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();
+            const head=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;assert.equal(head,context.sha);
             const parent=(await github.rest.git.getCommit({...context.repo,commit_sha:head})).data;
-            const files=git('diff','--cached','--name-only').split('\n');
+            const files=git('diff','--cached','--name-only').split('\n');assert.equal(files.length,5);
             const entries=[];
-            for(const file of files) {
-              const body=fs.readFileSync(file,'utf8');
-              const blob=(await github.rest.git.createBlob({...context.repo,content:body,encoding:'utf-8'})).data;
-              assert.equal(blob.sha,git('rev-parse',':'+file),file);
-              entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});
-            }
+            for(const file of files){assert(file.startsWith('frontend/'));const blob=(await github.rest.git.createBlob({...context.repo,content:fs.readFileSync(file,'utf8'),encoding:'utf-8'})).data;assert.equal(blob.sha,git('rev-parse',':'+file));entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});}
             const tree=(await github.rest.git.createTree({...context.repo,base_tree:parent.tree.sha,tree:entries})).data;
-            const commit=(await github.rest.git.createCommit({...context.repo,message:'fix: complete bounded P4 text reflow and preserve normal header layout',tree:tree.sha,parents:[head]})).data;
-            const result={candidateCommit:commit.sha,parentCommit:head,tree:tree.sha,files,patchSha256:'af20602ee8a01b174e08547d55e08672ac57269aa9662ada11f2dcc7e5d0e0e1',status:'Source checks passed. Browser acceptance and publication pending. No branch advanced.'};
-            fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'p4-staged.json'),JSON.stringify(result,null,2));
-            core.info('P4_CANDIDATE '+JSON.stringify(result));
+            const commit=(await github.rest.git.createCommit({...context.repo,message:'fix: retain selected discovery tab during enlarged text reflow',tree:tree.sha,parents:[head]})).data;
+            const result={candidateCommit:commit.sha,parentCommit:head,tree:tree.sha,files,status:'Source validation passed. Browser checks and review refresh pending. Main not advanced.'};
+            fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'p4-staged.json'),JSON.stringify(result,null,2));core.info('P4_CANDIDATE '+JSON.stringify(result));
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: p4-inspected-candidate
-          path: |
-            ${{ runner.temp }}/p4-staged.json
-            ${{ runner.temp }}/p4-completion.patch
-          if-no-files-found: error
+          path: ${{ runner.temp }}/p4-staged.json
+          if-no-files-found: warn
