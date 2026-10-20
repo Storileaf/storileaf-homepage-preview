@@ -1,0 +1,45 @@
+name: Recover interrupted P4 candidate for inspection
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/recover-p4-candidate.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Export the existing proposed patch without applying it
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const path = require('node:path');
+            const zlib = require('node:zlib');
+            const crypto = require('node:crypto');
+            const assert = require('node:assert/strict');
+            assert.equal(context.repo.owner, 'Storileaf');
+            assert.equal(context.repo.repo, 'storileaf-homepage-preview');
+            const sha = 'f48431e16dffe1c2934d58f454d302013ef67ba4';
+            const blob = (await github.rest.git.getBlob({...context.repo, file_sha: sha})).data;
+            const encoded = Buffer.from(blob.content, 'base64');
+            assert.equal(crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob ' + encoded.length + '\0'), encoded])).digest('hex'), sha);
+            const patch = zlib.gunzipSync(Buffer.from(encoded.toString('utf8').trim(), 'base64'), {maxOutputLength: 5000000});
+            const folder = path.join(process.env.RUNNER_TEMP, 'p4-recovered');
+            fs.mkdirSync(folder, {recursive: true});
+            fs.writeFileSync(path.join(folder, 'proposed.patch'), patch);
+            fs.writeFileSync(path.join(folder, 'identity.json'), JSON.stringify({purpose: 'Recovery for inspection only. Patch not executed or published.', sourceBlob: sha, sourceTree: '906f805a419825c450167acb5069409bc755f5fa', recoveredAt: new Date().toISOString(), main: context.sha, patchSha256: crypto.createHash('sha256').update(patch).digest('hex'), bytes: patch.length}, null, 2));
+      - name: Retain current Git history for exact local comparison
+        run: git bundle create "$RUNNER_TEMP/p4-recovered/current.bundle" main
+      - uses: actions/upload-artifact@v4
+        with:
+          name: p4-recovered-candidate
+          path: ${{ runner.temp }}/p4-recovered/
+          retention-days: 7
+          if-no-files-found: error
