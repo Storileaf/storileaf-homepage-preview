@@ -1,0 +1,68 @@
+name: Inspect P4 checkpoint evidence
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/inspect-p4-checkpoint.yml]
+  workflow_dispatch:
+    inputs:
+      candidate:
+        description: Existing candidate commit to inspect
+        default: cd64a97532689f945c7bd52c943805f784e0a443
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Read candidate checks without rerunning or modifying them
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('node:fs');
+            const path=require('node:path');
+            const cp=require('node:child_process');
+            const crypto=require('node:crypto');
+            const assert=require('node:assert/strict');
+            const candidate=context.payload.inputs?.candidate || 'cd64a97532689f945c7bd52c943805f784e0a443';
+            assert(/^[a-f0-9]{40}$/.test(candidate));
+            const out=path.join(process.env.RUNNER_TEMP,'p4-inspection');fs.mkdirSync(out,{recursive:true});
+            let runs=[];
+            for(let attempt=0;attempt<90;attempt++) {
+              runs=(await github.rest.actions.listWorkflowRunsForRepo({...context.repo,head_sha:candidate,per_page:100})).data.workflow_runs;
+              const pending=runs.filter(r=>r.status!=='completed');
+              core.info(JSON.stringify({attempt,count:runs.length,pending:pending.map(r=>r.name)}));
+              if(runs.length>=14 && !pending.length)break;
+              await new Promise(r=>setTimeout(r,10000));
+            }
+            const result={candidate,inspectedAt:new Date().toISOString(),runs:[]};
+            const retain=new Set(['p4-reflow-verification','homepage-hero-parity','homepage-shared-parity','homepage-discovery-parity','homepage-assembly-parity','homepage-writing-parity','homepage-group1-parity']);
+            for(const run of runs) {
+              const jobs=(await github.rest.actions.listJobsForWorkflowRun({...context.repo,run_id:run.id,per_page:100})).data.jobs;
+              const artifacts=(await github.rest.actions.listWorkflowRunArtifacts({...context.repo,run_id:run.id,per_page:100})).data.artifacts;
+              const item={id:run.id,name:run.name,path:run.path,head:run.head_sha,status:run.status,conclusion:run.conclusion,attempt:run.run_attempt,url:run.html_url,jobs:jobs.map(j=>({id:j.id,name:j.name,status:j.status,conclusion:j.conclusion,started_at:j.started_at,completed_at:j.completed_at,steps:j.steps})),artifacts:artifacts.map(a=>({id:a.id,name:a.name,bytes:a.size_in_bytes,digest:a.digest,expiresAt:a.expires_at}))};
+              result.runs.push(item);
+              for(const job of jobs.filter(j=>j.conclusion==='failure')) {
+                const log=await github.rest.actions.downloadJobLogsForWorkflowRun({...context.repo,job_id:job.id});
+                fs.writeFileSync(path.join(out,'failed-job-'+job.id+'.log'),String(log.data));
+              }
+              for(const artifact of artifacts.filter(a=>retain.has(a.name))) {
+                const downloaded=await github.rest.actions.downloadArtifact({...context.repo,artifact_id:artifact.id,archive_format:'zip'});
+                const body=Buffer.from(downloaded.data);
+                assert.equal('sha256:'+crypto.createHash('sha256').update(body).digest('hex'),artifact.digest);
+                const archive=path.join(out,artifact.name+'.zip');fs.writeFileSync(archive,body);
+                const destination=path.join(out,artifact.name);fs.mkdirSync(destination,{recursive:true});
+                cp.execFileSync('python3',['-c','import sys,zipfile,pathlib; z=zipfile.ZipFile(sys.argv[1]); d=pathlib.Path(sys.argv[2]); [(d.joinpath(pathlib.Path(n).name).write_bytes(z.read(n))) for n in z.namelist() if n.endswith(".json")]',archive,destination]);
+                // Keep P4 images for direct visual inspection, other reports only.
+                if(artifact.name!=='p4-reflow-verification')fs.unlinkSync(archive);
+              }
+            }
+            fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify(result,null,2));
+            core.info('P4_RESULTS '+JSON.stringify(result.runs.map(({id,name,status,conclusion})=>({id,name,status,conclusion}))));
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p4-checkpoint-inspection
+          path: ${{ runner.temp }}/p4-inspection/
+          if-no-files-found: error
