@@ -1,0 +1,54 @@
+name: Diagnose P4 header intrinsic sizing
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/diagnose-p4-header.yml]
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
+      - run: |
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/p4-header-server.log 2>&1 &
+      - name: Measure original and bounded CSS experiments without modifying runtime
+        run: |
+          mkdir -p qa/p4-header-diagnosis
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          import {chromium} from 'playwright-core';
+          const browser = await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
+          const report={source:process.env.GITHUB_SHA,browser:browser.version(),purpose:'Diagnostic CSS experiments only. Not parity acceptance.',rows:[]};
+          const variants={original:null,current:'',noShrink:'.sl-header-actions { flex-shrink:0; }',bounded:'.sl-header-actions { flex-shrink:0; max-width:calc(100% - var(--sl-header-logo-width) - 64px); }'};
+          for(const width of [361,390,820,1440]) for(const [variant,css]of Object.entries(variants)) {
+            const p=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'});
+            await p.goto('http://127.0.0.1:4173/'+(variant==='original'?'react-review/':'frontend/dist/'),{waitUntil:'networkidle'});
+            await p.evaluate(()=>document.fonts.ready);
+            if(css)await p.addStyleTag({content:css});
+            for(const enlarged of [false,true]) {
+              if(enlarged)await p.locator('.sl-header a,.sl-header button').evaluateAll(es=>{const m=es.map(e=>({e,s:parseFloat(getComputedStyle(e).fontSize),l:parseFloat(getComputedStyle(e).lineHeight)}));for(const{e,s,l}of m){e.style.fontSize=s*2+'px';e.style.lineHeight=l*2+'px'}});
+              const values=await p.evaluate(()=>Object.fromEntries(['.sl-header','.sl-header-inner','.sl-header-logo','.sl-header-actions','.sl-header-primary','.sl-header-mobile-trigger'].map(s=>{const e=document.querySelector(s),c=getComputedStyle(e);return[s,{rect:e.getBoundingClientRect().toJSON(),font:c.font,pad:c.padding,flex:c.flex,width:c.width,whiteSpace:c.whiteSpace,overflow:c.overflow}]})));
+              report.rows.push({width,variant,enlarged,values});
+              if(width===361)await p.screenshot({path:'qa/p4-header-diagnosis/'+variant+'-'+enlarged+'.png',clip:{x:0,y:0,width,height:180}});
+            }
+            await p.close();
+          }
+          await fs.writeFile('qa/p4-header-diagnosis/report.json',JSON.stringify(report,null,2));
+          console.log(JSON.stringify(report.rows.map(r=>({width:r.width,variant:r.variant,enlarged:r.enlarged,header:r.values['.sl-header'].rect,action:r.values['.sl-header-primary'].rect,group:r.values['.sl-header-actions'].rect})),null,2));
+          await browser.close();
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p4-header-diagnosis
+          path: qa/p4-header-diagnosis/
