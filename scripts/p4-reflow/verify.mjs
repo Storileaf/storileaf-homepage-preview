@@ -71,7 +71,10 @@ async function enlarge(p,selector=enlargeSelector){
  const metrics=await p.locator(selector).evaluateAll(es=>{
   const nodes=es.filter(e=>e.checkVisibility()&&!e.closest('svg')&&(e.textContent.trim()||e.matches('select,input')))
   const data=nodes.map(e=>({e,size:parseFloat(getComputedStyle(e).fontSize),line:parseFloat(getComputedStyle(e).lineHeight)}))
-  for(const {e,size,line}of data){e.style.fontSize=size*2+'px';if(Number.isFinite(line))e.style.lineHeight=line*2+'px'}
+  for(const {e,size,line}of data){
+   e.dataset.p4OriginalType = JSON.stringify(['font-size','line-height'].map(property=>({property,value:e.style.getPropertyValue(property),priority:e.style.getPropertyPriority(property)})))
+   e.style.fontSize=size*2+'px';if(Number.isFinite(line))e.style.lineHeight=line*2+'px'
+  }
   return data.map(({e,size,line})=>({tag:e.tagName,text:e.textContent.trim().slice(0,80),size:size*2,line:line*2}))
  })
  await frames(p);return metrics
@@ -128,7 +131,25 @@ try{
   if(width>1130){for(const name of ['Books','Resources']){const t=p.locator('.sl-header-nav-trigger').filter({hasText:name});await t.focus();await t.press('Enter');await p.locator(name==='Books'?'[data-testid="books-dropdown"]':'[data-testid="resources-dropdown"]').waitFor();await t.press('Escape');row.menu[name]=await t.evaluate(e=>document.activeElement===e);check(row.menu[name],'Enlarged desktop menu Escape/focus '+name+' '+width)}}
   else{const t=p.getByTestId('mobile-menu');await t.focus();await t.press('Enter');await p.locator('.sl-mobile-nav-dialog').waitFor();await enlarge(p,'.sl-mobile-nav-dialog p,.sl-mobile-nav-dialog a,.sl-mobile-nav-dialog summary');await p.keyboard.press('Escape');await p.locator('.sl-mobile-nav-dialog').waitFor({state:'detached'});await frames(p);row.menu.mobile=await t.evaluate(e=>document.activeElement===e);check(row.menu.mobile,'Mobile menu focus restoration '+width)}
   row.normalAfterReset = {}
-  for(const [kind,page] of Object.entries(ps)) { await ready(page,urls[kind]); row.normalAfterReset[kind]=await snapshot(page) }
+  for(const [kind,page] of Object.entries(ps)) {
+   // Restore the actual pre-enlargement inline styles in the same document.
+   // A reload can legitimately restore the horizontal rail's last scroll.
+   await page.locator('[data-p4-original-type]').evaluateAll(elements=>{
+    for(const element of elements){
+     for(const {property,value,priority} of JSON.parse(element.dataset.p4OriginalType)){
+      if(value)element.style.setProperty(property,value,priority);else element.style.removeProperty(property)
+     }
+     delete element.dataset.p4OriginalType
+    }
+   })
+   await frames(page)
+   const first=page.locator('.sl-book-tab-trigger').first()
+   await first.focus();await first.press('Enter');await frames(page)
+   // Use the same native rail state as the initial default capture.
+   await page.locator('.sl-book-tabs-scroll').evaluate(element=>element.scrollTo({left:0,behavior:'instant'}))
+   await page.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await frames(page)
+   row.normalAfterReset[kind]=await snapshot(page)
+  }
   for(const key of Object.keys(targets)) { const initial=row.normal.candidate.groups[key], reset=row.normalAfterReset.candidate.groups[key]; check(initial.length===reset.length && initial.every((n,i)=>n.rect.every((v,j)=>Math.abs(v-reset[i].rect[j])<=.15)), 'Normal layout restored after enlargement '+key+' '+width) }
   report.widths.push(row);for(const p of Object.values(ps))await p.close()
  }
