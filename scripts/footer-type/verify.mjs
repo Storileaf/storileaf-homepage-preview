@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import { execFileSync } from 'node:child_process'
 import { createHash } from 'node:crypto'
 import { chromium } from 'playwright-core'
+import { settledSnapshot } from '../../frontend/scripts/browser-readiness.mjs'
 
 const baseline='898958276bb82c8c7c5b2c9839456a26f8cf0591'
 const cssPath='assets/index-DhPZyX4z.css'
@@ -19,7 +20,7 @@ let browser
 const fonts=async p=>{await p.evaluate(async()=>{await document.fonts.ready;await Promise.all([document.fonts.load('650 15px Manrope'),document.fonts.load('450 64px Newsreader')])});const loaded=await p.evaluate(()=>[...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family));for(const name of ['Manrope','Newsreader'])check(loaded.some(n=>n.includes(name)),'Missing downloaded font '+name)}
 const reset=async p=>{await p.mouse.move(0,0);await p.evaluate(()=>{document.activeElement?.blur();getSelection()?.removeAllRanges();scrollTo({top:0,behavior:'instant'})});await p.waitForTimeout(200)}
 const selectors=source=>source?{footer:'.sl-footer',heading:'.sl-footer-column h3',menu:'.sl-footer-column a',currency:'.sl-footer-currency select',control:'.sl-footer-currency',legal:'.sl-footer-bottom > span,.sl-footer-bottom a',unit:'.sl-newsletter-footer'}:{footer:'.site-footer',heading:'.footer-column h3',menu:'.footer-column a',currency:'.currency-picker select',control:'.currency-picker',legal:'.footer-bottom > span,.footer-bottom a',unit:'.newsletter-footer-unit'}
-const read=(p,source=false)=>p.evaluate(q=>{
+const read=(p,source=false)=>settledSnapshot(p,()=>p.evaluate(q=>{
  const describe=el=>{const s=getComputedStyle(el);return {tag:el.tagName,text:el.textContent.trim(),href:el.getAttribute('href'),size:s.fontSize,line:s.lineHeight,font:s.fontFamily,weight:s.fontWeight,colour:s.color,background:s.backgroundColor,padding:s.padding,margin:s.margin,gap:s.gap,radius:s.borderRadius}}
  const select=document.querySelector(q.currency),s=getComputedStyle(select),r=select.getBoundingClientRect(),c=document.querySelector(q.control).getBoundingClientRect()
  const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');ctx.font=`${s.fontWeight} ${s.fontSize} ${s.fontFamily}`
@@ -29,7 +30,7 @@ const read=(p,source=false)=>p.evaluate(q=>{
  const frozen=[...f.querySelectorAll('*')].map(el=>{const x=describe(el);if(el.tagName==='OPTION'&&/^\d+(\.\d+)?px$/.test(x.gap))x.gap=String(parseFloat(x.gap)/parseFloat(x.size))+'em';if(el.matches(q.heading)||el.matches(q.currency)||el.closest(q.currency)){delete x.size;delete x.line}return x})
  const outside=[...document.querySelectorAll('.site-header,main>section,.newsletter-strip,.sl-header,.sl-reference-section,.sl-newsletter')].filter(el=>!el.contains(f)&&!el.closest(q.footer)).map(el=>{const r=el.getBoundingClientRect();return {text:el.textContent,cls:el.className,rect:[r.x,r.y+scrollY,r.width,r.height]}})
  return {headings:[...document.querySelectorAll(q.heading)].map(describe),menu:[...document.querySelectorAll(q.menu)].map(describe),legal:[...document.querySelectorAll(q.legal)].map(describe),currency:{...describe(select),value:select.value,options:[...select.options].map(o=>({value:o.value,label:o.label})),width:r.width,controlWidth:c.width,left:c.left,right:c.right,labelWidth,available:select.clientWidth-parseFloat(s.paddingLeft)-parseFloat(s.paddingRight)},frozen,outside,footer:{x:fr.x,y:fr.y+scrollY,width:fr.width,height:fr.height},background:{photo:getComputedStyle(document.querySelector(q.unit),'::before').backgroundImage,fade:getComputedStyle(document.querySelector(q.unit),'::after').backgroundImage},pageWidth:document.documentElement.scrollWidth,viewport:innerWidth}
-},selectors(source))
+},selectors(source)))
 function assertResult(a,label){
  check(a.headings.length===3&&a.headings.every(x=>x.size==='15px'&&x.line==='21px'&&x.weight==='650'&&x.font.includes('Manrope')),label+' heading role')
  check(a.menu.length===17&&a.menu.every(x=>x.size==='14px'&&x.weight==='400'),label+' menu links changed')
@@ -65,10 +66,24 @@ try{
  const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'});page.on('pageerror',e=>report.problems.push(e.message))
  const response=page.waitForResponse(r=>r.url().includes('/'+cssPath));await page.goto(url,{waitUntil:'networkidle'});report.cssSha256=hash(await(await response).text());check(report.cssSha256===hash(current),'Loaded CSS hash differs');await fonts(page)
  const height=await page.evaluate(()=>document.documentElement.scrollHeight);for(let y=0;y<height;y+=750){await page.evaluate(y=>scrollTo(0,y),y);await page.waitForTimeout(60)}await page.waitForTimeout(500)
+ let comparisonStyle=null
+ report.staticComparisonMethod=live?'Actual served stylesheet, no injection':'One test style node alternates exact historical and current saved CSS. The external current CSS response is hash verified before comparison; no source styles, assertions or tolerances are changed.'
  for(const width of widths){
   await page.setViewportSize({width,height:1000});await reset(page)
   let b
-  if(!live){const style=await page.addStyleTag({content:prior});await page.evaluate(()=>document.querySelector('link[href*="index-DhPZyX4z.css"]').disabled=true);await reset(page);b=await read(page);if([390,1440].includes(width))await capture(page,b,width,'before');await style.evaluate(e=>e.remove());await page.evaluate(()=>document.querySelector('link[href*="index-DhPZyX4z.css"]').disabled=false);await reset(page)}
+  if(!live){
+   // Use one test stylesheet for both exact saved versions. Re-enabling an
+   // external link can return before its CSS participates in layout again.
+   // The actual live mode below uses the real loaded stylesheet, unmodified.
+   if(!comparisonStyle){
+    comparisonStyle=await page.addStyleTag({content:prior});
+    await page.evaluate(()=>document.querySelector('link[href*="index-DhPZyX4z.css"]').disabled=true);
+   }else await comparisonStyle.evaluate((el,css)=>{el.textContent=css},prior);
+   await reset(page);b=await read(page);
+   if([390,1440].includes(width))await capture(page,b,width,'before');
+   await comparisonStyle.evaluate((el,css)=>{el.textContent=css},current);
+   await reset(page);
+  }
   const a=await read(page);assertResult(a,'Static '+width);if(b)compare(b,a,'Static '+width)
   report.widths.push({width,before:b,after:a})
   if([390,1440].includes(width)){await capture(page,a,width,live?'live':'after');await exercise(page)}

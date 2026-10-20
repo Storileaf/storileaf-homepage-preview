@@ -20,14 +20,6 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      # Temporary, tracked public changes only. No Git configuration or credentials.
-      - name: Export tracked public changes for interrupted session recovery
-        run: git diff --binary d4ffea10af7cce8ebc1f2a9c0c51a6c76d2b3dfd HEAD -- frontend scripts docs .github REPOSITORY_HANDOFF.md > "$RUNNER_TEMP/media-recovery.patch"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: media-tracked-recovery
-          path: ${{ runner.temp }}/media-recovery.patch
-          retention-days: 1
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

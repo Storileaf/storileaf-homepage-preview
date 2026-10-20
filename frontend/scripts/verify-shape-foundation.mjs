@@ -3,6 +3,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import http from 'node:http'
+import { settledSnapshot } from './browser-readiness.mjs'
 
 // Read-only checks. The experimental build never replaces the published root.
 const root = path.resolve('..')
@@ -32,7 +33,7 @@ check(report.staticReferences.length === 0, 'A runtime dependency on the retired
 // them under authorisation and compares their geometry to the actual protected
 // homepage in verify-shared-parity, not to the obsolete source approximation.
 const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css']).split('/* Shared public site ending.')[0] + '\n.sl-action--text { font-size:var(--sl-text-editorial-action); }'
-report.sourceGeometryScope = 'Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate'
+report.sourceGeometryScope = 'Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate. All geometry and computed style values remain asserted after bounded stable sampling; no difference is filtered out.'
 const originalTokens = git(['show', sourceBaseline + ':frontend/src/styles/tokens.css'])
 const tokens = await fs.readFile('src/styles/tokens.css', 'utf8')
 for (const alias of ['header-action', 'newsletter-control', 'gold-action']) {
@@ -62,15 +63,18 @@ const measure = (page, selectors) => page.evaluate(list => Object.fromEntries(li
   const s = getComputedStyle(el), r = el.getBoundingClientRect()
   return [selector, { radius: s.borderTopLeftRadius, width: r.width, height: r.height, fontSize: s.fontSize, lineHeight: s.lineHeight, display: s.display, background: s.backgroundColor, colour: s.color }]
 })), selectors)
-const geometry = page => page.evaluate(() => [...document.querySelectorAll('body *:not(script):not(style)')].map(el => {
+const geometry = page => settledSnapshot(page, () => page.evaluate(() => [...document.querySelectorAll('body *:not(script):not(style)')].map(el => {
   const r = el.getBoundingClientRect(), s = getComputedStyle(el)
   return [el.tagName, el.getAttribute('class'), [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
-}))
+})))
 const focusMeasure = locator => locator.evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, parentRadius: getComputedStyle(el.parentElement).borderTopLeftRadius, visible: el.matches(':focus-visible'), outline: getComputedStyle(el).outlineWidth, offset: getComputedStyle(el).outlineOffset }))
 const clearSelection = page => page.evaluate(() => window.getSelection()?.removeAllRanges())
 // Responsive viewport units and media queries can settle on the next frame.
 // Measure both styles only after layout has caught up with the requested width.
-const settleLayout = page => page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+const settleLayout = async page => {
+  await page.bringToFront()
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+}
 const shot = async (page, name) => {
   // A pointer-held test can select text when released outside a control.
   // Clear only transient selection, preserving focus and all page styling.
@@ -188,7 +192,7 @@ try {
       await page.setViewportSize({ width, height: 900 })
       await settleLayout(page)
       await page.mouse.move(0, 0); await page.evaluate(() => { document.activeElement?.blur(); scrollTo(0, 0) })
-      const measured = await measure(page, targets)
+      const measured = await settledSnapshot(page, () => measure(page, targets))
       const row = { width, controls: measured }
       result.widths.push(row)
       if (kind === 'source') {
@@ -197,7 +201,7 @@ try {
         const afterGeometry = await geometry(page)
         const priorStyle = await page.addStyleTag({ content: originalTokens + '\n' + original })
         await settleLayout(page)
-        const before = await measure(page, targets)
+        const before = await settledSnapshot(page, () => measure(page, targets))
         row.before = before
         const beforeGeometry = await geometry(page)
         row.geometryChanges = beforeGeometry.flatMap((before, index) => JSON.stringify(before) === JSON.stringify(afterGeometry[index]) ? [] : [{ index, before, after: afterGeometry[index] }])
@@ -216,6 +220,7 @@ try {
           await page.locator('.sl-newsletter-controls').screenshot({ path: path.join(out, 'newsletter-before-' + width + '.png'), animations: 'disabled' })
         }
         await priorStyle.evaluate(el => el.remove())
+        await settleLayout(page)
         if (width === 390 || width === 1440) {
           await page.evaluate(() => scrollTo(0, 0))
           await page.locator('.sl-header').screenshot({ path: path.join(out, 'header-after-' + width + '.png'), animations: 'disabled' })
