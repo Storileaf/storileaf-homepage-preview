@@ -1,0 +1,1731 @@
+{
+  "candidate": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "observedAt": "2026-10-20 06:58:39 UTC",
+  "result": "All 11 retained/source/Pages workflows completed successfully on their first attempt. Dedicated Writing and Assembly workflows are outside this summary.",
+  "workflows": [
+    {
+      "id": 39382383859,
+      "name": "pages build and deployment",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382383859",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:47:39Z",
+      "jobs": [
+        {
+          "id": 118494202166,
+          "name": "build",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": null,
+            "npm": null,
+            "playwright": null
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": null,
+            "passed": null,
+            "failed": null
+          },
+          "failedSteps": [],
+          "stepCount": 5,
+          "retainedGroup1Step": []
+        },
+        {
+          "id": 118494271639,
+          "name": "deploy",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": null,
+            "npm": null,
+            "playwright": null
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": null,
+            "passed": null,
+            "failed": null
+          },
+          "failedSteps": [],
+          "stepCount": 3,
+          "retainedGroup1Step": []
+        },
+        {
+          "id": 118494271686,
+          "name": "report-build-status",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": null,
+            "npm": null,
+            "playwright": null
+          },
+          "checkoutShaConfirmedInLog": false,
+          "testCounts": {
+            "tests": null,
+            "passed": null,
+            "failed": null
+          },
+          "failedSteps": [],
+          "stepCount": 3,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12246570145
+      ]
+    },
+    {
+      "id": 39382384273,
+      "name": "Verify Package 2 foundations",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384273",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:48:05Z",
+      "jobs": [
+        {
+          "id": 118494198910,
+          "name": "review",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 11,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12246196136
+      ]
+    },
+    {
+      "id": 39382384528,
+      "name": "Validate editable StoriLeaf public website source",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384528",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:48:06Z",
+      "jobs": [
+        {
+          "id": 118494199594,
+          "name": "typecheck-and-build",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 16,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12245881614,
+        12245044340
+      ]
+    },
+    {
+      "id": 39382384228,
+      "name": "Verify final footer typography",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384228",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:48:35Z",
+      "jobs": [
+        {
+          "id": 118494199232,
+          "name": "verify",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 11,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12246246042
+      ]
+    },
+    {
+      "id": 39382384392,
+      "name": "Verify React How it works parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384392",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:49:51Z",
+      "jobs": [
+        {
+          "id": 118494199445,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 13,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12246405916,
+        12246281244
+      ]
+    },
+    {
+      "id": 39382384450,
+      "name": "Verify React media parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384450",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:51:35Z",
+      "jobs": [
+        {
+          "id": 118494199488,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 14,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12246645324,
+        12246481161
+      ]
+    },
+    {
+      "id": 39382384378,
+      "name": "Verify React homepage Group 1 parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384378",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:51:35Z",
+      "jobs": [
+        {
+          "id": 118494199136,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 19,
+          "retainedGroup1Step": [
+            {
+              "name": "Compare Group 1 against the current static homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach Group 1 section comparisons",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifactIds": [
+        12246325826,
+        12246026626,
+        12245767448
+      ]
+    },
+    {
+      "id": 39382384344,
+      "name": "Verify React hero and motion parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384344",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:51:41Z",
+      "jobs": [
+        {
+          "id": 118494199680,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 13,
+          "retainedGroup1Step": []
+        }
+      ],
+      "artifactIds": [
+        12245742432,
+        12245712548
+      ]
+    },
+    {
+      "id": 39382384401,
+      "name": "Verify React homepage Group 2 parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384401",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:52:31Z",
+      "jobs": [
+        {
+          "id": 118494199617,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 20,
+          "retainedGroup1Step": [
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifactIds": [
+        12246685975,
+        12246411476,
+        12245838566
+      ]
+    },
+    {
+      "id": 39382384554,
+      "name": "Verify React shared header and footer parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384554",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:54:55Z",
+      "jobs": [
+        {
+          "id": 118494199893,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 21,
+          "retainedGroup1Step": [
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifactIds": [
+        12246651393,
+        12246406902,
+        12246257403
+      ]
+    },
+    {
+      "id": 39382384299,
+      "name": "Verify React six-book discovery parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384299",
+      "headSha": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "attempt": 1,
+      "conclusion": "success",
+      "completedAt": "2026-10-20T06:56:44Z",
+      "jobs": [
+        {
+          "id": 118494199264,
+          "name": "compare",
+          "conclusion": "success",
+          "environment": {
+            "runner": "2.337.0",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "os": "Ubuntu 24.04.5 LTS",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwright": "playwright-core@1.56.1"
+          },
+          "checkoutShaConfirmedInLog": true,
+          "testCounts": {
+            "tests": 75,
+            "passed": 75,
+            "failed": 0
+          },
+          "failedSteps": [],
+          "stepCount": 22,
+          "retainedGroup1Step": [
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifactIds": [
+        12246655988,
+        12246511276,
+        12245867858
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12246570145,
+      "name": "github-pages",
+      "runId": 39382383859,
+      "sizeBytes": 21957081,
+      "sha256": "a9f88c34a5f8e2a3b615e56a628386ebd579fc5c1738101f9cb779810aebf17e",
+      "downloaded": false
+    },
+    {
+      "id": 12246196136,
+      "name": "package2-published-review",
+      "runId": 39382384273,
+      "sizeBytes": 23931036,
+      "sha256": "ea60cd4b58f15ae8af6247bbb44acb90d7effb3245d60d4c9e8209603b9ce879",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246196136.zip",
+      "extracted": "/tmp/group8-third-artifact-12246196136"
+    },
+    {
+      "id": 12245881614,
+      "name": "public-frontend-source-browser-qa",
+      "runId": 39382384528,
+      "sizeBytes": 20686873,
+      "sha256": "e99788778d9cc50f549304229dcfda52225ff2e05ced22cd7de93b49b8cd4a30",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12245881614.zip",
+      "extracted": "/tmp/group8-third-artifact-12245881614"
+    },
+    {
+      "id": 12245044340,
+      "name": "public-frontend-source-preview",
+      "runId": 39382384528,
+      "sizeBytes": 198869,
+      "sha256": "a1998643404161445200dd1ddd6b984b6b3873cf425c04e355eb9ab15b5cc3a9",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12245044340.zip",
+      "extracted": "/tmp/group8-third-artifact-12245044340"
+    },
+    {
+      "id": 12246246042,
+      "name": "footer-type-published-review",
+      "runId": 39382384228,
+      "sizeBytes": 37315458,
+      "sha256": "4c2fe620e089761a1fa4a101314dc3cc403e2bd4e195390ed8464a43bfd6b391",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246246042.zip",
+      "extracted": "/tmp/group8-third-artifact-12246246042"
+    },
+    {
+      "id": 12246405916,
+      "name": "homepage-process-parity",
+      "runId": 39382384392,
+      "sizeBytes": 38381211,
+      "sha256": "154f551f04117947c6002810ea7412e6dc02cb0bb4343740db0bda7375aa73f7",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246405916.zip",
+      "extracted": "/tmp/group8-third-artifact-12246405916"
+    },
+    {
+      "id": 12246281244,
+      "name": "homepage-process-source-preview",
+      "runId": 39382384392,
+      "sizeBytes": 198869,
+      "sha256": "e0cf5d389ccfd59ece1c7f794f8872fd6d5aabbb325d3d272148159878c8a804",
+      "downloaded": false
+    },
+    {
+      "id": 12246645324,
+      "name": "homepage-media-source-preview",
+      "runId": 39382384450,
+      "sizeBytes": 198869,
+      "sha256": "52723dde3371069448cad962033fe8f139fa3db7407b06dea3544d004bcd8b9c",
+      "downloaded": false
+    },
+    {
+      "id": 12246481161,
+      "name": "homepage-media-parity",
+      "runId": 39382384450,
+      "sizeBytes": 106982729,
+      "sha256": "2e90171a349a5a9a43d665e81f027ec35011d33a635f18c5576fdc06815c8b8c",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246481161.zip",
+      "extracted": "/tmp/group8-third-artifact-12246481161"
+    },
+    {
+      "id": 12246325826,
+      "name": "homepage-group1-parity",
+      "runId": 39382384378,
+      "sizeBytes": 38785001,
+      "sha256": "a8cc1e91abf091aab715c852fa439c235678e3b24c31f52849df85a29811da9a",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246325826.zip",
+      "extracted": "/tmp/group8-third-artifact-12246325826"
+    },
+    {
+      "id": 12246026626,
+      "name": "homepage-group1-regressions",
+      "runId": 39382384378,
+      "sizeBytes": 101226666,
+      "sha256": "c97f0a1d01c202d6b8e8c0cdeb43532401a123fbe6424f7eaf5c645a14a323d7",
+      "downloaded": false
+    },
+    {
+      "id": 12245767448,
+      "name": "homepage-group1-source-preview",
+      "runId": 39382384378,
+      "sizeBytes": 198869,
+      "sha256": "e0cf5d389ccfd59ece1c7f794f8872fd6d5aabbb325d3d272148159878c8a804",
+      "downloaded": false
+    },
+    {
+      "id": 12245742432,
+      "name": "homepage-hero-source-preview",
+      "runId": 39382384344,
+      "sizeBytes": 198869,
+      "sha256": "a1998643404161445200dd1ddd6b984b6b3873cf425c04e355eb9ab15b5cc3a9",
+      "downloaded": false
+    },
+    {
+      "id": 12245712548,
+      "name": "homepage-hero-parity",
+      "runId": 39382384344,
+      "sizeBytes": 76529018,
+      "sha256": "954c9802f84a8836613c8c8316dfa62b10bd85f4285e2b7146c141d12b7d5fc8",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12245712548.zip",
+      "extracted": "/tmp/group8-third-artifact-12245712548"
+    },
+    {
+      "id": 12246685975,
+      "name": "homepage-group2-source-preview",
+      "runId": 39382384401,
+      "sizeBytes": 198869,
+      "sha256": "d959da4a5841fc93eef1eb262c9ad775c4f84e920aa4572183f7a11c5352679a",
+      "downloaded": false
+    },
+    {
+      "id": 12246411476,
+      "name": "homepage-group2-parity",
+      "runId": 39382384401,
+      "sizeBytes": 18065014,
+      "sha256": "f7b406958c6eabce7026298a4a7bca7c7b2f4190bd102a6f3a6943858fa63500",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246411476.zip",
+      "extracted": "/tmp/group8-third-artifact-12246411476"
+    },
+    {
+      "id": 12245838566,
+      "name": "homepage-group2-regressions",
+      "runId": 39382384401,
+      "sizeBytes": 140549046,
+      "sha256": "e9de1cd5684e3b50a340859f4e9835ad167d867f2042973a674ca122d707e9a3",
+      "downloaded": false
+    },
+    {
+      "id": 12246651393,
+      "name": "homepage-shared-source-preview",
+      "runId": 39382384554,
+      "sizeBytes": 198869,
+      "sha256": "a1998643404161445200dd1ddd6b984b6b3873cf425c04e355eb9ab15b5cc3a9",
+      "downloaded": false
+    },
+    {
+      "id": 12246406902,
+      "name": "homepage-shared-parity",
+      "runId": 39382384554,
+      "sizeBytes": 42512505,
+      "sha256": "1f7cb2e98148180472ac854e81eee93e8cab652e06ffc006166839ded5e7b625",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246406902.zip",
+      "extracted": "/tmp/group8-third-artifact-12246406902"
+    },
+    {
+      "id": 12246257403,
+      "name": "homepage-shared-regressions",
+      "runId": 39382384554,
+      "sizeBytes": 158619585,
+      "sha256": "eacc80420d1de8df0ed93be0076da07856a3a4ebfade7d5f42f67228560b1c3b",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246257403.zip",
+      "extracted": "/tmp/group8-third-artifact-12246257403"
+    },
+    {
+      "id": 12246655988,
+      "name": "homepage-discovery-parity",
+      "runId": 39382384299,
+      "sizeBytes": 126708965,
+      "sha256": "bdc9e6092595f0e6107ca360b5b2fb654e403fc98b64ce1d72f531ea9e8e85ba",
+      "downloaded": true,
+      "digestVerified": true,
+      "archive": "/tmp/group8-third-12246655988.zip",
+      "extracted": "/tmp/group8-third-artifact-12246655988"
+    },
+    {
+      "id": 12246511276,
+      "name": "homepage-discovery-source-preview",
+      "runId": 39382384299,
+      "sizeBytes": 198869,
+      "sha256": "e0cf5d389ccfd59ece1c7f794f8872fd6d5aabbb325d3d272148159878c8a804",
+      "downloaded": false
+    },
+    {
+      "id": 12245867858,
+      "name": "homepage-discovery-regressions",
+      "runId": 39382384299,
+      "sizeBytes": 200977805,
+      "sha256": "ae929860c6810b90b6383c47fc0936cf241dabbbfbc085275fe687f1e27d897c",
+      "downloaded": false
+    }
+  ],
+  "reports": [
+    {
+      "report": "/tmp/group8-third-artifact-12246196136/package2-live/report.json",
+      "reportSha256": "6d5e623c823544dd3c2a0a2ce0c3f3aeb83d8e3b2b2d0d71dc5b9e1f7ccee999",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246196136,
+      "runId": 39382384273,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job."
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246196136/package2/report.json",
+      "reportSha256": "3ce6f321924ff0846e2f40c4243592d2ae7f861ac88084cc80ec062d0e397e6f",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246196136,
+      "runId": 39382384273,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "pricingWarnings": {
+        "count": 1,
+        "matchesProtectedBaseline": true
+      },
+      "booleanChecks": {
+        "shortHeights": true,
+        "faqTextEnlargement200Percent": true,
+        "faqTextSpacing": true,
+        "touch": true,
+        "pricingUnchanged": true
+      }
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12245881614/source-reference-qa.json",
+      "reportSha256": "e8ac32b80b4e34d53f52961252631af55004bdfd626a9a901ff493aed9004aef",
+      "sourceCommit": null,
+      "browser": null,
+      "widths": [],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12245881614,
+      "runId": 39382384528,
+      "qualityFindings": [],
+      "identityLimit": "Report has no explicit candidate field; pinned by verified artifact metadata and its workflow checkout.",
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job."
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12245881614/shape-foundation/report.json",
+      "reportSha256": "fe622339d476a60f23f537dd28f33f7959a937265f3197a87c1f46b545971f91",
+      "sourceCommit": null,
+      "browser": null,
+      "widths": [],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12245881614,
+      "runId": 39382384528,
+      "qualityFindings": [],
+      "identityLimit": "Report has no explicit candidate field; pinned by verified artifact metadata and its workflow checkout.",
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "sourceAndProtectedAudits": [
+        {
+          "kind": "source",
+          "widths": [
+            320,
+            360,
+            390,
+            430,
+            768,
+            820,
+            1024,
+            1280,
+            1440
+          ],
+          "runtimeErrors": [],
+          "missingImages": [],
+          "blockedVendorRequests": []
+        },
+        {
+          "kind": "published",
+          "widths": [
+            320,
+            360,
+            390,
+            430,
+            768,
+            820,
+            1024,
+            1280,
+            1440
+          ],
+          "runtimeErrors": [],
+          "missingImages": [],
+          "blockedVendorRequests": []
+        }
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246246042/footer-type/report.json",
+      "reportSha256": "483f4360c17bb6a047078c28f963fc7f8dfbe77c564ffafbc163f50ab88cd8e4",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246246042,
+      "runId": 39382384228,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "checks": [
+        "Static currency focus and all four selections",
+        "Static currency focus and all four selections",
+        "Short screen heights with reduced motion",
+        "200% desktop zoom reflow equivalent at 720 CSS pixels",
+        "Source currency focus and all four selections",
+        "Source currency focus and all four selections",
+        "Touch control tap and fit"
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246246042/footer-type-live/report.json",
+      "reportSha256": "5a3f9c460708731ab1a3ff9eaf4c17771c523f6741e7eef48461ca9ea7cd89fa",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246246042,
+      "runId": 39382384228,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "checks": [
+        "Static currency focus and all four selections",
+        "Static currency focus and all four selections",
+        "Short screen heights with reduced motion",
+        "200% desktop zoom reflow equivalent at 720 CSS pixels",
+        "Touch control tap and fit"
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246405916/report.json",
+      "reportSha256": "dfc8d84ca4207a237f3a2fad293ee7fc28a55d696900beb066ebae1a8567dd4d",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 24,
+      "captureRecords": 104,
+      "uniqueRecordedCaptureFiles": 100,
+      "captureHashesComparedWithReport": 88,
+      "captureRecordsWithoutReportHash": 16,
+      "identitiesVerified": {
+        "sourceHashes": 53,
+        "harnessHashes": 3,
+        "protectedHashes": 4
+      },
+      "maxGeometry": 0,
+      "maxPixelRatio": 2.375014843842774e-05,
+      "problems": [],
+      "artifactId": 12246405916,
+      "runId": 39382384392,
+      "qualityFindings": []
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246481161/report.json",
+      "reportSha256": "893e043d44f1ee331568e78c43bbb6e6402dfafbd1f7f0c5846d6cab60b7d00a",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 9,
+      "captureRecords": 172,
+      "uniqueRecordedCaptureFiles": 172,
+      "captureHashesComparedWithReport": 172,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {
+        "sourceFiles": 66,
+        "harnessSha256": 1
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": 0.0006703536115300822,
+      "problems": [],
+      "artifactId": 12246481161,
+      "runId": 39382384450,
+      "qualityFindings": [],
+      "lightboxComparisons": 60
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246481161/physical/report.json",
+      "reportSha256": "a5be61241e53f0829be76ccf3d662cc19a09715e8dce280b25df0169c575c217",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 9,
+      "captureRecords": 84,
+      "uniqueRecordedCaptureFiles": 84,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 84,
+      "identitiesVerified": {
+        "sourceHashes": 53,
+        "harnessHashes": 3,
+        "protectedHashes": 5
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": 0.0033914109121909635,
+      "problems": [],
+      "artifactId": 12246481161,
+      "runId": 39382384450,
+      "qualityFindings": [],
+      "slideComparisons": 40
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246325826/report.json",
+      "reportSha256": "078dd48f5a9f493f32aa7963c769b3958f74be15bc494a7f4f86690c1bac71df",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 19,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 48,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {
+        "sourceFiles": 8,
+        "harnessFiles": 1,
+        "publishedFiles": 2
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246325826,
+      "runId": 39382384378,
+      "qualityFindings": [
+        {
+          "id": "gifting-enlarged-text-320",
+          "status": "Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement.",
+          "detail": "At 320px and targeted 200 percent section text, the Gifting grid expands within its clipped panel. Matching document overflow is not an enlargement quality pass."
+        }
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12245712548/report.json",
+      "reportSha256": "f3ca0348cbce5bbdbde41f7f5a5a298d99cf703ef2cc88fb407ca117d6ac38f2",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.84",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 43,
+      "captureRecords": 136,
+      "uniqueRecordedCaptureFiles": 136,
+      "captureHashesComparedWithReport": 136,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {
+        "sourceHashes": 53,
+        "harnessHashes": 3,
+        "protectedHashes": 10
+      },
+      "maxGeometry": 0,
+      "maxPixelRatio": 0.004806327160493827,
+      "problems": [],
+      "artifactId": 12245712548,
+      "runId": 39382384344,
+      "qualityFindings": [
+        {
+          "label": "text-200-320",
+          "kind": "published",
+          "overflow": false,
+          "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+        },
+        {
+          "label": "text-200-320",
+          "kind": "source",
+          "overflow": false,
+          "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+        }
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246411476/report.json",
+      "reportSha256": "c9865bdb4b587df780d536a406d832041f26ce34651c3a045a4b10bf3a009952",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 18,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 92,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {
+        "sourceFiles": 7,
+        "publishedFiles": 2,
+        "harnessSha256": 1
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246411476,
+      "runId": 39382384401,
+      "qualityFindings": [],
+      "individualExpandedComparisons": 60
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246406902/report.json",
+      "reportSha256": "ebb5233d603feef8ac1903d2968c728aa75bca63e926a7d2b0b9833041d91073",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 41,
+      "captureRecords": 132,
+      "uniqueRecordedCaptureFiles": 132,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 132,
+      "identitiesVerified": {
+        "sourceFiles": 53,
+        "publishedFiles": 5,
+        "harnessSha256": 1,
+        "menuCaptureHelperSha256": 1,
+        "sourceBuildFiles": 3
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246406902,
+      "runId": 39382384554,
+      "qualityFindings": [
+        {
+          "id": "shared-enlarged-text-320",
+          "status": "Inherited published limitation retained for a separately approved visible refinement."
+        },
+        {
+          "id": "shared-enlarged-text-1440",
+          "status": "Inherited published limitation retained for a separately approved visible refinement."
+        }
+      ],
+      "inheritedNavigationFindings": [
+        {
+          "id": "published-touch-dialog-anchor-focus",
+          "status": "The protected published Dialog restores trigger focus after hash navigation and moves the target away from its intended offset in emulated touch. The source restores trigger focus with preventScroll and must retain the correct native hash position. The protected page is unchanged."
+        }
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/qa/homepage-qa-report.json",
+      "reportSha256": "0ae81551477ce207ebb3742ffe22457292798517dcad2c794ab7aaaa2911c395",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job."
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/qa/footer-type/report.json",
+      "reportSha256": "483f4360c17bb6a047078c28f963fc7f8dfbe77c564ffafbc163f50ab88cd8e4",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "checks": [
+        "Static currency focus and all four selections",
+        "Static currency focus and all four selections",
+        "Short screen heights with reduced motion",
+        "200% desktop zoom reflow equivalent at 720 CSS pixels",
+        "Source currency focus and all four selections",
+        "Source currency focus and all four selections",
+        "Touch control tap and fit"
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/qa/editorial-links/report.json",
+      "reportSha256": "77a10920c91381b40400a9168866b9f9998d2d96bd8c5ca0404fa2b729637a5a",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job."
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/qa/package1-live/report.json",
+      "reportSha256": "33f6b3748096c676db9918ae5ca7ad410ee31fb7d30b70e3925568ee6c19bf63",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job."
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/qa/package2/report.json",
+      "reportSha256": "16d1f18a583764014148b4eb7c7b3f3cd3a725477acb912263c9d0912bcdd3c7",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": null,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "pricingWarnings": {
+        "count": 1,
+        "matchesProtectedBaseline": true
+      },
+      "booleanChecks": {
+        "shortHeights": true,
+        "faqTextEnlargement200Percent": true,
+        "faqTextSpacing": true,
+        "touch": true,
+        "pricingUnchanged": true
+      }
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/source-reference-qa.json",
+      "reportSha256": "75db3ab225822a1d47df3164fed1236ad9aec7b3431cae86a10b973371bb3207",
+      "sourceCommit": null,
+      "browser": null,
+      "widths": [],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "identityLimit": "Report has no explicit candidate field; pinned by verified artifact metadata and its workflow checkout.",
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job."
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/shape-foundation/report.json",
+      "reportSha256": "4436d2e11ffc471e86a3d9892a73f629690dea9d34319d808a13ee528accd3fc",
+      "sourceCommit": null,
+      "browser": null,
+      "widths": [],
+      "states": 0,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 0,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {},
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "identityLimit": "Report has no explicit candidate field; pinned by verified artifact metadata and its workflow checkout.",
+      "browserVersionLimit": "This older report does not record the exact executable version; no version is inferred from another job.",
+      "sourceAndProtectedAudits": [
+        {
+          "kind": "source",
+          "widths": [
+            320,
+            360,
+            390,
+            430,
+            768,
+            820,
+            1024,
+            1280,
+            1440
+          ],
+          "runtimeErrors": [],
+          "missingImages": [],
+          "blockedVendorRequests": []
+        },
+        {
+          "kind": "published",
+          "widths": [
+            320,
+            360,
+            390,
+            430,
+            768,
+            820,
+            1024,
+            1280,
+            1440
+          ],
+          "runtimeErrors": [],
+          "missingImages": [],
+          "blockedVendorRequests": []
+        }
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/group1/report.json",
+      "reportSha256": "2620164e265d705114f51598d43c5054ca5e59dd7dff7ea255722fc8d327e86e",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 19,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 48,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {
+        "sourceFiles": 8,
+        "harnessFiles": 1,
+        "publishedFiles": 2
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [
+        {
+          "id": "gifting-enlarged-text-320",
+          "status": "Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement.",
+          "detail": "At 320px and targeted 200 percent section text, the Gifting grid expands within its clipped panel. Matching document overflow is not an enlargement quality pass."
+        }
+      ]
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/group2/report.json",
+      "reportSha256": "30a6b9d8dbe0a9a37ba205c99a8863c85045becb5fdd33610046f560db7d1850",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 18,
+      "captureRecords": 0,
+      "uniqueRecordedCaptureFiles": 92,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 0,
+      "identitiesVerified": {
+        "sourceFiles": 7,
+        "publishedFiles": 2,
+        "harnessSha256": 1
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246257403,
+      "runId": 39382384554,
+      "qualityFindings": [],
+      "individualExpandedComparisons": 60
+    },
+    {
+      "report": "/tmp/group8-third-artifact-12246655988/report.json",
+      "reportSha256": "f75168f4938e75255ce9c9e0f294a54e85d8868752cf88107d9cbd2604382ea6",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "browser": "155.0.8059.39",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "states": 30,
+      "captureRecords": 168,
+      "uniqueRecordedCaptureFiles": 168,
+      "captureHashesComparedWithReport": 0,
+      "captureRecordsWithoutReportHash": 168,
+      "identitiesVerified": {
+        "sourceFiles": 53,
+        "packageFiles": 2,
+        "publishedFiles": 5,
+        "harnessSha256": 1,
+        "sourceBuildFiles": 3
+      },
+      "maxGeometry": null,
+      "maxPixelRatio": null,
+      "problems": [],
+      "artifactId": 12246655988,
+      "runId": 39382384299,
+      "qualityFindings": [
+        {
+          "id": "discovery-enlarged-320-relationship-memoir",
+          "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+          "slug": "relationship-memoir"
+        },
+        {
+          "id": "discovery-enlarged-320-celebrating-occasions",
+          "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+          "slug": "celebrating-occasions"
+        },
+        {
+          "id": "discovery-enlarged-1440-relationship-memoir",
+          "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+          "slug": "relationship-memoir"
+        },
+        {
+          "id": "discovery-enlarged-1440-celebrating-occasions",
+          "status": "Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.",
+          "slug": "celebrating-occasions"
+        }
+      ],
+      "inheritedNavigationFindings": [
+        {
+          "id": "published-books-menu-focus-restore-320",
+          "status": "The protected mobile dialog initially reaches the Books anchor, then restoring trigger focus moves its scroll position. The source must retain its intended native anchor placement.",
+          "label": "Explore all books"
+        },
+        {
+          "id": "published-books-menu-focus-restore-390",
+          "status": "The protected mobile dialog initially reaches the Books anchor, then restoring trigger focus moves its scroll position. The source must retain its intended native anchor placement.",
+          "label": "Explore all books"
+        },
+        {
+          "id": "published-books-menu-focus-restore-820",
+          "status": "The protected mobile dialog initially reaches the Books anchor, then restoring trigger focus moves its scroll position. The source must retain its intended native anchor placement.",
+          "label": "Explore all books"
+        }
+      ]
+    }
+  ],
+  "group1AlignmentDiagnosis": {
+    "checks": [
+      {
+        "runId": 39382384378,
+        "artifactId": 12246325826,
+        "report": "/tmp/group8-third-artifact-12246325826/report.json",
+        "reportSha256": "078dd48f5a9f493f32aa7963c769b3958f74be15bc494a7f4f86690c1bac71df",
+        "traceCount": 18,
+        "allUseOneAlignmentCall": true,
+        "allVisibleAndInPosition": true,
+        "minStableDurationMs": 207.29999999998836,
+        "minStableSamples": 14,
+        "maxFinalDeltaCssPixels": 0.453125,
+        "formerResources1440Case": {
+          "kind": "source",
+          "id": "resources",
+          "width": 1440,
+          "alignmentCalls": 1,
+          "final": {
+            "idCount": 1,
+            "offset": "116px",
+            "rootPadding": "100px",
+            "documentTop": 6538.3125,
+            "scrollY": 6322,
+            "maximumScroll": 8580,
+            "top": 216.3125,
+            "expectedTop": 216,
+            "inPosition": true,
+            "visible": true,
+            "cssViewport": {
+              "width": 1440,
+              "height": 600
+            }
+          },
+          "beforeStableDurationMs": 207.29999999998836,
+          "afterStableDurationMs": 215,
+          "beforeSamples": 14,
+          "afterSamples": 14
+        }
+      },
+      {
+        "runId": 39382384554,
+        "artifactId": 12246257403,
+        "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/group1/report.json",
+        "reportSha256": "2620164e265d705114f51598d43c5054ca5e59dd7dff7ea255722fc8d327e86e",
+        "traceCount": 18,
+        "allUseOneAlignmentCall": true,
+        "allVisibleAndInPosition": true,
+        "minStableDurationMs": 203.90000000002328,
+        "minStableSamples": 14,
+        "maxFinalDeltaCssPixels": 0.453125,
+        "formerResources1440Case": {
+          "kind": "source",
+          "id": "resources",
+          "width": 1440,
+          "alignmentCalls": 1,
+          "final": {
+            "idCount": 1,
+            "offset": "116px",
+            "rootPadding": "100px",
+            "documentTop": 6538.3125,
+            "scrollY": 6322,
+            "maximumScroll": 8580,
+            "top": 216.3125,
+            "expectedTop": 216,
+            "inPosition": true,
+            "visible": true,
+            "cssViewport": {
+              "width": 1440,
+              "height": 600
+            }
+          },
+          "beforeStableDurationMs": 213.5,
+          "afterStableDurationMs": 215.20000000001164,
+          "beforeSamples": 14,
+          "afterSamples": 14
+        }
+      }
+    ],
+    "interpretation": "Both the direct and shared retained gates pass with unchanged position and visibility assertions, one alignment call per target, and bounded read-only geometry stability. The previously observed post-settle Resources shift is retained as prior evidence; its mechanism remains unproven. This observation is separate from the assembly native-history defect and its source reconstruction."
+  },
+  "sourceBuild": {
+    "artifactId": 12245044340,
+    "sha256": {
+      "index.html": "23739a80b6f2653f1373f5d9c139b5e3772713c52ff6d194140883376a35c237",
+      "assets/index-C6syLBIa.js": "1924dfc8bd01893c46c337cb7cd06cb7d53f7dca497835ed6ae4c1fb93932850",
+      "assets/index-NU-3HqjY.css": "f4eb5347d08bb36a101b43662a60a559d21c92b8218a382bef5b6818486b9a18"
+    },
+    "matchesLocalValidatedBuild": true,
+    "sharedAndDiscoveryBuildHashesCompared": true
+  },
+  "knownOpenQualityFindings": [
+    {
+      "subject": "Gifting",
+      "detail": "320px targeted 200 percent text enlargement still clips inherited heading and paragraph lines."
+    },
+    {
+      "subject": "Shared shell",
+      "detail": "Inherited 320px footer/currency clipping and 1440px desktop navigation overflow under targeted enlargement remain recorded."
+    },
+    {
+      "subject": "Discovery",
+      "detail": "Relationship Memoir and Celebrating Occasions tab labels extend outside their tabs at 320px and 1440px under targeted enlargement."
+    },
+    {
+      "subject": "Hero",
+      "detail": "Inherited progression labels clip at 320px under targeted 200 percent text enlargement; both protected and source measurements match."
+    }
+  ],
+  "notTriggered": {
+    "workflow": ".github/workflows/review-editorial-links.yml",
+    "reason": "Candidate changes do not match workflow path filter; its comparison is retained explicitly in the shared workflow."
+  },
+  "verificationLimits": [
+    "Downloaded archive SHA256 values match GitHub artifact metadata before extraction; member paths and symlink entries were checked before extraction.",
+    "Source, harness, package and protected-file hashes present in reports were compared with their exact Git revisions. Older reports without an embedded source SHA are identified through their verified artifact/run envelope.",
+    "Every per-capture SHA256 recorded by the reviewed reports was compared. Other capture files were checked for presence and hashed under a verified archive; their reports do not supply a separate comparison digest.",
+    "Recorded browser versions include Chromium 155.0.8059.39 and 155.0.8059.84. Runner images differ between jobs and are listed individually. Exact browser versions are not invented for older reports that omit them.",
+    "Targeted text enlargement, emulated touch and 720 CSS pixel zoom reflow equivalents are not native browser zoom, physical-device testing or accessibility certification.",
+    "Pages success confirms deployment of the protected export; it does not publish frontend/dist or grant founder visual acceptance.",
+    "No workflow was retried, no threshold/assertion was relaxed, and no repository runtime, harness or documentation file was edited during this monitoring task."
+  ]
+}

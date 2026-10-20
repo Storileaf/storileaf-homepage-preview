@@ -1,0 +1,1652 @@
+{
+  "purpose": "Independent read-only verification of the reversed whole-device native raster and the traced native touch close on the failed pinned Writing attempt. This record does not replace or pass the failed checkpoint.",
+  "reviewedAtUtc": "2026-10-20T12:27:31.124215+00:00",
+  "reviewer": "assembly_verification",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "latestRun": {
+    "id": 39420920519,
+    "job": 118621340795,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39420920519",
+    "sourceCommit": "8674c0bfd13b4b40311fdf59f95591dcf5383994",
+    "artifact": {
+      "id": 12263528973,
+      "bytes": 17777043,
+      "zipSha256": "73ace1c5b944fba9f80aa81959e43cf618d4155ac78d85630d065364979a5d28",
+      "originDirectory": "/tmp/group8-writing-touch-39420920519"
+    },
+    "reportSha256": "05eb45cac0df68d53fd32d0c2c2dcb1a98be2ddb8be21c5624d34a34c14659fc",
+    "browserEnvironment": {
+      "artifactPath": "browser-environment.json",
+      "sha256": "f8dce2c107b411a6f393ca6d6a75f639d200b776cdac7e24b896bd21fd754c3b",
+      "record": {
+        "purpose": "Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.",
+        "recordedAt": "2026-10-20T12:16:05.160Z",
+        "browser": {
+          "expectedVersion": "155.0.8059.84",
+          "expectedRevision": "1697595",
+          "actualVersion": "155.0.8059.84",
+          "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+          "archive": {
+            "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+            "bytes": 199014491,
+            "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+          },
+          "executable": {
+            "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+            "bytes": 298806600,
+            "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+          },
+          "checkpointLaunch": {
+            "headless": true,
+            "args": [
+              "--no-sandbox"
+            ]
+          }
+        },
+        "runner": {
+          "name": "GitHub Actions 1000002951",
+          "os": "Linux",
+          "arch": "X64",
+          "imageOS": "ubuntu24",
+          "imageVersion": "20261012.334.1",
+          "kernel": "6.17.0-1022-azure",
+          "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+        },
+        "runtime": {
+          "node": "v22.23.3",
+          "npm": "10.9.9",
+          "python": "Python 3.12.3",
+          "playwright": "1.56.1"
+        },
+        "run": {
+          "repository": "Storileaf/storileaf-homepage-preview",
+          "id": "39420920519",
+          "attempt": "1",
+          "job": "compare",
+          "commit": "8674c0bfd13b4b40311fdf59f95591dcf5383994"
+        },
+        "runtimeTree": "09740a8614e473d01650211e0795e268aa455f3c",
+        "harness": {
+          "path": "frontend/scripts/verify-writing-parity.mjs",
+          "sha256": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3"
+        },
+        "workflow": {
+          "path": ".github/workflows/verify-writing-parity.yml",
+          "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+        }
+      }
+    },
+    "harnessHashes": {
+      "scripts/verify-writing-parity.mjs": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3",
+      "scripts/browser-readiness.mjs": "ca88d8553d196608652d630b233dfd3f05c3692bea315d31b2f778fa6f58cb91",
+      "scripts/computed-style-parity.mjs": "efbddf441b802d7135986ebed473133a591127cf862b52eab7ce805b3ce2fb1c"
+    },
+    "problems": [
+      "section-1280 tile 0 pixels {\"ratio\":0.018169088924632353,\"changed\":25303,\"total\":1392640,\"size\":[1280,1088]}"
+    ],
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01
+    }
+  },
+  "comparisonRun": {
+    "id": 39380638969,
+    "job": 118488726841,
+    "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+    "browser": "155.0.8059.39",
+    "artifact": {
+      "id": 12245153088,
+      "path": "/tmp/group8-writing-second-39380638969.zip",
+      "sha256": "1990d228558591bf49e48150c59639811ce60804fb8bd846528244ac7345217a",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39380638969/artifacts/12245153088"
+    },
+    "permanentReport": "second-writing-report.json.gz",
+    "decompressedReportSha256": "e1984b75a895a811282cf250037b3d29802fe6ded4581b1060585c01d07559a5"
+  },
+  "method": {
+    "images": "Original native PNGs decoded losslessly to 8-bit RGB with Pillow. No PNG was edited, substituted or recomposited. Array comparisons use signed 16-bit differences to prevent unsigned wraparound.",
+    "threshold": "A pixel changes when max(abs(R1-R2),abs(G1-G2),abs(B1-B2)) > 24, exactly as the frozen checkpoint. The original 0.01 ratio limit remains unchanged.",
+    "bounds": "All crop and difference bounds use [left, top, rightExclusive, bottomExclusive].",
+    "fullDeviceBand": [
+      0,
+      371,
+      1280,
+      897
+    ],
+    "fullDeviceBandRationale": "Full image width and floor(stage top)..ceil(stage bottom), from the measured native stage [115,371.25,1050,525], also enclosing the phone extending left of the stage.",
+    "questionCrop": [
+      482,
+      492,
+      871,
+      545
+    ],
+    "rawHash": "SHA256 of row-major decoded 8-bit RGB bytes. Threshold-mask hashes use one 0/1 uint8 per full-image pixel.",
+    "coverage": "For the constant-background question crop, per-channel coverage a_c=(B_c-P_c)/(B_c-F_c), F=(37,53,38), B=(250,249,247). Edge samples satisfy 0.05 < mean(a_c) < 0.95. Channel spread is max(a_c)-min(a_c). These numerical mode labels do not identify a compositor cause."
+  },
+  "originalImages": {
+    "secondPublished": {
+      "run": 39380638969,
+      "kind": "published",
+      "originArtifactPath": "published-section-1280-tile-0.png",
+      "localPath": "/tmp/group8-writing-second-39380638969/published-section-1280-tile-0.png",
+      "size": [
+        1280,
+        1088
+      ],
+      "fileSha256": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4",
+      "fullDeviceBandRawRgbSha256": "4b80ac9d2efd83e376f262a95b22bbec739649967c6b5186cb769ad477fb786e",
+      "questionRawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+      "questionCoverage": {
+        "foregroundRgb": [
+          37,
+          53,
+          38
+        ],
+        "backgroundRgb": [
+          250,
+          249,
+          247
+        ],
+        "edgePixels": 2018,
+        "coverageChannelSpreadMedian": 0.003149106532565185,
+        "coverageChannelSpreadMaximum": 0.007209926224010732,
+        "edgePixelsWithSpreadOver0_05": 0,
+        "fractionEdgesWithSpreadOver0_05": 0.0
+      }
+    },
+    "secondSource": {
+      "run": 39380638969,
+      "kind": "source",
+      "originArtifactPath": "source-section-1280-tile-0.png",
+      "localPath": "/tmp/group8-writing-second-39380638969/source-section-1280-tile-0.png",
+      "size": [
+        1280,
+        1088
+      ],
+      "fileSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+      "fullDeviceBandRawRgbSha256": "92c42b9de90373f11b702c18ae59b56057333469cc8d617bcad74e37e668e6b2",
+      "questionRawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "questionCoverage": {
+        "foregroundRgb": [
+          37,
+          53,
+          38
+        ],
+        "backgroundRgb": [
+          250,
+          249,
+          247
+        ],
+        "edgePixels": 2723,
+        "coverageChannelSpreadMedian": 0.34204910483635464,
+        "coverageChannelSpreadMaximum": 0.6590965249230631,
+        "edgePixelsWithSpreadOver0_05": 2678,
+        "fractionEdgesWithSpreadOver0_05": 0.9834741094381197
+      }
+    },
+    "latestPublished": {
+      "run": 39420920519,
+      "kind": "published",
+      "originArtifactPath": "published-section-1280-tile-0.png",
+      "localPath": "/tmp/group8-writing-touch-39420920519/published-section-1280-tile-0.png",
+      "size": [
+        1280,
+        1088
+      ],
+      "fileSha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+      "fullDeviceBandRawRgbSha256": "92c42b9de90373f11b702c18ae59b56057333469cc8d617bcad74e37e668e6b2",
+      "questionRawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "questionCoverage": {
+        "foregroundRgb": [
+          37,
+          53,
+          38
+        ],
+        "backgroundRgb": [
+          250,
+          249,
+          247
+        ],
+        "edgePixels": 2723,
+        "coverageChannelSpreadMedian": 0.34204910483635464,
+        "coverageChannelSpreadMaximum": 0.6590965249230631,
+        "edgePixelsWithSpreadOver0_05": 2678,
+        "fractionEdgesWithSpreadOver0_05": 0.9834741094381197
+      }
+    },
+    "latestSource": {
+      "run": 39420920519,
+      "kind": "source",
+      "originArtifactPath": "source-section-1280-tile-0.png",
+      "localPath": "/tmp/group8-writing-touch-39420920519/source-section-1280-tile-0.png",
+      "size": [
+        1280,
+        1088
+      ],
+      "fileSha256": "59d52945854843c3c4a2f81445685fa6bdc8ca499f3fda38e4816d832874b707",
+      "fullDeviceBandRawRgbSha256": "4b80ac9d2efd83e376f262a95b22bbec739649967c6b5186cb769ad477fb786e",
+      "questionRawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+      "questionCoverage": {
+        "foregroundRgb": [
+          37,
+          53,
+          38
+        ],
+        "backgroundRgb": [
+          250,
+          249,
+          247
+        ],
+        "edgePixels": 2018,
+        "coverageChannelSpreadMedian": 0.003149106532565185,
+        "coverageChannelSpreadMaximum": 0.007209926224010732,
+        "edgePixelsWithSpreadOver0_05": 0,
+        "fractionEdgesWithSpreadOver0_05": 0.0
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "left": "secondPublished",
+      "right": "latestSource",
+      "changedPixelsOver24": 0,
+      "totalPixels": 1392640,
+      "ratio": 0.0,
+      "changedPixelBoundsExclusive": null,
+      "anyRgbDifferencePixels": 485,
+      "anyRgbDifferenceBoundsExclusive": [
+        0,
+        1087,
+        1279,
+        1088
+      ],
+      "thresholdMaskRawUint8Sha256": "b55089569723a705646f6350767ca136e070bb7a1eeddf6afbfb3750d2d7cc6c",
+      "deviceBandEveryRgbByteEqual": true,
+      "bands": [
+        {
+          "name": "aboveDeviceStage",
+          "rowsExclusive": [
+            0,
+            371
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 0
+        },
+        {
+          "name": "deviceStage",
+          "rowsExclusive": [
+            371,
+            897
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 0
+        },
+        {
+          "name": "belowDeviceStage",
+          "rowsExclusive": [
+            897,
+            1088
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 485
+        }
+      ]
+    },
+    {
+      "left": "secondSource",
+      "right": "latestPublished",
+      "changedPixelsOver24": 0,
+      "totalPixels": 1392640,
+      "ratio": 0.0,
+      "changedPixelBoundsExclusive": null,
+      "anyRgbDifferencePixels": 485,
+      "anyRgbDifferenceBoundsExclusive": [
+        0,
+        1087,
+        1279,
+        1088
+      ],
+      "thresholdMaskRawUint8Sha256": "b55089569723a705646f6350767ca136e070bb7a1eeddf6afbfb3750d2d7cc6c",
+      "deviceBandEveryRgbByteEqual": true,
+      "bands": [
+        {
+          "name": "aboveDeviceStage",
+          "rowsExclusive": [
+            0,
+            371
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 0
+        },
+        {
+          "name": "deviceStage",
+          "rowsExclusive": [
+            371,
+            897
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 0
+        },
+        {
+          "name": "belowDeviceStage",
+          "rowsExclusive": [
+            897,
+            1088
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 485
+        }
+      ]
+    },
+    {
+      "left": "latestPublished",
+      "right": "latestSource",
+      "changedPixelsOver24": 25303,
+      "totalPixels": 1392640,
+      "ratio": 0.018169088924632353,
+      "changedPixelBoundsExclusive": [
+        114,
+        405,
+        1153,
+        878
+      ],
+      "anyRgbDifferencePixels": 57925,
+      "anyRgbDifferenceBoundsExclusive": [
+        0,
+        377,
+        1279,
+        1088
+      ],
+      "thresholdMaskRawUint8Sha256": "4f34f999d3fcf98e358fa70be626c7a87854a120b2ada94a98d7da6090000d3d",
+      "deviceBandEveryRgbByteEqual": false,
+      "bands": [
+        {
+          "name": "aboveDeviceStage",
+          "rowsExclusive": [
+            0,
+            371
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 0
+        },
+        {
+          "name": "deviceStage",
+          "rowsExclusive": [
+            371,
+            897
+          ],
+          "changedPixelsOver24": 25303,
+          "anyRgbDifferencePixels": 57403
+        },
+        {
+          "name": "belowDeviceStage",
+          "rowsExclusive": [
+            897,
+            1088
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 522
+        }
+      ]
+    },
+    {
+      "left": "secondPublished",
+      "right": "secondSource",
+      "changedPixelsOver24": 25303,
+      "totalPixels": 1392640,
+      "ratio": 0.018169088924632353,
+      "changedPixelBoundsExclusive": [
+        114,
+        405,
+        1153,
+        878
+      ],
+      "anyRgbDifferencePixels": 57925,
+      "anyRgbDifferenceBoundsExclusive": [
+        0,
+        377,
+        1279,
+        1088
+      ],
+      "thresholdMaskRawUint8Sha256": "4f34f999d3fcf98e358fa70be626c7a87854a120b2ada94a98d7da6090000d3d",
+      "deviceBandEveryRgbByteEqual": false,
+      "bands": [
+        {
+          "name": "aboveDeviceStage",
+          "rowsExclusive": [
+            0,
+            371
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 0
+        },
+        {
+          "name": "deviceStage",
+          "rowsExclusive": [
+            371,
+            897
+          ],
+          "changedPixelsOver24": 25303,
+          "anyRgbDifferencePixels": 57403
+        },
+        {
+          "name": "belowDeviceStage",
+          "rowsExclusive": [
+            897,
+            1088
+          ],
+          "changedPixelsOver24": 0,
+          "anyRgbDifferencePixels": 522
+        }
+      ]
+    }
+  ],
+  "wholeDeviceReversal": {
+    "sameModeBandsIdentical": true,
+    "oldAndNewThresholdMasksIdentical": true,
+    "sameModeWholeImagesZeroPixelsOverThreshold": true,
+    "sameModeRawWholeImageDifferences": "485 pixels on bottom row1087 only; neither device composition nor heading differs.",
+    "latestFailedChangedPixels": 25303,
+    "latestFailedRatio": 0.018169088924632353,
+    "changedPixelBoundsExclusive": [
+      114,
+      405,
+      1153,
+      878
+    ],
+    "questionVariants": {
+      "lcdLike": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "grayscaleLike": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f"
+    }
+  },
+  "latestFixed1280Samples": {
+    "sampleHashesVerified": 6,
+    "allThreeSamplesByteIdenticalPerSide": true,
+    "allNativeGeometryAndTransformsEqualAcrossSidesAndSamples": true,
+    "rawRecords": [
+      {
+        "kind": "published",
+        "label": "section-1280",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "samples": [
+          {
+            "index": 0,
+            "plannedMilliseconds": 0,
+            "elapsedMilliseconds": 117,
+            "file": "published-section-1280-tile-0-native-paint-0.png",
+            "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+            "native": {
+              "scroll": [
+                0,
+                4680
+              ],
+              "root": [
+                0,
+                0.125,
+                1280,
+                1087.125
+              ],
+              "device": [
+                {
+                  "class": "device-stage is-visible",
+                  "rect": [
+                    115,
+                    371.25,
+                    1050,
+                    525
+                  ],
+                  "transform": "none",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-laptop",
+                  "rect": [
+                    262,
+                    376.5,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-tablet",
+                  "rect": [
+                    876.25,
+                    486.75,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-phone",
+                  "rect": [
+                    111.50067901611328,
+                    538.2608032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                }
+              ],
+              "fontStatus": "loaded",
+              "documentState": "complete"
+            }
+          },
+          {
+            "index": 1,
+            "plannedMilliseconds": 250,
+            "elapsedMilliseconds": 349,
+            "file": "published-section-1280-tile-0-native-paint-1.png",
+            "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+            "native": {
+              "scroll": [
+                0,
+                4680
+              ],
+              "root": [
+                0,
+                0.125,
+                1280,
+                1087.125
+              ],
+              "device": [
+                {
+                  "class": "device-stage is-visible",
+                  "rect": [
+                    115,
+                    371.25,
+                    1050,
+                    525
+                  ],
+                  "transform": "none",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-laptop",
+                  "rect": [
+                    262,
+                    376.5,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-tablet",
+                  "rect": [
+                    876.25,
+                    486.75,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-phone",
+                  "rect": [
+                    111.50067901611328,
+                    538.2608032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                }
+              ],
+              "fontStatus": "loaded",
+              "documentState": "complete"
+            }
+          },
+          {
+            "index": 2,
+            "plannedMilliseconds": 750,
+            "elapsedMilliseconds": 850,
+            "file": "published-section-1280-tile-0-native-paint-2.png",
+            "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+            "native": {
+              "scroll": [
+                0,
+                4680
+              ],
+              "root": [
+                0,
+                0.125,
+                1280,
+                1087.125
+              ],
+              "device": [
+                {
+                  "class": "device-stage is-visible",
+                  "rect": [
+                    115,
+                    371.25,
+                    1050,
+                    525
+                  ],
+                  "transform": "none",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-laptop",
+                  "rect": [
+                    262,
+                    376.5,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-tablet",
+                  "rect": [
+                    876.25,
+                    486.75,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-phone",
+                  "rect": [
+                    111.50067901611328,
+                    538.2608032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                }
+              ],
+              "fontStatus": "loaded",
+              "documentState": "complete"
+            }
+          }
+        ],
+        "finalTwoStable": true
+      },
+      {
+        "kind": "source",
+        "label": "section-1280",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "samples": [
+          {
+            "index": 0,
+            "plannedMilliseconds": 0,
+            "elapsedMilliseconds": 119,
+            "file": "source-section-1280-tile-0-native-paint-0.png",
+            "sha256": "59d52945854843c3c4a2f81445685fa6bdc8ca499f3fda38e4816d832874b707",
+            "native": {
+              "scroll": [
+                0,
+                4680
+              ],
+              "root": [
+                0,
+                0.125,
+                1280,
+                1087.125
+              ],
+              "device": [
+                {
+                  "class": "device-stage is-visible",
+                  "rect": [
+                    115,
+                    371.25,
+                    1050,
+                    525
+                  ],
+                  "transform": "none",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-laptop",
+                  "rect": [
+                    262,
+                    376.5,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-tablet",
+                  "rect": [
+                    876.25,
+                    486.75,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-phone",
+                  "rect": [
+                    111.50067901611328,
+                    538.2608032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                }
+              ],
+              "fontStatus": "loaded",
+              "documentState": "complete"
+            }
+          },
+          {
+            "index": 1,
+            "plannedMilliseconds": 250,
+            "elapsedMilliseconds": 351,
+            "file": "source-section-1280-tile-0-native-paint-1.png",
+            "sha256": "59d52945854843c3c4a2f81445685fa6bdc8ca499f3fda38e4816d832874b707",
+            "native": {
+              "scroll": [
+                0,
+                4680
+              ],
+              "root": [
+                0,
+                0.125,
+                1280,
+                1087.125
+              ],
+              "device": [
+                {
+                  "class": "device-stage is-visible",
+                  "rect": [
+                    115,
+                    371.25,
+                    1050,
+                    525
+                  ],
+                  "transform": "none",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-laptop",
+                  "rect": [
+                    262,
+                    376.5,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-tablet",
+                  "rect": [
+                    876.25,
+                    486.75,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-phone",
+                  "rect": [
+                    111.50067901611328,
+                    538.2608032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                }
+              ],
+              "fontStatus": "loaded",
+              "documentState": "complete"
+            }
+          },
+          {
+            "index": 2,
+            "plannedMilliseconds": 750,
+            "elapsedMilliseconds": 852,
+            "file": "source-section-1280-tile-0-native-paint-2.png",
+            "sha256": "59d52945854843c3c4a2f81445685fa6bdc8ca499f3fda38e4816d832874b707",
+            "native": {
+              "scroll": [
+                0,
+                4680
+              ],
+              "root": [
+                0,
+                0.125,
+                1280,
+                1087.125
+              ],
+              "device": [
+                {
+                  "class": "device-stage is-visible",
+                  "rect": [
+                    115,
+                    371.25,
+                    1050,
+                    525
+                  ],
+                  "transform": "none",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-laptop",
+                  "rect": [
+                    262,
+                    376.5,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-tablet",
+                  "rect": [
+                    876.25,
+                    486.75,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                },
+                {
+                  "class": "device-phone",
+                  "rect": [
+                    111.50067901611328,
+                    538.2608032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+                  "filter": "none",
+                  "opacity": "1"
+                }
+              ],
+              "fontStatus": "loaded",
+              "documentState": "complete"
+            }
+          }
+        ],
+        "finalTwoStable": true
+      }
+    ]
+  },
+  "touchLifecycle": {
+    "harnessSha256": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3",
+    "strictAssertionsRemainActive": [
+      "native unmount event and two observed frames, no errors",
+      "final triggerFocused === true",
+      "final dialogConnected === false and bodyOverflow !== hidden"
+    ],
+    "implementationReview": "The reviewed helper issues one native Close tap; all observers are passive. It records the actual detached-dialog unmount event and immediate after-hidden state, waits for the existing settled focus/body-unlock predicate, and does not force focus or repeat the tap.",
+    "observations": {
+      "published": {
+        "checks": {
+          "singleNativeTapMethod": true,
+          "noTraceErrors": true,
+          "nativeUnmountObserved": true,
+          "bothFramesObserved": true,
+          "unmountOnDetachedDialog": true,
+          "bodyFocusedAtUnmount": true,
+          "triggerFocusAfterUnmount": true,
+          "immediateAfterHiddenFocused": true,
+          "strictFinalTriggerFocus": true,
+          "strictFinalDialogDisconnected": true,
+          "strictFinalBodyUnlocked": true,
+          "scrollUnchangedEveryObservation": true
+        },
+        "milestonesMilliseconds": {
+          "bodyOverflowChange": 63,
+          "nativeUnmount": 66.10000000000582,
+          "triggerFocus": 66.30000000001746,
+          "immediateAfterHidden": 72.20000000001164,
+          "frame1": 73.30000000001746,
+          "frame2": 90,
+          "final": 92.70000000001164
+        },
+        "rawCloseRecord": {
+          "method": "single-native-tap",
+          "afterHidden": {
+            "phase": "after-hidden",
+            "elapsedMilliseconds": 72.20000000001164,
+            "focus": {
+              "tag": "BUTTON",
+              "id": null,
+              "testId": "try-question",
+              "label": null,
+              "text": "Try answering a question"
+            },
+            "triggerFocused": true,
+            "expanded": "false",
+            "dialogConnected": false,
+            "bodyOverflow": "visible",
+            "scroll": [
+              0,
+              5117
+            ],
+            "eventTarget": null
+          },
+          "trace": {
+            "unmountObserved": true,
+            "afterAutofocusFrames": true,
+            "events": [
+              {
+                "phase": "before-tap",
+                "elapsedMilliseconds": 0.10000000000582077,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Clear text"
+                },
+                "triggerFocused": false,
+                "expanded": "true",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "focusout",
+                "elapsedMilliseconds": 7.800000000017462,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "true",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Clear text"
+                }
+              },
+              {
+                "phase": "focusin",
+                "elapsedMilliseconds": 42.80000000001746,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Close"
+                },
+                "triggerFocused": false,
+                "expanded": "true",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Close"
+                }
+              },
+              {
+                "phase": "focusout",
+                "elapsedMilliseconds": 45,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "false",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Close"
+                }
+              },
+              {
+                "phase": "body-overflow-change",
+                "elapsedMilliseconds": 63,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "unmount-autofocus",
+                "elapsedMilliseconds": 66.10000000000582,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "DIV",
+                  "id": "radix-_R_hjaq_",
+                  "testId": "question-dialog",
+                  "label": null,
+                  "text": null
+                }
+              },
+              {
+                "phase": "focusin",
+                "elapsedMilliseconds": 66.30000000001746,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                }
+              },
+              {
+                "phase": "unmount-autofocus-microtask",
+                "elapsedMilliseconds": 66.39999999999418,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "after-hidden",
+                "elapsedMilliseconds": 72.20000000001164,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "unmount-autofocus-frame-1",
+                "elapsedMilliseconds": 73.30000000001746,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "unmount-autofocus-frame-2",
+                "elapsedMilliseconds": 90,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "final",
+                "elapsedMilliseconds": 92.70000000001164,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              }
+            ],
+            "final": {
+              "phase": "final",
+              "elapsedMilliseconds": 92.70000000001164,
+              "focus": {
+                "tag": "BUTTON",
+                "id": null,
+                "testId": "try-question",
+                "label": null,
+                "text": "Try answering a question"
+              },
+              "triggerFocused": true,
+              "expanded": "false",
+              "dialogConnected": false,
+              "bodyOverflow": "visible",
+              "scroll": [
+                0,
+                5117
+              ],
+              "eventTarget": null
+            }
+          },
+          "errors": []
+        }
+      },
+      "source": {
+        "checks": {
+          "singleNativeTapMethod": true,
+          "noTraceErrors": true,
+          "nativeUnmountObserved": true,
+          "bothFramesObserved": true,
+          "unmountOnDetachedDialog": true,
+          "bodyFocusedAtUnmount": true,
+          "triggerFocusAfterUnmount": true,
+          "immediateAfterHiddenFocused": true,
+          "strictFinalTriggerFocus": true,
+          "strictFinalDialogDisconnected": true,
+          "strictFinalBodyUnlocked": true,
+          "scrollUnchangedEveryObservation": true
+        },
+        "milestonesMilliseconds": {
+          "bodyOverflowChange": 59.70000000001164,
+          "nativeUnmount": 62.80000000001746,
+          "triggerFocus": 62.90000000002328,
+          "immediateAfterHidden": 69.10000000000582,
+          "frame1": 74.5,
+          "frame2": 91.20000000001164,
+          "final": 94.5
+        },
+        "rawCloseRecord": {
+          "method": "single-native-tap",
+          "afterHidden": {
+            "phase": "after-hidden",
+            "elapsedMilliseconds": 69.10000000000582,
+            "focus": {
+              "tag": "BUTTON",
+              "id": null,
+              "testId": "try-question",
+              "label": null,
+              "text": "Try answering a question"
+            },
+            "triggerFocused": true,
+            "expanded": "false",
+            "dialogConnected": false,
+            "bodyOverflow": "visible",
+            "scroll": [
+              0,
+              5117
+            ],
+            "eventTarget": null
+          },
+          "trace": {
+            "unmountObserved": true,
+            "afterAutofocusFrames": true,
+            "events": [
+              {
+                "phase": "before-tap",
+                "elapsedMilliseconds": 0.10000000000582077,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Clear text"
+                },
+                "triggerFocused": false,
+                "expanded": "true",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "focusout",
+                "elapsedMilliseconds": 9.200000000011642,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "true",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Clear text"
+                }
+              },
+              {
+                "phase": "focusin",
+                "elapsedMilliseconds": 43.70000000001164,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Close"
+                },
+                "triggerFocused": false,
+                "expanded": "true",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Close"
+                }
+              },
+              {
+                "phase": "focusout",
+                "elapsedMilliseconds": 46,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "false",
+                "dialogConnected": true,
+                "bodyOverflow": "hidden",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": "Close"
+                }
+              },
+              {
+                "phase": "body-overflow-change",
+                "elapsedMilliseconds": 59.70000000001164,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "unmount-autofocus",
+                "elapsedMilliseconds": 62.80000000001746,
+                "focus": {
+                  "tag": "BODY",
+                  "id": null,
+                  "testId": null,
+                  "label": null,
+                  "text": null
+                },
+                "triggerFocused": false,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "DIV",
+                  "id": "radix-_r_j_",
+                  "testId": "question-dialog",
+                  "label": null,
+                  "text": null
+                }
+              },
+              {
+                "phase": "focusin",
+                "elapsedMilliseconds": 62.90000000002328,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                }
+              },
+              {
+                "phase": "unmount-autofocus-microtask",
+                "elapsedMilliseconds": 63.10000000000582,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "after-hidden",
+                "elapsedMilliseconds": 69.10000000000582,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "unmount-autofocus-frame-1",
+                "elapsedMilliseconds": 74.5,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "unmount-autofocus-frame-2",
+                "elapsedMilliseconds": 91.20000000001164,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              },
+              {
+                "phase": "final",
+                "elapsedMilliseconds": 94.5,
+                "focus": {
+                  "tag": "BUTTON",
+                  "id": null,
+                  "testId": "try-question",
+                  "label": null,
+                  "text": "Try answering a question"
+                },
+                "triggerFocused": true,
+                "expanded": "false",
+                "dialogConnected": false,
+                "bodyOverflow": "visible",
+                "scroll": [
+                  0,
+                  5117
+                ],
+                "eventTarget": null
+              }
+            ],
+            "final": {
+              "phase": "final",
+              "elapsedMilliseconds": 94.5,
+              "focus": {
+                "tag": "BUTTON",
+                "id": null,
+                "testId": "try-question",
+                "label": null,
+                "text": "Try answering a question"
+              },
+              "triggerFocused": true,
+              "expanded": "false",
+              "dialogConnected": false,
+              "bodyOverflow": "visible",
+              "scroll": [
+                0,
+                5117
+              ],
+              "eventTarget": null
+            }
+          },
+          "errors": []
+        }
+      }
+    }
+  },
+  "capturePreparationAudit": {
+    "paths": [
+      "frontend/scripts/verify-writing-parity.mjs",
+      "frontend/scripts/browser-readiness.mjs",
+      "qa/homepage-assembly/2026-10-20/diagnose-writing-raster.mjs"
+    ],
+    "differencesFromEarlierNativeDiagnostic": [
+      "Writing snapshot uses the shared synchronous closed-FAQ layout refresh; native diagnostic does not.",
+      "Clean Writing captures re-scroll to the same section position, temporarily hide fixed-header descendants and then restore the header.",
+      "Writing opens both pages before paired reads and captures; earlier native diagnostic opens and closes each page sequentially.",
+      "Writing uses native clipped screenshots with caret hide; earlier diagnostic uses full native viewport screenshots with caret initial."
+    ],
+    "normalMotionPause": "Native animation pause/currentTime alignment occurs later in separate normal-motion contexts; it does not directly mutate the earlier 1280 reduced-motion context.",
+    "nextAuthorisedDiagnostic": "Two fixed fresh pairs per rendering mode in the same exact .84 browser job, retaining native initial/no-op/actual-font/FAQ-refresh/same-position-scroll/header-hide/header-restore stages and all original captures. This independent review did not implement or execute that diagnostic."
+  },
+  "conclusions": [
+    "The latest failing 1280 device raster is exactly the earlier two-state raster reversed between protected and source, not a new measured content, shape or styling difference.",
+    "The current touch trace proves one observed successful native close lifecycle on both pages, with strict focus/dismissal/unlock assertions active.",
+    "The latest Writing checkpoint remains failed by its unchanged raster gate."
+  ],
+  "causalLimits": [
+    "The retained original first-pinned failure had no close trace; the latest successful trace cannot establish the earlier event order or prove that failure was a timer race.",
+    "Pixel coverage and byte identities establish recurring raster variants but do not establish layer promotion, header suppression, FAQ refresh or any specific browser operation as the cause.",
+    "Same-mode cross-run image equality is diagnostic evidence, not permission to substitute a different run or frame in the checkpoint.",
+    "Chrome-only CI evidence and emulated touch do not establish other browser, physical-device, native zoom or accessibility certification."
+  ],
+  "changesByThisReview": "This JSON record only. No runtime, screenshot, harness, threshold, mask or workflow changed."
+}

@@ -1,0 +1,715 @@
+{
+  "purpose": "Bounded permanent representative review set from the passing third complete-homepage Assembly checkpoint.",
+  "method": "Eight exact original PNG copies, retaining native viewport crops and surrounding sticky-header context. No cropping, resampling, compositing, padding, masking or image edits were applied when retaining this set.",
+  "run": {
+    "id": 39382384349,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384349",
+    "jobId": 118494199376,
+    "conclusion": "success"
+  },
+  "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "artifact": {
+    "id": 12246655390,
+    "name": "homepage-assembly-parity",
+    "sha256": "a81f630b64f513f2b52a5992854c2c37352aef3aac23d6012e2f6b0863c44fb6",
+    "bytes": 52091483,
+    "origin": "GitHub Actions artifact ZIP",
+    "originalReportPath": "report.json"
+  },
+  "report": {
+    "retainedPath": "../assembly-report.json.gz",
+    "compressedSha256": "5b753010aabeea9182e0503de01837791f0179664a8b4306080ce03dc36723c4",
+    "rawSha256": "cd7be854f619acc702d29f1927855c18cfa3c121c5af5846df3df84de19fc7a9",
+    "rawReportMatchesRetainedGzip": true,
+    "completeCheckpoint": true
+  },
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "runnerImage": "ubuntu-24.04 / 20261012.334.1",
+    "node": "22.23.3",
+    "npm": "10.9.9",
+    "playwrightCore": "1.56.1",
+    "deviceScaleFactor": 1,
+    "browser": "Chromium 155.0.8059.39"
+  },
+  "selection": {
+    "pairCount": 4,
+    "fileCount": 8,
+    "totalPngBytes": 3140065,
+    "pairs": [
+      "320-join-writing",
+      "1440-join-gifting",
+      "1440-assembled-process-656",
+      "1440-ending"
+    ],
+    "reason": "Mobile process-to-Writing join; desktop Writing-to-Gifting join; normal-motion process release into Writing; complete desktop newsletter/footer field. Every selected pair was already inspected at original resolution."
+  },
+  "files": [
+    {
+      "file": "assembly-published-320-join-writing.png",
+      "kind": "published",
+      "pair": "320-join-writing",
+      "bytes": 106103,
+      "sha256": "6bcf1f11c6b47e8532e77e9a090f92139271d179164bc8ab9f224ba3c44aa3e5",
+      "originArtifactPath": "published-320-join-writing.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/published-320-join-writing.png",
+      "capture": {
+        "kind": "published",
+        "file": "published-320-join-writing.png",
+        "label": "320-join-writing",
+        "key": "writing",
+        "requestedScroll": 5254,
+        "viewport": {
+          "width": 320,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 540
+        },
+        "before": {
+          "scrollY": 5254,
+          "documentHeight": 10597,
+          "viewport": [
+            320,
+            900
+          ],
+          "target": [
+            0,
+            270.109375,
+            320,
+            772.546875
+          ],
+          "header": [
+            11,
+            9,
+            298,
+            67
+          ]
+        },
+        "after": {
+          "scrollY": 5254,
+          "documentHeight": 10597,
+          "viewport": [
+            320,
+            900
+          ],
+          "target": [
+            0,
+            270.109375,
+            320,
+            772.546875
+          ],
+          "header": [
+            11,
+            9,
+            298,
+            67
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/images/brand/process/storileaf-memory-selection-card-800.webp",
+            "alt": "Personal photographs and notes being gathered before making a book",
+            "loaded": true,
+            "natural": [
+              800,
+              600
+            ]
+          }
+        ],
+        "sha256": "6bcf1f11c6b47e8532e77e9a090f92139271d179164bc8ab9f224ba3c44aa3e5"
+      },
+      "visualReviewFinding": "Process photograph, its bottom padding and the warm paper writing section meet at the same position. The writing heading retains the same three-line wrapping and teal italic emphasis. The viewport edge cuts through the introduction at the same point; no missing paint or join displacement is visible."
+    },
+    {
+      "file": "assembly-source-320-join-writing.png",
+      "kind": "source",
+      "pair": "320-join-writing",
+      "bytes": 106103,
+      "sha256": "6bcf1f11c6b47e8532e77e9a090f92139271d179164bc8ab9f224ba3c44aa3e5",
+      "originArtifactPath": "source-320-join-writing.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/source-320-join-writing.png",
+      "capture": {
+        "kind": "source",
+        "file": "source-320-join-writing.png",
+        "label": "320-join-writing",
+        "key": "writing",
+        "requestedScroll": 5254,
+        "viewport": {
+          "width": 320,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 540
+        },
+        "before": {
+          "scrollY": 5254,
+          "documentHeight": 10597,
+          "viewport": [
+            320,
+            900
+          ],
+          "target": [
+            0,
+            270.109375,
+            320,
+            772.546875
+          ],
+          "header": [
+            11,
+            9,
+            298,
+            67
+          ]
+        },
+        "after": {
+          "scrollY": 5254,
+          "documentHeight": 10597,
+          "viewport": [
+            320,
+            900
+          ],
+          "target": [
+            0,
+            270.109375,
+            320,
+            772.546875
+          ],
+          "header": [
+            11,
+            9,
+            298,
+            67
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/images/brand/process/storileaf-memory-selection-card-800.webp",
+            "alt": "Personal photographs and notes being gathered before making a book",
+            "loaded": true,
+            "natural": [
+              800,
+              600
+            ]
+          }
+        ],
+        "sha256": "6bcf1f11c6b47e8532e77e9a090f92139271d179164bc8ab9f224ba3c44aa3e5"
+      },
+      "visualReviewFinding": "Process photograph, its bottom padding and the warm paper writing section meet at the same position. The writing heading retains the same three-line wrapping and teal italic emphasis. The viewport edge cuts through the introduction at the same point; no missing paint or join displacement is visible."
+    },
+    {
+      "file": "assembly-published-1440-join-gifting.png",
+      "kind": "published",
+      "pair": "1440-join-gifting",
+      "bytes": 267867,
+      "sha256": "3ab30138430ab88bed1e54594749e5684a562dc65c27b3798afe92cb1e447548",
+      "originArtifactPath": "published-1440-join-gifting.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/published-1440-join-gifting.png",
+      "capture": {
+        "kind": "published",
+        "file": "published-1440-join-gifting.png",
+        "label": "1440-join-gifting",
+        "key": "gifting",
+        "requestedScroll": 5590,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 540
+        },
+        "before": {
+          "scrollY": 5590,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": [
+            0,
+            270.3125,
+            1440,
+            642
+          ],
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "after": {
+          "scrollY": 5590,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": [
+            0,
+            270.3125,
+            1440,
+            642
+          ],
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/images/brand/gifting/storileaf-story-book-gift-handover-wide-1200.webp",
+            "alt": "An adult son sharing a printed story book with his father",
+            "loaded": true,
+            "natural": [
+              1200,
+              800
+            ]
+          }
+        ],
+        "sha256": "3ab30138430ab88bed1e54594749e5684a562dc65c27b3798afe92cb1e447548"
+      },
+      "visualReviewFinding": "The practice action, large intervening space and desktop Gifting panel match, including the forest panel, rounded outer corners and photograph. The narrow retained underlay equivalence produces the same visible paint."
+    },
+    {
+      "file": "assembly-source-1440-join-gifting.png",
+      "kind": "source",
+      "pair": "1440-join-gifting",
+      "bytes": 265994,
+      "sha256": "98d451062d9c85fe95dcf32deee68a8ad276cab871dbe42a229934f20bc6e90d",
+      "originArtifactPath": "source-1440-join-gifting.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/source-1440-join-gifting.png",
+      "capture": {
+        "kind": "source",
+        "file": "source-1440-join-gifting.png",
+        "label": "1440-join-gifting",
+        "key": "gifting",
+        "requestedScroll": 5590,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 540
+        },
+        "before": {
+          "scrollY": 5590,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": [
+            0,
+            270.3125,
+            1440,
+            642
+          ],
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "after": {
+          "scrollY": 5590,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": [
+            0,
+            270.3125,
+            1440,
+            642
+          ],
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/images/brand/gifting/storileaf-story-book-gift-handover-wide-1200.webp",
+            "alt": "An adult son sharing a printed story book with his father",
+            "loaded": true,
+            "natural": [
+              1200,
+              800
+            ]
+          }
+        ],
+        "sha256": "98d451062d9c85fe95dcf32deee68a8ad276cab871dbe42a229934f20bc6e90d"
+      },
+      "visualReviewFinding": "The practice action, large intervening space and desktop Gifting panel match, including the forest panel, rounded outer corners and photograph. The narrow retained underlay equivalence produces the same visible paint."
+    },
+    {
+      "file": "assembly-published-1440-assembled-process-656.png",
+      "kind": "published",
+      "pair": "1440-assembled-process-656",
+      "bytes": 558450,
+      "sha256": "eda0e95fed6f099b2ec20628e9c9318045088e634bef7d16134063abe976f410",
+      "originArtifactPath": "published-1440-assembled-process-656.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/published-1440-assembled-process-656.png",
+      "capture": {
+        "kind": "published",
+        "file": "published-1440-assembled-process-656.png",
+        "label": "1440-assembled-process-656",
+        "requestedScroll": 4625,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "before": {
+          "scrollY": 4625,
+          "documentHeight": 9610,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "after": {
+          "scrollY": 4625,
+          "documentHeight": 9610,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp",
+            "alt": "An open finished Life Story book on a veranda",
+            "loaded": true,
+            "natural": [
+              800,
+              600
+            ]
+          }
+        ],
+        "sha256": "eda0e95fed6f099b2ec20628e9c9318045088e634bef7d16134063abe976f410"
+      },
+      "visualReviewFinding": "After release, the process grid moves above the viewport and the writing heading enters below at the same point. Stage four remains selected, and the photograph, actions and section join match."
+    },
+    {
+      "file": "assembly-source-1440-assembled-process-656.png",
+      "kind": "source",
+      "pair": "1440-assembled-process-656",
+      "bytes": 558360,
+      "sha256": "ffb129872dd5016cc3e24acd79cdad55f05959584e284ee4bf0d6d2fe9874112",
+      "originArtifactPath": "source-1440-assembled-process-656.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/source-1440-assembled-process-656.png",
+      "capture": {
+        "kind": "source",
+        "file": "source-1440-assembled-process-656.png",
+        "label": "1440-assembled-process-656",
+        "requestedScroll": 4625,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "before": {
+          "scrollY": 4625,
+          "documentHeight": 9610,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "after": {
+          "scrollY": 4625,
+          "documentHeight": 9610,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp",
+            "alt": "An open finished Life Story book on a veranda",
+            "loaded": true,
+            "natural": [
+              800,
+              600
+            ]
+          }
+        ],
+        "sha256": "ffb129872dd5016cc3e24acd79cdad55f05959584e284ee4bf0d6d2fe9874112"
+      },
+      "visualReviewFinding": "After release, the process grid moves above the viewport and the writing heading enters below at the same point. Stage four remains selected, and the photograph, actions and section join match."
+    },
+    {
+      "file": "assembly-published-1440-ending.png",
+      "kind": "published",
+      "pair": "1440-ending",
+      "bytes": 638594,
+      "sha256": "6507ecd16a0aa9b1de01198a0be1366e909597daaa9ea7460dcdaff7d572ab5a",
+      "originArtifactPath": "published-1440-ending.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/published-1440-ending.png",
+      "capture": {
+        "kind": "published",
+        "file": "published-1440-ending.png",
+        "label": "1440-ending",
+        "requestedScroll": 8244,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "before": {
+          "scrollY": 8244,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "after": {
+          "scrollY": 8244,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          }
+        ],
+        "sha256": "6507ecd16a0aa9b1de01198a0be1366e909597daaa9ea7460dcdaff7d572ab5a"
+      },
+      "visualReviewFinding": "The desktop photographic newsletter and footer field matches. Newsletter text/form alignment, four-column footer, gold logo and headings, currency control, legal rule and final Get in touch label all retain the approved arrangement."
+    },
+    {
+      "file": "assembly-source-1440-ending.png",
+      "kind": "source",
+      "pair": "1440-ending",
+      "bytes": 638594,
+      "sha256": "6507ecd16a0aa9b1de01198a0be1366e909597daaa9ea7460dcdaff7d572ab5a",
+      "originArtifactPath": "source-1440-ending.png",
+      "originLocalPath": "/tmp/assembly-third-39382384349/source-1440-ending.png",
+      "capture": {
+        "kind": "source",
+        "file": "source-1440-ending.png",
+        "label": "1440-ending",
+        "requestedScroll": 8244,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "clip": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 900
+        },
+        "before": {
+          "scrollY": 8244,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "after": {
+          "scrollY": 8244,
+          "documentHeight": 9144,
+          "viewport": [
+            1440,
+            900
+          ],
+          "target": null,
+          "header": [
+            55,
+            15,
+            1330,
+            76
+          ]
+        },
+        "images": [
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          },
+          {
+            "src": "https://storileaf.com/logo.png",
+            "alt": "StoriLeaf",
+            "loaded": true,
+            "natural": [
+              500,
+              125
+            ]
+          }
+        ],
+        "sha256": "6507ecd16a0aa9b1de01198a0be1366e909597daaa9ea7460dcdaff7d572ab5a"
+      },
+      "visualReviewFinding": "The desktop photographic newsletter and footer field matches. Newsletter text/form alignment, four-column footer, gold logo and headings, currency control, legal rule and final Get in touch label all retain the approved arrangement."
+    }
+  ],
+  "limits": [
+    "This permanent image set is a representative subset of the 146 automated pairs, not a replacement for the full raw report or complete Actions artifact.",
+    "The default-size sample does not resolve inherited text-enlargement findings.",
+    "Package 4, founder visual acceptance and explicit React publication approval remain separate gates."
+  ]
+}

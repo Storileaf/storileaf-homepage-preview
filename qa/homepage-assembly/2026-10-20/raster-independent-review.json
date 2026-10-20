@@ -1,0 +1,3213 @@
+{
+  "purpose": "Independent read-only review of both diagnostic environments; not a parity pass",
+  "createdAtUtc": "2026-10-20T12:09:22.179169+00:00",
+  "runId": 39418950215,
+  "diagnosticCommit": "fa919e6d3998b8dcbeb42e704875d15de9a3d64b",
+  "frozenRuntime": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "existingPixelAnalysis": "/tmp/group8-writing-raster-analysis.json",
+  "reproductionScript": "/tmp/group8-writing-raster-independent-review.py",
+  "method": "Question coverage uses a_c=(B_c\u2212P_c)/(B_c\u2212F_c), with B=(250,249,247), F=(37,53,38), edge mean coverage between 0.05 and 0.95, and channel spread=max(a_c)\u2212min(a_c). Native selected-node rect, documentRect, client and offset arrays are compared exactly across implementations before/after each screenshot. Original files are only read.",
+  "crossEnvironmentIdentity": {
+    "sourceHashes": {
+      "equal": true,
+      "valueOrCount": 53
+    },
+    "protectedHashes": {
+      "equal": true,
+      "valueOrCount": 4
+    },
+    "harnessHashes": {
+      "equal": true,
+      "valueOrCount": 3
+    },
+    "buildHashes": {
+      "equal": true,
+      "valueOrCount": 3
+    },
+    "runtimeTree": {
+      "equal": true,
+      "valueOrCount": "b371048da86b50af9855a2326a6fdf5ecee6f21e"
+    },
+    "frozenRuntimeTree": {
+      "equal": true,
+      "valueOrCount": "b371048da86b50af9855a2326a6fdf5ecee6f21e"
+    },
+    "diagnosticCommit": {
+      "equal": true,
+      "valueOrCount": "fa919e6d3998b8dcbeb42e704875d15de9a3d64b"
+    },
+    "thresholds": {
+      "equal": true,
+      "valueOrCount": 3
+    },
+    "node": {
+      "equal": true,
+      "valueOrCount": "v22.23.3"
+    },
+    "platform": {
+      "equal": true,
+      "valueOrCount": "linux"
+    },
+    "playwright": {
+      "equal": true,
+      "valueOrCount": "1.56.1"
+    }
+  },
+  "modes": {
+    "default": {
+      "report": "/tmp/group8-writing-raster-default-39418950215/report.json",
+      "reportSha256": "ade45110bc030de49fde1620522e9fe0262b4eac716b0a75ca166bcca1d85b22",
+      "browser": "155.0.8059.84",
+      "launchArgs": [
+        "--no-sandbox"
+      ],
+      "captureHashes": [
+        {
+          "file": "published-901-initial.png",
+          "sha256": "05fd8a05ee1d65a64d0a5004c38f12a828a886f5a89609ac971effe958e18073"
+        },
+        {
+          "file": "published-901-scroll-out.png",
+          "sha256": "4f46b777ddf61564e7bd0a77332a1ceab232e4f6cdb99a5c3dd9ba8eca69202f"
+        },
+        {
+          "file": "published-901-scroll-back.png",
+          "sha256": "05fd8a05ee1d65a64d0a5004c38f12a828a886f5a89609ac971effe958e18073"
+        },
+        {
+          "file": "published-901-height-altered.png",
+          "sha256": "af839467b14a1bf84db301284310c74307c41b09180b4161bb697cc1c1739a41"
+        },
+        {
+          "file": "published-901-height-back.png",
+          "sha256": "05fd8a05ee1d65a64d0a5004c38f12a828a886f5a89609ac971effe958e18073"
+        },
+        {
+          "file": "source-901-initial.png",
+          "sha256": "379b54cd54fd71d3593ebe89e4aa9e59e83eda75e09c3e6cec26c940542d4943"
+        },
+        {
+          "file": "source-901-scroll-out.png",
+          "sha256": "20f5f542a8725f128572861c294f97987d8ec7319f504704a616f55a05a859a9"
+        },
+        {
+          "file": "source-901-scroll-back.png",
+          "sha256": "379b54cd54fd71d3593ebe89e4aa9e59e83eda75e09c3e6cec26c940542d4943"
+        },
+        {
+          "file": "source-901-height-altered.png",
+          "sha256": "af839467b14a1bf84db301284310c74307c41b09180b4161bb697cc1c1739a41"
+        },
+        {
+          "file": "source-901-height-back.png",
+          "sha256": "379b54cd54fd71d3593ebe89e4aa9e59e83eda75e09c3e6cec26c940542d4943"
+        },
+        {
+          "file": "published-1440-initial.png",
+          "sha256": "512222660d6a30e2743495a0263fb568443ab3453498f7156867b2b8f9f8f2af"
+        },
+        {
+          "file": "published-1440-scroll-out.png",
+          "sha256": "aef624951828d4d62831aca903a40dcc4d0830fc6fca8fe2eb4ff62bfa918781"
+        },
+        {
+          "file": "published-1440-scroll-back.png",
+          "sha256": "512222660d6a30e2743495a0263fb568443ab3453498f7156867b2b8f9f8f2af"
+        },
+        {
+          "file": "published-1440-height-altered.png",
+          "sha256": "6c28e92eb424fefe7c10b3baf176dd0bea5c78c2c12b4406ef90af027cdb07a9"
+        },
+        {
+          "file": "published-1440-height-back.png",
+          "sha256": "512222660d6a30e2743495a0263fb568443ab3453498f7156867b2b8f9f8f2af"
+        },
+        {
+          "file": "source-1440-initial.png",
+          "sha256": "9069c7b3bd64e00714f39993b03bb9beb0b86eecc05d550b1bd8ef84d42adcab"
+        },
+        {
+          "file": "source-1440-scroll-out.png",
+          "sha256": "da1a8df8771d7656533917a934ae8d0ca7b8bce5ebf4231ea3ec8ebe6ed7d3d0"
+        },
+        {
+          "file": "source-1440-scroll-back.png",
+          "sha256": "9069c7b3bd64e00714f39993b03bb9beb0b86eecc05d550b1bd8ef84d42adcab"
+        },
+        {
+          "file": "source-1440-height-altered.png",
+          "sha256": "6c28e92eb424fefe7c10b3baf176dd0bea5c78c2c12b4406ef90af027cdb07a9"
+        },
+        {
+          "file": "source-1440-height-back.png",
+          "sha256": "9069c7b3bd64e00714f39993b03bb9beb0b86eecc05d550b1bd8ef84d42adcab"
+        }
+      ],
+      "geometryArrayComparisonCount": 2240,
+      "maximumGeometryDifference": 0,
+      "geometryDifferences": [],
+      "screenshotTimeGeometryMovement": [],
+      "nativeDeviceCoverage": [
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "initial",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "scroll-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-altered",
+          "viewport": [
+            901,
+            880
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "initial",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "scroll-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-altered",
+          "viewport": [
+            901,
+            880
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "initial",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "scroll-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-altered",
+          "viewport": [
+            1440,
+            1080
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "initial",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "scroll-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-altered",
+          "viewport": [
+            1440,
+            1080
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        }
+      ],
+      "questionCrops": [
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "initial",
+          "file": "published-901-initial.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "scroll-back",
+          "file": "published-901-scroll-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-altered",
+          "file": "published-901-height-altered.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-back",
+          "file": "published-901-height-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "initial",
+          "file": "source-901-initial.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "scroll-back",
+          "file": "source-901-scroll-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-altered",
+          "file": "source-901-height-altered.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-back",
+          "file": "source-901-height-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7600fa472014cc439f95ae3aaf9d4def08af4da252e9f6616fcdd66f3c785dcf",
+          "edgePixels": 2112,
+          "fractionSpreadOver005": 0.9824810606060606,
+          "medianSpread": 0.34332951456746863,
+          "maximumSpread": 0.6285014713480244
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "initial",
+          "file": "published-1440-initial.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "scroll-back",
+          "file": "published-1440-scroll-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-altered",
+          "file": "published-1440-height-altered.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-back",
+          "file": "published-1440-height-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "initial",
+          "file": "source-1440-initial.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "scroll-back",
+          "file": "source-1440-scroll-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-altered",
+          "file": "source-1440-height-altered.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-back",
+          "file": "source-1440-height-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "edgePixels": 2723,
+          "fractionSpreadOver005": 0.9834741094381197,
+          "medianSpread": 0.34204910483635464,
+          "maximumSpread": 0.6590965249230631
+        }
+      ],
+      "sampled1440ResidualRegions": [
+        {
+          "label": "laptop-logo",
+          "cropExclusive": [
+            377,
+            405,
+            485,
+            445
+          ],
+          "changedPixels": 0,
+          "pixels": 4320,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-sidebar",
+          "cropExclusive": [
+            380,
+            452,
+            530,
+            834
+          ],
+          "changedPixels": 0,
+          "pixels": 57300,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-question",
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "changedPixels": 0,
+          "pixels": 20617,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-helper",
+          "cropExclusive": [
+            562,
+            561,
+            951,
+            585
+          ],
+          "changedPixels": 0,
+          "pixels": 9336,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-answer",
+          "cropExclusive": [
+            562,
+            594,
+            951,
+            689
+          ],
+          "changedPixels": 0,
+          "pixels": 36955,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-main-blank",
+          "cropExclusive": [
+            600,
+            720,
+            900,
+            810
+          ],
+          "changedPixels": 0,
+          "pixels": 27000,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "tablet-question",
+          "cropExclusive": [
+            985,
+            602,
+            1202,
+            671
+          ],
+          "changedPixels": 0,
+          "pixels": 14973,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "tablet-logo",
+          "cropExclusive": [
+            980,
+            515,
+            1060,
+            545
+          ],
+          "changedPixels": 0,
+          "pixels": 2400,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "phone-body-sample",
+          "cropExclusive": [
+            230,
+            650,
+            330,
+            750
+          ],
+          "changedPixels": 0,
+          "pixels": 10000,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        }
+      ],
+      "comparisons": [
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "initial",
+          "files": [
+            "published-901-initial.png",
+            "source-901-initial.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 0,
+            "total": 901000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 0,
+            "total": 363103,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "scroll-out",
+          "files": [
+            "published-901-scroll-out.png",
+            "source-901-scroll-out.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 0,
+            "total": 901000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            null,
+            null
+          ]
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "scroll-back",
+          "files": [
+            "published-901-scroll-back.png",
+            "source-901-scroll-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 0,
+            "total": 901000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 0,
+            "total": 363103,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "height-altered",
+          "files": [
+            "published-901-height-altered.png",
+            "source-901-height-altered.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 880
+            },
+            "changed": 0,
+            "total": 792880,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 0,
+            "total": 363103,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "height-back",
+          "files": [
+            "published-901-height-back.png",
+            "source-901-height-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 0,
+            "total": 901000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 0,
+            "total": 363103,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "initial",
+          "files": [
+            "published-1440-initial.png",
+            "source-1440-initial.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 0,
+            "total": 1728000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 0,
+            "total": 757440,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "scroll-out",
+          "files": [
+            "published-1440-scroll-out.png",
+            "source-1440-scroll-out.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 0,
+            "total": 1728000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            null,
+            null
+          ]
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "scroll-back",
+          "files": [
+            "published-1440-scroll-back.png",
+            "source-1440-scroll-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 0,
+            "total": 1728000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 0,
+            "total": 757440,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "height-altered",
+          "files": [
+            "published-1440-height-altered.png",
+            "source-1440-height-altered.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1080
+            },
+            "changed": 0,
+            "total": 1555200,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 0,
+            "total": 757440,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "height-back",
+          "files": [
+            "published-1440-height-back.png",
+            "source-1440-height-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 0,
+            "total": 1728000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 0,
+            "total": 757440,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          }
+        }
+      ],
+      "errors": [],
+      "immutableHashChecks": {
+        "sourceHashes": {
+          "count": 53,
+          "immutableRef": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "mismatches": []
+        },
+        "protectedHashes": {
+          "count": 4,
+          "immutableRef": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+          "mismatches": []
+        },
+        "harnessHashes": {
+          "count": 3,
+          "immutableRef": "fa919e6d3998b8dcbeb42e704875d15de9a3d64b",
+          "mismatches": []
+        },
+        "artifact": {
+          "path": "/tmp/group8-writing-raster-default-39418950215.zip",
+          "id": 12262767051,
+          "bytes": 7772360,
+          "sha256": "9349071c5fad069927c3b9354a6cc332beb7c0fabd34682ab2196c7e0e876ee0",
+          "verifiedAgainst": "Connected GitHub fetch_workflow_run_artifacts metadata for run39418950215; independently fetched after primary owner downloaded the files."
+        }
+      }
+    },
+    "disable-lcd-text": {
+      "report": "/tmp/group8-writing-raster-disable-lcd-text-39418950215/report.json",
+      "reportSha256": "1dee96e05b26a2f6108e4e1ccffb489e80e3bc6dd4cc3e1ae55f9a8d6b13d2e0",
+      "browser": "155.0.8059.39",
+      "launchArgs": [
+        "--no-sandbox",
+        "--disable-lcd-text"
+      ],
+      "captureHashes": [
+        {
+          "file": "published-901-initial.png",
+          "sha256": "12d994ade3dd202a3bacecb42cafb45c1060f1d513ca3d5bc085fee3a550d297"
+        },
+        {
+          "file": "published-901-scroll-out.png",
+          "sha256": "4f46b777ddf61564e7bd0a77332a1ceab232e4f6cdb99a5c3dd9ba8eca69202f"
+        },
+        {
+          "file": "published-901-scroll-back.png",
+          "sha256": "12d994ade3dd202a3bacecb42cafb45c1060f1d513ca3d5bc085fee3a550d297"
+        },
+        {
+          "file": "published-901-height-altered.png",
+          "sha256": "5100b91813fb0e363557003a1cc5d23d900d75f49c4857cf8439476022845a41"
+        },
+        {
+          "file": "published-901-height-back.png",
+          "sha256": "12d994ade3dd202a3bacecb42cafb45c1060f1d513ca3d5bc085fee3a550d297"
+        },
+        {
+          "file": "source-901-initial.png",
+          "sha256": "5945edae062edb4896f9778f1abec79b5d11e19c885fed8982a678e55f6cf499"
+        },
+        {
+          "file": "source-901-scroll-out.png",
+          "sha256": "20f5f542a8725f128572861c294f97987d8ec7319f504704a616f55a05a859a9"
+        },
+        {
+          "file": "source-901-scroll-back.png",
+          "sha256": "5945edae062edb4896f9778f1abec79b5d11e19c885fed8982a678e55f6cf499"
+        },
+        {
+          "file": "source-901-height-altered.png",
+          "sha256": "0e6a154181520fd26336c1c4c4df24c0a0b023e7ad1dbcfa74d99a6edc7845f9"
+        },
+        {
+          "file": "source-901-height-back.png",
+          "sha256": "5945edae062edb4896f9778f1abec79b5d11e19c885fed8982a678e55f6cf499"
+        },
+        {
+          "file": "published-1440-initial.png",
+          "sha256": "4188f2c7e9f794a39096bce46785667642b15be0a587dc218e403120c9dc559f"
+        },
+        {
+          "file": "published-1440-scroll-out.png",
+          "sha256": "aef624951828d4d62831aca903a40dcc4d0830fc6fca8fe2eb4ff62bfa918781"
+        },
+        {
+          "file": "published-1440-scroll-back.png",
+          "sha256": "4188f2c7e9f794a39096bce46785667642b15be0a587dc218e403120c9dc559f"
+        },
+        {
+          "file": "published-1440-height-altered.png",
+          "sha256": "ac99b6141f78a32ee9c3ceeadb507d19dc2af0a08687048ee1c6ed1c36a3e5e1"
+        },
+        {
+          "file": "published-1440-height-back.png",
+          "sha256": "4188f2c7e9f794a39096bce46785667642b15be0a587dc218e403120c9dc559f"
+        },
+        {
+          "file": "source-1440-initial.png",
+          "sha256": "b56fb7ebd6bdc247fe233b65e7472db76f1ff15bb66fa35b62d665f09f3f1caa"
+        },
+        {
+          "file": "source-1440-scroll-out.png",
+          "sha256": "da1a8df8771d7656533917a934ae8d0ca7b8bce5ebf4231ea3ec8ebe6ed7d3d0"
+        },
+        {
+          "file": "source-1440-scroll-back.png",
+          "sha256": "b56fb7ebd6bdc247fe233b65e7472db76f1ff15bb66fa35b62d665f09f3f1caa"
+        },
+        {
+          "file": "source-1440-height-altered.png",
+          "sha256": "682125370144268156614ed639526cb0cb0dc4a8f687474ed639e1253fd1a929"
+        },
+        {
+          "file": "source-1440-height-back.png",
+          "sha256": "b56fb7ebd6bdc247fe233b65e7472db76f1ff15bb66fa35b62d665f09f3f1caa"
+        }
+      ],
+      "geometryArrayComparisonCount": 2240,
+      "maximumGeometryDifference": 0,
+      "geometryDifferences": [],
+      "screenshotTimeGeometryMovement": [],
+      "nativeDeviceCoverage": [
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "initial",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "scroll-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-altered",
+          "viewport": [
+            901,
+            880
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "initial",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "scroll-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-altered",
+          "viewport": [
+            901,
+            880
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-back",
+          "viewport": [
+            901,
+            1000
+          ],
+          "deviceStageRect": [
+            48,
+            294.375,
+            805,
+            402.5
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 294,
+            "width": 901,
+            "height": 403
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "initial",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "scroll-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-altered",
+          "viewport": [
+            1440,
+            1080
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "initial",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "scroll-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-altered",
+          "viewport": [
+            1440,
+            1080
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-back",
+          "viewport": [
+            1440,
+            1200
+          ],
+          "deviceStageRect": [
+            195,
+            379.3125,
+            1050,
+            525
+          ],
+          "stageFullyWithinViewport": true,
+          "deviceRegion": {
+            "x": 0,
+            "y": 379,
+            "width": 1440,
+            "height": 526
+          }
+        }
+      ],
+      "questionCrops": [
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "initial",
+          "file": "published-901-initial.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "e8ad9f45366054f6276b539dc5781a261cb51c3de93cc49cdd096e74ad611108",
+          "edgePixels": 1568,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.0032223415682062218,
+          "maximumSpread": 0.010594668489405351
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "scroll-back",
+          "file": "published-901-scroll-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "e8ad9f45366054f6276b539dc5781a261cb51c3de93cc49cdd096e74ad611108",
+          "edgePixels": 1568,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.0032223415682062218,
+          "maximumSpread": 0.010594668489405351
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-altered",
+          "file": "published-901-height-altered.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "e8ad9f45366054f6276b539dc5781a261cb51c3de93cc49cdd096e74ad611108",
+          "edgePixels": 1568,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.0032223415682062218,
+          "maximumSpread": 0.010594668489405351
+        },
+        {
+          "kind": "published",
+          "width": 901,
+          "stage": "height-back",
+          "file": "published-901-height-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "e8ad9f45366054f6276b539dc5781a261cb51c3de93cc49cdd096e74ad611108",
+          "edgePixels": 1568,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.0032223415682062218,
+          "maximumSpread": 0.010594668489405351
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "initial",
+          "file": "source-901-initial.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7a83979aab5c1ea08b369fa805c895b4a72d07b0d3e622550eb46807ce1406b7",
+          "edgePixels": 1586,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003401360544217691,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "scroll-back",
+          "file": "source-901-scroll-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7a83979aab5c1ea08b369fa805c895b4a72d07b0d3e622550eb46807ce1406b7",
+          "edgePixels": 1586,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003401360544217691,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-altered",
+          "file": "source-901-height-altered.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7a83979aab5c1ea08b369fa805c895b4a72d07b0d3e622550eb46807ce1406b7",
+          "edgePixels": 1586,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003401360544217691,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 901,
+          "stage": "height-back",
+          "file": "source-901-height-back.png",
+          "questionRect": [
+            330.1875,
+            390.6875,
+            346.90625,
+            39.6875
+          ],
+          "cropExclusive": [
+            330,
+            390,
+            626,
+            431
+          ],
+          "cropSize": [
+            296,
+            41
+          ],
+          "rawRgbSha256": "7a83979aab5c1ea08b369fa805c895b4a72d07b0d3e622550eb46807ce1406b7",
+          "edgePixels": 1586,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003401360544217691,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "initial",
+          "file": "published-1440-initial.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "scroll-back",
+          "file": "published-1440-scroll-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-altered",
+          "file": "published-1440-height-altered.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "published",
+          "width": 1440,
+          "stage": "height-back",
+          "file": "published-1440-height-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "initial",
+          "file": "source-1440-initial.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "scroll-back",
+          "file": "source-1440-scroll-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-altered",
+          "file": "source-1440-height-altered.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        },
+        {
+          "kind": "source",
+          "width": 1440,
+          "stage": "height-back",
+          "file": "source-1440-height-back.png",
+          "questionRect": [
+            562.09375,
+            500.828125,
+            455.578125,
+            52.125
+          ],
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "cropSize": [
+            389,
+            53
+          ],
+          "rawRgbSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "edgePixels": 2018,
+          "fractionSpreadOver005": 0.0,
+          "medianSpread": 0.003149106532565185,
+          "maximumSpread": 0.007209926224010732
+        }
+      ],
+      "sampled1440ResidualRegions": [
+        {
+          "label": "laptop-logo",
+          "cropExclusive": [
+            377,
+            405,
+            485,
+            445
+          ],
+          "changedPixels": 328,
+          "pixels": 4320,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-sidebar",
+          "cropExclusive": [
+            380,
+            452,
+            530,
+            834
+          ],
+          "changedPixels": 1433,
+          "pixels": 57300,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-question",
+          "cropExclusive": [
+            562,
+            500,
+            951,
+            553
+          ],
+          "changedPixels": 0,
+          "pixels": 20617,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-helper",
+          "cropExclusive": [
+            562,
+            561,
+            951,
+            585
+          ],
+          "changedPixels": 0,
+          "pixels": 9336,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-answer",
+          "cropExclusive": [
+            562,
+            594,
+            951,
+            689
+          ],
+          "changedPixels": 2220,
+          "pixels": 36955,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "laptop-main-blank",
+          "cropExclusive": [
+            600,
+            720,
+            900,
+            810
+          ],
+          "changedPixels": 0,
+          "pixels": 27000,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "tablet-question",
+          "cropExclusive": [
+            985,
+            602,
+            1202,
+            671
+          ],
+          "changedPixels": 1383,
+          "pixels": 14973,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "tablet-logo",
+          "cropExclusive": [
+            980,
+            515,
+            1060,
+            545
+          ],
+          "changedPixels": 0,
+          "pixels": 2400,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        },
+        {
+          "label": "phone-body-sample",
+          "cropExclusive": [
+            230,
+            650,
+            330,
+            750
+          ],
+          "changedPixels": 0,
+          "pixels": 10000,
+          "note": "Fixed diagnostic region; not an exhaustive or disjoint pixel decomposition."
+        }
+      ],
+      "comparisons": [
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "initial",
+          "files": [
+            "published-901-initial.png",
+            "source-901-initial.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 9523,
+            "total": 901000,
+            "ratio": 0.010569367369589345,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 9523,
+            "total": 363103,
+            "ratio": 0.02622671803868324,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "scroll-out",
+          "files": [
+            "published-901-scroll-out.png",
+            "source-901-scroll-out.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 0,
+            "total": 901000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            null,
+            null
+          ]
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "scroll-back",
+          "files": [
+            "published-901-scroll-back.png",
+            "source-901-scroll-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 9523,
+            "total": 901000,
+            "ratio": 0.010569367369589345,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 9523,
+            "total": 363103,
+            "ratio": 0.02622671803868324,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "height-altered",
+          "files": [
+            "published-901-height-altered.png",
+            "source-901-height-altered.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 880
+            },
+            "changed": 9523,
+            "total": 792880,
+            "ratio": 0.01201064473816971,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 9523,
+            "total": 363103,
+            "ratio": 0.02622671803868324,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 901,
+            "height": 1000
+          },
+          "label": "height-back",
+          "files": [
+            "published-901-height-back.png",
+            "source-901-height-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 1000
+            },
+            "changed": 9523,
+            "total": 901000,
+            "ratio": 0.010569367369589345,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            },
+            "changed": 9523,
+            "total": 363103,
+            "ratio": 0.02622671803868324,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              183,
+              298,
+              824,
+              632
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "initial",
+          "files": [
+            "published-1440-initial.png",
+            "source-1440-initial.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 11705,
+            "total": 1728000,
+            "ratio": 0.006773726851851852,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 11705,
+            "total": 757440,
+            "ratio": 0.015453369243768483,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "scroll-out",
+          "files": [
+            "published-1440-scroll-out.png",
+            "source-1440-scroll-out.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 0,
+            "total": 1728000,
+            "ratio": 0,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": null
+          },
+          "deviceRegions": [
+            null,
+            null
+          ]
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "scroll-back",
+          "files": [
+            "published-1440-scroll-back.png",
+            "source-1440-scroll-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 11705,
+            "total": 1728000,
+            "ratio": 0.006773726851851852,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 11705,
+            "total": 757440,
+            "ratio": 0.015453369243768483,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "height-altered",
+          "files": [
+            "published-1440-height-altered.png",
+            "source-1440-height-altered.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1080
+            },
+            "changed": 11705,
+            "total": 1555200,
+            "ratio": 0.00752636316872428,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 11705,
+            "total": 757440,
+            "ratio": 0.015453369243768483,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          }
+        },
+        {
+          "viewport": {
+            "width": 1440,
+            "height": 1200
+          },
+          "label": "height-back",
+          "files": [
+            "published-1440-height-back.png",
+            "source-1440-height-back.png"
+          ],
+          "fullViewport": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1200
+            },
+            "changed": 11705,
+            "total": 1728000,
+            "ratio": 0.006773726851851852,
+            "exceedsCheckpointPixelThreshold": false,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          },
+          "deviceRegions": [
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          ],
+          "deviceRegion": {
+            "sameSize": true,
+            "region": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            },
+            "changed": 11705,
+            "total": 757440,
+            "ratio": 0.015453369243768483,
+            "exceedsCheckpointPixelThreshold": true,
+            "changedBounds": [
+              350,
+              419,
+              1232,
+              854
+            ]
+          }
+        }
+      ],
+      "errors": [],
+      "immutableHashChecks": {
+        "sourceHashes": {
+          "count": 53,
+          "immutableRef": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "mismatches": []
+        },
+        "protectedHashes": {
+          "count": 4,
+          "immutableRef": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+          "mismatches": []
+        },
+        "harnessHashes": {
+          "count": 3,
+          "immutableRef": "fa919e6d3998b8dcbeb42e704875d15de9a3d64b",
+          "mismatches": []
+        },
+        "artifact": {
+          "path": "/tmp/group8-writing-raster-disable-lcd-text-39418950215.zip",
+          "id": 12262582137,
+          "bytes": 7714292,
+          "sha256": "2abf7cff8df92e23a7c7ffb404e05f62828b74d88cbbfaac9a4aeaaba60081b7",
+          "verifiedAgainst": "Connected GitHub fetch_workflow_run_artifacts metadata for run39418950215; independently fetched after primary owner downloaded the files."
+        }
+      }
+    }
+  },
+  "environmentConfound": {
+    "default": {
+      "browser": "155.0.8059.84",
+      "runnerImage": "20261018.339.1"
+    },
+    "disable-lcd-text": {
+      "browser": "155.0.8059.39",
+      "runnerImage": "20261012.334.1"
+    },
+    "runnerImageSource": "Reported by primary artifact owner from the actual job logs; browser identities independently read from each raw diagnostic report."
+  },
+  "visualReview": {
+    "files": [
+      "/tmp/group8-writing-raster-default-39418950215/published-901-initial.png",
+      "/tmp/group8-writing-raster-default-39418950215/source-901-initial.png",
+      "/tmp/group8-writing-raster-default-39418950215/published-1440-initial.png",
+      "/tmp/group8-writing-raster-default-39418950215/source-1440-initial.png",
+      "/tmp/group8-writing-raster-disable-lcd-text-39418950215/published-901-initial.png",
+      "/tmp/group8-writing-raster-disable-lcd-text-39418950215/source-901-initial.png",
+      "/tmp/group8-writing-raster-disable-lcd-text-39418950215/published-1440-initial.png",
+      "/tmp/group8-writing-raster-disable-lcd-text-39418950215/source-1440-initial.png"
+    ],
+    "count": 8,
+    "finding": "All eight initial native screenshots were inspected at original resolution. They contain the complete painted device arrangement, section heading, action and adjacent page context. The default pixel equality is not produced by blank or offscreen device captures. The flagged environment retains visible text/image-edge raster differences within the device composition."
+  },
+  "findings": [
+    "Both environments retain identical 53 source hashes, 4 protected hashes, 3 harness hashes, 3 build hashes and complete frontend tree identity. The browser patch version and runner image differ, confounding the direct mode comparison.",
+    "In each environment all 2,240 selected-node geometry-array comparisons are exact; no selected rect moves during a screenshot. The device stage is fully within every visible-stage viewport.",
+    "Default Chromium 155.0.8059.84 uses the retained LCD-like laptop question variant on both pages at every visible stage. All 10 paired full-viewport diagnostic comparisons have zero pixels above the existing 24-channel threshold.",
+    "Flagged Chromium 155.0.8059.39 forces scalar/grayscale-like question coverage on both pages. At 1440 both laptop question crops equal the retained 4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f RGB variant, but other device regions still differ.",
+    "At 901 under the flag both question crops are scalar/grayscale-like but differ from each other despite exact native bounds. The two-mode LCD/grayscale model therefore explains a real component of the earlier failures, but does not exhaust all device raster differences.",
+    "The flag retains 9,523 differing device pixels at 901 and 11,705 at 1440, unchanged through scroll and viewport-height round trips. The corresponding device-region ratios are 0.0262267180 and 0.0154533692.",
+    "Residual 1440 samples under the flag include 328 changed pixels in the laptop logo,1433 in the sidebar, 2,220 in the answer region and 1,383 in the tablet question; the laptop question, helper, tablet logo and sampled phone region match at the same 24-channel threshold."
+  ],
+  "recommendation": {
+    "currentChange": "No runtime, CSS, checkpoint threshold, capture mask or browser flag change is justified by this two-job comparison.",
+    "why": "The tested flag does not resolve the full native raster discrepancy, and the default/flag contrast is confounded by different browser patch versions and runner images. One matching default pair is insufficient evidence that a newer Chrome version fixed the root cause.",
+    "smallestControlledFollowup": "A causal comparison of LCD flags would require one exact browser binary and runner for both modes. Such a causal claim is not required for the accepted workflow-only version pin and is not made here.",
+    "completionGate": "Any eventual checkpoint environment correction still requires the full Writing matrix with unchanged assertions and limits, plus explicit documentation of the tested browser environment. Existing failed checkpoints remain preserved.",
+    "workflowCorrection": "The separately reviewed exact official current-Stable Chrome pin is justified as a reproducibility correction. It changes neither runtime styling nor default rendering flags.",
+    "nextVerification": "Run the full unchanged Writing gate using the exact pinned default Chrome. Preserve its complete result and browser metadata. This remains a fresh verification, not a replacement of the original failed evidence."
+  },
+  "limits": [
+    "This analysis does not identify the compositor event, cache state or transform transition responsible for the residual pixels.",
+    "The eight inspected initial screenshots are a visual sample; geometry and crop analysis cover every recorded stage.",
+    "The alpha-coverage marker0.05 is diagnostic only and does not alter the checkpoint pixel tolerance.",
+    "No runtime, harness, CSS or original PNG files were changed by this diagnostic review."
+  ],
+  "workflowOnlyReproducibilityReview": {
+    "status": "accepted for a full unchanged checkpoint run",
+    "path": ".github/workflows/verify-writing-parity.yml",
+    "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19",
+    "scope": "55 added workflow lines install an exact official Chrome binary and record its provenance. No checkpoint or runtime files are edited by this patch.",
+    "officialMetadata": {
+      "url": "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json",
+      "timestamp": "2026-10-20T10:18:26.692Z",
+      "channel": "Stable",
+      "version": "155.0.8059.84",
+      "revision": "1697595",
+      "linux64Archive": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+      "independentlyRetrieved": true
+    },
+    "checks": [
+      "YAML parsed; the extracted Bash block passed bash -n; embedded Node module passed node --input-type=module --check; git diff --check passed.",
+      "Actual executable version is asserted before CHROME_PATH is exported. The exact official URL is versioned, and archive/executable SHA256 values are recorded.",
+      "Existing Writing harness honours CHROME_PATH, remains byte-identical to a2d1ee1, and launches with its unchanged default no-sandbox argument and no LCD flag.",
+      "browser-environment.json is written into the existing artifact directory. The unchanged harness does not clear that directory.",
+      "Protected-runtime guards, complete-width selection, relevant interaction states, source comparison and pixel/geometry limits remain unchanged."
+    ],
+    "harnessSha256": "d4ea089241820ca178ea7959b9b0be5e1230d0519680c3384d4a063b00f574ff",
+    "rationale": "Pinning the exact current stable browser removes the demonstrated dependence on whichever Chrome patch version the ubuntu-latest image happens to provide. This makes the next run reproducible; it is not a claim that the pinned version fixed the raster cause, and no passing image is selected."
+  }
+}

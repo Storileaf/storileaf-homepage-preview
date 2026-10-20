@@ -1,0 +1,2947 @@
+{
+  "purpose": "Independent verification of the first complete Writing checkpoint using exact pinned default Chrome; retained failure evidence, not completion approval.",
+  "verifiedAtUtc": "2026-10-20T12:17:00.122095+00:00",
+  "run": {
+    "id": 39420059271,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39420059271",
+    "jobId": 118618473338,
+    "jobName": "compare",
+    "conclusion": "failure",
+    "failedStep": "Compare writing composition and unsaved practice behaviour",
+    "protectedGuard": "passed",
+    "isolatedPreviewUpload": "skipped because the comparison failed"
+  },
+  "sourceCommit": "f02182a5f45fc0166fb60796717fa15795a58237",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "runtimeTree": "b371048da86b50af9855a2326a6fdf5ecee6f21e",
+  "artifact": {
+    "id": 12262928906,
+    "name": "homepage-writing-parity",
+    "zipBytes": 17783794,
+    "zipSha256": "601fd54eadaf57b25004726ba47ed779bf71b36c852baf9cba836927e3331317",
+    "zipPath": "/tmp/group8-writing-pinned-39420059271.zip",
+    "metadataVerification": "ZIP size/digest and workflow source commit independently matched connected GitHub run-artifact metadata; no duplicate download."
+  },
+  "report": {
+    "file": "pinned-initial-writing-report.json.gz",
+    "compressedSha256": "87486ae68916159b4b473582aaa21cbb922741cc5c2b4d1a3e43f80c38babbc5",
+    "rawArtifactPath": "report.json",
+    "rawSha256": "da25cc2e32e1cc7bd005609bbaa105d09d1f840bdadcc0f5005096ca5fabcaff",
+    "gzipDecompressesToExactOriginal": true
+  },
+  "browserEnvironment": {
+    "file": "pinned-initial-browser-environment.json",
+    "artifactPath": "browser-environment.json",
+    "sha256": "288d03d0e1500bed310749beb6d0e8123766e1579a0b788dc748c219e3d6a102",
+    "matchesArtifactExactly": true,
+    "record": {
+      "purpose": "Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.",
+      "recordedAt": "2026-10-20T12:09:04.329Z",
+      "browser": {
+        "expectedVersion": "155.0.8059.84",
+        "expectedRevision": "1697595",
+        "actualVersion": "155.0.8059.84",
+        "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+        "archive": {
+          "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+          "bytes": 199014491,
+          "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+        },
+        "executable": {
+          "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+          "bytes": 298806600,
+          "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+        },
+        "checkpointLaunch": {
+          "headless": true,
+          "args": [
+            "--no-sandbox"
+          ]
+        }
+      },
+      "runner": {
+        "name": "GitHub Actions 1000002946",
+        "os": "Linux",
+        "arch": "X64",
+        "imageOS": "ubuntu24",
+        "imageVersion": "20261012.334.1",
+        "kernel": "6.17.0-1022-azure",
+        "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+      },
+      "runtime": {
+        "node": "v22.23.3",
+        "npm": "10.9.9",
+        "python": "Python 3.12.3",
+        "playwright": "1.56.1"
+      },
+      "run": {
+        "repository": "Storileaf/storileaf-homepage-preview",
+        "id": "39420059271",
+        "attempt": "1",
+        "job": "compare",
+        "commit": "f02182a5f45fc0166fb60796717fa15795a58237"
+      },
+      "runtimeTree": "b371048da86b50af9855a2326a6fdf5ecee6f21e",
+      "harness": {
+        "path": "frontend/scripts/verify-writing-parity.mjs",
+        "sha256": "d4ea089241820ca178ea7959b9b0be5e1230d0519680c3384d4a063b00f574ff"
+      },
+      "workflow": {
+        "path": ".github/workflows/verify-writing-parity.yml",
+        "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+      }
+    }
+  },
+  "verification": {
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "widthCount": 10,
+    "stateCount": 19,
+    "focused": false,
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01
+    },
+    "ordinaryCaptureCount": 120,
+    "fixedSampleCount": 36,
+    "allCaptureHashes": [
+      {
+        "type": "ordinary",
+        "file": "published-section-320-tile-0.png",
+        "sha256": "c67f91ba58aeea7652935887d78889c82ea9836b3d2bc67a8623af852d73d923",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-320-tile-0.png",
+        "sha256": "c67f91ba58aeea7652935887d78889c82ea9836b3d2bc67a8623af852d73d923",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-320-tile-0.png",
+        "sha256": "7724ebe42bcf9b1b3394c4c0a280669fc739bc366342a760fe6815ab62fd3b1b",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-320-tile-0.png",
+        "sha256": "8b1ed4344f2d9a34949c47d164fe24952243c8350470013878baf15773c6ac98",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-320-tile-0.png",
+        "sha256": "a3b1dcb9598c94763ed074c43ac6bc60113b2df5718d683b6a7436262d5944d4",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-320-tile-0.png",
+        "sha256": "badf58f377b6a82d56a5b851a2699c64c604cc7de8939f17f81d8462037c2b53",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-360-tile-0.png",
+        "sha256": "537279307ad3755fbe9e43a362ae29e3ef28ab6c29e3457f2ce182f4c07e9404",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-360-tile-0.png",
+        "sha256": "7db5f342c99fc48d87b50d9ae8f50211ca5a28a58947770dd895b380213648cb",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-360-tile-0.png",
+        "sha256": "d71b713bdfaf14d5d20c781e9e6c078218d5d678680d26b6219a6796f6a94686",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-360-tile-0.png",
+        "sha256": "d71b713bdfaf14d5d20c781e9e6c078218d5d678680d26b6219a6796f6a94686",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-360-tile-0.png",
+        "sha256": "f4e58acbcf37fb07c631e210d9f030d9644e8353394b149762f050b6af84b686",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-360-tile-0.png",
+        "sha256": "f4e58acbcf37fb07c631e210d9f030d9644e8353394b149762f050b6af84b686",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-390-tile-0.png",
+        "sha256": "583d6c67f392b749a9923378a787709fe8e28219806abe2897d440cbd3762a35",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-390-tile-0.png",
+        "sha256": "499689e6d344d13e3e39fd69971b702d88de345af6adb0371969c28d7d9862d6",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-390-tile-0.png",
+        "sha256": "4590b029a7a65a817c38c2766891f80b0d9edd6059623551131ed521d9b99281",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-390-tile-0.png",
+        "sha256": "cf5c29387604acd7604b8fe5c5e4da7a4b33c9e055fb6961b332152e84bc747a",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-context-390-tile-0.png",
+        "sha256": "004bc19ce7d5baec078aa8da51474286ff5eff18a7f4639de7c8288e95ac2c7b",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-context-390-tile-0.png",
+        "sha256": "e87a6ca89b07b5b96b24ef483e947db68a11ab104707f76ce3bb884d34e76afc",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-390-tile-0.png",
+        "sha256": "2aa773d0cdf99468ef892a8755fd28855dbd089274f8270b0256884f1c4dd56d",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-390-tile-0.png",
+        "sha256": "16e290e946e95659fbfdaa9dd21bc788336f052c79d74023c994b7858d18aa1b",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-430-tile-0.png",
+        "sha256": "8ce813cfeea6be03c50c4d23ee56c20af3adcd41c346a174329985233e2df670",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-430-tile-0.png",
+        "sha256": "8ce813cfeea6be03c50c4d23ee56c20af3adcd41c346a174329985233e2df670",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-430-tile-0.png",
+        "sha256": "5ff7b3a60fb06dcae012e67a605b0a5a2cf7b70fc372aa9708d113a13aa6500c",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-430-tile-0.png",
+        "sha256": "ce78d35873641fd4cb54522eea459d5d42585dc6823d9a4ede057779754fd4e0",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-430-tile-0.png",
+        "sha256": "fc1159f036d8c88d144a9f279a3e8218bb007811b1c63d54560c725e1ca72e28",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-430-tile-0.png",
+        "sha256": "055dedc759f1745a92f2e3c2cd3d6814acfc45abe5c86b04ea284a10a41a779d",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-600-tile-0.png",
+        "sha256": "0fbcc0f7e337c8048b5efc8db6a115c4563d56c4096b245b191e92547c954507",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-600-tile-0.png",
+        "sha256": "f8c620ac063ec25bfcf15cd518e2ff8a465aed5996d84777fb3c2045c73c476f",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-600-tile-0.png",
+        "sha256": "2213fb7cd631d22c025363db312350a48905b0471fd450cd3c7ce48221442365",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-600-tile-0.png",
+        "sha256": "65f4260c411c7cd9ebbf2541bec525269d95ec606f77b6af67f9cb7ba317b615",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-600-tile-0.png",
+        "sha256": "f79586caaadd2e1d15074d9f6406e7c645d594101973baef62e681f15c998ed0",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-600-tile-0.png",
+        "sha256": "79d0b8cafc2f2e75e7aecdd5a86def2345a6ee26342bb20fc17afd46e743d6f4",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-768-tile-0.png",
+        "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-768-tile-0.png",
+        "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-768-tile-0.png",
+        "sha256": "6145e5b7454e070c25f031597b933721f552195a6f1aba3dd4282d15facdcde8",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-768-tile-0.png",
+        "sha256": "f61abb618e2bb240d0b8fcbba4f610df889dbbf282e1e1ab353d09e40fd96fcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-768-tile-0.png",
+        "sha256": "7776bc8fbbc8e4bdc6a788352a5f31ea04bd1d9a7521980744fe871a2a4f0e14",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-768-tile-0.png",
+        "sha256": "7f97ce7ec3dfaca9e3168a45d4f19e5f7ae0f95b02f9805784c00ca843ef81a4",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-820-tile-0.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-820-tile-0.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-820-tile-0.png",
+        "sha256": "2d1b32ee01bc88aff638bc24c5fc9432af71ca46bf9cbf97751620bde4c30d87",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-820-tile-0.png",
+        "sha256": "3e8a697e343cad34953bf3f091454f73b40acab69c9a6a4cb6ccdc28e2774cc5",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-context-820-tile-0.png",
+        "sha256": "792680d8fbef1066b4134d08c2954c40a3118ee6bf79d93d05d5037e4feb5076",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-context-820-tile-0.png",
+        "sha256": "1695c22618e106601d3c6ebfb3bfd2ecb511d9cc73ad1791fe7dc11e9c615505",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-820-tile-0.png",
+        "sha256": "72531055ea7cfa85b1e3543cfc179a67ecb99f43ce6707b7a27144c219dbc065",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-820-tile-0.png",
+        "sha256": "62cfbd412c211375d3864912dec537fb4980d74a6a5c40a5eeb04abdb2b571ba",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-1024-tile-0.png",
+        "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-1024-tile-0.png",
+        "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-1024-tile-0.png",
+        "sha256": "cc8b61ec175e0f1b599f7806af867e7941666ff4b3e7f17d5256a0e26110ee8e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-1024-tile-0.png",
+        "sha256": "cc8b61ec175e0f1b599f7806af867e7941666ff4b3e7f17d5256a0e26110ee8e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-1024-tile-0.png",
+        "sha256": "2552c2276c155463b73ab5ef6ae2f24dc3b8c576eb396aab7869f2ecb80ab98c",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-1024-tile-0.png",
+        "sha256": "2552c2276c155463b73ab5ef6ae2f24dc3b8c576eb396aab7869f2ecb80ab98c",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-1280-tile-0.png",
+        "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-1280-tile-0.png",
+        "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-1280-tile-0.png",
+        "sha256": "18ac6258979003485db784289881b90c7676c6aec584f93b07acb257a0d33f6e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-1280-tile-0.png",
+        "sha256": "18ac6258979003485db784289881b90c7676c6aec584f93b07acb257a0d33f6e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-1280-tile-0.png",
+        "sha256": "8e888035a249d433c31216cf21e7fa8bb1a434f990032c511253509aed3c88cb",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-1280-tile-0.png",
+        "sha256": "2bc1a8e93c3f78ee5b3e267f995e5199614efa550b5d544b0fd4797518e7e9ef",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-section-1440-tile-0.png",
+        "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-section-1440-tile-0.png",
+        "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-empty-1440-tile-0.png",
+        "sha256": "43d44a5c3518c22ce529343141d446b40a44793614b49f3ce222a38a732230f1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-empty-1440-tile-0.png",
+        "sha256": "43d44a5c3518c22ce529343141d446b40a44793614b49f3ce222a38a732230f1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-context-1440-tile-0.png",
+        "sha256": "ea19493096db1c41b08cdaa0cc33eccf9c8d5f914a936e7d503d5eff5e1fa348",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-context-1440-tile-0.png",
+        "sha256": "1e86cc596bde7321460a19864532285e0a6cfa72947b50a2f80d8b2d58684265",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-typed-1440-tile-0.png",
+        "sha256": "ab78651bdace37dfb106176b616ea244c9e21a3fb5556456cef6f0f4794858ff",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-typed-1440-tile-0.png",
+        "sha256": "ab78651bdace37dfb106176b616ea244c9e21a3fb5556456cef6f0f4794858ff",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-keyboard-entry-390-tile-0.png",
+        "sha256": "9364ebf663a951961a36acb085d7be36b06f0a79e2fa9e7a1379afef3bae4cea",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-keyboard-entry-390-tile-0.png",
+        "sha256": "d0629db7eeb6cc57d03b08e226fc2ca6574a3f09cf09396cbf1cefcfe9386c29",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-tabbed-selection-390-tile-0.png",
+        "sha256": "eea37fbb5e3333267b2035dd47741a70aa7266ad9be23e4a3b78d2bc87333f82",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-tabbed-selection-390-tile-0.png",
+        "sha256": "4d1b041bc687a3e6899a4a70bb209d5ac86e1f75a804fe6d7144a48a42e3ea2f",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-keyboard-entry-1440-tile-0.png",
+        "sha256": "079095a540662a58083258115a364fd5dc15ee96d4b22223f8cef88852a04efd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-keyboard-entry-1440-tile-0.png",
+        "sha256": "2bde05108eb379630b5b4cfec496b854210b46f8300888bb5d9e89c12b110a39",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-dialog-tabbed-selection-1440-tile-0.png",
+        "sha256": "6d54ca66b5906019e7c3d501bd8720b5eec3ab849bf0627e3b475cdda1b2dafe",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-dialog-tabbed-selection-1440-tile-0.png",
+        "sha256": "6d54ca66b5906019e7c3d501bd8720b5eec3ab849bf0627e3b475cdda1b2dafe",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-boundary-901-tile-0.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-boundary-901-tile-0.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-short-320x568-dialog-top-tile-0.png",
+        "sha256": "7eab616757b26b66671be8b91a8156a8b67724e8ee1d31b25c7352c562c3cb1c",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-short-320x568-dialog-top-tile-0.png",
+        "sha256": "cfb34b7788ded74887035fc3f4dd9fdea6efda088e0ba1a32fb585f083ab6db9",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-short-320x568-dialog-bottom-tile-0.png",
+        "sha256": "d31c317ee8b2f6be547983841418eec004c8289df251db4e95d18c141f5bed46",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-short-320x568-dialog-bottom-tile-0.png",
+        "sha256": "e270d567b9173a344392f758aaded342a6c04f9267d34fbb2e31f8c7a08c42b6",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-short-820x500-dialog-top-tile-0.png",
+        "sha256": "e51877838e23cb644a7229b34e206d32542822953f24fe763b5bfb79e5b386eb",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-short-820x500-dialog-top-tile-0.png",
+        "sha256": "2658467d4eeb24c1e75e6f1a5e0f191150c063fba223ccf4e751aa7bc87069d4",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-short-820x500-dialog-bottom-tile-0.png",
+        "sha256": "9046399bea748d73406f191cbb4ea6014658b5efe840b981a04bf12f092cfcb8",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-short-820x500-dialog-bottom-tile-0.png",
+        "sha256": "9139919a9df56e825c04f78d8e91ff3095daa781a9906e7d4e8dc377324eb76d",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-short-1440x500-dialog-top-tile-0.png",
+        "sha256": "e6f1a039b913756ce5f45fe28b7a8cf40aae8317d6ad944100994387bb5f60fc",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-short-1440x500-dialog-top-tile-0.png",
+        "sha256": "8ad48187cee7282bafac990c9a353af00848d8610eb924e77c3256dd75220795",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-short-1440x500-dialog-bottom-tile-0.png",
+        "sha256": "8db835eb5ac18d65e585cd88f7344fa3219744fa51413b1b0394af75a32d1ccf",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-short-1440x500-dialog-bottom-tile-0.png",
+        "sha256": "d3c7bb10c9fed3041cbc17a3164162e4b8869fcac54a914e6e1b20d28acbaeb3",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-320-section-tile-0.png",
+        "sha256": "59776c0273cd58fc61774db3387ac43343b12426055eb63f9bb00ec80869dbd0",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-320-section-tile-0.png",
+        "sha256": "59776c0273cd58fc61774db3387ac43343b12426055eb63f9bb00ec80869dbd0",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-320-section-tile-1.png",
+        "sha256": "53fb599dd5b6dec29abaf447eccdb684bb3057a5c3d49997781d2b503913bad1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-320-section-tile-1.png",
+        "sha256": "53fb599dd5b6dec29abaf447eccdb684bb3057a5c3d49997781d2b503913bad1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-320-section-tile-2.png",
+        "sha256": "e4de49a3acd45c1bfd920219e9cb04249130f7d303a9e66d9a7cd79854f482c4",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-320-section-tile-2.png",
+        "sha256": "e4de49a3acd45c1bfd920219e9cb04249130f7d303a9e66d9a7cd79854f482c4",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-320-dialog-tile-0.png",
+        "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-320-dialog-tile-0.png",
+        "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-320-dialog-bottom-tile-0.png",
+        "sha256": "052128e7bd823f069b56faf291b83c56e4715c8d300fbc6b4d8ff438709e443f",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-320-dialog-bottom-tile-0.png",
+        "sha256": "052128e7bd823f069b56faf291b83c56e4715c8d300fbc6b4d8ff438709e443f",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-1440-section-tile-0.png",
+        "sha256": "e433a8578757d880159ad8b46bc3eab5ad8502e6238263ae4a2532847e56ffff",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-1440-section-tile-0.png",
+        "sha256": "e433a8578757d880159ad8b46bc3eab5ad8502e6238263ae4a2532847e56ffff",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-1440-section-tile-1.png",
+        "sha256": "03dcb520ec6242bcf0378447866ea515773de5bbbd9a887d18a1542a5d4a58a1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-1440-section-tile-1.png",
+        "sha256": "7787372319e2c628ab5931e93bfda7333b9756a220227d055e06216e4d092224",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-1440-dialog-tile-0.png",
+        "sha256": "6744a29259fbcbc7bb95a724bec781e9c00b6cd28759bfc354c5ac027e2f0ddb",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-1440-dialog-tile-0.png",
+        "sha256": "6744a29259fbcbc7bb95a724bec781e9c00b6cd28759bfc354c5ac027e2f0ddb",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-text-200-1440-dialog-bottom-tile-0.png",
+        "sha256": "7d621e83196f74b40eeebb4fa3add094394a83fdb14cf16b03a0c8bed9ecf1c7",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-text-200-1440-dialog-bottom-tile-0.png",
+        "sha256": "7d621e83196f74b40eeebb4fa3add094394a83fdb14cf16b03a0c8bed9ecf1c7",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-native-trigger-hover-390-tile-0.png",
+        "sha256": "bcded8078ae99961cec20332c1489a892087ce30b66fddd4473f314981107a24",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-native-trigger-hover-390-tile-0.png",
+        "sha256": "9ec614a2fb6faffcf26289c4dbe22ddf66047cbac367755b2916db6a23684d83",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-native-trigger-focus-390-tile-0.png",
+        "sha256": "91802dca036b4981c5641711fc393e7f217b9b5d7058d9f9cf602886903e05ee",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-native-trigger-focus-390-tile-0.png",
+        "sha256": "b317bd2a50848f4a23d195e7a8ea4567d58b3489f44b780101a30c818402f2f7",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-native-trigger-hover-1440-tile-0.png",
+        "sha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-native-trigger-hover-1440-tile-0.png",
+        "sha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-native-trigger-focus-1440-tile-0.png",
+        "sha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-native-trigger-focus-1440-tile-0.png",
+        "sha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-entrance-phase-100-tile-0.png",
+        "sha256": "cd9f2e86906e9503ffaeb9b3130542117b9a031799518ff4447450bb688e90f2",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-entrance-phase-100-tile-0.png",
+        "sha256": "ddde8d56d8c0ebda351eb0a8106c14727617f14e3fa4c972c10a3d0964be3c18",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-entrance-phase-450-tile-0.png",
+        "sha256": "c798763d82d24af560cfdf2a101617aa8be17b2196c484d3edf275c38cb1c603",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-entrance-phase-450-tile-0.png",
+        "sha256": "f9cc4a76f4675bc77df12944f656b835ae328f6d5cd59cf3f433ff9f8427ee6a",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "published-entrance-phase-1100-tile-0.png",
+        "sha256": "35345b5cd024b3b9f91945ed111ab28a247eebb3bfdb72b2f12cf9948bead5f9",
+        "matchesRawReport": true
+      },
+      {
+        "type": "ordinary",
+        "file": "source-entrance-phase-1100-tile-0.png",
+        "sha256": "07e128c0d4323de336a022ba220a3c4101c08ea37daa27e6ce7c76a049bec604",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-768-tile-0-native-paint-0.png",
+        "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-768-tile-0-native-paint-1.png",
+        "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-768-tile-0-native-paint-2.png",
+        "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-768-tile-0-native-paint-0.png",
+        "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-768-tile-0-native-paint-1.png",
+        "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-768-tile-0-native-paint-2.png",
+        "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-820-tile-0-native-paint-0.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-820-tile-0-native-paint-1.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-820-tile-0-native-paint-2.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-820-tile-0-native-paint-0.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-820-tile-0-native-paint-1.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-820-tile-0-native-paint-2.png",
+        "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1024-tile-0-native-paint-0.png",
+        "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1024-tile-0-native-paint-1.png",
+        "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1024-tile-0-native-paint-2.png",
+        "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1024-tile-0-native-paint-0.png",
+        "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1024-tile-0-native-paint-1.png",
+        "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1024-tile-0-native-paint-2.png",
+        "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1280-tile-0-native-paint-0.png",
+        "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1280-tile-0-native-paint-1.png",
+        "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1280-tile-0-native-paint-2.png",
+        "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1280-tile-0-native-paint-0.png",
+        "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1280-tile-0-native-paint-1.png",
+        "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1280-tile-0-native-paint-2.png",
+        "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1440-tile-0-native-paint-0.png",
+        "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1440-tile-0-native-paint-1.png",
+        "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-section-1440-tile-0-native-paint-2.png",
+        "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1440-tile-0-native-paint-0.png",
+        "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1440-tile-0-native-paint-1.png",
+        "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-section-1440-tile-0-native-paint-2.png",
+        "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-boundary-901-tile-0-native-paint-0.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-boundary-901-tile-0-native-paint-1.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "published-boundary-901-tile-0-native-paint-2.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-boundary-901-tile-0-native-paint-0.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-boundary-901-tile-0-native-paint-1.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      },
+      {
+        "type": "fixed-native-sample",
+        "file": "source-boundary-901-tile-0-native-paint-2.png",
+        "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "matchesRawReport": true
+      }
+    ],
+    "pixelPairCount": 60,
+    "maximumPixelRatio": 0.0001923076923076923,
+    "pixelPairs": [
+      {
+        "reportPath": "/widths/0/section/rendered/0",
+        "files": [
+          "published-section-320-tile-0.png",
+          "source-section-320-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 247360,
+        "size": [
+          320,
+          773
+        ]
+      },
+      {
+        "reportPath": "/widths/0/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-320-tile-0.png",
+          "source-dialog-empty-320-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 198144,
+        "size": [
+          288,
+          688
+        ]
+      },
+      {
+        "reportPath": "/widths/0/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-320-tile-0.png",
+          "source-dialog-typed-320-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 198144,
+        "size": [
+          288,
+          688
+        ]
+      },
+      {
+        "reportPath": "/widths/1/section/rendered/0",
+        "files": [
+          "published-section-360-tile-0.png",
+          "source-section-360-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 269280,
+        "size": [
+          360,
+          748
+        ]
+      },
+      {
+        "reportPath": "/widths/1/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-360-tile-0.png",
+          "source-dialog-empty-360-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 214512,
+        "size": [
+          328,
+          654
+        ]
+      },
+      {
+        "reportPath": "/widths/1/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-360-tile-0.png",
+          "source-dialog-typed-360-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 214512,
+        "size": [
+          328,
+          654
+        ]
+      },
+      {
+        "reportPath": "/widths/2/section/rendered/0",
+        "files": [
+          "published-section-390-tile-0.png",
+          "source-section-390-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 276120,
+        "size": [
+          390,
+          708
+        ]
+      },
+      {
+        "reportPath": "/widths/2/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-390-tile-0.png",
+          "source-dialog-empty-390-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 226256,
+        "size": [
+          358,
+          632
+        ]
+      },
+      {
+        "reportPath": "/widths/2/dialog/context/0",
+        "files": [
+          "published-dialog-context-390-tile-0.png",
+          "source-dialog-context-390-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 468000,
+        "size": [
+          390,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/widths/2/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-390-tile-0.png",
+          "source-dialog-typed-390-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 226256,
+        "size": [
+          358,
+          632
+        ]
+      },
+      {
+        "reportPath": "/widths/3/section/rendered/0",
+        "files": [
+          "published-section-430-tile-0.png",
+          "source-section-430-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 304440,
+        "size": [
+          430,
+          708
+        ]
+      },
+      {
+        "reportPath": "/widths/3/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-430-tile-0.png",
+          "source-dialog-empty-430-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 251536,
+        "size": [
+          398,
+          632
+        ]
+      },
+      {
+        "reportPath": "/widths/3/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-430-tile-0.png",
+          "source-dialog-typed-430-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 251536,
+        "size": [
+          398,
+          632
+        ]
+      },
+      {
+        "reportPath": "/widths/4/section/rendered/0",
+        "files": [
+          "published-section-600-tile-0.png",
+          "source-section-600-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 397800,
+        "size": [
+          600,
+          663
+        ]
+      },
+      {
+        "reportPath": "/widths/4/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-600-tile-0.png",
+          "source-dialog-empty-600-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 364656,
+        "size": [
+          568,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/4/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-600-tile-0.png",
+          "source-dialog-typed-600-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 364656,
+        "size": [
+          568,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/5/section/rendered/0",
+        "files": [
+          "published-section-768-tile-0.png",
+          "source-section-768-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 680448,
+        "size": [
+          768,
+          886
+        ]
+      },
+      {
+        "reportPath": "/widths/5/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-768-tile-0.png",
+          "source-dialog-empty-768-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/5/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-768-tile-0.png",
+          "source-dialog-typed-768-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/6/section/rendered/0",
+        "files": [
+          "published-section-820-tile-0.png",
+          "source-section-820-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 747020,
+        "size": [
+          820,
+          911
+        ]
+      },
+      {
+        "reportPath": "/widths/6/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-820-tile-0.png",
+          "source-dialog-empty-820-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/6/dialog/context/0",
+        "files": [
+          "published-dialog-context-820-tile-0.png",
+          "source-dialog-context-820-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 984000,
+        "size": [
+          820,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/widths/6/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-820-tile-0.png",
+          "source-dialog-typed-820-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/7/section/rendered/0",
+        "files": [
+          "published-section-1024-tile-0.png",
+          "source-section-1024-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1026048,
+        "size": [
+          1024,
+          1002
+        ]
+      },
+      {
+        "reportPath": "/widths/7/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-1024-tile-0.png",
+          "source-dialog-empty-1024-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/7/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-1024-tile-0.png",
+          "source-dialog-typed-1024-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/8/section/rendered/0",
+        "files": [
+          "published-section-1280-tile-0.png",
+          "source-section-1280-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1392640,
+        "size": [
+          1280,
+          1088
+        ]
+      },
+      {
+        "reportPath": "/widths/8/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-1280-tile-0.png",
+          "source-dialog-empty-1280-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/8/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-1280-tile-0.png",
+          "source-dialog-typed-1280-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/9/section/rendered/0",
+        "files": [
+          "published-section-1440-tile-0.png",
+          "source-section-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1578240,
+        "size": [
+          1440,
+          1096
+        ]
+      },
+      {
+        "reportPath": "/widths/9/dialog/rendered/0",
+        "files": [
+          "published-dialog-empty-1440-tile-0.png",
+          "source-dialog-empty-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/widths/9/dialog/context/0",
+        "files": [
+          "published-dialog-context-1440-tile-0.png",
+          "source-dialog-context-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1728000,
+        "size": [
+          1440,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/widths/9/filled/rendered/0",
+        "files": [
+          "published-dialog-typed-1440-tile-0.png",
+          "source-dialog-typed-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/states/0/keyboardEntry/rendered/0",
+        "files": [
+          "published-dialog-keyboard-entry-390-tile-0.png",
+          "source-dialog-keyboard-entry-390-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 226256,
+        "size": [
+          358,
+          632
+        ]
+      },
+      {
+        "reportPath": "/states/0/selectedText/rendered/0",
+        "files": [
+          "published-dialog-tabbed-selection-390-tile-0.png",
+          "source-dialog-tabbed-selection-390-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 226256,
+        "size": [
+          358,
+          632
+        ]
+      },
+      {
+        "reportPath": "/states/1/keyboardEntry/rendered/0",
+        "files": [
+          "published-dialog-keyboard-entry-1440-tile-0.png",
+          "source-dialog-keyboard-entry-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/states/1/selectedText/rendered/0",
+        "files": [
+          "published-dialog-tabbed-selection-1440-tile-0.png",
+          "source-dialog-tabbed-selection-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 423720,
+        "size": [
+          660,
+          642
+        ]
+      },
+      {
+        "reportPath": "/states/5/rendered/0",
+        "files": [
+          "published-boundary-901-tile-0.png",
+          "source-boundary-901-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 800088,
+        "size": [
+          901,
+          888
+        ]
+      },
+      {
+        "reportPath": "/states/8/top/rendered/0",
+        "files": [
+          "published-short-320x568-dialog-top-tile-0.png",
+          "source-short-320x568-dialog-top-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 141120,
+        "size": [
+          288,
+          490
+        ]
+      },
+      {
+        "reportPath": "/states/8/bottom/rendered/0",
+        "files": [
+          "published-short-320x568-dialog-bottom-tile-0.png",
+          "source-short-320x568-dialog-bottom-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 141120,
+        "size": [
+          288,
+          490
+        ]
+      },
+      {
+        "reportPath": "/states/9/top/rendered/0",
+        "files": [
+          "published-short-820x500-dialog-top-tile-0.png",
+          "source-short-820x500-dialog-top-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 297000,
+        "size": [
+          660,
+          450
+        ]
+      },
+      {
+        "reportPath": "/states/9/bottom/rendered/0",
+        "files": [
+          "published-short-820x500-dialog-bottom-tile-0.png",
+          "source-short-820x500-dialog-bottom-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 297000,
+        "size": [
+          660,
+          450
+        ]
+      },
+      {
+        "reportPath": "/states/10/top/rendered/0",
+        "files": [
+          "published-short-1440x500-dialog-top-tile-0.png",
+          "source-short-1440x500-dialog-top-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 297000,
+        "size": [
+          660,
+          450
+        ]
+      },
+      {
+        "reportPath": "/states/10/bottom/rendered/0",
+        "files": [
+          "published-short-1440x500-dialog-bottom-tile-0.png",
+          "source-short-1440x500-dialog-bottom-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 297000,
+        "size": [
+          660,
+          450
+        ]
+      },
+      {
+        "reportPath": "/states/11/section/rendered/0",
+        "files": [
+          "published-text-200-320-section-tile-0.png",
+          "source-text-200-320-section-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 288000,
+        "size": [
+          320,
+          900
+        ]
+      },
+      {
+        "reportPath": "/states/11/section/rendered/1",
+        "files": [
+          "published-text-200-320-section-tile-1.png",
+          "source-text-200-320-section-tile-1.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 288000,
+        "size": [
+          320,
+          900
+        ]
+      },
+      {
+        "reportPath": "/states/11/section/rendered/2",
+        "files": [
+          "published-text-200-320-section-tile-2.png",
+          "source-text-200-320-section-tile-2.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 287360,
+        "size": [
+          320,
+          898
+        ]
+      },
+      {
+        "reportPath": "/states/11/dialog/rendered/0",
+        "files": [
+          "published-text-200-320-dialog-tile-0.png",
+          "source-text-200-320-dialog-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 222912,
+        "size": [
+          288,
+          774
+        ]
+      },
+      {
+        "reportPath": "/states/11/bottom/0",
+        "files": [
+          "published-text-200-320-dialog-bottom-tile-0.png",
+          "source-text-200-320-dialog-bottom-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 222912,
+        "size": [
+          288,
+          774
+        ]
+      },
+      {
+        "reportPath": "/states/12/section/rendered/0",
+        "files": [
+          "published-text-200-1440-section-tile-0.png",
+          "source-text-200-1440-section-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1296000,
+        "size": [
+          1440,
+          900
+        ]
+      },
+      {
+        "reportPath": "/states/12/section/rendered/1",
+        "files": [
+          "published-text-200-1440-section-tile-1.png",
+          "source-text-200-1440-section-tile-1.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1294560,
+        "size": [
+          1440,
+          899
+        ]
+      },
+      {
+        "reportPath": "/states/12/dialog/rendered/0",
+        "files": [
+          "published-text-200-1440-dialog-tile-0.png",
+          "source-text-200-1440-dialog-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 505560,
+        "size": [
+          660,
+          766
+        ]
+      },
+      {
+        "reportPath": "/states/12/bottom/0",
+        "files": [
+          "published-text-200-1440-dialog-bottom-tile-0.png",
+          "source-text-200-1440-dialog-bottom-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 505560,
+        "size": [
+          660,
+          766
+        ]
+      },
+      {
+        "reportPath": "/states/14/rendered/0",
+        "files": [
+          "published-native-trigger-hover-390-tile-0.png",
+          "source-native-trigger-hover-390-tile-0.png"
+        ],
+        "ratio": 0.0001923076923076923,
+        "changed": 90,
+        "total": 468000,
+        "size": [
+          390,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/states/15/rendered/0",
+        "files": [
+          "published-native-trigger-focus-390-tile-0.png",
+          "source-native-trigger-focus-390-tile-0.png"
+        ],
+        "ratio": 0.00015384615384615385,
+        "changed": 72,
+        "total": 468000,
+        "size": [
+          390,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/states/16/rendered/0",
+        "files": [
+          "published-native-trigger-hover-1440-tile-0.png",
+          "source-native-trigger-hover-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1728000,
+        "size": [
+          1440,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/states/17/rendered/0",
+        "files": [
+          "published-native-trigger-focus-1440-tile-0.png",
+          "source-native-trigger-focus-1440-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1728000,
+        "size": [
+          1440,
+          1200
+        ]
+      },
+      {
+        "reportPath": "/states/18/phases/0/rendered/0",
+        "files": [
+          "published-entrance-phase-100-tile-0.png",
+          "source-entrance-phase-100-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1578240,
+        "size": [
+          1440,
+          1096
+        ]
+      },
+      {
+        "reportPath": "/states/18/phases/1/rendered/0",
+        "files": [
+          "published-entrance-phase-450-tile-0.png",
+          "source-entrance-phase-450-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1578240,
+        "size": [
+          1440,
+          1096
+        ]
+      },
+      {
+        "reportPath": "/states/18/phases/2/rendered/0",
+        "files": [
+          "published-entrance-phase-1100-tile-0.png",
+          "source-entrance-phase-1100-tile-0.png"
+        ],
+        "ratio": 0,
+        "changed": 0,
+        "total": 1578240,
+        "size": [
+          1440,
+          1096
+        ]
+      }
+    ],
+    "geometryComparisonCount": 58,
+    "maximumGeometryDifference": 0.015625,
+    "geometryComparisons": [
+      {
+        "reportPath": "/widths/0/section",
+        "label": "section-320",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/0/dialog",
+        "label": "dialog-empty-320",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/0/filled",
+        "label": "dialog-typed-320",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/1/section",
+        "label": "section-360",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/1/dialog",
+        "label": "dialog-empty-360",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/1/filled",
+        "label": "dialog-typed-360",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/2/section",
+        "label": "section-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/2/dialog",
+        "label": "dialog-empty-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/2/filled",
+        "label": "dialog-typed-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/3/section",
+        "label": "section-430",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/3/dialog",
+        "label": "dialog-empty-430",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/3/filled",
+        "label": "dialog-typed-430",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/4/section",
+        "label": "section-600",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/4/dialog",
+        "label": "dialog-empty-600",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/4/filled",
+        "label": "dialog-typed-600",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/5/section",
+        "label": "section-768",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/5/dialog",
+        "label": "dialog-empty-768",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/5/filled",
+        "label": "dialog-typed-768",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/6/section",
+        "label": "section-820",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/6/dialog",
+        "label": "dialog-empty-820",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/6/filled",
+        "label": "dialog-typed-820",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/7/section",
+        "label": "section-1024",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/7/dialog",
+        "label": "dialog-empty-1024",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/7/filled",
+        "label": "dialog-typed-1024",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/8/section",
+        "label": "section-1280",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/8/dialog",
+        "label": "dialog-empty-1280",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/8/filled",
+        "label": "dialog-typed-1280",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/9/section",
+        "label": "section-1440",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/9/dialog",
+        "label": "dialog-empty-1440",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/widths/9/filled",
+        "label": "dialog-typed-1440",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/0/keyboardEntry",
+        "label": "dialog-keyboard-entry-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/0/selectedText",
+        "label": "dialog-tabbed-selection-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/1/keyboardEntry",
+        "label": "dialog-keyboard-entry-1440",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/1/selectedText",
+        "label": "dialog-tabbed-selection-1440",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/2",
+        "label": "boundary-720",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/3",
+        "label": "boundary-721",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/4",
+        "label": "boundary-900",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/5",
+        "label": "boundary-901",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/6",
+        "label": "boundary-600",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/7",
+        "label": "boundary-601",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/8/top",
+        "label": "short-320x568-dialog-top",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/8/bottom",
+        "label": "short-320x568-dialog-bottom",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/9/top",
+        "label": "short-820x500-dialog-top",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/9/bottom",
+        "label": "short-820x500-dialog-bottom",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/10/top",
+        "label": "short-1440x500-dialog-top",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/10/bottom",
+        "label": "short-1440x500-dialog-bottom",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/11/section",
+        "label": "text-200-320-section",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/11/dialog",
+        "label": "text-200-320-dialog",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/12/section",
+        "label": "text-200-1440-section",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/12/dialog",
+        "label": "text-200-1440-dialog",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/14/comparison",
+        "label": "native-trigger-hover-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/15",
+        "label": "native-trigger-focus-390",
+        "maximumDifference": 0,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/16/comparison",
+        "label": "native-trigger-hover-1440",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/17",
+        "label": "native-trigger-focus-1440",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/18/phases/0",
+        "label": "entrance-phase-100",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/18/phases/1",
+        "label": "entrance-phase-450",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/18/phases/2",
+        "label": "entrance-phase-1100",
+        "maximumDifference": 0.015625,
+        "differences": []
+      },
+      {
+        "reportPath": "/states/18/restored",
+        "label": "live-motion-restoration",
+        "maximumDifference": 0.015625,
+        "differences": []
+      }
+    ],
+    "fixedNativeSampleSets": [
+      {
+        "kind": "published",
+        "label": "section-768",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "published-section-768-tile-0-native-paint-0.png",
+          "published-section-768-tile-0-native-paint-1.png",
+          "published-section-768-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          83,
+          317,
+          815
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-768",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "source-section-768-tile-0-native-paint-0.png",
+          "source-section-768-tile-0-native-paint-1.png",
+          "source-section-768-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          80,
+          314,
+          814
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-820",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "published-section-820-tile-0-native-paint-0.png",
+          "published-section-820-tile-0-native-paint-1.png",
+          "published-section-820-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          84,
+          316,
+          816
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-820",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "source-section-820-tile-0-native-paint-0.png",
+          "source-section-820-tile-0-native-paint-1.png",
+          "source-section-820-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          83,
+          317,
+          817
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-1024",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "published-section-1024-tile-0-native-paint-0.png",
+          "published-section-1024-tile-0-native-paint-1.png",
+          "published-section-1024-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          90,
+          323,
+          823
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-1024",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "source-section-1024-tile-0-native-paint-0.png",
+          "source-section-1024-tile-0-native-paint-1.png",
+          "source-section-1024-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          86,
+          319,
+          819
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-1280",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "published-section-1280-tile-0-native-paint-0.png",
+          "published-section-1280-tile-0-native-paint-1.png",
+          "published-section-1280-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          96,
+          330,
+          829
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-1280",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "source-section-1280-tile-0-native-paint-0.png",
+          "source-section-1280-tile-0-native-paint-1.png",
+          "source-section-1280-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          97,
+          330,
+          830
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-1440",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "published-section-1440-tile-0-native-paint-0.png",
+          "published-section-1440-tile-0-native-paint-1.png",
+          "published-section-1440-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          100,
+          332,
+          832
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-1440",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "source-section-1440-tile-0-native-paint-0.png",
+          "source-section-1440-tile-0-native-paint-1.png",
+          "source-section-1440-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          98,
+          332,
+          832
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "boundary-901",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "published-boundary-901-tile-0-native-paint-0.png",
+          "published-boundary-901-tile-0-native-paint-1.png",
+          "published-boundary-901-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          85,
+          318,
+          818
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "boundary-901",
+        "tile": 0,
+        "fixedTimes": [
+          0,
+          250,
+          750
+        ],
+        "finalSampleIndex": 2,
+        "allThreeByteIdentical": true,
+        "lastTwoByteIdentical": true,
+        "reportedFinalTwoStable": true,
+        "sampleFiles": [
+          "source-boundary-901-tile-0-native-paint-0.png",
+          "source-boundary-901-tile-0-native-paint-1.png",
+          "source-boundary-901-tile-0-native-paint-2.png"
+        ],
+        "elapsedMilliseconds": [
+          85,
+          318,
+          819
+        ]
+      }
+    ],
+    "fixedSetCount": 12,
+    "stableSetCount": 12,
+    "qualityFindingCount": 22,
+    "qualityFindingMeaning": "Retain the raw findings and their existing wording. A text-range extent signal is not automatically visible clipping or a quality pass.",
+    "problems": [
+      "source touch close returns focus"
+    ],
+    "immutableFileHashes": {
+      "sourceHashes": {
+        "count": 53,
+        "immutableCommit": "f02182a5f45fc0166fb60796717fa15795a58237",
+        "files": [
+          {
+            "file": "frontend/src/App.tsx",
+            "sha256": "97010e342e0977003877de3368fe0cd0767ec6324b95cc6d5b4f0560e3818347",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/ActionLink.tsx",
+            "sha256": "b48d8e8c7e2edc5026b87a9f9c942b6a5b6f6efeb2dc145eea5bb49caeb68c0a",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/EditorialHeading.tsx",
+            "sha256": "7bbda62ee6d411a7f77e3a37e915bb871faf128bdf6001314f8c6e9a85112cdb",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/Layout.tsx",
+            "sha256": "2c37f54870ac5a894abe809a09eaa1e74f773cd73a50adead97e515c0beb13d0",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/NewsletterFooter.tsx",
+            "sha256": "5e8f750e6ed6df253db605001f50630bd45867d124572f2f0ecf4c1fb78ca788",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/ResourceCategoryCard.tsx",
+            "sha256": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/ResponsiveImage.tsx",
+            "sha256": "4d1e3181e30a63e6408c718ecc6ba9c6fa086b3d24b99011e4aba3f90f0df5fc",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/SiteHeader.tsx",
+            "sha256": "a4b349fab2cc692d4ac838b2761fa61c292848ea316091530742c8e30772b3e8",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/components/Typography.tsx",
+            "sha256": "e05b1008187370bf37b56a3fc4fc34f1b9100027614e6c7c9cb8634f62e9de33",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/content.ts",
+            "sha256": "a7cded91fccec79530673df1ce2a54e42886e233b7eb989afaec63a65b7338fd",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/homepageScrollRestoration.ts",
+            "sha256": "4135dc8a0acadc933e6d6fea69588dbf2b10f6936d32ea19d6c697bcb944c871",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/main.tsx",
+            "sha256": "23ece7a01f1627ad6c4c888abb9efbc8a13d271e55a813d398c5c8004a07d8d8",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/BookDiscovery.tsx",
+            "sha256": "3f7eaea9e161e1428232976d44571077bcc055e0657b31babd0f36453d04b391",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/BookGallery.tsx",
+            "sha256": "021c551fbffc847e5e583155ee4e16045ff0eed6439526c4d308199cfeccf96a",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/FaqSection.tsx",
+            "sha256": "e645c8856c9b60e19751115a2504d90f6a79ff5ff4d292be1ee883b1f0705866",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/FinalInvitation.tsx",
+            "sha256": "95f0c629bf4da5c39f2c8320ca0e5833f06c539621161c6207a4a2d95135eb2a",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/GiftingSection.tsx",
+            "sha256": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/HeroSection.tsx",
+            "sha256": "70eb6342e54cb98d84e9396b91bf51e8d40657bb22a6e82306cf82d90b551944",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/homepageDiscoveryContent.ts",
+            "sha256": "0344b2b251997a9faf387861e6b89d0f8975429fad68ba0cf1dc85f8e3d7524b",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/homepageEditorialContent.ts",
+            "sha256": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/homepageMediaContent.ts",
+            "sha256": "cc12a7c87dff83df9bd3c7de5b1e8f532cc9190a48585a8c7748aa702386927e",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/homepageQuestionsContent.ts",
+            "sha256": "e660d3e75f4ea8b1dd344200260759c95d5e3d7c8f29367d81ba18d59213d65d",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/HowItWorks.tsx",
+            "sha256": "280747e6c6e5d610931d598745fc1b9b67aeec291aefeed6e12e37d5b8ba3154",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/PhysicalBookPresentation.tsx",
+            "sha256": "c54976988eab7918d500046360d752087cdd92a5bc6dc0b332f8c33fbd8566cb",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/PracticeDialog.tsx",
+            "sha256": "1ffe8bb3b954fb9063b8e5a053e8533354be75737a620504a8a8b1072eb0571f",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/processProgress.ts",
+            "sha256": "17f2008a08e856e94edfa0b30b437b0d0a9ca2a2114e68583a65a6ef0bc377d5",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/ReassuranceBand.tsx",
+            "sha256": "56febe6b3829e48ea5e22a5ac3cd2fc48fce26b2c371cb94b5900f07f6787242",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/ResourcesSection.tsx",
+            "sha256": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/useMediaReducedMotion.ts",
+            "sha256": "de6885e91b5a77adc56532926a9fd043539453784ac292b5e918e8ca50123ab2",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/sections/WritingShowcase.tsx",
+            "sha256": "b5f2a0637ba298152d3b5bee6d34ea420def50335cccb1ddf1d8bf42a226bb2c",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/siteRoutes.ts",
+            "sha256": "5e714d61a0f4e50de472a0c65b76fe67936f043e935f63c4d88e53480051ba6e",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/components.css",
+            "sha256": "c1dee5ba708a2cb87072de87e1f87c43e0f77d842e27a4b0c6cdd1d98106d971",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/foundations.css",
+            "sha256": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-craft.css",
+            "sha256": "fffb03c76f35637dd95ed6fc1a484411228e1723a39d7b8adfe3c898d9ffe8de",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-discovery.css",
+            "sha256": "24bde0aee654721675b57d9c3b09cd26ef854f023dce188bdb9ed071b96f2efe",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-editorial.css",
+            "sha256": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-hero.css",
+            "sha256": "66c6a4af46a9441c76e2cdddef04d63869e5917674edca65c1e23c9b92148cdc",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-media.css",
+            "sha256": "47baf5bca2a34c3635b876eb1bfa5bc0ae208c7c8d716b28aba168018dc3f400",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-process.css",
+            "sha256": "3d05706aea2c61e07420c3028ab6def8cc2345f24d95751f9840c4b04d121379",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-questions.css",
+            "sha256": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/homepage-writing.css",
+            "sha256": "d7c7d096a6509a965ba4963a9452545e1f0632d2a95871defa29538ba22f860d",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/shared-footer.css",
+            "sha256": "5c02e6ce6ffc3dc418e696f1474e31244fdfc4e811d6f1e16f3bea0a8e710467",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/shared-header.css",
+            "sha256": "98dc7bf867dd848a16b7f51f27abcd4af16a1884e7b72b0554015cfc2f336464",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/tokens.css",
+            "sha256": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/styles/typography.css",
+            "sha256": "faf05e6601df7e528380f4f74a0e6232e0d2c216bb8fcd491f30a4112902e655",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/src/usePreviewCurrency.ts",
+            "sha256": "763fe027ed3e6ffcec144394be365dba0d343594e6028d655b3d826470b16ba4",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/hero.json",
+            "sha256": "5c88630d6f125372273b358064076dc2678e6f7b04ae8cc4af4a6cba030dc587",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/images.json",
+            "sha256": "3063a8d9ed41376682a1ff036b1ec7b93a9f5496ea724e5ff82b072512805426",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/ledger.json",
+            "sha256": "c00a403216cab6e5bebd3f5c81d3836a9f15a01c5a56d3bd56f437fca5952e58",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/media-images.json",
+            "sha256": "62e2f1df2ad5f1ca7062017ead9234ecc4d7f1e5916586ff320cfee65cb81b52",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/media-ledger.json",
+            "sha256": "77c4bf6b0c4dddd6c8e35f287d851f41f35144c13661a0f7b158612b3265e2f3",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/process.json",
+            "sha256": "6f378edc2a12f397f99fd20dcb4e1a1238975c4e050444b769ab9ddf9bc2bef7",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/content/writing.json",
+            "sha256": "3f96a49530b2d2e9133e25140e17f1e3161adf994be83f8c24fbd8a8f38ec565",
+            "matchesImmutableCommit": true
+          }
+        ]
+      },
+      "harnessHashes": {
+        "count": 3,
+        "immutableCommit": "f02182a5f45fc0166fb60796717fa15795a58237",
+        "files": [
+          {
+            "file": "frontend/scripts/verify-writing-parity.mjs",
+            "sha256": "d4ea089241820ca178ea7959b9b0be5e1230d0519680c3384d4a063b00f574ff",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/scripts/browser-readiness.mjs",
+            "sha256": "ca88d8553d196608652d630b233dfd3f05c3692bea315d31b2f778fa6f58cb91",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "frontend/scripts/computed-style-parity.mjs",
+            "sha256": "efbddf441b802d7135986ebed473133a591127cf862b52eab7ce805b3ce2fb1c",
+            "matchesImmutableCommit": true
+          }
+        ]
+      },
+      "protectedHashes": {
+        "count": 4,
+        "immutableCommit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+        "files": [
+          {
+            "file": "index.html",
+            "sha256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "assets/index-DhPZyX4z.css",
+            "sha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "assets/routes-DrwDv2x2.js",
+            "sha256": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+            "matchesImmutableCommit": true
+          },
+          {
+            "file": "assets/content-sections-CfrmOVRI.js",
+            "sha256": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+            "matchesImmutableCommit": true
+          }
+        ]
+      }
+    }
+  },
+  "soleFailure": {
+    "message": "source touch close returns focus",
+    "state": "emulated-touch-practice",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "motion": "reduce",
+    "touch": "Chromium emulation",
+    "rawRecord": {
+      "label": "emulated-touch-practice",
+      "published": {
+        "value": "A room full of stories",
+        "count": "5 words",
+        "clearDisabled": false,
+        "focus": "demo-answer"
+      },
+      "source": {
+        "value": "A room full of stories",
+        "count": "5 words",
+        "clearDisabled": false,
+        "focus": "demo-answer"
+      }
+    },
+    "observed": "The immediate source trigger-focus equality check after the dialog-hidden wait returned false. No focus target or timestamp for that check was retained.",
+    "notRecorded": [
+      "Actual activeElement after the hidden-state observation",
+      "Native unmount-autofocus event timing",
+      "Post-event settled focus",
+      "Body-unlock timing for the final touch dismissal"
+    ],
+    "failedHarness": "frontend/scripts/verify-writing-parity.mjs at f02182a5f45fc0166fb60796717fa15795a58237",
+    "failedHarnessSha256": "d4ea089241820ca178ea7959b9b0be5e1230d0519680c3384d4a063b00f574ff"
+  },
+  "lifecycleAudit": {
+    "protectedFocusScope": {
+      "file": "assets/content-sections-CfrmOVRI.js",
+      "commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "detail": "FocusScope cleanup schedules the autoFocusOnUnmount event with setTimeout(...,0); the event is non-bubbling and is dispatched on the detached container."
+    },
+    "protectedDialogHandler": {
+      "file": "assets/content-sections-CfrmOVRI.js",
+      "commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "detail": "DialogContentModal prevents the fallback autofocus action and calls context.triggerRef.current?.focus()."
+    },
+    "sourcePackages": [
+      {
+        "package": "@radix-ui/react-dialog",
+        "version": "1.2.0",
+        "sourcePath": "frontend/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+        "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7"
+      },
+      {
+        "package": "@radix-ui/react-focus-scope",
+        "version": "1.2.0",
+        "sourcePath": "frontend/node_modules/@radix-ui/react-focus-scope/dist/index.mjs",
+        "sha256": "be4160427815e0f67f85fc46d941700de32863416ea62127f6012a51550ce410"
+      }
+    ],
+    "sourceScope": "Installed source FocusScope and DialogContentModal use the same deferred unmount/trigger-focus sequence. Overall package code and protected compiled versions are not claimed identical.",
+    "sourceComponent": "PracticeDialog uses the Radix modal without overriding close autofocus; controlled dismissal also clears the unsaved answer.",
+    "measurementBoundary": "The existing general closeDialog helper waits for exact trigger focus and released body overflow after hidden. The touch-only branch omitted that lifecycle wait and sampled immediately after hidden.",
+    "inference": "An observation before the deferred autofocus callback is supported as a plausible explanation by the code. The failing sample lacks a lifecycle trace, so its exact scheduling cause is not established."
+  },
+  "boundedCorrectionReview": {
+    "harnessSha256": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3",
+    "scope": "Touch-close measurement only: one native tap, preserved immediate after-hidden reading, direct passive observation of the detached dialog unmount-autofocus event, document focus/scroll-release trace, two recorded post-event frames, then the existing strict focus/body-unlock predicate.",
+    "assertions": "Strict trigger focus is retained; actual dismissal and released scroll lock are also asserted. Errors and traces are kept on failure. There is no forced focus, repeated dismissal, image alteration, numeric relaxation or runtime change.",
+    "reviewResult": "Node syntax and diff checks passed; event listener, observer and animation-frame cleanup reviewed. Full checkpoint required after this correction."
+  },
+  "limits": [
+    "This run failed and remains failed; all raster gates passing does not erase the touch-focus observation.",
+    "No source runtime repair is justified or claimed from the untraced focus observation.",
+    "Passing native raster comparisons in this pinned run does not prove that Chrome version, header suppression, transition timing or a compositor mechanism caused earlier raster differences.",
+    "Emulated touch is not physical-device testing. Native zoom, other engines and accessibility certification are not claimed.",
+    "Founder visual acceptance, Package 4 and publication approval remain separate gates."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "initial_candidate": "95e6271b7943abd25e528751db7b673b9350cc17",
+  "corrected_candidate": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+  "protected_baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "owner": "frontend/src/styles/homepage-writing.css",
+  "protected_css": "assets/index-DhPZyX4z.css",
+  "findings": [
+    {
+      "property": "scroll-margin-top",
+      "initial": "24px",
+      "protected_final": "116px; 96px at widths720px and below",
+      "reason": "Final Package2 ID rules override the earlier generic section rule",
+      "protected_lines": [
+        5015,
+        11185,
+        11287
+      ]
+    },
+    {
+      "property": "tab-size",
+      "protected": "4",
+      "reason": "Inherited published html default retained within writing and dialog scopes",
+      "protected_lines": [
+        126
+      ]
+    },
+    {
+      "property": "-webkit-text-size-adjust",
+      "protected": "100%",
+      "reason": "Inherited published html default retained within writing and dialog scopes",
+      "protected_lines": [
+        126
+      ]
+    },
+    {
+      "property": "-webkit-tap-highlight-color",
+      "protected": "transparent",
+      "reason": "Inherited setting also applies to textarea and label, beyond existing button resets",
+      "protected_lines": [
+        126
+      ]
+    },
+    {
+      "property": "::selection",
+      "protected": "Published sage background and forest foreground",
+      "reason": "Retain actual selected-text appearance rather than browser defaults",
+      "protected_lines": [
+        5001
+      ]
+    },
+    {
+      "property": "textarea::placeholder opacity",
+      "protected": "1",
+      "reason": "Retain the published reset independently of browser native opacity",
+      "protected_lines": [
+        256
+      ]
+    }
+  ],
+  "unchanged": "Component markup, wording, device geometry, dialog lifecycle and motion timings; shared foundations, tokens and protected files",
+  "source_verification": {
+    "typescript": "passed",
+    "content_gate": "passed",
+    "published_guard": "passed",
+    "tests_passed": 70,
+    "tests_failed": 0,
+    "vite_build": "passed",
+    "modules": 135,
+    "git_diff_check": "passed"
+  },
+  "corrected_build": {
+    "css": "index-NU-3HqjY.css",
+    "js": "index-wq4Q_H4d.js"
+  },
+  "limitations": "Static cascade audit and source validation do not establish browser parity. Subsequent corrected writing and assembly reports own rendered verification. Restoring a browser-neutral inherited declaration does not claim a Firefox or native mobile test."
+}

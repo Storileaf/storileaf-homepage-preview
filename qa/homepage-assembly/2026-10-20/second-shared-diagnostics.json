@@ -1,0 +1,511 @@
+{
+  "run": 39380639122,
+  "job": 118488727503,
+  "candidate": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+  "status": "failure",
+  "failedStep": "Retain Group1 editorial section parity",
+  "otherSteps": "Source, shapes, full static regression, Package1 live, Package2, editorial actions, footer typography, Group2, shared navigation/currency and protected guard succeeded.",
+  "artifact": {
+    "id": 12246005006,
+    "name": "homepage-shared-regressions",
+    "zip": "/tmp/shared-second-regressions-39380639122.zip",
+    "sha256": "7e0cbca49fb36511ba5d63dcce84d0ca9d29f9f645121a37fa66341a9d05ae1c",
+    "extracted": "/tmp/shared-second-regressions-39380639122"
+  },
+  "report": {
+    "path": "/tmp/shared-second-regressions-39380639122/frontend/qa/group1/report.json",
+    "sha256": "070ad0e14272790ce88381e10fbe7b446af8317c7318c94e67bdc558636c7012"
+  },
+  "sharedComparisonFromJobLog": {
+    "status": "success",
+    "widths": 10,
+    "states": 41,
+    "captures": 132,
+    "problems": []
+  },
+  "group1": {
+    "browser": "155.0.8059.39",
+    "widths": 10,
+    "states": 19,
+    "problems": [
+      "source final section position differs resources at 1440",
+      "source section target not visible resources at 1440"
+    ],
+    "sourceFileHashChecks": {
+      "src/App.tsx": true,
+      "src/sections/GiftingSection.tsx": true,
+      "src/sections/ResourcesSection.tsx": true,
+      "src/sections/homepageEditorialContent.ts": true,
+      "src/styles/homepage-editorial.css": true,
+      "src/components/ResourceCategoryCard.tsx": true,
+      "content/ledger.json": true,
+      "content/images.json": true
+    },
+    "protectedFileHashChecks": {
+      "htmlSha256": true,
+      "cssSha256": true
+    },
+    "alignmentStates": [
+      {
+        "state": "programmatic section alignment",
+        "id": "resources",
+        "width": 390,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 6569.5625,
+          "scrollY": 6394,
+          "maximumScroll": 9250,
+          "top": 175.5625,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 390,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 6569.5625,
+          "scrollY": 6394,
+          "maximumScroll": 9250,
+          "top": 175.5625,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 390,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "resources-activity",
+        "width": 390,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "80px",
+          "documentTop": 6825.28125,
+          "scrollY": 6629,
+          "maximumScroll": 9250,
+          "top": 196.28125,
+          "expectedTop": 196,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 390,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "80px",
+          "documentTop": 6825.28125,
+          "scrollY": 6629,
+          "maximumScroll": 9250,
+          "top": 196.28125,
+          "expectedTop": 196,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 390,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "gifting",
+        "width": 390,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 5824.453125,
+          "scrollY": 5648,
+          "maximumScroll": 9250,
+          "top": 176.453125,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 390,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 5824.453125,
+          "scrollY": 5648,
+          "maximumScroll": 9250,
+          "top": 176.453125,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 390,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "resources",
+        "width": 600,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 6590.046875,
+          "scrollY": 6414,
+          "maximumScroll": 9282,
+          "top": 176.046875,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 600,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 6590.046875,
+          "scrollY": 6414,
+          "maximumScroll": 9282,
+          "top": 176.046875,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "resources-activity",
+        "width": 600,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "80px",
+          "documentTop": 6878.296875,
+          "scrollY": 6682,
+          "maximumScroll": 9282,
+          "top": 196.296875,
+          "expectedTop": 196,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 600,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "80px",
+          "documentTop": 6878.296875,
+          "scrollY": 6682,
+          "maximumScroll": 9282,
+          "top": 196.296875,
+          "expectedTop": 196,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "gifting",
+        "width": 600,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 5879.234375,
+          "scrollY": 5703,
+          "maximumScroll": 9282,
+          "top": 176.234375,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 600,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "96px",
+          "rootPadding": "80px",
+          "documentTop": 5879.234375,
+          "scrollY": 5703,
+          "maximumScroll": 9282,
+          "top": 176.234375,
+          "expectedTop": 176,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 600,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "resources",
+        "width": 1440,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "100px",
+          "documentTop": 6538.3125,
+          "scrollY": 6322,
+          "maximumScroll": 8580,
+          "top": 216.3125,
+          "expectedTop": 216,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 1440,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "100px",
+          "documentTop": 6538.3125,
+          "scrollY": 5095,
+          "maximumScroll": 8580,
+          "top": 1443.3125,
+          "expectedTop": 216,
+          "inPosition": false,
+          "visible": false,
+          "cssViewport": {
+            "width": 1440,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "resources-activity",
+        "width": 1440,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "100px",
+          "documentTop": 6895.09375,
+          "scrollY": 6679,
+          "maximumScroll": 8580,
+          "top": 216.09375,
+          "expectedTop": 216,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 1440,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "100px",
+          "documentTop": 6895.09375,
+          "scrollY": 6679,
+          "maximumScroll": 8580,
+          "top": 216.09375,
+          "expectedTop": 216,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 1440,
+            "height": 600
+          }
+        }
+      },
+      {
+        "state": "programmatic section alignment",
+        "id": "gifting",
+        "width": 1440,
+        "height": 600,
+        "published": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "100px",
+          "documentTop": 5896.3125,
+          "scrollY": 5680,
+          "maximumScroll": 8580,
+          "top": 216.3125,
+          "expectedTop": 216,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 1440,
+            "height": 600
+          }
+        },
+        "source": {
+          "idCount": 1,
+          "offset": "116px",
+          "rootPadding": "100px",
+          "documentTop": 5896.3125,
+          "scrollY": 5680,
+          "maximumScroll": 8580,
+          "top": 216.3125,
+          "expectedTop": 216,
+          "inPosition": true,
+          "visible": true,
+          "cssViewport": {
+            "width": 1440,
+            "height": 600
+          }
+        }
+      }
+    ]
+  },
+  "comparisonWithStandalone": {
+    "run": 39380639017,
+    "browser": "155.0.8059.84",
+    "report": "/tmp/group1-second-39380639017/report.json",
+    "reportSha256": "86c381eab548adcf7c9209d2f58a551689b2a7434e0d611caac82e08128dfa62",
+    "allNineAlignmentStatesIdentical": true
+  },
+  "observations": [
+    "All ten Group1 default geometry/style/pixel comparisons passed.",
+    "Only source Resources at the first1440px target fails final positioning and visibility.",
+    "The protected and source final Resources documentTop, margins, root padding and document maximum are identical. Source scrollY5095 differs from protected6322.",
+    "The expected-position wait returned before the subsequent foreground/CSS-viewport/two-frame settle and final failed measurement. Movement therefore occurred after that initial expected-position observation.",
+    "Subsequent ResourcesActivity and Gifting targets at1440 align.",
+    "The native scrollIntoView probe does not invoke route history; the diagnosed assembly history mismatch is separate."
+  ],
+  "causeStatus": "Concrete native scroll-position failure reproduced across two Chromium builds. Delayed responsive layout or scroll anchoring is plausible, but the raw report has no event timeline to establish mechanism. Assembly agent owns direct probe diagnosis. No edits or retry by this agent.",
+  "allRetainedReportDigests": {
+    "qa/homepage-qa-report.json": "fd326cd7c52aee38bd1433aaf6913a974921f940de8d61f612858b6530bf94ba",
+    "qa/footer-type/homepage-before-390-crop.json": "3d5af1447689c4486812d76ee4d4c37dce440cc6ed0b0f2db6e788b62116b60e",
+    "qa/footer-type/source-before-1440-crop.json": "a64dcdcd56dc6f24fca3be63a013a9d6384ab8a40457900e221bf995c9327cb5",
+    "qa/footer-type/homepage-after-1440-crop.json": "84d479473f7ca258e34967b6b209ee9708753a7264ef8d3a60868603e7e46e7f",
+    "qa/footer-type/homepage-after-390-crop.json": "207d5919fedbc0dd92f418b4296c702c6f23fcda7c3405145d27fb9883aaff4b",
+    "qa/footer-type/source-after-390-crop.json": "207d5919fedbc0dd92f418b4296c702c6f23fcda7c3405145d27fb9883aaff4b",
+    "qa/footer-type/report.json": "5586fb572e8083d8b5e65c3e9e7cc7ecaac827d6ed7901010f724e57785f7089",
+    "qa/footer-type/source-before-390-crop.json": "1360b75a2d0ebd6a74d34904313accbbfc4c716c5560f619cf14b16d6d466fff",
+    "qa/footer-type/homepage-before-1440-crop.json": "563a1bc042389f8ca3a2cac8ef9137c07996fdafed3a002124e20f33bc3c1989",
+    "qa/footer-type/source-after-1440-crop.json": "84d479473f7ca258e34967b6b209ee9708753a7264ef8d3a60868603e7e46e7f",
+    "qa/editorial-links/crops-before-1440.json": "b2a827e53b35d0277e85acde5f7fd74728b502c026c5c4e46c3e1047bc688287",
+    "qa/editorial-links/crops-after-390.json": "0da9492b2f7d7098115fec819b4566b3127a1446402bdfda4d38fd83e625a0b8",
+    "qa/editorial-links/report.json": "865ea96b02c6afa5819960ba9963c0e36ee4c2d31a1bbb45656b15e2d4fdc875",
+    "qa/editorial-links/crops-before-390.json": "72b418c795405b1240bbaa837eef8dd4492d225e3643d34c9057d8bcc8da6b7e",
+    "qa/editorial-links/crops-after-1440.json": "31b996f9a253bfc629617c285eeab8f8f23e73058eabda083d832d62fe2f0107",
+    "qa/package1-live/report.json": "052e5a0e5aca054ece2d137963195163e3b60fbec0e88f704eb6a059dfe6db4a",
+    "qa/package2/report.json": "1c8a3df4e0c952001e18f047b6db531a4d7802e8c7aeb34a7befb33008748ae1",
+    "frontend/qa/source-reference-qa.json": "c692691c7cc7f39df3842d8dfa490af3280d5e8c932755aaafad56627c87c32c",
+    "frontend/qa/shape-foundation/focus-captures.json": "886e068e2601227be53d9ba4d4958f657aec2477a67dce0cd8c496123af8fac7",
+    "frontend/qa/shape-foundation/report.json": "2b2de7454f6e3aeed83ac1c8b7f943cb5da0022f6d14d7ea0e10322b76e1dc80",
+    "frontend/qa/group1/report.json": "070ad0e14272790ce88381e10fbe7b446af8317c7318c94e67bdc558636c7012",
+    "frontend/qa/group2/report.json": "3b58b66c72500d489dd3a12ad785b69bbdecac5bde55603737859b6eb6ac7a50"
+  },
+  "group1ImageManifest": {
+    "gifting-react-390.png": "6a2120539ecf9340e2e0e66a4483aad9c0bedb111e1ebf01819c76d25abd3096",
+    "gifting-comparison-768.png": "593c6e0896475bc3adbb9aeef6547d6b7b6c3dbd2e1dd80587ef021c3321299f",
+    "gifting-context-source-390.png": "31d747b708043f11fc6139dc272eec8833a3acdb5ebbd781c93ac35ec7cec120",
+    "gifting-published-1280.png": "8be3411362323660f1d0021a54ae880282dd129311500954240ddb44d9fe5aad",
+    "resources-comparison-1440.png": "01ea3f9bf7d2c636b5028be3ea57e0c89b47e3a015f08dbbe2c7f65a381cf4fc",
+    "resources-comparison-600.png": "b3fca73b3ef7ac7a79f15b8647402e34e5fa33952391009206e4ba5c2378dc1c",
+    "resources-comparison-320.png": "eac98f4fbf01d9935ae8a8245db1fafcd18d2464fe1a057356ee5dce7ee2187c",
+    "gifting-comparison-430.png": "f7df1dbb51225ba0c7308d9692835987e5a9ec4466138ecfd3ef9a3bd67e5768",
+    "resources-comparison-390.png": "1f242eeb93c78e49505c1d6b783c9101cf00ebbea3c7ccef921f3c6cd91ec7bb",
+    "resources-comparison-1280.png": "20504688b6de46645c78ba213f172de67b641b62974ca72c6ab69a9751ede8b1",
+    "resources-comparison-360.png": "6da5de19b5e4258ec91917d397b8f88045c3cea7c9ad0c131a85ed516ce9cc71",
+    "gifting-comparison-820.png": "5c6d552924575847af08fb2f561ca919d70e0d8a1319d0494d1d88d0665faf93",
+    "gifting-react-430.png": "f5ab1bbb308743b182b146e2c3d347cfea20b6338f0c18d3bff15d61cdfdbbe1",
+    "gifting-context-published-1440.png": "fe5db9eb3de4b7ac4040768db9039c67e3e8e716c22c9f517a3b5662b9f121ad",
+    "resources-published-820.png": "dc63b5d2569bb73c061a10f72708714416509f3a9a0de140ac5023664ea5c656",
+    "gifting-react-600.png": "a6a1e472668b5352601bea85399cab5755b48f6fc9557693057e87a799b1a701",
+    "resources-react-390.png": "3b9eb88ae5df09db6794fe6892a9a6aa7d50c7331cbb253de1117f027c9c9ef2",
+    "resources-react-1024.png": "f2b560c91afe7b423ae1bfc9d269257fd260636cb339c0f1a359ae18f6ed0b8a",
+    "gifting-text-enlargement-published-320.png": "ae513cbae801648cc404c8e1ef19334a68aa5fb2dc510359e0a8462e3730db23",
+    "resources-comparison-430.png": "4b667d3fcb077801e3996bdea756f4402dad714a68f5919fa52df9db7e447008",
+    "resources-published-600.png": "9ca7a27a46823648cde12b1af724afb1c6f1bc057bfabc0edb52c067e5f491fe",
+    "gifting-react-820.png": "caa7f25939f2badf5422de43c3953db2f325af62b26c15ae85392e9dde6c68b9",
+    "resources-focus-published-1440.png": "dbe26027db6c4ca977802f0c2bcc841edece3ebf75ba82fcb5c41ccb6482bb6e",
+    "resources-comparison-1024.png": "cc0cac1a6397a1596dfb30f45f73cad7336622b80e2b14176a61c30e5206d838",
+    "gifting-published-1440.png": "29ee2faf494486380e36a8471d558fd6603db7f955c4eddd96fc396df89b21e1",
+    "resources-react-360.png": "8fa40625d488af1724b1aa417dec0381f11d9ef92120941574179ce35b0da5ca",
+    "gifting-published-820.png": "50d1ef56cd3b8e5dd1d37e3ccba7327173ea55a314664ae717215fe092f8f3a1",
+    "gifting-published-430.png": "12cb268d4d63e877910ab94564fb1932d5457f8145a8c98bb06f18bc91885c15",
+    "gifting-comparison-390.png": "97314b4b7454df9b1eb4cc3274458afc79356f4bfaeaa6084bbbc94869db935a",
+    "resources-published-320.png": "d1eae37fc9006b70fb3a68f77bd75d65a1e7f01c889d0e03ac2d59260fa14012",
+    "gifting-comparison-1024.png": "e3396e5fec546d55faa87e2a300849558a6bbdae6e13727089ae64e8c691904b",
+    "resources-react-820.png": "dc63b5d2569bb73c061a10f72708714416509f3a9a0de140ac5023664ea5c656",
+    "resources-published-1024.png": "f2b560c91afe7b423ae1bfc9d269257fd260636cb339c0f1a359ae18f6ed0b8a",
+    "resources-focus-source-1440.png": "dbe26027db6c4ca977802f0c2bcc841edece3ebf75ba82fcb5c41ccb6482bb6e",
+    "gifting-react-768.png": "8b946986b43d7336f88bb79a4d8942550c215e34741eeaeefbd3ec0602c768a3",
+    "resources-context-source-1440.png": "cb5ac0b80bc4cf7dcdc6a2704a47a19eb99fdfb8c2ad2982c25d1dacd992b18d",
+    "gifting-context-source-1440.png": "2aa8b4257546472cbc4c7b19372dc636cc58b41ff3254e1e0cda3a24ae70c3b6",
+    "resources-context-published-1440.png": "28bf48a9cfe5830e1caf261e3bd47bc143ba53fdf58562e1b2b02f3381768b9a",
+    "gifting-comparison-320.png": "a39d2f1f5c0f83df88fd92f96976e89630555237cff059694c29a304c113791e",
+    "resources-react-430.png": "504ee5952fd2cb52d2ff11976a233037c41f22f78c6101447a6901ffc34d1d08",
+    "gifting-react-360.png": "ba6dc7f0a713961fe103a50b1bbccab3cd92468131769bb4cc65412039bda74b",
+    "resources-published-360.png": "8fa40625d488af1724b1aa417dec0381f11d9ef92120941574179ce35b0da5ca",
+    "gifting-react-320.png": "a57bc2346fe5bde7679568e7752fdf79f59dcc4ddcb0cde626613290068a4145",
+    "resources-published-430.png": "504ee5952fd2cb52d2ff11976a233037c41f22f78c6101447a6901ffc34d1d08",
+    "resources-react-1440.png": "5e2ce421cc06a514311932629bdbe24b7ccfab545eb00c702b52be70971e7044",
+    "resources-text-enlargement-published-320.png": "35ed8b7637f84f3ea1ba34aec8660607c865c3562bbd3041bdcfe08230b5c0bf",
+    "resources-react-1280.png": "433586fd58c6f67419996ce2b4d6ee1ff71af9603da1569650c9b14ce182b36d",
+    "gifting-text-enlargement-source-320.png": "95eb59682bf520b4187b2d1d3f4d7df0d888d98e42182e4c769e3bcf6a551ac8",
+    "resources-comparison-820.png": "f71e1781b5a1d3ec99428045f08e254572a5484a8f88c7680340951ffbf114f2",
+    "resources-comparison-768.png": "42c57b5867f893ea9e09eb66f3d96b3be79e494e6ae56b9a122753a9d7e6fa96",
+    "resources-react-768.png": "34b369efd6eee96ebb16faa5b684a9f39b93e65aaf11cc4a5d1bae0ad07d332f",
+    "resources-published-390.png": "3b9eb88ae5df09db6794fe6892a9a6aa7d50c7331cbb253de1117f027c9c9ef2",
+    "gifting-published-320.png": "d318a9c5acf457b52436afa413891ee07981d14e5b2946356b571f0a4f7a59a2",
+    "resources-context-source-390.png": "69d007125f44952ea44edb8bdd56c1a25633e7e8cc5f480638ca4a1faba7d1fa",
+    "resources-react-600.png": "9ca7a27a46823648cde12b1af724afb1c6f1bc057bfabc0edb52c067e5f491fe",
+    "gifting-react-1440.png": "d31216b5b90a07e2b8f8bc0f0df1be148262f278dffd48f4415d66d91662e757",
+    "gifting-published-1024.png": "64e80aed72ec9aa37405f821a6723f744294400256e4a2d35370b02e0a0a3dc3",
+    "gifting-comparison-600.png": "7eff5136d82231165533fbd87cc1735a20b4624b27e0707fdf658cd6a8346d7b",
+    "gifting-react-1024.png": "7b8c3e5e4af45fc955bdb5031995a857c526a703cceaaebd0ca579f6a4e01bb5",
+    "gifting-context-published-390.png": "36e0eeb8c34e436415cdba775a2b610004a1a427436a7caf420c018c112bc538",
+    "resources-react-320.png": "d1eae37fc9006b70fb3a68f77bd75d65a1e7f01c889d0e03ac2d59260fa14012",
+    "resources-published-768.png": "34b369efd6eee96ebb16faa5b684a9f39b93e65aaf11cc4a5d1bae0ad07d332f",
+    "gifting-react-1280.png": "d1a388363cffe9736edcaf858ebf8dda7027e180877249d327d7373636a1a03f",
+    "gifting-published-360.png": "52918d05ec993f102393225f8ba8e307f5956516891a1d5605f7d740aa88e58a",
+    "resources-text-enlargement-source-320.png": "35ed8b7637f84f3ea1ba34aec8660607c865c3562bbd3041bdcfe08230b5c0bf",
+    "resources-published-1440.png": "5e2ce421cc06a514311932629bdbe24b7ccfab545eb00c702b52be70971e7044",
+    "gifting-published-600.png": "027d7c9b26762c9466d8867025fa05500ae146b43d9c04593cf4d09dd1b580c7",
+    "resources-published-1280.png": "433586fd58c6f67419996ce2b4d6ee1ff71af9603da1569650c9b14ce182b36d",
+    "resources-focus-published-390.png": "ebd04da8384d3030b7049d459046911f2032910e3a360f2c473fdebc0b5cef8c",
+    "resources-context-published-390.png": "d2709312ab4508f5300169d7f37694d42187d1980c9c5c12dc0d23538fcc8b79",
+    "gifting-comparison-1440.png": "d345762d7444fe92ee9f63a8679a32345d27029f5d4c483cf90d75262bdb0149",
+    "gifting-published-390.png": "6ae90d5db22a8bf1696060e513e85d7f75eddb079c97a5d4c1390bf909150750",
+    "gifting-comparison-360.png": "764322ce7ae9dfabe8ea17dfa0b711a4866b8b70ad64fefaff1a83cd78a42a82",
+    "resources-focus-source-390.png": "ebd04da8384d3030b7049d459046911f2032910e3a360f2c473fdebc0b5cef8c",
+    "gifting-comparison-1280.png": "8ded2fba7b520945118e4e7fa6106c56a4fd8338587d5d876532dec4e22ef283",
+    "gifting-published-768.png": "a6949c6387c1dcd55da0c54774e2cbf410872a4a7c07d452a5427d078a2a39cc"
+  }
+}

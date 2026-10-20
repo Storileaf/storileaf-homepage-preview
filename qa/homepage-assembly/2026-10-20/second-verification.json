@@ -1,0 +1,1605 @@
+{
+  "package": 3,
+  "group": 8,
+  "source_commit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+  "writing": {
+    "run": 39380638969,
+    "job": 118488726841,
+    "status": "failure",
+    "candidate": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+    "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "artifact": {
+      "id": 12245153088,
+      "path": "/tmp/group8-writing-second-39380638969.zip",
+      "sha256": "1990d228558591bf49e48150c59639811ce60804fb8bd846528244ac7345217a",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39380638969/artifacts/12245153088"
+    },
+    "report": {
+      "file": "second-writing-report.json.gz",
+      "sha256": "e1984b75a895a811282cf250037b3d29802fe6ded4581b1060585c01d07559a5"
+    },
+    "problems": [
+      "section-768 tile 0 pixels {\"ratio\":0.018794970372460498,\"changed\":12789,\"total\":680448,\"size\":[768,886]}",
+      "section-1280 tile 0 pixels {\"ratio\":0.018169088924632353,\"changed\":25303,\"total\":1392640,\"size\":[1280,1088]}",
+      "section-1440 tile 0 pixels {\"ratio\":0.016027980535279804,\"changed\":25296,\"total\":1578240,\"size\":[1440,1096]}",
+      "boundary-901 emphasis[0].rect[2] 532.171875 versus 532.015625"
+    ],
+    "environment": {
+      "browser": "155.0.8059.39",
+      "node": "v22.23.3",
+      "platform": "linux",
+      "playwright": "1.56.1"
+    },
+    "requestedWidths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "states": 19,
+    "captures": 118,
+    "identity": {
+      "sourceHashes": {
+        "count": 52,
+        "mismatches": []
+      },
+      "harnessHashes": {
+        "count": 3,
+        "mismatches": []
+      },
+      "protectedHashes": {
+        "count": 4,
+        "mismatches": []
+      },
+      "captures": {
+        "count": 118,
+        "mismatches": []
+      }
+    },
+    "rasterDiagnostics": [
+      {
+        "width": 768,
+        "runCurrent": {
+          "published": {
+            "origin": [
+              0,
+              5332.46875
+            ],
+            "nodes": {
+              "root": [
+                {
+                  "rect": [
+                    0,
+                    0,
+                    768,
+                    884.65625
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "stage": [
+                {
+                  "rect": [
+                    32,
+                    341.65625,
+                    704,
+                    352
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "laptop": [
+                {
+                  "rect": [
+                    130.546875,
+                    345.171875,
+                    492.796875,
+                    319.078125
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "tablet": [
+                {
+                  "rect": [
+                    542.40625,
+                    419.09375,
+                    190.078125,
+                    250.09375
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "phone": [
+                {
+                  "rect": [
+                    29.645708084106445,
+                    453.6295166015625,
+                    124.36483764648438,
+                    228.350341796875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+                }
+              ],
+              "heading": [
+                {
+                  "rect": [
+                    32,
+                    112,
+                    704,
+                    173.65625
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "title": [
+                {
+                  "rect": [
+                    32,
+                    112,
+                    704,
+                    95.65625
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "emphasis": [
+                {
+                  "rect": [
+                    215.421875,
+                    112,
+                    379.671875,
+                    93.828125
+                  ],
+                  "transform": "none"
+                }
+              ]
+            },
+            "capture": {
+              "kind": "published",
+              "file": "published-section-768-tile-0.png",
+              "viewport": {
+                "width": 768,
+                "height": 1200
+              },
+              "clip": {
+                "x": 0,
+                "y": 0,
+                "width": 768,
+                "height": 886
+              },
+              "offset": 0,
+              "context": false,
+              "dialog": false,
+              "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+            }
+          },
+          "source": {
+            "origin": [
+              0,
+              5332.46875
+            ],
+            "nodes": {
+              "root": [
+                {
+                  "rect": [
+                    0,
+                    0,
+                    768,
+                    884.65625
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "stage": [
+                {
+                  "rect": [
+                    32,
+                    341.65625,
+                    704,
+                    352
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "laptop": [
+                {
+                  "rect": [
+                    130.546875,
+                    345.171875,
+                    492.796875,
+                    319.078125
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "tablet": [
+                {
+                  "rect": [
+                    542.40625,
+                    419.09375,
+                    190.078125,
+                    250.09375
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "phone": [
+                {
+                  "rect": [
+                    29.645708084106445,
+                    453.6295166015625,
+                    124.36483764648438,
+                    228.350341796875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+                }
+              ],
+              "heading": [
+                {
+                  "rect": [
+                    32,
+                    112,
+                    704,
+                    173.65625
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "title": [
+                {
+                  "rect": [
+                    32,
+                    112,
+                    704,
+                    95.65625
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "emphasis": [
+                {
+                  "rect": [
+                    215.421875,
+                    112,
+                    379.671875,
+                    93.828125
+                  ],
+                  "transform": "none"
+                }
+              ]
+            },
+            "capture": {
+              "kind": "source",
+              "file": "source-section-768-tile-0.png",
+              "viewport": {
+                "width": 768,
+                "height": 1200
+              },
+              "clip": {
+                "x": 0,
+                "y": 0,
+                "width": 768,
+                "height": 886
+              },
+              "offset": 0,
+              "context": false,
+              "dialog": false,
+              "sha256": "0b991b942940775dcc7f0a3f7eb8f312f4103db95825a36a9f479905d80b6247"
+            }
+          }
+        },
+        "sameVersionBetweenRuns": {
+          "published": {
+            "file": "published-section-768-tile-0.png",
+            "firstSHA256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+            "secondSHA256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+            "changedPixels": 0,
+            "ratio": 0.0,
+            "bounds": null
+          },
+          "source": {
+            "file": "source-section-768-tile-0.png",
+            "firstSHA256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+            "secondSHA256": "0b991b942940775dcc7f0a3f7eb8f312f4103db95825a36a9f479905d80b6247",
+            "changedPixels": 12789,
+            "ratio": 0.018794970372460498,
+            "bounds": [
+              31,
+              346,
+              710,
+              680
+            ]
+          }
+        }
+      },
+      {
+        "width": 1280,
+        "runCurrent": {
+          "published": {
+            "origin": [
+              0,
+              4680.125
+            ],
+            "nodes": {
+              "root": [
+                {
+                  "rect": [
+                    0,
+                    0,
+                    1280,
+                    1087.125
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "stage": [
+                {
+                  "rect": [
+                    115,
+                    371.125,
+                    1050,
+                    525
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "laptop": [
+                {
+                  "rect": [
+                    262,
+                    376.375,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "tablet": [
+                {
+                  "rect": [
+                    876.25,
+                    486.625,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "phone": [
+                {
+                  "rect": [
+                    111.50067901611328,
+                    538.1358032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+                }
+              ],
+              "heading": [
+                {
+                  "rect": [
+                    230,
+                    112,
+                    820,
+                    203.125
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "title": [
+                {
+                  "rect": [
+                    245,
+                    112,
+                    790,
+                    125.125
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "emphasis": [
+                {
+                  "rect": [
+                    419.53125,
+                    113,
+                    496.515625,
+                    122.5625
+                  ],
+                  "transform": "none"
+                }
+              ]
+            },
+            "capture": {
+              "kind": "published",
+              "file": "published-section-1280-tile-0.png",
+              "viewport": {
+                "width": 1280,
+                "height": 1200
+              },
+              "clip": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 1088
+              },
+              "offset": 0,
+              "context": false,
+              "dialog": false,
+              "sha256": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4"
+            }
+          },
+          "source": {
+            "origin": [
+              0,
+              4680.125
+            ],
+            "nodes": {
+              "root": [
+                {
+                  "rect": [
+                    0,
+                    0,
+                    1280,
+                    1087.125
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "stage": [
+                {
+                  "rect": [
+                    115,
+                    371.125,
+                    1050,
+                    525
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "laptop": [
+                {
+                  "rect": [
+                    262,
+                    376.375,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "tablet": [
+                {
+                  "rect": [
+                    876.25,
+                    486.625,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "phone": [
+                {
+                  "rect": [
+                    111.50067901611328,
+                    538.1358032226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+                }
+              ],
+              "heading": [
+                {
+                  "rect": [
+                    230,
+                    112,
+                    820,
+                    203.125
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "title": [
+                {
+                  "rect": [
+                    245,
+                    112,
+                    790,
+                    125.125
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "emphasis": [
+                {
+                  "rect": [
+                    419.53125,
+                    113,
+                    496.515625,
+                    122.5625
+                  ],
+                  "transform": "none"
+                }
+              ]
+            },
+            "capture": {
+              "kind": "source",
+              "file": "source-section-1280-tile-0.png",
+              "viewport": {
+                "width": 1280,
+                "height": 1200
+              },
+              "clip": {
+                "x": 0,
+                "y": 0,
+                "width": 1280,
+                "height": 1088
+              },
+              "offset": 0,
+              "context": false,
+              "dialog": false,
+              "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+            }
+          }
+        },
+        "sameVersionBetweenRuns": {
+          "published": {
+            "file": "published-section-1280-tile-0.png",
+            "firstSHA256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+            "secondSHA256": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4",
+            "changedPixels": 25303,
+            "ratio": 0.018169088924632353,
+            "bounds": [
+              114,
+              405,
+              1152,
+              877
+            ]
+          },
+          "source": {
+            "file": "source-section-1280-tile-0.png",
+            "firstSHA256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+            "secondSHA256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+            "changedPixels": 0,
+            "ratio": 0.0,
+            "bounds": null
+          }
+        }
+      },
+      {
+        "width": 1440,
+        "runCurrent": {
+          "published": {
+            "origin": [
+              0,
+              4765.21875
+            ],
+            "nodes": {
+              "root": [
+                {
+                  "rect": [
+                    0,
+                    0,
+                    1440,
+                    1095.09375
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "stage": [
+                {
+                  "rect": [
+                    195,
+                    379.09375,
+                    1050,
+                    525
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "laptop": [
+                {
+                  "rect": [
+                    342,
+                    384.34375,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "tablet": [
+                {
+                  "rect": [
+                    956.25,
+                    494.59375,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "phone": [
+                {
+                  "rect": [
+                    191.50067138671875,
+                    546.1045532226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+                }
+              ],
+              "heading": [
+                {
+                  "rect": [
+                    310,
+                    112,
+                    820,
+                    211.09375
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "title": [
+                {
+                  "rect": [
+                    325,
+                    112,
+                    790,
+                    133.09375
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "emphasis": [
+                {
+                  "rect": [
+                    485.453125,
+                    113,
+                    528.234375,
+                    130.546875
+                  ],
+                  "transform": "none"
+                }
+              ]
+            },
+            "capture": {
+              "kind": "published",
+              "file": "published-section-1440-tile-0.png",
+              "viewport": {
+                "width": 1440,
+                "height": 1200
+              },
+              "clip": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 1096
+              },
+              "offset": 0,
+              "context": false,
+              "dialog": false,
+              "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e"
+            }
+          },
+          "source": {
+            "origin": [
+              0,
+              4765.21875
+            ],
+            "nodes": {
+              "root": [
+                {
+                  "rect": [
+                    0,
+                    0,
+                    1440,
+                    1095.09375
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "stage": [
+                {
+                  "rect": [
+                    195,
+                    379.09375,
+                    1050,
+                    525
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "laptop": [
+                {
+                  "rect": [
+                    342,
+                    384.34375,
+                    735,
+                    469.515625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "tablet": [
+                {
+                  "rect": [
+                    956.25,
+                    494.59375,
+                    283.5,
+                    373.015625
+                  ],
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "phone": [
+                {
+                  "rect": [
+                    191.50067138671875,
+                    546.1045532226562,
+                    185.4986572265625,
+                    340.6033935546875
+                  ],
+                  "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)"
+                }
+              ],
+              "heading": [
+                {
+                  "rect": [
+                    310,
+                    112,
+                    820,
+                    211.09375
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "title": [
+                {
+                  "rect": [
+                    325,
+                    112,
+                    790,
+                    133.09375
+                  ],
+                  "transform": "none"
+                }
+              ],
+              "emphasis": [
+                {
+                  "rect": [
+                    485.453125,
+                    113,
+                    528.234375,
+                    130.546875
+                  ],
+                  "transform": "none"
+                }
+              ]
+            },
+            "capture": {
+              "kind": "source",
+              "file": "source-section-1440-tile-0.png",
+              "viewport": {
+                "width": 1440,
+                "height": 1200
+              },
+              "clip": {
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 1096
+              },
+              "offset": 0,
+              "context": false,
+              "dialog": false,
+              "sha256": "86c811b94e9389b1209af8bb01b5b52f621d1fe94d6044509117af37935abd24"
+            }
+          }
+        },
+        "sameVersionBetweenRuns": {
+          "published": {
+            "file": "published-section-1440-tile-0.png",
+            "firstSHA256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+            "secondSHA256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+            "changedPixels": 0,
+            "ratio": 0.0,
+            "bounds": null
+          },
+          "source": {
+            "file": "source-section-1440-tile-0.png",
+            "firstSHA256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+            "secondSHA256": "86c811b94e9389b1209af8bb01b5b52f621d1fe94d6044509117af37935abd24",
+            "changedPixels": 25296,
+            "ratio": 0.016027980535279804,
+            "bounds": [
+              194,
+              419,
+              1232,
+              885
+            ]
+          }
+        }
+      }
+    ],
+    "fontMetricDiagnostics": [
+      {
+        "run": "first",
+        "nodes": {
+          "published": [
+            {
+              "rect": [
+                302.484375,
+                112,
+                532.015625,
+                46
+              ],
+              "style": {
+                "fontFamily": "Newsreader",
+                "fontSize": "46px",
+                "fontWeight": "430",
+                "fontStyle": "italic",
+                "lineHeight": "47.84px",
+                "letterSpacing": "-1.932px",
+                "textAlign": "center",
+                "color": "rgb(12, 103, 83)",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "backgroundImage": "none",
+                "borderTopWidth": "0px",
+                "borderRightWidth": "0px",
+                "borderBottomWidth": "0px",
+                "borderLeftWidth": "0px",
+                "borderRadius": "0px",
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px",
+                "gap": "normal",
+                "rowGap": "normal",
+                "columnGap": "normal",
+                "display": "inline",
+                "position": "static",
+                "alignItems": "normal",
+                "justifyContent": "normal",
+                "flexDirection": "row",
+                "flexShrink": "1",
+                "opacity": "1",
+                "boxShadow": "none",
+                "overflow": "visible",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "zIndex": "auto",
+                "transform": "none",
+                "transformOrigin": "0px 0px",
+                "animationName": "none",
+                "animationDuration": "1e-05s",
+                "animationDelay": "0s",
+                "animationTimingFunction": "ease",
+                "animationFillMode": "none",
+                "transitionDuration": "1e-05s",
+                "resize": "none",
+                "containerType": "normal",
+                "objectFit": "fill",
+                "objectPosition": "50% 50%"
+              },
+              "text": "Come back when you are ready.",
+              "label": null,
+              "role": null,
+              "hidden": null,
+              "expanded": null,
+              "state": null,
+              "alt": null
+            }
+          ],
+          "source": [
+            {
+              "rect": [
+                302.484375,
+                112,
+                532.015625,
+                46
+              ],
+              "style": {
+                "fontFamily": "Newsreader",
+                "fontSize": "46px",
+                "fontWeight": "430",
+                "fontStyle": "italic",
+                "lineHeight": "47.84px",
+                "letterSpacing": "-1.932px",
+                "textAlign": "center",
+                "color": "rgb(12, 103, 83)",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "backgroundImage": "none",
+                "borderTopWidth": "0px",
+                "borderRightWidth": "0px",
+                "borderBottomWidth": "0px",
+                "borderLeftWidth": "0px",
+                "borderRadius": "0px",
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px",
+                "gap": "normal",
+                "rowGap": "normal",
+                "columnGap": "normal",
+                "display": "inline",
+                "position": "static",
+                "alignItems": "normal",
+                "justifyContent": "normal",
+                "flexDirection": "row",
+                "flexShrink": "1",
+                "opacity": "1",
+                "boxShadow": "none",
+                "overflow": "visible",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "zIndex": "auto",
+                "transform": "none",
+                "transformOrigin": "0px 0px",
+                "animationName": "none",
+                "animationDuration": "1e-05s",
+                "animationDelay": "0s",
+                "animationTimingFunction": "ease",
+                "animationFillMode": "none",
+                "transitionDuration": "1e-05s",
+                "resize": "none",
+                "containerType": "normal",
+                "objectFit": "fill",
+                "objectPosition": "50% 50%"
+              },
+              "text": "Come back when you are ready.",
+              "label": null,
+              "role": null,
+              "hidden": null,
+              "expanded": null,
+              "state": null,
+              "alt": null
+            }
+          ]
+        }
+      },
+      {
+        "run": "second",
+        "nodes": {
+          "published": [
+            {
+              "rect": [
+                302.390625,
+                112,
+                532.171875,
+                46
+              ],
+              "style": {
+                "fontFamily": "Newsreader",
+                "fontSize": "46px",
+                "fontWeight": "430",
+                "fontStyle": "italic",
+                "lineHeight": "47.84px",
+                "letterSpacing": "-1.932px",
+                "textAlign": "center",
+                "color": "rgb(12, 103, 83)",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "backgroundImage": "none",
+                "borderTopWidth": "0px",
+                "borderRightWidth": "0px",
+                "borderBottomWidth": "0px",
+                "borderLeftWidth": "0px",
+                "borderRadius": "0px",
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px",
+                "gap": "normal",
+                "rowGap": "normal",
+                "columnGap": "normal",
+                "display": "inline",
+                "position": "static",
+                "alignItems": "normal",
+                "justifyContent": "normal",
+                "flexDirection": "row",
+                "flexShrink": "1",
+                "opacity": "1",
+                "boxShadow": "none",
+                "overflow": "visible",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "zIndex": "auto",
+                "transform": "none",
+                "transformOrigin": "0px 0px",
+                "animationName": "none",
+                "animationDuration": "1e-05s",
+                "animationDelay": "0s",
+                "animationTimingFunction": "ease",
+                "animationFillMode": "none",
+                "transitionDuration": "1e-05s",
+                "resize": "none",
+                "containerType": "normal",
+                "objectFit": "fill",
+                "objectPosition": "50% 50%",
+                "scrollMarginTop": "0px",
+                "tabSize": "4",
+                "webkitTextSizeAdjust": "100%",
+                "webkitTapHighlightColor": "rgba(0, 0, 0, 0)"
+              },
+              "text": "Come back when you are ready.",
+              "label": null,
+              "role": null,
+              "hidden": null,
+              "expanded": null,
+              "state": null,
+              "alt": null,
+              "selectionColours": {
+                "color": "rgb(37, 53, 38)",
+                "backgroundColor": "rgb(229, 235, 224)"
+              }
+            }
+          ],
+          "source": [
+            {
+              "rect": [
+                302.484375,
+                112,
+                532.015625,
+                46
+              ],
+              "style": {
+                "fontFamily": "Newsreader",
+                "fontSize": "46px",
+                "fontWeight": "430",
+                "fontStyle": "italic",
+                "lineHeight": "47.84px",
+                "letterSpacing": "-1.932px",
+                "textAlign": "center",
+                "color": "rgb(12, 103, 83)",
+                "backgroundColor": "rgba(0, 0, 0, 0)",
+                "backgroundImage": "none",
+                "borderTopWidth": "0px",
+                "borderRightWidth": "0px",
+                "borderBottomWidth": "0px",
+                "borderLeftWidth": "0px",
+                "borderRadius": "0px",
+                "paddingTop": "0px",
+                "paddingRight": "0px",
+                "paddingBottom": "0px",
+                "paddingLeft": "0px",
+                "marginTop": "0px",
+                "marginRight": "0px",
+                "marginBottom": "0px",
+                "marginLeft": "0px",
+                "gap": "normal",
+                "rowGap": "normal",
+                "columnGap": "normal",
+                "display": "inline",
+                "position": "static",
+                "alignItems": "normal",
+                "justifyContent": "normal",
+                "flexDirection": "row",
+                "flexShrink": "1",
+                "opacity": "1",
+                "boxShadow": "none",
+                "overflow": "visible",
+                "overflowX": "visible",
+                "overflowY": "visible",
+                "zIndex": "auto",
+                "transform": "none",
+                "transformOrigin": "0px 0px",
+                "animationName": "none",
+                "animationDuration": "1e-05s",
+                "animationDelay": "0s",
+                "animationTimingFunction": "ease",
+                "animationFillMode": "none",
+                "transitionDuration": "1e-05s",
+                "resize": "none",
+                "containerType": "normal",
+                "objectFit": "fill",
+                "objectPosition": "50% 50%",
+                "scrollMarginTop": "0px",
+                "tabSize": "4",
+                "webkitTextSizeAdjust": "100%",
+                "webkitTapHighlightColor": "rgba(0, 0, 0, 0)"
+              },
+              "text": "Come back when you are ready.",
+              "label": null,
+              "role": null,
+              "hidden": null,
+              "expanded": null,
+              "state": null,
+              "alt": null,
+              "selectionColours": {
+                "color": "rgb(37, 53, 38)",
+                "backgroundColor": "rgb(229, 235, 224)"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "diagnosisStatus": "Investigation. No source or harness correction and no replay yet.",
+    "observations": [
+      "Device-only changed-pixel regions. Heading, lead, action and background remain unchanged in failed section captures.",
+      "Native section origins, relative stage/device geometry, computed transforms and clips match at each failed width.",
+      "At1280 the source PNG is byte-identical to the initial passing source PNG while the protected published PNG differs.",
+      "The protected published901 emphasis width moved from532.015625 to532.171875 with unchanged recorded font styles; source remains532.015625. Exact glyph/face/raster readiness requires additional evidence."
+    ]
+  },
+  "assembly": {
+    "runId": 39380639048,
+    "jobId": 118488727092,
+    "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+    "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "browser": "155.0.8059.84",
+    "zipSha256": "74834f42c33ef448e644b5f77ac980cfd0dd68d76122ad8dbb85f9f57baba836",
+    "reportSha256": "8a77908e9d3f608a0a879c9bdc0ab6221f481ca3ca0fb184f94d42fa6feb1e2c",
+    "checks": {
+      "sourceHashes": {
+        "count": 56,
+        "mismatches": []
+      },
+      "harnessHashes": {
+        "count": 2,
+        "mismatches": []
+      },
+      "protectedHashes": {
+        "count": 5,
+        "mismatches": []
+      },
+      "captures": {
+        "count": 280,
+        "mismatches": []
+      }
+    },
+    "widthCount": 10,
+    "pairCount": 140,
+    "maxGeometry": 0,
+    "maxPixelRatio": 0.005260416666666667,
+    "stateCoverage": {
+      "completedJourneyAttempts": 1,
+      "requiredJourneyAttempts": 10,
+      "pinnedWidths": [],
+      "shortScreens": []
+    },
+    "completeCheckpoint": false,
+    "problems": [
+      "page.waitForFunction: Timeout 30000ms exceeded.\n    at journey (/home/runner/work/storileaf-homepage-preview/storileaf-homepage-preview/frontend/scripts/verify-assembly-parity.mjs:377:16)\n    at async file:///home/runner/work/storileaf-homepage-preview/storileaf-homepage-preview/frontend/scripts/verify-assembly-parity.mjs:447:75"
+    ],
+    "history": [
+      {
+        "kind": "published",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "motion": "reduce",
+        "status": "complete",
+        "file": "journey-390x844-reduce-pointer-published.json",
+        "anchors": [
+          {
+            "text": "See inside",
+            "id": "samples",
+            "phase": "complete",
+            "preInteraction": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+              "scroll": [
+                0,
+                9262
+              ],
+              "historyLength": 4,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "before": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+              "scroll": [
+                0,
+                9262
+              ],
+              "historyLength": 4,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "reachedNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+              "scroll": [
+                0,
+                2072
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "backSettled": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+              "scroll": [
+                0,
+                9262
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "back": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+              "scroll": [
+                0,
+                9262
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "forwardNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+              "scroll": [
+                0,
+                2072
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            }
+          },
+          {
+            "text": "How it works",
+            "id": "how-it-works",
+            "phase": "complete",
+            "preInteraction": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+              "scroll": [
+                0,
+                9294
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "before": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+              "scroll": [
+                0,
+                9294
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "reachedNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+              "scroll": [
+                0,
+                3807
+              ],
+              "historyLength": 6,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "backSettled": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+              "scroll": [
+                0,
+                9294
+              ],
+              "historyLength": 6,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "back": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+              "scroll": [
+                0,
+                9294
+              ],
+              "historyLength": 6,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "forwardNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+              "scroll": [
+                0,
+                3807
+              ],
+              "historyLength": 6,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            }
+          },
+          {
+            "text": "Resources",
+            "id": "resources",
+            "phase": "complete",
+            "preInteraction": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 6,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "before": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 6,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "reachedNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+              "scroll": [
+                0,
+                6394
+              ],
+              "historyLength": 7,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "backSettled": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 7,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "back": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 7,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "forwardNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+              "scroll": [
+                0,
+                6394
+              ],
+              "historyLength": 7,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            }
+          },
+          {
+            "text": "Common questions",
+            "id": "questions",
+            "phase": "complete",
+            "preInteraction": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 7,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "before": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 7,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "reachedNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+              "scroll": [
+                0,
+                7582
+              ],
+              "historyLength": 8,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "backSettled": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 8,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "back": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+              "scroll": [
+                0,
+                9348
+              ],
+              "historyLength": 8,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "forwardNavigation": {
+              "url": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+              "scroll": [
+                0,
+                7582
+              ],
+              "historyLength": 8,
+              "scrollRestoration": "manual",
+              "document": [
+                390,
+                10193
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "kind": "source",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "motion": "reduce",
+        "status": "failed",
+        "file": "journey-390x844-reduce-pointer-source.json",
+        "anchors": [
+          {
+            "text": "See inside",
+            "id": "samples",
+            "phase": "browser Back",
+            "preInteraction": {
+              "url": "http://127.0.0.1:4180/#top",
+              "scroll": [
+                0,
+                9262
+              ],
+              "historyLength": 4,
+              "scrollRestoration": "auto",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "before": {
+              "url": "http://127.0.0.1:4180/#top",
+              "scroll": [
+                0,
+                9262
+              ],
+              "historyLength": 4,
+              "scrollRestoration": "auto",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "reachedNavigation": {
+              "url": "http://127.0.0.1:4180/#samples",
+              "scroll": [
+                0,
+                2072
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "auto",
+              "document": [
+                390,
+                10193
+              ]
+            },
+            "backSettled": {
+              "url": "http://127.0.0.1:4180/#top",
+              "scroll": [
+                0,
+                0
+              ],
+              "historyLength": 5,
+              "scrollRestoration": "auto",
+              "document": [
+                390,
+                10193
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "report_file": "second-assembly-report.json.gz"
+  },
+  "status": "Failed checkpoint retained. Source history behaviour requires reconstruction; baseline-only writing raster and glyph variations require diagnosis. No thresholds changed."
+}

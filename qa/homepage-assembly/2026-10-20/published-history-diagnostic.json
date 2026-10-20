@@ -1,0 +1,50 @@
+{
+  "purpose": "Bounded diagnostic of the initial assembly Back restoration premise on the unchanged live published page",
+  "observed_on_utc": "2026-10-20",
+  "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+  "browser": "Connected Chrome; exact version was not independently recorded for this manual probe",
+  "viewport": [
+    390,
+    844
+  ],
+  "document_client_width": 375,
+  "document_height": 10077,
+  "motion": "No motion preference override applied in this connected browser probe",
+  "sequence": [
+    {
+      "action": "Activate footer StoriLeaf home",
+      "settled_hash": "#top",
+      "settled_scroll_y": 0
+    },
+    {
+      "action": "Native pointer scroll to footer",
+      "hash": "#top",
+      "scroll_y": 9233,
+      "see_inside_top": 364.90625,
+      "see_inside_bottom": 386.59375
+    },
+    {
+      "action": "Activate footer See inside",
+      "settled_hash": "#samples",
+      "settled_scroll_y": 2151,
+      "samples_top": 176.34375
+    },
+    {
+      "action": "Browser Back",
+      "settled_hash": "#top",
+      "settled_scroll_y": 9147,
+      "focus_text": "See inside",
+      "document_height": 10077
+    },
+    {
+      "action": "Browser Forward",
+      "settled_hash": "#samples",
+      "settled_scroll_y": 2151,
+      "samples_top": 176.34375,
+      "document_height": 10077
+    }
+  ],
+  "finding": "The unchanged published page restored 86px above the viewport sampled before pointer activation. This disproves using that earlier sample as an unconditional native history expectation.",
+  "bounded_correction": "The assembly gate now uses the existing discovery gate method. A passive capture-phase listener records the actual click-time URL and scroll without changing focus, scroll, events or history. Back must restore that actual position within the unchanged 1.1px gate. Earlier pre-interaction values remain recorded.",
+  "limits": "No click-time instrumentation was installed in the connected browser. This probe does not establish the exact focus mechanism or source parity. The corrected CI comparison separately records click-time and settled Back state on both versions. The viewport override was reset after the probe."
+}

@@ -1,0 +1,2084 @@
+{
+  "schema": "StoriLeaf Group8 Writing third-run review",
+  "reviewedAt": "2026-10-20T07:01:26.254585+00:00",
+  "status": "FAILED: two stable native pixel differences remain unresolved. This summary does not mark Group8 complete.",
+  "run": {
+    "id": 39382384202,
+    "jobId": 118494198632,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39382384202",
+    "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+    "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "createdAt": "2026-10-20T06:47:09.033Z",
+    "finishedAt": "2026-10-20T06:49:42.189Z",
+    "conclusion": "failure"
+  },
+  "artifact": {
+    "id": 12246485873,
+    "name": "homepage-writing-parity",
+    "zip": "/tmp/group8-writing-third-39382384202.zip",
+    "zipBytes": 17770389,
+    "zipSha256": "b8b79500c4dd27d920fbc8d152a36c27d9199827bf7e34f23493456838756f1c",
+    "extracted": "/tmp/group8-writing-third-39382384202",
+    "report": "/tmp/group8-writing-third-39382384202/report.json",
+    "reportSha256": "b135ef7d84e37248e1e357db7443ad4e66370837304eb9039a8638c601a73bcd"
+  },
+  "environment": {
+    "chromium": "155.0.8059.39",
+    "playwright": "1.56.1",
+    "node": "v22.23.3",
+    "platform": "linux",
+    "npm": "10.9.9",
+    "os": "Ubuntu 24.04.5",
+    "runnerImage": "ubuntu-24.04",
+    "runnerImageVersion": "20261012.334.1",
+    "runnerProvisionerVersion": "20261012.601",
+    "deviceScaleFactor": 1,
+    "environmentEvidence": "Report fields plus exact Actions job log for job118494198632. No Firefox, WebKit, physical device or native zoom run is claimed."
+  },
+  "metrics": {
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "widthCount": 10,
+    "stateCount": 19,
+    "ordinaryCaptureCount": 120,
+    "fixedNativePaintCaptureCount": 36,
+    "nativePaintRecordCount": 12,
+    "qualityFindingCount": 22,
+    "maximumMeasuredGeometryDifference": 0.015625,
+    "maximumOrdinaryPixelRatio": 0.02024777274499805,
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01
+    },
+    "problems": [
+      "section-1440 tile 0 pixels {\"ratio\":0.016027980535279804,\"changed\":25296,\"total\":1578240,\"size\":[1440,1096]}",
+      "boundary-901 tile 0 pixels {\"ratio\":0.02024777274499805,\"changed\":16200,\"total\":800088,\"size\":[901,888]}"
+    ]
+  },
+  "identities": {
+    "verifiedCounts": {
+      "captures": 120,
+      "nativePaint": 36,
+      "source": 53,
+      "harness": 3,
+      "protected": 4
+    },
+    "allVerified": true,
+    "mismatches": [],
+    "method": "All original and fixed-sample PNG bytes were hashed; all reported source, harness and protected files were compared to bytes from their exact immutable Git revisions. Derived review contact sheets are separate and not substituted for captures."
+  },
+  "sourceHashes": {
+    "src/App.tsx": "97010e342e0977003877de3368fe0cd0767ec6324b95cc6d5b4f0560e3818347",
+    "src/components/ActionLink.tsx": "b48d8e8c7e2edc5026b87a9f9c942b6a5b6f6efeb2dc145eea5bb49caeb68c0a",
+    "src/components/EditorialHeading.tsx": "7bbda62ee6d411a7f77e3a37e915bb871faf128bdf6001314f8c6e9a85112cdb",
+    "src/components/Layout.tsx": "2c37f54870ac5a894abe809a09eaa1e74f773cd73a50adead97e515c0beb13d0",
+    "src/components/NewsletterFooter.tsx": "5e8f750e6ed6df253db605001f50630bd45867d124572f2f0ecf4c1fb78ca788",
+    "src/components/ResourceCategoryCard.tsx": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47",
+    "src/components/ResponsiveImage.tsx": "4d1e3181e30a63e6408c718ecc6ba9c6fa086b3d24b99011e4aba3f90f0df5fc",
+    "src/components/SiteHeader.tsx": "a4b349fab2cc692d4ac838b2761fa61c292848ea316091530742c8e30772b3e8",
+    "src/components/Typography.tsx": "e05b1008187370bf37b56a3fc4fc34f1b9100027614e6c7c9cb8634f62e9de33",
+    "src/content.ts": "a7cded91fccec79530673df1ce2a54e42886e233b7eb989afaec63a65b7338fd",
+    "src/homepageScrollRestoration.ts": "4135dc8a0acadc933e6d6fea69588dbf2b10f6936d32ea19d6c697bcb944c871",
+    "src/main.tsx": "23ece7a01f1627ad6c4c888abb9efbc8a13d271e55a813d398c5c8004a07d8d8",
+    "src/sections/BookDiscovery.tsx": "3f7eaea9e161e1428232976d44571077bcc055e0657b31babd0f36453d04b391",
+    "src/sections/BookGallery.tsx": "021c551fbffc847e5e583155ee4e16045ff0eed6439526c4d308199cfeccf96a",
+    "src/sections/FaqSection.tsx": "e645c8856c9b60e19751115a2504d90f6a79ff5ff4d292be1ee883b1f0705866",
+    "src/sections/FinalInvitation.tsx": "95f0c629bf4da5c39f2c8320ca0e5833f06c539621161c6207a4a2d95135eb2a",
+    "src/sections/GiftingSection.tsx": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6",
+    "src/sections/HeroSection.tsx": "70eb6342e54cb98d84e9396b91bf51e8d40657bb22a6e82306cf82d90b551944",
+    "src/sections/homepageDiscoveryContent.ts": "0344b2b251997a9faf387861e6b89d0f8975429fad68ba0cf1dc85f8e3d7524b",
+    "src/sections/homepageEditorialContent.ts": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1",
+    "src/sections/homepageMediaContent.ts": "cc12a7c87dff83df9bd3c7de5b1e8f532cc9190a48585a8c7748aa702386927e",
+    "src/sections/homepageQuestionsContent.ts": "e660d3e75f4ea8b1dd344200260759c95d5e3d7c8f29367d81ba18d59213d65d",
+    "src/sections/HowItWorks.tsx": "280747e6c6e5d610931d598745fc1b9b67aeec291aefeed6e12e37d5b8ba3154",
+    "src/sections/PhysicalBookPresentation.tsx": "c54976988eab7918d500046360d752087cdd92a5bc6dc0b332f8c33fbd8566cb",
+    "src/sections/PracticeDialog.tsx": "1ffe8bb3b954fb9063b8e5a053e8533354be75737a620504a8a8b1072eb0571f",
+    "src/sections/processProgress.ts": "17f2008a08e856e94edfa0b30b437b0d0a9ca2a2114e68583a65a6ef0bc377d5",
+    "src/sections/ReassuranceBand.tsx": "56febe6b3829e48ea5e22a5ac3cd2fc48fce26b2c371cb94b5900f07f6787242",
+    "src/sections/ResourcesSection.tsx": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403",
+    "src/sections/useMediaReducedMotion.ts": "de6885e91b5a77adc56532926a9fd043539453784ac292b5e918e8ca50123ab2",
+    "src/sections/WritingShowcase.tsx": "b5f2a0637ba298152d3b5bee6d34ea420def50335cccb1ddf1d8bf42a226bb2c",
+    "src/siteRoutes.ts": "5e714d61a0f4e50de472a0c65b76fe67936f043e935f63c4d88e53480051ba6e",
+    "src/styles/components.css": "c1dee5ba708a2cb87072de87e1f87c43e0f77d842e27a4b0c6cdd1d98106d971",
+    "src/styles/foundations.css": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268",
+    "src/styles/homepage-craft.css": "fffb03c76f35637dd95ed6fc1a484411228e1723a39d7b8adfe3c898d9ffe8de",
+    "src/styles/homepage-discovery.css": "24bde0aee654721675b57d9c3b09cd26ef854f023dce188bdb9ed071b96f2efe",
+    "src/styles/homepage-editorial.css": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a",
+    "src/styles/homepage-hero.css": "66c6a4af46a9441c76e2cdddef04d63869e5917674edca65c1e23c9b92148cdc",
+    "src/styles/homepage-media.css": "47baf5bca2a34c3635b876eb1bfa5bc0ae208c7c8d716b28aba168018dc3f400",
+    "src/styles/homepage-process.css": "3d05706aea2c61e07420c3028ab6def8cc2345f24d95751f9840c4b04d121379",
+    "src/styles/homepage-questions.css": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da",
+    "src/styles/homepage-writing.css": "d7c7d096a6509a965ba4963a9452545e1f0632d2a95871defa29538ba22f860d",
+    "src/styles/shared-footer.css": "5c02e6ce6ffc3dc418e696f1474e31244fdfc4e811d6f1e16f3bea0a8e710467",
+    "src/styles/shared-header.css": "98dc7bf867dd848a16b7f51f27abcd4af16a1884e7b72b0554015cfc2f336464",
+    "src/styles/tokens.css": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081",
+    "src/styles/typography.css": "faf05e6601df7e528380f4f74a0e6232e0d2c216bb8fcd491f30a4112902e655",
+    "src/usePreviewCurrency.ts": "763fe027ed3e6ffcec144394be365dba0d343594e6028d655b3d826470b16ba4",
+    "content/hero.json": "5c88630d6f125372273b358064076dc2678e6f7b04ae8cc4af4a6cba030dc587",
+    "content/images.json": "3063a8d9ed41376682a1ff036b1ec7b93a9f5496ea724e5ff82b072512805426",
+    "content/ledger.json": "c00a403216cab6e5bebd3f5c81d3836a9f15a01c5a56d3bd56f437fca5952e58",
+    "content/media-images.json": "62e2f1df2ad5f1ca7062017ead9234ecc4d7f1e5916586ff320cfee65cb81b52",
+    "content/media-ledger.json": "77c4bf6b0c4dddd6c8e35f287d851f41f35144c13661a0f7b158612b3265e2f3",
+    "content/process.json": "6f378edc2a12f397f99fd20dcb4e1a1238975c4e050444b769ab9ddf9bc2bef7",
+    "content/writing.json": "3f96a49530b2d2e9133e25140e17f1e3161adf994be83f8c24fbd8a8f38ec565"
+  },
+  "harnessHashes": {
+    "scripts/verify-writing-parity.mjs": "d4ea089241820ca178ea7959b9b0be5e1230d0519680c3384d4a063b00f574ff",
+    "scripts/browser-readiness.mjs": "ca88d8553d196608652d630b233dfd3f05c3692bea315d31b2f778fa6f58cb91",
+    "scripts/computed-style-parity.mjs": "efbddf441b802d7135986ebed473133a591127cf862b52eab7ce805b3ce2fb1c"
+  },
+  "protectedHashes": {
+    "index.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+    "assets/index-DhPZyX4z.css": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+    "assets/routes-DrwDv2x2.js": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+    "assets/content-sections-CfrmOVRI.js": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e"
+  },
+  "fixedNativePaint": [
+    {
+      "kind": "published",
+      "label": "section-768",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 92,
+          "file": "published-section-768-tile-0-native-paint-0.png",
+          "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 326,
+          "file": "published-section-768-tile-0-native-paint-1.png",
+          "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 825,
+          "file": "published-section-768-tile-0-native-paint-2.png",
+          "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          5332
+        ],
+        "root": [
+          0,
+          0.46875,
+          768,
+          884.65625
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              32,
+              342.125,
+              704,
+              352
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              130.546875,
+              345.640625,
+              492.796875,
+              319.078125
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              542.40625,
+              419.5625,
+              190.078125,
+              250.09375
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              29.645708084106445,
+              454.0982666015625,
+              124.36483764648438,
+              228.350341796875
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "source",
+      "label": "section-768",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 90,
+          "file": "source-section-768-tile-0-native-paint-0.png",
+          "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 340,
+          "file": "source-section-768-tile-0-native-paint-1.png",
+          "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 823,
+          "file": "source-section-768-tile-0-native-paint-2.png",
+          "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          5332
+        ],
+        "root": [
+          0,
+          0.46875,
+          768,
+          884.65625
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              32,
+              342.125,
+              704,
+              352
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              130.546875,
+              345.640625,
+              492.796875,
+              319.078125
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              542.40625,
+              419.5625,
+              190.078125,
+              250.09375
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              29.645708084106445,
+              454.0982666015625,
+              124.36483764648438,
+              228.350341796875
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "published",
+      "label": "section-820",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 96,
+          "file": "published-section-820-tile-0-native-paint-0.png",
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 329,
+          "file": "published-section-820-tile-0-native-paint-1.png",
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 827,
+          "file": "published-section-820-tile-0-native-paint-2.png",
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          5399
+        ],
+        "root": [
+          0,
+          0.234375,
+          820,
+          910.65625
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              32,
+              341.890625,
+              756,
+              378
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              137.828125,
+              345.65625,
+              529.1875,
+              341.6875
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              580.125,
+              425.046875,
+              204.109375,
+              268.5625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              29.468708038330078,
+              462.13311767578125,
+              133.54696655273438,
+              245.2025146484375
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "source",
+      "label": "section-820",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 93,
+          "file": "source-section-820-tile-0-native-paint-0.png",
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 327,
+          "file": "source-section-820-tile-0-native-paint-1.png",
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 827,
+          "file": "source-section-820-tile-0-native-paint-2.png",
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          5399
+        ],
+        "root": [
+          0,
+          0.234375,
+          820,
+          910.65625
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              32,
+              341.890625,
+              756,
+              378
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              137.828125,
+              345.65625,
+              529.1875,
+              341.6875
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              580.125,
+              425.046875,
+              204.109375,
+              268.5625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              29.468708038330078,
+              462.13311767578125,
+              133.54696655273438,
+              245.2025146484375
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "published",
+      "label": "section-1024",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 105,
+          "file": "published-section-1024-tile-0-native-paint-0.png",
+          "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 338,
+          "file": "published-section-1024-tile-0-native-paint-1.png",
+          "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 838,
+          "file": "published-section-1024-tile-0-native-paint-2.png",
+          "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4429
+        ],
+        "root": [
+          0,
+          0.015625,
+          1024,
+          1001.09375
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              48,
+              346.109375,
+              928,
+              464
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              177.90625,
+              350.734375,
+              649.59375,
+              416.46875
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              720.828125,
+              448.1875,
+              250.546875,
+              329.65625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              44.894229888916016,
+              493.7049560546875,
+              163.9302978515625,
+              300.996337890625
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "source",
+      "label": "section-1024",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 106,
+          "file": "source-section-1024-tile-0-native-paint-0.png",
+          "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 338,
+          "file": "source-section-1024-tile-0-native-paint-1.png",
+          "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 838,
+          "file": "source-section-1024-tile-0-native-paint-2.png",
+          "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4429
+        ],
+        "root": [
+          0,
+          0.015625,
+          1024,
+          1001.09375
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              48,
+              346.109375,
+              928,
+              464
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              177.90625,
+              350.734375,
+              649.59375,
+              416.46875
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              720.828125,
+              448.1875,
+              250.546875,
+              329.65625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              44.894229888916016,
+              493.7049560546875,
+              163.9302978515625,
+              300.996337890625
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "published",
+      "label": "section-1280",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 118,
+          "file": "published-section-1280-tile-0-native-paint-0.png",
+          "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 350,
+          "file": "published-section-1280-tile-0-native-paint-1.png",
+          "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 849,
+          "file": "published-section-1280-tile-0-native-paint-2.png",
+          "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4680
+        ],
+        "root": [
+          0,
+          0.125,
+          1280,
+          1087.125
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              115,
+              371.25,
+              1050,
+              525
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              262,
+              376.5,
+              735,
+              469.515625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              876.25,
+              486.75,
+              283.5,
+              373.015625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              111.50067901611328,
+              538.2608032226562,
+              185.4986572265625,
+              340.6033935546875
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "source",
+      "label": "section-1280",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 116,
+          "file": "source-section-1280-tile-0-native-paint-0.png",
+          "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 366,
+          "file": "source-section-1280-tile-0-native-paint-1.png",
+          "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 866,
+          "file": "source-section-1280-tile-0-native-paint-2.png",
+          "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4680
+        ],
+        "root": [
+          0,
+          0.125,
+          1280,
+          1087.125
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              115,
+              371.25,
+              1050,
+              525
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              262,
+              376.5,
+              735,
+              469.515625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              876.25,
+              486.75,
+              283.5,
+              373.015625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              111.50067901611328,
+              538.2608032226562,
+              185.4986572265625,
+              340.6033935546875
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "published",
+      "label": "section-1440",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 122,
+          "file": "published-section-1440-tile-0-native-paint-0.png",
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 376,
+          "file": "published-section-1440-tile-0-native-paint-1.png",
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 854,
+          "file": "published-section-1440-tile-0-native-paint-2.png",
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4765
+        ],
+        "root": [
+          0,
+          0.21875,
+          1440,
+          1095.09375
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              195,
+              379.3125,
+              1050,
+              525
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              342,
+              384.5625,
+              735,
+              469.515625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              956.25,
+              494.8125,
+              283.5,
+              373.015625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              191.50067138671875,
+              546.3233032226562,
+              185.4986572265625,
+              340.6033935546875
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "source",
+      "label": "section-1440",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 125,
+          "file": "source-section-1440-tile-0-native-paint-0.png",
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 369,
+          "file": "source-section-1440-tile-0-native-paint-1.png",
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 869,
+          "file": "source-section-1440-tile-0-native-paint-2.png",
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4765
+        ],
+        "root": [
+          0,
+          0.21875,
+          1440,
+          1095.09375
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              195,
+              379.3125,
+              1050,
+              525
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              342,
+              384.5625,
+              735,
+              469.515625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              956.25,
+              494.8125,
+              283.5,
+              373.015625
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              191.50067138671875,
+              546.3233032226562,
+              185.4986572265625,
+              340.6033935546875
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "published",
+      "label": "boundary-901",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 99,
+          "file": "published-boundary-901-tile-0-native-paint-0.png",
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 331,
+          "file": "published-boundary-901-tile-0-native-paint-1.png",
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 831,
+          "file": "published-boundary-901-tile-0-native-paint-2.png",
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4465
+        ],
+        "root": [
+          0,
+          0.546875,
+          901,
+          887.328125
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              48,
+              294.375,
+              805,
+              402.5
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              160.6875,
+              298.390625,
+              563.5,
+              363
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              631.640625,
+              382.921875,
+              217.34375,
+              285.96875
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              45.31406021118164,
+              422.40411376953125,
+              142.21563720703125,
+              261.1292724609375
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    },
+    {
+      "kind": "source",
+      "label": "boundary-901",
+      "tile": 0,
+      "plannedMilliseconds": [
+        0,
+        250,
+        750
+      ],
+      "finalSampleIndex": 2,
+      "allThreeByteIdentical": true,
+      "finalTwoStable": true,
+      "samples": [
+        {
+          "index": 0,
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 99,
+          "file": "source-boundary-901-tile-0-native-paint-0.png",
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        },
+        {
+          "index": 1,
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 331,
+          "file": "source-boundary-901-tile-0-native-paint-1.png",
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        },
+        {
+          "index": 2,
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 832,
+          "file": "source-boundary-901-tile-0-native-paint-2.png",
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        }
+      ],
+      "nativeStateAtFirstSample": {
+        "scroll": [
+          0,
+          4465
+        ],
+        "root": [
+          0,
+          0.546875,
+          901,
+          887.328125
+        ],
+        "device": [
+          {
+            "class": "device-stage is-visible",
+            "rect": [
+              48,
+              294.375,
+              805,
+              402.5
+            ],
+            "transform": "none",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-laptop",
+            "rect": [
+              160.6875,
+              298.390625,
+              563.5,
+              363
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-tablet",
+            "rect": [
+              631.640625,
+              382.921875,
+              217.34375,
+              285.96875
+            ],
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          },
+          {
+            "class": "device-phone",
+            "rect": [
+              45.31406021118164,
+              422.40411376953125,
+              142.21563720703125,
+              261.1292724609375
+            ],
+            "transform": "matrix(0.996195, -0.0871557, 0.0871557, 0.996195, 0, 0)",
+            "filter": "none",
+            "opacity": "1"
+          }
+        ],
+        "fontStatus": "loaded",
+        "documentState": "complete"
+      },
+      "allNativeStatesEqual": true
+    }
+  ],
+  "fonts": {
+    "preparationContexts": 54,
+    "preparationPasses": 106,
+    "actualDescriptorLoads": 1316,
+    "resourceObservations": 290,
+    "allBeforeAndAfterChecksTrue": true,
+    "emphasisBeforeAfterChanges": 0,
+    "freshFailingPairs": [
+      {
+        "width": 1440,
+        "contextIndices": [
+          18,
+          19
+        ],
+        "actualTextDescriptorsEqual": false,
+        "faceInventoriesEqual": true,
+        "allResourceIdentitiesEqual": true,
+        "resourceCountPerSide": [
+          5,
+          5
+        ],
+        "bodyCaptureErrors": [
+          0,
+          0
+        ],
+        "emphasisRequests": [
+          [
+            {
+              "font": "italic 430 64px Newsreader, Georgia, serif",
+              "beforeCheck": true,
+              "afterCheck": true,
+              "faces": [
+                {
+                  "family": "Newsreader",
+                  "style": "italic",
+                  "weight": "450",
+                  "stretch": "normal",
+                  "status": "loaded"
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "font": "italic 430 64px Newsreader, Georgia, serif",
+              "beforeCheck": true,
+              "afterCheck": true,
+              "faces": [
+                {
+                  "family": "Newsreader",
+                  "style": "italic",
+                  "weight": "450",
+                  "stretch": "normal",
+                  "status": "loaded"
+                }
+              ]
+            }
+          ]
+        ],
+        "primaryDescriptorsAndLoadedFacesEqual": true,
+        "requestedFallbackDifference": {
+          "published": "Manrope, sans-serif",
+          "source": "Manrope, Arial, sans-serif",
+          "affectedRequestCount": 25,
+          "explanation": "The full requested fallback stack differs. Primary family, style, size, weight, text, checks and returned loaded face records match for all corresponding requests."
+        }
+      },
+      {
+        "width": 901,
+        "contextIndices": [
+          30,
+          31
+        ],
+        "actualTextDescriptorsEqual": false,
+        "faceInventoriesEqual": true,
+        "allResourceIdentitiesEqual": true,
+        "resourceCountPerSide": [
+          5,
+          5
+        ],
+        "bodyCaptureErrors": [
+          0,
+          0
+        ],
+        "emphasisRequests": [
+          [
+            {
+              "font": "italic 430 46px Newsreader, Georgia, serif",
+              "beforeCheck": true,
+              "afterCheck": true,
+              "faces": [
+                {
+                  "family": "Newsreader",
+                  "style": "italic",
+                  "weight": "450",
+                  "stretch": "normal",
+                  "status": "loaded"
+                }
+              ]
+            }
+          ],
+          [
+            {
+              "font": "italic 430 46px Newsreader, Georgia, serif",
+              "beforeCheck": true,
+              "afterCheck": true,
+              "faces": [
+                {
+                  "family": "Newsreader",
+                  "style": "italic",
+                  "weight": "450",
+                  "stretch": "normal",
+                  "status": "loaded"
+                }
+              ]
+            }
+          ]
+        ],
+        "primaryDescriptorsAndLoadedFacesEqual": true,
+        "requestedFallbackDifference": {
+          "published": "Manrope, sans-serif",
+          "source": "Manrope, Arial, sans-serif",
+          "affectedRequestCount": 25,
+          "explanation": "The full requested fallback stack differs. Primary family, style, size, weight, text, checks and returned loaded face records match for all corresponding requests."
+        }
+      }
+    ],
+    "uniqueResourceIdentities": [
+      {
+        "url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;450;500;550;600;650;700&family=Newsreader:ital,wght@0,400;0,450;0,500;0,550;0,600;1,400;1,450;1,500&display=swap",
+        "sha256": "1aee81646d85fdc30438d527abb7597f8dca6fe405d17ec70be389607a32e3a5",
+        "bytes": 25541,
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqC9yFZCYg7oRZaLFYYzbA.woff2",
+        "sha256": "48bc8861b9b2ca9300747cad4fd6a3b4ac3028d364df00bd1b72097baa75e509",
+        "bytes": 64520,
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+        "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+        "bytes": 24836,
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9VfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBAbNJYQ.woff2",
+        "sha256": "62981321d9a3cc7a61a73792729043703fd6112da86e8ec848bb57f088578757",
+        "bytes": 58084,
+        "status": 200
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+        "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb",
+        "bytes": 15120,
+        "status": 200
+      }
+    ],
+    "bodyReadLimitations": {
+      "count": 16,
+      "contexts": [
+        {
+          "contextIndex": 20,
+          "kind": "published",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "errors": [
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqC9yFZCYg7oRZaLFYYzbA.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9VfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBAbNJYQ.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            }
+          ]
+        },
+        {
+          "contextIndex": 21,
+          "kind": "source",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "errors": [
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqC9yFZCYg7oRZaLFYYzbA.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9VfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBAbNJYQ.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            }
+          ]
+        },
+        {
+          "contextIndex": 22,
+          "kind": "published",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "errors": [
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqC9yFZCYg7oRZaLFYYzbA.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9VfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBAbNJYQ.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            }
+          ]
+        },
+        {
+          "contextIndex": 23,
+          "kind": "source",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "errors": [
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9XfjOCX1hbuyalUrK439vogqC9yFZCYg7oRZaLFYYzbA.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/newsreader/v26/cY9VfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBAbNJYQ.woff2",
+              "error": "Error: response.body: Protocol error (Network.getResponseBody): No data found for resource with given identifier"
+            }
+          ]
+        }
+      ],
+      "interpretation": "The 16 body-read errors occur in the four 390/1440 practice interaction contexts that include a reload. These contexts also retained the initial five complete font resource hashes. No body-read errors occurred in the fresh 901/1440 failing device pairs. The errors are CDP response-body retrieval limits; font runtime failure or a precise caching mechanism is not inferred."
+    },
+    "conclusion": "Fresh failing pairs loaded the same primary text faces from byte-identical Google CSS and WOFF resources. The full Manrope fallback stack differs by source\u2019s additional Arial entry. All check/load calls were already true before explicit loading and no recorded emphasis geometry changed across the load pass. The removed 901 glyph drift cannot be attributed to an observed late font load."
+  },
+  "glyphDiagnostic": {
+    "width": 901,
+    "publishedEmphasisWidth": 532.015625,
+    "sourceEmphasisWidth": 532.015625,
+    "glyphCount": 29,
+    "allGlyphRangesExactlyEqual": true,
+    "previousSecondPublishedWidth": 532.171875,
+    "previousSecondSourceWidth": 532.015625,
+    "secondDelta": 0.15625,
+    "threshold": 0.15,
+    "interpretation": "This third capture has matching glyph ranges. No evidence identifies what caused the second run\u2019s baseline-only drift, so it remains retained as prior diagnostic history."
+  },
+  "previousRuns": [
+    {
+      "name": "first",
+      "runId": 39379793132,
+      "sourceCommit": "95e6271b7943abd25e528751db7b673b9350cc17",
+      "report": "/tmp/group8-writing-first-39379793132/report.json",
+      "reportSha256": "14ccfab41a895f116795f8521da4da201128882f3f8d3667caf81c7defa4fb5b",
+      "browser": "155.0.8059.39",
+      "problems": [],
+      "widths": 10,
+      "states": 19,
+      "ordinaryCaptures": 114
+    },
+    {
+      "name": "second",
+      "runId": 39380638969,
+      "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+      "report": "/tmp/group8-writing-second-39380638969/report.json",
+      "reportSha256": "e1984b75a895a811282cf250037b3d29802fe6ded4581b1060585c01d07559a5",
+      "browser": "155.0.8059.39",
+      "problems": [
+        "section-768 tile 0 pixels {\"ratio\":0.018794970372460498,\"changed\":12789,\"total\":680448,\"size\":[768,886]}",
+        "section-1280 tile 0 pixels {\"ratio\":0.018169088924632353,\"changed\":25303,\"total\":1392640,\"size\":[1280,1088]}",
+        "section-1440 tile 0 pixels {\"ratio\":0.016027980535279804,\"changed\":25296,\"total\":1578240,\"size\":[1440,1096]}",
+        "boundary-901 emphasis[0].rect[2] 532.171875 versus 532.015625"
+      ],
+      "widths": 10,
+      "states": 19,
+      "ordinaryCaptures": 118
+    },
+    {
+      "name": "third",
+      "runId": 39382384202,
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "report": "/tmp/group8-writing-third-39382384202/report.json",
+      "reportSha256": "b135ef7d84e37248e1e357db7443ad4e66370837304eb9039a8638c601a73bcd",
+      "browser": "155.0.8059.39",
+      "problems": [
+        "section-1440 tile 0 pixels {\"ratio\":0.016027980535279804,\"changed\":25296,\"total\":1578240,\"size\":[1440,1096]}",
+        "boundary-901 tile 0 pixels {\"ratio\":0.02024777274499805,\"changed\":16200,\"total\":800088,\"size\":[901,888]}"
+      ],
+      "widths": 10,
+      "states": 19,
+      "ordinaryCaptures": 120
+    }
+  ],
+  "crossRunImageIdentities": [
+    {
+      "width": 768,
+      "kind": "published",
+      "file": "published-section-768-tile-0.png",
+      "hashes": {
+        "first": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "second": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "third": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+      }
+    },
+    {
+      "width": 768,
+      "kind": "source",
+      "file": "source-section-768-tile-0.png",
+      "hashes": {
+        "first": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+        "second": "0b991b942940775dcc7f0a3f7eb8f312f4103db95825a36a9f479905d80b6247",
+        "third": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+      }
+    },
+    {
+      "width": 820,
+      "kind": "published",
+      "file": "published-section-820-tile-0.png",
+      "hashes": {
+        "first": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "second": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "third": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+      }
+    },
+    {
+      "width": 820,
+      "kind": "source",
+      "file": "source-section-820-tile-0.png",
+      "hashes": {
+        "first": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "second": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "third": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+      }
+    },
+    {
+      "width": 1280,
+      "kind": "published",
+      "file": "published-section-1280-tile-0.png",
+      "hashes": {
+        "first": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+        "second": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4",
+        "third": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+      }
+    },
+    {
+      "width": 1280,
+      "kind": "source",
+      "file": "source-section-1280-tile-0.png",
+      "hashes": {
+        "first": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "second": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "third": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+      }
+    },
+    {
+      "width": 1440,
+      "kind": "published",
+      "file": "published-section-1440-tile-0.png",
+      "hashes": {
+        "first": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "second": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "third": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+      }
+    },
+    {
+      "width": 1440,
+      "kind": "source",
+      "file": "source-section-1440-tile-0.png",
+      "hashes": {
+        "first": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+        "second": "86c811b94e9389b1209af8bb01b5b52f621d1fe94d6044509117af37935abd24",
+        "third": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+      }
+    }
+  ],
+  "interpretation": {
+    "established": [
+      "All three fixed samples in each of12device records are byte-identical; waiting longer is not justified by these samples.",
+      "The fresh failing 901/1440 pairs have identical measured native scroll/root/device geometry, primary text descriptors, returned loaded face records and font resource bytes. The Manrope fallback stack includes Arial in source and is recorded separately.",
+      "At1440 the third source image is byte-identical to the first passing source image, while the protected image has changed. At1280 the third protected image returns to its first-run identity while source remains unchanged.",
+      "The visible difference is a device raster difference, not a recorded section geometry or font identity difference."
+    ],
+    "notEstablished": [
+      "The exact compositor/layer lifecycle mechanism is not identified by the checkpoint report.",
+      "The readiness pass is not shown to have caused disappearance of prior768/1280pixel or901glyph differences.",
+      "Passing interaction, style and geometry checks do not cancel the two failing pixel checks."
+    ],
+    "nextDiagnostic": "Root approved a separate two-environment LayerTree and fixed-native-stage diagnostic on unchanged runtime, including default Chromium and --disable-lcd-text. It does not replace this checkpoint."
+  },
+  "qualityFindings": {
+    "missingDialogDescription": "Twenty inherited cases across ten widths and two versions retain a generated aria-describedby target that does not exist. The textarea description correctly references visible demo-privacy. No repair or accessibility pass is claimed.",
+    "targetedEnlargement": "Two own-box text-extent observations at320px doubled text remain inside the measured dialog border. Visual inspection does not show glyphs cut off. Native document/modal horizontal overflow checks are clear; vertical content uses dialog scrolling."
+  },
+  "visualReview": {
+    "method": "Original screenshots were inspected directly or in labelled contact sheets made from unchanged native pixels. Contact sheets only add labels and padding. Display preview scaling is not used as pixel-comparison evidence.",
+    "records": [
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-mobile-defaults.png",
+        "sourceImages": [
+          {
+            "file": "published-section-320-tile-0.png",
+            "sha256": "c67f91ba58aeea7652935887d78889c82ea9836b3d2bc67a8623af852d73d923"
+          },
+          {
+            "file": "source-section-320-tile-0.png",
+            "sha256": "c67f91ba58aeea7652935887d78889c82ea9836b3d2bc67a8623af852d73d923"
+          },
+          {
+            "file": "published-section-390-tile-0.png",
+            "sha256": "583d6c67f392b749a9923378a787709fe8e28219806abe2897d440cbd3762a35"
+          },
+          {
+            "file": "source-section-390-tile-0.png",
+            "sha256": "499689e6d344d13e3e39fd69971b702d88de345af6adb0371969c28d7d9862d6"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "8fc27792f883e1ee8f85b22528b8499186cf8905b69c86d3735cfbb3b30163dc",
+        "observation": "320 and390 section crops are fully painted with the question/helper card, hidden devices, matching heading wrapping and trigger. No visible horizontal clipping in these native-width captures."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-dialog-mobile.png",
+        "sourceImages": [
+          {
+            "file": "published-dialog-empty-320-tile-0.png",
+            "sha256": "7724ebe42bcf9b1b3394c4c0a280669fc739bc366342a760fe6815ab62fd3b1b"
+          },
+          {
+            "file": "source-dialog-empty-320-tile-0.png",
+            "sha256": "8b1ed4344f2d9a34949c47d164fe24952243c8350470013878baf15773c6ac98"
+          },
+          {
+            "file": "published-dialog-typed-390-tile-0.png",
+            "sha256": "2aa773d0cdf99468ef892a8755fd28855dbd089274f8270b0256884f1c4dd56d"
+          },
+          {
+            "file": "source-dialog-typed-390-tile-0.png",
+            "sha256": "16e290e946e95659fbfdaa9dd21bc788336f052c79d74023c994b7858d18aa1b"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "68683370485f3d2752c311e2d8773c6032ff898763317e70367c12c993ae5664",
+        "observation": "The320 empty dialog and390 multiline answer show matching question/privacy/label/textarea/actions. The390 focused textarea outline is visible and the two-line input is counted as11words."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-selected-text.png",
+        "sourceImages": [
+          {
+            "file": "published-dialog-tabbed-selection-390-tile-0.png",
+            "sha256": "eea37fbb5e3333267b2035dd47741a70aa7266ad9be23e4a3b78d2bc87333f82"
+          },
+          {
+            "file": "source-dialog-tabbed-selection-390-tile-0.png",
+            "sha256": "4d1b041bc687a3e6899a4a70bb209d5ac86e1f75a804fe6d7144a48a42e3ea2f"
+          },
+          {
+            "file": "published-dialog-tabbed-selection-1440-tile-0.png",
+            "sha256": "c95f0ee9d5a724e33ce3ce2981335d65d5352d01a30f409f5cae4e994ac878c4"
+          },
+          {
+            "file": "source-dialog-tabbed-selection-1440-tile-0.png",
+            "sha256": "6d54ca66b5906019e7c3d501bd8720b5eec3ab849bf0627e3b475cdda1b2dafe"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "080d48ad22d32ac8ab673a8fc32dfe722a6013d77c0e32c96628e9d8b59c302f",
+        "observation": "390 and1440 tabbed text selections show the sage selection background, forest text, preserved tab indentation, visible textarea focus outline and7word count."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-short-320.png",
+        "sourceImages": [
+          {
+            "file": "published-short-320x568-dialog-top-tile-0.png",
+            "sha256": "7eab616757b26b66671be8b91a8156a8b67724e8ee1d31b25c7352c562c3cb1c"
+          },
+          {
+            "file": "source-short-320x568-dialog-top-tile-0.png",
+            "sha256": "cfb34b7788ded74887035fc3f4dd9fdea6efda088e0ba1a32fb585f083ab6db9"
+          },
+          {
+            "file": "published-short-320x568-dialog-bottom-tile-0.png",
+            "sha256": "d31c317ee8b2f6be547983841418eec004c8289df251db4e95d18c141f5bed46"
+          },
+          {
+            "file": "source-short-320x568-dialog-bottom-tile-0.png",
+            "sha256": "e270d567b9173a344392f758aaded342a6c04f9267d34fbb2e31f8c7a08c42b6"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "d4b9dd9f4053f8fff9b08bf68e373e636c8d2d717b5c0c6c580180d8dc52e6e2",
+        "observation": "320x568 top and bottom native dialog-scroll captures show the upper content and then textarea/count/Clear/Close. The bottom view intentionally starts part-way through earlier content; it is a scrolled viewport, not missing raster."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-short-820.png",
+        "sourceImages": [
+          {
+            "file": "published-short-820x500-dialog-top-tile-0.png",
+            "sha256": "e51877838e23cb644a7229b34e206d32542822953f24fe763b5bfb79e5b386eb"
+          },
+          {
+            "file": "source-short-820x500-dialog-top-tile-0.png",
+            "sha256": "2658467d4eeb24c1e75e6f1a5e0f191150c063fba223ccf4e751aa7bc87069d4"
+          },
+          {
+            "file": "published-short-820x500-dialog-bottom-tile-0.png",
+            "sha256": "9046399bea748d73406f191cbb4ea6014658b5efe840b981a04bf12f092cfcb8"
+          },
+          {
+            "file": "source-short-820x500-dialog-bottom-tile-0.png",
+            "sha256": "9139919a9df56e825c04f78d8e91ff3095daa781a9906e7d4e8dc377324eb76d"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "66ae26a7c9da327f0bf0cc1b276884923f19a7bbf4724822e26aac44ea57e97b",
+        "observation": "820x500 top/bottom dialog captures preserve the same modal-scrolling behaviour and the bottom Close control is visible."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-enlarged-dialog-320.png",
+        "sourceImages": [
+          {
+            "file": "published-text-200-320-dialog-tile-0.png",
+            "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343"
+          },
+          {
+            "file": "source-text-200-320-dialog-tile-0.png",
+            "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343"
+          },
+          {
+            "file": "published-text-200-320-dialog-bottom-tile-0.png",
+            "sha256": "052128e7bd823f069b56faf291b83c56e4715c8d300fbc6b4d8ff438709e443f"
+          },
+          {
+            "file": "source-text-200-320-dialog-bottom-tile-0.png",
+            "sha256": "052128e7bd823f069b56faf291b83c56e4715c8d300fbc6b4d8ff438709e443f"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "4704e76e45f69a039115aedbf22ace0e7e1ec7c80f845443698fa9dbd6085ae4",
+        "observation": "Targeted doubled text matches on both sides. The longest heading text extends outside its own h2box into padding, but its glyphs remain visible inside the dialog border. Native vertical dialog scrolling exposes controls; this is not a native zoom or accessibility certification."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-enlarged-dialog-1440.png",
+        "sourceImages": [
+          {
+            "file": "published-text-200-1440-dialog-tile-0.png",
+            "sha256": "6744a29259fbcbc7bb95a724bec781e9c00b6cd28759bfc354c5ac027e2f0ddb"
+          },
+          {
+            "file": "source-text-200-1440-dialog-tile-0.png",
+            "sha256": "6744a29259fbcbc7bb95a724bec781e9c00b6cd28759bfc354c5ac027e2f0ddb"
+          },
+          {
+            "file": "published-text-200-1440-dialog-bottom-tile-0.png",
+            "sha256": "7d621e83196f74b40eeebb4fa3add094394a83fdb14cf16b03a0c8bed9ecf1c7"
+          },
+          {
+            "file": "source-text-200-1440-dialog-bottom-tile-0.png",
+            "sha256": "7d621e83196f74b40eeebb4fa3add094394a83fdb14cf16b03a0c8bed9ecf1c7"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "6a91e968ae2336f382b27ee265c009b602ff37ccbf61cc05a30d31313f69d654",
+        "observation": "Targeted doubled text matches at1440; the dialog remains internally scrollable and the bottom actions are visible in the second capture."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-section-1440.png",
+        "sourceImages": [
+          {
+            "file": "published-section-1440-tile-0.png",
+            "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+          },
+          {
+            "file": "source-section-1440-tile-0.png",
+            "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "cd9509604ceca7fb5b3534c29d11b15dfa7ab99a6688d93932a1318e7725b6af",
+        "observation": "The heading, lead, device composition, action and background align. The published device text and edges are visibly softer than the source; this visual observation agrees with the retained pixel failure and does not establish compositor cause."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-entrance-phase-100.png",
+        "sourceImages": [
+          {
+            "file": "published-entrance-phase-100-tile-0.png",
+            "sha256": "cd9f2e86906e9503ffaeb9b3130542117b9a031799518ff4447450bb688e90f2"
+          },
+          {
+            "file": "source-entrance-phase-100-tile-0.png",
+            "sha256": "ddde8d56d8c0ebda351eb0a8106c14727617f14e3fa4c972c10a3d0964be3c18"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "64e19bbc50bef5e2069168cbb4edc57b39e601c802d55f5b9cb8f8b8b649178b",
+        "observation": "Both native definitions paused at100ms show the early translucent device stage with matching composition and visible content; sample answers remain static."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-entrance-phase-450.png",
+        "sourceImages": [
+          {
+            "file": "published-entrance-phase-450-tile-0.png",
+            "sha256": "c798763d82d24af560cfdf2a101617aa8be17b2196c484d3edf275c38cb1c603"
+          },
+          {
+            "file": "source-entrance-phase-450-tile-0.png",
+            "sha256": "f9cc4a76f4675bc77df12944f656b835ae328f6d5cd59cf3f433ff9f8427ee6a"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "69b7b51e6c4886d361a57992447b0a91e06b9b0198e2cefe00c23420ee9a4303",
+        "observation": "Both paused450ms native states show the intermediate stage with matching arrangement and opacity progression."
+      },
+      {
+        "contactSheet": "/tmp/group8-writing-third-39382384202/review-entrance-phase-1100.png",
+        "sourceImages": [
+          {
+            "file": "published-entrance-phase-1100-tile-0.png",
+            "sha256": "35345b5cd024b3b9f91945ed111ab28a247eebb3bfdb72b2f12cf9948bead5f9"
+          },
+          {
+            "file": "source-entrance-phase-1100-tile-0.png",
+            "sha256": "07e128c0d4323de336a022ba220a3c4101c08ea37daa27e6ce7c76a049bec604"
+          }
+        ],
+        "alteration": "Native pixels arranged with labels and padding only. Original captures are unchanged.",
+        "contactSheetSha256": "e4d4134932671ed96c20a433881da28536e374ceb1624706ba0e60f84b7e458d",
+        "observation": "Both paused1100ms native states show the completed device composition with matching arrangement. These are phase samples, not video or physical-device evidence."
+      },
+      {
+        "sourceImages": [
+          {
+            "file": "published-section-820-tile-0.png",
+            "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+          },
+          {
+            "file": "source-section-820-tile-0.png",
+            "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+          }
+        ],
+        "viewed": "Published original viewed; source is byte-identical.",
+        "observation": "820 composition is fully painted: laptop, tablet and angled phone retain proportions, overlaps, static sample text, logo and trigger."
+      },
+      {
+        "sourceImages": [
+          {
+            "file": "diagnostic-section-1440-diff.png",
+            "sha256": "79f12a894deb11fd0fbcd499491547a6f61370cfbc0faef6657e8b591f9753c0"
+          },
+          {
+            "file": "diagnostic-boundary-901-diff.png",
+            "sha256": "28094a56a24ee21660c5c6de43e80116a0820dbff2d51dc19cf1324d2b266a54"
+          }
+        ],
+        "alteration": "Derived inspection overlay highlights raw pixels differing by more than24; it is not substituted for any original capture.",
+        "observation": "The differences are confined to device interiors and edges. The section heading, lead, action and background are unchanged in these highlighted areas."
+      }
+    ],
+    "captureHashesChecked": "All 120 ordinary and 36 fixed native images were hashed; representative visual inspection does not imply every capture was manually inspected.",
+    "limits": "Chromium only. Touch is emulated. Enlargement doubles targeted font size and line height, not native browser zoom. No physical device, other engine, screen reader or accessibility certification is claimed. Device sample answers are static in the protected runtime; this suite does not invent an automatic typing animation."
+  },
+  "independentPixelAnalysis": {
+    "path": "/tmp/group8-writing-raster-analysis.json",
+    "sha256": "1c30abed3d693ecfd5c546675bbd6b42b5b26e79e218bd7470296857f08c81b1",
+    "script": "/tmp/group8-writing-raster-analysis.py",
+    "method": "For question-text pixels on an exact flat background, channel coverage a=(B-P)/(B-F), F=(37,53,38), B=(250,249,247), with edge samples restricted to mean coverage between 0.05 and 0.95. Per-pixel spread is max(aR,aG,aB)-min(aR,aG,aB).",
+    "cropCoordinates": {
+      "1440": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "1280": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "901": [
+        330,
+        390,
+        626,
+        430
+      ]
+    },
+    "conclusion": "The retained device text shows two distinct raster modes consistent with LCD/subpixel and grayscale antialiasing, and their assignment to source/published reverses across runs and widths. This is evidence about observed pixel mode, not proof of the compositor lifecycle cause. All threshold-exceeding differences at 1440 and 901 fall within device bands."
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "package": 3,
+  "group": 8,
+  "source_commit": "95e6271b7943abd25e528751db7b673b9350cc17",
+  "protected_baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "writing": {
+    "run": 39379793132,
+    "job": 118486035722,
+    "status": "success",
+    "sourceCommit": "95e6271b7943abd25e528751db7b673b9350cc17",
+    "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "artifact": {
+      "id": 12244961380,
+      "name": "homepage-writing-parity",
+      "sha256": "560211fb1f4fb66152d6946dfdfea0b120f3cde57cbe3c5c5ca60e67fbeef1c7",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39379793132/artifacts/12244961380"
+    },
+    "report": {
+      "path": "initial-writing-report.json.gz",
+      "sha256": "14ccfab41a895f116795f8521da4da201128882f3f8d3667caf81c7defa4fb5b"
+    },
+    "environment": {
+      "browser": "155.0.8059.39",
+      "node": "v22.23.3",
+      "platform": "linux",
+      "playwright": "1.56.1"
+    },
+    "runner": {
+      "os": "Ubuntu 24.04.5",
+      "imageVersion": "20261012.334.1",
+      "npm": "10.9.9"
+    },
+    "metrics": {
+      "widths": 10,
+      "states": 19,
+      "captures": 114,
+      "problems": [],
+      "maximumGeometry": 0.125,
+      "maximumChangedPixelRatio": 0.0007867194682129976,
+      "captureHashMismatches": []
+    },
+    "manualArtifactReview": [
+      "Published and source section-1440-tile-0 show complete three-device composition and action",
+      "Published and source dialog-typed-390-tile-0 show correct 11-word sample and visible native focus outline",
+      "Source text-200-320-dialog-tile-0 shows h2 word extending into right padding, without visibly cut glyphs"
+    ],
+    "qualityInterpretation": [
+      "20 missing generated dialog-description target findings, two versions times ten widths, inherited. Textarea description resolves correctly.",
+      "Two 320px text enlargement records flag own text-box extent. Heading right289.484375 versus boxRight279, within modal border ending304. No document or own horizontal overflow. Inspect signal, not visible clipping."
+    ],
+    "limits": "Chromium only. Touch is emulated. Enlargement doubles targeted font size and line height, not native browser zoom. No physical device, other engine, screen reader or accessibility certification is claimed. Device sample answers are static in the protected runtime; this suite does not invent an automatic typing animation.",
+    "createdAt": "2026-10-20T06:20:36.073Z",
+    "finishedAt": "2026-10-20T06:22:02.171Z",
+    "pending": "Corrected candidate restores root-audited inherited cascade values. Extended harness adds those assertions and selected tabbed input captures. First passing report is retained initial evidence, not final corrected-source evidence.",
+    "immutableGitIdentityVerification": {
+      "sourceHashes": {
+        "count": 52,
+        "mismatches": []
+      },
+      "harnessHashes": {
+        "count": 3,
+        "mismatches": []
+      },
+      "protectedHashes": {
+        "count": 4,
+        "mismatches": []
+      }
+    }
+  },
+  "assembly": {
+    "source": "95e6271b7943abd25e528751db7b673b9350cc17",
+    "browser": "155.0.8059.39",
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "states": 0,
+    "captures": 280,
+    "problems": [
+      "320 reduced complete page absolute assembly writing.style; gifting.style",
+      "320 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "360 reduced complete page absolute assembly writing.style; gifting.style",
+      "360 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "390 reduced complete page absolute assembly writing.style; gifting.style",
+      "390 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "430 reduced complete page absolute assembly writing.style; gifting.style",
+      "430 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "600 reduced complete page absolute assembly writing.style; gifting.style",
+      "600 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "768 reduced complete page absolute assembly writing.style; gifting.style",
+      "768 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "820 reduced complete page absolute assembly writing.style; gifting.style",
+      "820 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "1024 reduced complete page absolute assembly writing.style; gifting.style",
+      "1024 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "1280 reduced complete page absolute assembly writing.style; gifting.style",
+      "1280 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "1440 reduced complete page absolute assembly writing.style; gifting.style",
+      "1440 motion enabled complete page absolute assembly writing.style; gifting.style",
+      "page.waitForFunction: Timeout 30000ms exceeded.\n    at journey (/home/runner/work/storileaf-homepage-preview/storileaf-homepage-preview/frontend/scripts/verify-assembly-parity.mjs:308:16)\n    at async file:///home/runner/work/storileaf-homepage-preview/storileaf-homepage-preview/frontend/scripts/verify-assembly-parity.mjs:367:75"
+    ],
+    "report_sha256": "3b84613a181fbf750eaebec0c0d74fbf095ce9a7956dcbbeb0a6126a8c5a9c79",
+    "max_geometry": 0,
+    "max_pixels": 0.0025264033564814815,
+    "run": 39379793118,
+    "job": 118486035559,
+    "status": "failure",
+    "artifact": {
+      "id": 12245336065,
+      "sha256": "5874f58ddec53416074b5e6e04401337fee227156b1756d8748f480bc99d49d7",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39379793118/artifacts/12245336065"
+    },
+    "report_path": "initial-assembly-report.json.gz",
+    "style_differences_summary": [
+      {
+        "region": "writing",
+        "property": "scrollMarginTop",
+        "published": "96px through720px;116px above",
+        "source": "24px",
+        "resolution": "Actual source correction in b6dab8c"
+      },
+      {
+        "region": "gifting",
+        "property": "backgroundColor",
+        "published": "rgba(0, 0, 0, 0)",
+        "source": "rgb(250, 249, 247)",
+        "resolution": "Existing Group1 explicit underlay equivalence carried into assembly with ancestor paint proof; Gifting runtime unchanged"
+      }
+    ],
+    "completed_scope": "All ten widths in both motion modes;140 native pairs;280 captures, all hashes verified",
+    "unfinished_scope": "First combined journey aborted at published native Back before returning its events. Other combined journeys, assembled pinning and short screens did not complete.",
+    "diagnostic_resolution": "Compare strict Back restoration to native click-time state using retained discovery method, preserve earlier readings and partial diagnostics, require all checkpoint states",
+    "environment": {
+      "browser": "155.0.8059.39",
+      "playwright": "1.56.1",
+      "os": "Ubuntu24.04.5 LTS",
+      "runner": "2.337.0",
+      "runnerImage": "ubuntu-24.04",
+      "runnerImageVersion": "20261012.334.1",
+      "node": "22.23.3",
+      "npm": "10.9.9"
+    }
+  },
+  "subsequent_candidate": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+  "policy": "Initial evidence retained; no threshold relaxation, runtime redesign or baseline change"
+}

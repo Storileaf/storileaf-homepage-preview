@@ -1,0 +1,46 @@
+{
+  "purpose": "Preserved native 1280px raster diagnostic captures. The source image is byte-identical across the initial and second runs while the protected image differs. This does not identify the rendering mechanism or establish a final checkpoint.",
+  "captures": [
+    {
+      "file": "initial-published-devices-1280.png",
+      "bytes": 205353,
+      "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+      "origins": [
+        {
+          "run": 39379793132,
+          "sourceCommit": "95e6271b7943abd25e528751db7b673b9350cc17",
+          "artifactFile": "published-section-1280-tile-0.png"
+        }
+      ]
+    },
+    {
+      "file": "second-published-devices-1280.png",
+      "bytes": 203287,
+      "sha256": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4",
+      "origins": [
+        {
+          "run": 39380638969,
+          "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+          "artifactFile": "published-section-1280-tile-0.png"
+        }
+      ]
+    },
+    {
+      "file": "unchanged-source-devices-1280.png",
+      "bytes": 205295,
+      "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+      "origins": [
+        {
+          "run": 39379793132,
+          "sourceCommit": "95e6271b7943abd25e528751db7b673b9350cc17",
+          "artifactFile": "source-section-1280-tile-0.png"
+        },
+        {
+          "run": 39380638969,
+          "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+          "artifactFile": "source-section-1280-tile-0.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,586 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-20T12:18:11.081684+00:00",
+  "result": "unchanged-runtime-and-build-with-writing-verification-only-change",
+  "verifiedSourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "frontendTree": {
+    "verified": "b371048da86b50af9855a2326a6fdf5ecee6f21e",
+    "candidate": "09740a8614e473d01650211e0795e268aa455f3c",
+    "match": false,
+    "reason": "Only frontend/scripts/verify-writing-parity.mjs differs; the frontend tree changes because it contains this verification harness.",
+    "trackedFileCount": 114,
+    "allWorkingTreeFilesMatchCandidateCommit": true,
+    "changedFiles": [
+      "frontend/scripts/verify-writing-parity.mjs"
+    ],
+    "unchangedRuntimeSubtrees": {
+      "frontend/src": {
+        "verified": "23da2d7dadca22651a3e7b5f0b8a3a0c544ceb4d",
+        "candidate": "23da2d7dadca22651a3e7b5f0b8a3a0c544ceb4d",
+        "match": true
+      },
+      "frontend/content": {
+        "verified": "84db7b9be00e5bed84af1706539b984591ae19e5",
+        "candidate": "84db7b9be00e5bed84af1706539b984591ae19e5",
+        "match": true
+      },
+      "frontend/public": {
+        "verified": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "candidate": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "match": true
+      }
+    }
+  },
+  "identityFileSet": {
+    "count": 101,
+    "selection": "frontend/src, frontend/content, frontend/public, frontend index/package/lock/TypeScript/Vite files and published guard; root index/404 plus assets, covers, gallery and pricing trees.",
+    "manifestFormat": "UTF-8 JSON array of sorted path/sha256 objects, sorted object keys, separators comma and colon, no trailing newline",
+    "manifestSha256": "9ad8e89c93d600db814649cd6778ab9e06c5ca5304b7b6f5d7ee4fd3072f6bad",
+    "files": [
+      {
+        "path": "404.html",
+        "sha256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81"
+      },
+      {
+        "path": "assets/Match-CtmL2Hj_.js",
+        "sha256": "0c1da7396594e8f88691d211fd55a57466625564760d9a6fd562b91eb237a8cc"
+      },
+      {
+        "path": "assets/content-sections-CfrmOVRI.js",
+        "sha256": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e"
+      },
+      {
+        "path": "assets/index-DO3Vh6An.js",
+        "sha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7"
+      },
+      {
+        "path": "assets/index-DhPZyX4z.css",
+        "sha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f"
+      },
+      {
+        "path": "assets/link-CrvydYrW.js",
+        "sha256": "2d261759e4c13f2b1ffa433ffcddcbb2053aea4a386a17a151da4c3f6da863c9"
+      },
+      {
+        "path": "assets/matchContext-DFjqCKIt.js",
+        "sha256": "9dbe7e1dbf08f86a2bc2e5f49c504d209f280e5a3b4e9a4ef3469b1dbdc29fe4"
+      },
+      {
+        "path": "assets/pricing-DQxYQr2Q.js",
+        "sha256": "27b0cdd8d6f4694f41080de64251c41c8b440eeef91f04958c3976449245ab34"
+      },
+      {
+        "path": "assets/pricing-page-eOuxT0Kj.js",
+        "sha256": "6933843cad74c1e867b84d543394c8070251ca7d6777dea894efd011963f2027"
+      },
+      {
+        "path": "assets/pricing._currency-D7ELIB-1.js",
+        "sha256": "089170d20cfcde4c33e3ed5bfa40e1480974eb32b56fa6a8165f1c4ad6b70709"
+      },
+      {
+        "path": "assets/pricing.index-DWapM0Qb.js",
+        "sha256": "95c713a17b15694b277e4cd600b99e29a1f21377278ce32c61a45637298ad741"
+      },
+      {
+        "path": "assets/routes-DrwDv2x2.js",
+        "sha256": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85"
+      },
+      {
+        "path": "assets/useStore-DY_dpydU.js",
+        "sha256": "889100b8a82dde9726dc30dcc5ab1913c87a020bd2f4359072144925402f8af2"
+      },
+      {
+        "path": "covers/cover-01.jpg",
+        "sha256": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01"
+      },
+      {
+        "path": "covers/cover-02.jpg",
+        "sha256": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4"
+      },
+      {
+        "path": "covers/cover-03.jpg",
+        "sha256": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983"
+      },
+      {
+        "path": "covers/cover-04.jpg",
+        "sha256": "af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12"
+      },
+      {
+        "path": "covers/cover-05.jpg",
+        "sha256": "0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190"
+      },
+      {
+        "path": "covers/cover-06.jpg",
+        "sha256": "784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0"
+      },
+      {
+        "path": "covers/cover-07.jpg",
+        "sha256": "673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b"
+      },
+      {
+        "path": "frontend/content/hero.json",
+        "sha256": "5c88630d6f125372273b358064076dc2678e6f7b04ae8cc4af4a6cba030dc587"
+      },
+      {
+        "path": "frontend/content/images.json",
+        "sha256": "3063a8d9ed41376682a1ff036b1ec7b93a9f5496ea724e5ff82b072512805426"
+      },
+      {
+        "path": "frontend/content/ledger.json",
+        "sha256": "c00a403216cab6e5bebd3f5c81d3836a9f15a01c5a56d3bd56f437fca5952e58"
+      },
+      {
+        "path": "frontend/content/media-images.json",
+        "sha256": "62e2f1df2ad5f1ca7062017ead9234ecc4d7f1e5916586ff320cfee65cb81b52"
+      },
+      {
+        "path": "frontend/content/media-ledger.json",
+        "sha256": "77c4bf6b0c4dddd6c8e35f287d851f41f35144c13661a0f7b158612b3265e2f3"
+      },
+      {
+        "path": "frontend/content/process.json",
+        "sha256": "6f378edc2a12f397f99fd20dcb4e1a1238975c4e050444b769ab9ddf9bc2bef7"
+      },
+      {
+        "path": "frontend/content/writing.json",
+        "sha256": "3f96a49530b2d2e9133e25140e17f1e3161adf994be83f8c24fbd8a8f38ec565"
+      },
+      {
+        "path": "frontend/index.html",
+        "sha256": "a1cfe9712c5e40df8e184c5be668c8627c31e4aa75b97c28c29367ef55313cc7"
+      },
+      {
+        "path": "frontend/package-lock.json",
+        "sha256": "05b9dc82bd3a5d060b2f234e0b0ef8e13dde3298e7203ac4a8c4de7fcae7b672"
+      },
+      {
+        "path": "frontend/package.json",
+        "sha256": "fb41a46de1b2e171f4bd9a1a028e2a0ad2e2889dccabc4a23928852617f3ea4d"
+      },
+      {
+        "path": "frontend/public/covers/cover-01.jpg",
+        "sha256": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01"
+      },
+      {
+        "path": "frontend/public/covers/cover-02.jpg",
+        "sha256": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4"
+      },
+      {
+        "path": "frontend/public/covers/cover-03.jpg",
+        "sha256": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983"
+      },
+      {
+        "path": "frontend/public/covers/cover-04.jpg",
+        "sha256": "af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12"
+      },
+      {
+        "path": "frontend/public/covers/cover-05.jpg",
+        "sha256": "0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190"
+      },
+      {
+        "path": "frontend/public/covers/cover-06.jpg",
+        "sha256": "784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0"
+      },
+      {
+        "path": "frontend/public/covers/cover-07.jpg",
+        "sha256": "673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b"
+      },
+      {
+        "path": "frontend/public/gallery/celebrating-occasions-open-book-placeholder.svg",
+        "sha256": "eba5b671f2f2d0c67e499e646119b24ecfe8cf5f147b96acce04d71dc8228fff"
+      },
+      {
+        "path": "frontend/public/gallery/founders-memoir-open-book-placeholder.svg",
+        "sha256": "1358f9c049923f55bc42f83812c71f14560a0cb45886e8646c0da780deb9542b"
+      },
+      {
+        "path": "frontend/public/gallery/life-story-open-book-placeholder.svg",
+        "sha256": "966bb50023e66ca1519a6b8275d75bb189142ed4257b65f867fdae70cbaf11fd"
+      },
+      {
+        "path": "frontend/public/gallery/parent-to-child-letters-open-book-placeholder.svg",
+        "sha256": "378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309"
+      },
+      {
+        "path": "frontend/public/gallery/relationship-memoir-open-book-placeholder.svg",
+        "sha256": "93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3"
+      },
+      {
+        "path": "frontend/public/gallery/travel-memoir-open-book-placeholder.svg",
+        "sha256": "94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57"
+      },
+      {
+        "path": "frontend/scripts/guard-published.mjs",
+        "sha256": "cb4fcc45b5913f01de83894d59e9d49a1f6b363e1f1f063d29ddda40a8fef5c1"
+      },
+      {
+        "path": "frontend/src/App.tsx",
+        "sha256": "97010e342e0977003877de3368fe0cd0767ec6324b95cc6d5b4f0560e3818347"
+      },
+      {
+        "path": "frontend/src/components/ActionLink.tsx",
+        "sha256": "b48d8e8c7e2edc5026b87a9f9c942b6a5b6f6efeb2dc145eea5bb49caeb68c0a"
+      },
+      {
+        "path": "frontend/src/components/EditorialHeading.tsx",
+        "sha256": "7bbda62ee6d411a7f77e3a37e915bb871faf128bdf6001314f8c6e9a85112cdb"
+      },
+      {
+        "path": "frontend/src/components/Layout.tsx",
+        "sha256": "2c37f54870ac5a894abe809a09eaa1e74f773cd73a50adead97e515c0beb13d0"
+      },
+      {
+        "path": "frontend/src/components/NewsletterFooter.tsx",
+        "sha256": "5e8f750e6ed6df253db605001f50630bd45867d124572f2f0ecf4c1fb78ca788"
+      },
+      {
+        "path": "frontend/src/components/ResourceCategoryCard.tsx",
+        "sha256": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47"
+      },
+      {
+        "path": "frontend/src/components/ResponsiveImage.tsx",
+        "sha256": "4d1e3181e30a63e6408c718ecc6ba9c6fa086b3d24b99011e4aba3f90f0df5fc"
+      },
+      {
+        "path": "frontend/src/components/SiteHeader.tsx",
+        "sha256": "a4b349fab2cc692d4ac838b2761fa61c292848ea316091530742c8e30772b3e8"
+      },
+      {
+        "path": "frontend/src/components/Typography.tsx",
+        "sha256": "e05b1008187370bf37b56a3fc4fc34f1b9100027614e6c7c9cb8634f62e9de33"
+      },
+      {
+        "path": "frontend/src/content.ts",
+        "sha256": "a7cded91fccec79530673df1ce2a54e42886e233b7eb989afaec63a65b7338fd"
+      },
+      {
+        "path": "frontend/src/homepageScrollRestoration.ts",
+        "sha256": "4135dc8a0acadc933e6d6fea69588dbf2b10f6936d32ea19d6c697bcb944c871"
+      },
+      {
+        "path": "frontend/src/main.tsx",
+        "sha256": "23ece7a01f1627ad6c4c888abb9efbc8a13d271e55a813d398c5c8004a07d8d8"
+      },
+      {
+        "path": "frontend/src/sections/BookDiscovery.tsx",
+        "sha256": "3f7eaea9e161e1428232976d44571077bcc055e0657b31babd0f36453d04b391"
+      },
+      {
+        "path": "frontend/src/sections/BookGallery.tsx",
+        "sha256": "021c551fbffc847e5e583155ee4e16045ff0eed6439526c4d308199cfeccf96a"
+      },
+      {
+        "path": "frontend/src/sections/FaqSection.tsx",
+        "sha256": "e645c8856c9b60e19751115a2504d90f6a79ff5ff4d292be1ee883b1f0705866"
+      },
+      {
+        "path": "frontend/src/sections/FinalInvitation.tsx",
+        "sha256": "95f0c629bf4da5c39f2c8320ca0e5833f06c539621161c6207a4a2d95135eb2a"
+      },
+      {
+        "path": "frontend/src/sections/GiftingSection.tsx",
+        "sha256": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6"
+      },
+      {
+        "path": "frontend/src/sections/HeroSection.tsx",
+        "sha256": "70eb6342e54cb98d84e9396b91bf51e8d40657bb22a6e82306cf82d90b551944"
+      },
+      {
+        "path": "frontend/src/sections/HowItWorks.tsx",
+        "sha256": "280747e6c6e5d610931d598745fc1b9b67aeec291aefeed6e12e37d5b8ba3154"
+      },
+      {
+        "path": "frontend/src/sections/PhysicalBookPresentation.tsx",
+        "sha256": "c54976988eab7918d500046360d752087cdd92a5bc6dc0b332f8c33fbd8566cb"
+      },
+      {
+        "path": "frontend/src/sections/PracticeDialog.tsx",
+        "sha256": "1ffe8bb3b954fb9063b8e5a053e8533354be75737a620504a8a8b1072eb0571f"
+      },
+      {
+        "path": "frontend/src/sections/ReassuranceBand.tsx",
+        "sha256": "56febe6b3829e48ea5e22a5ac3cd2fc48fce26b2c371cb94b5900f07f6787242"
+      },
+      {
+        "path": "frontend/src/sections/ResourcesSection.tsx",
+        "sha256": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403"
+      },
+      {
+        "path": "frontend/src/sections/WritingShowcase.tsx",
+        "sha256": "b5f2a0637ba298152d3b5bee6d34ea420def50335cccb1ddf1d8bf42a226bb2c"
+      },
+      {
+        "path": "frontend/src/sections/homepageDiscoveryContent.ts",
+        "sha256": "0344b2b251997a9faf387861e6b89d0f8975429fad68ba0cf1dc85f8e3d7524b"
+      },
+      {
+        "path": "frontend/src/sections/homepageEditorialContent.ts",
+        "sha256": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1"
+      },
+      {
+        "path": "frontend/src/sections/homepageMediaContent.ts",
+        "sha256": "cc12a7c87dff83df9bd3c7de5b1e8f532cc9190a48585a8c7748aa702386927e"
+      },
+      {
+        "path": "frontend/src/sections/homepageQuestionsContent.ts",
+        "sha256": "e660d3e75f4ea8b1dd344200260759c95d5e3d7c8f29367d81ba18d59213d65d"
+      },
+      {
+        "path": "frontend/src/sections/processProgress.ts",
+        "sha256": "17f2008a08e856e94edfa0b30b437b0d0a9ca2a2114e68583a65a6ef0bc377d5"
+      },
+      {
+        "path": "frontend/src/sections/useMediaReducedMotion.ts",
+        "sha256": "de6885e91b5a77adc56532926a9fd043539453784ac292b5e918e8ca50123ab2"
+      },
+      {
+        "path": "frontend/src/siteRoutes.ts",
+        "sha256": "5e714d61a0f4e50de472a0c65b76fe67936f043e935f63c4d88e53480051ba6e"
+      },
+      {
+        "path": "frontend/src/styles/components.css",
+        "sha256": "c1dee5ba708a2cb87072de87e1f87c43e0f77d842e27a4b0c6cdd1d98106d971"
+      },
+      {
+        "path": "frontend/src/styles/foundations.css",
+        "sha256": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268"
+      },
+      {
+        "path": "frontend/src/styles/homepage-craft.css",
+        "sha256": "fffb03c76f35637dd95ed6fc1a484411228e1723a39d7b8adfe3c898d9ffe8de"
+      },
+      {
+        "path": "frontend/src/styles/homepage-discovery.css",
+        "sha256": "24bde0aee654721675b57d9c3b09cd26ef854f023dce188bdb9ed071b96f2efe"
+      },
+      {
+        "path": "frontend/src/styles/homepage-editorial.css",
+        "sha256": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a"
+      },
+      {
+        "path": "frontend/src/styles/homepage-hero.css",
+        "sha256": "66c6a4af46a9441c76e2cdddef04d63869e5917674edca65c1e23c9b92148cdc"
+      },
+      {
+        "path": "frontend/src/styles/homepage-media.css",
+        "sha256": "47baf5bca2a34c3635b876eb1bfa5bc0ae208c7c8d716b28aba168018dc3f400"
+      },
+      {
+        "path": "frontend/src/styles/homepage-process.css",
+        "sha256": "3d05706aea2c61e07420c3028ab6def8cc2345f24d95751f9840c4b04d121379"
+      },
+      {
+        "path": "frontend/src/styles/homepage-questions.css",
+        "sha256": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da"
+      },
+      {
+        "path": "frontend/src/styles/homepage-writing.css",
+        "sha256": "d7c7d096a6509a965ba4963a9452545e1f0632d2a95871defa29538ba22f860d"
+      },
+      {
+        "path": "frontend/src/styles/shared-footer.css",
+        "sha256": "5c02e6ce6ffc3dc418e696f1474e31244fdfc4e811d6f1e16f3bea0a8e710467"
+      },
+      {
+        "path": "frontend/src/styles/shared-header.css",
+        "sha256": "98dc7bf867dd848a16b7f51f27abcd4af16a1884e7b72b0554015cfc2f336464"
+      },
+      {
+        "path": "frontend/src/styles/tokens.css",
+        "sha256": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081"
+      },
+      {
+        "path": "frontend/src/styles/typography.css",
+        "sha256": "faf05e6601df7e528380f4f74a0e6232e0d2c216bb8fcd491f30a4112902e655"
+      },
+      {
+        "path": "frontend/src/usePreviewCurrency.ts",
+        "sha256": "763fe027ed3e6ffcec144394be365dba0d343594e6028d655b3d826470b16ba4"
+      },
+      {
+        "path": "frontend/tsconfig.json",
+        "sha256": "40010763a8efa67e2bf665926f2c3b507c6c296b82cd4b16f6febfb36d133a3a"
+      },
+      {
+        "path": "frontend/vite.config.ts",
+        "sha256": "069efdb1aa7f3b62a0561de049a131ed8ea98aeb465083dce4bb12405f810930"
+      },
+      {
+        "path": "gallery/README.md",
+        "sha256": "9fa589a8dfc6d894e51a03ec98ac42a8373cfad5c53f24452dbc5c59209d511b"
+      },
+      {
+        "path": "gallery/celebrating-occasions-open-book-placeholder.svg",
+        "sha256": "eba5b671f2f2d0c67e499e646119b24ecfe8cf5f147b96acce04d71dc8228fff"
+      },
+      {
+        "path": "gallery/founders-memoir-open-book-placeholder.svg",
+        "sha256": "1358f9c049923f55bc42f83812c71f14560a0cb45886e8646c0da780deb9542b"
+      },
+      {
+        "path": "gallery/life-story-open-book-placeholder.svg",
+        "sha256": "966bb50023e66ca1519a6b8275d75bb189142ed4257b65f867fdae70cbaf11fd"
+      },
+      {
+        "path": "gallery/parent-to-child-letters-open-book-placeholder.svg",
+        "sha256": "378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309"
+      },
+      {
+        "path": "gallery/relationship-memoir-open-book-placeholder.svg",
+        "sha256": "93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3"
+      },
+      {
+        "path": "gallery/travel-memoir-open-book-placeholder.svg",
+        "sha256": "94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57"
+      },
+      {
+        "path": "index.html",
+        "sha256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81"
+      },
+      {
+        "path": "pricing/index.html",
+        "sha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14"
+      }
+    ],
+    "allMatchVerifiedCommitCandidateCommitAndWorkingTree": true
+  },
+  "build": {
+    "artifactId": 12245044340,
+    "runId": 39382384528,
+    "artifactName": "public-frontend-source-preview",
+    "archiveSha256": "a1998643404161445200dd1ddd6b984b6b3873cf425c04e355eb9ab15b5cc3a9",
+    "archiveDigestRechecked": true,
+    "fileCount": 16,
+    "fileSetsIdentical": true,
+    "allLocalDistBytesMatchArtifact": true,
+    "files": [
+      {
+        "path": "assets/index-C6syLBIa.js",
+        "sha256": "1924dfc8bd01893c46c337cb7cd06cb7d53f7dca497835ed6ae4c1fb93932850"
+      },
+      {
+        "path": "assets/index-NU-3HqjY.css",
+        "sha256": "f4eb5347d08bb36a101b43662a60a559d21c92b8218a382bef5b6818486b9a18"
+      },
+      {
+        "path": "covers/cover-01.jpg",
+        "sha256": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01"
+      },
+      {
+        "path": "covers/cover-02.jpg",
+        "sha256": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4"
+      },
+      {
+        "path": "covers/cover-03.jpg",
+        "sha256": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983"
+      },
+      {
+        "path": "covers/cover-04.jpg",
+        "sha256": "af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12"
+      },
+      {
+        "path": "covers/cover-05.jpg",
+        "sha256": "0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190"
+      },
+      {
+        "path": "covers/cover-06.jpg",
+        "sha256": "784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0"
+      },
+      {
+        "path": "covers/cover-07.jpg",
+        "sha256": "673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b"
+      },
+      {
+        "path": "gallery/celebrating-occasions-open-book-placeholder.svg",
+        "sha256": "eba5b671f2f2d0c67e499e646119b24ecfe8cf5f147b96acce04d71dc8228fff"
+      },
+      {
+        "path": "gallery/founders-memoir-open-book-placeholder.svg",
+        "sha256": "1358f9c049923f55bc42f83812c71f14560a0cb45886e8646c0da780deb9542b"
+      },
+      {
+        "path": "gallery/life-story-open-book-placeholder.svg",
+        "sha256": "966bb50023e66ca1519a6b8275d75bb189142ed4257b65f867fdae70cbaf11fd"
+      },
+      {
+        "path": "gallery/parent-to-child-letters-open-book-placeholder.svg",
+        "sha256": "378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309"
+      },
+      {
+        "path": "gallery/relationship-memoir-open-book-placeholder.svg",
+        "sha256": "93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3"
+      },
+      {
+        "path": "gallery/travel-memoir-open-book-placeholder.svg",
+        "sha256": "94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57"
+      },
+      {
+        "path": "index.html",
+        "sha256": "23739a80b6f2653f1373f5d9c139b5e3772713c52ff6d194140883376a35c237"
+      }
+    ],
+    "referenceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+    "candidateWorkflowArtifactComparison": {
+      "result": "all-16-files-match",
+      "runId": 39420920491,
+      "jobId": 118621341328,
+      "artifactId": 12263473811,
+      "archive": "/tmp/group8-final-source-preview-12263473811.zip",
+      "extracted": "/tmp/group8-final-source-preview-12263473811",
+      "archiveSha256": "dba55a7dea5ad71d0b22cc9b0e50260e6fc07759ba20bba7e1600a943d26a323",
+      "digestVerifiedBeforeExtraction": true,
+      "memberPathsAndSymlinksChecked": true,
+      "fileCount": 16,
+      "matchesVerifiedA2ArtifactAndLocalDist": true
+    }
+  },
+  "protectedPublished": {
+    "guardBaselineUnchanged": true,
+    "committedAndWorkingTreeDiffsEmpty": true,
+    "paths": [
+      "index.html",
+      "404.html",
+      "assets/",
+      "covers/",
+      "gallery/",
+      "pricing/",
+      "favicon.svg",
+      "manifest.json",
+      "logo192.png",
+      "logo512.png",
+      "robots.txt",
+      ".nojekyll"
+    ]
+  },
+  "method": [
+    "Resolve immutable commits and frontend trees; identify the single changed frontend verification harness and confirm every tracked frontend working-tree file matches the candidate commit.",
+    "Compare all 101 previously enumerated runtime/content/dependency/asset/guard files against the verified a2 commit, candidate commit and original SHA256 manifest; separately confirm source/content/public subtree identity.",
+    "Compare all 16 local isolated build files with their previously digest-verified a2 preview hashes; download candidate preview artifact 12263473811, validate its ZIP digest and safe member paths before extraction, then confirm the exact file set and every file hash match a2 and the local build.",
+    "Check the unchanged published guard baseline and read-only Git diffs for all protected published paths."
+  ],
+  "evidenceOwners": {
+    "retained": "qa/homepage-assembly/2026-10-20/retained-verification.json",
+    "group8": "docs/PACKAGE_3_GROUP_8_REVIEW.md"
+  },
+  "limitations": [
+    "No build, source test, browser test or screenshot was rerun locally for this identity audit. Automatically triggered candidate workflow results are recorded separately.",
+    "The complete frontend Git tree is intentionally different because the Writing verification harness changed; runtime equivalence is demonstrated by explicit files and runtime subtree identities.",
+    "Detailed a2 evidence remains identifiable historical evidence. It is reused only where runtime, relevant harness, protected inputs and applicable environment match; it is not relabelled as freshly downloaded candidate evidence.",
+    "Final Writing evidence has a separate owner. Group 8 closure, Package 4, founder acceptance and React publication remain separate requirements."
+  ],
+  "candidateCommit": "8674c0bfd13b4b40311fdf59f95591dcf5383994",
+  "candidateCommitTree": "9f37760c1fc23ab4056112b0d2000001786de5e8",
+  "committedChangesBetweenVerifiedSourceAndCandidate": [
+    ".github/workflows/diagnose-writing-raster.yml",
+    ".github/workflows/verify-writing-parity.yml",
+    "frontend/scripts/verify-writing-parity.mjs",
+    "qa/homepage-assembly/2026-10-20/diagnose-writing-raster.mjs"
+  ],
+  "writingHarnessChange": {
+    "path": "frontend/scripts/verify-writing-parity.mjs",
+    "verifiedSha256": "d4ea089241820ca178ea7959b9b0be5e1230d0519680c3384d4a063b00f574ff",
+    "candidateSha256": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3",
+    "scope": "Pinned render environment and observation of completed native touch-dismissal autofocus; dedicated Writing evidence is owned separately."
+  }
+}

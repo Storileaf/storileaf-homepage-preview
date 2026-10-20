@@ -1,0 +1,68 @@
+{
+  "candidate_before_uncommitted_patch": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+  "protected_baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "protected_sources": [
+    {
+      "file": "assets/Match-CtmL2Hj_.js",
+      "region": "@tanstack/router-core/dist/esm/scroll-restoration.js",
+      "lines": "9\u2013193",
+      "sha256": "0c1da7396594e8f88691d211fd55a57466625564760d9a6fd562b91eb237a8cc",
+      "baseline_sha256": "0c1da7396594e8f88691d211fd55a57466625564760d9a6fd562b91eb237a8cc",
+      "protected_bytes_unchanged": true
+    },
+    {
+      "file": "assets/index-DO3Vh6An.js",
+      "region": "src/router.tsx scrollRestoration: true",
+      "line": 13526,
+      "sha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "baseline_sha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "protected_bytes_unchanged": true
+    }
+  ],
+  "source_validation": {
+    "typecheck": "pass",
+    "content_gate": "pass",
+    "protected_guard": "pass",
+    "tests": 75,
+    "passed": 75,
+    "failed": 0,
+    "history_tests": 5,
+    "build": "pass",
+    "vite": "8.1.5",
+    "focused_history_tests": "5 passed, 0 failed; rerun after pagehide correction",
+    "final_check_and_build": "passed after pagehide correction"
+  },
+  "sha256": {
+    "frontend/src/App.tsx": "97010e342e0977003877de3368fe0cd0767ec6324b95cc6d5b4f0560e3818347",
+    "frontend/src/homepageScrollRestoration.ts": "4135dc8a0acadc933e6d6fea69588dbf2b10f6936d32ea19d6c697bcb944c871",
+    "frontend/scripts/homepage-scroll-restoration.test.mjs": "8c5eb47174e456c6afbc32c0c854d66d54ef9362cbd1d328a189f92d5bcc50e9",
+    "frontend/dist/index.html": "23739a80b6f2653f1373f5d9c139b5e3772713c52ff6d194140883376a35c237",
+    "frontend/dist/assets/index-NU-3HqjY.css": "f4eb5347d08bb36a101b43662a60a559d21c92b8218a382bef5b6818486b9a18",
+    "frontend/dist/assets/index-C6syLBIa.js": "1924dfc8bd01893c46c337cb7cd06cb7d53f7dca497835ed6ae4c1fb93932850"
+  },
+  "scope": "Source-only numeric window/connected-element scroll restoration, native anchors and focus unchanged; no practice answer storage, dependency, protected export change or publication.",
+  "checks": [
+    "native fragment movement before popstate",
+    "Back 9262 and Forward 2072",
+    "separate connected rail coordinates",
+    "repeated same-hash click cancels pending restore",
+    "direct hash",
+    "invalid/missing cache and blocked sessionStorage",
+    "pagehide/BFCache/reload",
+    "native scroll clamping",
+    "removed textarea target and numeric-only cache",
+    "StrictMode cleanup, prior mode, listener removal and history length",
+    "pagehide during pending Back preserves the saved destination for BFCache restoration"
+  ],
+  "limits": [
+    "Node event-order fixtures are not native browser validation; assembled browser journey remains outstanding."
+  ],
+  "node": "v24.19.0",
+  "lifecycle_diagnostic": {
+    "source": "independent Node event-order fixture, not a native browser observation",
+    "before": "Saved Y8200; Back pending with interim native Y0; pagehide incorrectly overwrote cache with Y0.",
+    "correction": "Skip the snapshot when a destination restore frame is pending, then cancel the frame and persist known numeric cache. Cleanup already used the same rule.",
+    "after": "Regression case restores Y8200 and rail X125 after BFCache pageshow."
+  },
+  "source_commit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66"
+}

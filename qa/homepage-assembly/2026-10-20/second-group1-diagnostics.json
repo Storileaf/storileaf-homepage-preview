@@ -1,0 +1,417 @@
+{
+  "runId": 39380639017,
+  "jobId": 118488728218,
+  "artifactId": 12245402947,
+  "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+  "browser": "155.0.8059.84",
+  "zipSha256": "0a23983b6083e3cf0a841db6b7c80b134d61a8a3f0d63a24587521bde10c6a81",
+  "reportSha256": "86c381eab548adcf7c9209d2f58a551689b2a7434e0d611caac82e08128dfa62",
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    600,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "states": 19,
+  "problems": [
+    "source final section position differs resources at 1440",
+    "source section target not visible resources at 1440"
+  ],
+  "alignmentRecords": [
+    {
+      "state": "programmatic section alignment",
+      "id": "resources",
+      "width": 390,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 6569.5625,
+        "scrollY": 6394,
+        "maximumScroll": 9250,
+        "top": 175.5625,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 390,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 6569.5625,
+        "scrollY": 6394,
+        "maximumScroll": 9250,
+        "top": 175.5625,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 390,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "resources-activity",
+      "width": 390,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "80px",
+        "documentTop": 6825.28125,
+        "scrollY": 6629,
+        "maximumScroll": 9250,
+        "top": 196.28125,
+        "expectedTop": 196,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 390,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "80px",
+        "documentTop": 6825.28125,
+        "scrollY": 6629,
+        "maximumScroll": 9250,
+        "top": 196.28125,
+        "expectedTop": 196,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 390,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "gifting",
+      "width": 390,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 5824.453125,
+        "scrollY": 5648,
+        "maximumScroll": 9250,
+        "top": 176.453125,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 390,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 5824.453125,
+        "scrollY": 5648,
+        "maximumScroll": 9250,
+        "top": 176.453125,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 390,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "resources",
+      "width": 600,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 6590.046875,
+        "scrollY": 6414,
+        "maximumScroll": 9282,
+        "top": 176.046875,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 6590.046875,
+        "scrollY": 6414,
+        "maximumScroll": 9282,
+        "top": 176.046875,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 600,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "resources-activity",
+      "width": 600,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "80px",
+        "documentTop": 6878.296875,
+        "scrollY": 6682,
+        "maximumScroll": 9282,
+        "top": 196.296875,
+        "expectedTop": 196,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "80px",
+        "documentTop": 6878.296875,
+        "scrollY": 6682,
+        "maximumScroll": 9282,
+        "top": 196.296875,
+        "expectedTop": 196,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 600,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "gifting",
+      "width": 600,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 5879.234375,
+        "scrollY": 5703,
+        "maximumScroll": 9282,
+        "top": 176.234375,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "96px",
+        "rootPadding": "80px",
+        "documentTop": 5879.234375,
+        "scrollY": 5703,
+        "maximumScroll": 9282,
+        "top": 176.234375,
+        "expectedTop": 176,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 600,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "resources",
+      "width": 1440,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "100px",
+        "documentTop": 6538.3125,
+        "scrollY": 6322,
+        "maximumScroll": 8580,
+        "top": 216.3125,
+        "expectedTop": 216,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 1440,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "100px",
+        "documentTop": 6538.3125,
+        "scrollY": 5095,
+        "maximumScroll": 8580,
+        "top": 1443.3125,
+        "expectedTop": 216,
+        "inPosition": false,
+        "visible": false,
+        "cssViewport": {
+          "width": 1440,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "resources-activity",
+      "width": 1440,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "100px",
+        "documentTop": 6895.09375,
+        "scrollY": 6679,
+        "maximumScroll": 8580,
+        "top": 216.09375,
+        "expectedTop": 216,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 1440,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "100px",
+        "documentTop": 6895.09375,
+        "scrollY": 6679,
+        "maximumScroll": 8580,
+        "top": 216.09375,
+        "expectedTop": 216,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 1440,
+          "height": 600
+        }
+      }
+    },
+    {
+      "state": "programmatic section alignment",
+      "id": "gifting",
+      "width": 1440,
+      "height": 600,
+      "published": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "100px",
+        "documentTop": 5896.3125,
+        "scrollY": 5680,
+        "maximumScroll": 8580,
+        "top": 216.3125,
+        "expectedTop": 216,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 1440,
+          "height": 600
+        }
+      },
+      "source": {
+        "idCount": 1,
+        "offset": "116px",
+        "rootPadding": "100px",
+        "documentTop": 5896.3125,
+        "scrollY": 5680,
+        "maximumScroll": 8580,
+        "top": 216.3125,
+        "expectedTop": 216,
+        "inPosition": true,
+        "visible": true,
+        "cssViewport": {
+          "width": 1440,
+          "height": 600
+        }
+      }
+    }
+  ],
+  "sourceIdentityChecks": [
+    {
+      "file": "src/App.tsx",
+      "sha256": "b6d36a801de0cc335a0b1ec951205dfc085a6bf02283f4972389fbfccb102374",
+      "matchesCommit": true
+    },
+    {
+      "file": "src/sections/GiftingSection.tsx",
+      "sha256": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6",
+      "matchesCommit": true
+    },
+    {
+      "file": "src/sections/ResourcesSection.tsx",
+      "sha256": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403",
+      "matchesCommit": true
+    },
+    {
+      "file": "src/sections/homepageEditorialContent.ts",
+      "sha256": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1",
+      "matchesCommit": true
+    },
+    {
+      "file": "src/styles/homepage-editorial.css",
+      "sha256": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a",
+      "matchesCommit": true
+    },
+    {
+      "file": "src/components/ResourceCategoryCard.tsx",
+      "sha256": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47",
+      "matchesCommit": true
+    },
+    {
+      "file": "content/ledger.json",
+      "sha256": "c00a403216cab6e5bebd3f5c81d3836a9f15a01c5a56d3bd56f437fca5952e58",
+      "matchesCommit": true
+    },
+    {
+      "file": "content/images.json",
+      "sha256": "3063a8d9ed41376682a1ff036b1ec7b93a9f5496ea724e5ff82b072512805426",
+      "matchesCommit": true
+    }
+  ],
+  "diagnosis": {
+    "established": "The first 600 to 1440 programmatic Resources alignment satisfied its measured target-offset wait, then moved before its final sample after foreground/CSS viewport/two-frame settling. The subsequent two 1440 targets passed. No URL or history traversal occurs in this phase.",
+    "cause": "Not established from retained measurements. A passive event and stable geometry trace is proposed before any correction.",
+    "scriptLocation": "frontend/scripts/verify-group1-parity.mjs programmatic section alignment loop"
+  }
+}

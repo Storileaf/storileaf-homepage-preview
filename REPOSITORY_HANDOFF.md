@@ -2,7 +2,7 @@
 
 ## Current checkpoint
 
-Package 3 Group 8, Writing showcase, the unsaved practice dialog and complete homepage assembly, is implemented in isolated React source. **VERIFICATION_PENDING**. Its dedicated rendered checkpoint, integrated page checks, retained regressions and closing records must pass before Package 3 is closed. The [Group 8 review](docs/PACKAGE_3_GROUP_8_REVIEW.md) and linked reports own the exact evidence and result.
+Package 3 Group 8, Writing showcase, the unsaved practice dialog and complete homepage assembly, is implemented in isolated React source. Complete assembly and retained checks have passed on a2d1ee14a793581a08a0e11dd64002e9360eaf66. **VERIFICATION_PENDING** for the final dedicated Writing checkpoint and closing records. The [Group 8 review](docs/PACKAGE_3_GROUP_8_REVIEW.md) and linked reports own the exact evidence and result.
 
 The composition now contains the entire approved homepage order. Writing showcase follows How it works and precedes Gifting. Its device illustration, mobile question view and temporary practice dialog retain the existing content and behaviour. The dialog remains unsaved and clears on every close. The standalone practice page and newsletter integration remain deferred.
 
@@ -22,11 +22,11 @@ The Group 6 review retains the investigated FAQ focus sampling failure, its unch
 
 Inherited Gifting, shared footer/currency, desktop navigation and discovery label enlargement findings remain open in their respective reviews. Group 7 also records clipping of the first and third hero progression labels at 320px with targeted 200 percent text enlargement in both versions. This requires a separate bounded repair proposal. Group 8 records the inherited missing dialog description target while the answer field correctly references its privacy note. The [pricing investigation](docs/PRICING_HYDRATION_REVIEW.md) owns the unresolved default footer, currency entry and selected book snapshot defects. Matching an inherited limitation is not an accessibility pass. These repairs are not silently included in structural migration.
 
-The process and media reports describe their targeted text enlargement and overflow checks precisely. They do not certify native browser zoom, other engines, physical devices or accessibility. Complete page assembly may change absolute section positions and must be checked again. Genuine photography replacing the gallery placeholders and temporary physical photographs remains deferred.
+The process, media and Group 8 reports describe their targeted text enlargement and overflow checks precisely. They do not certify native browser zoom, other engines, physical devices or accessibility. Group 8 has rechecked absolute section positions, joins and combined behaviour in the complete composition. Genuine photography replacing the gallery placeholders and temporary physical photographs remains deferred.
 
 ## Next work
 
-Finish the Group 8 dedicated rendered and functional checkpoint, complete page assembly checks, retained regressions, evidence, both handoffs and final deployment verification. Recheck absolute section positions, joins, scrolling, navigation targets, history and the combined menus, gallery, slideshow, pinned process, practice dialog and FAQ behaviour. Do not infer Package 3 completion merely because all components exist.
+Finish the final Group 8 Writing rendered and functional checkpoint, evidence, both handoffs and final deployment verification. Preserve the passing complete assembly and retained evidence with its exact source and environment identities. Do not infer Package 3 completion merely because all components exist.
 
 Package 4 follows. It includes the complete page quality review, separately proposed inherited repairs and accurately reported browser, zoom and device coverage. Review duplicate CI jobs, repeated setup and unreliable measurements after assembly and before the first separately authorised new public page. Founder rendered acceptance and explicit React publication approval remain separate gates. No new public page, backend work, standalone practice or newsletter integration is included.
 

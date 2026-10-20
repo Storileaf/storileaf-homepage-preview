@@ -1,0 +1,4966 @@
+{
+  "analysis": "Independent read-only colour-distribution and cross-run identity analysis of Writing device text",
+  "createdAtUtc": "2026-10-20T07:01:34.380685+00:00",
+  "script": "/tmp/group8-writing-raster-analysis.py",
+  "method": {
+    "crop": "Unrotated laptop question only, from its recorded DOM bounds, excluding the tablet overlap by ending 5px before its recorded left edge. Crop coordinates are [left, top, right-exclusive, bottom-exclusive].",
+    "foreground": [
+      37,
+      53,
+      38
+    ],
+    "background": [
+      250,
+      249,
+      247
+    ],
+    "backgroundVerification": "The uniform background is the most common RGB value in every analysed crop. The foreground is the exact recorded computed question colour in every case.",
+    "coverageFormula": "For channel c, a_c = (B_c - P_c) / (B_c - F_c), where B is background, F is text foreground and P is the screenshot pixel. Coverage spread = max(a_R,a_G,a_B) - min(a_R,a_G,a_B).",
+    "edgeSelection": "Keep pixels whose mean channel coverage is strictly between 0.05 and 0.95. This excludes clear background and near-solid foreground.",
+    "interpretation": "A scalar grayscale coverage blend lies close to one RGB line and therefore has nearly equal per-channel coverage, allowing integer rounding. Large channel spreads and complementary coloured fringes demonstrate separate channel coverage, consistent with LCD/subpixel antialiasing.",
+    "diagnosticBoundary": "The 0.05 spread marker classifies this pixel distribution; it is not a changed checkpoint tolerance and is not used to pass a screenshot comparison.",
+    "imageHandling": "Images were read only. Crops exist in memory for numerical analysis. No saved PNG was edited, padded, resampled or substituted."
+  },
+  "runs": {
+    "first": {
+      "directory": "/tmp/group8-writing-first-39379793132",
+      "sourceCommit": "95e6271b7943abd25e528751db7b673b9350cc17",
+      "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "browser": "155.0.8059.39",
+      "reportSha256": "14ccfab41a895f116795f8521da4da201128882f3f8d3667caf81c7defa4fb5b"
+    },
+    "second": {
+      "directory": "/tmp/group8-writing-second-39380638969",
+      "sourceCommit": "b6dab8cad4f5ac724d847ca63f63a224f21aefa9",
+      "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "browser": "155.0.8059.39",
+      "reportSha256": "e1984b75a895a811282cf250037b3d29802fe6ded4581b1060585c01d07559a5"
+    },
+    "third": {
+      "directory": "/tmp/group8-writing-third-39382384202",
+      "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+      "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "browser": "155.0.8059.39",
+      "reportSha256": "b135ef7d84e37248e1e357db7443ad4e66370837304eb9039a8638c601a73bcd"
+    }
+  },
+  "samples": [
+    {
+      "run": "first",
+      "label": "section-768",
+      "kind": "published",
+      "file": "/tmp/group8-writing-first-39379793132/published-section-768-tile-0.png",
+      "pngSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        768,
+        886
+      ],
+      "questionRect": [
+        279.1875,
+        427.640625,
+        302.109375,
+        34.5625
+      ],
+      "cropExclusive": [
+        279,
+        427,
+        537,
+        463
+      ],
+      "cropSize": [
+        258,
+        36
+      ],
+      "rawRgbCropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 6828,
+      "samplePixelCount": 9288,
+      "edgePixelCount": 1885,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18779342723004694,
+        "median": 0.3397129186602871,
+        "p75": 0.4701574679335984,
+        "p90": 0.591571759103264,
+        "p95": 0.6249747287553069,
+        "p99": 0.6262326751578049,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9771883289124669,
+      "edgeFractionSpreadOver010": 0.9135278514588859,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 281,
+          "y": 434,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 299,
+          "y": 438,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 400,
+          "y": 454,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 452,
+          "y": 434,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 280,
+          "y": 454,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-768",
+      "kind": "source",
+      "file": "/tmp/group8-writing-first-39379793132/source-section-768-tile-0.png",
+      "pngSha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        768,
+        886
+      ],
+      "questionRect": [
+        279.1875,
+        427.640625,
+        302.109375,
+        34.5625
+      ],
+      "cropExclusive": [
+        279,
+        427,
+        537,
+        463
+      ],
+      "cropSize": [
+        258,
+        36
+      ],
+      "rawRgbCropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 6828,
+      "samplePixelCount": 9288,
+      "edgePixelCount": 1885,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18779342723004694,
+        "median": 0.3397129186602871,
+        "p75": 0.4701574679335984,
+        "p90": 0.591571759103264,
+        "p95": 0.6249747287553069,
+        "p99": 0.6262326751578049,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9771883289124669,
+      "edgeFractionSpreadOver010": 0.9135278514588859,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 281,
+          "y": 434,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 299,
+          "y": 438,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 400,
+          "y": 454,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 452,
+          "y": 434,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 280,
+          "y": 454,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-768",
+      "kind": "published",
+      "file": "/tmp/group8-writing-second-39380638969/published-section-768-tile-0.png",
+      "pngSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        768,
+        886
+      ],
+      "questionRect": [
+        279.1875,
+        427.640625,
+        302.109375,
+        34.5625
+      ],
+      "cropExclusive": [
+        279,
+        427,
+        537,
+        463
+      ],
+      "cropSize": [
+        258,
+        36
+      ],
+      "rawRgbCropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 6828,
+      "samplePixelCount": 9288,
+      "edgePixelCount": 1885,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18779342723004694,
+        "median": 0.3397129186602871,
+        "p75": 0.4701574679335984,
+        "p90": 0.591571759103264,
+        "p95": 0.6249747287553069,
+        "p99": 0.6262326751578049,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9771883289124669,
+      "edgeFractionSpreadOver010": 0.9135278514588859,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 281,
+          "y": 434,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 299,
+          "y": 438,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 400,
+          "y": 454,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 452,
+          "y": 434,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 280,
+          "y": 454,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-768",
+      "kind": "source",
+      "file": "/tmp/group8-writing-second-39380638969/source-section-768-tile-0.png",
+      "pngSha256": "0b991b942940775dcc7f0a3f7eb8f312f4103db95825a36a9f479905d80b6247",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        768,
+        886
+      ],
+      "questionRect": [
+        279.1875,
+        427.640625,
+        302.109375,
+        34.5625
+      ],
+      "cropExclusive": [
+        279,
+        427,
+        537,
+        463
+      ],
+      "cropSize": [
+        258,
+        36
+      ],
+      "rawRgbCropSha256": "700666fa1afab27e8076c57c5d92d8afe33a6322cc0307c6ebaafa7cc808a60e",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 7300,
+      "samplePixelCount": 9288,
+      "edgePixelCount": 1378,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0002920232720083904,
+        "p25": 0.0020839321644150477,
+        "median": 0.003185781354795414,
+        "p75": 0.004354734008975236,
+        "p90": 0.005346157601796686,
+        "p95": 0.006469094814959497,
+        "p99": 0.007209926224010732,
+        "max": 0.008666145884191012
+      },
+      "edgeFractionSpreadOver005": 0.0,
+      "edgeFractionSpreadOver010": 0.0,
+      "observedPattern": "scalar coverage / grayscale-like",
+      "strongestEdgePixels": [
+        {
+          "x": 436,
+          "y": 439,
+          "rgb": [
+            213,
+            216,
+            210
+          ],
+          "coverage": [
+            0.17370892018779344,
+            0.1683673469387755,
+            0.17703349282296652
+          ],
+          "channelSpread": 0.008666145884191012
+        },
+        {
+          "x": 281,
+          "y": 433,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 350,
+          "y": 437,
+          "rgb": [
+            107,
+            116,
+            106
+          ],
+          "coverage": [
+            0.6713615023474179,
+            0.6785714285714286,
+            0.6746411483253588
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 444,
+          "y": 437,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 449,
+          "y": 437,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-768",
+      "kind": "published",
+      "file": "/tmp/group8-writing-third-39382384202/published-section-768-tile-0.png",
+      "pngSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        768,
+        886
+      ],
+      "questionRect": [
+        279.1875,
+        427.640625,
+        302.109375,
+        34.5625
+      ],
+      "cropExclusive": [
+        279,
+        427,
+        537,
+        463
+      ],
+      "cropSize": [
+        258,
+        36
+      ],
+      "rawRgbCropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 6828,
+      "samplePixelCount": 9288,
+      "edgePixelCount": 1885,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18779342723004694,
+        "median": 0.3397129186602871,
+        "p75": 0.4701574679335984,
+        "p90": 0.591571759103264,
+        "p95": 0.6249747287553069,
+        "p99": 0.6262326751578049,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9771883289124669,
+      "edgeFractionSpreadOver010": 0.9135278514588859,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 281,
+          "y": 434,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 299,
+          "y": 438,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 400,
+          "y": 454,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 452,
+          "y": 434,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 280,
+          "y": 454,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-768",
+      "kind": "source",
+      "file": "/tmp/group8-writing-third-39382384202/source-section-768-tile-0.png",
+      "pngSha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        768,
+        886
+      ],
+      "questionRect": [
+        279.1875,
+        427.640625,
+        302.109375,
+        34.5625
+      ],
+      "cropExclusive": [
+        279,
+        427,
+        537,
+        463
+      ],
+      "cropSize": [
+        258,
+        36
+      ],
+      "rawRgbCropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 6828,
+      "samplePixelCount": 9288,
+      "edgePixelCount": 1885,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18779342723004694,
+        "median": 0.3397129186602871,
+        "p75": 0.4701574679335984,
+        "p90": 0.591571759103264,
+        "p95": 0.6249747287553069,
+        "p99": 0.6262326751578049,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9771883289124669,
+      "edgeFractionSpreadOver010": 0.9135278514588859,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 281,
+          "y": 434,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 299,
+          "y": 438,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 400,
+          "y": 454,
+          "rgb": [
+            203,
+            144,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 452,
+          "y": 434,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        },
+        {
+          "x": 280,
+          "y": 454,
+          "rgb": [
+            203,
+            138,
+            70
+          ],
+          "coverage": [
+            0.22065727699530516,
+            0.5663265306122449,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6262326751578049
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-820",
+      "kind": "published",
+      "file": "/tmp/group8-writing-first-39379793132/published-section-820-tile-0.png",
+      "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        820,
+        911
+      ],
+      "questionRect": [
+        297.203125,
+        432.953125,
+        325.171875,
+        37.21875
+      ],
+      "cropExclusive": [
+        297,
+        432,
+        575,
+        471
+      ],
+      "cropSize": [
+        278,
+        39
+      ],
+      "rawRgbCropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8246,
+      "samplePixelCount": 10842,
+      "edgePixelCount": 1916,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18784958555158704,
+        "median": 0.3160478019632949,
+        "p75": 0.4988656019048902,
+        "p90": 0.5903812026866141,
+        "p95": 0.5946548509558146,
+        "p99": 0.6261428218433407,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9754697286012526,
+      "edgeFractionSpreadOver010": 0.9144050104384134,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 328,
+          "y": 460,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 442,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 438,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 437,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 439,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-820",
+      "kind": "source",
+      "file": "/tmp/group8-writing-first-39379793132/source-section-820-tile-0.png",
+      "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        820,
+        911
+      ],
+      "questionRect": [
+        297.203125,
+        432.953125,
+        325.171875,
+        37.21875
+      ],
+      "cropExclusive": [
+        297,
+        432,
+        575,
+        471
+      ],
+      "cropSize": [
+        278,
+        39
+      ],
+      "rawRgbCropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8246,
+      "samplePixelCount": 10842,
+      "edgePixelCount": 1916,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18784958555158704,
+        "median": 0.3160478019632949,
+        "p75": 0.4988656019048902,
+        "p90": 0.5903812026866141,
+        "p95": 0.5946548509558146,
+        "p99": 0.6261428218433407,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9754697286012526,
+      "edgeFractionSpreadOver010": 0.9144050104384134,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 328,
+          "y": 460,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 442,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 438,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 437,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 439,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-820",
+      "kind": "published",
+      "file": "/tmp/group8-writing-second-39380638969/published-section-820-tile-0.png",
+      "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        820,
+        911
+      ],
+      "questionRect": [
+        297.203125,
+        432.953125,
+        325.171875,
+        37.21875
+      ],
+      "cropExclusive": [
+        297,
+        432,
+        575,
+        471
+      ],
+      "cropSize": [
+        278,
+        39
+      ],
+      "rawRgbCropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8246,
+      "samplePixelCount": 10842,
+      "edgePixelCount": 1916,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18784958555158704,
+        "median": 0.3160478019632949,
+        "p75": 0.4988656019048902,
+        "p90": 0.5903812026866141,
+        "p95": 0.5946548509558146,
+        "p99": 0.6261428218433407,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9754697286012526,
+      "edgeFractionSpreadOver010": 0.9144050104384134,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 328,
+          "y": 460,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 442,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 438,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 437,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 439,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-820",
+      "kind": "source",
+      "file": "/tmp/group8-writing-second-39380638969/source-section-820-tile-0.png",
+      "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        820,
+        911
+      ],
+      "questionRect": [
+        297.203125,
+        432.953125,
+        325.171875,
+        37.21875
+      ],
+      "cropExclusive": [
+        297,
+        432,
+        575,
+        471
+      ],
+      "cropSize": [
+        278,
+        39
+      ],
+      "rawRgbCropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8246,
+      "samplePixelCount": 10842,
+      "edgePixelCount": 1916,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18784958555158704,
+        "median": 0.3160478019632949,
+        "p75": 0.4988656019048902,
+        "p90": 0.5903812026866141,
+        "p95": 0.5946548509558146,
+        "p99": 0.6261428218433407,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9754697286012526,
+      "edgeFractionSpreadOver010": 0.9144050104384134,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 328,
+          "y": 460,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 442,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 438,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 437,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 439,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-820",
+      "kind": "published",
+      "file": "/tmp/group8-writing-third-39382384202/published-section-820-tile-0.png",
+      "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        820,
+        911
+      ],
+      "questionRect": [
+        297.203125,
+        432.953125,
+        325.171875,
+        37.21875
+      ],
+      "cropExclusive": [
+        297,
+        432,
+        575,
+        471
+      ],
+      "cropSize": [
+        278,
+        39
+      ],
+      "rawRgbCropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8246,
+      "samplePixelCount": 10842,
+      "edgePixelCount": 1916,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18784958555158704,
+        "median": 0.3160478019632949,
+        "p75": 0.4988656019048902,
+        "p90": 0.5903812026866141,
+        "p95": 0.5946548509558146,
+        "p99": 0.6261428218433407,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9754697286012526,
+      "edgeFractionSpreadOver010": 0.9144050104384134,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 328,
+          "y": 460,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 442,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 438,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 437,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 439,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-820",
+      "kind": "source",
+      "file": "/tmp/group8-writing-third-39382384202/source-section-820-tile-0.png",
+      "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        820,
+        911
+      ],
+      "questionRect": [
+        297.203125,
+        432.953125,
+        325.171875,
+        37.21875
+      ],
+      "cropExclusive": [
+        297,
+        432,
+        575,
+        471
+      ],
+      "cropSize": [
+        278,
+        39
+      ],
+      "rawRgbCropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8246,
+      "samplePixelCount": 10842,
+      "edgePixelCount": 1916,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0011961722488038617,
+        "p25": 0.18784958555158704,
+        "median": 0.3160478019632949,
+        "p75": 0.4988656019048902,
+        "p90": 0.5903812026866141,
+        "p95": 0.5946548509558146,
+        "p99": 0.6261428218433407,
+        "max": 0.6274007682458387
+      },
+      "edgeFractionSpreadOver005": 0.9754697286012526,
+      "edgeFractionSpreadOver010": 0.9144050104384134,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 328,
+          "y": 460,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 442,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 438,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 437,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        },
+        {
+          "x": 314,
+          "y": 439,
+          "rgb": [
+            190,
+            126,
+            57
+          ],
+          "coverage": [
+            0.28169014084507044,
+            0.6275510204081632,
+            0.9090909090909091
+          ],
+          "channelSpread": 0.6274007682458387
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-1024",
+      "kind": "published",
+      "file": "/tmp/group8-writing-first-39379793132/published-section-1024-tile-0.png",
+      "pngSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1024,
+        1002
+      ],
+      "questionRect": [
+        372.796875,
+        455.0625,
+        401.46875,
+        45.9375
+      ],
+      "cropExclusive": [
+        372,
+        455,
+        715,
+        501
+      ],
+      "cropSize": [
+        343,
+        46
+      ],
+      "rawRgbCropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 12086,
+      "samplePixelCount": 15778,
+      "edgePixelCount": 2461,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0012579464024979198,
+        "p25": 0.215962441314554,
+        "median": 0.34155491160680196,
+        "p75": 0.4963946357571265,
+        "p90": 0.5663005144102253,
+        "p95": 0.5945369184805804,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9821210889882162,
+      "edgeFractionSpreadOver010": 0.9548963835839089,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 615,
+          "y": 466,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 464,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 463,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-1024",
+      "kind": "source",
+      "file": "/tmp/group8-writing-first-39379793132/source-section-1024-tile-0.png",
+      "pngSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1024,
+        1002
+      ],
+      "questionRect": [
+        372.796875,
+        455.0625,
+        401.46875,
+        45.9375
+      ],
+      "cropExclusive": [
+        372,
+        455,
+        715,
+        501
+      ],
+      "cropSize": [
+        343,
+        46
+      ],
+      "rawRgbCropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 12086,
+      "samplePixelCount": 15778,
+      "edgePixelCount": 2461,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0012579464024979198,
+        "p25": 0.215962441314554,
+        "median": 0.34155491160680196,
+        "p75": 0.4963946357571265,
+        "p90": 0.5663005144102253,
+        "p95": 0.5945369184805804,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9821210889882162,
+      "edgeFractionSpreadOver010": 0.9548963835839089,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 615,
+          "y": 466,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 464,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 463,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-1024",
+      "kind": "published",
+      "file": "/tmp/group8-writing-second-39380638969/published-section-1024-tile-0.png",
+      "pngSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1024,
+        1002
+      ],
+      "questionRect": [
+        372.796875,
+        455.0625,
+        401.46875,
+        45.9375
+      ],
+      "cropExclusive": [
+        372,
+        455,
+        715,
+        501
+      ],
+      "cropSize": [
+        343,
+        46
+      ],
+      "rawRgbCropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 12086,
+      "samplePixelCount": 15778,
+      "edgePixelCount": 2461,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0012579464024979198,
+        "p25": 0.215962441314554,
+        "median": 0.34155491160680196,
+        "p75": 0.4963946357571265,
+        "p90": 0.5663005144102253,
+        "p95": 0.5945369184805804,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9821210889882162,
+      "edgeFractionSpreadOver010": 0.9548963835839089,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 615,
+          "y": 466,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 464,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 463,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-1024",
+      "kind": "source",
+      "file": "/tmp/group8-writing-second-39380638969/source-section-1024-tile-0.png",
+      "pngSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1024,
+        1002
+      ],
+      "questionRect": [
+        372.796875,
+        455.0625,
+        401.46875,
+        45.9375
+      ],
+      "cropExclusive": [
+        372,
+        455,
+        715,
+        501
+      ],
+      "cropSize": [
+        343,
+        46
+      ],
+      "rawRgbCropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 12086,
+      "samplePixelCount": 15778,
+      "edgePixelCount": 2461,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0012579464024979198,
+        "p25": 0.215962441314554,
+        "median": 0.34155491160680196,
+        "p75": 0.4963946357571265,
+        "p90": 0.5663005144102253,
+        "p95": 0.5945369184805804,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9821210889882162,
+      "edgeFractionSpreadOver010": 0.9548963835839089,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 615,
+          "y": 466,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 464,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 463,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-1024",
+      "kind": "published",
+      "file": "/tmp/group8-writing-third-39382384202/published-section-1024-tile-0.png",
+      "pngSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1024,
+        1002
+      ],
+      "questionRect": [
+        372.796875,
+        455.0625,
+        401.46875,
+        45.9375
+      ],
+      "cropExclusive": [
+        372,
+        455,
+        715,
+        501
+      ],
+      "cropSize": [
+        343,
+        46
+      ],
+      "rawRgbCropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 12086,
+      "samplePixelCount": 15778,
+      "edgePixelCount": 2461,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0012579464024979198,
+        "p25": 0.215962441314554,
+        "median": 0.34155491160680196,
+        "p75": 0.4963946357571265,
+        "p90": 0.5663005144102253,
+        "p95": 0.5945369184805804,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9821210889882162,
+      "edgeFractionSpreadOver010": 0.9548963835839089,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 615,
+          "y": 466,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 464,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 463,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-1024",
+      "kind": "source",
+      "file": "/tmp/group8-writing-third-39382384202/source-section-1024-tile-0.png",
+      "pngSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1024,
+        1002
+      ],
+      "questionRect": [
+        372.796875,
+        455.0625,
+        401.46875,
+        45.9375
+      ],
+      "cropExclusive": [
+        372,
+        455,
+        715,
+        501
+      ],
+      "cropSize": [
+        343,
+        46
+      ],
+      "rawRgbCropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 12086,
+      "samplePixelCount": 15778,
+      "edgePixelCount": 2461,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0012579464024979198,
+        "p25": 0.215962441314554,
+        "median": 0.34155491160680196,
+        "p75": 0.4963946357571265,
+        "p90": 0.5663005144102253,
+        "p95": 0.5945369184805804,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9821210889882162,
+      "edgeFractionSpreadOver010": 0.9548963835839089,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 615,
+          "y": 466,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 464,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 465,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 615,
+          "y": 463,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-1280",
+      "kind": "published",
+      "file": "/tmp/group8-writing-first-39379793132/published-section-1280-tile-0.png",
+      "pngSha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1280,
+        1088
+      ],
+      "questionRect": [
+        482.09375,
+        492.640625,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 549,
+          "y": 530,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 600,
+          "y": 529,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 745,
+          "y": 502,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 530,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 528,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-1280",
+      "kind": "source",
+      "file": "/tmp/group8-writing-first-39379793132/source-section-1280-tile-0.png",
+      "pngSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1280,
+        1088
+      ],
+      "questionRect": [
+        482.09375,
+        492.640625,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 549,
+          "y": 530,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 600,
+          "y": 529,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 745,
+          "y": 502,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 530,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 528,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-1280",
+      "kind": "published",
+      "file": "/tmp/group8-writing-second-39380638969/published-section-1280-tile-0.png",
+      "pngSha256": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1280,
+        1088
+      ],
+      "questionRect": [
+        482.09375,
+        492.640625,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16955,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2018,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0002920232720083904,
+        "p25": 0.001988119191338511,
+        "median": 0.003149106532565185,
+        "p75": 0.004345278781369033,
+        "p90": 0.005346157601796686,
+        "p95": 0.006424511984185838,
+        "p99": 0.006981740064446851,
+        "max": 0.007209926224010732
+      },
+      "edgeFractionSpreadOver005": 0.0,
+      "edgeFractionSpreadOver010": 0.0,
+      "observedPattern": "scalar coverage / grayscale-like",
+      "strongestEdgePixels": [
+        {
+          "x": 525,
+          "y": 533,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 757,
+          "y": 504,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 757,
+          "y": 503,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 659,
+          "y": 501,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 757,
+          "y": 500,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-1280",
+      "kind": "source",
+      "file": "/tmp/group8-writing-second-39380638969/source-section-1280-tile-0.png",
+      "pngSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1280,
+        1088
+      ],
+      "questionRect": [
+        482.09375,
+        492.640625,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 549,
+          "y": 530,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 600,
+          "y": 529,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 745,
+          "y": 502,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 530,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 528,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-1280",
+      "kind": "published",
+      "file": "/tmp/group8-writing-third-39382384202/published-section-1280-tile-0.png",
+      "pngSha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1280,
+        1088
+      ],
+      "questionRect": [
+        482.09375,
+        492.640625,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 549,
+          "y": 530,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 600,
+          "y": 529,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 745,
+          "y": 502,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 530,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 528,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-1280",
+      "kind": "source",
+      "file": "/tmp/group8-writing-third-39382384202/source-section-1280-tile-0.png",
+      "pngSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1280,
+        1088
+      ],
+      "questionRect": [
+        482.09375,
+        492.640625,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        482,
+        492,
+        871,
+        545
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 549,
+          "y": 530,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 600,
+          "y": 529,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 745,
+          "y": 502,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 530,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 600,
+          "y": 528,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-1440",
+      "kind": "published",
+      "file": "/tmp/group8-writing-first-39379793132/published-section-1440-tile-0.png",
+      "pngSha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1440,
+        1096
+      ],
+      "questionRect": [
+        562.09375,
+        500.609375,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 629,
+          "y": 538,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 680,
+          "y": 537,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 825,
+          "y": 510,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 538,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 536,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "first",
+      "label": "section-1440",
+      "kind": "source",
+      "file": "/tmp/group8-writing-first-39379793132/source-section-1440-tile-0.png",
+      "pngSha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1440,
+        1096
+      ],
+      "questionRect": [
+        562.09375,
+        500.609375,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 629,
+          "y": 538,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 680,
+          "y": 537,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 825,
+          "y": 510,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 538,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 536,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-1440",
+      "kind": "published",
+      "file": "/tmp/group8-writing-second-39380638969/published-section-1440-tile-0.png",
+      "pngSha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1440,
+        1096
+      ],
+      "questionRect": [
+        562.09375,
+        500.609375,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 629,
+          "y": 538,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 680,
+          "y": 537,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 825,
+          "y": 510,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 538,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 536,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "second",
+      "label": "section-1440",
+      "kind": "source",
+      "file": "/tmp/group8-writing-second-39380638969/source-section-1440-tile-0.png",
+      "pngSha256": "86c811b94e9389b1209af8bb01b5b52f621d1fe94d6044509117af37935abd24",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1440,
+        1096
+      ],
+      "questionRect": [
+        562.09375,
+        500.609375,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16955,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2018,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0002920232720083904,
+        "p25": 0.001988119191338511,
+        "median": 0.003149106532565185,
+        "p75": 0.004345278781369033,
+        "p90": 0.005346157601796686,
+        "p95": 0.006424511984185838,
+        "p99": 0.006981740064446851,
+        "max": 0.007209926224010732
+      },
+      "edgeFractionSpreadOver005": 0.0,
+      "edgeFractionSpreadOver010": 0.0,
+      "observedPattern": "scalar coverage / grayscale-like",
+      "strongestEdgePixels": [
+        {
+          "x": 605,
+          "y": 541,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 837,
+          "y": 512,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 837,
+          "y": 511,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 739,
+          "y": 509,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 837,
+          "y": 508,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-1440",
+      "kind": "published",
+      "file": "/tmp/group8-writing-third-39382384202/published-section-1440-tile-0.png",
+      "pngSha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1440,
+        1096
+      ],
+      "questionRect": [
+        562.09375,
+        500.609375,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16955,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2018,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0002920232720083904,
+        "p25": 0.001988119191338511,
+        "median": 0.003149106532565185,
+        "p75": 0.004345278781369033,
+        "p90": 0.005346157601796686,
+        "p95": 0.006424511984185838,
+        "p99": 0.006981740064446851,
+        "max": 0.007209926224010732
+      },
+      "edgeFractionSpreadOver005": 0.0,
+      "edgeFractionSpreadOver010": 0.0,
+      "observedPattern": "scalar coverage / grayscale-like",
+      "strongestEdgePixels": [
+        {
+          "x": 605,
+          "y": 541,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 837,
+          "y": 512,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 837,
+          "y": 511,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 739,
+          "y": 509,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 837,
+          "y": 508,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "section-1440",
+      "kind": "source",
+      "file": "/tmp/group8-writing-third-39382384202/source-section-1440-tile-0.png",
+      "pngSha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        1440,
+        1096
+      ],
+      "questionRect": [
+        562.09375,
+        500.609375,
+        455.578125,
+        52.125
+      ],
+      "cropExclusive": [
+        562,
+        500,
+        951,
+        553
+      ],
+      "cropSize": [
+        389,
+        53
+      ],
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 16200,
+      "samplePixelCount": 20617,
+      "edgePixelCount": 2723,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.003504279264101351,
+        "p25": 0.21769211761798862,
+        "median": 0.34204910483635464,
+        "p75": 0.5036053642428735,
+        "p90": 0.5932789720780824,
+        "p95": 0.5956376215827661,
+        "p99": 0.6262326751578049,
+        "max": 0.6590965249230631
+      },
+      "edgeFractionSpreadOver005": 0.9834741094381197,
+      "edgeFractionSpreadOver010": 0.9537275064267352,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 629,
+          "y": 538,
+          "rgb": [
+            210,
+            144,
+            70
+          ],
+          "coverage": [
+            0.18779342723004694,
+            0.5357142857142857,
+            0.84688995215311
+          ],
+          "channelSpread": 0.6590965249230631
+        },
+        {
+          "x": 680,
+          "y": 537,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 825,
+          "y": 510,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 538,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 680,
+          "y": 536,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "boundary-901",
+      "kind": "published",
+      "file": "/tmp/group8-writing-third-39382384202/published-boundary-901-tile-0.png",
+      "pngSha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        901,
+        888
+      ],
+      "questionRect": [
+        330.1875,
+        390.140625,
+        346.90625,
+        39.6875
+      ],
+      "cropExclusive": [
+        330,
+        390,
+        626,
+        430
+      ],
+      "cropSize": [
+        296,
+        40
+      ],
+      "rawRgbCropSha256": "d6122184efc1f9cdbe23461a667ea67721103a80ed163943578cb6bf0575c07e",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 8811,
+      "samplePixelCount": 11840,
+      "edgePixelCount": 2112,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0018683529749928818,
+        "p25": 0.215311004784689,
+        "median": 0.34332951456746863,
+        "p75": 0.503290877642249,
+        "p90": 0.5938180919648673,
+        "p95": 0.595678055574275,
+        "p99": 0.6262326751578049,
+        "max": 0.6285014713480244
+      },
+      "edgeFractionSpreadOver005": 0.9824810606060606,
+      "edgeFractionSpreadOver010": 0.9507575757575758,
+      "observedPattern": "channel-separated / LCD-like",
+      "strongestEdgePixels": [
+        {
+          "x": 396,
+          "y": 419,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 508,
+          "y": 401,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 508,
+          "y": 400,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 508,
+          "y": 399,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        },
+        {
+          "x": 460,
+          "y": 399,
+          "rgb": [
+            56,
+            126,
+            188
+          ],
+          "coverage": [
+            0.9107981220657277,
+            0.6275510204081632,
+            0.2822966507177033
+          ],
+          "channelSpread": 0.6285014713480244
+        }
+      ]
+    },
+    {
+      "run": "third",
+      "label": "boundary-901",
+      "kind": "source",
+      "file": "/tmp/group8-writing-third-39382384202/source-boundary-901-tile-0.png",
+      "pngSha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e",
+      "reportCaptureHashVerified": true,
+      "imageSize": [
+        901,
+        888
+      ],
+      "questionRect": [
+        330.1875,
+        390.140625,
+        346.90625,
+        39.6875
+      ],
+      "cropExclusive": [
+        330,
+        390,
+        626,
+        430
+      ],
+      "cropSize": [
+        296,
+        40
+      ],
+      "rawRgbCropSha256": "d5c9af5d283ef398c7fae1d6f98e456ed0359e904cbecdc235509e8095fcefb0",
+      "foreground": [
+        37,
+        53,
+        38
+      ],
+      "background": [
+        250,
+        249,
+        247
+      ],
+      "backgroundPixelCount": 9398,
+      "samplePixelCount": 11840,
+      "edgePixelCount": 1586,
+      "coverageChannelSpreadPercentiles": {
+        "min": 0.0002920232720083904,
+        "p25": 0.0022755581105681766,
+        "median": 0.003401360544217691,
+        "p75": 0.0044792564913289645,
+        "p90": 0.005883214529831093,
+        "p95": 0.006563188655744012,
+        "p99": 0.007209926224010732,
+        "max": 0.007209926224010732
+      },
+      "edgeFractionSpreadOver005": 0.0,
+      "edgeFractionSpreadOver010": 0.0,
+      "observedPattern": "scalar coverage / grayscale-like",
+      "strongestEdgePixels": [
+        {
+          "x": 502,
+          "y": 421,
+          "rgb": [
+            107,
+            116,
+            106
+          ],
+          "coverage": [
+            0.6713615023474179,
+            0.6785714285714286,
+            0.6746411483253588
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 399,
+          "y": 395,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 469,
+          "y": 401,
+          "rgb": [
+            107,
+            116,
+            106
+          ],
+          "coverage": [
+            0.6713615023474179,
+            0.6785714285714286,
+            0.6746411483253588
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 404,
+          "y": 415,
+          "rgb": [
+            180,
+            186,
+            179
+          ],
+          "coverage": [
+            0.3286384976525822,
+            0.32142857142857145,
+            0.3253588516746411
+          ],
+          "channelSpread": 0.007209926224010732
+        },
+        {
+          "x": 447,
+          "y": 401,
+          "rgb": [
+            107,
+            116,
+            106
+          ],
+          "coverage": [
+            0.6713615023474179,
+            0.6785714285714286,
+            0.6746411483253588
+          ],
+          "channelSpread": 0.007209926224010732
+        }
+      ]
+    }
+  ],
+  "fullPngCrossRunIdentities": [
+    {
+      "label": "section-768",
+      "kind": "published",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+          "cropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+          "cropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+          "cropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-768",
+      "kind": "source",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+          "cropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "0b991b942940775dcc7f0a3f7eb8f312f4103db95825a36a9f479905d80b6247",
+          "cropSha256": "700666fa1afab27e8076c57c5d92d8afe33a6322cc0307c6ebaafa7cc808a60e",
+          "pattern": "scalar coverage / grayscale-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+          "cropSha256": "c393ea817059641251601d278d36f90e8dc1418bc25b96bde677be4867c5190b",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-820",
+      "kind": "published",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+          "cropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+          "cropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+          "cropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-820",
+      "kind": "source",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+          "cropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+          "cropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+          "cropSha256": "a9432fdc9590306af582e35b38693d7ccb1ca43afe747d3a822be3595e0f2d3d",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-1024",
+      "kind": "published",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+          "cropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+          "cropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+          "cropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-1024",
+      "kind": "source",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+          "cropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+          "cropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+          "cropSha256": "7b7b9abd5fcec6dc059b7176e6a8a5bf0923492ccb6c9addbaa89deb6bbb71a0",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-1280",
+      "kind": "published",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "be81c3e248fa19000310c0be0bb8ac28c96f3f3eed5f9d9ddc72ca5b8ddb06a4",
+          "cropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "pattern": "scalar coverage / grayscale-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-1280",
+      "kind": "source",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "section-1440",
+      "kind": "published",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3",
+          "cropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "pattern": "scalar coverage / grayscale-like"
+        }
+      ]
+    },
+    {
+      "label": "section-1440",
+      "kind": "source",
+      "runs": [
+        {
+          "run": "first",
+          "pngSha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "pngSha256": "86c811b94e9389b1209af8bb01b5b52f621d1fe94d6044509117af37935abd24",
+          "cropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+          "pattern": "scalar coverage / grayscale-like"
+        },
+        {
+          "run": "third",
+          "pngSha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+          "cropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "boundary-901",
+      "kind": "published",
+      "runs": [
+        {
+          "run": "third",
+          "pngSha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+          "cropSha256": "d6122184efc1f9cdbe23461a667ea67721103a80ed163943578cb6bf0575c07e",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "label": "boundary-901",
+      "kind": "source",
+      "runs": [
+        {
+          "run": "third",
+          "pngSha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e",
+          "cropSha256": "d5c9af5d283ef398c7fae1d6f98e456ed0359e904cbecdc235509e8095fcefb0",
+          "pattern": "scalar coverage / grayscale-like"
+        }
+      ]
+    }
+  ],
+  "shared1280And1440QuestionVariants": [
+    {
+      "rawRgbCropSha256": "877e164fb362ac7d74fad63f868e0ff0db626060ebf9c13d44c4afc7eaf30799",
+      "size": [
+        389,
+        53
+      ],
+      "members": [
+        {
+          "run": "first",
+          "label": "section-1280",
+          "kind": "published",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "first",
+          "label": "section-1280",
+          "kind": "source",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "label": "section-1280",
+          "kind": "source",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "label": "section-1280",
+          "kind": "published",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "label": "section-1280",
+          "kind": "source",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "first",
+          "label": "section-1440",
+          "kind": "published",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "first",
+          "label": "section-1440",
+          "kind": "source",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "second",
+          "label": "section-1440",
+          "kind": "published",
+          "pattern": "channel-separated / LCD-like"
+        },
+        {
+          "run": "third",
+          "label": "section-1440",
+          "kind": "source",
+          "pattern": "channel-separated / LCD-like"
+        }
+      ]
+    },
+    {
+      "rawRgbCropSha256": "4ee8e4c19d8faf7261b91873bafa716557e394c5fbfbe49d79fce5a0087ef97f",
+      "size": [
+        389,
+        53
+      ],
+      "members": [
+        {
+          "run": "second",
+          "label": "section-1280",
+          "kind": "published",
+          "pattern": "scalar coverage / grayscale-like"
+        },
+        {
+          "run": "second",
+          "label": "section-1440",
+          "kind": "source",
+          "pattern": "scalar coverage / grayscale-like"
+        },
+        {
+          "run": "third",
+          "label": "section-1440",
+          "kind": "published",
+          "pattern": "scalar coverage / grayscale-like"
+        }
+      ]
+    }
+  ],
+  "thirdRunFixedSamples": [
+    {
+      "label": "section-768",
+      "kind": "published",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 92,
+          "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 326,
+          "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 825,
+          "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd"
+        }
+      ]
+    },
+    {
+      "label": "section-768",
+      "kind": "source",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 90,
+          "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 340,
+          "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 823,
+          "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954"
+        }
+      ]
+    },
+    {
+      "label": "section-820",
+      "kind": "published",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 96,
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 329,
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 827,
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        }
+      ]
+    },
+    {
+      "label": "section-820",
+      "kind": "source",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 93,
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 327,
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 827,
+          "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33"
+        }
+      ]
+    },
+    {
+      "label": "section-1024",
+      "kind": "published",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 105,
+          "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 338,
+          "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 838,
+          "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87"
+        }
+      ]
+    },
+    {
+      "label": "section-1024",
+      "kind": "source",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 106,
+          "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 338,
+          "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 838,
+          "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212"
+        }
+      ]
+    },
+    {
+      "label": "section-1280",
+      "kind": "published",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 118,
+          "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 350,
+          "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 849,
+          "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1"
+        }
+      ]
+    },
+    {
+      "label": "section-1280",
+      "kind": "source",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 116,
+          "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 366,
+          "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 866,
+          "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206"
+        }
+      ]
+    },
+    {
+      "label": "section-1440",
+      "kind": "published",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 122,
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 376,
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 854,
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        }
+      ]
+    },
+    {
+      "label": "section-1440",
+      "kind": "source",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 125,
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 369,
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 869,
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        }
+      ]
+    },
+    {
+      "label": "boundary-901",
+      "kind": "published",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 99,
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 331,
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 831,
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        }
+      ]
+    },
+    {
+      "label": "boundary-901",
+      "kind": "source",
+      "allThreeByteIdentical": true,
+      "samples": [
+        {
+          "plannedMilliseconds": 0,
+          "elapsedMilliseconds": 99,
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        },
+        {
+          "plannedMilliseconds": 250,
+          "elapsedMilliseconds": 331,
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        },
+        {
+          "plannedMilliseconds": 750,
+          "elapsedMilliseconds": 832,
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        }
+      ]
+    }
+  ],
+  "thirdRunDifferenceLocalisation": [
+    {
+      "label": "section-1440",
+      "channelThreshold": 24,
+      "changedPixels": 25296,
+      "changedBoundingBoxExclusive": [
+        194,
+        419,
+        1233,
+        886
+      ],
+      "headingBand": [
+        0,
+        350
+      ],
+      "headingChangedPixels": 0,
+      "deviceBand": [
+        350,
+        910
+      ],
+      "deviceChangedPixels": 25296,
+      "actionBand": [
+        910,
+        1096
+      ],
+      "actionChangedPixels": 0
+    },
+    {
+      "label": "boundary-901",
+      "channelThreshold": 24,
+      "changedPixels": 16200,
+      "changedBoundingBoxExclusive": [
+        47,
+        298,
+        825,
+        682
+      ],
+      "headingBand": [
+        0,
+        260
+      ],
+      "headingChangedPixels": 0,
+      "deviceBand": [
+        260,
+        700
+      ],
+      "deviceChangedPixels": 16200,
+      "actionBand": [
+        700,
+        888
+      ],
+      "actionChangedPixels": 0
+    }
+  ],
+  "findings": [
+    "At 1440 in the third run, published laptop question edges have scalar coverage (maximum channel spread about 0.00721), whereas 98.35% of source edge pixels have channel spread above 0.05. At 901 the pattern reverses: 98.25% of published edge pixels exceed 0.05, and no source edge pixel does.",
+    "All twelve 1280/1440 laptop question crops across the three runs resolve to exactly two raw RGB byte identities: one scalar/grayscale-like variant and one channel-separated/LCD-like variant. The crop text and layout are identical, and the variant is not bound to published or source.",
+    "The unchanged protected 1280 screenshot is byte-identical between runs one and three, but uses the grayscale-like question variant in run two. Published 1440 uses the LCD-like variant in runs one and two and grayscale-like in run three.",
+    "Source 768 and source 1440 full PNGs are each byte-identical between runs one and three; their question rasterisation is grayscale-like in run two. Source commits differ, so these exact screenshot identities do not prove all source files were unchanged.",
+    "Every third-run fixed sample set is byte-identical at planned times 0, 250 and 750ms. For 1440 the elapsed samples span 122\u2013854ms published and 125\u2013869ms source. The observed difference persists over this capture window; another short settling delay is not justified by these data.",
+    "At the unchanged pixel-channel threshold 24, all 25,296 changed pixels in the 1440 failing pair and all 16,200 changed pixels in the 901 failing pair lie within the device bands; none lie in the heading or practice-action bands."
+  ],
+  "inference": "These results strongly support different text antialiasing/rasterisation states as a concrete component of the Writing difference. The unchanged protected implementation varies between the two states across runs, so the evidence does not support a simple fixed source-only typography mismatch. A stable compositing/raster state influenced by earlier rendering history is compatible with the observations.",
+  "notEstablished": [
+    "Pixel analysis does not identify the responsible compositor layer, compositing reason or browser event.",
+    "The inherited 0.001ms reduced-motion transform transition and initial scale 0.97 remain a causal hypothesis. No transition was disabled or changed in this analysis.",
+    "The laptop question analysis does not prove that every changed device pixel is explained exclusively by text antialiasing; layer rasterisation can also affect borders and other content.",
+    "The existing Writing screenshot failures remain failures. These diagnostics do not relax thresholds or grant rendered acceptance."
+  ]
+}

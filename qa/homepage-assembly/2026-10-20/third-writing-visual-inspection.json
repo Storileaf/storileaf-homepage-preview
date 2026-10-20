@@ -1,0 +1,63 @@
+{
+  "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "run": 39382384202,
+  "inspection": "Assistant inspection of unmodified native PNG pairs. This is not founder acceptance.",
+  "pairs": [
+    {
+      "label": "section-1440",
+      "observation": "Visible device interiors and outlines have a different raster while their heading and action appear aligned. The difference remains a failed comparison pending the layer diagnostic.",
+      "files": [
+        {
+          "file": "published-section-1440-tile-0.png",
+          "sha256": "24733e6cdc422a2fa03c630ce0de5a5ac64a0ee3fd768c4165146775533db8e3"
+        },
+        {
+          "file": "source-section-1440-tile-0.png",
+          "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496"
+        }
+      ]
+    },
+    {
+      "label": "boundary-901",
+      "observation": "The opposite side has the softer device raster compared with the1440 pair. No text wrapping, composition or crop displacement was visible.",
+      "files": [
+        {
+          "file": "published-boundary-901-tile-0.png",
+          "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd"
+        },
+        {
+          "file": "source-boundary-901-tile-0.png",
+          "sha256": "104f70a689655d0f4a47cfbe5051c4287736f2f3c457f4f42a8d1a06f8dd138e"
+        }
+      ]
+    },
+    {
+      "label": "dialog-empty-390",
+      "observation": "Question, privacy wording, answer label, empty field, disabled Clear text and Close control appear matched. All visible content fits the dialog.",
+      "files": [
+        {
+          "file": "published-dialog-empty-390-tile-0.png",
+          "sha256": "4590b029a7a65a817c38c2766891f80b0d9edd6059623551131ed521d9b99281"
+        },
+        {
+          "file": "source-dialog-empty-390-tile-0.png",
+          "sha256": "cf5c29387604acd7604b8fe5c5e4da7a4b33c9e055fb6961b332152e84bc747a"
+        }
+      ]
+    },
+    {
+      "label": "dialog-typed-820",
+      "observation": "Typed line breaks, focused field outline, live11-word count, enabled Clear text and Close action appear matched.",
+      "files": [
+        {
+          "file": "published-dialog-typed-820-tile-0.png",
+          "sha256": "72531055ea7cfa85b1e3543cfc179a67ecb99f43ce6707b7a27144c219dbc065"
+        },
+        {
+          "file": "source-dialog-typed-820-tile-0.png",
+          "sha256": "62cfbd412c211375d3864912dec537fb4980d74a6a5c40a5eeb04abdb2b571ba"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1915 @@
+{
+  "runId": 39382384349,
+  "jobId": 118494199376,
+  "artifactId": 12246655390,
+  "sourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "browser": "155.0.8059.39",
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "runnerImage": "ubuntu-24.04 / 20261012.334.1",
+    "node": "22.23.3",
+    "npm": "10.9.9",
+    "playwrightCore": "1.56.1",
+    "deviceScaleFactor": 1
+  },
+  "artifactPath": "/tmp/assembly-third-39382384349.zip",
+  "artifactSha256": "a81f630b64f513f2b52a5992854c2c37352aef3aac23d6012e2f6b0863c44fb6",
+  "reportPath": "/tmp/assembly-third-39382384349/report.json",
+  "reportSha256": "cd7be854f619acc702d29f1927855c18cfa3c121c5af5846df3df84de19fc7a9",
+  "hashChecks": {
+    "sourceHashes": {
+      "count": 57,
+      "mismatches": []
+    },
+    "harnessHashes": {
+      "count": 2,
+      "mismatches": []
+    },
+    "protectedHashes": {
+      "count": 5,
+      "mismatches": []
+    },
+    "captures": {
+      "count": 292,
+      "mismatches": []
+    }
+  },
+  "completeWidthSet": true,
+  "completeCheckpoint": true,
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    600,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "comparisonCount": 27,
+  "maximumGeometryDifference": 0,
+  "nativeViewportPairs": 146,
+  "nativeCaptureCount": 292,
+  "maximumPixelRatio": 0.0006558641975308642,
+  "highestPixelPairs": [
+    {
+      "label": "768-join-questions",
+      "ratio": 0.0006558641975308642,
+      "files": [
+        "published-768-join-questions.png",
+        "source-768-join-questions.png"
+      ]
+    },
+    {
+      "label": "820-join-questions",
+      "ratio": 0.0006142728093947606,
+      "files": [
+        "published-820-join-questions.png",
+        "source-820-join-questions.png"
+      ]
+    },
+    {
+      "label": "430-join-gallery",
+      "ratio": 0.0001722652885443583,
+      "files": [
+        "published-430-join-gallery.png",
+        "source-430-join-gallery.png"
+      ]
+    },
+    {
+      "label": "600-join-gallery",
+      "ratio": 0.0001234567901234568,
+      "files": [
+        "published-600-join-gallery.png",
+        "source-600-join-gallery.png"
+      ]
+    },
+    {
+      "label": "1440-join-gallery",
+      "ratio": 8.487654320987654e-05,
+      "files": [
+        "published-1440-join-gallery.png",
+        "source-1440-join-gallery.png"
+      ]
+    },
+    {
+      "label": "1280-join-gifting",
+      "ratio": 4.484953703703704e-05,
+      "files": [
+        "published-1280-join-gifting.png",
+        "source-1280-join-gifting.png"
+      ]
+    }
+  ],
+  "contextCount": 30,
+  "failedContexts": [],
+  "stateCount": 14,
+  "stateCoverage": {
+    "completedJourneyAttempts": 10,
+    "requiredJourneyAttempts": 10,
+    "pinnedWidths": [
+      1024,
+      1440
+    ],
+    "shortScreens": [
+      {
+        "width": 320,
+        "height": 568
+      },
+      {
+        "width": 820,
+        "height": 500
+      },
+      {
+        "width": 1440,
+        "height": 500
+      }
+    ]
+  },
+  "problems": [],
+  "journeys": [
+    {
+      "kind": "published",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-390x844-reduce-pointer-published.json",
+      "sha256": "685ef1fa26887ac2bceb41f7c11d46c2e47f921dfdcd5393761e4e774ae02500",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 9262,
+          "clickY": 9262,
+          "arrivalY": 2072,
+          "backY": 9262,
+          "forwardY": 2072,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 9294,
+          "clickY": 9294,
+          "arrivalY": 3807,
+          "backY": 9294,
+          "forwardY": 3807,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 6394,
+          "backY": 9348,
+          "forwardY": 6394,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 7582,
+          "backY": 9348,
+          "forwardY": 7582,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-390x844-reduce-pointer-source.json",
+      "sha256": "b3659e40b86d738db02dbed85e59dd86fbea65fba46f809eb6a3d573ec152cd8",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 9262,
+          "clickY": 9262,
+          "arrivalY": 2072,
+          "backY": 9262,
+          "forwardY": 2072,
+          "beforeUrl": "http://127.0.0.1:4180/#top",
+          "backUrl": "http://127.0.0.1:4180/#top",
+          "forwardUrl": "http://127.0.0.1:4180/#samples",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 9294,
+          "clickY": 9294,
+          "arrivalY": 3807,
+          "backY": 9294,
+          "forwardY": 3807,
+          "beforeUrl": "http://127.0.0.1:4180/#samples",
+          "backUrl": "http://127.0.0.1:4180/#samples",
+          "forwardUrl": "http://127.0.0.1:4180/#how-it-works",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 6394,
+          "backY": 9348,
+          "forwardY": 6394,
+          "beforeUrl": "http://127.0.0.1:4180/#how-it-works",
+          "backUrl": "http://127.0.0.1:4180/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4180/#resources",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 7582,
+          "backY": 9348,
+          "forwardY": 7582,
+          "beforeUrl": "http://127.0.0.1:4180/#resources",
+          "backUrl": "http://127.0.0.1:4180/#resources",
+          "forwardUrl": "http://127.0.0.1:4180/#questions",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "published",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "no-preference",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-390x844-no-preference-pointer-published.json",
+      "sha256": "2d9df9d263e6fc62e13f4c482379c99e21f5ad8ec6434a27d87f99c1862e5f53",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 9262,
+          "clickY": 9262,
+          "arrivalY": 2072,
+          "backY": 9262,
+          "forwardY": 2072,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 9294,
+          "clickY": 9294,
+          "arrivalY": 3807,
+          "backY": 9294,
+          "forwardY": 3807,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 6394,
+          "backY": 9348,
+          "forwardY": 6394,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 7582,
+          "backY": 9348,
+          "forwardY": 7582,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "no-preference",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-390x844-no-preference-pointer-source.json",
+      "sha256": "f0e4c9eadeb8b48d08708d23eb22c6bba358bd7ff224fa648607fbda635c1093",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 9262,
+          "clickY": 9262,
+          "arrivalY": 2072,
+          "backY": 9262,
+          "forwardY": 2072,
+          "beforeUrl": "http://127.0.0.1:4180/#top",
+          "backUrl": "http://127.0.0.1:4180/#top",
+          "forwardUrl": "http://127.0.0.1:4180/#samples",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 9294,
+          "clickY": 9294,
+          "arrivalY": 3807,
+          "backY": 9294,
+          "forwardY": 3807,
+          "beforeUrl": "http://127.0.0.1:4180/#samples",
+          "backUrl": "http://127.0.0.1:4180/#samples",
+          "forwardUrl": "http://127.0.0.1:4180/#how-it-works",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 6394,
+          "backY": 9348,
+          "forwardY": 6394,
+          "beforeUrl": "http://127.0.0.1:4180/#how-it-works",
+          "backUrl": "http://127.0.0.1:4180/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4180/#resources",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 9348,
+          "clickY": 9348,
+          "arrivalY": 7582,
+          "backY": 9348,
+          "forwardY": 7582,
+          "beforeUrl": "http://127.0.0.1:4180/#resources",
+          "backUrl": "http://127.0.0.1:4180/#resources",
+          "forwardUrl": "http://127.0.0.1:4180/#questions",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "published",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "motion": "reduce",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-1440x900-reduce-pointer-published.json",
+      "sha256": "b4bf4b7922c880fe1300d39e174fbe7cd8bfbdac4a722cd3747a3d6242ff1c1f",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 2180,
+          "backY": 8482,
+          "forwardY": 2180,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 3773,
+          "backY": 8482,
+          "forwardY": 3773,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 6286,
+          "backY": 8482,
+          "forwardY": 6286,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 7358,
+          "backY": 8482,
+          "forwardY": 7358,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "motion": "reduce",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-1440x900-reduce-pointer-source.json",
+      "sha256": "e749965d85def29e457bee0b5a573ee9700b354004e8327700859ee15db124d2",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 2180,
+          "backY": 8482,
+          "forwardY": 2180,
+          "beforeUrl": "http://127.0.0.1:4180/#top",
+          "backUrl": "http://127.0.0.1:4180/#top",
+          "forwardUrl": "http://127.0.0.1:4180/#samples",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 3773,
+          "backY": 8482,
+          "forwardY": 3773,
+          "beforeUrl": "http://127.0.0.1:4180/#samples",
+          "backUrl": "http://127.0.0.1:4180/#samples",
+          "forwardUrl": "http://127.0.0.1:4180/#how-it-works",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 6286,
+          "backY": 8482,
+          "forwardY": 6286,
+          "beforeUrl": "http://127.0.0.1:4180/#how-it-works",
+          "backUrl": "http://127.0.0.1:4180/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4180/#resources",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 8482,
+          "clickY": 8482,
+          "arrivalY": 7358,
+          "backY": 8482,
+          "forwardY": 7358,
+          "beforeUrl": "http://127.0.0.1:4180/#resources",
+          "backUrl": "http://127.0.0.1:4180/#resources",
+          "forwardUrl": "http://127.0.0.1:4180/#questions",
+          "documentHeight": 9382,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "published",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "motion": "no-preference",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-1440x900-no-preference-pointer-published.json",
+      "sha256": "7c2e0c8bf3882962f4f63a7fea2a5e9274e966d64c5fb16b3845886a345ceb7e",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 2180,
+          "backY": 8948,
+          "forwardY": 2180,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 3773,
+          "backY": 8948,
+          "forwardY": 3773,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 6752,
+          "backY": 8948,
+          "forwardY": 6752,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 7824,
+          "backY": 8948,
+          "forwardY": 7824,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "motion": "no-preference",
+      "touch": false,
+      "status": "complete",
+      "file": "journey-1440x900-no-preference-pointer-source.json",
+      "sha256": "c14e002a5b7828ea9800f7a91ff413a2b8150c0750defbc9fddaeda52ba89445",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 2180,
+          "backY": 8948,
+          "forwardY": 2180,
+          "beforeUrl": "http://127.0.0.1:4180/#top",
+          "backUrl": "http://127.0.0.1:4180/#top",
+          "forwardUrl": "http://127.0.0.1:4180/#samples",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 3773,
+          "backY": 8948,
+          "forwardY": 3773,
+          "beforeUrl": "http://127.0.0.1:4180/#samples",
+          "backUrl": "http://127.0.0.1:4180/#samples",
+          "forwardUrl": "http://127.0.0.1:4180/#how-it-works",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 6752,
+          "backY": 8948,
+          "forwardY": 6752,
+          "beforeUrl": "http://127.0.0.1:4180/#how-it-works",
+          "backUrl": "http://127.0.0.1:4180/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4180/#resources",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 8948,
+          "clickY": 8948,
+          "arrivalY": 7824,
+          "backY": 8948,
+          "forwardY": 7824,
+          "beforeUrl": "http://127.0.0.1:4180/#resources",
+          "backUrl": "http://127.0.0.1:4180/#resources",
+          "forwardUrl": "http://127.0.0.1:4180/#questions",
+          "documentHeight": 9848,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "published",
+      "viewport": {
+        "width": 390,
+        "height": 700
+      },
+      "motion": "reduce",
+      "touch": true,
+      "status": "complete",
+      "file": "journey-390x700-reduce-touch-published.json",
+      "sha256": "feb3e8fdcae02af9f6e50b6cb67b1da6a585b0124a7b62367e7b54e314dea99e",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 9334,
+          "clickY": 9334,
+          "arrivalY": 2072,
+          "backY": 9334,
+          "forwardY": 2072,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#top",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 9366,
+          "clickY": 9366,
+          "arrivalY": 3807,
+          "backY": 9366,
+          "forwardY": 3807,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#samples",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 9461,
+          "clickY": 9461,
+          "arrivalY": 6394,
+          "backY": 9461,
+          "forwardY": 6394,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 9492,
+          "clickY": 9492,
+          "arrivalY": 7582,
+          "backY": 9492,
+          "forwardY": 7582,
+          "beforeUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "backUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#resources",
+          "forwardUrl": "http://127.0.0.1:4173/storileaf-homepage-preview/#questions",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        }
+      ]
+    },
+    {
+      "kind": "source",
+      "viewport": {
+        "width": 390,
+        "height": 700
+      },
+      "motion": "reduce",
+      "touch": true,
+      "status": "complete",
+      "file": "journey-390x700-reduce-touch-source.json",
+      "sha256": "45c5f6090096aa761144e15009bfce9fd957c4140aa111df6a88da03ced00c4a",
+      "history": [
+        {
+          "id": "samples",
+          "preInteractionY": 9334,
+          "clickY": 9334,
+          "arrivalY": 2072,
+          "backY": 9334,
+          "forwardY": 2072,
+          "beforeUrl": "http://127.0.0.1:4180/#top",
+          "backUrl": "http://127.0.0.1:4180/#top",
+          "forwardUrl": "http://127.0.0.1:4180/#samples",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "how-it-works",
+          "preInteractionY": 9366,
+          "clickY": 9366,
+          "arrivalY": 3807,
+          "backY": 9366,
+          "forwardY": 3807,
+          "beforeUrl": "http://127.0.0.1:4180/#samples",
+          "backUrl": "http://127.0.0.1:4180/#samples",
+          "forwardUrl": "http://127.0.0.1:4180/#how-it-works",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "resources",
+          "preInteractionY": 9461,
+          "clickY": 9461,
+          "arrivalY": 6394,
+          "backY": 9461,
+          "forwardY": 6394,
+          "beforeUrl": "http://127.0.0.1:4180/#how-it-works",
+          "backUrl": "http://127.0.0.1:4180/#how-it-works",
+          "forwardUrl": "http://127.0.0.1:4180/#resources",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        },
+        {
+          "id": "questions",
+          "preInteractionY": 9492,
+          "clickY": 9492,
+          "arrivalY": 7582,
+          "backY": 9492,
+          "forwardY": 7582,
+          "beforeUrl": "http://127.0.0.1:4180/#resources",
+          "backUrl": "http://127.0.0.1:4180/#resources",
+          "forwardUrl": "http://127.0.0.1:4180/#questions",
+          "documentHeight": 10193,
+          "scrollRestoration": "manual"
+        }
+      ]
+    }
+  ],
+  "pinning": [
+    {
+      "width": 1024,
+      "status": "complete",
+      "sequence": [
+        {
+          "progress": 6,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": 13.859375,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3671,
+            "active": 0
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": 13.859375,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3671,
+            "active": 0
+          }
+        },
+        {
+          "progress": 118,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -98.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3783,
+            "active": 1
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -98.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3783,
+            "active": 1
+          }
+        },
+        {
+          "progress": 230,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -210.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3895,
+            "active": 2
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -210.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3895,
+            "active": 2
+          }
+        },
+        {
+          "progress": 342,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -322.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 4007,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -322.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 4007,
+            "active": 3
+          }
+        },
+        {
+          "progress": 422,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -402.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 4087,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -402.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 4087,
+            "active": 3
+          }
+        },
+        {
+          "progress": 656,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -636.140625,
+            "height": 1210.15625,
+            "gridTop": -48.140625,
+            "scrollY": 4321,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -636.140625,
+            "height": 1210.15625,
+            "gridTop": -48.140625,
+            "scrollY": 4321,
+            "active": 3
+          }
+        },
+        {
+          "progress": 342,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -322.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 4007,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -322.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 4007,
+            "active": 3
+          }
+        },
+        {
+          "progress": 230,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -210.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3895,
+            "active": 2
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -210.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3895,
+            "active": 2
+          }
+        },
+        {
+          "progress": 118,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": -98.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3783,
+            "active": 1
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": -98.140625,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3783,
+            "active": 1
+          }
+        },
+        {
+          "progress": 6,
+          "published": {
+            "documentTop": 3684.859375,
+            "top": 13.859375,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3671,
+            "active": 0
+          },
+          "source": {
+            "documentTop": 3684.859375,
+            "top": 13.859375,
+            "height": 1210.15625,
+            "gridTop": 120,
+            "scrollY": 3671,
+            "active": 0
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "status": "complete",
+      "sequence": [
+        {
+          "progress": 6,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": 13.9375,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 3975,
+            "active": 0
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": 13.9375,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 3975,
+            "active": 0
+          }
+        },
+        {
+          "progress": 118,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -98.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4087,
+            "active": 1
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -98.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4087,
+            "active": 1
+          }
+        },
+        {
+          "progress": 230,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -210.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4199,
+            "active": 2
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -210.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4199,
+            "active": 2
+          }
+        },
+        {
+          "progress": 342,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -322.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4311,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -322.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4311,
+            "active": 3
+          }
+        },
+        {
+          "progress": 422,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -402.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4391,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -402.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4391,
+            "active": 3
+          }
+        },
+        {
+          "progress": 656,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -636.0625,
+            "height": 1242.28125,
+            "gridTop": -48.0625,
+            "scrollY": 4625,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -636.0625,
+            "height": 1242.28125,
+            "gridTop": -48.0625,
+            "scrollY": 4625,
+            "active": 3
+          }
+        },
+        {
+          "progress": 342,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -322.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4311,
+            "active": 3
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -322.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4311,
+            "active": 3
+          }
+        },
+        {
+          "progress": 230,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -210.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4199,
+            "active": 2
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -210.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4199,
+            "active": 2
+          }
+        },
+        {
+          "progress": 118,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": -98.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4087,
+            "active": 1
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": -98.0625,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 4087,
+            "active": 1
+          }
+        },
+        {
+          "progress": 6,
+          "published": {
+            "documentTop": 3988.9375,
+            "top": 13.9375,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 3975,
+            "active": 0
+          },
+          "source": {
+            "documentTop": 3988.9375,
+            "top": 13.9375,
+            "height": 1242.28125,
+            "gridTop": 144,
+            "scrollY": 3975,
+            "active": 0
+          }
+        }
+      ]
+    }
+  ],
+  "shortScreens": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "status": "complete",
+      "maximumGeometry": 0,
+      "differences": []
+    },
+    {
+      "viewport": {
+        "width": 820,
+        "height": 500
+      },
+      "status": "complete",
+      "maximumGeometry": 0,
+      "differences": []
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 500
+      },
+      "status": "complete",
+      "maximumGeometry": 0,
+      "differences": []
+    }
+  ],
+  "visualReview": {
+    "status": "complete",
+    "reviewedAtUtc": "2026-10-20T06:57:01.757547+00:00",
+    "method": "Direct visual inspection of each listed unmodified native PNG at original resolution, alongside its published/source counterpart. Capture SHA-256 values verified against the raw report. No synthetic full-page composite or screenshot padding was used.",
+    "pairCount": 18,
+    "fileCount": 36,
+    "representativeWidths": [
+      320,
+      390,
+      820,
+      1440
+    ],
+    "additionalWidth": 768,
+    "pairs": [
+      {
+        "label": "320-join-writing",
+        "files": [
+          {
+            "file": "published-320-join-writing.png",
+            "sha256": "6bcf1f11c6b47e8532e77e9a090f92139271d179164bc8ab9f224ba3c44aa3e5",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 540
+            },
+            "scrollY": 5254
+          },
+          {
+            "file": "source-320-join-writing.png",
+            "sha256": "6bcf1f11c6b47e8532e77e9a090f92139271d179164bc8ab9f224ba3c44aa3e5",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 540
+            },
+            "scrollY": 5254
+          }
+        ],
+        "finding": "Process photograph, its bottom padding and the warm paper writing section meet at the same position. The writing heading retains the same three-line wrapping and teal italic emphasis. The viewport edge cuts through the introduction at the same point; no missing paint or join displacement is visible.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "390-join-writing",
+        "files": [
+          {
+            "file": "published-390-join-writing.png",
+            "sha256": "a73fee0b533d8c1dc46139e6640073976083f0c791279098d0f4eca92e79bec5",
+            "viewport": {
+              "width": 390,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 540
+            },
+            "scrollY": 4847
+          },
+          {
+            "file": "source-390-join-writing.png",
+            "sha256": "a73fee0b533d8c1dc46139e6640073976083f0c791279098d0f4eca92e79bec5",
+            "viewport": {
+              "width": 390,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 540
+            },
+            "scrollY": 4847
+          }
+        ],
+        "finding": "The process photograph, warm paper transition, two-line writing heading and introduction match. The sticky header remains visible over the process image in both native captures.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "820-join-writing",
+        "files": [
+          {
+            "file": "published-820-join-writing.png",
+            "sha256": "a2fbb2a379a1a15781ad953fd28bd793abe9390f0835184cd524a3d9465a24e0",
+            "viewport": {
+              "width": 820,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 540
+            },
+            "scrollY": 5129
+          },
+          {
+            "file": "source-820-join-writing.png",
+            "sha256": "a2fbb2a379a1a15781ad953fd28bd793abe9390f0835184cd524a3d9465a24e0",
+            "viewport": {
+              "width": 820,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 540
+            },
+            "scrollY": 5129
+          }
+        ],
+        "finding": "The process image crop, writing section start and two-line heading match at the tablet width. The header overlays the image in the same position, with the same login and menu controls.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-join-writing",
+        "files": [
+          {
+            "file": "published-1440-join-writing.png",
+            "sha256": "9daf47022ed565d9636ac9bce70e0356c2286b8a39d93c1a63e88adbb64af6b0",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 540
+            },
+            "scrollY": 4495
+          },
+          {
+            "file": "source-1440-join-writing.png",
+            "sha256": "3730c3c2576810d608cf5d7a07ce72efc7605caa03a51efccb1383622c31165a",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 540
+            },
+            "scrollY": 4495
+          }
+        ],
+        "finding": "The process actions, right-hand photograph and writing heading join at the same absolute position. The desktop navigation and heading scale, line breaks and surrounding space match.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "320-join-gifting",
+        "files": [
+          {
+            "file": "published-320-join-gifting.png",
+            "sha256": "dbdd83796aebfdf5d05459e70a0340fb07d8a706872687b91ef51f72b1011e68",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 540
+            },
+            "scrollY": 6026
+          },
+          {
+            "file": "source-320-join-gifting.png",
+            "sha256": "1704d35a7f0b3734a8fe29efd9e6498c5621e01dcd5dde50ee7dabf90a7b61ff",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 540
+            },
+            "scrollY": 6026
+          }
+        ],
+        "finding": "The bottom of the mobile practice composition, outlined practice action, sage-to-warm-paper transition and rounded Gifting photograph match. The native viewport contains no missing paint or unintended section overlap.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "390-join-gifting",
+        "files": [
+          {
+            "file": "published-390-join-gifting.png",
+            "sha256": "d0d4fee4e99f60267d329ef8883fd14f7be0208291320c7175d2c92b2e2f4995",
+            "viewport": {
+              "width": 390,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 540
+            },
+            "scrollY": 5554
+          },
+          {
+            "file": "source-390-join-gifting.png",
+            "sha256": "aaa7d48bd1b32bca49227a83bf9f9bedccf570d1fb250508e27a39cd1a6f2069",
+            "viewport": {
+              "width": 390,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 540
+            },
+            "scrollY": 5554
+          }
+        ],
+        "finding": "The practice action and its spacing into the Gifting photograph match. The photographic crop, rounded corners and section background transition are the same.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "820-join-gifting",
+        "files": [
+          {
+            "file": "published-820-join-gifting.png",
+            "sha256": "96230899d14528fa742bc2d00fa7f2514ba3003809907196f7c883f7e3823dfa",
+            "viewport": {
+              "width": 820,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 540
+            },
+            "scrollY": 6039
+          },
+          {
+            "file": "source-820-join-gifting.png",
+            "sha256": "6afdb1a13143cdd2386ba84b1b15c814336ffd659c444c650cf8e610aea53804",
+            "viewport": {
+              "width": 820,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 540
+            },
+            "scrollY": 6039
+          }
+        ],
+        "finding": "The lower device edges, centred practice action, spacing and two-column Gifting panel match. The forest text panel and photographic crop share the same join and dimensions.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-join-gifting",
+        "files": [
+          {
+            "file": "published-1440-join-gifting.png",
+            "sha256": "3ab30138430ab88bed1e54594749e5684a562dc65c27b3798afe92cb1e447548",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 540
+            },
+            "scrollY": 5590
+          },
+          {
+            "file": "source-1440-join-gifting.png",
+            "sha256": "98d451062d9c85fe95dcf32deee68a8ad276cab871dbe42a229934f20bc6e90d",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 540
+            },
+            "scrollY": 5590
+          }
+        ],
+        "finding": "The practice action, large intervening space and desktop Gifting panel match, including the forest panel, rounded outer corners and photograph. The narrow retained underlay equivalence produces the same visible paint.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "320-ending",
+        "files": [
+          {
+            "file": "published-320-ending.png",
+            "sha256": "32dff2909dd7e2fcc9de5d243f620795c1e7615dce2013b9b2b1ad385161ba8a",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 900
+            },
+            "scrollY": 9697
+          },
+          {
+            "file": "source-320-ending.png",
+            "sha256": "32dff2909dd7e2fcc9de5d243f620795c1e7615dce2013b9b2b1ad385161ba8a",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 900
+            },
+            "scrollY": 9697
+          }
+        ],
+        "finding": "The footer logo, currency control, tagline, two-column book/explore groups, help group and legal row match. Default-size labels fit within the viewport. Get in touch has no arrow. This bottom viewport does not show the full newsletter introduction.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "390-ending",
+        "files": [
+          {
+            "file": "published-390-ending.png",
+            "sha256": "4dcbf6b31e0385c4025657e8fa7202491a4e7bf0e51b39566e5fce7931bc9c3e",
+            "viewport": {
+              "width": 390,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 900
+            },
+            "scrollY": 8950
+          },
+          {
+            "file": "source-390-ending.png",
+            "sha256": "4dcbf6b31e0385c4025657e8fa7202491a4e7bf0e51b39566e5fce7931bc9c3e",
+            "viewport": {
+              "width": 390,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 390,
+              "height": 900
+            },
+            "scrollY": 8950
+          }
+        ],
+        "finding": "The footer and lower newsletter form area match, including the mobile groups, currency placement, line wrapping and legal row. Default-size labels fit. The photographic background fades into the same forest field.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "820-ending",
+        "files": [
+          {
+            "file": "published-820-ending.png",
+            "sha256": "debd11eb3d3d949c91f0d896557cea55938fd882e5f63cd13b29dda3503e52cf",
+            "viewport": {
+              "width": 820,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 900
+            },
+            "scrollY": 9460
+          },
+          {
+            "file": "source-820-ending.png",
+            "sha256": "debd11eb3d3d949c91f0d896557cea55938fd882e5f63cd13b29dda3503e52cf",
+            "viewport": {
+              "width": 820,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 900
+            },
+            "scrollY": 9460
+          }
+        ],
+        "finding": "The complete visible newsletter and footer field matches: single-line newsletter heading, form, three-column main footer, help row and legal row. The photograph and fade remain continuous.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-ending",
+        "files": [
+          {
+            "file": "published-1440-ending.png",
+            "sha256": "6507ecd16a0aa9b1de01198a0be1366e909597daaa9ea7460dcdaff7d572ab5a",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 8244
+          },
+          {
+            "file": "source-1440-ending.png",
+            "sha256": "6507ecd16a0aa9b1de01198a0be1366e909597daaa9ea7460dcdaff7d572ab5a",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 8244
+          }
+        ],
+        "finding": "The desktop photographic newsletter and footer field matches. Newsletter text/form alignment, four-column footer, gold logo and headings, currency control, legal rule and final Get in touch label all retain the approved arrangement.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-assembled-process-342",
+        "files": [
+          {
+            "file": "published-1440-assembled-process-342.png",
+            "sha256": "ebf63a4f9be3cdcb49d853f6e4e02e1299c86cd9083657d3086c1e118543c7cb",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 4311
+          },
+          {
+            "file": "source-1440-assembled-process-342.png",
+            "sha256": "5650caec68595cfcc612b9f5d0a1fad81851f17eeb8944ad504f8538b2a9a3dd",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 4311
+          }
+        ],
+        "finding": "With normal motion, stage four is selected and the complete process grid is held below the sticky header. Text, circular markers, inset dividers, actions and album photograph match.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-assembled-process-422",
+        "files": [
+          {
+            "file": "published-1440-assembled-process-422.png",
+            "sha256": "a877d60127a197f6efbacd84851f48193650b0f557d6389a931eb427508a5ea5",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 4391
+          },
+          {
+            "file": "source-1440-assembled-process-422.png",
+            "sha256": "b2974e0b7f97abd666faaf1540bdeecbc8e302bdaa149214de317425947fbd24",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 4391
+          }
+        ],
+        "finding": "The deliberate stage-four hold is visibly preserved while the writing section begins to approach the viewport bottom. The process grid remains at the same held coordinate in both captures.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-assembled-process-656",
+        "files": [
+          {
+            "file": "published-1440-assembled-process-656.png",
+            "sha256": "eda0e95fed6f099b2ec20628e9c9318045088e634bef7d16134063abe976f410",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 4625
+          },
+          {
+            "file": "source-1440-assembled-process-656.png",
+            "sha256": "ffb129872dd5016cc3e24acd79cdad55f05959584e284ee4bf0d6d2fe9874112",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 900
+            },
+            "scrollY": 4625
+          }
+        ],
+        "finding": "After release, the process grid moves above the viewport and the writing heading enters below at the same point. Stage four remains selected, and the photograph, actions and section join match.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "320-join-ending",
+        "files": [
+          {
+            "file": "published-320-join-ending.png",
+            "sha256": "57c262199ff66dd1f1456279c4951fa3b03d984cd4dca18fc7d6818729a010f5",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 540
+            },
+            "scrollY": 9106
+          },
+          {
+            "file": "source-320-join-ending.png",
+            "sha256": "57c262199ff66dd1f1456279c4951fa3b03d984cd4dca18fc7d6818729a010f5",
+            "viewport": {
+              "width": 320,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 320,
+              "height": 540
+            },
+            "scrollY": 9106
+          }
+        ],
+        "finding": "The mobile invitation and photographic newsletter opening match. The invitation wraps to two lines, its action sits below, and the newsletter starts at the same height with the same heading and supporting copy.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "1440-join-ending",
+        "files": [
+          {
+            "file": "published-1440-join-ending.png",
+            "sha256": "35cf2428f51b1b2c2ed581669353e21b81fd399dd576ade1c0e767da3b9c5723",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 540
+            },
+            "scrollY": 8027
+          },
+          {
+            "file": "source-1440-join-ending.png",
+            "sha256": "35cf2428f51b1b2c2ed581669353e21b81fd399dd576ade1c0e767da3b9c5723",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 540
+            },
+            "scrollY": 8027
+          }
+        ],
+        "finding": "The desktop invitation, right-aligned action and photographic newsletter opening meet at the same position. The newsletter heading and email form enter the viewport with matching spacing and proportions.",
+        "result": "matching visible composition and join"
+      },
+      {
+        "label": "768-join-questions",
+        "files": [
+          {
+            "file": "published-768-join-questions.png",
+            "sha256": "cf6c0fc808dfd47e35a1ad9cb169072bc08ec94255b3ff1cce1a07b747b6391f",
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 540
+            },
+            "scrollY": 8225
+          },
+          {
+            "file": "source-768-join-questions.png",
+            "sha256": "5146435bb8d9b309651e9feb32d2a98182d04e43e6a63a3a09302f74b956ce74",
+            "viewport": {
+              "width": 768,
+              "height": 900
+            },
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 540
+            },
+            "scrollY": 8225
+          }
+        ],
+        "finding": "This is the largest changed-pixel pair in the run. The Resources footer label, section transition, FAQ heading and Ask us a question action retain matching geometry and visible layout. No missing paint or section-join mismatch is visible at native resolution.",
+        "result": "matching visible composition and join"
+      }
+    ],
+    "finding": "No missing paint, displaced section join, unexpected overlap or visible composition mismatch was found within this representative sample. Native captures include the expected sticky header and natural viewport-edge cuts.",
+    "limits": [
+      "This is a representative manual review of 18 pairs, not an individual manual inspection of every one of the 146 automated screenshot pairs.",
+      "The writing device composition and dialog have a separate dedicated verification owner; these assembly screenshots principally cover the joins and complete-page interactions.",
+      "Default-size fit in this sample does not resolve the separately recorded inherited text-enlargement findings.",
+      "Chromium 155.0.8059.39 on an Ubuntu GitHub-hosted runner, device scale factor 1. Touch interaction is Chromium emulation. No physical device, native browser zoom, other browser engine or accessibility certification is claimed.",
+      "Package 4, founder visual acceptance and explicit permission to publish the React homepage remain separate gates."
+    ]
+  },
+  "thresholds": {
+    "geometry": 0.15,
+    "pixelChannel": 24,
+    "pixelRatio": 0.01,
+    "nativeAnchorScroll": 1.1
+  },
+  "summaryScope": "Independent verification of the third Assembly run and its representative native screenshot sample. This does not close other Group 8 evidence, documentation, retained workflow or publication gates."
+}
