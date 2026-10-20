@@ -1,0 +1,81 @@
+name: Prepare P4 reflow diagnostic inputs
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/prepare-p4-reflow.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate the unchanged source and protected export
+        run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Prepare public repository and locked local diagnostic dependencies
+        run: |
+          mkdir -p "$RUNNER_TEMP/p4-inputs"
+          git bundle create "$RUNNER_TEMP/p4-inputs/public-source.bundle" main
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+          tar -czf "$RUNNER_TEMP/p4-inputs/dependencies.tgz" frontend/node_modules node_modules
+          python3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > "$RUNNER_TEMP/p4-server.log" 2>&1 &
+      - name: Retain actual public rendering resources for isolated diagnosis
+        env:
+          P4_INPUTS: ${{ runner.temp }}/p4-inputs
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          import { createHash } from 'node:crypto';
+          import { chromium } from 'playwright-core';
+          const out = process.env.P4_INPUTS;
+          const folder = path.join(out, 'resources');
+          await fs.mkdir(folder, { recursive: true });
+          const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', headless: true, args: ['--no-sandbox'] });
+          const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
+          const entries = {}, pending = [], errors = [];
+          page.on('response', response => {
+            const url = response.url();
+            if (!/^https:\/\//.test(url) || !['stylesheet', 'font', 'image'].includes(response.request().resourceType())) return;
+            pending.push((async () => {
+              try {
+                if (!response.ok()) throw Error(url + ' status ' + response.status());
+                const body = await response.body(), sha256 = createHash('sha256').update(body).digest('hex');
+                await fs.writeFile(path.join(folder, sha256), body);
+                entries[url] = { file: sha256, sha256, bytes: body.length, contentType: response.headers()['content-type'], type: response.request().resourceType() };
+              } catch (error) { errors.push(String(error)); }
+            })());
+          });
+          await page.goto('http://127.0.0.1:4180/', { waitUntil: 'networkidle' });
+          await page.evaluate(async () => { await document.fonts.ready; });
+          for (const image of await page.locator('img').all()) {
+            await image.evaluate(async el => { el.loading = 'eager'; try { await el.decode(); } catch {} });
+          }
+          for (const width of [320, 390, 820, 1440]) {
+            await page.setViewportSize({ width, height: 1000 });
+            await page.evaluate(async () => { await document.fonts.ready; });
+            await page.waitForLoadState('networkidle');
+          }
+          await Promise.all(pending);
+          await fs.writeFile(path.join(folder, 'index.json'), JSON.stringify(entries, null, 2));
+          const metadata = { purpose: 'Public source and public rendering inputs for the authorised P4-01 through P4-04 diagnosis. No deployment or acceptance claim.', sourceCommit: process.env.GITHUB_SHA, browser: browser.version(), node: process.version, resourceCount: Object.keys(entries).length, errors, recordedAt: new Date().toISOString() };
+          await fs.writeFile(path.join(out, 'environment.json'), JSON.stringify(metadata, null, 2));
+          console.log(JSON.stringify(metadata, null, 2));
+          await browser.close();
+          if (errors.length) process.exitCode = 1;
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p4-reflow-diagnostic-inputs
+          path: ${{ runner.temp }}/p4-inputs/
+          retention-days: 7
+          if-no-files-found: error
