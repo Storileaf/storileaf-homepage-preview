@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   prepare:
     runs-on: ubuntu-latest
@@ -18,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Validate the unchanged source and protected export
+      - name: Validate source and protected export
         run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
       - name: Prepare public repository and locked local diagnostic dependencies
         run: |
@@ -27,6 +28,29 @@ jobs:
           npm install --no-save --no-package-lock playwright-core@1.56.1
           tar -czf "$RUNNER_TEMP/p4-inputs/dependencies.tgz" frontend/node_modules node_modules
           python3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > "$RUNNER_TEMP/p4-server.log" 2>&1 &
+      - name: Retain failed checkpoint identities without rerunning them
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs/promises');
+            const path = require('node:path');
+            const args = {owner: context.repo.owner, repo: context.repo.repo};
+            const runs = (await github.rest.actions.listWorkflowRunsForRepo({...args, head_sha: '19bec2a78620af0ea3894bc5b2cea891be526115', per_page: 100})).data.workflow_runs;
+            const summary = [];
+            for (const run of runs) {
+              const entry = {id: run.id, name: run.name, status: run.status, conclusion: run.conclusion, head: run.head_sha, url: run.html_url};
+              if (run.conclusion === 'failure') {
+                const jobs = (await github.rest.actions.listJobsForWorkflowRun({...args, run_id: run.id, per_page: 100})).data.jobs;
+                entry.jobs = jobs.map(job => ({id: job.id, conclusion: job.conclusion, failedSteps: job.steps.filter(step => step.conclusion === 'failure').map(step => step.name)}));
+                for (const job of jobs.filter(job => job.conclusion === 'failure')) {
+                  const result = await github.rest.actions.downloadJobLogsForWorkflowRun({...args, job_id: job.id});
+                  await fs.writeFile(path.join(process.env.RUNNER_TEMP, 'p4-inputs', 'job-' + job.id + '.log'), Buffer.from(result.data));
+                }
+              }
+              summary.push(entry);
+            }
+            await fs.writeFile(path.join(process.env.RUNNER_TEMP, 'p4-inputs', 'previous-runs.json'), JSON.stringify(summary, null, 2));
+            console.log(JSON.stringify(summary, null, 2));
       - name: Retain actual public rendering resources for isolated diagnosis
         env:
           P4_INPUTS: ${{ runner.temp }}/p4-inputs
@@ -66,7 +90,7 @@ jobs:
           }
           await Promise.all(pending);
           await fs.writeFile(path.join(folder, 'index.json'), JSON.stringify(entries, null, 2));
-          const metadata = { purpose: 'Public source and public rendering inputs for the authorised P4-01 through P4-04 diagnosis. No deployment or acceptance claim.', sourceCommit: process.env.GITHUB_SHA, browser: browser.version(), node: process.version, resourceCount: Object.keys(entries).length, errors, recordedAt: new Date().toISOString() };
+          const metadata = { purpose: 'Public source and rendering inputs for authorised P4-01 through P4-04 diagnosis. No deployment or acceptance claim.', sourceCommit: process.env.GITHUB_SHA, browser: browser.version(), node: process.version, resourceCount: Object.keys(entries).length, errors, recordedAt: new Date().toISOString() };
           await fs.writeFile(path.join(out, 'environment.json'), JSON.stringify(metadata, null, 2));
           console.log(JSON.stringify(metadata, null, 2));
           await browser.close();
