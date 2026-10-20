@@ -332,4 +332,19 @@ Retain the existing laptop, tablet and phone composition on wider screens, and t
 | Controls | Keep the current outlined trigger, filled Close action, top close icon and Clear text control. Preserve their typography, hover, focus, dimensions and canonical 6px action corners. Do not turn illustration labels into buttons. |
 | Practice behaviour | Maximum 2000 characters. Count words separated by whitespace, retain singular and plural labels, clear on every dismissal, restore trigger focus and release body scroll. No submission, success message, storage or account association. |
 
-Preserve the current description relationship for migration comparison and record its inherited missing dialog description target in the Group 8 review. Matching that defect is not accessibility acceptance. A separately reviewed repair must address it before the final release gate. The original reassurance, hero motion and temporary media decisions remain unchanged.
+P4-05 now connects both the source dialog and answer field to the existing visible demo-privacy paragraph with exact approved wording. Do not reintroduce the dangling generated ID. The protected original is unchanged. Actual screen-reader announcement acceptance remains in the Package 4 review. The original reassurance, hero motion and temporary media decisions remain unchanged.
+
+
+## Approved intrinsic text reflow exceptions
+
+P4-01 through P4-04, authorised 20 October 2026, use the scoped homepage-reflow.css rules and measured fit hooks. Canonical foundations.css and tokens.css remain unchanged. The ordinary composition, typography, colours, spacing, imagery, destinations and motion are preserved. The Package 4 review owns verification.
+
+Gifting copy and its existing gold action may wrap inside their column. The header can grow for enlarged navigation while retaining its original minimum heights and narrow normal action fit. Never shrink the font to hide overflow.
+
+Footer tracks have zero intrinsic minima, with the original brand paragraph measure capped by available width. On narrow screens use one navigation column only when actual longest words cannot fit the original 1.3-to-1 split. Move currency below brand copy only when its width, declared logo width and gap cannot share the row. Preserve grouping, order, photograph and legal row.
+
+Discovery tabs use min-content inside their existing horizontal rail. Keep the selected tab visible after intrinsic width changes, without changing selection or vertical page position. Underlines retain exact left/right insets.
+
+Hero progression measures each step according to its actual number/word row or column layout. Stack the existing steps only when the row or existing narrow label cap cannot fit; turn the existing separators downwards. Return to the ordinary row when fit allows. Do not alter carousel, ticker or covers.
+
+Observers use actual dimensions and font readiness, batch updates into frames and clean up on teardown. They do not detect artificial test flags, rewrite copy or persist customer text. These are homepage exceptions, not private-interface defaults.

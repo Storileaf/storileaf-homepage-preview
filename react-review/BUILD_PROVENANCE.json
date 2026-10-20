@@ -1,16 +1,17 @@
 {
-  "purpose": "Founder-authorised separate rendered review. Not the root homepage cutover or production release.",
-  "sourceCommit": "051c69611d8bd685b79268489e5ff04bd64b9ed5",
-  "runId": 39452392812,
-  "artifactId": 12277649682,
-  "artifactDigest": "sha256:a0f5627081a042be3beb5c2bdbbc798b950973c71c860b7f419ba1549b6e89cc",
-  "preparedFrom": "5bad90e78bb9ffd3887372de06ef7a9aae43c7d9",
-  "preparedAt": "2026-10-20T16:18:28.178Z",
+  "purpose": "Founder-authorised separate review refresh for P4-01 through P4-04. Not root cutover or production release.",
+  "sourceCommit": "dbfac4a24b1fc16e1d440ac499012a76b27ab0c9",
+  "runId": 39480030189,
+  "artifactId": 12291760387,
+  "digest": "sha256:4950333d400fcb5ccb139530bc7a975f6773726d74ecf306129f7d329ea5cdc6",
+  "artifactDigest": "sha256:4950333d400fcb5ccb139530bc7a975f6773726d74ecf306129f7d329ea5cdc6",
+  "preparedFrom": "daa0ae551fdc14bd0ec651dc14c733ba02e2d694",
+  "preparedAt": "2026-10-20T19:16:35.949Z",
   "destination": "react-review/",
   "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
   "sha256": {
-    "assets/index-07HVzALy.js": "477a735c772b6b168292f0e3ff60ac3c4810dc8d8f65ba230a0405ccf192242d",
-    "assets/index-NU-3HqjY.css": "f4eb5347d08bb36a101b43662a60a559d21c92b8218a382bef5b6818486b9a18",
+    "assets/index-BRVaS-zf.css": "a869eaff505d3cdf66e9daa78755051676db2fb0cb92f1fae380d723a16cfded",
+    "assets/index-D1gMkTDF.js": "fd5871fc762bfed6d5b20c9e1d3df84949c4550775ac65ab8aab7c4a6f3867dd",
     "covers/cover-01.jpg": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01",
     "covers/cover-02.jpg": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4",
     "covers/cover-03.jpg": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983",
@@ -24,7 +25,7 @@
     "gallery/parent-to-child-letters-open-book-placeholder.svg": "378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309",
     "gallery/relationship-memoir-open-book-placeholder.svg": "93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3",
     "gallery/travel-memoir-open-book-placeholder.svg": "94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57",
-    "index.html": "8159bc25ff04dfca5dc517486e929ec8f6ea7fbd46bceab164eeae12bb809c20"
+    "index.html": "358a2e2edc4667bc22f9e60050a3a6845444428e5f0a86ebc8eeeb3a98d77904"
   },
-  "limits": "Existing Package 4 findings and actual screen-reader acceptance remain open. Review files are byte-identical to the tested artifact."
+  "limits": "The verified reflow snapshot is fixed. P4-05 spoken announcements, P4-06, pricing and wider browser/device coverage remain separate."
 }

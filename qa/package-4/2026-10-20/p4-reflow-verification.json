@@ -1,0 +1,147 @@
+{
+  "checkpoint": "P4-01 through P4-04 approved text reflow",
+  "sourceCommit": "dbfac4a24b1fc16e1d440ac499012a76b27ab0c9",
+  "approvedOn": "2026-10-20",
+  "status": "Implemented and verified for the recorded Chromium scope; separate review refresh only, not root cutover or full Package 4 clearance",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "beforeSource": "051c69611d8bd685b79268489e5ff04bd64b9ed5",
+  "beforeReviewCommit": "36fefee332054d05bc1bc8bf450f2377a419c41f",
+  "reviewUrl": "https://storileaf.github.io/storileaf-homepage-preview/react-review/",
+  "workflowRecord": "reflow/checks.json",
+  "rawEvidence": "reflow/",
+  "build": {
+    "sourceCommit": "dbfac4a24b1fc16e1d440ac499012a76b27ab0c9",
+    "runId": 39480030189,
+    "artifactId": 12291760387,
+    "digest": "sha256:4950333d400fcb5ccb139530bc7a975f6773726d74ecf306129f7d329ea5cdc6"
+  },
+  "staging": {
+    "runId": 39481976891,
+    "artifactId": 12292310435,
+    "sha256": "a9628a48837114db33963669e330c7a9ffe5d19059dd1dd392d4c8eebde2a9e5",
+    "candidateCommit": "5bf7ab5336d63e982fde921f64bfe8a6d4b513ca"
+  },
+  "sourceTests": 87,
+  "verificationWorkflows": 13,
+  "editorialCoverage": "The standalone editorial workflow is path-filtered for this TS-only final correction. Its unchanged comparison command is required to pass in the candidate Group 1 retained editorial step. No browser test is rerun or omitted here.",
+  "widths": [
+    320,
+    360,
+    361,
+    362,
+    390,
+    430,
+    480,
+    481,
+    600,
+    720,
+    721,
+    768,
+    820,
+    900,
+    901,
+    1024,
+    1130,
+    1131,
+    1280,
+    1440
+  ],
+  "targetedEnlargement": "Font sizes and line heights doubled for the selected scopes. Not native browser zoom.",
+  "thresholds": {
+    "geometry": 0.15,
+    "pixelChannel": 24,
+    "pixelRatio": 0.01
+  },
+  "captures": 479,
+  "normalPixelComparisons": 101,
+  "maximumNormalGeometryDelta": 0,
+  "maximumNormalChangedPixelRatio": 0,
+  "independentInspection": {
+    "archiveAnd479PngHashesVerified": true,
+    "all101NormalPixelPairsIndependentlyRecomputed": true,
+    "maximumRecomputedChangedPixelRatio": 0,
+    "method": "Downloaded original artifacts. Independent Python/Pillow/NumPy pixel comparison with unchanged channel threshold 24. Source/content hashes compared with inspected local files. No browser was substituted.",
+    "visualImages": [
+      "normal-before-header-361-0.png",
+      "normal-candidate-header-361-0.png",
+      "normal-before-footer-1440-0.png",
+      "normal-candidate-footer-1440-0.png",
+      "normal-before-progression-820-0.png",
+      "normal-candidate-progression-820-0.png",
+      "enlarged-before-header-1440-0.png",
+      "enlarged-candidate-header-1440-0.png",
+      "enlarged-before-gifting-320-0.png",
+      "enlarged-candidate-gifting-320-0.png",
+      "enlarged-candidate-gifting-320-1.png",
+      "enlarged-candidate-gifting-320-2.png",
+      "enlarged-before-progression-320-0.png",
+      "enlarged-candidate-progression-320-0.png",
+      "enlarged-candidate-footer-320-0.png",
+      "enlarged-candidate-footer-320-1.png",
+      "enlarged-candidate-footer-320-2.png",
+      "enlarged-candidate-progression-481-0.png",
+      "enlarged-candidate-progression-721-0.png",
+      "enlarged-candidate-progression-768-0.png"
+    ],
+    "additionalDiscoveryImages": [
+      "comparison-enlarged-320-relationship-memoir.png",
+      "comparison-enlarged-320-celebrating-occasions.png"
+    ],
+    "additionalSharedImage": "ending-source-enlarged-320.png",
+    "captureLimitation": "The last dedicated footer viewport tile repeats content after bottom scroll clamping and does not itself show the complete legal row. The separate full shared enlarged 320px image was inspected, including the legal row."
+  },
+  "environment": {
+    "dedicatedReflow": {
+      "browser": "155.0.8059.84",
+      "node": "v22.23.3",
+      "platform": "linux",
+      "playwright": "1.56.1"
+    },
+    "individualBrowserProvenance": "Each original report records its actual browser. Writing retains browser-environment.json. Assembly used 155.0.8059.39; the reflow, hero, discovery and Writing reports used 155.0.8059.84. Do not conflate runners.",
+    "devices": "Headless Chromium with emulated touch in retained suites. No physical devices."
+  },
+  "diagnostics": [
+    {
+      "source": "19bec2a78620af0ea3894bc5b2cea891be526115",
+      "findings": "Real normal footer/header corrections, including 361px header height; old equality assertions also required inherited enlarged clipping.",
+      "runs": [
+        39462154107,
+        39462152943,
+        39462153200
+      ]
+    },
+    {
+      "source": "cd64a97532689f945c7bd52c943805f784e0a443",
+      "findings": "Normal 20-width layouts passed; enlarged hero at 481/721/768 failed; reset test compared restored rail scroll with initial left origin. Discovery exposed selected-tab visibility and exact underline-width contract.",
+      "runs": [
+        39477778826,
+        39477778688
+      ],
+      "collectorRun": 39477911389,
+      "collectorArtifact": 12291615283,
+      "collectorSha256": "8ecdb3ba3ee54f5c5d26e3fbea8087b48b39589c7fcbea20a8a30beb40279c3f"
+    },
+    {
+      "source": "5094e6cc9f7cad145997344635a207c1c741a759",
+      "findings": "Intrinsic hero widths corrected. Reset now restores actual inline type in the same document and compares the same native rail position. Final discovery correction followed.",
+      "collectorRun": 39479212174,
+      "collectorArtifact": 12291358153,
+      "collectorSha256": "86606620b9513599511e95a843f7044f12522f3af333275258e98a9d8740b5d3"
+    },
+    {
+      "kind": "evidence-staging bookkeeping",
+      "runId": 39480208075,
+      "finding": "Awaited an editorial standalone job not triggered by the final TS-only change. Corrected stager requires the successful retained editorial comparison on the same source. No browser assertions or tests were bypassed."
+    }
+  ],
+  "remaining": [
+    "P4-05 actual screen-reader announcements",
+    "P4-06 native zoom and text-spacing diagnosis",
+    "P4-07 separately authorised protected pricing export repairs",
+    "P4-08 wider browser, native zoom, physical-device and assistive-technology coverage",
+    "Founder review of refreshed enlarged states",
+    "Separate root replacement or production release approval"
+  ],
+  "publication": "The exact successful build and durable evidence are prepared in this commit. The private design handoff records the final public commit, Pages deployment and post-publication byte/browser check.",
+  "retention": "Raw reports and selected original screenshots are committed. Complete capture archives and failed run logs remain in Actions with their recorded expiry. No permanent test-stability claim."
+}
