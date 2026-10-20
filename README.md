@@ -1,6 +1,6 @@
 # StoriLeaf public website preview and frontend source
 
-Updated at the Package 3 Group 5 documentation checkpoint. Frontend design work only. This is not the production website or private customer application.
+Frontend design work only. This is not the production website or private customer application.
 
 [Published homepage preview](https://storileaf.github.io/storileaf-homepage-preview/)
 
@@ -18,9 +18,9 @@ Official private Storileaf/storiYoceFj6IRAleaf main remains authoritative for ac
 
 The [frontend workspace](frontend/) uses Vite, React and TypeScript for staged homepage migration. It includes content provenance, design tokens, reusable components, migrated sections, tests and an isolated build. The [source validation workflow](.github/workflows/validate-public-source.yml) checks it without changing published root assets.
 
-Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 through 5 have completed implementation and browser verification within their recorded scopes. The gallery and lightbox passed first, followed by the physical book slideshow and complete shared samples field. The [Group 5 review](docs/PACKAGE_3_GROUP_5_REVIEW.md) owns this batch's evidence. The component inventory links all earlier reviews and identifies the remaining sections. Passing comparisons do not supply founder rendered acceptance.
+Packages 1 and 2 remain complete in source and the published homepage. Current section milestones, remaining work and detailed migration reviews are maintained in the component inventory and handoff linked above. Passing comparisons do not supply founder rendered acceptance. This README does not maintain a second list of group completion states.
 
-The complete React homepage remains unfinished. How it works, hero/motion, writing showcase/dialog and final assembly still need their agreed work and checks. The output remains under frontend/dist and is not published automatically. A complete publishing switch requires full visual and functional parity and explicit founder approval.
+The complete React homepage remains unfinished. The output remains under frontend/dist and is not published automatically. A complete publishing switch requires full visual and functional parity and explicit founder approval.
 
 For local development, use Node 22 and the existing commands.
 
@@ -36,7 +36,7 @@ The [homepage QA workflow](.github/workflows/verify-homepage-ui.yml) checks the 
 
 The [pricing investigation](docs/PRICING_HYDRATION_REVIEW.md) records three unresolved export mismatches. Existing enlargement findings remain in their owning reviews. The protected pricing preview is unchanged. The [gallery guidance](gallery/README.md) records temporary image slots and replacement photography work.
 
-Leaner documentation preserves full detail with one maintained owner per subject. The complete preceding README remains at [its immutable revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/46cd1e7ef9aadb1b07fa68b4f137a3d24dffc403/README.md). Historical test records identify their tested source; the Pages run attached to each commit is the authority for that commit's deployment outcome. A successful documentation deployment does not publish the isolated React build.
+Leaner documentation preserves full detail with one maintained owner per subject. The complete preceding README remains at [its immutable revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/46cd1e7ef9aadb1b07fa68b4f137a3d24dffc403/README.md), and the [Group 5 closure README](https://github.com/Storileaf/storileaf-homepage-preview/blob/4c8fa3b6c25f29ae0e3f18bf5d7fbb8d03501cec/README.md) preserves its former milestone summary. Historical test records identify their tested source; the Pages run attached to each commit is the authority for that commit's deployment outcome. A successful documentation deployment does not publish the isolated React build.
 
 ## Scope and safeguards
 

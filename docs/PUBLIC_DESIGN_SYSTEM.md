@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 5. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 6. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -146,7 +146,7 @@ Shared NewsletterFooter as one photographic field gradually fading to forest. Gr
 
 EditorialSectionHeading with centred and split layouts, no mandatory italic formula. Primary/outline/gold-on-dark/text Action components with consistent feedback and accessible targets.
 
-BookDiscovery, BookGallery and PhysicalBookPresentation keep their separately approved behaviours and exact copy. BookGallery owns the shared samples field and accepts PhysicalBookPresentation in its existing composition slot. The sticky four-stage ProcessStory is a specialised editorial feature, not a generic dashboard scroll primitive.
+BookDiscovery, BookGallery and PhysicalBookPresentation keep their separately approved behaviours and exact copy. BookGallery owns the shared samples field and accepts PhysicalBookPresentation in its existing composition slot. HowItWorks implements the specialised sticky four-stage editorial progression described below; it is not a generic dashboard scroll primitive.
 
 ResourceCategoryCard keeps equal photographic panels and a centred Browse all resources treatment. Activities and Browse all resources remain noninteractive section labels because their destination pages are unbuilt. Preserve the existing interim Resources and Activities header anchors.
 
@@ -188,9 +188,9 @@ The deployed static homepage, including the completed Package 1 and Package 2 re
 
 The public React source is deliberately staged. Its current implementation status belongs in the [component inventory](COMPONENT_INVENTORY.md), and detailed verification belongs in the relevant package review. This partial composition is not a second approved homepage. The current compiled root remains the comparison reference until complete visual and functional parity and explicit founder acceptance permit a publishing decision.
 
-The detailed historical implementation paragraphs previously repeated here remain intact at [the preceding design-system revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/2d57aa278afd657ecf2edd99e91eb370f603020c/docs/PUBLIC_DESIGN_SYSTEM.md#implementation-maturity). The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md) and [Group 5](PACKAGE_3_GROUP_5_REVIEW.md) reviews own their source identities, diagnostic failures, run records and measured evidence. Those details are preserved rather than copied into further active summaries.
+The detailed historical implementation paragraphs previously repeated here remain intact at [the preceding design-system revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/2d57aa278afd657ecf2edd99e91eb370f603020c/docs/PUBLIC_DESIGN_SYSTEM.md#implementation-maturity). The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md), [Group 5](PACKAGE_3_GROUP_5_REVIEW.md) and [Group 6](PACKAGE_3_GROUP_6_REVIEW.md) reviews own their source identities, diagnostic failures, run records and measured evidence. Those details are preserved rather than copied into further active summaries.
 
-Group 4 extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Group 5 adds the rendered local Samples target. Only uniquely rendered targets may resolve locally. The full hero and surrounding homepage remain unfinished. Founder visual acceptance and complete homepage cutover remain separate.
+Group 4 extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Group 5 adds the rendered local Samples target and Group 6 adds How it works. Only uniquely rendered targets may resolve locally. The full hero and surrounding homepage remain unfinished. Founder visual acceptance and complete homepage cutover remain separate.
 
 ## Shared component migration
 
@@ -245,3 +245,22 @@ BookGallery and PhysicalBookPresentation share one samples section and one radia
 | Slideshow | Four accessible indicators with one pressed state. Existing active white elongated mark and quiet inactive dots. Advance every 6500ms while the observer reports the section visible, loop after the fourth, and reset the interval after manual selection. Preserve 900ms crossfade, observer/timer cleanup and immediate response to reduced motion. Reduced motion prevents autoplay and removes the crossfade. Only the active photograph has exposed alternative text. |
 
 Retain original temporary asset provenance rather than presenting placeholders as finished product photographs. The gallery and physical checkpoints are sequential; the physical checkpoint must compare the complete shared field because the radial background depends on combined section height. Principal target recommendations do not silently authorise resizing the specialised existing slideshow indicators. Broader accessibility, native zoom and device acceptance remain Package 4 work. Matching section parity is not founder approval or authority to publish React.
+
+## Group 6 How it works preservation
+
+HowItWorks follows the combined gallery and physical presentation. Preserve the published composition rather than treating its scroll runway as ordinary section spacing. Scoped rules are in `frontend/src/styles/homepage-process.css`; pure interval helpers are in `frontend/src/sections/processProgress.ts`. These retained exceptions do not change global foundation tokens. The [Group 6 review](PACKAGE_3_GROUP_6_REVIEW.md) owns implementation and verification evidence, while the content gate and process.json own wording and image provenance.
+
+| Process element | Retained rule |
+| --- | --- |
+| Heading | Newsreader clamp(43px,4.15vw,59px), 1.05 leading and minus .04em tracking. Teal italic emphasis is a separate line at weight 420 with 12px top margin. At 720px and below use clamp(43px,7.3vw,55px) and a 9px emphasis gap. |
+| Wide composition | Above 900px use .99fr/1.01fr columns with clamp(37px,5vw,70px) gap. The heading occupies the first row, steps the second, actions the third. The photograph spans rows two and three and stretches with the content rather than imposing a fixed text box. |
+| Markers and dividers | Circular markers are 38px square, becoming 36px at 720px and below. Active marker remains white on teal. Each list row keeps 5px vertical inset around its button and a single lower divider, except the last. Keep the 12px button corners separate from circular markers and the 6px action family. |
+| Desktop rows | At least 94px high, with 4px/10px button padding and 15px grid gap. Titles retain 17.5px weight 700 and 1.32 leading; descriptions retain 15px and 1.48 leading. Their actual heights must not define scroll intervals. |
+| Narrow composition | At 900px and below stack the copy and photograph with a 35px gap. Preserve 80px section padding, becoming 76px at 720px. Photograph height is 420px, then 355px at 720px and 300px at 480px. Existing 20px photograph corners remain. |
+| Image treatment | Preserve the four sources, declared attributes and alternative text. Cover crop is centred, becoming 50%/35% at 720px and below. Entry lasts 320ms from .55 opacity and scale 1.016. Reduced motion disables it. |
+| Pinning eligibility | Only at width at least 901px, height at least 731px and no reduced motion preference. Grid top is clamp(134px,16vh,160px), except widths 901px through 1100px retain 120px. The eligible section keeps 63px/52px vertical padding and a 525px trailing runway. Short screens and reduced motion do not use this pinned progression. |
+| Scroll progression | Preserve the 20px progress origin and independent 112px intervals for the four stages. Stage four remains selected through the remaining pinned distance before release. Reverse scrolling restores earlier stages. Manual selection lands 6px inside its interval on eligible screens. Do not shorten the fourth hold or derive intervals from row dimensions. |
+| Manual controls and actions | Native stage buttons retain aria-pressed and their relationship to the visual. They remain usable without scroll selection. Choose a book may reach the rendered local Books target; Explore gifting keeps its canonical destination. Both retain their existing 49px minimum action height, shared 6px corners, focus and hover. |
+| Anchor and lifecycle | Section scroll margin is 116px, becoming 96px at 720px, within the existing root scroll context. Respect live motion preference and viewport changes. Keep passive scroll handling, one scheduled animation frame and listener/frame cleanup. Do not introduce scroll hijacking, an autoplay timer or new controls. |
+
+Normal section padding outside the eligible pinned mode retains its published variants, including the 84px/90px tall desktop reduced motion treatment. Preserve the exact existing CSS cascade rather than globally normalising those values. Native zoom, wider browser and complete page checks remain required. A matched targeted text enlargement capture does not certify the whole page or every assistive setting.

@@ -1,6 +1,6 @@
 # Public website content creation and approval gate
 
-Updated 20 October 2026 for authorised Package 3 Groups 1 through 5. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
+Updated 20 October 2026 for authorised Package 3 Groups 1 through 6. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
 
 ## Product fact sources
 
@@ -27,7 +27,7 @@ Where facts conflict, identify the discrepancy. Never invent a capability, price
 
 Use existing_verified for proven existing wording, proposed for suggestions, founder_approved for explicitly accepted final text, implemented_verified for built and tested material, superseded for historical alternatives. A build or passing browser test never grants editorial approval.
 
-The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json extension with source references and flags for whether a record may be published. Both feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
+The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json and process.json extensions with source references and flags for whether a record may be published. All feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
 
 ## Language and claims
 
@@ -61,7 +61,7 @@ Group 3 adds a separate inherited_published_shared exception for exactly 17 reco
 
 Each new record identifies migration_group 3, the protected e9550069 commit, its exact source_fragment and either assets/content-sections-CfrmOVRI.js or index.html. The shared validator parses only the named protected homepage data and header regions, the bounded footer currency label and the skip anchor before the header in the named homepage root. It verifies that HeaderNavigation actually renders the six descriptions and that the skip-link class token has its exact destination. It does not execute JavaScript or approve arbitrary matching literals. Plain ledger text is compared without decoding markup or escaped additions. No original approved_on date is invented. The five action records retain their existing canonical destinations; reading labels cannot gain links.
 
-The Group 3 route map permits its four existing section/top targets and the main-content skip landmark. Group 4 adds only the rendered Books target, including the final invitation's authorised local binding. Group 5 subsequently adds the uniquely rendered Samples target as described below. Canonical published destinations stay in the ledger. FAQ pricing and Gifting destinations remain exact; other shared targets retain their actual published URLs until separately migrated. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) preserves its original checkpoint, and the [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) owns the Books extension.
+The Group 3 route map permits its four existing section/top targets and the main-content skip landmark. Group 4 adds only the rendered Books target, including the final invitation's authorised local binding. Group 5 subsequently adds the uniquely rendered Samples target and Group 6 adds How it works, as described below. Canonical published destinations stay in the ledger. FAQ pricing and Gifting destinations remain exact; other shared targets retain their actual published URLs until separately migrated. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) preserves its original checkpoint, and the [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) owns the Books extension.
 
 Use the [content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) to document the exact old and new copy and link it from the page's decision record. Do not increase duplicate documentation by pasting entire product terms into the public repository.
 
@@ -83,6 +83,16 @@ The media validator reads only the named SampleGallery and CraftPhotoSlideshow f
 
 media-images.json owns the six original SVG placeholder identities and four temporary photograph identities. Preserve original order, paths, alternative text, declared dimensions, centred crops, origin and rights review. The six copied gallery assets must match protected file bytes. Declared dimensions retain the published attributes; they are not claims about natural resolution. Browser checks separately verify loading and natural image sizes. Neither placeholders nor provisional photography become final product photography through this migration.
 
-The physical action retains exactly https://storileaf.com/pricing/ with its existing verified destination state. It is not silently rebound to a currency route. Only the actual unique samples section may resolve shared See inside links locally. Source origin, homepage path, absence of an added query and unique target are checked; canonical ledger destinations stay intact. How it works remains an outward published target until separately migrated.
+The physical action retains exactly https://storileaf.com/pricing/ with its existing verified destination state. It is not silently rebound to a currency route. Only the actual unique samples section may resolve shared See inside links locally. Source origin, homepage path, absence of an added query and unique target are checked; canonical ledger destinations stay intact. At the Group 5 checkpoint, How it works remained an outward published target. Group 6 supersedes that route boundary only for its actually rendered section.
 
 The [Group 5 review](PACKAGE_3_GROUP_5_REVIEW.md) owns implementation, diagnostic and verification evidence. Style values remain in the public design system. No new product promise, wording approval, pricing repair, asset replacement or React publication is created by this extension.
+
+## Group 6 How it works content
+
+The authorised reconstruction adds exactly eleven records and four photograph identities in frontend/content/process.json under inherited_published_process and migration_group 6. Preserve all earlier ledger and media records. The permitted text is the section heading with its exact emphasis, titles and descriptions for stages 0 through 3, Choose a book and Explore gifting. Their explicit IDs are home.process.title, home.process.step.0.title and description through home.process.step.3.title and description, home.process.choose and home.process.gift. Prefix matching does not approve additional records.
+
+The parser reads only Process, sharedSteps, stepVisuals and the actual homepage image bindings in the protected compiled source. It never evaluates compiled JavaScript or template expressions. Preserve the exact source fragments, word order, emphasis, photograph order, alternative text, declared dimensions and responsive crops. Mutation checks reject changed copy, destinations, fragments, assets and invented original approval dates. The existing inherited authority records permission to retain published wording, not a new exact wording approval or a new product capability.
+
+Choose a book keeps its canonical published Books destination in the ledger and may bind to the one rendered local Books section. Explore gifting remains exactly https://storileaf.com/gift/. Shared How it works links may now use the unique local #how-it-works target, with origin, path, query and current page semantics still checked. The existing FAQ action to https://storileaf.com/how-it-works/ remains unchanged; migration of a homepage section does not authorise rewriting that separate destination.
+
+Declared 800 by 940 image dimensions reproduce the original attributes rather than asserting natural image resolution. Loading and natural sizes are recorded by browser verification. Existing rights review remains pending final production checking. The [Group 6 review](PACKAGE_3_GROUP_6_REVIEW.md) owns implementation and verification evidence. No new wording, product claim, image replacement or release permission is introduced.
