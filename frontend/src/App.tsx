@@ -1,3 +1,5 @@
+import { HowItWorks } from './sections/HowItWorks'
+import './styles/homepage-process.css'
 import { PhysicalBookPresentation } from './sections/PhysicalBookPresentation'
 import { NewsletterFooter } from './components/NewsletterFooter'
 import { SiteHeader } from './components/SiteHeader'
@@ -21,7 +23,7 @@ import './styles/homepage-discovery.css'
 export function App() {
   const [currency, setCurrency] = usePreviewCurrency()
   // Only migrated, uniquely rendered targets can use local native anchors.
-  const routes = previewRoutesForCurrency(currency, ['top', 'main-content', 'books', 'samples', 'resources', 'resources-activity', 'questions'])
+  const routes = previewRoutesForCurrency(currency, ['top', 'main-content', 'books', 'samples', 'how-it-works', 'resources', 'resources-activity', 'questions'])
   return <div className="sl-site" id="top">
     <a className="sl-skip-link" href={routes.mainContent}>{approvedCopy('shared.header.skip')}</a>
     <SiteHeader routes={routes} />
@@ -30,6 +32,7 @@ export function App() {
       <ReassuranceBand />
       <BookDiscovery />
       <BookGallery><PhysicalBookPresentation /></BookGallery>
+      <HowItWorks booksHref={routes.books} />
       <GiftingSection />
       <ResourcesSection />
       <FaqSection booksHref={routes.books} />

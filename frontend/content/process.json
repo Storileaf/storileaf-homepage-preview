@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "provenance": {
+    "approval_kind": "inherited_published_process",
+    "migration_group": 6,
+    "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "source": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+    "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+    "migration_recorded_on": "2026-10-19",
+    "status": "founder_approved",
+    "public": true,
+    "approval_note": "Exact published wording retained under the founder instruction to reproduce How it works. This records migration authority, not a new original wording approval."
+  },
+  "records": [
+    {"id":"home.process.title","copy":"From a first answer to the finished pages.","emphasis":"to the finished pages.","source_fragment":"Process h2#process-title children"},
+    {"id":"home.process.step.0.title","copy":"Choose the story","source_fragment":"sharedSteps[0].title"},
+    {"id":"home.process.step.0.description","copy":"Find the book that fits the person, journey or relationship you want to honour.","source_fragment":"sharedSteps[0].text"},
+    {"id":"home.process.step.1.title","copy":"Tell it in your own words","source_fragment":"sharedSteps[1].title"},
+    {"id":"home.process.step.1.description","copy":"Use guided questions to share memories, moments and reflections.","source_fragment":"sharedSteps[1].text"},
+    {"id":"home.process.step.2.title","copy":"See it take shape","source_fragment":"sharedSteps[2].title"},
+    {"id":"home.process.step.2.description","copy":"We turn your words into a draft book for review before printing.","source_fragment":"sharedSteps[2].text"},
+    {"id":"home.process.step.3.title","copy":"Share what matters","source_fragment":"sharedSteps[3].title"},
+    {"id":"home.process.step.3.description","copy":"Keep a beautifully printed book for yourself or give it to someone you love.","source_fragment":"sharedSteps[3].text"},
+    {"id":"home.process.choose","copy":"Choose a book","href":"https://storileaf.github.io/storileaf-homepage-preview/#books","source_fragment":"Process Books action","destination_state":"existing_verified","destination_verified_on":"2026-10-19"},
+    {"id":"home.process.gift","copy":"Explore gifting","href":"https://storileaf.com/gift/","source_fragment":"Process gifting action","destination_state":"existing_verified","destination_verified_on":"2026-10-19"}
+  ],
+  "assets": [
+    {"id":"memories","src":"https://storileaf.com/images/brand/process/storileaf-memory-selection-card-800.webp","alt":"Personal photographs and notes being gathered before making a book","width":800,"height":940,"object_position":"50% 50%","narrow_object_position":"50% 35%","source_fragment":"stepVisuals[0]","origin":"https://storileaf.com/images/brand/process/storileaf-memory-selection-card-800.webp","rights_review":"pending_final_production_check"},
+    {"id":"conversation","src":"https://storileaf.com/images/brand/process/storileaf-memory-sharing-voice-card-800.webp","alt":"A father sharing a story with his adult daughter","width":800,"height":940,"object_position":"50% 50%","narrow_object_position":"50% 35%","source_fragment":"stepVisuals[1]","origin":"https://storileaf.com/images/brand/process/storileaf-memory-sharing-voice-card-800.webp","rights_review":"pending_final_production_check"},
+    {"id":"proof","src":"https://storileaf.com/images/brand/process/storileaf-proof-review-card-800.webp","alt":"Someone reviewing the pages of a book before printing","width":800,"height":940,"object_position":"50% 50%","narrow_object_position":"50% 35%","source_fragment":"stepVisuals[2]","origin":"https://storileaf.com/images/brand/process/storileaf-proof-review-card-800.webp","rights_review":"pending_final_production_check"},
+    {"id":"life","src":"https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp","alt":"An open finished Life Story book on a veranda","width":800,"height":940,"object_position":"50% 50%","narrow_object_position":"50% 35%","source_fragment":"stepVisuals[3]","origin":"https://storileaf.com/images/brand/collections/life-story/storileaf-life-story-open-book-veranda-card-800.webp","rights_review":"pending_final_production_check"}
+  ]
+}
