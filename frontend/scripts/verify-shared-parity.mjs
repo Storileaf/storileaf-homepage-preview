@@ -3,6 +3,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
+import { alignMenuForCapture, restoreMenuAfterCapture } from './menu-capture-alignment.mjs'
 
 // Compare the protected, fully hydrated static homepage with the separate React
 // build. This gate never alters published files or supplies replacement content.
@@ -32,7 +33,7 @@ const report = {
     'Both 0s and 0.00001s are treated as effectively instantaneous reduced motion. Longer source transitions and animations still fail.',
     'The photograph origin position 0% and 0px are equivalent zero offsets. Other image positioning remains exact.',
   ],
-  captureMethod: 'Actual fonts, logo and shared photograph are loaded. Header and menu crops retain their real context and receive no hiding CSS. Footer crops temporarily extend viewport height, apply a recorded subpixel body padding-top adjustment below one CSS pixel and add one body padding-bottom pixel outside the final section to avoid fractional maximum-scroll clipping. Section geometry must remain unchanged and the whole ending must fit below the visible sticky header. Both body paddings and the viewport are restored. Menu crops compare the complete visible panel. Full viewport context captures retain the actual surrounding page and are informational because the React homepage is incomplete. No target CSS, content, image or route response is substituted.',
+  captureMethod: 'Actual fonts, logo and shared photograph are loaded. Header and menu crops retain their real context and receive no hiding CSS. Raw menu position and every descendant geometry/style are compared before capture preparation. Only clean menu panel captures temporarily translate their raster origin to the next whole CSS pixel, by less than one pixel per axis, without resizing or replacing any content. The helper records original and aligned bounds, rejects existing translation or any size change, and restores the original inline property even on failure. Unadjusted menu context screenshots remain alongside the clean comparison. Footer crops temporarily extend viewport height, apply a recorded subpixel body padding-top adjustment below one CSS pixel and add one body padding-bottom pixel outside the final section to avoid fractional maximum-scroll clipping. Section geometry must remain unchanged and the whole ending must fit below the visible sticky header. Both body paddings and the viewport are restored. Menu crops compare the complete visible panel. Full viewport context captures retain the actual surrounding page and are informational because the React homepage is incomplete. No target content, image or route response is substituted. Geometry and pixel tolerances are unchanged.',
   viewportReadinessMethod: 'The foreground page must match its requested innerWidth and innerHeight and an inert hidden fixed 100vw by 100vh probe within 0.01 CSS pixels, then complete two animation frames. The wait is bounded.',
   limits: 'Chromium automation with emulated touch and targeted text enlargement. This is not native browser zoom, cross browser, physical device or accessibility certification. Pricing diagnostic evidence is kept separately; this workflow does not replace the protected pricing preview.',
 }
@@ -53,6 +54,7 @@ for (const entry of await fs.readdir('dist/assets')) {
   if (/\.(css|js)$/.test(entry)) report.sourceBuildFiles['assets/' + entry] = hash(await fs.readFile('dist/assets/' + entry))
 }
 report.harnessSha256 = hash(await fs.readFile('scripts/verify-shared-parity.mjs'))
+report.menuCaptureHelperSha256 = hash(await fs.readFile('scripts/menu-capture-alignment.mjs'))
 const styles = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing', 'color', 'backgroundColor', 'backgroundImage', 'borderTopWidth', 'borderRightWidth', 'borderBottomWidth', 'borderLeftWidth', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'borderRadius', 'boxShadow', 'backdropFilter', 'textAlign', 'display', 'gap', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'marginTop', 'marginBottom', 'transform', 'textDecorationLine', 'textUnderlineOffset', 'transitionDuration', 'transitionTimingFunction', 'transitionProperty', 'animationDuration', 'animationTimingFunction', 'animationDelay', 'animationFillMode']
 
 function groupsFor(kind) {
@@ -266,8 +268,9 @@ async function pixelComparison(left, right, filename) {
 async function capture(page, group, filename) {
   await settle(page)
   const viewport = page.viewportSize(), original = await page.locator(group.selector).boundingBox()
-  let alignment = null
+  let alignment = null, menuAlignment = null
   const ending = group.selector === groupsFor(group.kind).ending.selector
+  const menu = ['books', 'resources'].some(name => group.selector === groupsFor(group.kind)[name].selector)
   if (ending) {
     await page.setViewportSize({ width: viewport.width, height: Math.max(viewport.height, Math.ceil(original.height) + 300) }); await settle(page)
     alignment = await page.locator(group.selector).evaluate(element => {
@@ -284,17 +287,27 @@ async function capture(page, group, filename) {
     await page.locator(group.selector).evaluate(element => scrollTo({ top: scrollY + element.getBoundingClientRect().top - 115, behavior: 'instant' })); await settle(page)
   }
   try {
+    if (menu) {
+      await page.screenshot({ path: path.join(folder, filename.replace('.png', '-unaligned-context.png')), animations: 'disabled', caret: 'hide' })
+      menuAlignment = await page.locator(group.selector).evaluate(alignMenuForCapture)
+      await settle(page)
+    }
     const geometry = await page.locator(group.selector).evaluate(element => {
       const r = element.getBoundingClientRect(), header = document.querySelector('.site-header, .sl-header')?.getBoundingClientRect()
       return { top: r.top, bottom: r.bottom, left: r.left, right: r.right, width: r.width, height: r.height, viewportHeight: innerHeight, viewportWidth: innerWidth, headerBottom: header?.bottom }
     })
     const dimensionsUnchanged = Math.abs(original.width - geometry.width) < 0.015 && Math.abs(original.height - geometry.height) < 0.015
     check(dimensionsUnchanged && (!alignment || (alignment.delta >= 0 && alignment.delta < 1 && alignment.geometryUnchanged)), filename + ' capture preparation changed target dimensions')
+    if (menuAlignment) check(Math.abs(geometry.left - menuAlignment.aligned.left) < 0.015 && Math.abs(geometry.top - menuAlignment.aligned.top) < 0.015, filename + ' menu raster alignment moved before capture')
     check(geometry.top >= 0 && geometry.bottom <= geometry.viewportHeight + 0.1 && geometry.left >= 0 && geometry.right <= geometry.viewportWidth + 0.1, filename + ' complete visible target does not fit capture viewport')
     if (ending) check(geometry.top > geometry.headerBottom + 5, filename + ' ending capture obscured by header')
-    report.captures.push({ filename, originalViewport: viewport, alignment, dimensionsUnchanged, geometry })
+    report.captures.push({ filename, originalViewport: viewport, alignment, menuAlignment, dimensionsUnchanged, geometry })
     return await page.locator(group.selector).screenshot({ path: path.join(folder, filename), animations: 'disabled', caret: 'hide' })
   } finally {
+    if (menuAlignment) {
+      const restored = await page.locator(group.selector).evaluate(restoreMenuAfterCapture, menuAlignment)
+      check(restored, filename + ' menu raster preparation did not restore original bounds')
+    }
     if (alignment) { await page.evaluate(({ before, beforeBottom }) => { document.body.style.paddingTop = before; document.body.style.paddingBottom = beforeBottom }, alignment); await page.setViewportSize(viewport); await settle(page) }
   }
 }
