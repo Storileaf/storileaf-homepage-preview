@@ -1,0 +1,108 @@
+name: Diagnose Writing capture preparation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'qa/homepage-assembly/2026-10-20/diagnose-writing-preparation.mjs'
+      - '.github/workflows/diagnose-writing-preparation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify frozen source and build isolated preview
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Install isolated diagnostic harness
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Install and record exact Chrome for Testing
+        env:
+          CHROME_PINNED_VERSION: '155.0.8059.84'
+          CHROME_PINNED_REVISION: '1697595'
+          CHROME_ARCHIVE_URL: https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip
+        run: |
+          export CHROME_ARCHIVE_PATH="$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION-linux64.zip"
+          export CHROME_PATH="$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION/chrome-linux64/chrome"
+          curl --fail --location --silent --show-error "$CHROME_ARCHIVE_URL" --output "$CHROME_ARCHIVE_PATH"
+          mkdir -p "$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION" "$RUNNER_TEMP/writing-preparation-diagnostic"
+          unzip -q "$CHROME_ARCHIVE_PATH" -d "$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION"
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict'
+          import { execFileSync } from 'node:child_process'
+          import { readFileSync, realpathSync, statSync, writeFileSync } from 'node:fs'
+          import { release } from 'node:os'
+          const command = (name, args) => execFileSync(name, args, { encoding: 'utf8' }).trim()
+          const sha256 = path => command('sha256sum', [path]).split(/\s+/)[0]
+          const binary = realpathSync(process.env.CHROME_PATH)
+          const versionOutput = command(binary, ['--version'])
+          const actualVersion = versionOutput.match(/\b\d+\.\d+\.\d+\.\d+\b/)?.[0]
+          const metadata = {
+            purpose: 'One exact browser archive and executable for sequential default and disable-lcd-text diagnostic modes in the same job.',
+            recordedAt: new Date().toISOString(),
+            browser: {
+              expectedVersion: process.env.CHROME_PINNED_VERSION,
+              expectedRevision: process.env.CHROME_PINNED_REVISION,
+              actualVersion, versionOutput,
+              archive: { url: process.env.CHROME_ARCHIVE_URL, bytes: statSync(process.env.CHROME_ARCHIVE_PATH).size, sha256: sha256(process.env.CHROME_ARCHIVE_PATH) },
+              executable: { path: binary, bytes: statSync(binary).size, sha256: sha256(binary) },
+              diagnosticLaunches: [{ mode: 'default', headless: true, args: ['--no-sandbox'] }, { mode: 'disable-lcd-text', headless: true, args: ['--no-sandbox', '--disable-lcd-text'] }]
+            },
+            runner: {
+              name: process.env.RUNNER_NAME, os: process.env.RUNNER_OS, arch: process.env.RUNNER_ARCH,
+              imageOS: process.env.ImageOS, imageVersion: process.env.ImageVersion,
+              kernel: release(), osRelease: readFileSync('/etc/os-release', 'utf8')
+            },
+            runtime: {
+              node: process.version, npm: command('npm', ['--version']),
+              python: command('python3', ['--version']),
+              playwright: JSON.parse(readFileSync('node_modules/playwright-core/package.json', 'utf8')).version
+            },
+            run: {
+              repository: process.env.GITHUB_REPOSITORY, id: process.env.GITHUB_RUN_ID,
+              attempt: process.env.GITHUB_RUN_ATTEMPT, job: process.env.GITHUB_JOB, commit: process.env.GITHUB_SHA
+            },
+            runtimeTree: command('git', ['rev-parse', 'HEAD:frontend']),
+            harness: { path: 'frontend/scripts/verify-writing-parity.mjs', sha256: sha256('frontend/scripts/verify-writing-parity.mjs') },
+            workflow: { path: '.github/workflows/diagnose-writing-preparation.yml', sha256: sha256('.github/workflows/diagnose-writing-preparation.yml') },
+            diagnostic: { path: 'qa/homepage-assembly/2026-10-20/diagnose-writing-preparation.mjs', sha256: sha256('qa/homepage-assembly/2026-10-20/diagnose-writing-preparation.mjs') }
+          }
+          writeFileSync(process.env.RUNNER_TEMP + '/writing-preparation-diagnostic/browser-environment.json', JSON.stringify(metadata, null, 2) + '\n')
+          assert.equal(actualVersion, process.env.CHROME_PINNED_VERSION, 'The diagnostic must use its exact pinned Chrome version')
+          console.log(`Recorded Chrome for Testing ${actualVersion} and its archive/executable SHA256s`)
+          NODE
+          printf 'CHROME_PATH=%s\n' "$CHROME_PATH" >> "$GITHUB_ENV"
+      - name: Serve protected baseline and unpublished source
+        run: |
+          mkdir -p "$RUNNER_TEMP/writing-preparation-baseline/storileaf-homepage-preview"
+          cp -a index.html 404.html assets covers gallery pricing "$RUNNER_TEMP/writing-preparation-baseline/storileaf-homepage-preview/"
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/writing-preparation-baseline" > "$RUNNER_TEMP/writing-preparation-baseline.log" 2>&1 &
+          python3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > "$RUNNER_TEMP/writing-preparation-source.log" 2>&1 &
+          sleep 2
+      - name: Observe each fixed preparation in one controlled browser environment
+        env:
+          WRITING_PREPARATION_OUT: ${{ runner.temp }}/writing-preparation-diagnostic
+        run: node qa/homepage-assembly/2026-10-20/diagnose-writing-preparation.mjs
+      - name: Confirm protected runtime
+        if: always()
+        working-directory: frontend
+        run: npm run guard:published
+      - name: Retain all outcomes without claiming parity
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-writing-preparation-diagnostic
+          path: ${{ runner.temp }}/writing-preparation-diagnostic/
+          if-no-files-found: error
