@@ -1,3 +1,4 @@
+import { cleanQuality, heroReflowDimension, heroReflowStyle } from './reflow-contract.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
@@ -136,11 +137,15 @@ async function snapshot(p, kind) {
 
 function compare(b, a, label, { enlarged = false } = {}) {
   const differences = [], computedStyleComparisons = []; let maximumGeometry = 0
+  const reflow = enlarged && label === 'text-200-320'
+  const delta = a.nodes['progression-container'][0].rect[3] - b.nodes['progression-container'][0].rect[3]
   for (const [key, values] of Object.entries(b.nodes)) {
     if (values.length !== a.nodes[key]?.length) { differences.push(key + ' count'); continue }
     for (const [i, x] of values.entries()) {
       const y = a.nodes[key][i]
-      const autoMargins = key === 'window' ? compareAutoMargins(x.autoMargins, y.autoMargins, { tolerance: .15 }) : null
+      const adjustedMargins = reflow && key === 'window' ? structuredClone(x.autoMargins) : x.autoMargins
+      if (reflow && key === 'window') { adjustedMargins.rect[1] += delta; adjustedMargins.parentRect[3] += delta }
+      const autoMargins = key === 'window' ? compareAutoMargins(adjustedMargins, y.autoMargins, { tolerance: .15 }) : null
       if (autoMargins) {
         computedStyleComparisons.push({ node: `${key}[${i}]`, property: 'auto horizontal margins', ...autoMargins, published: x.autoMargins, source: y.autoMargins })
         maximumGeometry = Math.max(maximumGeometry, autoMargins.maximumGeometry)
@@ -148,12 +153,13 @@ function compare(b, a, label, { enlarged = false } = {}) {
       }
       for (let j = 0; j < 4; j++) {
         const delta = Math.abs(x.rect[j] - y.rect[j]); maximumGeometry = Math.max(maximumGeometry, delta)
-        if (delta > .15) differences.push(`${key}[${i}].rect[${j}] ${x.rect[j]} versus ${y.rect[j]}`)
+        if (delta > .15 && !(reflow && heroReflowDimension(key, j, x.rect[j], y.rect[j], a.nodes['progression-container'][0].rect[3] - b.nodes['progression-container'][0].rect[3]))) differences.push(`${key}[${i}].rect[${j}] ${x.rect[j]} versus ${y.rect[j]}`)
       }
       for (const k of ['style', 'text', 'href', 'alt', 'src', 'label', 'role', 'pressed', 'current', 'hidden', 'tabindex']) if (JSON.stringify(x[k]) !== JSON.stringify(y[k])) {
         if (k === 'style') {
           for (const prop of new Set([...Object.keys(x.style || {}), ...Object.keys(y.style || {})])) {
             if (x.style?.[prop] === y.style?.[prop]) continue
+            if (reflow && heroReflowStyle(key, prop, x.style?.[prop], y.style?.[prop], x.rect, y.rect)) continue
             if (prop === 'transformOrigin') {
               const coordinates = comparePixelCoordinates(x.style[prop], y.style[prop], .15)
               computedStyleComparisons.push({ node: `${key}[${i}]`, property: prop, published: x.style[prop], source: y.style[prop], ...coordinates })
@@ -167,7 +173,13 @@ function compare(b, a, label, { enlarged = false } = {}) {
       }
     }
   }
-  for (const key of ['pseudo', 'active', 'playing', 'tickerPlaying', 'orbitPaused', 'previousCount', 'coverAngles', 'orbitRadii', 'sectionOrder', 'live']) if (JSON.stringify(b[key]) !== JSON.stringify(a[key])) differences.push(key)
+  const expectedPseudo = structuredClone(b.pseudo)
+  if (reflow && expectedPseudo?.grid?.transformOrigin && a.pseudo?.grid?.transformOrigin) {
+    const beforeOrigin = expectedPseudo.grid.transformOrigin.split(/\s+/).map(parseFloat), afterOrigin = a.pseudo.grid.transformOrigin.split(/\s+/).map(parseFloat)
+    if (Math.abs(beforeOrigin[0] - afterOrigin[0]) <= .15 && Math.abs(afterOrigin[1] - beforeOrigin[1] - delta / 2) <= .15) expectedPseudo.grid.transformOrigin = a.pseudo.grid.transformOrigin
+  }
+  if (JSON.stringify(expectedPseudo) !== JSON.stringify(a.pseudo)) differences.push('pseudo')
+  for (const key of ['active', 'playing', 'tickerPlaying', 'orbitPaused', 'previousCount', 'coverAngles', 'orbitRadii', 'sectionOrder', 'live']) if (JSON.stringify(b[key]) !== JSON.stringify(a[key])) differences.push(key)
   if (b.origin.some((v, i) => Math.abs(v - a.origin[i]) > .15)) differences.push('absolute hero origin')
   if (!b.ids.every(n => n === 1) || !a.ids.every(n => n === 1)) differences.push('unique IDs')
   check(!differences.length, label + ' ' + differences.join('; '))
@@ -270,7 +282,7 @@ async function suppressHeader(p, label) {
   report.preparation.push({ method: 'Temporary visibility:hidden on the identified header and all descendants, followed by two native animation frames and computed-visibility checks. The stylesheet is removed after this clean capture. Header context captures remain unchanged.', label, selector, ...evidence })
   return stylesheet
 }
-async function captures(ps, label, context = false, focusSelector) {
+async function captures(ps, label, context = false, focusSelector, authorisedReflow = false) {
   const files = []
   for (const [kind, p] of Object.entries(ps)) {
     await p.bringToFront(); await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
@@ -289,7 +301,8 @@ async function captures(ps, label, context = false, focusSelector) {
     } finally { if (hiddenHeader) await hiddenHeader.evaluate(e => e.remove()) }
   }
   const result = await pixels(files)
-  check(result.ratio !== null && result.ratio <= .01, label + (context ? ' context' : '') + ' pixels ' + JSON.stringify(result))
+  result.equalityRequired = !authorisedReflow
+  if (!authorisedReflow) check(result.ratio !== null && result.ratio <= .01, label + (context ? ' context' : '') + ' pixels ' + JSON.stringify(result))
   return { files, pixels: result }
 }
 // Returning to the page top after hover moves the target away from the real
@@ -642,7 +655,7 @@ try {
           const records = [...root.querySelectorAll('h1,h1 em,.hero-progression,.hero-progression b,.hero-progression i,.hero-description,.hero-actions a,.hero-marquee-group>span,.hero-marquee-group i')].map(el => ({ el, size: parseFloat(getComputedStyle(el).fontSize), line: parseFloat(getComputedStyle(el).lineHeight) }))
           for (const { el, size, line } of records) { el.style.fontSize = size * 2 + 'px'; if (Number.isFinite(line)) el.style.lineHeight = line * 2 + 'px' }
         })
-        const entry = await pair(ps, 'text-200-' + viewport.width, { enlarged: true }); entry.rendered = await captures(ps, entry.label); entry.quality = {}
+        const entry = await pair(ps, 'text-200-' + viewport.width, { enlarged: true }); entry.rendered = await captures(ps, entry.label, false, undefined, viewport.width === 320); entry.authorisedReflow = viewport.width === 320 ? 'P4-04' : null; entry.quality = {}
         for (const [kind, p] of Object.entries(ps)) {
           entry.quality[kind] = await p.locator('.hero').evaluate(root => {
             const clipped = []
@@ -654,6 +667,7 @@ try {
           })
           if (entry.quality[kind].clipped.length || entry.quality[kind].overflow) qualityFindings.push({ label: entry.label, kind, ...entry.quality[kind] })
         }
+        check(cleanQuality(entry.quality.source, ['clipped'], 'overflow'), 'P4-04 enlarged source hero text must fit ' + viewport.width)
         report.states.push(entry)
       } finally { await close(ps) }
     })

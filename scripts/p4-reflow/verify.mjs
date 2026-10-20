@@ -127,6 +127,9 @@ try{
   await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));await frames(p)
   if(width>1130){for(const name of ['Books','Resources']){const t=p.locator('.sl-header-nav-trigger').filter({hasText:name});await t.focus();await t.press('Enter');await p.locator(name==='Books'?'[data-testid="books-dropdown"]':'[data-testid="resources-dropdown"]').waitFor();await t.press('Escape');row.menu[name]=await t.evaluate(e=>document.activeElement===e);check(row.menu[name],'Enlarged desktop menu Escape/focus '+name+' '+width)}}
   else{const t=p.getByTestId('mobile-menu');await t.focus();await t.press('Enter');await p.locator('.sl-mobile-nav-dialog').waitFor();await enlarge(p,'.sl-mobile-nav-dialog p,.sl-mobile-nav-dialog a,.sl-mobile-nav-dialog summary');await p.keyboard.press('Escape');await p.locator('.sl-mobile-nav-dialog').waitFor({state:'detached'});await frames(p);row.menu.mobile=await t.evaluate(e=>document.activeElement===e);check(row.menu.mobile,'Mobile menu focus restoration '+width)}
+  row.normalAfterReset = {}
+  for(const [kind,page] of Object.entries(ps)) { await ready(page,urls[kind]); row.normalAfterReset[kind]=await snapshot(page) }
+  for(const key of Object.keys(targets)) { const initial=row.normal.candidate.groups[key], reset=row.normalAfterReset.candidate.groups[key]; check(initial.length===reset.length && initial.every((n,i)=>n.rect.every((v,j)=>Math.abs(v-reset[i].rect[j])<=.15)), 'Normal layout restored after enlargement '+key+' '+width) }
   report.widths.push(row);for(const p of Object.values(ps))await p.close()
  }
 }catch(error){report.failures.push(error.stack||String(error))}

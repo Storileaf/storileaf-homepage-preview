@@ -1,3 +1,4 @@
+import { cleanQuality, footerReflowDimension } from './reflow-contract.mjs'
 import { chromium } from 'playwright-core'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -213,7 +214,7 @@ async function snapshot(page, group) {
     }
   }, { ...group, styles, publicHome, sourceUrl: urls.source, ending: group.selector === groupsFor(group.kind).ending.selector })
 }
-function compare(before, after, label, { allowQualityOverflow = false, position = false } = {}) {
+function compare(before, after, label, { allowQualityOverflow = false, position = false, approvedReflow = false } = {}) {
   const differences = []
   for (const name of Object.keys(before.nodes)) {
     const b = before.nodes[name], a = after.nodes[name]
@@ -228,7 +229,7 @@ function compare(before, after, label, { allowQualityOverflow = false, position 
       if (/^border(Top|Right|Bottom|Left)Color$/.test(key) && b.styles[key.replace('Color', 'Width')] === '0px' && a.styles[key.replace('Color', 'Width')] === '0px') continue
       differences.push(name + ' ' + key + ' ' + b.styles[key] + ' -> ' + a.styles[key])
     }
-    if (b.geometry && a.geometry) for (const key of Object.keys(b.geometry)) if (Math.abs(b.geometry[key] - a.geometry[key]) > 0.15) differences.push(name + ' ' + key + ' ' + b.geometry[key] + ' -> ' + a.geometry[key])
+    if (b.geometry && a.geometry) for (const key of Object.keys(b.geometry)) if (Math.abs(b.geometry[key] - a.geometry[key]) > 0.15 && !(approvedReflow === 'P4-02-footer' && footerReflowDimension(name, key))) differences.push(name + ' ' + key + ' ' + b.geometry[key] + ' -> ' + a.geometry[key])
   }
   if (position) for (const key of Object.keys(before.position)) if (Math.abs(before.position[key] - after.position[key]) > 0.15) differences.push('viewport position ' + key + ' differs')
   for (const key of ['images', 'icons', 'disclosures', 'select', 'input', 'pseudo']) if (JSON.stringify(before[key]) !== JSON.stringify(after[key])) differences.push(key + ' differs')
@@ -238,13 +239,14 @@ function compare(before, after, label, { allowQualityOverflow = false, position 
     if (link.ariaCurrent !== null) differences.push('source incorrectly claims current page for ' + link.text)
     if (link.local && link.localTargetCount !== 1) differences.push('source local hash must target one existing ID for ' + link.text)
   }
-  if (allowQualityOverflow) check(before.documentOverflow === after.documentOverflow, label + ' enlarged document overflow differs')
+  if (approvedReflow) check(!after.documentOverflow, label + ' repaired source must not overflow')
+  else if (allowQualityOverflow) check(before.documentOverflow === after.documentOverflow, label + ' enlarged document overflow differs')
   else check(!before.documentOverflow && !after.documentOverflow, label + ' document overflow')
   check(!differences.length, label + ' differs ' + differences.slice(0, 16).join('; '))
   return differences
 }
 
-async function pixelComparison(left, right, filename) {
+async function pixelComparison(left, right, filename, equalityRequired = true) {
   await pixelPage.bringToFront()
   const result = await within(pixelPage.evaluate(async ({ left, right }) => {
     const load = data => new Promise((resolve, reject) => { const image = new Image(); image.onload = () => resolve(image); image.onerror = reject; image.src = 'data:image/png;base64,' + data })
@@ -262,7 +264,8 @@ async function pixelComparison(left, right, filename) {
     return { publishedSize: [a.width, a.height], sourceSize: [b.width, b.height], changedPixels, changedRatio, channelTolerance: 24, data: canvas.toDataURL('image/png').split(',')[1] }
   }, { left: left.toString('base64'), right: right.toString('base64') }), 'Pixel comparison ' + filename)
   await fs.writeFile(path.join(folder, filename), Buffer.from(result.data, 'base64')); delete result.data
-  check(result.changedRatio !== null && result.changedRatio <= 0.01, filename + ' pixels differ ' + result.changedRatio)
+  result.equalityRequired = equalityRequired
+  if (equalityRequired) check(result.changedRatio !== null && result.changedRatio <= 0.01, filename + ' pixels differ ' + result.changedRatio)
   return result
 }
 async function capture(page, group, filename) {
@@ -318,9 +321,9 @@ async function comparison(name, label, options = {}) {
   if (options.screenshots !== false) {
     const left = await capture(pages.published, groupsFor('published')[name], name + '-published-' + label + '.png')
     const right = await capture(pages.source, groupsFor('source')[name], name + '-source-' + label + '.png')
-    filename = name + '-comparison-' + label + '.png'; pixels = await pixelComparison(left, right, filename)
+    filename = name + '-comparison-' + label + '.png'; pixels = await pixelComparison(left, right, filename, options.approvedReflow !== 'P4-02-footer')
   }
-  return { published: before, source: after, differences, pixels, filename }
+  return { published: before, source: after, differences, pixels, filename, authorisedReflow: options.approvedReflow || null }
 }
 const trigger = (page, kind, name) => page.locator(groupsFor(kind).header.selector).getByRole('button', { name: name === 'books' ? 'The books' : 'Resources', exact: true })
 async function closeMenus(page, kind) {
@@ -696,16 +699,16 @@ try {
       else await openMenu(page, kind, 'books', 'keyboard')
       values[kind] = await enlarge(page, kind, viewport.width <= 1130)
     }
-    check(JSON.stringify(values.published.quality) === JSON.stringify(values.source.quality), 'Targeted enlarged shared text clipping differs at ' + viewport.width)
+    check(cleanQuality(values.source.quality, ['clippedText','textOutsideViewport']), 'P4-02 enlarged source navigation and footer must fit at ' + viewport.width)
     report.states.push({ state: 'targeted 200 percent shared text enlargement', viewport, ...values })
-    if (values.published.quality.documentOverflow || values.published.quality.clippedText.length || values.published.quality.textOutsideViewport.length) report.qualityFindings.push({ id: 'shared-enlarged-text-' + viewport.width, status: 'Inherited published limitation retained for a separately approved visible refinement.', viewport, published: values.published.quality, source: values.source.quality })
+    if (values.published.quality.documentOverflow || values.published.quality.clippedText.length || values.published.quality.textOutsideViewport.length) report.qualityFindings.push({ id: 'shared-enlarged-text-' + viewport.width, status: 'P4-02 authorised reflow. The source must be readable; the protected baseline remains unchanged.', viewport, published: values.published.quality, source: values.source.quality })
     const name = viewport.width <= 1130 ? 'mobile' : 'books'
-    report.states.push({ state: 'enlarged rendered panel', group: name, viewport, ...(await comparison(name, 'enlarged-' + viewport.width, { allowQualityOverflow: true, screenshots: false })) })
+    report.states.push({ state: 'enlarged rendered panel', group: name, viewport, ...(await comparison(name, 'enlarged-' + viewport.width, { allowQualityOverflow: true, screenshots: false, approvedReflow: 'P4-02-overflow' })) })
     for (const [kind, page] of Object.entries(pages)) {
       await page.screenshot({ path: path.join(folder, 'enlarged-context-' + kind + '-' + viewport.width + '.png'), animations: 'disabled', caret: 'hide' })
       if (viewport.width <= 1130) await closeMobile(page, kind); else await closeMenus(page, kind)
     }
-    report.states.push({ state: 'enlarged rendered ending', group: 'ending', viewport, ...(await comparison('ending', 'enlarged-' + viewport.width, { allowQualityOverflow: true })) })
+    report.states.push({ state: 'enlarged rendered ending', group: 'ending', viewport, ...(await comparison('ending', 'enlarged-' + viewport.width, { allowQualityOverflow: true, approvedReflow: 'P4-02-footer' })) })
   }
 } catch (error) { problems.push(String(error.stack || error)) }
 finally {

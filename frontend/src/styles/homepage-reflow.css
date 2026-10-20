@@ -34,6 +34,9 @@
 }
 @media (max-width:720px) {
   .sl-header-inner { min-height: 65px; }
+  /* Keep the original single-line action at the 361px boundary. The cap
+     permits its existing use of the trailing inset, never the border. */
+  .sl-header-actions { flex-shrink: 0; max-width: calc(100% - var(--sl-header-logo-width) - 52px); }
   .sl-footer-grid { --sl-footer-column-ratio: 1.3; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); }
   .sl-footer-grid[data-text-wrap] { grid-template-columns: minmax(0,1fr); }
   .hero-progression[data-progression-wrap] { flex-direction: column; }

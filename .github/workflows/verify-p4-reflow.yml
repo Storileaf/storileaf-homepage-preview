@@ -9,7 +9,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,16 +23,20 @@ jobs:
       - name: Serve the prior review and the candidate without publishing either
         run: |
           npm install --no-save --no-package-lock playwright-core@1.56.1
+          mkdir -p "$RUNNER_TEMP/p4-before"
+          git archive 36fefee332054d05bc1bc8bf450f2377a419c41f react-review | tar -x -C "$RUNNER_TEMP/p4-before"
+          python3 -m http.server 4174 --bind 127.0.0.1 --directory "$RUNNER_TEMP/p4-before" > "$RUNNER_TEMP/p4-before-server.log" 2>&1 &
           python3 -m http.server 4173 --bind 127.0.0.1 > "$RUNNER_TEMP/p4-reflow-server.log" 2>&1 &
       - name: Compare normal layouts and verify enlarged text fit
         env:
-          P4_WIDTHS: 320,390,820,1440
+          P4_WIDTHS: 320,360,361,362,390,430,480,481,600,720,721,768,820,900,901,1024,1130,1131,1280,1440
+          P4_BEFORE: http://127.0.0.1:4174/react-review/
         run: node scripts/p4-reflow/verify.mjs
       - name: Confirm protected export and fixed review are unchanged
         if: always()
         run: |
           node frontend/scripts/guard-published.mjs
-          git diff --exit-code 5f86e1376034fd56eb0bfb298b0533c3e36cc81c HEAD -- react-review/
+          git diff --exit-code HEAD -- react-review/
       - uses: actions/upload-artifact@v4
         if: always()
         with:

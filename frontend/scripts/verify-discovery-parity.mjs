@@ -1,3 +1,4 @@
+import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension } from './reflow-contract.mjs'
 import { chromium } from 'playwright-core'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -177,23 +178,29 @@ function normalStyle(key, value, all) {
 }
 function compare(before, after, label, { enlarged = false } = {}) {
   const differences = []
+  const delta = after.nodes.list.geometry.height - before.nodes.list.geometry.height
   for (const name of Object.keys(before.nodes)) {
     const b = before.nodes[name], a = after.nodes[name]
     if (!b || !a) { differences.push(name + ' missing'); continue }
     if (b.text !== a.text || b.visible !== a.visible) differences.push(name + ' text or visibility differs')
-    for (const property of Object.keys(b.geometry)) if (Math.abs(b.geometry[property] - a.geometry[property]) > 0.15) differences.push(name + ' ' + property + ' ' + b.geometry[property] + ' -> ' + a.geometry[property])
+    for (const property of Object.keys(b.geometry)) if (Math.abs(b.geometry[property] - a.geometry[property]) > 0.15 && !(enlarged && discoveryReflowDimension(name, property, b.geometry[property], a.geometry[property], delta))) differences.push(name + ' ' + property + ' ' + b.geometry[property] + ' -> ' + a.geometry[property])
     for (const key of styles) {
+      if (key === 'minWidth' && tabMinimumEquivalent(name, b.styles[key], a.styles[key])) continue
       if (['IMG', 'svg'].includes(b.tag) && ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing'].includes(key)) continue
       if (normalStyle(key, b.styles[key], b.styles) !== normalStyle(key, a.styles[key], a.styles)) differences.push(name + ' ' + key + ' ' + b.styles[key] + ' -> ' + a.styles[key])
     }
     if (b.pseudo && a.pseudo) for (const key of pseudoStyles) if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')
   }
-  for (const key of ['section', 'list', 'content', 'icons', 'rail', 'photoAnimation']) if (JSON.stringify(before[key]) !== JSON.stringify(after[key])) differences.push(key + ' differs')
+  for (const key of ['section', 'list', 'content', 'icons', 'rail', 'photoAnimation']) {
+    if (enlarged && key === 'rail') {
+      if (before.rail.clientWidth !== after.rail.clientWidth || !after.rail.activeFullyRevealed || !Number.isFinite(after.rail.scrollWidth) || after.rail.scrollWidth < after.rail.clientWidth || after.rail.scrollLeft < -1 || after.rail.scrollLeft > after.rail.scrollWidth - after.rail.clientWidth + 1) differences.push('P4-03 accessible scroll rail contract')
+    } else if (JSON.stringify(before[key]) !== JSON.stringify(after[key])) differences.push(key + ' differs')
+  }
   const comparableImage = image => { const { sizes, ...required } = image; return !before.image.srcset && !after.image.srcset ? required : image }
   if (JSON.stringify(comparableImage(before.image)) !== JSON.stringify(comparableImage(after.image))) differences.push('image differs')
   const semantic = data => ({ tabs: data.tabs.map(({ id, controls, ...rest }) => rest), panels: data.panels.map(({ id, labelledBy, ...rest }) => rest) })
   if (JSON.stringify(semantic(before)) !== JSON.stringify(semantic(after))) differences.push('tab/panel semantics differ')
-  if (enlarged) check(before.documentOverflow === after.documentOverflow, label + ' enlarged document overflow differs')
+  if (enlarged) check(!after.documentOverflow, label + ' repaired enlarged document must fit')
   else check(!before.documentOverflow && !after.documentOverflow, label + ' document overflow')
   check(!differences.length, label + ' differs: ' + differences.slice(0, 18).join('; '))
   return differences
@@ -226,7 +233,7 @@ async function capture(page, filename) {
     return await page.locator(section).screenshot({ path: path.join(folder, filename), animations: 'disabled', caret: 'hide' })
   } finally { await page.evaluate(before => { document.body.style.paddingTop = before }, adjustment.before); await page.setViewportSize(viewport); await settle(page); await page.evaluate(position => scrollTo({ left: position.x, top: position.y, behavior: 'instant' }), originalScroll); await settle(page) }
 }
-async function pixels(left, right, filename) {
+async function pixels(left, right, filename, equalityRequired = true) {
   await pixelPage.bringToFront()
   const result = await within(pixelPage.evaluate(async ({ left, right }) => {
     const load = data => new Promise((resolve, reject) => { const image = new Image(); image.onload = () => resolve(image); image.onerror = reject; image.src = 'data:image/png;base64,' + data })
@@ -237,7 +244,8 @@ async function pixels(left, right, filename) {
     return { publishedSize: [a.width, a.height], sourceSize: [b.width, b.height], changedPixels, changedRatio, data: canvas.toDataURL('image/png').split(',')[1] }
   }, { left: left.toString('base64'), right: right.toString('base64') }), 'Discovery pixel comparison ' + filename)
   await fs.writeFile(path.join(folder, filename), Buffer.from(result.data, 'base64')); delete result.data
-  check(result.changedRatio !== null && result.changedRatio <= 0.01, filename + ' pixels differ ' + result.changedRatio)
+  result.equalityRequired = equalityRequired
+  if (equalityRequired) check(result.changedRatio !== null && result.changedRatio <= 0.01, filename + ' pixels differ ' + result.changedRatio)
   return result
 }
 async function comparison(label, options = {}) {
@@ -245,9 +253,9 @@ async function comparison(label, options = {}) {
   let filename = null, pixelResult = null
   if (options.screenshots !== false) {
     const a = await capture(pages.published, 'published-' + label + '.png'), b = await capture(pages.source, 'source-' + label + '.png')
-    filename = 'comparison-' + label + '.png'; pixelResult = await pixels(a, b, filename)
+    filename = 'comparison-' + label + '.png'; pixelResult = await pixels(a, b, filename, !options.enlarged)
   }
-  return { published, source, differences, pixels: pixelResult, filename }
+  return { published, source, differences, pixels: pixelResult, filename, authorisedReflow: options.enlarged ? 'P4-03' : null }
 }
 async function focusState(page) {
   await settle(page)
@@ -518,8 +526,9 @@ try {
     const values = {}
     for (const [kind, page] of Object.entries(pages)) { await page.emulateMedia({ reducedMotion: 'reduce' }); await page.setViewportSize(viewport); await ready(page, kind); for (let selected = 0; selected <= index; selected++) await choose(page, selected); await page.mouse.move(0, 0); await page.evaluate(() => document.activeElement?.blur()); values[kind] = await enlarge(page) }
     check(JSON.stringify(values.published.quality) === JSON.stringify(values.source.quality), 'Enlarged discovery quality differs ' + viewport.width + ' ' + slug)
+    check(cleanQuality(values.source.quality, ['clippedText','textOutsideViewport','clippedControls','activeTabTextOutsideButton']), 'P4-03 enlarged source labels and controls must fit ' + viewport.width + ' ' + slug)
     const quality = values.published.quality
-    if (quality.documentOverflow || quality.clippedText.length || quality.textOutsideViewport.length || quality.clippedControls.length || quality.activeTabTextOutsideButton.length) report.qualityFindings.push({ id: 'discovery-enlarged-' + viewport.width + '-' + slug, status: 'Inherited published enlargement limitation; parity is not an enlargement quality pass. A visible refinement needs separate approval.', viewport, slug, published: quality, source: values.source.quality })
+    if (quality.documentOverflow || quality.clippedText.length || quality.textOutsideViewport.length || quality.clippedControls.length || quality.activeTabTextOutsideButton.length) report.qualityFindings.push({ id: 'discovery-enlarged-' + viewport.width + '-' + slug, status: 'P4-03 authorised intrinsic tab sizing; source must eliminate the inherited clipping.', viewport, slug, published: quality, source: values.source.quality })
     report.states.push({ state: 'targeted 200 percent discovery text', viewport, index, slug, enlargement: values, ...(await comparison('enlarged-' + viewport.width + '-' + slug, { enlarged: true })) })
     console.log('Discovery enlargement complete: ' + viewport.width + 'px ' + slug)
   }

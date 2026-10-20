@@ -639,10 +639,10 @@ try {
     }
     report.states.push({ state: 'targeted 200 percent section text enlargement', kind, width: 320, height: 568, documentOverflow: overflow, expectedTextMetrics, actualTextMetrics, clippedText })
   }
-  check(JSON.stringify(enlargement.published) === JSON.stringify(enlargement.source), 'Text enlargement clipping differs from the published baseline')
+  check(Array.isArray(enlargement.source) && enlargement.source.length === 0, 'P4-01 source enlarged Gifting and Resources must not clip')
   if (enlargement.published?.length) report.qualityFindings.push({
     id: 'gifting-enlarged-text-320',
-    status: 'Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement.',
+    status: 'P4-01 authorised repair. Published clipping retained as evidence; source must have no clipped text.',
     detail: 'At 320px and targeted 200 percent section text, the Gifting grid expands within its clipped panel. Matching document overflow is not an enlargement quality pass.',
     ...enlargement,
   })
@@ -654,7 +654,7 @@ try {
   const cards = report.widths.map(row => '<section><h2>' + row.width + 'px</h2>' + Object.keys(groups).map(name =>
     '<h3>' + name + '</h3><a href="' + name + '-comparison-' + row.width + '.png"><img src="' + name + '-comparison-' + row.width + '.png" alt="Published and React ' + name + ' comparison at ' + row.width + ' pixels"></a>').join('') + '</section>').join('')
   const quality = report.qualityFindings.length
-    ? '<h2>Open quality finding</h2><p>At 320px with targeted doubled text, both published and React Gifting clip text inside the panel. This remains open for Package 4 and an approved visible refinement. Matching behaviour does not establish enlargement quality.</p>' : ''
+    ? '<h2>Open quality finding</h2><p>The protected Gifting baseline clips targeted doubled text. P4-01 requires the source to eliminate that clipping. Normal layout and pixel gates remain unchanged.</p>' : ''
   await fs.writeFile(path.join(folder, 'review.html'), '<!doctype html><html lang="en-GB"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StoriLeaf Group 1 comparisons</title><style>body{max-width:1500px;margin:40px auto;padding:0 24px;font:16px/1.6 system-ui;background:#f9f8f6;color:#253526}img{width:100%;height:auto;border:1px solid #ddd}section{margin-top:56px}h1,h2,h3{line-height:1.2}</style><h1>StoriLeaf Group 1 rendered comparisons</h1><p>Published sections on the left. React sections on the right. Open each image for its original resolution. The JSON report records measured differences, screenshots and the precise test scope.</p><p>Source migration evidence only. The React homepage remains incomplete and unpublished.</p>' + quality + '<p><a href="report.json">Open the test report</a></p>' + cards + '</html>')
 }
 console.log(JSON.stringify({ completeWidthSet: report.completeWidthSet, browser: report.browser, testedWidths: report.widths.map(row => row.width), states: report.states.length, problems }))
