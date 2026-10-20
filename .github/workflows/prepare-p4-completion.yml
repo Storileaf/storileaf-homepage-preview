@@ -1,0 +1,101 @@
+name: Prepare inspected P4 reflow correction
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/prepare-p4-completion.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify and apply the inspected patch only in this runner
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const path = require('node:path');
+            const crypto = require('node:crypto');
+            const zlib = require('node:zlib');
+            const cp = require('node:child_process');
+            const assert = require('node:assert/strict');
+            assert.equal(context.repo.owner, 'Storileaf');
+            assert.equal(context.repo.repo, 'storileaf-homepage-preview');
+            assert.equal(context.ref, 'refs/heads/main');
+            const git = (...args) => cp.execFileSync('git', args, {encoding:'utf8'}).trim();
+            assert.equal(git('rev-parse','HEAD:frontend'),git('rev-parse','19bec2a78620af0ea3894bc5b2cea891be526115:frontend'));
+            const expected = {
+              '.github/workflows/verify-p4-reflow.yml':'3116b1467ed02c53a1ffcce62bdf8b411d12151b',
+              'frontend/scripts/reflow-contract.mjs':null,
+              'frontend/scripts/reflow-contract.test.mjs':null,
+              'frontend/scripts/verify-discovery-parity.mjs':'8fef01d1edb47e7ce47200b4faa36a5670ae3952',
+              'frontend/scripts/verify-group1-parity.mjs':'c5273ef79c3b2e2a84f805549095e80df09ffa1b',
+              'frontend/scripts/verify-hero-parity.mjs':'76687cf49df7b94d9559424bfcae40caca6fc905',
+              'frontend/scripts/verify-shared-parity.mjs':'9b027fe578155c2ab4760fd0922bcd9ac5f1f9e4',
+              'frontend/src/styles/homepage-reflow.css':'c388df68586558995e44bec540f1d29e375b221b',
+              'scripts/p4-reflow/verify.mjs':'dc12032b67d1b7f8a544de0aac6dc40a0f865a61'
+            };
+            for(const [file,sha] of Object.entries(expected)) {
+              if(sha) assert.equal(git('rev-parse','HEAD:'+file),sha,file);
+              else assert(!fs.existsSync(file),file);
+            }
+            const blob = (await github.rest.git.getBlob({...context.repo,file_sha:'fe5763bd5b1e7251e2e2055e2c4a03844550c5d0'})).data;
+            // Undo the one identified transcription character in transport.
+            // Both compressed and decoded hashes below must match the locally tested patch.
+            const transport = Buffer.from(blob.content,'base64').toString('base64');
+            assert.equal(transport.split('Je97ddfqOOns').length,2);
+            const compressed = Buffer.from(transport.replace('Je97ddfqOOns','Je97ddfqOns'),'base64');
+            const hash = b => crypto.createHash('sha256').update(b).digest('hex');
+            assert.equal(hash(compressed),'25e34c7daf9212110b3f33532e2aad3062f4d8fc90d41b189a77e8aefb5feb61');
+            const patch = zlib.gunzipSync(compressed,{maxOutputLength:100000});
+            assert.equal(hash(patch),'af20602ee8a01b174e08547d55e08672ac57269aa9662ada11f2dcc7e5d0e0e1');
+            const file = path.join(process.env.RUNNER_TEMP,'p4-completion.patch');
+            fs.writeFileSync(file,patch);
+            cp.execFileSync('git',['apply','--check','--unidiff-zero',file]);
+            cp.execFileSync('git',['apply','--index','--unidiff-zero',file]);
+            assert.deepEqual(git('diff','--cached','--name-only').split('\n').sort(),Object.keys(expected).sort());
+            cp.execFileSync('git',['diff','--cached','--check']);
+      - name: Validate types, content, protected files, regression tests and build
+        run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Create an unreferenced candidate without advancing main
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('node:fs');
+            const path = require('node:path');
+            const cp = require('node:child_process');
+            const assert = require('node:assert/strict');
+            const git = (...args) => cp.execFileSync('git',args,{encoding:'utf8'}).trim();
+            const head=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
+            assert.equal(head,context.sha,'Refuse stale main');
+            const parent=(await github.rest.git.getCommit({...context.repo,commit_sha:head})).data;
+            const files=git('diff','--cached','--name-only').split('\n');
+            const entries=[];
+            for(const file of files) {
+              const body=fs.readFileSync(file,'utf8');
+              const blob=(await github.rest.git.createBlob({...context.repo,content:body,encoding:'utf-8'})).data;
+              assert.equal(blob.sha,git('rev-parse',':'+file),file);
+              entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});
+            }
+            const tree=(await github.rest.git.createTree({...context.repo,base_tree:parent.tree.sha,tree:entries})).data;
+            const commit=(await github.rest.git.createCommit({...context.repo,message:'fix: complete bounded P4 text reflow and preserve normal header layout',tree:tree.sha,parents:[head]})).data;
+            const result={candidateCommit:commit.sha,parentCommit:head,tree:tree.sha,files,patchSha256:'af20602ee8a01b174e08547d55e08672ac57269aa9662ada11f2dcc7e5d0e0e1',status:'Source checks passed. Browser acceptance and publication pending. No branch advanced.'};
+            fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'p4-staged.json'),JSON.stringify(result,null,2));
+            core.info('P4_CANDIDATE '+JSON.stringify(result));
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p4-inspected-candidate
+          path: |
+            ${{ runner.temp }}/p4-staged.json
+            ${{ runner.temp }}/p4-completion.patch
+          if-no-files-found: error
