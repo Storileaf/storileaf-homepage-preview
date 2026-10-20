@@ -1,0 +1,46 @@
+name: Verify authorised P4 text reflow
+on:
+  push:
+    branches: [main]
+    paths: [frontend/**, scripts/p4-reflow/**, .github/workflows/verify-p4-reflow.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate source and preserve the original homepage
+        run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Serve the prior review and the candidate without publishing either
+        run: |
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+          python3 -m http.server 4173 --bind 127.0.0.1 > "$RUNNER_TEMP/p4-reflow-server.log" 2>&1 &
+      - name: Compare normal layouts and verify enlarged text fit
+        env:
+          P4_WIDTHS: 320,390,820,1440
+        run: node scripts/p4-reflow/verify.mjs
+      - name: Confirm protected export and fixed review are unchanged
+        if: always()
+        run: |
+          node frontend/scripts/guard-published.mjs
+          git diff --exit-code 5f86e1376034fd56eb0bfb298b0533c3e36cc81c HEAD -- react-review/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p4-reflow-verification
+          path: qa/p4-reflow/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: p4-reflow-source-preview
+          path: frontend/dist/

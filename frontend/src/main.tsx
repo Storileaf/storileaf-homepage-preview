@@ -7,6 +7,7 @@ import './styles/typography.css'
 import './styles/components.css'
 import './styles/shared-footer.css'
 import './styles/shared-header.css'
+import './styles/homepage-reflow.css'
 
 const host = document.getElementById('root')
 if (!host) throw new Error('StoriLeaf component mount is missing')

@@ -1,5 +1,6 @@
 import type { ChangeEvent } from 'react'
 import { approvedCopy, verifiedHref } from '../content'
+import { useFooterCurrencyWrap } from './useFooterCurrencyWrap'
 import { ResponsiveImage } from './ResponsiveImage'
 import type { PublicSiteRoutes } from '../siteRoutes'
 
@@ -36,6 +37,7 @@ function Chevron() {
  * not a submission form. Route and currency state belong to the page shell.
  */
 export function NewsletterFooter({routes,currency,onCurrencyChange}: Props) {
+  const brandRef = useFooterCurrencyWrap()
   const updateCurrency=(event: ChangeEvent<HTMLSelectElement>)=>{
     onCurrencyChange(event.target.value as Currency)
   }
@@ -57,7 +59,7 @@ export function NewsletterFooter({routes,currency,onCurrencyChange}: Props) {
     <footer className="sl-footer">
       <div className="sl-container">
         <div className="sl-footer-grid">
-          <div className="sl-footer-brand">
+          <div className="sl-footer-brand" ref={brandRef}>
             <a className="sl-footer-logo" href={routes.home} aria-label={approvedCopy('shared.header.home_label')}>
               <ResponsiveImage src="https://storileaf.com/logo.png" alt="StoriLeaf" width={500} height={125} sizes="(max-width:360px) 105px, (max-width:480px) 114px, (max-width:720px) 130px, 151px" />
             </a>

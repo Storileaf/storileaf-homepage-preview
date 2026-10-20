@@ -1,0 +1,41 @@
+/* P4-01 through P4-04. Approved 20 October 2026.
+   Intrinsic text fit only. Canonical typography, colours, spacing and motion
+   stay in their owning stylesheets. Normal-size geometry is a regression gate. */
+
+/* P4-01. Let the grid and its anonymous button text shrink and wrap rather
+   than escaping the clipped forest panel. Keep the original panel padding. */
+.sl-home-gifting .sl-gift-copy { min-width: 0; overflow-wrap: anywhere; }
+.sl-home-gifting .sl-gift-copy .sl-action--gold { max-width: 100%; white-space: normal; }
+
+/* P4-02. The existing navigation can take another line without shrinking its
+   text. Minimum heights preserve the original header at ordinary text size. */
+.sl-header-inner { height: auto; min-height: 74px; }
+.sl-header-desktop-nav { min-width: 0; }
+.sl-header-desktop-nav > div { min-width: 0; }
+.sl-header-nav-list { flex-wrap: wrap; }
+.sl-header-actions { min-width: 0; flex-shrink: 1; }
+.sl-header .sl-header-primary { min-width: 0; white-space: normal; overflow-wrap: anywhere; }
+.sl-footer-grid { grid-template-columns: minmax(0,1.65fr) minmax(0,1fr) minmax(0,.85fr) minmax(0,.8fr); }
+.sl-footer-brand, .sl-footer-column { min-width: 0; }
+.sl-footer-brand > p, .sl-footer-column :is(h3,a) { max-width: 100%; overflow-wrap: anywhere; }
+.sl-footer-bottom, .sl-footer-bottom > div { flex-wrap: wrap; }
+
+/* P4-03. Keep each longest word inside its own tab. The existing horizontal
+   rail accepts wider tabs when enlargement makes six equal slots unsuitable. */
+.sl-book-discovery .sl-book-tab-trigger { min-width: min-content; }
+
+/* P4-04. The three steps retain their order and separators. Their text may
+   wrap within the available width instead of being cut by the hero boundary. */
+.hero-progression > span { min-width: 0; overflow-wrap: anywhere; }
+
+@media (max-width:900px) {
+  .sl-footer-grid { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr); }
+}
+@media (max-width:720px) {
+  .sl-header-inner { min-height: 65px; }
+  .sl-footer-grid { grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); }
+  .sl-footer-brand { grid-template-columns: minmax(0,1fr) auto; }
+  /* Measured intrinsic logo + currency width, not a guessed font/zoom flag. */
+  .sl-footer-brand[data-currency-wrap] { grid-template-columns: minmax(0,1fr); }
+  .sl-footer-brand[data-currency-wrap] .sl-footer-currency { grid-area: 3 / 1; justify-self: start; }
+}
