@@ -1,4 +1,4 @@
-name: Prepare inspected P4 reflow correction
+name: Prepare verified P4 closure records
 on:
   push:
     branches: [main]
@@ -6,121 +6,193 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: read
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Apply only the inspected discovery correction in the runner
+      - name: Preserve runtime and original published baseline
+        run: |
+          node frontend/scripts/guard-published.mjs
+          test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse dbfac4a24b1fc16e1d440ac499012a76b27ab0c9:frontend)"
+          test "$(git rev-parse HEAD^ )" = daa0ae551fdc14bd0ec651dc14c733ba02e2d694
+      - name: Retrieve verified evidence without rerunning browser tests
         uses: actions/github-script@v7
         with:
           script: |
-            const fs=require('node:fs'), cp=require('node:child_process'), assert=require('node:assert/strict'), crypto=require('node:crypto');
-            assert.equal(context.repo.owner,'Storileaf');assert.equal(context.repo.repo,'storileaf-homepage-preview');assert.equal(context.ref,'refs/heads/main');
-            const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();
-            assert.equal(git('rev-parse','HEAD:frontend'),git('rev-parse','5094e6cc9f7cad145997344635a207c1c741a759:frontend'));
-            const replace=(file,from,to)=>{const text=fs.readFileSync(file,'utf8');assert.equal(text.split(from).length,2,file+' exact single replacement');fs.writeFileSync(file,text.replace(from,to));};
-            const hook=`import { useLayoutEffect, useRef } from 'react'
-            import { observeIntrinsicFit } from '../intrinsicTextFit'
-
-            /** Keep the selected tab visible after text changes its intrinsic width.
-             * Selection, keyboard handling and vertical page position are untouched. */
-            export function useDiscoveryTextFit() {
-              const ref = useRef<HTMLDivElement>(null)
-              useLayoutEffect(() => {
-                const rail = ref.current
-                if (!rail) return
-                const tabs = [...rail.querySelectorAll<HTMLElement>('[role="tab"]')]
-                let previous = ''
-                const measure = () => {
-                  const sizes = [rail.clientWidth, ...tabs.map(tab => tab.getBoundingClientRect().width)].join(',')
-                  const changed = previous !== '' && sizes !== previous
-                  previous = sizes
-                  if (!changed) return
-                  const active = tabs.find(tab => tab.getAttribute('aria-selected') === 'true')
-                  if (!active) return
-                  const outer = rail.getBoundingClientRect(), inner = active.getBoundingClientRect()
-                  const delta = inner.left < outer.left ? inner.left - outer.left
-                    : inner.right > outer.right ? inner.right - outer.right : 0
-                  if (Math.abs(delta) > .5) rail.scrollBy({ left: delta, behavior: 'instant' })
-                }
-                return observeIntrinsicFit([rail, ...tabs], measure)
-              }, [])
-              return ref
+            const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process'),assert=require('node:assert/strict');
+            assert.equal(context.repo.owner,'Storileaf');assert.equal(context.repo.repo,'storileaf-homepage-preview');
+            const out=path.join(process.env.RUNNER_TEMP,'p4-close');fs.mkdirSync(out,{recursive:true});
+            const inputs=[
+              {id:12292310435,sha:'a9628a48837114db33963669e330c7a9ffe5d19059dd1dd392d4c8eebde2a9e5',folder:'evidence'},
+              {id:12291671043,sha:'e978ecb7fbee7ab8183c38758ac33b5384379b5de714c69497b72ceb19554fd0',folder:'reflow'},
+              {id:12291398929,sha:'ab09b1f93773989083c93960114f3af8e928dccf953627fb6716be109e272b80',folder:'shared'}
+            ];
+            for(const input of inputs){
+              const response=await github.rest.actions.downloadArtifact({...context.repo,artifact_id:input.id,archive_format:'zip'});const body=Buffer.from(response.data);
+              assert.equal(crypto.createHash('sha256').update(body).digest('hex'),input.sha);
+              const archive=path.join(out,input.folder+'.zip');fs.writeFileSync(archive,body);
+              cp.execFileSync('python3',['-c','import sys,zipfile,pathlib; z=zipfile.ZipFile(sys.argv[1]); assert all(not n.startswith("/") and ".." not in pathlib.PurePosixPath(n).parts for n in z.namelist()); z.extractall(sys.argv[2])',archive,path.join(out,input.folder)]);
             }
-            `;
-            assert(!fs.existsSync('frontend/src/sections/useDiscoveryTextFit.ts'));
-            fs.writeFileSync('frontend/src/sections/useDiscoveryTextFit.ts',hook);
-            replace('frontend/src/sections/BookDiscovery.tsx',"import { useEffect, useRef, useState } from 'react'","import { useEffect, useState } from 'react'\nimport { useDiscoveryTextFit } from './useDiscoveryTextFit'");
-            replace('frontend/src/sections/BookDiscovery.tsx','const tabRail = useRef<HTMLDivElement>(null)','const tabRail = useDiscoveryTextFit()');
-            fs.appendFileSync('frontend/scripts/reflow-contract.mjs',String.raw`
-            /** The underline keeps its exact insets and tracks the authorised tab width. */
-            export function discoveryUnderlineWidthEquivalent(name, before, after) {
-              if (!/^tab[0-5]$/.test(name)) return false
-              const values = [before?.geometry?.width, after?.geometry?.width]
-              for (const node of [before, after]) {
-                const dimensions = ['width', 'left', 'right'].map(key => /^-?[\d.]+px$/.test(node?.pseudo?.[key]) ? parseFloat(node.pseudo[key]) : NaN)
-                values.push(...dimensions)
-                if (!dimensions.every(Number.isFinite) || Math.abs(dimensions[0] - (node.geometry.width - dimensions[1] - dimensions[2])) > .15) return false
-              }
-              return values.every(Number.isFinite) && before.pseudo.left === after.pseudo.left && before.pseudo.right === after.pseudo.right
-            }
-            `);
-            fs.appendFileSync('frontend/scripts/reflow-contract.test.mjs',`
+            const checks=JSON.parse(fs.readFileSync(path.join(out,'evidence/checks.json'),'utf8'));
+            assert.equal(checks.sourceCommit,'dbfac4a24b1fc16e1d440ac499012a76b27ab0c9');
+            const tests=checks.runs.filter(r=>r.path.startsWith('.github/workflows/'));assert.equal(tests.length,13);assert(tests.every(r=>r.conclusion==='success'));
+            const staged=JSON.parse(fs.readFileSync(path.join(out,'evidence/staged.json'),'utf8'));assert.equal(staged.tree,'7f5d52a2c6d3b5cd6b547a6d76a1d4627448728c');assert.equal(staged.parentCommit,'daa0ae551fdc14bd0ec651dc14c733ba02e2d694');
+            core.exportVariable('P4_CLOSE',out);
+      - name: Prepare scoped documentation and durable verification summary
+        run: |
+          python3 - <<'PY'
+          import os,json,hashlib,subprocess,pathlib
+          R=pathlib.Path('.'); E=pathlib.Path(os.environ['P4_CLOSE']); O=E/'prepared';O.mkdir()
+          source='dbfac4a24b1fc16e1d440ac499012a76b27ab0c9'
+          checks=json.loads((E/'evidence/checks.json').read_text()); report=json.loads((E/'reflow/report.json').read_text())
+          assert report['sourceCommit']==source and report['failures']==[] and len(report['widths'])==20
+          expected={'docs/PACKAGE_4_QUALITY_AUDIT.md':'7ffe1d9f20c8e9d0d6779229500fa85a3bbe8fea','docs/PUBLIC_DESIGN_SYSTEM.md':'ac1d9f558ba80bb352206696d47bacce6c676c96','docs/COMPONENT_INVENTORY.md':'d63132fc1de6292294edf21cfb33f80c61f1395f','REPOSITORY_HANDOFF.md':'235e182ffdfd58d1516472f9aa286eec7d41722d','.github/workflows/verify-react-review.yml':'3f49e224c2c2d7c163899f25989af340b956a010'}
+          for file,sha in expected.items():assert subprocess.check_output(['git','rev-parse','HEAD:'+file],text=True).strip()==sha,file
+          prepared={}
+          def save(file,text):
+              dest=O/file;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(text);prepared[file]=hashlib.sha256(dest.read_bytes()).hexdigest()
+          def replace(text,before,after):
+              assert text.count(before)==1,before[:100]
+              return text.replace(before,after)
+          captures=[c for w in report['widths'] for mode in ['normal','enlarged'] for data in w[mode].values() for group in data['captures'].values() for c in group]
+          for c in captures:assert hashlib.sha256((E/'reflow'/c['file']).read_bytes()).hexdigest()==c['sha256']
+          pixels=[p for w in report['widths'] for p in w['normalPixels']]
+          assert len(captures)==479 and len(pixels)==101 and max(p['ratio'] for p in pixels)==0
+          assert all(not w['geometryDifferences'] and not w['enlarged']['candidate']['quality']['findings'] for w in report['widths'])
+          inspected=['normal-before-header-361-0.png','normal-candidate-header-361-0.png','normal-before-footer-1440-0.png','normal-candidate-footer-1440-0.png','normal-before-progression-820-0.png','normal-candidate-progression-820-0.png','enlarged-before-header-1440-0.png','enlarged-candidate-header-1440-0.png','enlarged-before-gifting-320-0.png','enlarged-candidate-gifting-320-0.png','enlarged-candidate-gifting-320-1.png','enlarged-candidate-gifting-320-2.png','enlarged-before-progression-320-0.png','enlarged-candidate-progression-320-0.png','enlarged-candidate-footer-320-0.png','enlarged-candidate-footer-320-1.png','enlarged-candidate-footer-320-2.png','enlarged-candidate-progression-481-0.png','enlarged-candidate-progression-721-0.png','enlarged-candidate-progression-768-0.png']
+          summary={'checkpoint':'P4-01 through P4-04 approved text reflow','sourceCommit':source,'approvedOn':'2026-10-20','status':'Implemented and verified for the recorded Chromium scope; separate review refresh only, not root cutover or full Package 4 clearance','protectedBaseline':'e9550069d91b5a9b48ade43fcfb0a71bbed2875b','beforeSource':'051c69611d8bd685b79268489e5ff04bd64b9ed5','beforeReviewCommit':'36fefee332054d05bc1bc8bf450f2377a419c41f','reviewUrl':'https://storileaf.github.io/storileaf-homepage-preview/react-review/','workflowRecord':'reflow/checks.json','rawEvidence':'reflow/','build':json.loads((E/'evidence/build-identity.json').read_text()),'staging':{'runId':39481976891,'artifactId':12292310435,'sha256':'a9628a48837114db33963669e330c7a9ffe5d19059dd1dd392d4c8eebde2a9e5','candidateCommit':'5bf7ab5336d63e982fde921f64bfe8a6d4b513ca'},'sourceTests':87,'verificationWorkflows':13,'editorialCoverage':checks['editorialCoverage'],'widths':[w['width'] for w in report['widths']],'targetedEnlargement':'Font sizes and line heights doubled for the selected scopes. Not native browser zoom.','thresholds':report['thresholds'],'captures':len(captures),'normalPixelComparisons':len(pixels),'maximumNormalGeometryDelta':0,'maximumNormalChangedPixelRatio':0,'independentInspection':{'archiveAnd479PngHashesVerified':True,'all101NormalPixelPairsIndependentlyRecomputed':True,'maximumRecomputedChangedPixelRatio':0,'method':'Downloaded original artifacts. Independent Python/Pillow/NumPy pixel comparison with unchanged channel threshold 24. Source/content hashes compared with inspected local files. No browser was substituted.','visualImages':inspected,'additionalDiscoveryImages':['comparison-enlarged-320-relationship-memoir.png','comparison-enlarged-320-celebrating-occasions.png'],'additionalSharedImage':'ending-source-enlarged-320.png','captureLimitation':'The last dedicated footer viewport tile repeats content after bottom scroll clamping and does not itself show the complete legal row. The separate full shared enlarged 320px image was inspected, including the legal row.'},'environment':{'dedicatedReflow':{k:report.get(k) for k in ['browser','node','platform','playwright']},'individualBrowserProvenance':'Each original report records its actual browser. Writing retains browser-environment.json. Assembly used 155.0.8059.39; the reflow, hero, discovery and Writing reports used 155.0.8059.84. Do not conflate runners.','devices':'Headless Chromium with emulated touch in retained suites. No physical devices.'},'diagnostics':[{'source':'19bec2a78620af0ea3894bc5b2cea891be526115','findings':'Real normal footer/header corrections, including 361px header height; old equality assertions also required inherited enlarged clipping.','runs':[39462154107,39462152943,39462153200]},{'source':'cd64a97532689f945c7bd52c943805f784e0a443','findings':'Normal 20-width layouts passed; enlarged hero at 481/721/768 failed; reset test compared restored rail scroll with initial left origin. Discovery exposed selected-tab visibility and exact underline-width contract.','runs':[39477778826,39477778688],'collectorRun':39477911389,'collectorArtifact':12291615283,'collectorSha256':'8ecdb3ba3ee54f5c5d26e3fbea8087b48b39589c7fcbea20a8a30beb40279c3f'},{'source':'5094e6cc9f7cad145997344635a207c1c741a759','findings':'Intrinsic hero widths corrected. Reset now restores actual inline type in the same document and compares the same native rail position. Final discovery correction followed.','collectorRun':39479212174,'collectorArtifact':12291358153,'collectorSha256':'86606620b9513599511e95a843f7044f12522f3af333275258e98a9d8740b5d3'},{'kind':'evidence-staging bookkeeping','runId':39480208075,'finding':'Awaited an editorial standalone job not triggered by the final TS-only change. Corrected stager requires the successful retained editorial comparison on the same source. No browser assertions or tests were bypassed.'}], 'remaining':['P4-05 actual screen-reader announcements','P4-06 native zoom and text-spacing diagnosis','P4-07 separately authorised protected pricing export repairs','P4-08 wider browser, native zoom, physical-device and assistive-technology coverage','Founder review of refreshed enlarged states','Separate root replacement or production release approval'],'publication':'The exact successful build and durable evidence are prepared in this commit. The private design handoff records the final public commit, Pages deployment and post-publication byte/browser check.','retention':'Raw reports and selected original screenshots are committed. Complete capture archives and failed run logs remain in Actions with their recorded expiry. No permanent test-stability claim.'}
+          save('qa/package-4/2026-10-20/p4-reflow-verification.json',json.dumps(summary,indent=2)+'\n')
+          review=(R/'docs/PACKAGE_4_QUALITY_AUDIT.md').read_text()
+          paragraphs=review.split('\n\n');paragraphs[1]='Updated 20 October 2026. **P4-01 through P4-04 are implemented and verified for the recorded Chromium reflow scope. The separate review is refreshed from the exact tested build.** P4-05 actual screen-reader acceptance, P4-06 diagnosis, pricing and wider coverage remain open. The [pre-reflow review](https://github.com/Storileaf/storileaf-homepage-preview/blob/5f86e1376034fd56eb0bfb298b0533c3e36cc81c/docs/PACKAGE_4_QUALITY_AUDIT.md) preserves the earlier decisions and complete P4-05 checkpoint.'
+          review='\n\n'.join(paragraphs)
+          addition='''## P4-01 through P4-04 reflow checkpoint
 
-            test('discovery underline width must follow its own tab with unchanged insets', async () => {
-              const { discoveryUnderlineWidthEquivalent } = await import('./reflow-contract.mjs')
-              const before = { geometry: { width: 147 }, pseudo: { width: '125px', left: '11px', right: '11px' } }
-              const after = { geometry: { width: 216.563 }, pseudo: { width: '194.562px', left: '11px', right: '11px' } }
-              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, after), true)
-              assert.equal(discoveryUnderlineWidthEquivalent('photo', before, after), false)
-              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, { ...after, pseudo: { ...after.pseudo, width: '190px' } }), false)
-              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, { ...after, pseudo: { ...after.pseudo, left: '12px' } }), false)
-              assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, null), false)
-            })
-            `);
-            replace('frontend/scripts/verify-discovery-parity.mjs','import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension }','import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension, discoveryUnderlineWidthEquivalent }');
-            replace('frontend/scripts/verify-discovery-parity.mjs',"if (b.pseudo && a.pseudo) for (const key of pseudoStyles) if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')",`if (b.pseudo && a.pseudo) for (const key of pseudoStyles) {
-                  if (enlarged && key === 'width' && discoveryUnderlineWidthEquivalent(name, b, a)) continue
-                  if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')
-                }`);
-            replace('frontend/scripts/verify-discovery-parity.mjs',"    check(JSON.stringify(values.published.quality) === JSON.stringify(values.source.quality), 'Enlarged discovery quality differs ' + viewport.width + ' ' + slug)","    // Retain the baseline measurements; the authorised source must eliminate clipping rather than reproduce it.");
-            const expected={
-              'frontend/src/sections/useDiscoveryTextFit.ts':'8ef8b7c7109d8d83c2adbe905e6268d0ad9213dd4e0198093c8a8f0d461d0473',
-              'frontend/src/sections/BookDiscovery.tsx':'352f712303cc3fd51a421fa2cb87238cf1fdf1f1430f11768d0e8e250d224f9c',
-              'frontend/scripts/reflow-contract.mjs':'b420b56364a49dc92378c7dcc3bd22b0ffebae45b0597eac03a6e352beae00de',
-              'frontend/scripts/reflow-contract.test.mjs':'b05c871393959b625676baf8c736a3d4c20cb30d9c4b9f9e23914436bb3c9d41',
-              'frontend/scripts/verify-discovery-parity.mjs':'7fb57bd7710c1b293f02ce2adb30c1ae15a8f5817c35191efcae07c55ad4f1f7'
-            };
-            for(const [file,expectedHash] of Object.entries(expected))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),expectedHash,file);
-            cp.execFileSync('git',['add','--',...Object.keys(expected)]);cp.execFileSync('git',['diff','--cached','--check']);
-      - name: Validate types, content, protected files, regression tests and build
-        run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
-      - name: Create an unreferenced source candidate without advancing main
+          The founder approved this batch on 20 October 2026 after inspecting the separate React review. Final source is dbfac4a24b1fc16e1d440ac499012a76b27ab0c9. The [durable verification index](../qa/package-4/2026-10-20/p4-reflow-verification.json) owns exact runs, hashes, failed candidates, environments, inspection and publication boundaries. [Original reports and selected images](../qa/package-4/2026-10-20/reflow/) are committed rather than relying solely on expiring Actions artifacts.
+
+          Gifting copy and its gold action now wrap within the existing panel. Enlarged desktop navigation can take additional lines with content-driven header height. The original minimum heights and ordinary action fit are retained, including the 361px boundary. Footer navigation becomes one column only when measured words cannot fit the existing mobile columns; currency moves below the brand copy only when it cannot share the logo row. The original 330px brand paragraph measure, grouping, legal links and all four currencies remain.
+
+          Discovery tabs retain their longest words within their boundaries and use the existing horizontal rail. An intrinsic resize observer keeps an already selected tab visible when text or font dimensions change, without changing selection or vertical page scroll. The underline retains its exact insets. Hero progression uses complete number, gap and word measurements; the existing steps stack only when their row cannot fit. Numbers, order, separators and all independent carousel, ticker and cover motion remain.
+
+          All 13 candidate verification workflows passed, plus the candidate Pages deployment. The standalone editorial workflow did not trigger for the final TS-only discovery correction; the unchanged editorial comparison passed in the candidate's retained Group 1 step and other retained suites. There were 87 source tests. The dedicated checkpoint covered 20 widths, including adjacent breakpoints, 479 captures and 101 ordinary-size pixel comparisons. All capture hashes were independently checked and all 101 comparisons recomputed. The maximum normal geometry delta and changed-pixel ratio were both zero in that checkpoint. Full scope and retained whole-page results belong in the index and raw reports, not an implication of universal browser certification.
+
+          Earlier failures were investigated. The first candidate changed the normal footer measure. The subsequent candidate retained a real 361px header regression. The normal header correction passed all 20 widths, but exposed enlarged hero fit failures at 481, 721 and 768px. Intrinsic number/word sizing corrected those. Discovery then exposed a real selected-tab visibility failure during enlargement, corrected by the final runtime hook.
+
+          Separately, migration assertions demanded equality to the original enlarged clipping. Their named improvement contracts now require clean source quality while retaining baseline measurements. Only the necessary enlarged geometry and tab underline width can differ. The underline must equal its own measured tab width minus unchanged insets within 0.15px. Normal comparisons and unrelated styles remain strict. Mutation tests reject incorrect widths, changed insets and unrelated elements. The source reset test now restores actual original inline font/line-height values in the same document and uses the same native rail position; a reload had legitimately restored a different horizontal position. No runtime storage change was made to satisfy it.
+
+          Geometry tolerance remains 0.15px, pixel channel threshold 24 and changed-pixel ratio 0.01. Failed evidence is retained; behavioural failures were not simply retried until green. The initial release collector waited for a nonexistent path-filtered editorial job, a bookkeeping problem corrected by requiring its already passing retained command. No browser check was dropped. Broader CI consolidation is still planned, not completed here.
+
+          Representative original screenshots were inspected, including enlarged Gifting, navigation, footer, discovery and hero boundaries and ordinary header/footer/progression pairs. The dedicated footer's last viewport tile is clamped and repeats content; the separate full shared 320px enlargement capture was therefore inspected through its legal row. The index lists exact images. Other original reports were read without claiming every retained image was independently reinspected.
+
+          Targeted doubled font/line-height tests are not native zoom. Retained Chromium suites include normal/reduced motion, emulated touch, short screens, input/focus, currency, anchors/history, media, pinning, practice and combined assembly according to their reports. No physical device, other-engine or actual screen-reader speech result is claimed. The approved normal composition, words, images, content ledgers, dependencies and canonical tokens are unchanged. The [design system](PUBLIC_DESIGN_SYSTEM.md) owns the scoped reflow rules.
+
+          Only the [separate review](https://storileaf.github.io/storileaf-homepage-preview/react-review/) is refreshed. The protected original and pricing remain unchanged. This closes the authorised reflow implementation and recorded browser checkpoint, not all Package 4 requirements. The founder's positive feedback on the previous review is not invented acceptance of every later enlarged state or authority for root replacement.
+
+          '''
+          addition='\n'.join(line[10:] if line.startswith('          ') else line for line in addition.split('\n'))
+          review=replace(review,'## P4-05 implementation and verification',addition+'## P4-05 implementation and verification')
+          lines=review.split('\n')
+          boundaries={'P4-01':'Gifting copy/action wrapping verified; original normal composition retained.','P4-02':'Navigation, conditional footer/currency reflow and four currency actions verified.','P4-03':'Intrinsic tab fit, selected visibility, underline insets and keyboard selection verified.','P4-04':'Measured progression fit covers narrow/tablet boundaries; original normal layout and motion retained.'}
+          for i,line in enumerate(lines):
+              if line.startswith('| P4-0'):
+                  parts=line.split('|');key=parts[1].strip()
+                  if key in boundaries:parts[3]=' Source repair and recorded Chromium scope complete ';parts[4]=' '+boundaries[key]+' ';lines[i]='|'.join(parts)
+          review='\n'.join(lines)
+          review=replace(review,'The next proposed implementation batch is P4-01 through P4-04 after agreement on bounded reflow changes.','The approved P4-01 through P4-04 implementation and recorded Chromium checkpoint are complete. Review the refreshed rendering and retain the separate remaining gates.')
+          review=replace(review,"The founder's P4-05 authority applies only to this source accessibility repair. P4-01 through P4-04 and pricing remain proposed, not approved by that instruction.","The founder separately approved P4-01 through P4-04. Those source repairs are implemented and verified above. Protected pricing changes remain outside that authority.")
+          review=replace(review,'The isolated React build is not published. The guard remains active at its original baseline and private production is untouched. Candidate Pages and existing live footer/foundation checks passed. A separate direct live-byte fetch from this conversation was unavailable and is not claimed. The private design handoff owns the final documentation commit and closing Pages result. Founder rendered acceptance and explicit React publication approval remain separate. Package 4 as a whole is not complete.','The separate review contains the verified reflow snapshot; the root remains the protected original. The guard baseline and private production are unchanged. Current live verification is separate from the historical P4-05 limits. The private design handoff records the closing public commit, Pages result and live check. Founder acceptance of the refreshed rendering and root replacement or production release remain separate. Package 4 as a whole is not complete.')
+          save('docs/PACKAGE_4_QUALITY_AUDIT.md',review)
+          style=(R/'docs/PUBLIC_DESIGN_SYSTEM.md').read_text()
+          style=replace(style,'Preserve the current description relationship for migration comparison and record its inherited missing dialog description target in the Group 8 review. Matching that defect is not accessibility acceptance. A separately reviewed repair must address it before the final release gate.','P4-05 now connects both the source dialog and answer field to the existing visible demo-privacy paragraph with exact approved wording. Do not reintroduce the dangling generated ID. The protected original is unchanged. Actual screen-reader announcement acceptance remains in the Package 4 review.')
+          style+='\n\n## Approved intrinsic text reflow exceptions\n\nP4-01 through P4-04, authorised 20 October 2026, use the scoped homepage-reflow.css rules and measured fit hooks. Canonical foundations.css and tokens.css remain unchanged. The ordinary composition, typography, colours, spacing, imagery, destinations and motion are preserved. The Package 4 review owns verification.\n\nGifting copy and its existing gold action may wrap inside their column. The header can grow for enlarged navigation while retaining its original minimum heights and narrow normal action fit. Never shrink the font to hide overflow.\n\nFooter tracks have zero intrinsic minima, with the original brand paragraph measure capped by available width. On narrow screens use one navigation column only when actual longest words cannot fit the original 1.3-to-1 split. Move currency below brand copy only when its width, declared logo width and gap cannot share the row. Preserve grouping, order, photograph and legal row.\n\nDiscovery tabs use min-content inside their existing horizontal rail. Keep the selected tab visible after intrinsic width changes, without changing selection or vertical page position. Underlines retain exact left/right insets.\n\nHero progression measures each step according to its actual number/word row or column layout. Stack the existing steps only when the row or existing narrow label cap cannot fit; turn the existing separators downwards. Return to the ordinary row when fit allows. Do not alter carousel, ticker or covers.\n\nObservers use actual dimensions and font readiness, batch updates into frames and clean up on teardown. They do not detect artificial test flags, rewrite copy or persist customer text. These are homepage exceptions, not private-interface defaults.\n'
+          save('docs/PUBLIC_DESIGN_SYSTEM.md',style)
+          inventory=(R/'docs/COMPONENT_INVENTORY.md').read_text()
+          inventory=replace(inventory,'Updated 20 October 2026 for the P4-05 source repair and Chromium checkpoint.','Updated 20 October 2026 for verified P4-01 through P4-04 reflow and the separate review refresh.')
+          inventory=replace(inventory,'Founder rendered acceptance and enlargement repairs remain separate; [Group 3]','P4-02 reflow verified in the [Package 4 review](PACKAGE_4_QUALITY_AUDIT.md); refreshed founder review remains separate. [Group 3]')
+          inventory=replace(inventory,'founder acceptance, inherited 320px enlarged progression labels, later final motion preferences and publication remain separate','P4-04 reflow verified in the [Package 4 review](PACKAGE_4_QUALITY_AUDIT.md); refreshed founder review, later final motion preferences and root replacement remain separate')
+          inventory=replace(inventory,'Founder rendered review and inherited enlarged labels remain separate','P4-03 intrinsic tab fit and active visibility verified in the [Package 4 review](PACKAGE_4_QUALITY_AUDIT.md); refreshed founder review remains separate')
+          inventory=replace(inventory,'[Group 1](PACKAGE_3_GROUP_1_REVIEW.md); inherited 320px targeted enlargement clipping remains open','[Group 1](PACKAGE_3_GROUP_1_REVIEW.md) retained; P4-01 wrapping and enlargement fit verified in the [Package 4 review](PACKAGE_4_QUALITY_AUDIT.md)')
+          inventory=replace(inventory,'[Group 3](PACKAGE_3_GROUP_3_REVIEW.md); inherited enlargement findings, founder acceptance and newsletter integration remain separate','[Group 3](PACKAGE_3_GROUP_3_REVIEW.md) retained; P4-02 conditional reflow verified in the [Package 4 review](PACKAGE_4_QUALITY_AUDIT.md). Refreshed founder review and newsletter integration remain separate')
+          inventory=replace(inventory,'Only the root static homepage is published. Keep frontend/dist isolated until complete homepage visual and functional parity and explicit founder publishing approval.','The protected original remains at the root. The separately authorised react-review address contains the verified reflow snapshot. This does not authorise root replacement or production release.')
+          inventory=replace(inventory,'This does not close Package 4, remove the protected static defect or authorise publication. Existing Gifting, footer/currency, desktop navigation, discovery and hero enlargement findings remain in their owners and the Package 4 register. Pricing remains separately scoped.','P4-01 through P4-04 are implemented and verified for their recorded Chromium reflow scope. This does not close Package 4, repair the protected original or establish wider browser/device coverage. P4-06 investigation and pricing remain separately scoped.')
+          save('docs/COMPONENT_INVENTORY.md',inventory)
+          handoff='''# StoriLeaf public website handoff
+
+          ## Current checkpoint
+
+          P4-01 through P4-04 are implemented and verified for the recorded Chromium text reflow scope. Final source is dbfac4a24b1fc16e1d440ac499012a76b27ab0c9. The separate [React review](https://storileaf.github.io/storileaf-homepage-preview/react-review/) contains that exact tested snapshot. The [original homepage](https://storileaf.github.io/storileaf-homepage-preview/) and pricing remain protected and unchanged.
+
+          The founder inspected the previous review, said it looked good and explicitly approved the four reflow repairs. No repeat implementation approval is needed for this scope. This feedback is not invented acceptance of every later enlarged state or permission for root replacement.
+
+          The [Package 4 review](docs/PACKAGE_4_QUALITY_AUDIT.md) owns implementation, failure diagnosis, bounded test corrections and remaining acceptance. The [durable index](qa/package-4/2026-10-20/p4-reflow-verification.json) links 13 passing verification workflows, 87 source tests, the 20-width reflow checkpoint, retained whole-page checks, raw reports and selected images. The path-filtered standalone editorial job was not rerun; its comparison passed within the same candidate's retained checks. The review is a fixed snapshot, not an automatic mirror of later edits.
+
+          Gifting, enlarged navigation, footer/currency, discovery labels and hero progression now reflow without the recorded clipping. The ordinary approved composition remains unchanged. A selected discovery tab stays visible when text dimensions change. Copy, imagery, section order, destinations, four currencies and independent motion systems are retained.
+
+          P4-05 remains repaired and Chromium verified. Dialog and textarea reference the existing visible privacy paragraph. Actual screen-reader announcement acceptance is pending. Practice answers remain unsaved and clear on dismissal. Its [original evidence](qa/package-4/2026-10-20/p4-05-verification.json) and the owning review preserve the failed first attempt and corrected implementation.
+
+          ## Completed migration and remaining work
+
+          Packages 1 and 2 and Package 3 Groups 1 through 8 remain complete through implementation and browser verification. Do not restart foundations, How it works, Hero or Writing. The [inventory](docs/COMPONENT_INVENTORY.md), [Group 8 review](docs/PACKAGE_3_GROUP_8_REVIEW.md) and [assembly index](qa/homepage-assembly/2026-10-20/committed-verification.json) retain the full composition, section joins, combined journeys and genuine history restoration correction. Stored history data contains numeric positions and entry keys, not practice text.
+
+          Review the refreshed rendering and finish the separate remaining gates. P4-05 needs real spoken-announcement testing. P4-06 needs native zoom/text-spacing diagnosis before calling its heading extent visible clipping. The three [pricing export findings](docs/PRICING_HYDRATION_REVIEW.md) need separate protected-export authority. Wider browser, native zoom, physical-device and assistive-technology coverage remain P4-08. Targeted doubled text and emulated touch are not substitutes.
+
+          This closes the approved reflow implementation and recorded browser checkpoint, not Package 4 as a whole. Founder acceptance of the refreshed rendering and explicit root replacement or production release remain separate. The [private design handoff](https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/REPOSITORY_HANDOFF.md) records the closing public commit, Pages result and post-publication live checks.
+
+          ## Authority and process
+
+          Public main is the only frontend editing branch. Source builds into frontend/dist. Only its authorised verified snapshot is copied to react-review. Preserve e9550069d91b5a9b48ade43fcfb0a71bbed2875b and the enabled guard. Root HTML, assets, imagery and pricing must not be replaced without separate release authority. Private main remains read only; private website documentation belongs on design/storileaf-website-ux. Use the connected Storileaf account, inspect current heads and reject stale writes. No automatic repository synchronisation exists. Do not use Macaly or assume its old contents are fully archived.
+
+          The [Public Design System](docs/PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. Use the [Content Gate](docs/CONTENT_GATE.md) and canonical records. Brand DNA guides identity and storytelling; current Newsreader/Manrope decisions supersede historical Georgia/Lato directions. Private capabilities, packages and commercial terms remain owned by private main. No new wording, page, authentication, payments, backend or newsletter integration is included.
+
+          Earlier FAQ focus, menu raster and Writing failures remain investigated evidence, not invented runtime blockers. The reflow review separately retains normal footer/header regressions, enlarged tablet boundaries, active-tab visibility and comparison corrections. Do not erase failures or claim permanent test stability. The [Workflow](docs/WORKFLOW.md) owns process. Broader CI consolidation remains planned before the first authorised new page; pilot one real page and extract layouts from demonstrated needs.
+
+          Replacement gallery/physical-book photography, final hero preferences, reassurance's provisional statement/placement, standalone practice, newsletter integration, remaining public pages and compact private-interface systems remain separate or deferred. Preserve approved imagery and motion meanwhile.
+
+          ## Historical continuity
+
+          The complete [pre-reflow handoff](https://github.com/Storileaf/storileaf-homepage-preview/blob/5f86e1376034fd56eb0bfb298b0533c3e36cc81c/REPOSITORY_HANDOFF.md) preserves the first review publication and links preceding Group 5, Group 6, initial Package 4 and P4-05 records. The [historical handoff](REPOSITORY_HANDOFF_HISTORY_02710dd.md) remains intact. Less duplication does not mean lost requirements, approvals, diagnostics or measurements. Current specific decisions supersede historical pending wording without erasing it.
+          '''
+          handoff='\n'.join(line[10:] if line.startswith('          ') else line for line in handoff.split('\n'))
+          save('REPOSITORY_HANDOFF.md',handoff)
+          live=(R/'.github/workflows/verify-react-review.yml').read_text();live=replace(live,'051c69611d8bd685b79268489e5ff04bd64b9ed5',source)
+          live=replace(live,"const hash = bytes =>", "assert.equal(provenance.sourceCommit, '"+source+"', 'Verify the exact reflow candidate')\n          const hash = bytes =>")
+          save('.github/workflows/verify-react-review.yml',live)
+          for folder,file in [('reflow','enlarged-candidate-gifting-320-1.png'),('reflow','enlarged-candidate-gifting-320-2.png'),('shared','ending-source-enlarged-320.png')]:
+              dest=O/'qa/package-4/2026-10-20/reflow/images'/file;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes((E/folder/file).read_bytes());prepared[str(dest.relative_to(O))]=hashlib.sha256(dest.read_bytes()).hexdigest()
+          (E/'prepared-files.json').write_text(json.dumps(prepared,indent=2))
+          PY
+      - name: Create a closure tree for connected-app inspection without publishing
         uses: actions/github-script@v7
         with:
           script: |
-            const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict');
+            const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),crypto=require('node:crypto'),assert=require('node:assert/strict');
             const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();
             const head=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;assert.equal(head,context.sha);
-            const parent=(await github.rest.git.getCommit({...context.repo,commit_sha:head})).data;
-            const files=git('diff','--cached','--name-only').split('\n');assert.equal(files.length,5);
-            const entries=[];
-            for(const file of files){assert(file.startsWith('frontend/'));const blob=(await github.rest.git.createBlob({...context.repo,content:fs.readFileSync(file,'utf8'),encoding:'utf-8'})).data;assert.equal(blob.sha,git('rev-parse',':'+file));entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});}
-            const tree=(await github.rest.git.createTree({...context.repo,base_tree:parent.tree.sha,tree:entries})).data;
-            const commit=(await github.rest.git.createCommit({...context.repo,message:'fix: retain selected discovery tab during enlarged text reflow',tree:tree.sha,parents:[head]})).data;
-            const result={candidateCommit:commit.sha,parentCommit:head,tree:tree.sha,files,status:'Source validation passed. Browser checks and review refresh pending. Main not advanced.'};
-            fs.writeFileSync(path.join(process.env.RUNNER_TEMP,'p4-staged.json'),JSON.stringify(result,null,2));core.info('P4_CANDIDATE '+JSON.stringify(result));
+            const out=process.env.P4_CLOSE,files=JSON.parse(fs.readFileSync(path.join(out,'prepared-files.json'),'utf8')),entries=[];
+            for(const [file,expected] of Object.entries(files)){
+              assert(file.startsWith('docs/')||file==='REPOSITORY_HANDOFF.md'||file==='.github/workflows/verify-react-review.yml'||file.startsWith('qa/package-4/2026-10-20/'));
+              const bytes=fs.readFileSync(path.join(out,'prepared',file));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),expected);
+              const blob=(await github.rest.git.createBlob({...context.repo,content:bytes.toString('base64'),encoding:'base64'})).data;entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});
+            }
+            // Preserve this later preparation record while adopting only the already verified review tree.
+            const workflow='.github/workflows/prepare-p4-completion.yml';entries.push({path:workflow,mode:'100644',type:'blob',sha:git('rev-parse','HEAD:'+workflow)});
+            const tree=(await github.rest.git.createTree({...context.repo,base_tree:'7f5d52a2c6d3b5cd6b547a6d76a1d4627448728c',tree:entries})).data;
+            const current=(await github.rest.git.getTree({...context.repo,tree_sha:git('rev-parse','HEAD^{tree}')})).data.tree;
+            const candidate=(await github.rest.git.getTree({...context.repo,tree_sha:tree.sha})).data.tree;
+            for(const item of current.filter(e=>!['docs','qa','react-review','.github','REPOSITORY_HANDOFF.md'].includes(e.path)))assert.deepEqual(candidate.find(e=>e.path===item.path),item);
+            const result={tree:tree.sha,parentCommit:head,sourceCommit:'dbfac4a24b1fc16e1d440ac499012a76b27ab0c9',verifiedReviewTree:'7f5d52a2c6d3b5cd6b547a6d76a1d4627448728c',files,scope:'Documentation, evidence, live verification identity and exact separate review only. No branch reference advanced. Root and private production unchanged.'};
+            fs.writeFileSync(path.join(out,'closure-tree.json'),JSON.stringify(result,null,2));core.info('P4_CLOSURE_TREE '+JSON.stringify(result));
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: p4-inspected-candidate
-          path: ${{ runner.temp }}/p4-staged.json
+          name: p4-closure-records
+          path: |
+            ${{ runner.temp }}/p4-close/closure-tree.json
+            ${{ runner.temp }}/p4-close/prepared-files.json
+            ${{ runner.temp }}/p4-close/prepared/
           if-no-files-found: warn
