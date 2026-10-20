@@ -38,3 +38,15 @@ export function heroReflowStyle(name, property, before, after, beforeRect, after
   if (property === 'transformOrigin' && (heroHeight.has(name) || ['progression','progression-arrow'].includes(name))) return centredTransformOrigin(before, beforeRect) && centredTransformOrigin(after, afterRect)
   return false
 }
+
+/** The underline keeps its exact insets and tracks the authorised tab width. */
+export function discoveryUnderlineWidthEquivalent(name, before, after) {
+  if (!/^tab[0-5]$/.test(name)) return false
+  const values = [before?.geometry?.width, after?.geometry?.width]
+  for (const node of [before, after]) {
+    const dimensions = ['width', 'left', 'right'].map(key => /^-?[\d.]+px$/.test(node?.pseudo?.[key]) ? parseFloat(node.pseudo[key]) : NaN)
+    values.push(...dimensions)
+    if (!dimensions.every(Number.isFinite) || Math.abs(dimensions[0] - (node.geometry.width - dimensions[1] - dimensions[2])) > .15) return false
+  }
+  return values.every(Number.isFinite) && before.pseudo.left === after.pseudo.left && before.pseudo.right === after.pseudo.right
+}

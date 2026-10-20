@@ -1,4 +1,4 @@
-import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension } from './reflow-contract.mjs'
+import { tabMinimumEquivalent, cleanQuality, discoveryReflowDimension, discoveryUnderlineWidthEquivalent } from './reflow-contract.mjs'
 import { chromium } from 'playwright-core'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -189,7 +189,10 @@ function compare(before, after, label, { enlarged = false } = {}) {
       if (['IMG', 'svg'].includes(b.tag) && ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing'].includes(key)) continue
       if (normalStyle(key, b.styles[key], b.styles) !== normalStyle(key, a.styles[key], a.styles)) differences.push(name + ' ' + key + ' ' + b.styles[key] + ' -> ' + a.styles[key])
     }
-    if (b.pseudo && a.pseudo) for (const key of pseudoStyles) if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')
+    if (b.pseudo && a.pseudo) for (const key of pseudoStyles) {
+      if (enlarged && key === 'width' && discoveryUnderlineWidthEquivalent(name, b, a)) continue
+      if (normalStyle(key, b.pseudo[key], b.pseudo) !== normalStyle(key, a.pseudo[key], a.pseudo)) differences.push(name + ' pseudo ' + key + ' differs')
+    }
   }
   for (const key of ['section', 'list', 'content', 'icons', 'rail', 'photoAnimation']) {
     if (enlarged && key === 'rail') {
@@ -525,7 +528,7 @@ try {
   for (const viewport of [{ width: 320, height: 568 }, { width: 1440, height: 900 }]) for (const [index, slug] of slugs.entries()) {
     const values = {}
     for (const [kind, page] of Object.entries(pages)) { await page.emulateMedia({ reducedMotion: 'reduce' }); await page.setViewportSize(viewport); await ready(page, kind); for (let selected = 0; selected <= index; selected++) await choose(page, selected); await page.mouse.move(0, 0); await page.evaluate(() => document.activeElement?.blur()); values[kind] = await enlarge(page) }
-    check(JSON.stringify(values.published.quality) === JSON.stringify(values.source.quality), 'Enlarged discovery quality differs ' + viewport.width + ' ' + slug)
+    // Retain the baseline measurements; the authorised source must eliminate clipping rather than reproduce it.
     check(cleanQuality(values.source.quality, ['clippedText','textOutsideViewport','clippedControls','activeTabTextOutsideButton']), 'P4-03 enlarged source labels and controls must fit ' + viewport.width + ' ' + slug)
     const quality = values.published.quality
     if (quality.documentOverflow || quality.clippedText.length || quality.textOutsideViewport.length || quality.clippedControls.length || quality.activeTabTextOutsideButton.length) report.qualityFindings.push({ id: 'discovery-enlarged-' + viewport.width + '-' + slug, status: 'P4-03 authorised intrinsic tab sizing; source must eliminate the inherited clipping.', viewport, slug, published: quality, source: values.source.quality })

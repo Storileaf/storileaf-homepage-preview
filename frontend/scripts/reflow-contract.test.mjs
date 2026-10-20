@@ -38,3 +38,15 @@ test('P4-04 does not excuse changed text styling, motion or image transforms', (
   assert.equal(heroReflowStyle('root','transformOrigin','160px 500px','160px 550px',[0,0,320,1000],[0,0,320,1100]),true)
   assert.equal(heroReflowStyle('root','transformOrigin','160px 500px','150px 550px',[0,0,320,1000],[0,0,320,1100]),false)
 })
+
+
+test('discovery underline width must follow its own tab with unchanged insets', async () => {
+  const { discoveryUnderlineWidthEquivalent } = await import('./reflow-contract.mjs')
+  const before = { geometry: { width: 147 }, pseudo: { width: '125px', left: '11px', right: '11px' } }
+  const after = { geometry: { width: 216.563 }, pseudo: { width: '194.562px', left: '11px', right: '11px' } }
+  assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, after), true)
+  assert.equal(discoveryUnderlineWidthEquivalent('photo', before, after), false)
+  assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, { ...after, pseudo: { ...after.pseudo, width: '190px' } }), false)
+  assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, { ...after, pseudo: { ...after.pseudo, left: '12px' } }), false)
+  assert.equal(discoveryUnderlineWidthEquivalent('tab2', before, null), false)
+})

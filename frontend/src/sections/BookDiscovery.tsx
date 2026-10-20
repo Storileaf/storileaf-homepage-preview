@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useDiscoveryTextFit } from './useDiscoveryTextFit'
 import * as Tabs from '@radix-ui/react-tabs'
 import { ActionLink } from '../components/ActionLink'
 import { Container, Section } from '../components/Layout'
@@ -24,7 +25,7 @@ function useDiscoveryReducedMotion() {
 
 export function BookDiscovery() {
   const [selected, setSelected] = useState('life-story')
-  const tabRail = useRef<HTMLDivElement>(null)
+  const tabRail = useDiscoveryTextFit()
   const reduced = useDiscoveryReducedMotion()
   const heading = editorialTitle('home.discovery.title')
 
