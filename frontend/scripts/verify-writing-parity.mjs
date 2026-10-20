@@ -27,7 +27,7 @@ const report = {
   sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   createdAt: new Date().toISOString(), focused, requestedWidths: widths,
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01 }, widths: [], states: [], captures: [], nativePaint: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
-  captureMethod: 'Native scrolled viewport crops cover the writing section in overlapping tiles if needed. No full-height offscreen raster is used. The unrelated fixed header and every descendant are hidden only during clean section captures, then restored; unchanged context captures keep it. Dialog crops use the actual fixed viewport geometry and its own native scrolling. Hover and focus captures assert their state immediately before and after. Native entrance animations may be paused at a common recorded phase without replacing their definitions. Visible default device compositions and the 901px diagnostic retain fixed native paint samples at initial, 250ms and 750ms after preparation. The predetermined last sample is compared, and the last two must be byte stable. No sample is chosen by its agreement with the other page. Changed earlier samples, coordinates and font resource identities remain in the report and artifact.',
+  captureMethod: 'Native scrolled viewport crops cover the writing section in overlapping tiles if needed. No full-height offscreen raster is used. The unrelated fixed header and every descendant are hidden only during clean section captures, then restored; unchanged context captures keep it. Dialog crops use the actual fixed viewport geometry and its own native scrolling. Hover and focus captures assert their state immediately before and after. Native entrance animations may be paused at a common recorded phase without replacing their definitions. Reduced-motion default desktop compositions and the 901px diagnostic retain one full-section capture before device preparation, then one unconditional native device-band observation, followed by the fixed full-section paint samples at initial, 250ms and 750ms. Preparation images are diagnostic and retain their hashes and native/layer states; viewport, scroll, DPR, document bounds and writing geometry/styles must stay unchanged. Layer changes are observed without waiting for an expected arrangement. The predetermined last full-section sample is compared, and the last two must be byte stable. No sample is chosen by its agreement with the other page. Changed earlier samples, coordinates and font resource identities remain in the report and artifact.',
   computedStyleMethod: 'Raw computed styles and measured boxes remain in snapshots. Explicit scoped animation names map to their published names. Transform-origin coordinates use the unchanged geometry tolerance. Automatic horizontal margins are compared only for identified centred writing blocks with native Typed OM evidence, unchanged boxes and measured parent content gaps.',
   qualityMeasurement: 'The clipped field records text range extents outside their own element box or the viewport. It is an inspection signal rather than proof of visibly cut glyphs. The 320px enlarged heading can extend into dialog padding while remaining inside the dialog border; screenshots and container overflow observations distinguish this from actual clipping.',
   animationNames,
@@ -227,8 +227,71 @@ async function pixelCompare(files, label) {
   }, data)
   await p.close(); check(pixels.ratio !== null && pixels.ratio <= .01, label + ' pixels ' + JSON.stringify(pixels)); return pixels
 }
+async function prepareNativePaint(p, evidence, clip) {
+  const preparation = { captures: [], states: [], layerEvents: [], droppedLayerEvents: 0, layerNodes: {} }, started = Date.now()
+  evidence.preparation = preparation
+  const client = await p.context().newCDPSession(p)
+  let layers = [], phase = 'enable'
+  const onLayers = event => {
+    layers = event.layers || []
+    if (preparation.layerEvents.length < 64) preparation.layerEvents.push({ phase, elapsedMilliseconds: Date.now() - started, layers })
+    else preparation.droppedLayerEvents++
+  }
+  const read = async label => {
+    const native = await p.evaluate(({ queries, styleKeys }) => {
+      const rect = e => { const r = e.getBoundingClientRect(); return [r.x, r.y, r.width, r.height] }
+      const dimensions = e => ({ rect: rect(e), client: [e.clientWidth, e.clientHeight], scroll: [e.scrollWidth, e.scrollHeight] })
+      const root = document.querySelector('#writing-space'), visual = visualViewport
+      return {
+        viewport: [innerWidth, innerHeight], visualViewport: visual ? [visual.width, visual.height, visual.offsetLeft, visual.offsetTop, visual.pageLeft, visual.pageTop, visual.scale] : null,
+        scroll: [scrollX, scrollY], dpr: devicePixelRatio, document: dimensions(document.documentElement), body: dimensions(document.body),
+        reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, runningAnimations: root.getAnimations({ subtree: true }).filter(a => a.playState === 'running').map(a => a.animationName || a.transitionProperty),
+        fontStatus: document.fonts.status, documentState: document.readyState,
+        nodes: Object.fromEntries(queries.map(([key, selector]) => [key, [...document.querySelectorAll(selector)].map(e => {
+          const s = getComputedStyle(e)
+          return { rect: rect(e), style: Object.fromEntries(styleKeys.map(k => [k, s[k]])) }
+        })]))
+      }
+    }, { queries: sectionQueries, styleKeys: [...styleKeys, 'filter', 'backdropFilter', 'willChange', 'visibility', 'contain', 'isolation'] })
+    const state = { label, elapsedMilliseconds: Date.now() - started, native, layers }
+    preparation.states.push(state)
+    return state
+  }
+  client.on('LayerTree.layerTreeDidChange', onLayers)
+  try {
+    await client.send('LayerTree.enable'); await twoFrames(p)
+    const before = await read('before')
+    check(before.native.reducedMotion && !before.native.runningAnimations.length, evidence.label + ' ' + evidence.kind + ' native device preparation requires settled reduced motion')
+    check(before.layers.length > 0, evidence.label + ' ' + evidence.kind + ' native device preparation layer provenance')
+    const stage = before.native.nodes.stage[0].rect, y = Math.max(0, Math.floor(stage[1]))
+    const deviceClip = { x: 0, y, width: before.native.viewport[0], height: Math.min(before.native.viewport[1], Math.ceil(stage[1] + stage[3])) - y }
+    if (stage[2] <= 0 || deviceClip.height <= 0) throw new Error(evidence.label + ' native device preparation requires a visible device band')
+    for (const [name, captureClip] of [['before-device-preparation', clip], ['device-observation', deviceClip]]) {
+      phase = name
+      const file = evidence.kind + '-' + evidence.label + '-tile-' + evidence.tile + '-' + name + '.png'
+      const bytes = await p.screenshot({ path: path.join(out, file), clip: captureClip, caret: 'hide' })
+      preparation.captures.push({ file, sha256: hash(bytes), clip: captureClip, caret: 'hide', elapsedMilliseconds: Date.now() - started })
+      const after = await read('after-' + name), differences = Object.keys(before.native).filter(k => k !== 'nodes' && JSON.stringify(before.native[k]) !== JSON.stringify(after.native[k]))
+      for (const key of Object.keys(before.native.nodes)) if (JSON.stringify(before.native.nodes[key]) !== JSON.stringify(after.native.nodes[key])) differences.push('nodes.' + key)
+      after.differences = differences
+      check(!differences.length, evidence.label + ' ' + evidence.kind + ' native device preparation changed ' + differences.join(', ') + ' after ' + name)
+    }
+    phase = 'describe-observed-layers'
+    for (const backendNodeId of new Set(preparation.states.flatMap(s => s.layers).filter(l => l.backendNodeId).map(l => l.backendNodeId))) {
+      const { node } = await client.send('DOM.describeNode', { backendNodeId, depth: 0 })
+      preparation.layerNodes[backendNodeId] = { nodeType: node.nodeType, nodeName: node.nodeName, attributes: node.attributes || [] }
+    }
+  } catch (error) { preparation.error = String(error); throw error }
+  finally {
+    client.off('LayerTree.layerTreeDidChange', onLayers)
+    try { await client.send('LayerTree.disable') } finally { await client.detach() }
+  }
+}
 async function fixedNativePaint(p, { kind, label, tile, selector, clip, file }) {
-  const evidence = { kind, label, tile, fixedTimes: [0, 250, 750], finalSampleIndex: 2, samples: [] }, start = Date.now()
+  const evidence = { kind, label, tile, fixedTimes: [0, 250, 750], finalSampleIndex: 2, samples: [] }
+  report.nativePaint.push(evidence)
+  await prepareNativePaint(p, evidence, clip)
+  const start = Date.now()
   let finalBytes
   for (const [index, plannedMilliseconds] of evidence.fixedTimes.entries()) {
     const remaining = plannedMilliseconds - (Date.now() - start)
@@ -244,7 +307,6 @@ async function fixedNativePaint(p, { kind, label, tile, selector, clip, file }) 
   }
   evidence.finalTwoStable = evidence.samples[1].sha256 === evidence.samples[2].sha256
   check(evidence.finalTwoStable, label + ' ' + kind + ' fixed native paint samples 1 and 2 are not stable')
-  report.nativePaint.push(evidence)
   await fs.writeFile(path.join(out, file), finalBytes)
 }
 async function capture(ps, label, { dialog = false, context = false, assertState } = {}) {
