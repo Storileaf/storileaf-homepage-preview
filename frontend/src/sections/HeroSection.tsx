@@ -6,6 +6,7 @@ import { Container } from '../components/Layout'
 import { Heading, Text } from '../components/Typography'
 import { approvedCopy } from '../content'
 import { useMediaReducedMotion } from './useMediaReducedMotion'
+import { useProgressionTextFit } from './useProgressionTextFit'
 
 type HeroStyle = CSSProperties & { '--tile-angle'?: string; '--slide-direction'?: number }
 
@@ -33,6 +34,7 @@ function Chevron({ previous = false }: { previous?: boolean }) {
 
 /** Reconstruct the published hero without changing its independent motion states. */
 export function HeroSection({ booksHref, samplesHref }: { booksHref: string; samplesHref: string }) {
+  const progressionRef = useProgressionTextFit()
   const [active, setActive] = useState(0)
   const [previous, setPrevious] = useState<number | null>(null)
   const [direction, setDirection] = useState(1)
@@ -114,7 +116,7 @@ export function HeroSection({ booksHref, samplesHref }: { booksHref: string; sam
     <div className="hero-orbit-fade" aria-hidden="true" />
     <Container className="hero-intro">
       <Heading as="h1" variant="hero" id="hero-title">{title}<em>{emphasis}</em></Heading>
-      <div className="hero-progression" aria-label={approvedCopy('home.hero.progression.label')}>
+      <div className="hero-progression" ref={progressionRef} aria-label={approvedCopy('home.hero.progression.label')}>
         {hero.progression.map((step, index) => <Fragment key={step.number}>
           {index > 0 && <i aria-hidden="true">→</i>}
           <span><b>{step.number}</b>{' '}{approvedCopy(step.copy_id)}</span>
