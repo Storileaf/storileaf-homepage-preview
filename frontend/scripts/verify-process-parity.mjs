@@ -193,9 +193,19 @@ try{
   for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
     const p=await newPage('source',viewport);await p.evaluate(()=>scrollTo({top:0,behavior:'instant'}));const header=p.locator('header a[href="#how-it-works"]').first()
     if(await header.isVisible())await header.click();else{await p.getByRole('button',{name:'Open navigation',exact:true}).click();await p.locator('[role="dialog"] a[href="#how-it-works"]').click();await p.locator('[role="dialog"]').waitFor({state:'hidden'})}
-    await p.waitForFunction(()=>location.hash==='#how-it-works');await p.waitForTimeout(700)
+    await p.waitForFunction(()=>location.hash==='#how-it-works')
+    // Native smooth-scroll duration depends on travel distance. Wait for the
+    // actual offset, not an arbitrary elapsed delay. No source style is changed.
+    const landingStarted=Date.now();let reachedOffset=true
+    try { await p.waitForFunction(()=>{
+      const e=document.getElementById('how-it-works'),r=e.getBoundingClientRect()
+      const expected=parseFloat(getComputedStyle(e).scrollMarginTop)+parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)
+      return Math.abs(r.top-expected)<1.1
+    },undefined,{timeout:5000}) } catch { reachedOffset=false }
+    await settled(p)
     const landing=await p.locator('#how-it-works').evaluate(e=>({top:e.getBoundingClientRect().top,expected:parseFloat(getComputedStyle(e).scrollMarginTop)+parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop),unique:document.querySelectorAll('#how-it-works').length,current:[...document.querySelectorAll('a[href="#how-it-works"]')].some(e=>e.getAttribute('aria-current')==='page')}))
-    check(Math.abs(landing.top-landing.expected)<2&&landing.unique===1&&!landing.current,'How it works actual header landing '+viewport.width)
+    landing.elapsedMilliseconds=Date.now()-landingStarted;landing.reachedOffset=reachedOffset
+    check(reachedOffset&&Math.abs(landing.top-landing.expected)<2&&landing.unique===1&&!landing.current,'How it works actual header landing '+viewport.width+' '+JSON.stringify(landing))
     const actions=p.locator('.sl-process-bottom-actions a');check(await actions.nth(1).getAttribute('href')===content.records.at(-1).href,'Unchanged process gifting destination')
     await actions.first().click();await p.waitForFunction(()=>location.hash==='#books');await p.goBack();await p.waitForFunction(()=>location.hash==='#how-it-works');await p.goForward();await p.waitForFunction(()=>location.hash==='#books')
     report.states.push({label:'actual navigation and history '+viewport.width,landing,booksAndHistory:true,gift:await actions.nth(1).getAttribute('href')});await p.context().close()
