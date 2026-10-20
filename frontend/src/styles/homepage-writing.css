@@ -20,6 +20,13 @@
   font: var(--sl-weight-body) var(--sl-text-body)/var(--sl-leading-body) var(--sl-font-ui);
   -webkit-font-smoothing: antialiased;
 }
+/* Preserve inherited published text defaults within these source components. */
+.sl-writing-section,
+.sl-practice-dialog { tab-size: 4; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+.sl-writing-section::selection,
+.sl-writing-section ::selection,
+.sl-practice-dialog::selection,
+.sl-practice-dialog ::selection { background: hsl(var(--sl-writing-sage)); color: hsl(var(--sl-writing-forest)); }
 .sl-writing-section button,
 .sl-practice-dialog button,
 .sl-practice-dialog textarea { font: inherit; color: inherit; margin: 0; }
@@ -41,7 +48,8 @@
   overflow: hidden;
   background: radial-gradient(circle at 50% 58%, hsl(var(--sl-writing-gold) / .13), transparent 26%), linear-gradient(180deg, hsl(var(--sl-writing-paper)) 0%, hsl(var(--sl-writing-canvas)) 100%);
   padding-block: 112px 118px;
-  scroll-margin-top: 24px;
+  /* Final homepage ID rules supersede the earlier generic 24px section margin. */
+  scroll-margin-top: 116px;
 }
 .sl-writing-section::before { content: ''; position: absolute; left: -12vw; right: -12vw; top: 54%; height: 1px; background: linear-gradient(90deg, transparent, hsl(var(--sl-writing-teal) / .18), hsl(var(--sl-writing-gold) / .28), hsl(var(--sl-writing-teal) / .18), transparent); }
 .sl-writing-section .editorial-device-heading { max-width: 820px; margin-inline: auto; text-align: center; }
@@ -138,13 +146,13 @@
 .sl-practice-dialog #demo-privacy { color: hsl(var(--sl-writing-ink)); margin-top: 14px; font-size: 12px; line-height: 1.75; }
 .sl-practice-dialog .demo-label { margin-top: 27px; margin-bottom: 9px; font-size: 12px; font-weight: 650; display: block; }
 .sl-practice-dialog textarea { resize: vertical; border: 1px solid hsl(var(--sl-writing-border)); width: 100%; min-height: 180px; color: hsl(var(--sl-writing-forest)); background: var(--sl-white); font-family: var(--sl-font-display); border-radius: 5px; padding: 16px; font-size: 20px; line-height: 1.6; }
-.sl-practice-dialog textarea::placeholder { color: hsl(var(--sl-writing-ink)); }
+.sl-practice-dialog textarea::placeholder { color: hsl(var(--sl-writing-ink)); opacity: 1; }
 .sl-practice-dialog .demo-answer-meta { color: hsl(var(--sl-writing-ink)); justify-content: space-between; align-items: center; margin-top: 6px; font-size: 11px; display: flex; }
 .sl-practice-dialog .subtle-button { min-height: 44px; color: hsl(var(--sl-writing-teal)); background: none; border: none; padding: 8px; font-size: 12px; }
 .sl-practice-dialog .subtle-button:disabled { color: hsl(var(--sl-writing-ink)); }
 .sl-practice-dialog > .button { margin-top: 18px; }
 @media (max-width:720px) {
-  .sl-writing-section { padding-block: 84px 96px; }
+  .sl-writing-section { padding-block: 84px 96px; scroll-margin-top: 96px; }
   .sl-writing-section .centred-section-heading .section-lead { font-size: 15px; }
   .sl-writing-section .device-stage { display: none; margin-bottom: 24px; }
   .sl-writing-section .device-tablet { border-radius: 12px; padding: 6px 4px; }

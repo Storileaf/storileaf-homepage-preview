@@ -29,6 +29,7 @@ const report = {
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01 }, widths: [], states: [], captures: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
   captureMethod: 'Native scrolled viewport crops cover the writing section in overlapping tiles if needed. No full-height offscreen raster is used. The unrelated fixed header and every descendant are hidden only during clean section captures, then restored; unchanged context captures keep it. Dialog crops use the actual fixed viewport geometry and its own native scrolling. Hover and focus captures assert their state immediately before and after. Native entrance animations may be paused at a common recorded phase without replacing their definitions.',
   computedStyleMethod: 'Raw computed styles and measured boxes remain in snapshots. Explicit scoped animation names map to their published names. Transform-origin coordinates use the unchanged geometry tolerance. Automatic horizontal margins are compared only for identified centred writing blocks with native Typed OM evidence, unchanged boxes and measured parent content gaps.',
+  qualityMeasurement: 'The clipped field records text range extents outside their own element box or the viewport. It is an inspection signal rather than proof of visibly cut glyphs. The 320px enlarged heading can extend into dialog padding while remaining inside the dialog border; screenshots and container overflow observations distinguish this from actual clipping.',
   animationNames,
   limits: 'Chromium only. Touch is emulated. Enlargement doubles targeted font size and line height, not native browser zoom. No physical device, other engine, screen reader or accessibility certification is claimed. Device sample answers are static in the protected runtime; this suite does not invent an automatic typing animation.'
 }
@@ -51,7 +52,7 @@ for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/routes-Dr
   check(bytes.equals(execFileSync('git', ['show', baseline + ':' + file])), 'Protected baseline changed ' + file)
   report.protectedHashes[file] = hash(bytes)
 }
-const styleKeys = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing', 'textAlign', 'color', 'backgroundColor', 'backgroundImage', 'borderTopWidth', 'borderRightWidth', 'borderBottomWidth', 'borderLeftWidth', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'borderRadius', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft', 'gap', 'rowGap', 'columnGap', 'display', 'position', 'alignItems', 'justifyContent', 'flexDirection', 'flexShrink', 'opacity', 'boxShadow', 'overflow', 'overflowX', 'overflowY', 'zIndex', 'transform', 'transformOrigin', 'outlineWidth', 'outlineStyle', 'outlineColor', 'outlineOffset', 'animationName', 'animationDuration', 'animationDelay', 'animationTimingFunction', 'animationFillMode', 'transitionDuration', 'resize', 'containerType', 'objectFit', 'objectPosition']
+const styleKeys = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing', 'textAlign', 'color', 'backgroundColor', 'backgroundImage', 'borderTopWidth', 'borderRightWidth', 'borderBottomWidth', 'borderLeftWidth', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'borderRadius', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft', 'gap', 'rowGap', 'columnGap', 'display', 'position', 'alignItems', 'justifyContent', 'flexDirection', 'flexShrink', 'opacity', 'boxShadow', 'overflow', 'overflowX', 'overflowY', 'zIndex', 'transform', 'transformOrigin', 'outlineWidth', 'outlineStyle', 'outlineColor', 'outlineOffset', 'animationName', 'animationDuration', 'animationDelay', 'animationTimingFunction', 'animationFillMode', 'transitionDuration', 'resize', 'containerType', 'objectFit', 'objectPosition', 'scrollMarginTop', 'tabSize', 'webkitTextSizeAdjust', 'webkitTapHighlightColor']
 const textKeys = ['title', 'emphasis', 'lead', 'avatar', 'sidebar-strong', 'sidebar-span', 'sidebar-bottom', 'breadcrumb', 'question', 'helper', 'answer', 'screen-bottom-span', 'mobile-question', 'mobile-helper', 'trigger', 'dialog-title', 'privacy', 'label', 'textarea', 'meta-count', 'clear', 'close-action']
 const sectionQueries = [
   ['root', '#writing-space'], ['container', '#writing-space>div'], ['heading', '.editorial-device-heading'], ['title', '#devices-title'], ['emphasis', '#devices-title em'], ['lead', '.editorial-device-heading>p'],
@@ -112,6 +113,8 @@ async function snapshot(p, dialog = false) {
         const edges = { borderLeft: parseFloat(ps.borderLeftWidth), paddingLeft: parseFloat(ps.paddingLeft), borderRight: parseFloat(ps.borderRightWidth), paddingRight: parseFloat(ps.paddingRight) }
         if (s.transform === 'none' && ps.transform === 'none' && typed?.get('margin-left')?.toString() === 'auto' && typed?.get('margin-right')?.toString() === 'auto') result.autoMargins = { bounded: parent === root || root.contains(parent), available, typed: { marginLeft: 'auto', marginRight: 'auto' }, raw: { marginLeft: s.marginLeft, marginRight: s.marginRight }, rect: [r.x, r.y - origin.y, r.width, r.height], parentRect: [pr.x, pr.y - origin.y, pr.width, pr.height], parentEdges: edges, layout: { display: s.display, position: s.position, transform: s.transform, parentTransform: ps.transform }, measured: { marginLeft: r.left - pr.left - edges.borderLeft - edges.paddingLeft, marginRight: pr.right - edges.borderRight - edges.paddingRight - r.right } }
       }
+      if (textKeys.includes(key)) { const selected = getComputedStyle(el, '::selection'); result.selectionColours = { color: selected.color, backgroundColor: selected.backgroundColor } }
+      if (key === 'textarea') { const prompt = getComputedStyle(el, '::placeholder'); result.placeholderStyle = { color: prompt.color, opacity: prompt.opacity } }
       if (key === 'dialog' || key === 'textarea') result.references = refs(el)
       return result
     })]))
@@ -135,7 +138,7 @@ function compare(b, a, label, { enlarged = false } = {}) {
         if (auto?.equal && ['marginLeft', 'marginRight'].includes(prop)) continue
         differences.push(`${key}[${i}].style.${prop} ${x.style[prop]} versus ${y.style[prop]}`)
       }
-      for (const prop of ['text', 'value', 'placeholder', 'maxLength', 'rows', 'disabled', 'label', 'role', 'hidden', 'expanded', 'state', 'src', 'alt', 'natural', 'references']) if (JSON.stringify(x[prop]) !== JSON.stringify(y[prop])) differences.push(`${key}[${i}].${prop}`)
+      for (const prop of ['text', 'value', 'placeholder', 'maxLength', 'rows', 'disabled', 'label', 'role', 'hidden', 'expanded', 'state', 'src', 'alt', 'natural', 'references', 'selectionColours', 'placeholderStyle']) if (JSON.stringify(x[prop]) !== JSON.stringify(y[prop])) differences.push(`${key}[${i}].${prop}`)
     }
   }
   if (!b.ids.every(n => n === 1) || !a.ids.every(n => n === 1)) differences.push('unique IDs')
@@ -227,13 +230,13 @@ async function typing(p, text) {
 }
 async function quality(p, selector) {
   return p.locator(selector).evaluate(root => {
-    const clipped = []
+    const clipped = [], rootBox = root.getBoundingClientRect()
     for (const el of root.querySelectorAll('h2,h3,p,label,button,.demo-answer-meta>span')) {
       if (!el.getBoundingClientRect().width || el.closest('[aria-hidden="true"]')) continue
       const range = document.createRange(); range.selectNodeContents(el); const box = el.getBoundingClientRect()
       for (const r of range.getClientRects()) if (r.width > 0 && (r.left < box.left - 1 || r.right > box.right + 1 || r.left < 0 || r.right > innerWidth + 1)) clipped.push({ text: el.textContent.trim(), left: r.left, right: r.right, boxLeft: box.left, boxRight: box.right })
     }
-    return { clipped, documentOverflow: document.documentElement.scrollWidth > innerWidth + 1, ownHorizontalOverflow: root.scrollWidth > root.clientWidth + 1, scrollHeight: root.scrollHeight, clientHeight: root.clientHeight, ariaReferences: ['aria-labelledby', 'aria-describedby'].map(attribute => ({ attribute, ids: (root.getAttribute(attribute) || '').split(/\s+/).filter(Boolean).map(id => ({ id, exists: Boolean(document.getElementById(id)) })) })) }
+    return { clipped, rootBounds: { left: rootBox.left, right: rootBox.right, top: rootBox.top, bottom: rootBox.bottom }, documentOverflow: document.documentElement.scrollWidth > innerWidth + 1, ownHorizontalOverflow: root.scrollWidth > root.clientWidth + 1, scrollHeight: root.scrollHeight, clientHeight: root.clientHeight, ariaReferences: ['aria-labelledby', 'aria-describedby'].map(attribute => ({ attribute, ids: (root.getAttribute(attribute) || '').split(/\s+/).filter(Boolean).map(id => ({ id, exists: Boolean(document.getElementById(id)) })) })) }
   })
 }
 
@@ -270,6 +273,9 @@ try {
     for (const p of Object.values(ps)) await openDialog(p, 'keyboard')
     state.keyboardEntry = await pair(ps, 'dialog-keyboard-entry-' + width, true)
     state.keyboardEntry.rendered = await capture(ps, 'dialog-keyboard-entry-' + width, { dialog: true, assertState: p => p.getByRole('button', { name: 'Close writing example', exact: true }).evaluate(e => document.activeElement === e && e.matches(':focus-visible')) })
+    for (const p of Object.values(ps)) { await typing(p, '\tA familiar room.\n\tA memory of home.'); await p.getByTestId('demo-answer').press('Control+A') }
+    state.selectedText = await pair(ps, 'dialog-tabbed-selection-' + width, true)
+    state.selectedText.rendered = await capture(ps, 'dialog-tabbed-selection-' + width, { dialog: true, assertState: p => p.getByTestId('demo-answer').evaluate(e => document.activeElement === e && e.selectionStart === 0 && e.selectionEnd === e.value.length) })
     for (const [kind, p] of Object.entries(ps)) {
       const observations = []
       for (const text of ['A', '  one\n\t two   three  ', '   \n\t']) observations.push(await typing(p, text))

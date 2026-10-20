@@ -22,9 +22,11 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const report = {
   checkpoint: 'Package 3 Group 8 complete homepage assembly', baseline,
   sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
-  createdAt: new Date().toISOString(), focused, requiredWidths, widths: [], states: [], captures: [], preparation: [],
+  createdAt: new Date().toISOString(), focused, requiredWidths, widths: [], states: [], journeyAttempts: [], captures: [], preparation: [],
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01, nativeAnchorScroll: 1.1 },
   sourceHashes: {}, harnessHashes: {}, protectedHashes: {}, problems, qualityFindings,
+  retainedEquivalences: ['Gifting retains the Group 1 explicit warm paper underlay. Only the published transparent background versus the source rgb(250, 249, 247) is equivalent, provided the published nearest painted ancestor is that same opaque warm paper with no background image, the section gradients match and the native painted joins pass the unchanged pixel gate. Raw styles and ancestor paint remain recorded.'],
+  historyMethod: 'As in the retained discovery gate, Back must restore the exact native click-time URL and scroll position within 1.1 CSS pixels. A passive capture-phase listener records that position without changing the event. The earlier pre-interaction viewport is preserved separately because native focus can move it before activation. Target arrival and Forward retain their exact hash, uniqueness, visibility and computed native scroll-offset assertions. Partial journeys preserve diagnostics if any assertion or wait fails.',
   captureMethod: 'Unaligned absolute document geometry. Every section join is scrolled into the native viewport using the same integer document position on both pages. Actual sticky-header context is retained. Reduced-motion comparisons keep the published static photograph, ticker and cover arrangement. No visibility mask, padding adjustment, raster translation, response substitution or target CSS is applied. Full-page evidence consists of recorded section joins and retained component captures, not an assumed fully painted browser fullPage crop.',
   limits: 'Chromium only. The combined journey uses native pointer and keyboard interaction. Separate narrow-screen touch uses Chromium emulation. This suite does not claim native browser zoom, physical devices, other browser engines, screen-reader results or accessibility certification. Inherited enlargement findings retain their separate owners. Package 4 and founder acceptance remain separate gates.'
 }
@@ -56,7 +58,7 @@ async function recordFiles(dir) {
   }
 }
 await recordFiles('src'); await recordFiles('content')
-for (const file of ['package.json', 'package-lock.json', 'vite.config.ts']) report.sourceHashes[file] = hash(await fs.readFile(file))
+for (const file of ['index.html', 'package.json', 'package-lock.json', 'vite.config.ts']) report.sourceHashes[file] = hash(await fs.readFile(file))
 for (const file of ['scripts/verify-assembly-parity.mjs', 'scripts/browser-readiness.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
 for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/index-DO3Vh6An.js', 'assets/content-sections-CfrmOVRI.js', 'assets/routes-DrwDv2x2.js']) {
   const bytes = await fs.readFile('../' + file)
@@ -113,7 +115,12 @@ async function snapshot(page, kind) {
       const elements = [...document.querySelectorAll(query)]
       return [name, elements.map(el => {
         const css = getComputedStyle(el)
-        return { rect: rect(el), style: Object.fromEntries(measuredStyles.map(key => [key, css[key]])), id: el.id, heading: el.querySelector('h1,h2,h3')?.textContent.replace(/\s+/g, ' ').trim() }
+        const ancestorPaint = []
+        if (name === 'gifting') for (let parent = el.parentElement; parent; parent = parent.parentElement) {
+          const style = getComputedStyle(parent)
+          ancestorPaint.push({ tag: parent.tagName, id: parent.id, backgroundColor: style.backgroundColor, backgroundImage: style.backgroundImage, opacity: style.opacity })
+        }
+        return { rect: rect(el), style: Object.fromEntries(measuredStyles.map(key => [key, css[key]])), id: el.id, heading: el.querySelector('h1,h2,h3')?.textContent.replace(/\s+/g, ' ').trim(), ...(name === 'gifting' ? { ancestorPaint } : {}) }
       })]
     }))
     const sectionNames = new Map(sectionOrder.map(name => [document.querySelector(regions.find(([key]) => key === name)[1]), name]))
@@ -130,7 +137,7 @@ async function snapshot(page, kind) {
   }, { regions: regions(kind), measuredStyles, sectionOrder, localIds }))
 }
 function compare(before, after, label) {
-  const differences = []; let maximumGeometry = 0
+  const differences = [], equivalences = []; let maximumGeometry = 0
   for (const [name, values] of Object.entries(before.nodes)) {
     const next = after.nodes[name]
     if (values.length !== 1 || next?.length !== 1) { differences.push(name + ' must render exactly once'); continue }
@@ -139,7 +146,21 @@ function compare(before, after, label) {
       const delta = Math.abs(a.rect[index] - b.rect[index]); maximumGeometry = Math.max(maximumGeometry, delta)
       if (delta > .15) differences.push(name + '.rect[' + index + '] ' + a.rect[index] + ' versus ' + b.rect[index])
     }
-    for (const key of ['style', 'heading', 'id']) if (JSON.stringify(a[key]) !== JSON.stringify(b[key])) differences.push(name + '.' + key)
+    for (const property of measuredStyles) {
+      if (a.style[property] === b.style[property]) continue
+      const paintedAncestorIndex = a.ancestorPaint?.findIndex(parent => parent.backgroundColor !== 'rgba(0, 0, 0, 0)' || parent.backgroundImage !== 'none') ?? -1
+      const paintedAncestor = a.ancestorPaint?.[paintedAncestorIndex]
+      if (name === 'gifting' && property === 'backgroundColor'
+        && a.style.backgroundColor === 'rgba(0, 0, 0, 0)' && b.style.backgroundColor === 'rgb(250, 249, 247)'
+        && a.style.backgroundImage === b.style.backgroundImage && a.style.backgroundImage !== 'none'
+        && paintedAncestor?.backgroundColor === b.style.backgroundColor && paintedAncestor.backgroundImage === 'none'
+        && a.ancestorPaint.slice(0, paintedAncestorIndex + 1).every(parent => parent.opacity === '1')) {
+        equivalences.push({ region: name, property, published: a.style[property], source: b.style[property], paintedAncestor, reason: 'Retained Group 1 warm paper underlay equivalence; same gradient and native painted join comparison remain required.' })
+        continue
+      }
+      differences.push(name + '.style.' + property + ' ' + a.style[property] + ' versus ' + b.style[property])
+    }
+    for (const key of ['heading', 'id']) if (JSON.stringify(a[key]) !== JSON.stringify(b[key])) differences.push(name + '.' + key)
   }
   for (const kind of ['published', 'source']) {
     const value = kind === 'published' ? before : after
@@ -162,7 +183,7 @@ function compare(before, after, label) {
   const externalFragments = value => value.hashLinks.filter(link => !localIds.includes(link.hash.slice(1))).map(({ text, href }) => ({ text, href }))
   check(JSON.stringify(externalFragments(before)) === JSON.stringify(externalFragments(after)), label + ' approved outward fragment destinations remain unchanged')
   check(!differences.length, label + ' absolute assembly ' + differences.join('; '))
-  return { maximumGeometry, differences }
+  return { maximumGeometry, differences, equivalences }
 }
 async function measure(pages, label) {
   const published = await snapshot(pages.published, 'published'), source = await snapshot(pages.source, 'source')
@@ -237,8 +258,30 @@ async function anchor(page, id, label) {
   check(result.count === 1 && result.visible, label + ' target visible and unique ' + id)
   return result
 }
-async function journey(page, kind, viewport, { touch = false } = {}) {
-  const events = [], activate = async locator => touch ? locator.tap() : locator.click()
+async function navigationState(page, ids = []) {
+  const read = () => page.evaluate(ids => {
+    const rect = el => { if (!el) return null; const r = el.getBoundingClientRect(); return { viewport: [r.x, r.y, r.width, r.height], document: [r.x + scrollX, r.y + scrollY, r.width, r.height] } }
+    const active = document.activeElement
+    const targets = Object.fromEntries([...new Set([...ids, location.hash.slice(1)])].filter(Boolean).map(id => {
+      const elements = [...document.querySelectorAll('[id="' + CSS.escape(id) + '"]')], el = elements[0]
+      return [id, { count: elements.length, rect: rect(el), scrollMarginTop: el ? getComputedStyle(el).scrollMarginTop : null }]
+    }))
+    return {
+      url: location.href, hash: location.hash, scroll: [scrollX, scrollY], historyLength: history.length, scrollRestoration: history.scrollRestoration,
+      viewport: [innerWidth, innerHeight], document: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
+      rootScrollPaddingTop: getComputedStyle(document.documentElement).scrollPaddingTop,
+      header: rect(document.querySelector('.site-header,.sl-header')), targets,
+      focus: { tag: active?.tagName, id: active?.id, testid: active?.getAttribute('data-testid'), label: active?.getAttribute('aria-label'), text: active?.textContent?.replace(/\s+/g, ' ').trim().slice(0, 160), rect: rect(active) },
+      faqs: [...document.querySelectorAll('#questions details')].map(el => el.open)
+    }
+  }, ids)
+  return { ...(await settledSnapshot(page, read)), capturedAt: new Date().toISOString() }
+}
+async function journey(page, kind, viewport, { touch = false, motion = 'reduce' } = {}) {
+  const attempt = { kind, viewport, touch, motion, status: 'running', startedAt: new Date().toISOString(), events: [] }
+  report.journeyAttempts.push(attempt)
+  const events = attempt.events, activate = async locator => touch ? locator.tap() : locator.click()
+  try {
   const header = page.locator(selector(kind, 'header'))
   await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await frames(page)
   if (viewport.width <= 1130) {
@@ -299,22 +342,59 @@ async function journey(page, kind, viewport, { touch = false } = {}) {
   await activate(ending.getByRole('link', { name: 'StoriLeaf home', exact: true }))
   await page.waitForFunction(() => location.hash === '#top' && scrollY <= 1)
   const anchors = []
+  events.push({ step: 'assembled footer anchors and history', anchors })
   for (const [text, id] of [['See inside', 'samples'], ['How it works', 'how-it-works'], ['Resources', 'resources'], ['Common questions', 'questions']]) {
     const link = ending.getByRole('link', { name: text, exact: true })
     await link.scrollIntoViewIfNeeded(); await frames(page)
-    const before = { url: page.url(), scrollY: await page.evaluate(() => scrollY) }
-    await activate(link); const reached = await anchor(page, id, kind)
+    const preInteraction = await navigationState(page, [id])
+    const entry = { text, id, phase: 'before activation', preInteraction }
+    anchors.push(entry)
+    // The retained discovery gate already distinguishes the pre-interaction
+    // viewport from native pointer focus at click time. Observe without changing
+    // the event, focus, scroll or browser history behaviour.
+    await link.evaluate((element, id) => {
+      window.__assemblyHistoryClick = null
+      element.addEventListener('click', () => {
+        const rect = el => { if (!el) return null; const r = el.getBoundingClientRect(); return [r.x, r.y, r.width, r.height] }
+        window.__assemblyHistoryClick = {
+          url: location.href, scroll: [scrollX, scrollY], historyLength: history.length, scrollRestoration: history.scrollRestoration,
+          document: [document.documentElement.scrollWidth, document.documentElement.scrollHeight], viewport: [innerWidth, innerHeight],
+          link: { href: element.href, rect: rect(element) }, target: { id, rect: rect(document.getElementById(id)) },
+          focus: { tag: document.activeElement?.tagName, id: document.activeElement?.id, rect: rect(document.activeElement) }
+        }
+      }, { once: true, capture: true, passive: true })
+    }, id)
+    await activate(link); const before = entry.before = await page.evaluate(() => window.__assemblyHistoryClick)
+    check(Boolean(before) && before.url === preInteraction.url, kind + ' native footer anchor click observed ' + id)
+    if (!before) throw new Error(kind + ' native footer anchor click was not recorded ' + id)
+    entry.phase = 'reaching target'; entry.reached = await anchor(page, id, kind)
+    entry.reachedNavigation = await navigationState(page, [id, new URL(before.url).hash.slice(1)])
+    entry.phase = 'browser Back'
     await page.goBack(); await page.waitForFunction(url => location.href === url, before.url)
-    await page.waitForFunction(y => Math.abs(scrollY - y) <= 1.1, before.scrollY)
-    const back = { url: page.url(), scrollY: await page.evaluate(() => scrollY) }
-    await page.goForward(); const forward = await anchor(page, id, kind)
-    anchors.push({ text, before, reached, back, forward })
+    entry.backSettled = await navigationState(page, [id, new URL(before.url).hash.slice(1)])
+    entry.expectedBackScroll = before.scroll[1]
+    entry.backScrollDifference = entry.backSettled.scroll[1] - before.scroll[1]
+    await page.waitForFunction(y => Math.abs(scrollY - y) <= 1.1, before.scroll[1])
+    entry.back = await navigationState(page, [id, new URL(before.url).hash.slice(1)])
+    entry.phase = 'browser Forward'
+    await page.goForward(); entry.forward = await anchor(page, id, kind)
+    entry.forwardNavigation = await navigationState(page, [id, new URL(before.url).hash.slice(1)])
+    entry.phase = 'complete'
   }
-  events.push({ step: 'assembled footer anchors and history', anchors })
   await activate(firstFaq.locator('summary')); await activate(secondFaq.locator('summary'))
   await activate(ending.getByRole('link', { name: 'StoriLeaf home', exact: true })); await page.waitForFunction(() => location.hash === '#top' && scrollY <= 1)
   events.push({ step: 'return home', state: await released(page, kind + ' final complete journey') })
+  attempt.status = 'complete'
   return events
+  } catch (error) {
+    attempt.status = 'failed'; attempt.failure = error.stack || String(error)
+    attempt.finalNavigation = await navigationState(page, ['top', 'samples', 'how-it-works', 'resources', 'questions']).catch(diagnosticError => ({ error: String(diagnosticError) }))
+    throw error
+  } finally {
+    attempt.completedAt = new Date().toISOString()
+    attempt.file = 'journey-' + viewport.width + 'x' + viewport.height + '-' + motion + '-' + (touch ? 'touch' : 'pointer') + '-' + kind + '.json'
+    await fs.writeFile(path.join(out, attempt.file), JSON.stringify(attempt, null, 2) + '\n')
+  }
 }
 async function pinnedAssembly(pages, width) {
   const sequence = [], captures = []
@@ -364,7 +444,7 @@ try {
     for (const motion of ['reduce', 'no-preference']) {
       const pages = await pair(viewport, { motion }), entries = {}
       try {
-        for (const [kind, page] of Object.entries(pages)) entries[kind] = await journey(page, kind, viewport)
+        for (const [kind, page] of Object.entries(pages)) entries[kind] = await journey(page, kind, viewport, { motion })
         report.states.push({ state: 'combined page journey', viewport, motion, ...entries })
         report.states.push(await measure(pages, viewport.width + '-' + motion + '-after-journey'))
       } finally { await closePair(pages) }
@@ -393,6 +473,14 @@ finally {
   if (browser) await browser.close()
   report.completedAt = new Date().toISOString()
   report.completeWidthSet = !focused && JSON.stringify(report.widths.map(row => row.width)) === JSON.stringify(requiredWidths)
+  report.stateCoverage = {
+    completedJourneyAttempts: report.journeyAttempts.filter(attempt => attempt.status === 'complete').length,
+    requiredJourneyAttempts: focused ? 8 : 10,
+    pinnedWidths: report.states.filter(state => state.state === 'pinned progression at assembled absolute positions').map(state => state.width),
+    shortScreens: report.states.filter(state => state.state === 'short screen assembled geometry').map(state => state.viewport)
+  }
+  report.completeCheckpoint = report.completeWidthSet && report.stateCoverage.completedJourneyAttempts === 10
+    && JSON.stringify(report.stateCoverage.pinnedWidths) === JSON.stringify([1024, 1440]) && report.stateCoverage.shortScreens.length === 3 && !problems.length
   await fs.writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n')
   const html = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
   const cards = report.widths.flatMap(row => row.joins).map(join => '<section><h2>' + html(join.label) + '</h2><p>Native document scroll ' + join.requested + '. Changed pixel ratio ' + join.pixels.ratio + '.</p><div class="pair">' + join.files.map((file, index) => '<figure><figcaption>' + (index ? 'React' : 'Published') + '</figcaption><a href="' + file + '"><img loading="lazy" src="' + file + '"></a></figure>').join('') + '</div></section>').join('')
