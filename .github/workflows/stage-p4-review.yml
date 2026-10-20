@@ -28,7 +28,10 @@ jobs:
             const source='dbfac4a24b1fc16e1d440ac499012a76b27ab0c9';
             const out=path.join(process.env.RUNNER_TEMP,'p4-review');fs.mkdirSync(out,{recursive:true});
             const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
-            const required=['review-editorial-links.yml','verify-footer-type.yml','validate-public-source.yml','review-package2.yml','verify-p4-reflow.yml','verify-writing-parity.yml','verify-process-parity.yml','verify-group1-parity.yml','verify-hero-parity.yml','verify-assembly-parity.yml','verify-media-parity.yml','verify-group2-parity.yml','verify-shared-parity.yml','verify-discovery-parity.yml'];
+            // The standalone editorial workflow only triggers on styles/its own paths.
+            // This last candidate changes discovery TS, not styles. Require the exact
+            // retained editorial step on this candidate rather than await a nonexistent run.
+            const required=['verify-footer-type.yml','validate-public-source.yml','review-package2.yml','verify-p4-reflow.yml','verify-writing-parity.yml','verify-process-parity.yml','verify-group1-parity.yml','verify-hero-parity.yml','verify-assembly-parity.yml','verify-media-parity.yml','verify-group2-parity.yml','verify-shared-parity.yml','verify-discovery-parity.yml'];
             let runs=[];
             for(let i=0;i<108;i++){
               runs=(await github.rest.actions.listWorkflowRunsForRepo({...context.repo,head_sha:source,per_page:100})).data.workflow_runs;
@@ -37,7 +40,7 @@ jobs:
               if(tests.length===required.length&&tests.every(r=>r.status==='completed'))break;
               await new Promise(resolve=>setTimeout(resolve,10000));
             }
-            const record={sourceCommit:source,recordedAt:new Date().toISOString(),runs:[],reports:[]};
+            const record={sourceCommit:source,recordedAt:new Date().toISOString(),runs:[],reports:[],editorialCoverage:'The standalone editorial workflow is path-filtered for this TS-only final correction. Its unchanged comparison command is required to pass in the candidate Group 1 retained editorial step. No browser test is rerun or omitted here.'};
             const wanted=new Set(['p4-reflow-verification','homepage-discovery-parity','homepage-shared-parity','homepage-hero-parity','homepage-writing-parity','homepage-assembly-parity','homepage-group1-parity']);
             for(const run of runs){
               const jobs=(await github.rest.actions.listJobsForWorkflowRun({...context.repo,run_id:run.id,per_page:100})).data.jobs;
@@ -49,7 +52,7 @@ jobs:
                 const archive=path.join(out,artifact.name+'.zip');fs.writeFileSync(archive,body);
                 const directory=path.join(out,artifact.name);fs.mkdirSync(directory,{recursive:true});
                 cp.execFileSync('python3',['-c',`import sys,zipfile,pathlib
-            z=zipfile.ZipFile(sys.argv[1]); d=pathlib.Path(sys.argv[2]); keep={'enlarged-candidate-header-1440-0.png','enlarged-before-header-1440-0.png','enlarged-candidate-gifting-320-0.png','enlarged-before-gifting-320-0.png','enlarged-candidate-footer-320-0.png','enlarged-candidate-footer-320-1.png','enlarged-candidate-footer-320-2.png','enlarged-before-footer-320-0.png','enlarged-candidate-tabs-320-0.png','enlarged-before-tabs-320-0.png','enlarged-candidate-progression-320-0.png','enlarged-before-progression-320-0.png','enlarged-candidate-progression-481-0.png','enlarged-candidate-progression-721-0.png','enlarged-candidate-progression-768-0.png','normal-before-header-361-0.png','normal-candidate-header-361-0.png','normal-before-footer-1440-0.png','normal-candidate-footer-1440-0.png','normal-before-progression-820-0.png','normal-candidate-progression-820-0.png'}
+            z=zipfile.ZipFile(sys.argv[1]); d=pathlib.Path(sys.argv[2]); keep={'enlarged-candidate-header-1440-0.png','enlarged-before-header-1440-0.png','enlarged-candidate-gifting-320-0.png','enlarged-before-gifting-320-0.png','enlarged-candidate-footer-320-0.png','enlarged-candidate-footer-320-1.png','enlarged-candidate-footer-320-2.png','enlarged-before-footer-320-0.png','enlarged-candidate-tabs-320-0.png','enlarged-before-tabs-320-0.png','enlarged-candidate-progression-320-0.png','enlarged-before-progression-320-0.png','enlarged-candidate-progression-481-0.png','enlarged-candidate-progression-721-0.png','enlarged-candidate-progression-768-0.png','normal-before-header-361-0.png','normal-candidate-header-361-0.png','normal-before-footer-1440-0.png','normal-candidate-footer-1440-0.png','normal-before-progression-820-0.png','normal-candidate-progression-820-0.png','comparison-enlarged-320-relationship-memoir.png','comparison-enlarged-320-celebrating-occasions.png','comparison-enlarged-1440-relationship-memoir.png','comparison-enlarged-1440-celebrating-occasions.png'}
             for n in z.namelist():
               if n.endswith('.json') or pathlib.Path(n).name in keep: (d/pathlib.Path(n).name).write_bytes(z.read(n))`,archive,directory]);
                 const reportPath=path.join(directory,'report.json');
@@ -60,6 +63,9 @@ jobs:
             }
             fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify(record,null,2));
             for(const file of required){const matching=runs.filter(r=>path.basename(r.path)===file);assert.equal(matching.length,1,file);assert.equal(matching[0].conclusion,'success',file);}
+            const group1=record.runs.find(r=>r.path.endsWith('/verify-group1-parity.yml'));
+            const editorial=group1.jobs.flatMap(j=>j.steps).find(s=>s.name==='Retain editorial action and footer typography comparisons');
+            assert(editorial);assert.equal(editorial.conclusion,'success','Candidate retained editorial comparison');
             const reflow=JSON.parse(fs.readFileSync(path.join(out,'p4-reflow-verification/report.json'),'utf8'));
             assert.equal(reflow.sourceCommit,source);assert.deepEqual(reflow.failures,[]);assert.equal(reflow.widths.length,20);
             const testRun=runs.find(r=>r.path.endsWith('/verify-p4-reflow.yml'));
@@ -69,7 +75,7 @@ jobs:
             const archive=path.join(out,'tested-build.zip');fs.writeFileSync(archive,bytes);
             cp.execFileSync('python3',['-c','import sys,zipfile,pathlib; z=zipfile.ZipFile(sys.argv[1]); assert all(not n.startswith("/") and ".." not in pathlib.PurePosixPath(n).parts for n in z.namelist()); z.extractall(sys.argv[2])',archive,path.join(out,'build')]);
             fs.writeFileSync(path.join(out,'build-identity.json'),JSON.stringify({sourceCommit:source,runId:testRun.id,artifactId:build.id,digest:build.digest},null,2));
-            core.info('All 14 candidate verification workflows passed. Exact tested build retained; no publication yet.');
+            core.info('All 13 candidate verification workflows and the retained editorial step passed. Exact tested build retained; no publication yet.');
       - name: Stage a review-only Git tree and durable verification files
         uses: actions/github-script@v7
         with:
@@ -90,7 +96,7 @@ jobs:
             const provenance={purpose:'Founder-authorised separate review refresh for P4-01 through P4-04. Not root cutover or production release.',...identity,artifactDigest:identity.digest,preparedFrom:head,preparedAt:new Date().toISOString(),destination:'react-review/',protectedBaseline:'e9550069d91b5a9b48ade43fcfb0a71bbed2875b',sha256,limits:'The verified reflow snapshot is fixed. P4-05 spoken announcements, P4-06, pricing and wider browser/device coverage remain separate.'};
             await add('react-review/BUILD_PROVENANCE.json',Buffer.from(JSON.stringify(provenance,null,2)+'\n'));
             const checks=fs.readFileSync(path.join(out,'checks.json'));await add('qa/package-4/2026-10-20/reflow/checks.json',checks);
-            for(const directory of fs.readdirSync(out,{withFileTypes:true}).filter(e=>e.isDirectory()&&e.name.endsWith('-parity')||e.isDirectory()&&e.name==='p4-reflow-verification')){
+            for(const directory of fs.readdirSync(out,{withFileTypes:true}).filter(e=>e.isDirectory()&&(e.name.endsWith('-parity')||e.name==='p4-reflow-verification'))){
               for(const file of fs.readdirSync(path.join(out,directory.name))){const bytes=fs.readFileSync(path.join(out,directory.name,file));
                 if(file.endsWith('.json'))await add('qa/package-4/2026-10-20/reflow/'+directory.name+'-'+file+'.gz',zlib.gzipSync(bytes,{level:9}));
                 else if(file.endsWith('.png'))await add('qa/package-4/2026-10-20/reflow/images/'+file,bytes);
