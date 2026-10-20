@@ -33,6 +33,61 @@ jobs:
         run: npm ci --no-audit --no-fund && npm run check && npm run build
       - name: Install isolated browser harness
         run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Install and record exact Chrome for Testing
+        env:
+          CHROME_PINNED_VERSION: '155.0.8059.84'
+          CHROME_PINNED_REVISION: '1697595'
+          CHROME_ARCHIVE_URL: https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip
+        run: |
+          export CHROME_ARCHIVE_PATH="$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION-linux64.zip"
+          export CHROME_PATH="$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION/chrome-linux64/chrome"
+          curl --fail --location --silent --show-error "$CHROME_ARCHIVE_URL" --output "$CHROME_ARCHIVE_PATH"
+          mkdir -p "$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION" frontend/qa/writing
+          unzip -q "$CHROME_ARCHIVE_PATH" -d "$RUNNER_TEMP/chrome-for-testing-$CHROME_PINNED_VERSION"
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict'
+          import { execFileSync } from 'node:child_process'
+          import { readFileSync, realpathSync, statSync, writeFileSync } from 'node:fs'
+          import { release } from 'node:os'
+          const command = (name, args) => execFileSync(name, args, { encoding: 'utf8' }).trim()
+          const sha256 = path => command('sha256sum', [path]).split(/\s+/)[0]
+          const binary = realpathSync(process.env.CHROME_PATH)
+          const versionOutput = command(binary, ['--version'])
+          const actualVersion = versionOutput.match(/\b\d+\.\d+\.\d+\.\d+\b/)?.[0]
+          const metadata = {
+            purpose: 'Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.',
+            recordedAt: new Date().toISOString(),
+            browser: {
+              expectedVersion: process.env.CHROME_PINNED_VERSION,
+              expectedRevision: process.env.CHROME_PINNED_REVISION,
+              actualVersion, versionOutput,
+              archive: { url: process.env.CHROME_ARCHIVE_URL, bytes: statSync(process.env.CHROME_ARCHIVE_PATH).size, sha256: sha256(process.env.CHROME_ARCHIVE_PATH) },
+              executable: { path: binary, bytes: statSync(binary).size, sha256: sha256(binary) },
+              checkpointLaunch: { headless: true, args: ['--no-sandbox'] }
+            },
+            runner: {
+              name: process.env.RUNNER_NAME, os: process.env.RUNNER_OS, arch: process.env.RUNNER_ARCH,
+              imageOS: process.env.ImageOS, imageVersion: process.env.ImageVersion,
+              kernel: release(), osRelease: readFileSync('/etc/os-release', 'utf8')
+            },
+            runtime: {
+              node: process.version, npm: command('npm', ['--version']),
+              python: command('python3', ['--version']),
+              playwright: JSON.parse(readFileSync('node_modules/playwright-core/package.json', 'utf8')).version
+            },
+            run: {
+              repository: process.env.GITHUB_REPOSITORY, id: process.env.GITHUB_RUN_ID,
+              attempt: process.env.GITHUB_RUN_ATTEMPT, job: process.env.GITHUB_JOB, commit: process.env.GITHUB_SHA
+            },
+            runtimeTree: command('git', ['rev-parse', 'HEAD:frontend']),
+            harness: { path: 'frontend/scripts/verify-writing-parity.mjs', sha256: sha256('frontend/scripts/verify-writing-parity.mjs') },
+            workflow: { path: '.github/workflows/verify-writing-parity.yml', sha256: sha256('.github/workflows/verify-writing-parity.yml') }
+          }
+          writeFileSync('frontend/qa/writing/browser-environment.json', JSON.stringify(metadata, null, 2) + '\n')
+          assert.equal(actualVersion, process.env.CHROME_PINNED_VERSION, 'The checkpoint must use its exact pinned Chrome version')
+          console.log(`Recorded Chrome for Testing ${actualVersion} and its archive/executable SHA256s`)
+          NODE
+          printf 'CHROME_PATH=%s\n' "$CHROME_PATH" >> "$GITHUB_ENV"
       - name: Serve baseline and source
         run: |
           mkdir -p "$RUNNER_TEMP/writing-baseline/storileaf-homepage-preview"
