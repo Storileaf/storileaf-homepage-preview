@@ -17,7 +17,7 @@ export function PracticeDialog() {
     <Dialog.Trigger asChild><button type="button" className="button button-outline" data-testid="try-question">{approvedCopy('home.writing.try')} <PracticeIcon name="arrow" /></button></Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay className="sl-practice-overlay" />
-      <Dialog.Content className="sl-practice-dialog question-dialog" data-testid="question-dialog">
+      <Dialog.Content className="sl-practice-dialog question-dialog" data-testid="question-dialog" aria-describedby="demo-privacy">
         <div className="dialog-topline"><Dialog.Close className="icon-button" aria-label={approvedCopy('home.writing.close_label')}><PracticeIcon name="close" /></Dialog.Close></div>
         <Dialog.Title>{approvedCopy('home.writing.question')}</Dialog.Title>
         <Dialog.Description id="demo-privacy">{approvedCopy('home.writing.privacy')}</Dialog.Description>

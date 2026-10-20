@@ -5,6 +5,7 @@ import { execFileSync } from 'node:child_process'
 import { chromium } from 'playwright-core'
 import { settledSnapshot } from './browser-readiness.mjs'
 import { comparePixelCoordinates, compareAutoMargins } from './computed-style-parity.mjs'
+import { comparePracticeReferences, verifyPracticeDescription } from './practice-description-contract.mjs'
 
 // Development can narrow WRITING_WIDTHS and set WRITING_FOCUSED=1. A completed
 // checkpoint requires the default matrix and the full interaction suite.
@@ -23,13 +24,14 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const check = (ok, message) => { if (!ok) problems.push(message) }
 const animationNames = { 'sl-writing-arrive': 'arrive', 'sl-writing-device-enter': 'device-enter', 'sl-writing-phone-enter': 'phone-enter', 'sl-practice-overlay-in': 'overlay-in' }
 const report = {
-  checkpoint: 'Package 3 Group 8 Writing showcase and unsaved practice dialog', baseline,
+  checkpoint: 'Package 4 P4-05 description repair with retained Group 8 Writing and practice gates', baseline,
   sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   createdAt: new Date().toISOString(), focused, requestedWidths: widths,
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01 }, widths: [], states: [], captures: [], nativePaint: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
   captureMethod: 'Native scrolled viewport crops cover the writing section in overlapping tiles if needed. No full-height offscreen raster is used. The unrelated fixed header and every descendant are hidden only during clean section captures, then restored; unchanged context captures keep it. Dialog crops use the actual fixed viewport geometry and its own native scrolling. Hover and focus captures assert their state immediately before and after. Native entrance animations may be paused at a common recorded phase without replacing their definitions. Reduced-motion default desktop compositions and the 901px diagnostic retain one full-section capture before device preparation, then one unconditional native device-band observation, followed by the fixed full-section paint samples at initial, 250ms and 750ms. Preparation images are diagnostic and retain their hashes and native/layer states; viewport, scroll, DPR, document bounds and writing geometry/styles must stay unchanged. Layer changes are observed without waiting for an expected arrangement. The predetermined last full-section sample is compared, and the last two must be byte stable. No sample is chosen by its agreement with the other page. Changed earlier samples, coordinates and font resource identities remain in the report and artifact.',
   computedStyleMethod: 'Raw computed styles and measured boxes remain in snapshots. Explicit scoped animation names map to their published names. Transform-origin coordinates use the unchanged geometry tolerance. Automatic horizontal margins are compared only for identified centred writing blocks with native Typed OM evidence, unchanged boxes and measured parent content gaps.',
   qualityMeasurement: 'The clipped field records text range extents outside their own element box or the viewport. It is an inspection signal rather than proof of visibly cut glyphs. The 320px enlarged heading can extend into dialog padding while remaining inside the dialog border; screenshots and container overflow observations distinguish this from actual clipping.',
+  approvedSemanticChange: 'P4-05 only: the protected dialog description resolves to null; the repaired source must resolve to the unchanged privacy text. Raw references remain recorded. The title and textarea references remain exact. Every source dialog opening additionally requires DOM and Chromium accessibility-tree evidence.',
   animationNames,
   limits: 'Chromium only. Touch is emulated. Enlargement doubles targeted font size and line height, not native browser zoom. No physical device, other engine, screen reader or accessibility certification is claimed. Device sample answers are static in the protected runtime; this suite does not invent an automatic typing animation.'
 }
@@ -45,7 +47,7 @@ for (const dir of ['src', 'content']) {
   await walk(dir)
 }
 report.harnessHashes = {}
-for (const file of ['scripts/verify-writing-parity.mjs', 'scripts/browser-readiness.mjs', 'scripts/computed-style-parity.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
+for (const file of ['scripts/verify-writing-parity.mjs', 'scripts/browser-readiness.mjs', 'scripts/computed-style-parity.mjs', 'scripts/practice-description-contract.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
 report.protectedHashes = {}
 for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/routes-DrwDv2x2.js', 'assets/content-sections-CfrmOVRI.js']) {
   const bytes = await fs.readFile('../' + file)
@@ -177,7 +179,7 @@ async function snapshot(p, dialog = false) {
   }, { queries: dialog ? dialogQueries : sectionQueries, styleKeys, textKeys, dialog }))
 }
 function compare(b, a, label, { enlarged = false } = {}) {
-  const differences = [], computedStyleComparisons = []; let maximumGeometry = 0
+  const differences = [], computedStyleComparisons = [], approvedSemanticDifferences = []; let maximumGeometry = 0
   for (const [key, values] of Object.entries(b.nodes)) {
     if (values.length !== a.nodes[key]?.length) { differences.push(key + ' count'); continue }
     for (const [i, x] of values.entries()) {
@@ -192,7 +194,12 @@ function compare(b, a, label, { enlarged = false } = {}) {
         if (auto?.equal && ['marginLeft', 'marginRight'].includes(prop)) continue
         differences.push(`${key}[${i}].style.${prop} ${x.style[prop]} versus ${y.style[prop]}`)
       }
-      for (const prop of ['text', 'value', 'placeholder', 'maxLength', 'rows', 'disabled', 'label', 'role', 'hidden', 'expanded', 'state', 'src', 'alt', 'natural', 'references', 'selectionColours', 'placeholderStyle']) if (JSON.stringify(x[prop]) !== JSON.stringify(y[prop])) differences.push(`${key}[${i}].${prop}`)
+      for (const prop of ['text', 'value', 'placeholder', 'maxLength', 'rows', 'disabled', 'label', 'role', 'hidden', 'expanded', 'state', 'src', 'alt', 'natural', 'selectionColours', 'placeholderStyle']) if (JSON.stringify(x[prop]) !== JSON.stringify(y[prop])) differences.push(`${key}[${i}].${prop}`)
+      if ('references' in x || 'references' in y) {
+        const referenceComparison = comparePracticeReferences(key, x.references, y.references)
+        if (!referenceComparison.equal) differences.push(`${key}[${i}].references`)
+        if (referenceComparison.approvedDifference) approvedSemanticDifferences.push({ node: `${key}[${i}]`, ...referenceComparison })
+      }
     }
   }
   if (!b.ids.every(n => n === 1) || !a.ids.every(n => n === 1)) differences.push('unique IDs')
@@ -201,7 +208,7 @@ function compare(b, a, label, { enlarged = false } = {}) {
   if (b.stageVisible !== a.stageVisible) differences.push('stage entrance state')
   check(!differences.length, label + ' ' + differences.join('; '))
   if (!enlarged) check(!b.overflow && !a.overflow, label + ' document overflow')
-  return { maximumGeometry, differences, computedStyleComparisons }
+  return { maximumGeometry, differences, computedStyleComparisons, approvedSemanticDifferences }
 }
 async function pair(ps, label, dialog = false, options = {}) { const b = await snapshot(ps.published, dialog), a = await snapshot(ps.source, dialog); return { label, published: b, source: a, ...compare(b, a, label, options) } }
 
@@ -346,6 +353,7 @@ async function openDialog(p, method = 'click') {
   const state = await p.getByTestId('question-dialog').evaluate(e => ({ name: e.querySelector('h2').textContent, privacy: e.querySelector('#demo-privacy').textContent, firstFocus: document.activeElement?.getAttribute('aria-label'), bodyOverflow: getComputedStyle(document.body).overflow, value: e.querySelector('textarea').value, maxLength: e.querySelector('textarea').maxLength, rows: e.querySelector('textarea').rows, placeholder: e.querySelector('textarea').placeholder, count: e.querySelector('.demo-answer-meta>span').textContent, clearDisabled: e.querySelector('.demo-answer-meta button').disabled, scroll: [e.scrollTop, e.scrollHeight, e.clientHeight] }))
   check(state.name === question && state.privacy === privacy && state.value === '' && state.maxLength === 2000 && state.rows === 6 && state.placeholder === placeholder && state.count === '0 words' && state.clearDisabled, 'Exact initial practice contract')
   check(state.firstFocus === 'Close writing example' && state.bodyOverflow === 'hidden', 'Native dialog first focus and scroll lock')
+  if (fontEvidence.get(p).record.kind === 'source') state.accessibility = await verifyPracticeDescription(p)
   return state
 }
 async function closeDialog(p, method = 'escape') {
