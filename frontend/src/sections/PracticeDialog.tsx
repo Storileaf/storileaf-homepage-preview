@@ -8,7 +8,10 @@ function PracticeIcon({ name }: { name: 'arrow' | 'close' | 'check' }) {
 }
 
 /** Local, unsaved practice only. Every dismissal clears the controlled answer.
- * Radix retains the published modal focus, dismissal and scroll behaviour. */
+ * Radix retains the published modal focus, dismissal and scroll behaviour.
+ * The privacy paragraph is referenced explicitly by both consumers. Using a
+ * native paragraph avoids the installed Radix Description registering a second,
+ * missing generated ID when its rendered ID is overridden (P4-05). */
 export function PracticeDialog() {
   const [open, setOpen] = useState(false)
   const [answer, setAnswer] = useState('')
@@ -20,7 +23,7 @@ export function PracticeDialog() {
       <Dialog.Content className="sl-practice-dialog question-dialog" data-testid="question-dialog" aria-describedby="demo-privacy">
         <div className="dialog-topline"><Dialog.Close className="icon-button" aria-label={approvedCopy('home.writing.close_label')}><PracticeIcon name="close" /></Dialog.Close></div>
         <Dialog.Title>{approvedCopy('home.writing.question')}</Dialog.Title>
-        <Dialog.Description id="demo-privacy">{approvedCopy('home.writing.privacy')}</Dialog.Description>
+        <p id="demo-privacy">{approvedCopy('home.writing.privacy')}</p>
         <label className="demo-label" htmlFor="demo-answer">{approvedCopy('home.writing.answer_label')}</label>
         <textarea id="demo-answer" data-testid="demo-answer" aria-describedby="demo-privacy" value={answer} onChange={event => setAnswer(event.target.value)} maxLength={2000} rows={6} placeholder={approvedCopy('home.writing.placeholder')} />
         <div className="demo-answer-meta"><span>{wordCount} {wordCount === 1 ? approvedCopy('home.writing.word') : approvedCopy('home.writing.words')}</span><button type="button" className="subtle-button" onClick={() => setAnswer('')} disabled={!answer}>{approvedCopy('home.writing.clear')}</button></div>

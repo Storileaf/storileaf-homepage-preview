@@ -23,6 +23,8 @@ test('P4-05 rejects a missing, removed, changed or additional description', () =
   }
   const duplicate = structuredClone(fixed); duplicate[1].texts.push(practicePrivacy)
   assert.equal(comparePracticeReferences('dialog', broken, duplicate).equal, false)
+  const dangling = structuredClone(fixed); dangling[1].texts.push(null)
+  assert.equal(comparePracticeReferences('dialog', broken, dangling).equal, false)
 })
 
 test('P4-05 cannot change the title or authorise another baseline defect', () => {
@@ -38,10 +40,11 @@ test('P4-05 does not exempt textarea or unrelated references from exact comparis
   assert.equal(comparePracticeReferences('other', broken, fixed).equal, false)
 })
 
-test('PracticeDialog explicitly connects both consumers to the existing approved paragraph', () => {
+test('PracticeDialog explicitly connects both consumers to one native approved paragraph', () => {
   const source = readFileSync(new URL('../src/sections/PracticeDialog.tsx', import.meta.url), 'utf8')
   assert.match(source, /<Dialog\.Content\b[^>]*\baria-describedby="demo-privacy"/)
-  assert.match(source, /<Dialog\.Description id="demo-privacy">\{approvedCopy\('home\.writing\.privacy'\)\}<\/Dialog\.Description>/)
+  assert.match(source, /<p id="demo-privacy">\{approvedCopy\('home\.writing\.privacy'\)\}<\/p>/)
+  assert.doesNotMatch(source, /<Dialog\.Description\b/)
   assert.match(source, /<textarea\b[^>]*\baria-describedby="demo-privacy"/)
   assert.equal((source.match(/\bid="demo-privacy"/g) || []).length, 1)
   assert.equal((source.match(/approvedCopy\('home\.writing\.privacy'\)/g) || []).length, 1)
