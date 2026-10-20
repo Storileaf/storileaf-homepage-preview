@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 6. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 7. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -96,7 +96,7 @@ The source entry places Gifting before Resources, preserving their relative home
 
 ### Reassurance, FAQ and final invitation exceptions
 
-Group 2 preserves the reassurance band's current wording, icons, dividers and responsive layout. Its required full homepage position is immediately after the hero and ticker and before book discovery. Group 4 now places discovery directly after it; the hero remains unmigrated. Do not change the band's wording or position in this group or treat historical alternatives as active implementation instructions.
+Group 2 preserves the reassurance band's current wording, icons, dividers and responsive layout. Its required full homepage position is immediately after the hero and ticker and before book discovery. Group 4 placed discovery directly after it; Group 7 now reconstructs the preceding hero and ticker in source. Do not change the band's wording or position during migration or treat historical alternatives as active implementation instructions. This assembled relationship still requires the Group 7 served comparison checkpoint.
 
 The band retains three equal columns above 720px and stacked rows at 720px and below. Its 27px vertical padding becomes 17px at that breakpoint. Text remains 17px on wide screens, 15px at 1130px and below, 16px at 720px and below, then the 15px body role at 480px and below. Its deliberate 700 weight and 1.45 leading remain. Icon roundels are 45px wide, becoming 41px at 1130px and below. These are retained section rules, not new defaults for body copy or controls.
 
@@ -188,9 +188,9 @@ The deployed static homepage, including the completed Package 1 and Package 2 re
 
 The public React source is deliberately staged. Its current implementation status belongs in the [component inventory](COMPONENT_INVENTORY.md), and detailed verification belongs in the relevant package review. This partial composition is not a second approved homepage. The current compiled root remains the comparison reference until complete visual and functional parity and explicit founder acceptance permit a publishing decision.
 
-The detailed historical implementation paragraphs previously repeated here remain intact at [the preceding design-system revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/2d57aa278afd657ecf2edd99e91eb370f603020c/docs/PUBLIC_DESIGN_SYSTEM.md#implementation-maturity). The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md), [Group 5](PACKAGE_3_GROUP_5_REVIEW.md) and [Group 6](PACKAGE_3_GROUP_6_REVIEW.md) reviews own their source identities, diagnostic failures, run records and measured evidence. Those details are preserved rather than copied into further active summaries.
+The detailed historical implementation paragraphs previously repeated here remain intact at [the preceding design-system revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/2d57aa278afd657ecf2edd99e91eb370f603020c/docs/PUBLIC_DESIGN_SYSTEM.md#implementation-maturity). The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md), [Group 5](PACKAGE_3_GROUP_5_REVIEW.md), [Group 6](PACKAGE_3_GROUP_6_REVIEW.md) and [Group 7](PACKAGE_3_GROUP_7_REVIEW.md) reviews own their source identities, diagnostic failures, run records and measured evidence. Linking a review does not imply that its checkpoint has passed. Those details are preserved rather than copied into further active summaries.
 
-Group 4 extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Group 5 adds the rendered local Samples target and Group 6 adds How it works. Only uniquely rendered targets may resolve locally. The full hero and surrounding homepage remain unfinished. Founder visual acceptance and complete homepage cutover remain separate.
+Group 4 extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Group 5 adds the rendered local Samples target and Group 6 adds How it works. Group 7 reuses Books and Samples for the reconstructed hero's existing actions. Only uniquely rendered targets may resolve locally. Hero source is implemented with its served checkpoint pending; writing showcase, the practice dialog and complete page assembly remain unfinished. Founder visual acceptance and complete homepage cutover remain separate.
 
 ## Shared component migration
 
@@ -220,7 +220,7 @@ The authorised six book discovery migration retains its own published heading sc
 | Photograph | Original lazy decoded source, declared 850 by 660 dimensions, centred cover crop. Minimum visual height 445px, then 410px at 900px, 315px at 720px, 270px at 480px and 255px at 360px and below. |
 | Motion | Active indicator uses the existing 220ms transform/opacity transition. Photo entry lasts 350ms from .55 opacity and scale 1.016 to full opacity and scale 1. Reduced motion disables photo entry and makes other discovery transitions effectively instantaneous. |
 
-Preserve the original automatic Radix tab activation, active tab reveal and reduced motion behaviour. Retain the six individual book destinations, default Life Story selection and existing image sources. Discovery follows the reassurance band, with the hero still awaiting migration. Shared Books navigation and the final invitation may use the actual local section without changing their visual treatment or canonical content records. No new pricing selection, public page, hero motion decision or visible refinement is introduced by this migration.
+Preserve the original automatic Radix tab activation, active tab reveal and reduced motion behaviour. Retain the six individual book destinations, default Life Story selection and existing image sources. Discovery follows the reassurance band. Group 7 restores the preceding hero and ticker in source without changing that join. Shared Books navigation and the final invitation may use the actual local section without changing their visual treatment or canonical content records. No new pricing selection, public page, hero motion decision or visible refinement is introduced by the discovery migration.
 
 The complete Group 4 local and committed comparisons pass for the normal and interactive scope recorded in its review. Targeted text doubling reproduces inherited Relationship Memoir and Celebrating Occasions label bounds issues at 320px and 1440px. These are open reflow findings rather than desired reusable behaviour. Preserve the approved normal layout and propose a bounded visible correction before implementing an enlargement refinement. Parity does not establish enlargement acceptance or complete Package 4 quality.
 
@@ -264,3 +264,50 @@ HowItWorks follows the combined gallery and physical presentation. Preserve the 
 | Anchor and lifecycle | Section scroll margin is 116px, becoming 96px at 720px, within the existing root scroll context. Respect live motion preference and viewport changes. Keep passive scroll handling, one scheduled animation frame and listener/frame cleanup. Do not introduce scroll hijacking, an autoplay timer or new controls. |
 
 Normal section padding outside the eligible pinned mode retains its published variants, including the 84px/90px tall desktop reduced motion treatment. Preserve the exact existing CSS cascade rather than globally normalising those values. Native zoom, wider browser and complete page checks remain required. A matched targeted text enlargement capture does not certify the whole page or every assistive setting.
+
+## Group 7 hero and motion preservation
+
+HeroSection reconstructs the published hero in isolated source using the existing Container, Heading, Text and ActionLink foundations. Its rules are scoped in `frontend/src/styles/homepage-hero.css`. The served comparison checkpoint remains pending. The [Group 7 review](PACKAGE_3_GROUP_7_REVIEW.md) owns source identities, captures, interaction evidence, diagnostic history and the eventual checkpoint result. Exact wording, photographs, cover identities and arrangement data belong in the content gate and `frontend/content/hero.json`.
+
+Preserve the sequence of floating header, hero introduction, photograph carousel, supporting paragraph/actions and ticker, followed immediately by the reassurance band and discovery. The 152px sage field behind the header belongs to this relationship. The hero uses a mix of 60 percent published sage and published warm paper, with the inherited 54px grid texture, opacity .64 and vertical mask. Preserve its orbit fade layers and the published local HSL surfaces; do not substitute the general source sage or paper tokens where their values differ.
+
+| Hero element | Retained rule |
+| --- | --- |
+| Section and containers | Top padding 63px, then 53px at 900px, 43px at 720px and 35px at 480px and below. No bottom padding. Introduction and outro use the existing 1184px container and foundation gutters. Keep isolated stacking and clipped decorative overflow. |
+| Heading | Use the canonical hero type token and its 900/720/480/360px changes. Maximum width 1070px, Newsreader weight 450, 1.01 leading and minus .049em tracking. The teal italic emphasis remains a separate block at weight 420, with normal wrapping. Legacy mobile heading widths and leading do not override these final values. |
+| Progression | Maximum width 820px, 31px top margin, 16px padding and 1px forest tint rules above/below. Manrope 15px weight 650 with 1.45 leading; horizontal gap clamp(12px,2.4vw,33px). At 720px use 23px top margin, 13px/3px padding, 13px type and 8px gaps, with each number above its phrase. At 480px use 5px gaps and 105px maximum phrase width. Numbers are 13px, then 12px at 720px and 11px at 360px. Arrow sizes remain 20px, then 15px at 720px and 13px at 480px. |
+| Photograph frame | Retain the width/height matrix below, 34px top margin and 20px corners. At 720px use 26px top margin and 15px corners. Preserve the 1px white border at .74 alpha, paper background at .92 alpha and existing shadow. The bottom veil spans the entire frame and begins its visible gradient at 78 percent. |
+| Photograph controls | Previous/next controls remain circular, 44px square and 43px at 480px. Position the combined controls 18px from the right/bottom, then 12px at 720px. The group gap remains 13px; the arrow pair gap is 7px, becoming 5px at 720px. Preserve the blurred paper background, border, shadow, hover and 15px chevrons. Three 22px indicator controls retain the existing pill surround, 5px dots and 19px active mark. Hide the indicators at 720px and below. |
+| Outro and copy | Top padding 30px, becoming 25px at 720px. Paragraph maximum width 710px with centred Manrope 16px/1.75; use 15px at 720px and 14px/1.72 at 480px. Preserve the published muted ink and exact copy. |
+| Actions | Row starts 22px below the copy with a 12px gap. Preserve the filled and outlined action pair, 153px minimum widths, weight 650, 1.4 leading and shared 6px corners. Default labels are 14px, minimum height 49px, padding 12px/24px and icon gap 20px. At 720px use 13px labels and 46px minimum height. At 480px use 12px labels, 12px/15px padding and 10px icon gap; at 360px use 12px inline padding and a 14px arrow instead of 17px. Preserve natural wrapping, including separate action rows at 320px. |
+| Ticker appearance | Forest strip with existing gold tint rules. Top margin 40px and minimum height 57px, becoming 27px and 50px at 720px. Newsreader italic 18px weight 400 with inherited 1.7 leading, becoming 15px at 720px. Phrase padding is 13px above, 12px below and 34px on the left with a 26px ornament gap; at 720px use 11px vertical padding, 26px left padding and 20px gap. Keep the 8px gold ornament and transparent tap highlight. |
+| Focus | Existing 2px teal outline with 4px offset for actions and photograph controls. The ticker's own focus outline remains 2px gold, inset 4px. Keep the ticker as the existing focusable pause interaction; do not add a prominent Pause movement control. |
+
+| Viewport width | Photograph outer width | Photograph frame height |
+| --- | --- | --- |
+| Above 900px | min(1240px, viewport minus 72px) | clamp(380px,39vw,570px) |
+| 721px through 900px | Viewport minus 46px | clamp(340px,51vw,480px) |
+| 481px through 720px | Viewport minus 26px | clamp(285px,68vw,390px) |
+| 361px through 480px | Viewport minus 26px | clamp(258px,68vw,299px) |
+| 360px and below | Viewport minus 26px | 244px |
+
+The fourteen decorative tiles retain six inner positions and eight outer positions. Each of the seven source covers appears twice. Preserve the angles and image mapping in hero.json rather than redistributing them. Tiles remain square with 12px corners, .78 opacity, the existing border and shadow, and no exposed alternative text.
+
+| Viewport width | Inner/outer radius | Tile size | Stage and ring origin |
+| --- | --- | --- | --- |
+| Above 900px | 345px / 665.5px | 106px square | 830px stage; ring origin at 50 percent horizontally and 38 percent vertically |
+| 721px through 900px | 285px / 511.5px | 82px square | Same stage and origin |
+| 720px and below | 230px / 412.5px | 68px square | 570px stage; origin at 50 percent horizontally and 31 percent vertically |
+
+Keep the motion systems independent. General playback pauses for reduced motion, a hidden document or when the hero's observer reports no intersection. Retain the observer threshold of .04. The photograph carousel also pauses for its existing hover/focus state; this does not pause the covers. The ticker additionally pauses for hover, focus or its held pause state; these do not pause the covers or photograph carousel.
+
+| Motion or interaction | Retained behaviour |
+| --- | --- |
+| Photograph progression | Three photographs loop every 7600ms. Manual selection retains the existing interval lifecycle rather than automatically resetting it. Preserve 700ms directional image animations and the existing 690ms previous image cleanup. The settled photograph breathes between scales 1.005 and 1.028 over a 7.5 second alternating cycle. Preload the next photograph after 1200ms. |
+| Photograph transition | Entry moves from a full width directional offset at scale 1.045 to zero offset at scale 1.012. Exit moves from zero at scale 1.012 to an opposite 18 percent offset at scale 1.035. Retain the existing cubic easing. Only the current photograph exposes descriptive alternative text; the previous image remains hidden from assistive technology. |
+| Photograph input | Native indicator and previous/next buttons keep keyboard operation and loop endpoints. Touch navigation requires horizontal displacement greater than 50px and vertical displacement below half the horizontal movement. Preserve pointer cancellation and pan-y/pinch-zoom behaviour; do not introduce a custom arrow key scheme. |
+| Orbit | Inner ring rotates clockwise over 160 seconds and outer ring anticlockwise over 220 seconds. Each face counter rotates at its ring's duration. General pause freezes these animations without resetting their position. At 720px and below the rings are static regardless of motion preference, with layer opacity .26. |
+| Ticker | Two copies of the six phrases form a 34 second linear track moving to minus 50 percent. Click, Enter and Space toggle its held pause. Hover and focus temporarily pause without clearing that held state. Preserve its pressed state and changing accessible pause/resume name. |
+| Reduced motion | Disable autoplay, orbit animation, image transitions and breathing. Keep manual photograph controls usable and the ticker visible but static. The decorative orbit opacity becomes .28, including on narrow screens. Honour live preference changes and preserve listener, observer and timer cleanup. |
+
+These rules reconstruct the current published settings. They do not finalise deferred orbit aesthetics or motion preferences, accept inherited accessibility limitations, grant founder rendered acceptance or authorise replacing the published homepage. Complete page assembly and Package 4 remain separate work.

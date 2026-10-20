@@ -1,6 +1,6 @@
 # Public website content creation and approval gate
 
-Updated 20 October 2026 for authorised Package 3 Groups 1 through 6. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
+Updated 20 October 2026 for authorised Package 3 Groups 1 through 7. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
 
 ## Product fact sources
 
@@ -27,7 +27,7 @@ Where facts conflict, identify the discrepancy. Never invent a capability, price
 
 Use existing_verified for proven existing wording, proposed for suggestions, founder_approved for explicitly accepted final text, implemented_verified for built and tested material, superseded for historical alternatives. A build or passing browser test never grants editorial approval.
 
-The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json and process.json extensions with source references and flags for whether a record may be published. All feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
+The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json, process.json and hero.json extensions with source references and flags for whether a record may be published. All feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
 
 ## Language and claims
 
@@ -96,3 +96,27 @@ The parser reads only Process, sharedSteps, stepVisuals and the actual homepage 
 Choose a book keeps its canonical published Books destination in the ledger and may bind to the one rendered local Books section. Explore gifting remains exactly https://storileaf.com/gift/. Shared How it works links may now use the unique local #how-it-works target, with origin, path, query and current page semantics still checked. The existing FAQ action to https://storileaf.com/how-it-works/ remains unchanged; migration of a homepage section does not authorise rewriting that separate destination.
 
 Declared 800 by 940 image dimensions reproduce the original attributes rather than asserting natural image resolution. Loading and natural sizes are recorded by browser verification. Existing rights review remains pending final production checking. The [Group 6 review](PACKAGE_3_GROUP_6_REVIEW.md) owns implementation and verification evidence. No new wording, product claim, image replacement or release permission is introduced.
+
+## Group 7 hero and motion content
+
+The authorised hero reconstruction adds exactly 23 inherited text records, three photograph identities and seven decorative cover identities in `frontend/content/hero.json`. Preserve all earlier ledger, media and process records. The exact approval kind is `inherited_published_hero`, with migration group 7, migration record date 20 October 2026 and protected baseline `e9550069d91b5a9b48ade43fcfb0a71bbed2875b`. This bounded extension feeds the existing content lookup and gate. It records authority to retain published material, not a new original wording approval, final motion preference or product capability.
+
+| Permitted record group | Exact scope |
+| --- | --- |
+| Heading | `home.hero.title`, including its exact separate italic emphasis |
+| Progression | `home.hero.progression.label` and numbered text records 0 through 2 |
+| Photograph controls | `home.hero.carousel.label`, `choose`, `show.0` through `show.2`, `previous` and `next` |
+| Supporting copy and actions | `home.hero.description`, `home.hero.explore` and `home.hero.samples` |
+| Ticker | `home.hero.ticker.pause`, `resume` and phrase records 0 through 5 |
+
+Membership and order are explicit in `frontend/scripts/inherited-hero-content.mjs`; a matching prefix does not permit another record. The parser reads only the named Hero and HeroCoverOrbits functions, heroMarquee, heroScenes, the three actual image bindings and the explicit cover/angle declarations in the protected `assets/content-sections-CfrmOVRI.js`. It parses the compiled source and URL templates as inert data and never executes them. Exact source fragments, full plain text, emphasis, action destinations and asset fields must agree with those bounded locations. Reject changed or reassigned wording, extra/missing records, invented original approval dates, arbitrary matching literals and altered provenance.
+
+The progression retains the original 01, 02 and 03 numbering and its three exact content references. The ticker retains six phrases in their original order, with two rendered copies and its existing pause/resume names. The seven original covers retain their protected order and explicit six inner/eight outer position mapping, with each source used exactly twice. Reordering references or changing angles is not authorised by text inheritance. These arrangement fields are checked independently of the 23 text records.
+
+The photograph records retain binding, spread and family in that order, including exact sources, alternative text, accessible slide labels, original scene titles, 1400 by 650 declared attributes and 50%/54%, 50%/50% and 50%/62% crops. The retained scene titles are data, not newly approved visible captions. The current hero exposes the active photograph's alternative text and a hidden slide label; do not add a caption from a stored title. Declared attributes do not assert natural image resolution. Browser evidence must separately establish loading and natural sizes.
+
+Cover records retain `covers/cover-01.jpg` through `cover-07.jpg`, 240 by 240 dimensions, centred crops, empty alternative text and decorative roles. Copies under `frontend/public/covers/` must match the seven protected asset files byte for byte. Keep the published source paths and origins in provenance while resolving the same copied assets under the isolated frontend base path. Existing photograph and cover rights review remains `pending_final_production_check`; this migration does not settle final production rights or authorise replacement imagery.
+
+Explore the books and See inside retain the canonical published destinations `https://storileaf.github.io/storileaf-homepage-preview/#books` and `https://storileaf.github.io/storileaf-homepage-preview/#samples`. They may bind to the already rendered unique local Books and Samples sections without adding a query, changing the destination or introducing current page semantics on section links. No new route is created by Group 7.
+
+Hero source is implemented, with its served rendered and functional checkpoint pending. The [Group 7 review](PACKAGE_3_GROUP_7_REVIEW.md) owns that evidence and its eventual result; the public design system owns geometry and motion rules. Neither source implementation nor this inherited content allowance constitutes founder rendered acceptance, a new exact wording approval or permission to publish the isolated React page.

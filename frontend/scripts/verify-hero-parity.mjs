@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { chromium } from 'playwright-core'
 import { settledSnapshot } from './browser-readiness.mjs'
+import { compareAutoMargins, comparePixelCoordinates } from './computed-style-parity.mjs'
 
 // Run from frontend. HERO_WIDTHS narrows development work only. A checkpoint
 // requires the default matrix and every functional scenario below.
@@ -25,6 +26,7 @@ const report = {
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01, measuredAutoplayMilliseconds: [7300, 8500] },
   widths: [], states: [], captures: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
   captureMethod: 'Real served pages, fonts and decoded photographs. Reduced motion comparisons include every photograph. Motion-enabled comparison captures pause existing native hero animations at a recorded common phase through the Web Animations API, then restore their original state. No animation definition, content, layout rule or baseline is replaced. Isolated hero captures temporarily hide only the sticky header; separate unchanged viewport captures retain it. Geometry and section joins are measured without origin alignment.',
+  computedStyleMethod: 'Raw styles remain in every snapshot. Pixel-valued transform-origin coordinates use the unchanged 0.15px geometry gate. Only the identified centred .hero-window can compare differing raw horizontal margins through native typed auto values and independently measured box-to-parent content gaps; both boxes, parent boxes, centring and raw values are checked. Missing typed evidence fails. The observed Chromium zero-versus-used-pixel serialization is recorded, not discarded.',
   limits: 'Chromium only. Touch uses browser input emulation. Text enlargement doubles targeted text properties and is not native browser zoom, a physical device test, a screen reader test or accessibility certification. Browser visibility is reported only if the headless browser actually exposes a hidden document.'
 }
 
@@ -54,7 +56,7 @@ for (const folder of ['src', 'content']) {
   await walk(folder)
 }
 report.harnessHashes = {}
-for (const file of ['scripts/verify-hero-parity.mjs', 'scripts/browser-readiness.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
+for (const file of ['scripts/verify-hero-parity.mjs', 'scripts/browser-readiness.mjs', 'scripts/computed-style-parity.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
 report.protectedHashes = {}
 for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/content-sections-CfrmOVRI.js', ...Array.from({ length: 7 }, (_, i) => 'covers/cover-0' + (i + 1) + '.jpg')]) {
   const bytes = await fs.readFile('../' + file)
@@ -96,6 +98,20 @@ async function snapshot(p, kind) {
         pressed: el.getAttribute('aria-pressed'), current: key === 'dot' ? el.getAttribute('aria-current') : undefined,
         hidden: el.getAttribute('aria-hidden'), tabindex: el.getAttribute('tabindex')
       }
+      if (key === 'window') {
+        const parent = el.parentElement, parentRect = parent.getBoundingClientRect(), parentStyle = getComputedStyle(parent)
+        const available = typeof el.computedStyleMap === 'function', typed = available ? el.computedStyleMap() : null
+        const parentEdges = { borderLeft: parseFloat(parentStyle.borderLeftWidth), paddingLeft: parseFloat(parentStyle.paddingLeft), borderRight: parseFloat(parentStyle.borderRightWidth), paddingRight: parseFloat(parentStyle.paddingRight) }
+        result.autoMargins = {
+          bounded: el.matches('.hero-window') && parent === root && result.style.display === 'block' && result.style.position === 'relative' && result.style.transform === 'none' && parentStyle.transform === 'none' && parentStyle.writingMode === 'horizontal-tb',
+          available,
+          typed: { marginLeft: typed?.get('margin-left')?.toString(), marginRight: typed?.get('margin-right')?.toString() },
+          raw: { marginLeft: result.style.marginLeft, marginRight: result.style.marginRight },
+          rect: [r.x + scrollX, r.y + scrollY, r.width, r.height], parentRect: [parentRect.x + scrollX, parentRect.y + scrollY, parentRect.width, parentRect.height], parentEdges,
+          layout: { display: result.style.display, position: result.style.position, transform: result.style.transform, parentTransform: parentStyle.transform },
+          measured: { marginLeft: r.left - parentRect.left - parentEdges.borderLeft - parentEdges.paddingLeft, marginRight: parentRect.right - parentEdges.borderRight - parentEdges.paddingRight - r.right }
+        }
+      }
       // Header, reassurance and Books keep their own previously verified
       // content/style contracts. Here only their actual absolute joins matter.
       if (['header', 'band', 'books'].includes(key)) return { rect: result.rect }
@@ -119,11 +135,17 @@ async function snapshot(p, kind) {
 }
 
 function compare(b, a, label, { enlarged = false } = {}) {
-  const differences = []; let maximumGeometry = 0
+  const differences = [], computedStyleComparisons = []; let maximumGeometry = 0
   for (const [key, values] of Object.entries(b.nodes)) {
     if (values.length !== a.nodes[key]?.length) { differences.push(key + ' count'); continue }
     for (const [i, x] of values.entries()) {
       const y = a.nodes[key][i]
+      const autoMargins = key === 'window' ? compareAutoMargins(x.autoMargins, y.autoMargins, { tolerance: .15 }) : null
+      if (autoMargins) {
+        computedStyleComparisons.push({ node: `${key}[${i}]`, property: 'auto horizontal margins', ...autoMargins, published: x.autoMargins, source: y.autoMargins })
+        maximumGeometry = Math.max(maximumGeometry, autoMargins.maximumGeometry)
+        if (!autoMargins.equal) differences.push(`${key}[${i}] auto margins ${autoMargins.differences.join(', ')}`)
+      }
       for (let j = 0; j < 4; j++) {
         const delta = Math.abs(x.rect[j] - y.rect[j]); maximumGeometry = Math.max(maximumGeometry, delta)
         if (delta > .15) differences.push(`${key}[${i}].rect[${j}] ${x.rect[j]} versus ${y.rect[j]}`)
@@ -131,7 +153,15 @@ function compare(b, a, label, { enlarged = false } = {}) {
       for (const k of ['style', 'text', 'href', 'alt', 'src', 'label', 'role', 'pressed', 'current', 'hidden', 'tabindex']) if (JSON.stringify(x[k]) !== JSON.stringify(y[k])) {
         if (k === 'style') {
           for (const prop of new Set([...Object.keys(x.style || {}), ...Object.keys(y.style || {})])) {
-            if (x.style?.[prop] !== y.style?.[prop]) differences.push(`${key}[${i}].style.${prop} ${x.style?.[prop]} versus ${y.style?.[prop]}`)
+            if (x.style?.[prop] === y.style?.[prop]) continue
+            if (prop === 'transformOrigin') {
+              const coordinates = comparePixelCoordinates(x.style[prop], y.style[prop], .15)
+              computedStyleComparisons.push({ node: `${key}[${i}]`, property: prop, published: x.style[prop], source: y.style[prop], ...coordinates })
+              if (coordinates.maximumGeometry !== null) maximumGeometry = Math.max(maximumGeometry, coordinates.maximumGeometry)
+              if (coordinates.equal) continue
+            }
+            if (autoMargins?.equal && ['marginLeft', 'marginRight'].includes(prop)) continue
+            differences.push(`${key}[${i}].style.${prop} ${x.style?.[prop]} versus ${y.style?.[prop]}`)
           }
         } else differences.push(`${key}[${i}].${k}`)
       }
@@ -142,7 +172,7 @@ function compare(b, a, label, { enlarged = false } = {}) {
   if (!b.ids.every(n => n === 1) || !a.ids.every(n => n === 1)) differences.push('unique IDs')
   check(!differences.length, label + ' ' + differences.join('; '))
   if (!enlarged) check(!b.overflow && !a.overflow, label + ' document overflow')
-  return { maximumGeometry, differences }
+  return { maximumGeometry, differences, computedStyleComparisons }
 }
 
 let browser
@@ -245,6 +275,83 @@ async function captures(ps, label, context = false) {
   check(result.ratio !== null && result.ratio <= .01, label + (context ? ' context' : '') + ' pixels ' + JSON.stringify(result))
   return { files, pixels: result }
 }
+// A whole-hero locator screenshot can include compositor tiles below the
+// current viewport. Native scrolling makes the lower join visibly painted.
+// Both pages receive the same document scroll target; no origins are aligned.
+async function joinCaptures(ps, label) {
+  const target = await ps.published.locator('.hero-outro').evaluate(el => Math.max(0, Math.floor(el.getBoundingClientRect().top + scrollY) - 24))
+  const measurements = {}, files = []
+  for (const [kind, p] of Object.entries(ps)) {
+    await p.bringToFront()
+    await p.evaluate(top => { document.activeElement?.blur(); scrollTo({ top, behavior: 'instant' }) }, target)
+    measurements[kind] = await settledSnapshot(p, () => p.evaluate(bandSelector => {
+      const selectors = { outro: '.hero-outro', ticker: '.hero-marquee', band: bandSelector, books: '#books' }
+      const regions = Object.fromEntries(Object.entries(selectors).map(([key, selector]) => {
+        const el = document.querySelector(selector), rect = el.getBoundingClientRect()
+        return [key, { rect: [rect.x, rect.y, rect.width, rect.height], background: getComputedStyle(el).backgroundColor }]
+      }))
+      return { scrollY, regions }
+    }, kind === 'source' ? '.sl-home-reassurance' : '.trust-band'))
+  }
+  const viewport = ps.source.viewportSize()
+  const clip = { x: 0, y: 0, width: viewport.width, height: Math.min(viewport.height, Math.ceil(Math.max(...Object.values(measurements).map(m => m.regions.books.rect[1])) + 180)) }
+  const geometry = []
+  for (const [kind, measurement] of Object.entries(measurements)) {
+    check(measurement.scrollY === target, kind + ' join uses requested native document scroll')
+    for (const key of ['outro', 'ticker', 'band']) {
+      const r = measurement.regions[key].rect
+      check(r[1] >= 0 && r[1] + r[3] <= clip.height, kind + ' ' + key + ' fully inside native join capture')
+    }
+    check(measurement.regions.books.rect[1] < clip.height, kind + ' Books begins inside native join capture')
+  }
+  for (const key of ['outro', 'ticker', 'band', 'books']) {
+    const before = measurements.published.regions[key].rect, after = measurements.source.regions[key].rect
+    const maximumGeometry = Math.max(...before.map((value, index) => Math.abs(value - after[index])))
+    geometry.push({ region: key, maximumGeometry })
+    check(maximumGeometry <= .15, label + ' native join geometry ' + key + ' ' + maximumGeometry)
+  }
+  for (const [kind, p] of Object.entries(ps)) {
+    await p.bringToFront()
+    const hiddenHeader = await p.addStyleTag({ content: '.site-header,.sl-header{visibility:hidden!important}' })
+    try {
+      const file = `${kind}-${label}-join.png`
+      await p.screenshot({ path: path.join(out, file), clip, animations: 'allow', caret: 'hide' })
+      files.push(file)
+      report.captures.push({ kind, file, context: 'native scrolled join', viewport, clip, scrollY: measurements[kind].scrollY, sha256: hash(await fs.readFile(path.join(out, file))) })
+    } finally {
+      await hiddenHeader.evaluate(e => e.remove())
+      await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
+    }
+  }
+  const result = await pixels(files)
+  check(result.ratio !== null && result.ratio <= .01, label + ' native join pixels ' + JSON.stringify(result))
+  const painted = {}, probe = await browser.newPage()
+  try {
+    for (const [index, kind] of ['published', 'source'].entries()) {
+      const image = 'data:image/png;base64,' + (await fs.readFile(path.join(out, files[index]))).toString('base64')
+      painted[kind] = await probe.evaluate(async ({ image, regions }) => {
+        const img = new Image(); img.src = image; await img.decode()
+        const canvas = document.createElement('canvas'); canvas.width = img.width; canvas.height = img.height
+        const ctx = canvas.getContext('2d', { willReadFrequently: true }); ctx.drawImage(img, 0, 0)
+        const sample = document.createElement('canvas'); sample.width = sample.height = 1
+        const colour = sample.getContext('2d', { willReadFrequently: true })
+        return ['ticker', 'band'].map(key => {
+          colour.clearRect(0, 0, 1, 1); colour.fillStyle = regions[key].background; colour.fillRect(0, 0, 1, 1)
+          const expected = [...colour.getImageData(0, 0, 1, 1).data]
+          const y = Math.ceil(regions[key].rect[1]) + 3
+          const samples = [.1, .5, .9].map(fraction => {
+            const x = Math.floor(img.width * fraction), actual = [...ctx.getImageData(x, y, 1, 1).data]
+            return { x, y, actual, maximumChannelDifference: Math.max(...expected.map((value, index) => Math.abs(value - actual[index]))) }
+          })
+          return { region: key, background: regions[key].background, expected, samples }
+        })
+      }, { image, regions: measurements[kind].regions })
+      check(painted[kind].every(region => region.expected[3] === 255 && region.samples.every(sample => sample.maximumChannelDifference <= 2)), kind + ' ticker and band painted in native viewport ' + JSON.stringify(painted[kind]))
+    }
+  } finally { await probe.close() }
+  report.preparation.push({ method: 'Native document scroll to the published outro minus 24px, applied identically to both pages. Bounded viewport capture includes the complete outro, ticker and reassurance band plus the start of Books. Only sticky-header visibility is temporarily hidden. Three background pixels in both ticker and band verify actual painting within 2 channel levels.', target, viewport, clip })
+  return { files, pixels: result, measurements, geometry, painted }
+}
 async function withPinnedPair(ps, phase, action) {
   const restore = []
   try {
@@ -297,7 +404,10 @@ try {
         for (const [kind, p] of Object.entries(ps)) { await select(p, index); images[kind] = await photoContract(p, kind, index) }
         const entry = await pair(ps, `reduced-${width}-photo-${index + 1}`)
         entry.images = images; entry.rendered = await captures(ps, entry.label)
-        if (index === 0) entry.context = await captures(ps, entry.label, true)
+        if (index === 0) {
+          entry.context = await captures(ps, entry.label, true)
+          entry.join = await joinCaptures(ps, entry.label)
+        }
         check(entry.source.sectionOrder.first && entry.source.sectionOrder.band === 'What to expect from StoriLeaf' && entry.source.sectionOrder.books === 'books', width + ' full header hero ticker reassurance discovery relationship')
         check(entry.source.previousCount === 0 && entry.source.playing === 'false' && entry.source.live === 'polite', width + ' initial reduced motion')
         photographs.push(entry)

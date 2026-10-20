@@ -4,7 +4,9 @@ The new StoriLeaf public website source is Vite + React + TypeScript. It is inde
 
 ## Current state
 
-This folder builds the staged React homepage. Packages 1 and 2 provide its completed foundations. Package 3 Groups 1 and 2 implement Gifting, Resources, the reassurance band, native FAQs and final invitation. Group 3 implements the shared header, newsletter, footer, navigation and currency behaviour with verified rendered comparisons. Group 4 adds six book discovery and its local Books navigation; its current verification status is in the [Group 4 review](../docs/PACKAGE_3_GROUP_4_REVIEW.md).
+This folder builds the staged React homepage. Packages 1 and 2 provide its completed foundations. Package 3 Groups 1 through 6 have recorded implementation and browser verification, including the shared shell, editorial sections, discovery, gallery/lightbox, physical book slideshow and How it works. The [component inventory](../docs/COMPONENT_INVENTORY.md) links their owning reviews, including the [Group 6 closure](../docs/PACKAGE_3_GROUP_6_REVIEW.md).
+
+Group 7 Hero and motion is implemented in isolated source. The [Group 7 review](../docs/PACKAGE_3_GROUP_7_REVIEW.md) owns its rendered and functional checkpoint, retained regressions and closure evidence; the [public handoff](../REPOSITORY_HANDOFF.md) owns the current result and next work.
 
 This is **not yet the full editable source of the published homepage**. The existing root index.html, 404.html and bundled assets remain the founder-approved visual baseline. The root is protected by scripts/guard-published.mjs, pinned to the last approved static release commit. Source output stays within dist and is not deployed to the Pages root.
 
@@ -28,6 +30,7 @@ The source validation GitHub Action runs typechecking, the content approval and 
 - src/usePreviewCurrency.ts and src/siteRoutes.ts preserve the shared currency and explicit local anchor contracts.
 - content/ledger.json records exact approved strings, source and whether actions point to real pages.
 - content/images.json records retained image sources, alternative text, declared dimensions and crops.
+- content/hero.json, content/process.json and the bounded media records retain each group's exact inherited copy, assets and provenance alongside the earlier ledger.
 - scripts/check-content.mjs validates copy provenance, approval states, source ID references and verified HTTPS destinations; unknown or unbuilt destinations cannot silently be linked.
 - scripts/guard-published.mjs prevents accidental overwriting of existing root static assets.
 - The bounded inherited-content validators retain exact protected copy for each authorised migration group without inventing original approval dates.
@@ -36,7 +39,9 @@ Read [current public design system](../docs/PUBLIC_DESIGN_SYSTEM.md), [content g
 
 ## Remaining migration work
 
-The remaining section groups are the six image gallery and lightbox, physical book slideshow, How it works, hero motion, writing demonstration and unsaved practice dialog. Each needs its own rendered and functional checkpoint before complete page assembly and Package 4 quality gates. Recreate the actual approved published wording, imagery and interactions. Obtain approval for each next group before editing it.
+Complete the Group 7 checkpoint before Group 8, which reconstructs Writing showcase, the existing unsaved practice dialog and complete page assembly. Retain exact published wording, imagery, interactions and unsaved behaviour. The gallery, physical presentation and How it works already have completed checkpoints and must not be restarted. The unchanged instructed migration scope does not require repeat approval; new visible refinements remain separate proposals.
+
+Check section joins, absolute positions, navigation, history and combined menus, media, pinned progression and dialogs once the entire page is present. Package 3 is complete only after Group 8, integrated assembly and closing records. Package 4 follows.
 
 Require source build, full browser interaction parity, keyboard/touch/reduced-motion tests and side-by-side screenshots at nine responsive widths before proposing any deployment cutover. The founder will approve that switch separately.
 
@@ -44,12 +49,12 @@ Rendered comparisons load the real Newsreader and Manrope fonts and the original
 
 ## Shared component staging
 
-The shared header, newsletter and footer reproduce the approved visual composition with explicit routes and currency state. Source navigation uses local fragments only for actual uniquely rendered targets, including Books in Group 4. Other destinations retain their published URLs. Native section links omit incorrect current page semantics. Newsletter integration remains deferred.
+The shared header, newsletter and footer reproduce the approved visual composition with explicit routes and currency state. Source navigation uses local fragments only for actual uniquely rendered targets, including Books, Samples and How it works. Other destinations retain their published URLs. Native section links omit incorrect current page semantics. Newsletter integration remains deferred.
 
-The separate [pricing investigation](../docs/PRICING_HYDRATION_REVIEW.md) records three unresolved protected export defects. This source migration does not repair or replace pricing. Existing Gifting and shared text enlargement findings also require separately proposed visible corrections.
+The separate [pricing investigation](../docs/PRICING_HYDRATION_REVIEW.md) records three unresolved protected export defects. This source migration does not repair or replace pricing. Gifting, shared footer/currency, desktop navigation, discovery and hero text enlargement findings also require separately proposed visible corrections in their owning reviews.
 
-## Source-only browser QA
+## Browser QA for isolated source
 
-Dedicated [Group 1](../docs/PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](../docs/PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](../docs/PACKAGE_3_GROUP_3_REVIEW.md) and [Group 4](../docs/PACKAGE_3_GROUP_4_REVIEW.md) gates compare the served static baseline with the isolated production build. Their reports cover the required nine widths plus a 600px intermediate check, relevant keyboard and pointer states, emulated touch, reduced motion, short screens, image readiness and targeted text enlargement.
+The [component inventory](../docs/COMPONENT_INVENTORY.md) links the served baseline versus React checkpoints for Groups 1 through 7. Their reports own the current checkpoint result, exact width/state coverage, source identities, captures, diagnostics and limitations. Each completed migration checkpoint requires the full width matrix and relevant retained gates described by the [workflow](../docs/WORKFLOW.md).
 
-The discovery workflow retains source validation, the complete static homepage regression, Packages 1 and 2, editorial/footer typography and all earlier migration gates. It uploads comparison reports, screenshots and the isolated build with read only permissions and no automatic commits. Complete native zoom, other browser engines, physical devices and accessibility certification are not established by these Chromium tests. The root remains protected and incomplete React is not published.
+The retained gates cover source validation, the protected static homepage, Packages 1 and 2, editorial/footer typography and earlier migration groups. Dedicated runs retain comparison reports, screenshots and the isolated build. Group 6's review preserves its FAQ focus and shared menu capture investigations; passing checks do not erase that history. Complete native zoom, other browser engines, physical devices and accessibility certification are not established by these Chromium tests. The root remains protected and incomplete React is not published.

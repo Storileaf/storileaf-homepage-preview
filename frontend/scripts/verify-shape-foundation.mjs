@@ -4,6 +4,7 @@ import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import http from 'node:http'
 import { settledSnapshot } from './browser-readiness.mjs'
+import { compareAutoMargins } from './computed-style-parity.mjs'
 
 // Read-only checks. The experimental build never replaces the published root.
 const root = path.resolve('..')
@@ -33,7 +34,7 @@ check(report.staticReferences.length === 0, 'A runtime dependency on the retired
 // them under authorisation and compares their geometry to the actual protected
 // homepage in verify-shared-parity, not to the obsolete source approximation.
 const original = git(['show', sourceBaseline + ':frontend/src/styles/components.css']).split('/* Shared public site ending.')[0] + '\n.sl-action--text { font-size:var(--sl-text-editorial-action); }'
-report.sourceGeometryScope = 'Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate. All geometry and computed style values remain asserted after bounded stable sampling; no difference is filtered out.'
+report.sourceGeometryScope = 'Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate. Every node, rectangle and typography value remains asserted after bounded stable sampling. A raw CSSOM auto-margin discrepancy is accepted only for the observed centred craft container when its typed auto declarations, exact parent/child geometry and actual gaps agree; raw values and the proof remain in autoMarginResolutionDifferences.'
 const originalTokens = git(['show', sourceBaseline + ':frontend/src/styles/tokens.css'])
 const tokens = await fs.readFile('src/styles/tokens.css', 'utf8')
 for (const alias of ['header-action', 'newsletter-control', 'gold-action']) {
@@ -65,8 +66,45 @@ const measure = (page, selectors) => page.evaluate(list => Object.fromEntries(li
 })), selectors)
 const geometry = page => settledSnapshot(page, () => page.evaluate(() => [...document.querySelectorAll('body *:not(script):not(style)')].map(el => {
   const r = el.getBoundingClientRect(), s = getComputedStyle(el)
-  return [el.tagName, el.getAttribute('class'), [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
+  const value = [el.tagName, el.getAttribute('class'), [r.x, r.y, r.width, r.height].map(n => Math.round(n * 100) / 100), s.fontFamily, s.fontSize, s.fontWeight, s.lineHeight, s.padding, s.margin]
+  // Chromium can report an offscreen grid's resolved auto margins as zero even
+  // though its unchanged box is centred. Record independent declaration and
+  // layout evidence for this observed container; never replace its raw values.
+  if (el.matches('#samples > .sl-container.sl-samples-frame.sl-book-craft')) {
+    const parent = el.parentElement, p = parent.getBoundingClientRect(), ps = getComputedStyle(parent)
+    const raw = { marginLeft: s.marginLeft, marginRight: s.marginRight }
+    const top = s.marginTop, bottom = s.marginBottom
+    const available = typeof el.computedStyleMap === 'function'
+    const typed = available ? el.computedStyleMap() : null
+    const parentEdges = { borderLeft: parseFloat(ps.borderLeftWidth), paddingLeft: parseFloat(ps.paddingLeft), borderRight: parseFloat(ps.borderRightWidth), paddingRight: parseFloat(ps.paddingRight) }
+    value.push({ top, bottom, autoMargins: {
+      bounded: el.className === 'sl-container sl-samples-frame sl-book-craft'
+        && parent.tagName === 'SECTION' && parent.id === 'samples' && ps.display === 'block'
+        && s.display === 'grid' && s.position === 'static' && s.transform === 'none' && ps.transform === 'none'
+        && s.writingMode === 'horizontal-tb' && ps.writingMode === 'horizontal-tb',
+      available,
+      typed: { marginLeft: typed?.get('margin-left')?.toString(), marginRight: typed?.get('margin-right')?.toString() },
+      raw,
+      rect: [r.x, r.y, r.width, r.height], parentRect: [p.x, p.y, p.width, p.height], parentEdges,
+      layout: { display: s.display, position: s.position, transform: s.transform, parentTransform: ps.transform },
+      measured: {
+        marginLeft: r.left - p.left - parentEdges.borderLeft - parentEdges.paddingLeft,
+        marginRight: p.right - parentEdges.borderRight - parentEdges.paddingRight - r.right,
+      },
+    } })
+  }
+  return value
 })))
+function equivalentCraftAutoMargins(before, after) {
+  if (!before || !after || before.length !== 10 || after.length !== 10) return false
+  if (before[0] !== 'DIV' || before[1] !== 'sl-container sl-samples-frame sl-book-craft') return false
+  // All original fields other than the resolved margin shorthand remain exact.
+  if (JSON.stringify(before.slice(0, 8)) !== JSON.stringify(after.slice(0, 8))) return false
+  const b = before[9], a = after[9]
+  if (b.top !== a.top || b.bottom !== a.bottom) return false
+  return compareAutoMargins(b.autoMargins, a.autoMargins, { tolerance: 0 }).equal
+}
+
 const focusMeasure = locator => locator.evaluate(el => ({ radius: getComputedStyle(el).borderTopLeftRadius, parentRadius: getComputedStyle(el.parentElement).borderTopLeftRadius, visible: el.matches(':focus-visible'), outline: getComputedStyle(el).outlineWidth, offset: getComputedStyle(el).outlineOffset }))
 const clearSelection = page => page.evaluate(() => window.getSelection()?.removeAllRanges())
 // Responsive viewport units and media queries can settle on the next frame.
@@ -204,7 +242,17 @@ try {
         const before = await settledSnapshot(page, () => measure(page, targets))
         row.before = before
         const beforeGeometry = await geometry(page)
-        row.geometryChanges = beforeGeometry.flatMap((before, index) => JSON.stringify(before) === JSON.stringify(afterGeometry[index]) ? [] : [{ index, before, after: afterGeometry[index] }])
+        row.autoMarginResolutionDifferences = []
+        row.geometryChanges = beforeGeometry.flatMap((before, index) => {
+          const after = afterGeometry[index]
+          if (JSON.stringify(before) === JSON.stringify(after)) return []
+          const difference = { index, before, after }
+          if (equivalentCraftAutoMargins(before, after)) {
+            row.autoMarginResolutionDifferences.push(difference)
+            return []
+          }
+          return [difference]
+        })
         row.geometryUnchanged = beforeGeometry.length === afterGeometry.length && row.geometryChanges.length === 0
         check(row.geometryUnchanged, 'Retained primitive styles changed normal page geometry or typography at ' + width)
         for (const selector of targets) {

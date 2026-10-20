@@ -1,0 +1,166 @@
+{
+  "status": "Initial diagnostic run failed and is retained, not closure evidence",
+  "source_commit": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+  "run_id": 39372765571,
+  "job_id": 118464089590,
+  "artifact_id": 12241339433,
+  "artifact_sha256": "708bc0cfe0c80364caae0547b466a923df40d4bbbeaca526ab27932fb9ff8142",
+  "report_sha256": "4c2e26cfad1656867fbd36622b58f3ea81125b68dfbb15122f6023519190ee66",
+  "compressed_report_sha256": "73e1e460b44d7f4eaeee33138e8c3dc76b0df8ed48c0d4e222414785a768201a",
+  "raw_report_bytes": 33286378,
+  "browser": "155.0.8059.39",
+  "created_at": "2026-10-20T05:02:50.872Z",
+  "completed_at": "2026-10-20T05:06:22.178Z",
+  "widths": [
+    320,
+    360,
+    390,
+    430,
+    600,
+    768,
+    820,
+    1024,
+    1280,
+    1440
+  ],
+  "states": 43,
+  "captures": 116,
+  "problems": [
+    "reduced-320-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-320-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-320-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-360-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-360-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-360-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-390-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-390-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-390-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-430-photo-1 root[0].style.animationDuration 1e-05s versus 0s; window[0].style.marginRight 13px versus 0px; window[0].style.marginLeft 13px versus 0px; pseudo",
+    "reduced-430-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-430-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-600-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-600-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-600-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-768-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-768-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-768-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-820-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-820-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-820-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1024-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1024-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1024-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1280-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1280-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1280-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1440-photo-1 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1440-photo-2 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "reduced-1440-photo-3 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "motion-600-phase-0 window[0].style.marginRight 0px versus 13px; window[0].style.marginLeft 0px versus 13px",
+    "motion-1440-phase-0 window[0].style.marginRight 0px versus 100px; window[0].style.marginLeft 0px versus 100px",
+    "boundary-360x900 root[0].style.animationDuration 1e-05s versus 0s; progression[0].style.transformOrigin 46.2422px 17.7891px versus 46.2734px 17.7891px; progression[1].style.transformOrigin 34.2734px 17.7891px versus 34.2969px 17.7891px; pseudo",
+    "boundary-361x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-480x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-481x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-600x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-601x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-720x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-721x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-900x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-901x900 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-320x568 root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "boundary-820x500 root[0].style.animationDuration 1e-05s versus 0s; progression[0].style.transformOrigin 64.5156px 10.875px versus 64.4844px 10.875px; progression[1].style.transformOrigin 51.7188px 10.875px versus 51.6953px 10.875px; progression[2].style.transformOrigin 77.0391px 10.875px versus 77px 10.875px; action[0].style.transformOrigin 103.43px 24.5px versus 103.398px 24.5px; pseudo",
+    "boundary-1440x500 root[0].style.animationDuration 1e-05s versus 0s; progression[0].style.transformOrigin 64.4844px 10.875px versus 64.5156px 10.875px; progression[1].style.transformOrigin 51.6953px 10.875px versus 51.7188px 10.875px; progression[2].style.transformOrigin 77px 10.875px versus 77.0391px 10.875px; action[0].style.transformOrigin 103.398px 24.5px versus 103.43px 24.5px; pseudo",
+    "carousel-keyboard-focus root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "carousel-pointer-hover root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "ticker-keyboard-focus-held root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "primary-action-hover root[0].style.animationDuration 1e-05s versus 0s; pseudo",
+    "text-200-320 root[0].style.animationDuration 1e-05s versus 0s; progression[1].style.transformOrigin 38.0078px 52.7891px versus 38.0312px 52.7891px; action[0].style.transformOrigin 127.68px 29.7969px versus 127.734px 29.7969px; pseudo",
+    "text-200-1440 root[0].style.animationDuration 1e-05s versus 0s; pseudo"
+  ],
+  "quality_findings": [
+    {
+      "label": "text-200-320",
+      "kind": "published",
+      "clipped": [
+        {
+          "text": "01 Your memories",
+          "left": -28.453125,
+          "right": 95.46875,
+          "boxLeft": -19,
+          "boxRight": 86
+        },
+        {
+          "text": "03 A keepsake for life",
+          "left": 227.546875,
+          "right": 345.484375,
+          "boxLeft": 234.015625,
+          "boxRight": 339.015625
+        },
+        {
+          "text": "03 A keepsake for life",
+          "left": 246.75,
+          "right": 326.265625,
+          "boxLeft": 234.015625,
+          "boxRight": 339.015625
+        }
+      ],
+      "overflow": false,
+      "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+    },
+    {
+      "label": "text-200-320",
+      "kind": "source",
+      "clipped": [
+        {
+          "text": "01 Your memories",
+          "left": -28.515625,
+          "right": 95.46875,
+          "boxLeft": -19.03125,
+          "boxRight": 85.96875
+        },
+        {
+          "text": "03 A keepsake for life",
+          "left": 227.53125,
+          "right": 345.53125,
+          "boxLeft": 234.03125,
+          "boxRight": 339.03125
+        },
+        {
+          "text": "03 A keepsake for life",
+          "left": 246.734375,
+          "right": 326.3125,
+          "boxLeft": 234.03125,
+          "boxRight": 339.03125
+        }
+      ],
+      "overflow": false,
+      "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+    }
+  ],
+  "capture_limitation": "The 320px full hero crop did not visibly paint its final ticker region. Native scrolled lower-join captures are required before closure. Matching screenshot pixels alone do not verify that omitted area.",
+  "shape_regression": {
+    "run_ids": [
+      39372765538,
+      39372765466,
+      39372765620,
+      39372765523
+    ],
+    "report_sha256": "5b7a2d056686f3114b8ef0b6a11c175ea4a2fe531c7c9a04799d10b496d64b3f",
+    "diagnosis_pending": false,
+    "artifact_id": 12241393900,
+    "artifact_sha256": "f900e0a9d8da5dfebd90c85d80bd8223678f84b52766bad32da7be9c1a12a12c",
+    "downloaded_and_digest_verified": true,
+    "diagnosis": "At 320px, the physical presentation container reports resolved auto margins as zero before historical CSS injection and20px after, with identical boxes/typography/padding. No runtime repair is justified. Correction requires native typed autos, exact boxes/parent content gaps and zero-or-used-gap raw values, while retaining all original nodes and assertions. Native rerun remains pending."
+  },
+  "thresholds": {
+    "geometry": 0.15,
+    "pixelChannel": 24,
+    "pixelRatio": 0.01,
+    "measuredAutoplayMilliseconds": [
+      7300,
+      8500
+    ]
+  },
+  "downloaded_and_digest_verified": true
+}

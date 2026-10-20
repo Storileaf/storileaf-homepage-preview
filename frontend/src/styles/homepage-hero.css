@@ -201,9 +201,12 @@
   .hero .hero-actions .sl-action > svg { width: 14px; height: 14px; }
 }
 @media (prefers-reduced-motion:reduce) {
+  .hero,
   .hero *,
   .hero::before,
-  .hero::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0s !important; }
+  .hero::after,
+  .hero *::before,
+  .hero *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0s !important; }
   .hero-orbit-ring,
   .hero-orbit-face,
   .hero-photo { animation: none !important; }
