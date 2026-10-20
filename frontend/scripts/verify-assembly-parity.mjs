@@ -22,7 +22,7 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const report = {
   checkpoint: 'Package 3 Group 8 complete homepage assembly', baseline,
   sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
-  createdAt: new Date().toISOString(), focused, requiredWidths, widths: [], states: [], journeyAttempts: [], captures: [], preparation: [],
+  createdAt: new Date().toISOString(), focused, requiredWidths, widths: [], states: [], contexts: [], journeyAttempts: [], captures: [], preparation: [],
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01, nativeAnchorScroll: 1.1 },
   sourceHashes: {}, harnessHashes: {}, protectedHashes: {}, problems, qualityFindings,
   retainedEquivalences: ['Gifting retains the Group 1 explicit warm paper underlay. Only the published transparent background versus the source rgb(250, 249, 247) is equivalent, provided the published nearest painted ancestor is that same opaque warm paper with no background image, the section gradients match and the native painted joins pass the unchanged pixel gate. Raw styles and ancestor paint remain recorded.'],
@@ -86,6 +86,7 @@ async function visibleImages(page) {
 }
 async function newPage(kind, viewport, { motion = 'reduce', touch = false } = {}) {
   const context = await browser.newContext({ viewport, deviceScaleFactor: 1, reducedMotion: motion, hasTouch: touch })
+  try {
   const page = await context.newPage()
   page.on('pageerror', error => problems.push(kind + ' runtime error ' + error.message))
   await page.goto(urls[kind], { waitUntil: 'domcontentloaded' })
@@ -103,11 +104,32 @@ async function newPage(kind, viewport, { motion = 'reduce', touch = false } = {}
   })
   await page.mouse.move(0, 0); await frames(page)
   return page
+  } catch (error) { await context.close(); throw error }
 }
 async function pair(viewport, options) {
-  return { published: await newPage('published', viewport, options), source: await newPage('source', viewport, options) }
+  const pages = {}
+  try {
+    pages.published = await newPage('published', viewport, options)
+    pages.source = await newPage('source', viewport, options)
+    return pages
+  } catch (error) { await closePair(pages); throw error }
 }
 async function closePair(pages) { for (const page of Object.values(pages)) await page.context().close() }
+async function isolatedContext(label, operation) {
+  const context = { label, status: 'running', startedAt: new Date().toISOString() }, problemStart = problems.length
+  report.contexts.push(context)
+  let value
+  try { value = await operation() }
+  catch (error) {
+    context.error = error.stack || String(error)
+    problems.push(label + '\n' + context.error)
+  } finally {
+    context.problems = problems.slice(problemStart)
+    context.status = context.problems.length ? 'failed' : 'complete'
+    context.completedAt = new Date().toISOString()
+  }
+  return { ok: context.status === 'complete', value, context }
+}
 async function snapshot(page, kind) {
   return settledSnapshot(page, () => page.evaluate(({ regions, measuredStyles, sectionOrder, localIds }) => {
     const rect = el => { const r = el.getBoundingClientRect(); return [r.x + scrollX, r.y + scrollY, r.width, r.height] }
@@ -279,6 +301,7 @@ async function navigationState(page, ids = []) {
 }
 async function journey(page, kind, viewport, { touch = false, motion = 'reduce' } = {}) {
   const attempt = { kind, viewport, touch, motion, status: 'running', startedAt: new Date().toISOString(), events: [] }
+  const problemStart = problems.length
   report.journeyAttempts.push(attempt)
   const events = attempt.events, activate = async locator => touch ? locator.tap() : locator.click()
   try {
@@ -391,13 +414,15 @@ async function journey(page, kind, viewport, { touch = false, motion = 'reduce' 
     attempt.finalNavigation = await navigationState(page, ['top', 'samples', 'how-it-works', 'resources', 'questions']).catch(diagnosticError => ({ error: String(diagnosticError) }))
     throw error
   } finally {
+    attempt.checkProblems = problems.slice(problemStart)
+    if (attempt.checkProblems.length && attempt.status === 'complete') attempt.status = 'failed'
     attempt.completedAt = new Date().toISOString()
     attempt.file = 'journey-' + viewport.width + 'x' + viewport.height + '-' + motion + '-' + (touch ? 'touch' : 'pointer') + '-' + kind + '.json'
     await fs.writeFile(path.join(out, attempt.file), JSON.stringify(attempt, null, 2) + '\n')
   }
 }
-async function pinnedAssembly(pages, width) {
-  const sequence = [], captures = []
+async function pinnedAssembly(pages, width, entry) {
+  const { sequence, captures } = entry
   // Sample 6px inside the inherited 112px intervals, rather than letting
   // integer native scrolling round a fractional document boundary ambiguously.
   for (const progress of [6, 118, 230, 342, 422, 656, 342, 230, 118, 6]) {
@@ -422,69 +447,103 @@ async function pinnedAssembly(pages, width) {
     check(fourth.active === 3 && held.active === 3 && Math.abs(fourth.gridTop - held.gridTop) <= .15, kind + ' complete-page fourth-stage hold')
     check(released.active === 3 && released.gridTop < held.gridTop - 20, kind + ' complete-page sticky release')
   }
-  return { state: 'pinned progression at assembled absolute positions', width, sequence, captures }
+  return entry
 }
 try {
   browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', headless: true, args: ['--no-sandbox'] })
   report.browser = browser.version(); pixelPage = await browser.newPage()
   for (const width of widths) {
-    const pages = await pair({ width, height: 900 }), row = { width, comparisons: [], joins: [] }
-    try {
-      row.comparisons.push(await measure(pages, width + ' reduced complete page'))
-      row.joins.push(await captureViewport(pages, width + '-top', { height: 900 }))
-      for (const key of joinKeys) row.joins.push(await captureViewport(pages, width + '-join-' + key, { key }))
-      const endTop = await pages.published.evaluate(() => document.documentElement.scrollHeight - innerHeight)
-      row.joins.push(await captureViewport(pages, width + '-ending', { top: endTop, height: 900 }))
-      for (const page of Object.values(pages)) { await page.emulateMedia({ reducedMotion: 'no-preference' }); await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await frames(page) }
-      row.comparisons.push(await measure(pages, width + ' motion enabled complete page'))
-      report.widths.push(row)
-    } finally { await closePair(pages) }
+    const row = { width, comparisons: [], joins: [], recordComplete: false }
+    report.widths.push(row)
+    const outcome = await isolatedContext(width + ' complete page and native joins', async () => {
+      const pages = await pair({ width, height: 900 })
+      try {
+        row.comparisons.push(await measure(pages, width + ' reduced complete page'))
+        row.joins.push(await captureViewport(pages, width + '-top', { height: 900 }))
+        for (const key of joinKeys) row.joins.push(await captureViewport(pages, width + '-join-' + key, { key }))
+        const endTop = await pages.published.evaluate(() => document.documentElement.scrollHeight - innerHeight)
+        row.joins.push(await captureViewport(pages, width + '-ending', { top: endTop, height: 900 }))
+        for (const page of Object.values(pages)) { await page.emulateMedia({ reducedMotion: 'no-preference' }); await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' })); await frames(page) }
+        row.comparisons.push(await measure(pages, width + ' motion enabled complete page'))
+        row.recordComplete = true
+      } finally { await closePair(pages) }
+    })
+    row.status = outcome.ok ? 'complete' : 'failed'
   }
   for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
     for (const motion of ['reduce', 'no-preference']) {
-      const pages = await pair(viewport, { motion }), entries = {}
-      try {
-        for (const [kind, page] of Object.entries(pages)) entries[kind] = await journey(page, kind, viewport, { motion })
-        report.states.push({ state: 'combined page journey', viewport, motion, ...entries })
-        report.states.push(await measure(pages, viewport.width + '-' + motion + '-after-journey'))
-      } finally { await closePair(pages) }
+      const entry = { state: 'combined page journey', viewport, motion, status: 'running', published: [], source: [] }
+      report.states.push(entry)
+      const outcome = await isolatedContext(viewport.width + ' ' + motion + ' combined page journey', async () => {
+        const pages = await pair(viewport, { motion }), completed = []
+        try {
+          for (const [kind, page] of Object.entries(pages)) {
+            const attemptIndex = report.journeyAttempts.length
+            const result = await isolatedContext(kind + ' ' + viewport.width + ' ' + motion + ' combined page journey', () => journey(page, kind, viewport, { motion }))
+            entry[kind] = report.journeyAttempts[attemptIndex]?.events || []
+            completed.push(result.ok)
+          }
+          if (completed.every(Boolean)) report.states.push(await measure(pages, viewport.width + '-' + motion + '-after-journey'))
+          else entry.postJourneyMeasurement = 'Not run because an independent journey failed before completing its state reset.'
+        } finally { await closePair(pages) }
+      })
+      entry.status = outcome.ok ? 'complete' : 'failed'
     }
   }
   for (const width of focused ? [1440] : [1024, 1440]) {
-    const pages = await pair({ width, height: 900 }, { motion: 'no-preference' })
-    try { report.states.push(await pinnedAssembly(pages, width)) }
-    finally { await closePair(pages) }
+    const entry = { state: 'pinned progression at assembled absolute positions', width, status: 'running', sequence: [], captures: [] }
+    report.states.push(entry)
+    const outcome = await isolatedContext(width + ' assembled pinned progression', async () => {
+      const pages = await pair({ width, height: 900 }, { motion: 'no-preference' })
+      try { await pinnedAssembly(pages, width, entry) }
+      finally { await closePair(pages) }
+    })
+    entry.status = outcome.ok ? 'complete' : 'failed'
   }
   if (!focused) {
     for (const viewport of [{ width: 320, height: 568 }, { width: 820, height: 500 }, { width: 1440, height: 500 }]) {
-      const pages = await pair(viewport, { motion: 'no-preference' })
-      try { report.states.push({ state: 'short screen assembled geometry', viewport, ...(await measure(pages, 'short-' + viewport.width)) }) }
-      finally { await closePair(pages) }
+      const entry = { state: 'short screen assembled geometry', viewport, status: 'running' }
+      report.states.push(entry)
+      const outcome = await isolatedContext(viewport.width + ' short screen assembled geometry', async () => {
+        const pages = await pair(viewport, { motion: 'no-preference' })
+        try { Object.assign(entry, await measure(pages, 'short-' + viewport.width)) }
+        finally { await closePair(pages) }
+      })
+      entry.status = outcome.ok ? 'complete' : 'failed'
     }
-    const viewport = { width: 390, height: 700 }, pages = await pair(viewport, { touch: true })
-    try {
-      const entries = {}
-      for (const [kind, page] of Object.entries(pages)) entries[kind] = await journey(page, kind, viewport, { touch: true })
-      report.states.push({ state: 'emulated touch combined page journey', viewport, ...entries })
-    } finally { await closePair(pages) }
+    const viewport = { width: 390, height: 700 }
+    const entry = { state: 'emulated touch combined page journey', viewport, status: 'running', published: [], source: [] }
+    report.states.push(entry)
+    const outcome = await isolatedContext('390 emulated touch combined page journey', async () => {
+      const pages = await pair(viewport, { touch: true })
+      try {
+        for (const [kind, page] of Object.entries(pages)) {
+          const attemptIndex = report.journeyAttempts.length
+          await isolatedContext(kind + ' 390 emulated touch combined page journey', () => journey(page, kind, viewport, { touch: true }))
+          entry[kind] = report.journeyAttempts[attemptIndex]?.events || []
+        }
+      } finally { await closePair(pages) }
+    })
+    entry.status = outcome.ok ? 'complete' : 'failed'
   }
 } catch (error) { problems.push(error.stack || String(error)) }
 finally {
   if (browser) await browser.close()
   report.completedAt = new Date().toISOString()
-  report.completeWidthSet = !focused && JSON.stringify(report.widths.map(row => row.width)) === JSON.stringify(requiredWidths)
+  report.completeWidthSet = !focused && report.widths.every(row => row.recordComplete) && JSON.stringify(report.widths.map(row => row.width)) === JSON.stringify(requiredWidths)
   report.stateCoverage = {
     completedJourneyAttempts: report.journeyAttempts.filter(attempt => attempt.status === 'complete').length,
     requiredJourneyAttempts: focused ? 8 : 10,
-    pinnedWidths: report.states.filter(state => state.state === 'pinned progression at assembled absolute positions').map(state => state.width),
-    shortScreens: report.states.filter(state => state.state === 'short screen assembled geometry').map(state => state.viewport)
+    pinnedWidths: report.states.filter(state => state.state === 'pinned progression at assembled absolute positions' && state.status === 'complete').map(state => state.width),
+    shortScreens: report.states.filter(state => state.state === 'short screen assembled geometry' && state.status === 'complete').map(state => state.viewport)
   }
   report.completeCheckpoint = report.completeWidthSet && report.stateCoverage.completedJourneyAttempts === 10
-    && JSON.stringify(report.stateCoverage.pinnedWidths) === JSON.stringify([1024, 1440]) && report.stateCoverage.shortScreens.length === 3 && !problems.length
+    && JSON.stringify(report.stateCoverage.pinnedWidths) === JSON.stringify([1024, 1440]) && report.stateCoverage.shortScreens.length === 3
+    && report.contexts.every(context => context.status === 'complete') && !problems.length
   await fs.writeFile(path.join(out, 'report.json'), JSON.stringify(report, null, 2) + '\n')
   const html = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
   const cards = report.widths.flatMap(row => row.joins).map(join => '<section><h2>' + html(join.label) + '</h2><p>Native document scroll ' + join.requested + '. Changed pixel ratio ' + join.pixels.ratio + '.</p><div class="pair">' + join.files.map((file, index) => '<figure><figcaption>' + (index ? 'React' : 'Published') + '</figcaption><a href="' + file + '"><img loading="lazy" src="' + file + '"></a></figure>').join('') + '</div></section>').join('')
   await fs.writeFile(path.join(out, 'review.html'), '<!doctype html><html lang="en-GB"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>StoriLeaf complete homepage assembly</title><style>body{max-width:1600px;margin:32px auto;padding:0 20px;font:16px/1.6 system-ui;background:#f9f8f6;color:#253526}.pair{display:flex;gap:20px}.pair figure{flex:1;min-width:0;margin:0}img{width:100%;height:auto}section{margin:50px 0}h1,h2{line-height:1.2}</style><h1>Complete homepage assembly comparison</h1><p>' + report.widths.length + ' widths, ' + report.captures.length + ' native viewport captures, ' + report.states.length + ' interaction and short-screen records, ' + problems.length + ' problems.</p><p>' + (report.completeWidthSet ? 'Full required width matrix recorded.' : 'Focused or incomplete run. This does not establish the complete checkpoint.') + '</p><p>Actual section joins and absolute document measurements. Component interiors retain their dedicated comparisons. This is not founder acceptance, Package 4 or publication approval.</p><p><a href="report.json">Complete measurements and findings</a></p>' + cards + '</html>')
 }
-console.log(JSON.stringify({ browser: report.browser, completeWidthSet: report.completeWidthSet, widths: report.widths.map(row => row.width), states: report.states.length, captures: report.captures.length, problems }))
+console.log(JSON.stringify({ browser: report.browser, completeWidthSet: report.completeWidthSet, completeCheckpoint: report.completeCheckpoint, stateCoverage: report.stateCoverage, widths: report.widths.map(row => row.width), states: report.states.length, captures: report.captures.length, failedContexts: report.contexts.filter(context => context.status === 'failed').map(context => context.label), problems }))
 if (problems.length) process.exitCode = 1

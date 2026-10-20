@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { HeroSection } from './sections/HeroSection'
 import './styles/homepage-hero.css'
 import { HowItWorks } from './sections/HowItWorks'
@@ -9,6 +10,7 @@ import { NewsletterFooter } from './components/NewsletterFooter'
 import { SiteHeader } from './components/SiteHeader'
 import { previewRoutesForCurrency } from './siteRoutes'
 import { usePreviewCurrency } from './usePreviewCurrency'
+import { installHomepageScrollRestoration } from './homepageScrollRestoration'
 import { approvedCopy } from './content'
 import { GiftingSection } from './sections/GiftingSection'
 import { ResourcesSection } from './sections/ResourcesSection'
@@ -25,6 +27,7 @@ import './styles/homepage-discovery.css'
 // The complete source composition remains isolated from the published export.
 // Publication requires full verification and explicit founder approval.
 export function App() {
+  useEffect(() => installHomepageScrollRestoration(window), [])
   const [currency, setCurrency] = usePreviewCurrency()
   // Only migrated, uniquely rendered targets can use local native anchors.
   const routes = previewRoutesForCurrency(currency, ['top', 'main-content', 'books', 'samples', 'how-it-works', 'resources', 'resources-activity', 'questions'])

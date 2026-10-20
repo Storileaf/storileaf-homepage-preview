@@ -26,8 +26,8 @@ const report = {
   checkpoint: 'Package 3 Group 8 Writing showcase and unsaved practice dialog', baseline,
   sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   createdAt: new Date().toISOString(), focused, requestedWidths: widths,
-  thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01 }, widths: [], states: [], captures: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
-  captureMethod: 'Native scrolled viewport crops cover the writing section in overlapping tiles if needed. No full-height offscreen raster is used. The unrelated fixed header and every descendant are hidden only during clean section captures, then restored; unchanged context captures keep it. Dialog crops use the actual fixed viewport geometry and its own native scrolling. Hover and focus captures assert their state immediately before and after. Native entrance animations may be paused at a common recorded phase without replacing their definitions.',
+  thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01 }, widths: [], states: [], captures: [], nativePaint: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
+  captureMethod: 'Native scrolled viewport crops cover the writing section in overlapping tiles if needed. No full-height offscreen raster is used. The unrelated fixed header and every descendant are hidden only during clean section captures, then restored; unchanged context captures keep it. Dialog crops use the actual fixed viewport geometry and its own native scrolling. Hover and focus captures assert their state immediately before and after. Native entrance animations may be paused at a common recorded phase without replacing their definitions. Visible default device compositions and the 901px diagnostic retain fixed native paint samples at initial, 250ms and 750ms after preparation. The predetermined last sample is compared, and the last two must be byte stable. No sample is chosen by its agreement with the other page. Changed earlier samples, coordinates and font resource identities remain in the report and artifact.',
   computedStyleMethod: 'Raw computed styles and measured boxes remain in snapshots. Explicit scoped animation names map to their published names. Transform-origin coordinates use the unchanged geometry tolerance. Automatic horizontal margins are compared only for identified centred writing blocks with native Typed OM evidence, unchanged boxes and measured parent content gaps.',
   qualityMeasurement: 'The clipped field records text range extents outside their own element box or the viewport. It is an inspection signal rather than proof of visibly cut glyphs. The 320px enlarged heading can extend into dialog padding while remaining inside the dialog border; screenshots and container overflow observations distinguish this from actual clipping.',
   animationNames,
@@ -52,7 +52,7 @@ for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/routes-Dr
   check(bytes.equals(execFileSync('git', ['show', baseline + ':' + file])), 'Protected baseline changed ' + file)
   report.protectedHashes[file] = hash(bytes)
 }
-const styleKeys = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing', 'textAlign', 'color', 'backgroundColor', 'backgroundImage', 'borderTopWidth', 'borderRightWidth', 'borderBottomWidth', 'borderLeftWidth', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'borderRadius', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft', 'gap', 'rowGap', 'columnGap', 'display', 'position', 'alignItems', 'justifyContent', 'flexDirection', 'flexShrink', 'opacity', 'boxShadow', 'overflow', 'overflowX', 'overflowY', 'zIndex', 'transform', 'transformOrigin', 'outlineWidth', 'outlineStyle', 'outlineColor', 'outlineOffset', 'animationName', 'animationDuration', 'animationDelay', 'animationTimingFunction', 'animationFillMode', 'transitionDuration', 'resize', 'containerType', 'objectFit', 'objectPosition', 'scrollMarginTop', 'tabSize', 'webkitTextSizeAdjust', 'webkitTapHighlightColor']
+const styleKeys = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'lineHeight', 'letterSpacing', 'textAlign', 'color', 'backgroundColor', 'backgroundImage', 'borderTopWidth', 'borderRightWidth', 'borderBottomWidth', 'borderLeftWidth', 'borderTopColor', 'borderRightColor', 'borderBottomColor', 'borderLeftColor', 'borderRadius', 'paddingTop', 'paddingRight', 'paddingBottom', 'paddingLeft', 'marginTop', 'marginRight', 'marginBottom', 'marginLeft', 'gap', 'rowGap', 'columnGap', 'display', 'position', 'alignItems', 'justifyContent', 'flexDirection', 'flexShrink', 'opacity', 'boxShadow', 'overflow', 'overflowX', 'overflowY', 'zIndex', 'transform', 'transformOrigin', 'outlineWidth', 'outlineStyle', 'outlineColor', 'outlineOffset', 'animationName', 'animationDuration', 'animationDelay', 'animationTimingFunction', 'animationFillMode', 'transitionDuration', 'resize', 'containerType', 'objectFit', 'objectPosition', 'scrollMarginTop', 'tabSize', 'webkitTextSizeAdjust', 'webkitTapHighlightColor', 'fontSynthesis', 'fontFeatureSettings', 'fontVariationSettings', 'fontOpticalSizing', 'fontKerning', 'fontStretch', 'fontVariantLigatures', 'textRendering', 'webkitFontSmoothing']
 const textKeys = ['title', 'emphasis', 'lead', 'avatar', 'sidebar-strong', 'sidebar-span', 'sidebar-bottom', 'breadcrumb', 'question', 'helper', 'answer', 'screen-bottom-span', 'mobile-question', 'mobile-helper', 'trigger', 'dialog-title', 'privacy', 'label', 'textarea', 'meta-count', 'clear', 'close-action']
 const sectionQueries = [
   ['root', '#writing-space'], ['container', '#writing-space>div'], ['heading', '.editorial-device-heading'], ['title', '#devices-title'], ['emphasis', '#devices-title em'], ['lead', '.editorial-device-heading>p'],
@@ -64,6 +64,44 @@ const dialogQueries = [
   ['dialog', '[data-testid="question-dialog"]'], ['topline', '.question-dialog .dialog-topline'], ['close-icon', '.question-dialog [aria-label="Close writing example"]'], ['close-svg', '.question-dialog [aria-label="Close writing example"] svg'], ['dialog-title', '.question-dialog h2'], ['privacy', '#demo-privacy'], ['label', '.question-dialog label'], ['textarea', '#demo-answer'], ['meta', '.demo-answer-meta'], ['meta-count', '.demo-answer-meta>span'], ['clear', '.demo-answer-meta button'], ['close-action', '.question-dialog>.button'], ['close-action-svg', '.question-dialog>.button svg']
 ]
 let browser
+const fontEvidence = new WeakMap()
+async function actualFonts(p, dialog = false) {
+  const evidence = fontEvidence.get(p)
+  const requests = await p.evaluate(({ queries, textKeys }) => {
+    const unique = new Map()
+    for (const [key, selector] of queries) {
+      if (!textKeys.includes(key)) continue
+      for (const e of document.querySelectorAll(selector)) {
+        if (!e.getBoundingClientRect().width) continue
+        const s = getComputedStyle(e), text = e.tagName === 'TEXTAREA' ? e.value || e.placeholder : e.textContent
+        const font = `${s.fontStyle} ${s.fontWeight} ${s.fontSize} ${s.fontFamily}`
+        unique.set(font + '\n' + text, { key, font, text, primaryFamily: s.fontFamily.split(',')[0].replaceAll('"', '').trim() })
+      }
+    }
+    return [...unique.values()]
+  }, { queries: dialog ? dialogQueries : sectionQueries, textKeys })
+  const signature = JSON.stringify(requests)
+  if (evidence.prepared.has(signature)) return
+  const observed = await p.evaluate(async requests => {
+    const emphasis = () => {
+      const e = document.querySelector('#devices-title em'), r = e.getBoundingClientRect(), range = document.createRange(); range.selectNodeContents(e)
+      return { rect: [r.x, r.y + scrollY, r.width, r.height], ranges: [...range.getClientRects()].map(r => [r.x, r.y + scrollY, r.width, r.height]) }
+    }
+    const before = emphasis()
+    const loaded = await Promise.all(requests.map(async request => {
+      const beforeCheck = document.fonts.check(request.font, request.text), faces = await document.fonts.load(request.font, request.text)
+      return { ...request, beforeCheck, afterCheck: document.fonts.check(request.font, request.text), faces: faces.map(f => ({ family: f.family, style: f.style, weight: f.weight, stretch: f.stretch, status: f.status, unicodeRange: f.unicodeRange })) }
+    }))
+    await document.fonts.ready
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+    return { loaded, before, after: emphasis(), fontStatus: document.fonts.status, documentState: document.readyState, sheets: [...document.styleSheets].map(s => ({ href: s.href, disabled: s.disabled, loaded: Boolean(s.ownerNode?.sheet || !s.ownerNode) })), inventory: [...document.fonts].map(f => ({ family: f.family, style: f.style, weight: f.weight, stretch: f.stretch, status: f.status, unicodeRange: f.unicodeRange })) }
+  }, requests)
+  check(observed.documentState === 'complete' && observed.fontStatus === 'loaded' && observed.sheets.every(s => s.disabled || s.loaded), evidence.record.kind + ' native stylesheet and font readiness')
+  check(observed.loaded.every(r => r.afterCheck && r.faces.some(f => f.family.replaceAll('"', '') === r.primaryFamily && f.status === 'loaded')), evidence.record.kind + ' actual computed text faces loaded')
+  await Promise.all(evidence.pending)
+  evidence.record.fontPasses.push({ dialog, ...observed })
+  evidence.prepared.add(signature)
+}
 async function twoFrames(p) { await p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))) }
 async function settleAnimations(p, selector = '#writing-space') {
   await p.bringToFront()
@@ -78,9 +116,19 @@ async function scrollSection(p, offset = 0) {
 async function newPage(kind, viewport, motion = 'reduce', touch = false, initialScroll = true) {
   const context = await browser.newContext({ viewport, reducedMotion: motion, hasTouch: touch, deviceScaleFactor: 1 })
   const p = await context.newPage()
+  const evidence = { prepared: new Set(), pending: [], record: { kind, viewport, motion, touch, resources: [], fontPasses: [] } }
+  fontEvidence.set(p, evidence); report.preparation.push(evidence.record)
+  p.on('response', response => {
+    if (!/^https:\/\/fonts\.(googleapis|gstatic)\.com\//.test(response.url())) return
+    evidence.pending.push((async () => {
+      try { const bytes = await response.body(); evidence.record.resources.push({ url: response.url(), status: response.status(), type: response.request().resourceType(), bytes: bytes.length, sha256: hash(bytes) }) }
+      catch (error) { evidence.record.resources.push({ url: response.url(), error: String(error) }) }
+    })())
+  })
   p.on('pageerror', e => problems.push(kind + ' runtime ' + e.message))
   await p.goto(urls[kind], { waitUntil: 'domcontentloaded' })
   await p.locator('#writing-space').waitFor()
+  await p.waitForLoadState('load')
   await p.evaluate(async () => {
     await Promise.all([document.fonts.load('450 59px Newsreader'), document.fonts.load('italic 420 59px Newsreader'), document.fonts.load('400 20px Newsreader'), document.fonts.load('400 15px Manrope'), document.fonts.load('650 14px Manrope')])
     await document.fonts.ready
@@ -97,6 +145,7 @@ async function pages(viewport, motion = 'reduce', touch = false, initialScroll =
 async function close(ps) { for (const p of Object.values(ps)) await p.context().close() }
 
 async function snapshot(p, dialog = false) {
+  await actualFonts(p, dialog)
   return settledSnapshot(p, () => p.evaluate(({ queries, styleKeys, textKeys, dialog }) => {
     const root = document.querySelector(dialog ? '[data-testid="question-dialog"]' : '#writing-space'), origin = root.getBoundingClientRect()
     const refs = el => ['aria-labelledby', 'aria-describedby'].map(name => ({ attribute: name, texts: (el.getAttribute(name) || '').split(/\s+/).filter(Boolean).map(id => document.getElementById(id)?.textContent.trim() || null) }))
@@ -114,6 +163,11 @@ async function snapshot(p, dialog = false) {
         if (s.transform === 'none' && ps.transform === 'none' && typed?.get('margin-left')?.toString() === 'auto' && typed?.get('margin-right')?.toString() === 'auto') result.autoMargins = { bounded: parent === root || root.contains(parent), available, typed: { marginLeft: 'auto', marginRight: 'auto' }, raw: { marginLeft: s.marginLeft, marginRight: s.marginRight }, rect: [r.x, r.y - origin.y, r.width, r.height], parentRect: [pr.x, pr.y - origin.y, pr.width, pr.height], parentEdges: edges, layout: { display: s.display, position: s.position, transform: s.transform, parentTransform: ps.transform }, measured: { marginLeft: r.left - pr.left - edges.borderLeft - edges.paddingLeft, marginRight: pr.right - edges.borderRight - edges.paddingRight - r.right } }
       }
       if (textKeys.includes(key)) { const selected = getComputedStyle(el, '::selection'); result.selectionColours = { color: selected.color, backgroundColor: selected.backgroundColor } }
+      if (['title', 'emphasis'].includes(key)) {
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), glyphs = []; let node
+        while ((node = walker.nextNode())) for (let i = 0; i < node.length; i++) { const range = document.createRange(); range.setStart(node, i); range.setEnd(node, i + 1); glyphs.push({ text: node.data[i], rects: [...range.getClientRects()].map(r => [r.x - origin.x, r.y - origin.y, r.width, r.height]) }) }
+        result.glyphs = glyphs
+      }
       if (key === 'textarea') { const prompt = getComputedStyle(el, '::placeholder'); result.placeholderStyle = { color: prompt.color, opacity: prompt.opacity } }
       if (key === 'dialog' || key === 'textarea') result.references = refs(el)
       return result
@@ -173,6 +227,26 @@ async function pixelCompare(files, label) {
   }, data)
   await p.close(); check(pixels.ratio !== null && pixels.ratio <= .01, label + ' pixels ' + JSON.stringify(pixels)); return pixels
 }
+async function fixedNativePaint(p, { kind, label, tile, selector, clip, file }) {
+  const evidence = { kind, label, tile, fixedTimes: [0, 250, 750], finalSampleIndex: 2, samples: [] }, start = Date.now()
+  let finalBytes
+  for (const [index, plannedMilliseconds] of evidence.fixedTimes.entries()) {
+    const remaining = plannedMilliseconds - (Date.now() - start)
+    if (remaining > 0) await p.waitForTimeout(remaining)
+    await twoFrames(p)
+    const native = await p.evaluate(selector => {
+      const rect = e => { const r = e.getBoundingClientRect(); return [r.x, r.y, r.width, r.height] }
+      return { scroll: [scrollX, scrollY], root: rect(document.querySelector(selector)), device: [...document.querySelectorAll('.device-stage,.device-laptop,.device-tablet,.device-phone')].map(e => ({ class: e.className, rect: rect(e), transform: getComputedStyle(e).transform, filter: getComputedStyle(e).filter, opacity: getComputedStyle(e).opacity })), fontStatus: document.fonts.status, documentState: document.readyState }
+    }, selector)
+    const sampleFile = kind + '-' + label + '-tile-' + tile + '-native-paint-' + index + '.png'
+    finalBytes = await p.screenshot({ path: path.join(out, sampleFile), clip, caret: 'hide' })
+    evidence.samples.push({ index, plannedMilliseconds, elapsedMilliseconds: Date.now() - start, file: sampleFile, sha256: hash(finalBytes), native })
+  }
+  evidence.finalTwoStable = evidence.samples[1].sha256 === evidence.samples[2].sha256
+  check(evidence.finalTwoStable, label + ' ' + kind + ' fixed native paint samples 1 and 2 are not stable')
+  report.nativePaint.push(evidence)
+  await fs.writeFile(path.join(out, file), finalBytes)
+}
 async function capture(ps, label, { dialog = false, context = false, assertState } = {}) {
   const first = ps.published, viewport = first.viewportSize(), selector = dialog ? '[data-testid="question-dialog"]' : '#writing-space'
   const height = await first.locator(selector).evaluate(e => e.getBoundingClientRect().height)
@@ -189,7 +263,8 @@ async function capture(ps, label, { dialog = false, context = false, assertState
       const clip = context ? undefined : { x: Math.max(0, Math.floor(box.x)), y: Math.max(0, Math.floor(box.y)), width: Math.min(viewport.width, Math.ceil(box.x + box.width)) - Math.max(0, Math.floor(box.x)), height: Math.min(viewport.height, Math.ceil(box.y + box.height)) - Math.max(0, Math.floor(box.y)) }
       check(!clip || clip.width > 0 && clip.height > 0, label + ' visible crop')
       const file = kind + '-' + label + '-tile-' + tile + '.png'
-      await p.screenshot({ path: path.join(out, file), clip, caret: 'hide' })
+      if (!dialog && !context && ((/^section-\d+$/.test(label) && viewport.width > 720) || label === 'boundary-901')) await fixedNativePaint(p, { kind, label, tile, selector, clip, file })
+      else await p.screenshot({ path: path.join(out, file), clip, caret: 'hide' })
       if (assertState) check(await assertState(p), label + ' ' + kind + ' state immediately after capture')
       report.captures.push({ kind, file, viewport, clip, offset, context, dialog, sha256: hash(await fs.readFile(path.join(out, file))) }); files.push(file)
       if (header) await header.evaluate(e => e.remove())
@@ -310,7 +385,9 @@ try {
 
   if (!focused) {
     for (const viewport of [{ width: 720, height: 1000 }, { width: 721, height: 1000 }, { width: 900, height: 1000 }, { width: 901, height: 1000 }, { width: 600, height: 1000 }, { width: 601, height: 1000 }]) {
-      const ps = await pages(viewport), entry = await pair(ps, 'boundary-' + viewport.width); entry.viewport = viewport; report.states.push(entry); await close(ps)
+      const ps = await pages(viewport), entry = await pair(ps, 'boundary-' + viewport.width); entry.viewport = viewport
+      if (viewport.width === 901) entry.rendered = await capture(ps, entry.label)
+      report.states.push(entry); await close(ps)
     }
     for (const viewport of [{ width: 320, height: 568 }, { width: 820, height: 500 }, { width: 1440, height: 500 }]) {
       const ps = await pages(viewport), entry = { label: 'short-' + viewport.width + 'x' + viewport.height, viewport, open: {} }

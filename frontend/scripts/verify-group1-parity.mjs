@@ -21,7 +21,7 @@ const report = {
   protectedBaseline: 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b',
   sourceCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   completeWidthSet: JSON.stringify(widths) === JSON.stringify(requiredWidths),
-  browser: '', urls, widths: [], states: [], captureAlignments: [], qualityFindings: [], problems,
+  browser: '', urls, widths: [], states: [], captureAlignments: [], alignmentTraces: [], qualityFindings: [], problems,
   thresholds: { geometryCssPixels: 0.15, screenshotChannelDifference: 24, screenshotChangedRatio: 0.01 },
   equivalentRepresentations: [
     'Loaded primary font families must match; unused fallback family lists may differ.',
@@ -30,11 +30,12 @@ const report = {
   ],
   captureMethod: 'Real pages measured after fonts and images load. Clean crops temporarily extend viewport height to contain the complete section, hide the unrelated sticky header and apply a recorded body padding adjustment of less than one CSS pixel based on the section document origin. The report records the resulting document positions and verifies unchanged section geometry for both capture adjustments. This avoids clipped browser painting and limits raster differences caused by different preceding content in the incomplete React page. Context captures retain the original viewport and header without the capture adjustments. No target section styles, assets or responses are substituted.',
   viewportReadinessMethod: 'Before measurement or section positioning, a hidden fixed 100vw by 100vh probe must match the requested viewport within 0.01 CSS pixels, and innerWidth/innerHeight must match exactly. This bounded check waits for responsive CSS after a resize, followed by two foreground animation frames. The probe does not participate in document layout.',
-  sectionAlignmentMethod: 'Programmatic native scrollIntoView checks unique preserved IDs, computed scroll margins and root padding, final document-clamped target placement and visibility. This does not exercise shared header navigation, URL fragments, router history or restoration.',
+  sectionAlignmentMethod: 'Programmatic native scrollIntoView checks unique preserved IDs, computed scroll margins and root padding, final document-clamped target placement and visibility. The existing CSS viewport probe remains required. Read-only geometry must also remain unchanged for at least 200ms and three animation-frame samples before the single alignment call and before final measurement. Passive resize, scroll and focus snapshots preserve the observed sequence. Stability is not a wait for the expected position, and alignment is never retried. The earlier post-settle source Resources shift is retained as an observed failure whose mechanism remains unproven. This does not exercise shared header navigation, URL fragments, router history or restoration.',
   limits: 'Chromium automation, emulated touch and targeted text enlargement. Not native browser zoom, physical device or cross browser certification.',
 }
 const check = (ok, message) => { if (!ok) problems.push(message) }
 const hash = value => createHash('sha256').update(value).digest('hex')
+report.harnessFiles = { 'scripts/verify-group1-parity.mjs': hash(await fs.readFile('scripts/verify-group1-parity.mjs')) }
 report.publishedFiles = {
   htmlSha256: hash(await fs.readFile('../index.html')),
   cssSha256: hash(await fs.readFile('../assets/index-DhPZyX4z.css')),
@@ -126,6 +127,63 @@ async function settle(page) {
       && Math.abs(box.width - width) < 0.01 && Math.abs(box.height - height) < 0.01
   }, page.viewportSize(), { timeout: 5000 })
   await within(page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))), 'Foreground frame settling')
+}
+async function traceAlignment(page, id) {
+  await page.bringToFront()
+  await page.evaluate(id => {
+    const events = []
+    const box = element => {
+      if (!element) return null
+      const r = element.getBoundingClientRect()
+      return { top: r.top, bottom: r.bottom, left: r.left, width: r.width, height: r.height, documentTop: r.top + scrollY }
+    }
+    const read = () => ({
+      url: location.href, scroll: [scrollX, scrollY], scrollRestoration: history.scrollRestoration,
+      viewport: [innerWidth, innerHeight], document: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
+      cssViewport: box(document.querySelector('[data-qa-css-viewport]')),
+      rootScrollPadding: getComputedStyle(document.documentElement).scrollPaddingTop,
+      rootScrollBehaviour: getComputedStyle(document.documentElement).scrollBehavior,
+      reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches,
+      sections: Object.fromEntries([...new Set([id, 'resources', 'resources-activity', 'gifting', 'writing-space', 'how-it-works'])].map(key => [key, box(document.getElementById(key))])),
+      focus: { tag: document.activeElement?.tagName, id: document.activeElement?.id, href: document.activeElement?.getAttribute('href'), label: document.activeElement?.getAttribute('aria-label'), box: box(document.activeElement) },
+      bodyPaddingTop: getComputedStyle(document.body).paddingTop
+    })
+    const record = type => events.push({ type, time: performance.now(), ...read() })
+    const listener = event => record(event.type)
+    const types = ['resize', 'scroll', 'focusin', 'focusout', 'popstate', 'hashchange']
+    for (const type of types) window.addEventListener(type, listener, { capture: true, passive: true })
+    window.__group1AlignmentTrace = {
+      read, record, events, stable: null,
+      stop() {
+        record('end')
+        for (const type of types) window.removeEventListener(type, listener, true)
+        return events
+      }
+    }
+    record('before viewport resize')
+  }, id)
+}
+async function stableAlignment(page, phase) {
+  await page.evaluate(phase => {
+    const trace = window.__group1AlignmentTrace
+    trace.stable = { phase, started: performance.now(), previous: null, since: performance.now(), samples: 0, totalSamples: 0, changes: 0 }
+    trace.record(phase + ' observation starts')
+  }, phase)
+  await page.waitForFunction(() => {
+    const trace = window.__group1AlignmentTrace, state = trace.stable
+    const value = JSON.stringify(trace.read()), now = performance.now()
+    state.totalSamples++
+    if (value !== state.previous) {
+      state.previous = value; state.since = now; state.samples = 1; state.changes++
+      trace.record(state.phase + ' geometry changed')
+    } else state.samples++
+    return state.samples >= 3 && now - state.since >= 200
+  }, undefined, { timeout: 5000, polling: 'raf' })
+  return page.evaluate(() => {
+    const trace = window.__group1AlignmentTrace, state = trace.stable
+    trace.record(state.phase + ' geometry stable')
+    return { value: trace.read(), duration: performance.now() - state.started, stableDuration: performance.now() - state.since, samples: state.samples, totalSamples: state.totalSamples, changes: state.changes }
+  })
 }
 async function ready(page, kind) {
   await page.bringToFront()
@@ -427,37 +485,62 @@ try {
     for (const id of ['resources', 'resources-activity', 'gifting']) {
       const values = {}
       for (const [kind, page] of Object.entries(pages)) {
-        await page.setViewportSize({ width, height: 600 })
-        await settle(page)
-        const target = page.locator('#' + id)
-        const idCount = await target.count()
-        check(idCount === 1, kind + ' section ID is not unique ' + id + ' at ' + width)
-        await target.evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'instant' }))
-        await page.waitForFunction(id => {
-          const element = document.getElementById(id), bounds = element.getBoundingClientRect()
-          const documentTop = bounds.top + scrollY
-          const offset = parseFloat(getComputedStyle(element).scrollMarginTop) + parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)
-          const maximumScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight)
-          const expectedTop = documentTop - Math.max(0, Math.min(documentTop - offset, maximumScroll))
-          return Math.abs(bounds.top - expectedTop) <= 1
-        }, id, { timeout: 5000 })
-        await settle(page)
-        values[kind] = await target.evaluate((element, idCount) => {
-          const box = element.getBoundingClientRect(), documentTop = box.top + scrollY
-          const offset = getComputedStyle(element).scrollMarginTop
-          const rootPadding = getComputedStyle(document.documentElement).scrollPaddingTop
-          const maximumScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight)
-          const expectedTop = documentTop - Math.max(0, Math.min(documentTop - parseFloat(offset) - parseFloat(rootPadding), maximumScroll))
-          const viewport = document.querySelector('[data-qa-css-viewport]').getBoundingClientRect()
-          return {
-            idCount, offset, rootPadding, documentTop, scrollY, maximumScroll,
-            top: box.top, expectedTop, inPosition: Math.abs(box.top - expectedTop) <= 1,
-            visible: box.top >= 0 && box.top < innerHeight,
-            cssViewport: { width: viewport.width, height: viewport.height },
-          }
-        }, idCount)
-        check(values[kind].inPosition, kind + ' final section position differs ' + id + ' at ' + width)
-        check(values[kind].visible, kind + ' section target not visible ' + id + ' at ' + width)
+        const diagnostic = { kind, id, width, height: 600, alignmentCalls: 0 }
+        report.alignmentTraces.push(diagnostic)
+        await traceAlignment(page, id)
+        try {
+          await page.setViewportSize({ width, height: 600 })
+          await settle(page)
+          diagnostic.beforeAlignment = await stableAlignment(page, 'before alignment')
+          const target = page.locator('#' + id)
+          const idCount = await target.count()
+          check(idCount === 1, kind + ' section ID is not unique ' + id + ' at ' + width)
+          await page.evaluate(() => window.__group1AlignmentTrace.record('single native alignment call'))
+          diagnostic.alignmentCalls++
+          await target.evaluate(element => element.scrollIntoView({ block: 'start', behavior: 'instant' }))
+          await page.waitForFunction(id => {
+            const element = document.getElementById(id), bounds = element.getBoundingClientRect()
+            const documentTop = bounds.top + scrollY
+            const offset = parseFloat(getComputedStyle(element).scrollMarginTop) + parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)
+            const maximumScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight)
+            const expectedTop = documentTop - Math.max(0, Math.min(documentTop - offset, maximumScroll))
+            return Math.abs(bounds.top - expectedTop) <= 1
+          }, id, { timeout: 5000 })
+          diagnostic.firstExpectedPosition = await page.evaluate(() => {
+            const trace = window.__group1AlignmentTrace
+            trace.record('expected native position observed')
+            return trace.read()
+          })
+          await settle(page)
+          diagnostic.afterAlignment = await stableAlignment(page, 'after alignment')
+          values[kind] = await target.evaluate((element, idCount) => {
+            window.__group1AlignmentTrace.record('final strict position reading')
+            const box = element.getBoundingClientRect(), documentTop = box.top + scrollY
+            const offset = getComputedStyle(element).scrollMarginTop
+            const rootPadding = getComputedStyle(document.documentElement).scrollPaddingTop
+            const maximumScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight)
+            const expectedTop = documentTop - Math.max(0, Math.min(documentTop - parseFloat(offset) - parseFloat(rootPadding), maximumScroll))
+            const viewport = document.querySelector('[data-qa-css-viewport]').getBoundingClientRect()
+            return {
+              idCount, offset, rootPadding, documentTop, scrollY, maximumScroll,
+              top: box.top, expectedTop, inPosition: Math.abs(box.top - expectedTop) <= 1,
+              visible: box.top >= 0 && box.top < innerHeight,
+              cssViewport: { width: viewport.width, height: viewport.height },
+            }
+          }, idCount)
+          diagnostic.finalPosition = values[kind]
+          check(values[kind].inPosition, kind + ' final section position differs ' + id + ' at ' + width)
+          check(values[kind].visible, kind + ' section target not visible ' + id + ' at ' + width)
+        } catch (error) {
+          diagnostic.failure = error.stack || String(error)
+          throw error
+        } finally {
+          diagnostic.events = await page.evaluate(() => {
+            const events = window.__group1AlignmentTrace.stop()
+            delete window.__group1AlignmentTrace
+            return events
+          }).catch(error => [{ captureError: String(error) }])
+        }
       }
       check(values.published.offset === values.source.offset, 'Section scroll margin differs ' + id + ' at ' + width)
       check(values.published.rootPadding === values.source.rootPadding, 'Root scroll padding differs ' + id + ' at ' + width)
