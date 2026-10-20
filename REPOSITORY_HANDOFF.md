@@ -2,6 +2,9 @@
 
 ## Current checkpoint
 
+Package 4's first assembled-page quality audit is now recorded in [the Package 4 review](docs/PACKAGE_4_QUALITY_AUDIT.md). It consolidates existing verified evidence, identifies inherited reflow and dialog accessibility defects, separates the three protected pricing issues, and sets bounded repair and wider-browser acceptance gates. This is an audit and repair proposal, **not** implementation or final Package 4 clearance. The published site and isolated React cutover status are unchanged.
+
+
 Package 3 Group 8, Writing showcase, the unsaved practice dialog and complete homepage assembly, is implemented and browser verified in isolated React source. Its dedicated Writing checkpoint, complete assembly and retained checks passed. Group 8 and Package 3 are closed through the implementation and verification stage. The [Group 8 review](docs/PACKAGE_3_GROUP_8_REVIEW.md) and [permanent verification index](qa/homepage-assembly/2026-10-20/committed-verification.json) own the exact source identities, evidence, diagnostic history and testing limits.
 
 The composition now contains the entire approved homepage order. Writing showcase follows How it works and precedes Gifting. Its device illustration, mobile question view and temporary practice dialog retain the existing content and behaviour. The dialog remains unsaved and clears on every close. The standalone practice page and newsletter integration remain deferred.
@@ -26,7 +29,7 @@ The process, media and Group 8 reports describe their targeted text enlargement 
 
 ## Next work
 
-Package 4 is next. The Group 8 review records the completed Writing and full assembly checkpoints, including the reconstructed native history behaviour and the bounded browser capture correction. The final closing public commit, Pages run and post-deployment byte verification are retained in the [private design handoff](https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/REPOSITORY_HANDOFF.md).
+Package 4 audit and repair proposals are recorded; authorised reflow/accessibility corrections, wider-browser verification and founder rendered acceptance are still outstanding. The Group 8 review records the completed Writing and full assembly checkpoints, including the reconstructed native history behaviour and the bounded browser capture correction. The final closing public commit, Pages run and post-deployment byte verification are retained in the [private design handoff](https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/REPOSITORY_HANDOFF.md).
 
 Package 4 includes the complete page quality review, separately proposed inherited repairs and accurately reported browser, zoom and device coverage. Review duplicate CI jobs, repeated setup and unreliable measurements after assembly and before the first separately authorised new public page. Founder rendered acceptance and explicit React publication approval remain separate gates. No new public page, backend work, standalone practice or newsletter integration is included.
 
