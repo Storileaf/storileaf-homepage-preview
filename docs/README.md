@@ -18,7 +18,7 @@ The approved homepage is the visual baseline. Official private main in Storileaf
 
 [Package 1](PACKAGE_1_REVIEW.md), [Package 2](PACKAGE_2_REVIEW.md), [editorial links](EDITORIAL_LINK_REVIEW.md) and [footer typography](FOOTER_TYPE_REVIEW.md) retain foundation evidence. The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md), [Group 5](PACKAGE_3_GROUP_5_REVIEW.md) and [Group 6](PACKAGE_3_GROUP_6_REVIEW.md) reviews own their migration histories and limitations. The [pricing investigation](PRICING_HYDRATION_REVIEW.md) owns its unresolved export defects. Existing enlargement findings remain in the relevant reviews, not a parallel issue narrative here.
 
-The [Group 7 review](PACKAGE_3_GROUP_7_REVIEW.md) owns Hero and motion. Its source is implemented with **VERIFICATION_PENDING** for the final checkpoint and closure. Current next steps remain in the handoff and inventory.
+The [Group 7 review](PACKAGE_3_GROUP_7_REVIEW.md) owns Hero and motion evidence. Current status and next steps remain in the handoff and inventory.
 
 Implementation, browser verification, founder acceptance and publication are separate states. The homepage remains incomplete as React. Root static files remain the published preview; frontend/dist stays isolated. No Macaly work, backend changes, private production edits or React publishing switch is authorised by these records.
 

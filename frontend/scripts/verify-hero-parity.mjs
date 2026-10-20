@@ -25,7 +25,7 @@ const report = {
   createdAt: new Date().toISOString(), focused,
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01, measuredAutoplayMilliseconds: [7300, 8500] },
   widths: [], states: [], captures: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
-  captureMethod: 'Real served pages, fonts and decoded photographs. Reduced motion comparisons include every photograph. Motion-enabled comparison captures pause existing native hero animations at a recorded common phase through the Web Animations API, then restore their original state. No animation definition, content, layout rule or baseline is replaced. Isolated hero captures temporarily hide only the sticky header; separate unchanged viewport captures retain it. Geometry and section joins are measured without origin alignment.',
+  captureMethod: 'Real served pages, fonts and decoded photographs. Reduced motion comparisons include every photograph. Motion-enabled comparison captures pause existing native hero animations at a recorded common phase through the Web Animations API, then restore their original state. No animation definition, content, layout rule or baseline is replaced. Isolated hero captures temporarily hide only the sticky header; separate unchanged viewport captures retain it. Hover captures use the native scrolled viewport and re-hover the target, with before/after state assertions. Focus captures assert activeElement and focus-visible before/after. Geometry and section joins are measured without origin alignment.',
   computedStyleMethod: 'Raw styles remain in every snapshot. Pixel-valued transform-origin coordinates use the unchanged 0.15px geometry gate. Only the identified centred .hero-window can compare differing raw horizontal margins through native typed auto values and independently measured box-to-parent content gaps; both boxes, parent boxes, centring and raw values are checked. Missing typed evidence fails. The observed Chromium zero-versus-used-pixel serialization is recorded, not discarded.',
   limits: 'Chromium only. Touch uses browser input emulation. Text enlargement doubles targeted text properties and is not native browser zoom, a physical device test, a screen reader test or accessibility certification. Browser visibility is reported only if the headless browser actually exposes a hidden document.'
 }
@@ -258,7 +258,7 @@ async function pixels(files) {
     }, inputs)
   } finally { await p.close() }
 }
-async function captures(ps, label, context = false) {
+async function captures(ps, label, context = false, focusSelector) {
   const files = []
   for (const [kind, p] of Object.entries(ps)) {
     await p.bringToFront(); await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
@@ -266,14 +266,59 @@ async function captures(ps, label, context = false) {
     try {
       if (!context) hiddenHeader = await p.addStyleTag({ content: '.site-header,.sl-header{visibility:hidden!important}' })
       const file = `${kind}-${label}${context ? '-context' : ''}.png`
+      const focusState = async () => p.locator(focusSelector).evaluate(el => ({ active: document.activeElement === el, visible: el.matches(':focus-visible') }))
+      const focusBefore = focusSelector ? await focusState() : undefined
+      if (focusSelector) check(focusBefore.active && focusBefore.visible, kind + ' ' + label + ' focus immediately before capture')
       if (context) await p.screenshot({ path: path.join(out, file), animations: 'allow', caret: 'hide' })
       else await p.locator('.hero').screenshot({ path: path.join(out, file), animations: 'allow', caret: 'hide' })
-      files.push(file); report.captures.push({ kind, file, context, viewport: p.viewportSize(), sha256: hash(await fs.readFile(path.join(out, file))) })
+      const focusAfter = focusSelector ? await focusState() : undefined
+      if (focusSelector) check(focusAfter.active && focusAfter.visible, kind + ' ' + label + ' focus immediately after capture')
+      files.push(file); report.captures.push({ kind, file, context, viewport: p.viewportSize(), focus: focusSelector ? { selector: focusSelector, before: focusBefore, after: focusAfter } : undefined, sha256: hash(await fs.readFile(path.join(out, file))) })
     } finally { if (hiddenHeader) await hiddenHeader.evaluate(e => e.remove()) }
   }
   const result = await pixels(files)
   check(result.ratio !== null && result.ratio <= .01, label + (context ? ' context' : '') + ' pixels ' + JSON.stringify(result))
   return { files, pixels: result }
+}
+// Returning to the page top after hover moves the target away from the real
+// pointer. Capture the native viewport with the target in view, then prove the
+// pointer and resolved hover appearance survived the actual screenshot.
+async function hoverCaptures(ps, label, selector) {
+  const viewport = ps.source.viewportSize(), files = [], states = {}
+  const target = await ps.published.locator(selector).evaluate((el, height) => {
+    const r = el.getBoundingClientRect()
+    return Math.max(0, Math.floor(r.top + scrollY - (height - r.height) / 2))
+  }, viewport.height)
+  for (const [kind, p] of Object.entries(ps)) {
+    await p.bringToFront()
+    await p.evaluate(top => { document.activeElement?.blur(); scrollTo({ top, behavior: 'instant' }) }, target)
+    const hiddenHeader = await p.addStyleTag({ content: '.site-header,.sl-header{visibility:hidden!important}' })
+    const readState = () => p.locator(selector).evaluate(el => {
+      const r = el.getBoundingClientRect(), s = getComputedStyle(el)
+      return { hovered: el.matches(':hover'), scrollY, rect: [r.x, r.y, r.width, r.height], background: s.backgroundColor, color: s.color, border: s.borderColor, boxShadow: s.boxShadow }
+    })
+    try {
+      await p.locator(selector).hover()
+      const before = await settledSnapshot(p, readState)
+      check(before.hovered && before.scrollY === target && before.rect[1] >= 0 && before.rect[1] + before.rect[3] <= viewport.height, kind + ' ' + label + ' native hover before capture')
+      const file = `${kind}-${label}-native.png`
+      await p.screenshot({ path: path.join(out, file), clip: { x: 0, y: 0, ...viewport }, animations: 'allow', caret: 'hide' })
+      const after = await readState()
+      check(after.hovered && JSON.stringify(before) === JSON.stringify(after), kind + ' ' + label + ' native hover retained through capture')
+      states[kind] = { before, after }; files.push(file)
+      report.captures.push({ kind, file, context: 'native scrolled hover', viewport, selector, scrollY: target, hover: states[kind], sha256: hash(await fs.readFile(path.join(out, file))) })
+    } finally {
+      await hiddenHeader.evaluate(e => e.remove())
+      await p.mouse.move(0, 0)
+      await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
+    }
+  }
+  const maximumGeometry = Math.max(...states.published.before.rect.map((value, index) => Math.abs(value - states.source.before.rect[index])))
+  check(maximumGeometry <= .15, label + ' native hover geometry ' + maximumGeometry)
+  const result = await pixels(files)
+  check(result.ratio !== null && result.ratio <= .01, label + ' native hover pixels ' + JSON.stringify(result))
+  report.preparation.push({ method: 'Identical native document scroll centres the target. The real pointer hovers after scrolling; settled computed appearance and :hover are asserted immediately before and after a viewport screenshot. No subsequent capture scroll changes the pointer relationship.', selector, target, viewport })
+  return { files, pixels: result, states, maximumGeometry }
 }
 // A whole-hero locator screenshot can include compositor tiles below the
 // current viewport. Native scrolling makes the lower join visibly painted.
@@ -545,13 +590,13 @@ try {
       const ps = await pages({ width: 1440, height: 900 })
       try {
         for (const p of Object.values(ps)) { await p.getByTestId('hero-next').focus(); await p.keyboard.press('Shift+Tab'); await p.keyboard.press('Tab') }
-        let entry = await pair(ps, 'carousel-keyboard-focus'); entry.rendered = await captures(ps, entry.label); report.states.push(entry)
+        let entry = await pair(ps, 'carousel-keyboard-focus'); entry.rendered = await captures(ps, entry.label, false, '[data-testid="hero-next"]'); report.states.push(entry)
         for (const p of Object.values(ps)) { await p.evaluate(() => document.activeElement?.blur()); await p.getByTestId('hero-next').hover() }
-        entry = await pair(ps, 'carousel-pointer-hover'); entry.rendered = await captures(ps, entry.label); report.states.push(entry)
+        entry = await pair(ps, 'carousel-pointer-hover'); entry.rendered = await hoverCaptures(ps, entry.label, '[data-testid="hero-next"]'); report.states.push(entry)
         for (const p of Object.values(ps)) { await p.mouse.move(0, 0); await p.locator('.hero-marquee').focus(); await p.keyboard.press('Space') }
-        entry = await pair(ps, 'ticker-keyboard-focus-held'); entry.rendered = await captures(ps, entry.label); report.states.push(entry)
+        entry = await pair(ps, 'ticker-keyboard-focus-held'); entry.rendered = await captures(ps, entry.label, false, '.hero-marquee'); report.states.push(entry)
         for (const p of Object.values(ps)) { await p.evaluate(() => document.activeElement?.blur()); await p.locator('.hero-actions a').first().hover() }
-        entry = await pair(ps, 'primary-action-hover'); entry.rendered = await captures(ps, entry.label); report.states.push(entry)
+        entry = await pair(ps, 'primary-action-hover'); entry.rendered = await hoverCaptures(ps, entry.label, '.hero-actions a:first-child'); report.states.push(entry)
       } finally { await close(ps) }
     })
 
