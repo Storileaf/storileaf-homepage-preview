@@ -258,13 +258,25 @@ async function pixels(files) {
     }, inputs)
   } finally { await p.close() }
 }
+async function suppressHeader(p, label) {
+  const selector = '.site-header,.site-header *,.sl-header,.sl-header *'
+  const stylesheet = await p.addStyleTag({ content: selector + '{visibility:hidden!important}' })
+  await p.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))))
+  const evidence = await p.locator(selector).evaluateAll(elements => ({
+    count: elements.length,
+    visible: elements.filter(el => getComputedStyle(el).visibility !== 'hidden').map(el => ({ tag: el.tagName, className: typeof el.className === 'string' ? el.className : el.getAttribute('class'), visibility: getComputedStyle(el).visibility }))
+  }))
+  check(evidence.count > 0 && evidence.visible.length === 0, label + ' scoped header and descendant suppression ' + JSON.stringify(evidence))
+  report.preparation.push({ method: 'Temporary visibility:hidden on the identified header and all descendants, followed by two native animation frames and computed-visibility checks. The stylesheet is removed after this clean capture. Header context captures remain unchanged.', label, selector, ...evidence })
+  return stylesheet
+}
 async function captures(ps, label, context = false, focusSelector) {
   const files = []
   for (const [kind, p] of Object.entries(ps)) {
     await p.bringToFront(); await p.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }))
     let hiddenHeader
     try {
-      if (!context) hiddenHeader = await p.addStyleTag({ content: '.site-header,.sl-header{visibility:hidden!important}' })
+      if (!context) hiddenHeader = await suppressHeader(p, kind + ' ' + label)
       const file = `${kind}-${label}${context ? '-context' : ''}.png`
       const focusState = async () => p.locator(focusSelector).evaluate(el => ({ active: document.activeElement === el, visible: el.matches(':focus-visible') }))
       const focusBefore = focusSelector ? await focusState() : undefined
@@ -292,7 +304,7 @@ async function hoverCaptures(ps, label, selector) {
   for (const [kind, p] of Object.entries(ps)) {
     await p.bringToFront()
     await p.evaluate(top => { document.activeElement?.blur(); scrollTo({ top, behavior: 'instant' }) }, target)
-    const hiddenHeader = await p.addStyleTag({ content: '.site-header,.sl-header{visibility:hidden!important}' })
+    const hiddenHeader = await suppressHeader(p, kind + ' ' + label)
     const readState = () => p.locator(selector).evaluate(el => {
       const r = el.getBoundingClientRect(), s = getComputedStyle(el)
       return { hovered: el.matches(':hover'), scrollY, rect: [r.x, r.y, r.width, r.height], background: s.backgroundColor, color: s.color, border: s.borderColor, boxShadow: s.boxShadow }
@@ -357,7 +369,7 @@ async function joinCaptures(ps, label) {
   }
   for (const [kind, p] of Object.entries(ps)) {
     await p.bringToFront()
-    const hiddenHeader = await p.addStyleTag({ content: '.site-header,.sl-header{visibility:hidden!important}' })
+    const hiddenHeader = await suppressHeader(p, kind + ' ' + label + ' join')
     try {
       const file = `${kind}-${label}-join.png`
       await p.screenshot({ path: path.join(out, file), clip, animations: 'allow', caret: 'hide' })
