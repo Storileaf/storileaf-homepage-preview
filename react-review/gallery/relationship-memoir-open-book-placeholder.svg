@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs><linearGradient id="scene" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7DBD6"/><stop offset="1" stop-color="#F5F1E9"/></linearGradient>
+<linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#FFFCF6"/><stop offset="1" stop-color="#ECE3D2"/></linearGradient>
+<filter id="shadow" x="-25%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#253227" flood-opacity=".22"/></filter></defs>
+<rect width="1200" height="800" fill="url(#scene)"/><circle cx="1022" cy="112" r="270" fill="#917771" opacity=".06"/>
+<ellipse cx="602" cy="654" rx="428" ry="48" fill="#917771" opacity=".12"/>
+<g filter="url(#shadow)">
+<path d="M602 222 C514 180 407 197 237 233 L226 622 C414 593 515 607 602 653 Z" fill="#917771" opacity=".67"/>
+<path d="M602 222 C697 180 804 197 974 233 L985 622 C802 593 702 607 602 653 Z" fill="#917771" opacity=".67"/>
+<path d="M595 224 C512 193 395 198 254 232 L247 603 C402 577 523 589 595 627 Z" fill="url(#paper)" stroke="#D8D1C2" stroke-width="4"/>
+<path d="M608 224 C691 193 805 198 946 232 L953 603 C794 577 680 589 608 627 Z" fill="url(#paper)" stroke="#D8D1C2" stroke-width="4"/>
+<path d="M600 223 C600 346 600 504 602 638" stroke="#BDB9AB" stroke-width="7" opacity=".58"/></g>
+<g stroke="#C5C6B9" stroke-width="3" opacity=".45" stroke-linecap="round">
+<path d="M286 283 C398 258 487 261 554 279 M285 314 C405 293 490 298 553 311 M286 347 C399 324 487 331 554 345 M285 381 C403 357 492 366 552 381"/>
+<path d="M645 280 C711 259 798 262 911 284 M647 313 C718 290 804 298 912 314 M647 347 C718 324 803 332 911 348 M649 381 C721 360 803 369 911 381"/>
+</g></svg>
