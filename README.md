@@ -1,38 +1,28 @@
 # StoriLeaf public website preview and frontend source
 
-Status 19 October 2026. Frontend design work only. This is not the production website or private customer application.
+Updated at the Package 3 Group 5 documentation checkpoint. Frontend design work only. This is not the production website or private customer application.
 
-**Published homepage**  
-https://storileaf.github.io/storileaf-homepage-preview/
+[Published homepage preview](https://storileaf.github.io/storileaf-homepage-preview/)
 
 ## Current authority
 
-The founder-approved homepage is the visual reference for the next generation of public website pages. Its current published version is still the root static HTML/CSS/JavaScript. Do not change its content, section order or interactions during design-system consolidation without a separately agreed correction.
+The founder approved homepage is the visual reference for the new public website. Its published version is still the root static HTML, CSS and compiled JavaScript. Preserve its content, imagery, proportions, section order and interactions during source migration. Further visible refinements require separate agreement.
 
-The active [public design system](docs/PUBLIC_DESIGN_SYSTEM.md) replaces earlier Georgia/Lato and pill-only website styling with Newsreader, Manrope and the current warm editorial site direction.
+The active [public design system](docs/PUBLIC_DESIGN_SYSTEM.md) supersedes historical Georgia/Lato and pill styling for the new public site with Newsreader, Manrope and the approved editorial homepage geometry.
 
-- [Public website documentation index](docs/README.md)
-- [Content creation and factual approval gate](docs/CONTENT_GATE.md)
-- [Development, parity and QA workflow](docs/WORKFLOW.md)
-- [Early performance foundations](docs/PERFORMANCE.md)
-- [Founder decisions and deferred work](docs/DECISIONS.md)
-- [Implementation handoff and historical decisions](REPOSITORY_HANDOFF.md)
+Use the [documentation index](docs/README.md) to find each authoritative record. The [handoff](REPOSITORY_HANDOFF.md) owns current work and next steps, the [component inventory](docs/COMPONENT_INVENTORY.md) owns status, the [content gate](docs/CONTENT_GATE.md) owns wording and provenance rules, and the [workflow](docs/WORKFLOW.md) owns development, documentation and release boundaries. The [performance foundations](docs/PERFORMANCE.md) and [decision register](docs/DECISIONS.md) retain their specialist guidance.
 
-The official private repository Storileaf/storiYoceFj6IRAleaf remains authoritative for actual product, packages, pricing, customer behaviour and production code. The private UX branch design/storileaf-website-ux records the approved public website copy and page decisions. These repositories do not automatically synchronise.
+Official private Storileaf/storiYoceFj6IRAleaf main remains authoritative for actual product capabilities, packages, pricing, customer behaviour and production code. The private design/storileaf-website-ux branch records website wording and page decisions. These repositories do not automatically synchronise.
 
 ## Editable React source
 
-The [frontend/](frontend/) workspace uses Vite, React and TypeScript for the staged homepage migration. It includes the content ledger, design tokens, reusable editorial and image components, migrated sections, shared components, tests and an isolated build. The [source build workflow](.github/workflows/validate-public-source.yml) checks these without changing published root assets.
+The [frontend workspace](frontend/) uses Vite, React and TypeScript for staged homepage migration. It includes content provenance, design tokens, reusable components, migrated sections, tests and an isolated build. The [source validation workflow](.github/workflows/validate-public-source.yml) checks it without changing published root assets.
 
-**Migration status**
+Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 through 5 have completed implementation and browser verification within their recorded scopes. The gallery and lightbox passed first, followed by the physical book slideshow and complete shared samples field. The [Group 5 review](docs/PACKAGE_3_GROUP_5_REVIEW.md) owns this batch's evidence. The component inventory links all earlier reviews and identifies the remaining sections. Passing comparisons do not supply founder rendered acceptance.
 
-Packages 1 and 2 remain complete in source and the published homepage. Package 3 Groups 1 and 2 implement Resources, Gifting, the reassurance band, FAQs and final invitation. The authorised Group 3 reconstructs the shared header, newsletter, footer and navigation, with complete local verification and the committed CI replay passing. The [Group 3 review](docs/PACKAGE_3_GROUP_3_REVIEW.md) owns its current status, and the [component inventory](docs/COMPONENT_INVENTORY.md) identifies the remaining sections.
+The complete React homepage remains unfinished. How it works, hero/motion, writing showcase/dialog and final assembly still need their agreed work and checks. The output remains under frontend/dist and is not published automatically. A complete publishing switch requires full visual and functional parity and explicit founder approval.
 
-Group 4 implements six book discovery and its local Books navigation. Complete local and committed ten width rendered/functional verification passes, including every retained gate. The [Group 4 review](docs/PACKAGE_3_GROUP_4_REVIEW.md) links the verified reports, screenshots and isolated build, and records inherited enlargement findings.
-
-The homepage migration remains incomplete. Before replacing the published homepage, all sections, wording, interactions, browser states and screenshots must match the approved static baseline and receive explicit founder approval. The build output stays under frontend/dist and is not published automatically.
-
-To develop the source locally, install Node 22 and run:
+For local development, use Node 22 and the existing commands.
 
     cd frontend
     npm ci
@@ -40,20 +30,18 @@ To develop the source locally, install Node 22 and run:
     npm run build
     npm run dev
 
-Current source validation uses the approved root baseline and nine-width static-site Chromium QA as a separate reference.
+## Verification and documentation
 
-## Existing browser QA
+The [homepage QA workflow](.github/workflows/verify-homepage-ui.yml) checks the published static UI. Source and migration workflows retain their own scoped comparisons. Automated Chromium checks and emulated touch are not native zoom, other browser, physical device or accessibility certification.
 
-The [homepage QA workflow](.github/workflows/verify-homepage-ui.yml) tests the published static UI and records screenshots under [qa/](qa/). Passing automated QA is not founder visual acceptance or full accessibility/physical-device certification.
+The [pricing investigation](docs/PRICING_HYDRATION_REVIEW.md) records three unresolved export mismatches. Existing enlargement findings remain in their owning reviews. The protected pricing preview is unchanged. The [gallery guidance](gallery/README.md) records temporary image slots and replacement photography work.
 
-The [Group 1](docs/PACKAGE_3_GROUP_1_REVIEW.md) and [Group 2](docs/PACKAGE_3_GROUP_2_REVIEW.md) reviews retain their completed evidence and open findings. The [pricing hydration investigation](docs/PRICING_HYDRATION_REVIEW.md) records three reproduced protected export mismatches and next options. The separate pricing preview is unchanged; diagnosis does not claim a runtime fix.
+Leaner documentation preserves full detail with one maintained owner per subject. The complete preceding README remains at [its immutable revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/46cd1e7ef9aadb1b07fa68b4f137a3d24dffc403/README.md). Historical test records identify their tested source; the Pages run attached to each commit is the authority for that commit's deployment outcome. A successful documentation deployment does not publish the isolated React build.
 
-Photo replacements for the six book gallery slots are documented in [gallery/README.md](gallery/README.md). Current homepage imagery includes approved temporary assets and visual placeholders.
+## Scope and safeguards
 
-## Scope and safety
+Use public main for authorised frontend work only. Do not commit customer data, private product code, credentials, payments, authentication, databases, unauthorised subscription integrations or proprietary font files. Keep the published file guard enabled. No private production or backend work is included.
 
-Use the public repo for approved frontend work only. Do not commit customer data, private product code, credentials, payments, authentication, databases, unauthorised subscription integrations or proprietary font files. Do not use Macaly to implement further changes.
+Do not use Macaly. Its old importer workflow has been retired; this does not establish that all external assets, domains and integrations have been archived or removed.
 
-Future account, Storyteller, contributor and admin pages will receive their own denser/dashboard-appropriate styling decisions later. The public website system is not a mandate to redesign those private applications.
-
-The older Macaly importer workflow has been retired so it cannot overwrite the current approved public homepage.
+Future account, Storyteller, contributor and admin interfaces need separate, denser design decisions. The public editorial system is not permission to redesign those applications.

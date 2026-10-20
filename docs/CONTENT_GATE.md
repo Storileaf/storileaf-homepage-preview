@@ -1,6 +1,6 @@
 # Public website content creation and approval gate
 
-Updated 19 October 2026 for authorised Package 3 Groups 1 through 4. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
+Updated 20 October 2026 for authorised Package 3 Groups 1 through 5. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
 
 ## Product fact sources
 
@@ -27,7 +27,7 @@ Where facts conflict, identify the discrepancy. Never invent a capability, price
 
 Use existing_verified for proven existing wording, proposed for suggestions, founder_approved for explicitly accepted final text, implemented_verified for built and tested material, superseded for historical alternatives. A build or passing browser test never grants editorial approval.
 
-The editable React source uses frontend/content/ledger.json with source references and flags for whether a record may be published. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
+The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json extension with source references and flags for whether a record may be published. Both feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
 
 ## Language and claims
 
@@ -61,7 +61,7 @@ Group 3 adds a separate inherited_published_shared exception for exactly 17 reco
 
 Each new record identifies migration_group 3, the protected e9550069 commit, its exact source_fragment and either assets/content-sections-CfrmOVRI.js or index.html. The shared validator parses only the named protected homepage data and header regions, the bounded footer currency label and the skip anchor before the header in the named homepage root. It verifies that HeaderNavigation actually renders the six descriptions and that the skip-link class token has its exact destination. It does not execute JavaScript or approve arbitrary matching literals. Plain ledger text is compared without decoding markup or escaped additions. No original approved_on date is invented. The five action records retain their existing canonical destinations; reading labels cannot gain links.
 
-The Group 3 route map permits its four existing section/top targets and the main-content skip landmark. Group 4 adds only the rendered Books target, including the final invitation's authorised local binding. Canonical published destinations stay in the ledger. FAQ pricing and Gifting destinations remain exact; other shared targets retain their actual published URLs until separately migrated. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) preserves its original checkpoint, and the [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) owns the Books extension.
+The Group 3 route map permits its four existing section/top targets and the main-content skip landmark. Group 4 adds only the rendered Books target, including the final invitation's authorised local binding. Group 5 subsequently adds the uniquely rendered Samples target as described below. Canonical published destinations stay in the ledger. FAQ pricing and Gifting destinations remain exact; other shared targets retain their actual published URLs until separately migrated. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) preserves its original checkpoint, and the [Group 4 review](PACKAGE_3_GROUP_4_REVIEW.md) owns the Books extension.
 
 Use the [content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) to document the exact old and new copy and link it from the page's decision record. Do not increase duplicate documentation by pasting entire product terms into the public repository.
 
@@ -74,3 +74,15 @@ The exact approval_kind is inherited_published_discovery with migration_group 4.
 Extract the exact strings from the named protected discovery and homepage data regions at e9550069d91b5a9b48ade43fcfb0a71bbed2875b without executing the compiled bundle. Each inherited record identifies Group 4, the immutable source fragment and migration record date. No new original wording approval date is inferred. Reject revised wording, arbitrary fragments, reassigned IDs, introduced links and invented approval dates. The dedicated review records the private product model and prior founder copy decisions checked for this scope.
 
 The six image records retain original sources and alternative text. Their 850 by 660 dimensions are the original img attributes; browser evidence must separately record loaded sources and natural sizes. The inherited image rights and final production review status remain unchanged.
+
+## Group 5 gallery and physical presentation content
+
+The founder authorised unchanged gallery/lightbox migration followed by the physical book/slideshow on 19 October 2026. Preserve all 116 preceding ledger records. The separate media-ledger.json adds exactly 30 records under inherited_published_media with migration_group 5. Fifteen cover the gallery heading, introduction, accessible instructions, rail and navigation labels and the six opener labels. Fifteen cover the physical heading, introduction, three detail headings and descriptions, the single package action, slideshow/group labels and four indicator labels. Existing formal book name records are reused. This is one content system with a bounded extension, not a second approval authority.
+
+The media validator reads only the named SampleGallery and CraftPhotoSlideshow functions, exact samples/craftPhotoSlides data and their actual homepage image bindings at the protected e9550069 baseline. Template URLs remain inert parsed data; compiled JavaScript and template expressions are never evaluated. The source_fragment must identify the actual render/data location, not an unrelated matching literal. Reject changed copy or emphasis, extra/missing/reassigned records, invented approval dates and new destinations. Retention does not create a new original wording approval.
+
+media-images.json owns the six original SVG placeholder identities and four temporary photograph identities. Preserve original order, paths, alternative text, declared dimensions, centred crops, origin and rights review. The six copied gallery assets must match protected file bytes. Declared dimensions retain the published attributes; they are not claims about natural resolution. Browser checks separately verify loading and natural image sizes. Neither placeholders nor provisional photography become final product photography through this migration.
+
+The physical action retains exactly https://storileaf.com/pricing/ with its existing verified destination state. It is not silently rebound to a currency route. Only the actual unique samples section may resolve shared See inside links locally. Source origin, homepage path, absence of an added query and unique target are checked; canonical ledger destinations stay intact. How it works remains an outward published target until separately migrated.
+
+The [Group 5 review](PACKAGE_3_GROUP_5_REVIEW.md) owns implementation, diagnostic and verification evidence. Style values remain in the public design system. No new product promise, wording approval, pricing repair, asset replacement or React publication is created by this extension.

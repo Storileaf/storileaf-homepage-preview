@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 19 October 2026 for Package 3 source migration Groups 1 through 4. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 5. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -61,7 +61,7 @@ Colour tokens for NEW React components are in frontend/src/styles/tokens.css. Ne
 
 ## Containers and spacing
 
-`Container` uses the existing 1184px content maximum. Total inline gutters are 96px above 900px, 64px at 900px and below, and 40px at 480px and below. That means 48px, 32px and 20px per side before the maximum width adds more outside space. Header and hero media retain their own wider compositions.
+`Container` uses the existing 1184px content maximum. Total inline gutters are 96px above 900px, 64px at 900px and below, and 40px at 480px and below. That means 48px, 32px and 20px per side before the maximum width adds more outside space. Header and hero media retain their own wider compositions. The shared gallery and physical presentation retain the 1440px samples frame described in the Group 5 rules below.
 
 `Section` supplies standard spacing of 94px, 70px and 57px at the same breakpoints. Compact spacing is 70px, 57px and 40px. A `none` option supports compositions that own their spacing. These are reusable defaults, not replacements for every homepage section's intentional top/bottom spacing.
 
@@ -146,7 +146,7 @@ Shared NewsletterFooter as one photographic field gradually fading to forest. Gr
 
 EditorialSectionHeading with centred and split layouts, no mandatory italic formula. Primary/outline/gold-on-dark/text Action components with consistent feedback and accessible targets.
 
-BookSelector, BookGallery and PrintedBookDetail keep their separately approved behaviours and exact copy. The sticky four-stage ProcessStory is a specialised editorial feature, not a generic dashboard scroll primitive.
+BookDiscovery, BookGallery and PhysicalBookPresentation keep their separately approved behaviours and exact copy. BookGallery owns the shared samples field and accepts PhysicalBookPresentation in its existing composition slot. The sticky four-stage ProcessStory is a specialised editorial feature, not a generic dashboard scroll primitive.
 
 ResourceCategoryCard keeps equal photographic panels and a centred Browse all resources treatment. Activities and Browse all resources remain noninteractive section labels because their destination pages are unbuilt. Preserve the existing interim Resources and Activities header anchors.
 
@@ -184,19 +184,19 @@ Group 1 identified an inherited text enlargement limitation. At 320×568px with 
 
 The deployed static homepage, including the completed Package 1 and Package 2 refinements, remains the migration reference. Its approved layout, content and interactions must be reproduced faithfully. The founder's positive final Package 2 response allows the staged work to continue without reopening the foundation work or inventing a separate acceptance record.
 
-## Implementation maturity
+## Implementation maturity and evidence ownership
 
-The public React source is deliberately staged. Groups 1 and 2 implement five editorial sections, and Group 3 reconstructs the shared header, newsletter, footer and navigation. This partial composition is not a second approved homepage. The current compiled root remains visually authoritative until a complete React rebuild passes desktop/mobile screenshot parity, accounts for approved refinements and receives founder acceptance. Consult [component inventory](COMPONENT_INVENTORY.md) before describing any component as migrated.
+The public React source is deliberately staged. Its current implementation status belongs in the [component inventory](COMPONENT_INVENTORY.md), and detailed verification belongs in the relevant package review. This partial composition is not a second approved homepage. The current compiled root remains the comparison reference until complete visual and functional parity and explicit founder acceptance permit a publishing decision.
 
-Package 3 Group 1 has implemented Resources and Gifting in isolated source, unchanged from source commit 2268529. Source validation and retained regressions pass. The working readiness/alignment harness matching committed 15d4500 passes all ten widths, 19 states, 48 capture geometry checks and 18 final programmatic target placements locally in Chrome 155. Its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, with all retained gates and both protected-runtime guards passing. The review records earlier failed attempts, the passing 981 CI and later failed clean-a64 replay, with the demonstrated responsive CSS readiness correction. The inherited text enlargement finding remains open. Groups 2 and 3 are separately recorded below. This evidence does not approve a homepage redesign or publication of the partial React build.
+The detailed historical implementation paragraphs previously repeated here remain intact at [the preceding design-system revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/2d57aa278afd657ecf2edd99e91eb370f603020c/docs/PUBLIC_DESIGN_SYSTEM.md#implementation-maturity). The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md) and [Group 5](PACKAGE_3_GROUP_5_REVIEW.md) reviews own their source identities, diagnostic failures, run records and measured evidence. Those details are preserved rather than copied into further active summaries.
 
-Group 2 added ReassuranceBand, FaqSection and FinalInvitation at its original verified source checkpoint 8cd289a, with the full local comparison verified and final CI passing at gate correction 6b5f983. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) retains that evidence and correction history. Group 4 subsequently extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Discovery now follows the band; the hero remains unmigrated. Founder visual acceptance and complete homepage cutover remain separate.
+Group 4 extends the FAQ/invitation route props to the rendered local Books target without changing their content or styles. Group 5 adds the rendered local Samples target. Only uniquely rendered targets may resolve locally. The full hero and surrounding homepage remain unfinished. Founder visual acceptance and complete homepage cutover remain separate.
 
 ## Shared component migration
 
-The founder authorised Group 3 shared header, newsletter, footer and navigation parity. Its source implementation, complete local visual and functional verification, and committed CI replay pass. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) owns the current evidence. The shared browser checks now exercise the actual Radix controls and compare their rendered geometry to the protected published implementation. Currency selection retains the published storage key and pricing route contract. The [pricing hydration investigation](PRICING_HYDRATION_REVIEW.md) identified three protected export mismatches; none is repaired by this source migration. No React cutover or founder acceptance is recorded.
+Shared header, newsletter, footer and navigation retain the reconstructed published Radix controls, geometry and existing currency storage/pricing contract. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) owns its original evidence and the later group reviews record affected regressions. The [pricing hydration investigation](PRICING_HYDRATION_REVIEW.md) identified three protected export mismatches; none is repaired by the source migration. No React cutover or founder acceptance is recorded.
 
-Group 3 targeted enlargement also records inherited footer label and currency control clipping at 320px and desktop navigation document overflow at 1440px with shared text doubled. These are open quality findings, not desired reusable behaviour or an enlargement acceptance. Propose bounded reflow corrections before visible implementation changes. The measured normal geometry and completed Packages 1 and 2 remain protected.
+Group 3 targeted enlargement records inherited footer label and currency control clipping at 320px and desktop navigation document overflow at 1440px with shared text doubled. These are open quality findings, not desired reusable behaviour or an enlargement acceptance. Propose bounded reflow corrections before visible implementation changes. The measured normal geometry and completed Packages 1 and 2 remain protected.
 
 ## Group 4 discovery preservation
 
@@ -223,3 +223,25 @@ The authorised six book discovery migration retains its own published heading sc
 Preserve the original automatic Radix tab activation, active tab reveal and reduced motion behaviour. Retain the six individual book destinations, default Life Story selection and existing image sources. Discovery follows the reassurance band, with the hero still awaiting migration. Shared Books navigation and the final invitation may use the actual local section without changing their visual treatment or canonical content records. No new pricing selection, public page, hero motion decision or visible refinement is introduced by this migration.
 
 The complete Group 4 local and committed comparisons pass for the normal and interactive scope recorded in its review. Targeted text doubling reproduces inherited Relationship Memoir and Celebrating Occasions label bounds issues at 320px and 1440px. These are open reflow findings rather than desired reusable behaviour. Preserve the approved normal layout and propose a bounded visible correction before implementing an enlargement refinement. Parity does not establish enlargement acceptance or complete Package 4 quality.
+
+## Group 5 gallery and physical presentation preservation
+
+BookGallery and PhysicalBookPresentation share one samples section and one radial forest field. The section follows discovery. Do not split the background, insert an additional visible wrapper or change the existing join. These are retained homepage exceptions, not new global defaults. Their source rules are scoped in `frontend/src/styles/homepage-media.css` and `homepage-craft.css`. Exact words and image identities belong in the media content records, and measured verification belongs in the [Group 5 review](PACKAGE_3_GROUP_5_REVIEW.md).
+
+| Media element | Retained rule |
+| --- | --- |
+| Shared field | Samples frame maximum 1440px with existing foundation gutters. Radial teal tint centred at 15%/16% over forest. Top border 20px and padding 93px above/80px below; at 720px and below use 14px border and 77px/66px padding. Scroll margin 116px, then 96px at 720px and below. |
+| Gallery heading | Newsreader clamp(50px,5.1vw,70px), weight 450, 1.01 leading, minus .045em tracking. Gold emphasis weight 430. At 720px and below use 39px/1.04. Lead 16px/1.7, then 15px on narrow screens. Heading bottom gap 48px, then 30px. |
+| Gallery rail | One manually scrollable horizontal row, proximity snapping and preserved inline scroll padding. Card width clamp(320px,43vw,560px), then min(79vw,520px) at 900px and min(84vw,410px) at 720px. Maximum 355px at 480px. No autoplay. |
+| Gallery images and labels | Six original temporary SVG images in original order. Image ratio 3/2, centred cover crop, 14px corners and existing border/shadow. Formal name only below each image, Manrope 17px weight 650 with 1.45 leading, then 16px at 720px. No sample text, extra caption or enlargement icon. Fine-pointer image hover scales to 1.015 over 220ms only without reduced motion. |
+| Gallery controls | Existing opposite 44px circular previous/next controls. Preserve disabled endpoints, spacing and narrow vertical arrangement at 360px and below. Opener focus uses the existing 2px gold outline with 5px offset and 14px corners. |
+| Lightbox | Single selected image with previous/next arrows, keyboard left/right, touch swipes, Escape and close control. Navigation stops at both ends, never loops. Preserve focus trap, background isolation and restoration to the clicked opener. No autoplay or extra controls. |
+| Lightbox layout | Width min(1180px,100vw minus 32px), maximum height 100dvh minus 24px, 20/24/24px padding, 16px corners. At 720px use viewport width minus 16px, 12/10/16px padding and 12px corners. Image uses contain, 9px corners and the existing viewport height bound. Retain the forest surface, dark blurred overlay, title and hidden instructions. |
+| Gallery to craft join | 51px top margin, 1px internal divider, 50px top padding becoming 38px at 480px. Desktop columns 1.08fr/.92fr, second column minimum 360px, gap clamp(38px,5vw,82px). At 900px and below stack with 32px gap. |
+| Physical photograph | Full height of the desktop copy column, minimum 520px, 12px corners and centred cover crop. At 900px use landscape ratio 1.58 and no minimum height; at 720px use 1.35. Preserve the four temporary photographs and existing bottom gradient. No visible slideshow caption. |
+| Physical heading and introduction | Heading Newsreader clamp(42px,4vw,58px), weight 450, 1.03 leading, minus .04em tracking, gold emphasis weight 430. Use 38px at 720px. Introduction remains 16px/1.75 with 22px top margin. |
+| Three physical details | Details start 30px below the introduction, then 26px at 720px. Icon and heading share a row. Icon tile 45px with 12px corners and 16px gap, then 42px and 13px gap. Heading Newsreader weight 600, clamp(20px,1.8vw,23px)/1.2, then 21px. Description remains 15px/1.65, no top margin, aligned 61px from the detail left edge, then 55px. Detail gaps 24px, then 23px. |
+| Physical action | One existing See package details link below the details, 28px top margin. Preserve the canonical pricing URL, gold colour, Manrope 15px weight 650 and 1.6 leading, 15px arrow gap, underline on hover and 3px arrow movement. |
+| Slideshow | Four accessible indicators with one pressed state. Existing active white elongated mark and quiet inactive dots. Advance every 6500ms while the observer reports the section visible, loop after the fourth, and reset the interval after manual selection. Preserve 900ms crossfade, observer/timer cleanup and immediate response to reduced motion. Reduced motion prevents autoplay and removes the crossfade. Only the active photograph has exposed alternative text. |
+
+Retain original temporary asset provenance rather than presenting placeholders as finished product photographs. The gallery and physical checkpoints are sequential; the physical checkpoint must compare the complete shared field because the radial background depends on combined section height. Principal target recommendations do not silently authorise resizing the specialised existing slideshow indicators. Broader accessibility, native zoom and device acceptance remain Package 4 work. Matching section parity is not founder approval or authority to publish React.

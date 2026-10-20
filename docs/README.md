@@ -1,34 +1,23 @@
-# StoriLeaf public website foundations
+# StoriLeaf public website documentation
 
-Updated 19 October 2026. These documents govern the NEW public website, not the existing account, Storyteller, contributor or admin applications.
+Updated at the Package 3 Group 5 documentation checkpoint. These documents govern the new public website, not the existing account, Storyteller, contributor or admin applications.
 
-Read the active [public design system](PUBLIC_DESIGN_SYSTEM.md), [content gate](CONTENT_GATE.md), [frontend workflow](WORKFLOW.md), [performance foundations](PERFORMANCE.md) and [decision register](DECISIONS.md) before starting pages.
+## Start here
 
-## Authority and boundaries
+The [public handoff](../REPOSITORY_HANDOFF.md) owns current work, next steps and open risks. The [component inventory](COMPONENT_INVENTORY.md) owns implementation status. Gallery, lightbox and physical book presentation are implemented and browser verified. The [Group 5 review](PACKAGE_3_GROUP_5_REVIEW.md) owns their two sequential checkpoints, detailed evidence and diagnostic history. How it works is the next proposed group, not work authorised by this documentation closure.
 
-Latest founder decisions take precedence for the new public website. The approved homepage is the visual baseline. The official private repository Storileaf/storiYoceFj6IRAleaf at main is authoritative for product capabilities, pricing, package terms, commercial promises, customer journeys and private applications. Brand DNA governs identity and storytelling. Private website UX documents on design/storileaf-website-ux record accepted wording and page decisions.
+## Authoritative records
 
-The prior private production Design System v1.1 specifies Georgia/Lato and predominantly pill controls. Those rules are superseded for the NEW PUBLIC WEBSITE by Newsreader/Manrope and the approved homepage geometry. They continue to describe existing account/admin interfaces until a separate redesign is authorised.
+The [public design system](PUBLIC_DESIGN_SYSTEM.md) is the sole public style authority. The [content gate](CONTENT_GATE.md) and frontend content records own exact wording, image provenance and destination checks. The [workflow](WORKFLOW.md) owns development stages, leaner iteration, documentation ownership and publication boundaries. The [performance foundations](PERFORMANCE.md) and [decision register](DECISIONS.md) retain their respective technical guidance and founder decisions.
 
-The public GitHub Pages preview deploys from main and repository root. The new frontend/ React workspace is an isolated migration foundation, not yet the source of the existing published homepage. Replacing the root static assets requires separately verified visual and functional parity. No Macaly development, backend or private production edits are authorised by these rules.
+Use the [page specification template](PAGE_SPEC_TEMPLATE.md) for a separately authorised page and the [content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) for exact copy proposals. Do not duplicate detailed evidence or product terms in either this index or the handoffs.
 
-Do not treat successful CI, a proposal, an approved design, a working preview and a production release as interchangeable.
+The approved homepage is the visual baseline. Official private main in Storileaf/storiYoceFj6IRAleaf remains authoritative for actual product capabilities, pricing, commercial terms and customer application behaviour. Its design/storileaf-website-ux branch owns website wording decisions and page plans. Brand DNA governs identity and storytelling. Newsreader, Manrope and approved homepage geometry supersede historical Georgia/Lato and pill styling for the new public website only. Private interfaces await their separate design decisions.
 
-## Implementation references
+## Evidence and open work
 
-- [Component migration inventory](COMPONENT_INVENTORY.md) keeps published versus editable source states distinct.
-- [Content proposal template](CONTENT_PROPOSAL_TEMPLATE.md) captures verified claims, exact copy approvals and destination status.
+[Package 1](PACKAGE_1_REVIEW.md), [Package 2](PACKAGE_2_REVIEW.md), [editorial links](EDITORIAL_LINK_REVIEW.md) and [footer typography](FOOTER_TYPE_REVIEW.md) retain foundation evidence. The [Group 1](PACKAGE_3_GROUP_1_REVIEW.md), [Group 2](PACKAGE_3_GROUP_2_REVIEW.md), [Group 3](PACKAGE_3_GROUP_3_REVIEW.md), [Group 4](PACKAGE_3_GROUP_4_REVIEW.md) and [Group 5](PACKAGE_3_GROUP_5_REVIEW.md) reviews own their migration histories and limitations. The [pricing investigation](PRICING_HYDRATION_REVIEW.md) owns its unresolved export defects. Existing enlargement findings remain in the relevant reviews, not a parallel issue narrative here.
 
-- [Reusable public page design and release template](PAGE_SPEC_TEMPLATE.md) records source-backed copy, visual decisions, responsive behaviour and implementation proof before publishing more pages.
+Implementation, browser verification, founder acceptance and publication are separate states. The homepage remains incomplete as React. Root static files remain the published preview; frontend/dist stays isolated. No Macaly work, backend changes, private production edits or React publishing switch is authorised by these records.
 
-Package 2 typography and spacing evidence is recorded in [Package 2 review](PACKAGE_2_REVIEW.md). PUBLIC_DESIGN_SYSTEM.md remains the sole public style authority.
-
-Package 3 Group 1 has implemented Resources and Gifting in isolated source. The [Group 1 review](PACKAGE_3_GROUP_1_REVIEW.md) records source commit 2268529, the current 15d4500 readiness/alignment harness, local evidence, earlier failed attempts, the passing 981 CI, a later failed clean-a64 replay and the inherited text enlargement finding. The working harness matching 15d passes the full local Chrome 155 matrix; its dedicated CI run 39281803940 is verified from the downloaded report and completed job log, including all retained gates and both protected-runtime guards. Group 1 checked programmatic component alignment. Shared navigation and URL fragment/history/restoration behaviour were outside its scope and now belong to Group 3 below.
-
-Package 3 Group 2 implements the reassurance band, six native FAQs and final invitation in isolated source, preserving current wording, position and expanded layouts. Its original source checkpoint 8cd289a has complete local evidence and final committed CI passing at gate correction 6b5f983. Group 4 extends only its invitation route binding to the rendered local Books target. The [Group 2 review](PACKAGE_3_GROUP_2_REVIEW.md) retains copy provenance, rendered results, artifact links, retained findings and the initial editorial count failure and correction.
-
-Package 3 Group 3 is authorised for shared header, newsletter, footer and navigation parity, including currency, anchors, current page semantics and pricing investigation. Source implementation, complete local rendered and functional verification, and the committed CI replay pass. The [Group 3 review](PACKAGE_3_GROUP_3_REVIEW.md) owns its evidence and current review state. The [pricing hydration review](PRICING_HYDRATION_REVIEW.md) preserves the read-only diagnosis and bounded future repair options; the protected pricing export is unchanged.
-
-Package 3 Group 4 implements six book discovery and local Books navigation. Complete local and committed comparison passes for all six panels at ten widths and their functional states. Its [review](PACKAGE_3_GROUP_4_REVIEW.md) records exact content, verified artifacts, the compatible Tabs decision, retained retry history and inherited enlargement findings.
-
-The homepage remains incomplete and unpublished as React. Founder rendered acceptance, work beyond the authorised discovery group and a complete React cutover remain separate gates. PUBLIC_DESIGN_SYSTEM.md is the sole active style authority.
+Leaner documentation means less overlap, not fewer details. The full previous index, including its earlier measurements, source identities and run narratives, is preserved at [the immutable preceding revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/46cd1e7ef9aadb1b07fa68b4f137a3d24dffc403/docs/README.md). Its statement limiting authority to discovery is superseded by the approved and now verified Group 5 batch. Current status belongs in the linked inventory and handoff rather than repeated transcripts.
