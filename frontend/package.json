@@ -14,7 +14,8 @@
     "guard:published": "node scripts/guard-published.mjs",
     "verify:group2": "node scripts/verify-group2-parity.mjs",
     "verify:shared": "node scripts/verify-shared-parity.mjs",
-    "verify:discovery": "node scripts/verify-discovery-parity.mjs"
+    "verify:discovery": "node scripts/verify-discovery-parity.mjs",
+    "verify:hero": "node scripts/verify-hero-parity.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.2.0",

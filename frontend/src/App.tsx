@@ -1,3 +1,5 @@
+import { HeroSection } from './sections/HeroSection'
+import './styles/homepage-hero.css'
 import { HowItWorks } from './sections/HowItWorks'
 import './styles/homepage-process.css'
 import { PhysicalBookPresentation } from './sections/PhysicalBookPresentation'
@@ -28,7 +30,7 @@ export function App() {
     <a className="sl-skip-link" href={routes.mainContent}>{approvedCopy('shared.header.skip')}</a>
     <SiteHeader routes={routes} />
     <main id="main-content">
-      {/* The hero will precede this band when migrated; no placeholder section is inserted. */}
+      <HeroSection booksHref={routes.books} samplesHref={routes.seeInside} />
       <ReassuranceBand />
       <BookDiscovery />
       <BookGallery><PhysicalBookPresentation /></BookGallery>

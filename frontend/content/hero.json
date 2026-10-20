@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "provenance": {
+    "approval_kind": "inherited_published_hero",
+    "migration_group": 7,
+    "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "source": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+    "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/content-sections-CfrmOVRI.js",
+    "migration_recorded_on": "2026-10-20",
+    "status": "founder_approved",
+    "public": true,
+    "approval_note": "Exact published wording, photographs and cover arrangement retained under the founder instruction to reconstruct Hero and motion. This records migration authority, not a new original wording approval or final motion preference."
+  },
+  "records": [
+    {
+      "id": "home.hero.title",
+      "copy": "The stories of your life, made into a book worth sharing.",
+      "emphasis": "made into a book worth sharing.",
+      "source_fragment": "Hero h1#hero-title children"
+    },
+    {
+      "id": "home.hero.progression.label",
+      "copy": "Your memories, your words, a keepsake for life",
+      "source_fragment": "Hero .hero-progression aria-label"
+    },
+    {
+      "id": "home.hero.progression.0",
+      "copy": "Your memories",
+      "source_fragment": "Hero .hero-progression span[0] text"
+    },
+    {
+      "id": "home.hero.progression.1",
+      "copy": "Your words",
+      "source_fragment": "Hero .hero-progression span[1] text"
+    },
+    {
+      "id": "home.hero.progression.2",
+      "copy": "A keepsake for life",
+      "source_fragment": "Hero .hero-progression span[2] text"
+    },
+    {
+      "id": "home.hero.carousel.label",
+      "copy": "Finished StoriLeaf books and inside pages",
+      "source_fragment": "Hero .hero-window aria-label"
+    },
+    {
+      "id": "home.hero.carousel.choose",
+      "copy": "Choose a photograph",
+      "source_fragment": "Hero .hero-image-dots aria-label"
+    },
+    {
+      "id": "home.hero.carousel.show.0",
+      "copy": "Show photograph 1",
+      "source_fragment": "Hero .hero-image-dots button[0] aria-label"
+    },
+    {
+      "id": "home.hero.carousel.show.1",
+      "copy": "Show photograph 2",
+      "source_fragment": "Hero .hero-image-dots button[1] aria-label"
+    },
+    {
+      "id": "home.hero.carousel.show.2",
+      "copy": "Show photograph 3",
+      "source_fragment": "Hero .hero-image-dots button[2] aria-label"
+    },
+    {
+      "id": "home.hero.carousel.previous",
+      "copy": "Previous photograph",
+      "source_fragment": "Hero #hero-previous aria-label"
+    },
+    {
+      "id": "home.hero.carousel.next",
+      "copy": "Next photograph",
+      "source_fragment": "Hero #hero-next aria-label"
+    },
+    {
+      "id": "home.hero.description",
+      "copy": "Guided questions help you begin with what matters most. Tell it in your own way, and we'll help turn it into something you can hold and revisit.",
+      "source_fragment": "Hero p.hero-description children"
+    },
+    {
+      "id": "home.hero.explore",
+      "copy": "Explore the books",
+      "href": "https://storileaf.github.io/storileaf-homepage-preview/#books",
+      "source_fragment": "Hero action #books",
+      "destination_state": "existing_verified",
+      "destination_verified_on": "2026-10-20"
+    },
+    {
+      "id": "home.hero.samples",
+      "copy": "See inside",
+      "href": "https://storileaf.github.io/storileaf-homepage-preview/#samples",
+      "source_fragment": "Hero action #samples",
+      "destination_state": "existing_verified",
+      "destination_verified_on": "2026-10-20"
+    },
+    {
+      "id": "home.hero.ticker.pause",
+      "copy": "Pause moving phrases",
+      "source_fragment": "Hero .hero-marquee unheld aria-label"
+    },
+    {
+      "id": "home.hero.ticker.resume",
+      "copy": "Resume moving phrases",
+      "source_fragment": "Hero .hero-marquee held aria-label"
+    },
+    {
+      "id": "home.hero.ticker.0",
+      "copy": "The kitchen everyone ended up in",
+      "source_fragment": "heroMarquee[0]"
+    },
+    {
+      "id": "home.hero.ticker.1",
+      "copy": "The trip that went completely off plan",
+      "source_fragment": "heroMarquee[1]"
+    },
+    {
+      "id": "home.hero.ticker.2",
+      "copy": "How you met",
+      "source_fragment": "heroMarquee[2]"
+    },
+    {
+      "id": "home.hero.ticker.3",
+      "copy": "The first difficult year",
+      "source_fragment": "heroMarquee[3]"
+    },
+    {
+      "id": "home.hero.ticker.4",
+      "copy": "The advice you want them to have",
+      "source_fragment": "heroMarquee[4]"
+    },
+    {
+      "id": "home.hero.ticker.5",
+      "copy": "The day everyone came together",
+      "source_fragment": "heroMarquee[5]"
+    }
+  ],
+  "photos": [
+    {
+      "id": "binding",
+      "src": "https://storileaf.com/images/brand/craft/storileaf-square-hardcover-binding-detail-wide-1200.webp",
+      "alt": "Close view of a finished StoriLeaf book, its binding and page edges",
+      "title": "The book is the destination.",
+      "label": "A finished printed book",
+      "width": 1400,
+      "height": 650,
+      "object_position": "50% 54%",
+      "source_fragment": "heroScenes[0]",
+      "origin": "https://storileaf.com/images/brand/craft/storileaf-square-hardcover-binding-detail-wide-1200.webp",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "spread",
+      "src": "https://storileaf.com/images/brand/craft/storileaf-life-story-text-photo-spread-wide-1200.webp",
+      "alt": "An open StoriLeaf story book with writing and a photograph across the spread",
+      "title": "Your words, on the page.",
+      "label": "Inside the book",
+      "width": 1400,
+      "height": 650,
+      "object_position": "50% 50%",
+      "source_fragment": "heroScenes[1]",
+      "origin": "https://storileaf.com/images/brand/craft/storileaf-life-story-text-photo-spread-wide-1200.webp",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "family",
+      "src": "https://storileaf.com/images/brand/brand/storileaf-family-reading-open-memoir-hero-1440.webp",
+      "alt": "A family reading an open personal story book together at home",
+      "title": "Made to be read, kept and shared.",
+      "label": "A book in real life",
+      "width": 1400,
+      "height": 650,
+      "object_position": "50% 62%",
+      "source_fragment": "heroScenes[2]",
+      "origin": "https://storileaf.com/images/brand/brand/storileaf-family-reading-open-memoir-hero-1440.webp",
+      "rights_review": "pending_final_production_check"
+    }
+  ],
+  "covers": [
+    {
+      "id": "cover-01",
+      "src": "/covers/cover-01.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-01.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[0]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-01.jpg",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "cover-02",
+      "src": "/covers/cover-02.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-02.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[1]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-02.jpg",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "cover-03",
+      "src": "/covers/cover-03.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-03.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[2]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-03.jpg",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "cover-04",
+      "src": "/covers/cover-04.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-04.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[3]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-04.jpg",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "cover-05",
+      "src": "/covers/cover-05.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-05.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[4]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-05.jpg",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "cover-06",
+      "src": "/covers/cover-06.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-06.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[5]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-06.jpg",
+      "rights_review": "pending_final_production_check"
+    },
+    {
+      "id": "cover-07",
+      "src": "/covers/cover-07.jpg",
+      "published_src": "/storileaf-homepage-preview/covers/cover-07.jpg",
+      "alt": "",
+      "width": 240,
+      "height": 240,
+      "object_position": "50% 50%",
+      "role": "decorative",
+      "source_fragment": "orbitCoverImages[6]",
+      "origin": "https://storileaf.github.io/storileaf-homepage-preview/covers/cover-07.jpg",
+      "rights_review": "pending_final_production_check"
+    }
+  ],
+  "orbits": {
+    "inner": [
+      {
+        "angle": 0,
+        "cover_index": 0
+      },
+      {
+        "angle": 60,
+        "cover_index": 1
+      },
+      {
+        "angle": 120,
+        "cover_index": 2
+      },
+      {
+        "angle": 180,
+        "cover_index": 3
+      },
+      {
+        "angle": 240,
+        "cover_index": 4
+      },
+      {
+        "angle": 300,
+        "cover_index": 5
+      }
+    ],
+    "outer": [
+      {
+        "angle": 22.5,
+        "cover_index": 6
+      },
+      {
+        "angle": 67.5,
+        "cover_index": 0
+      },
+      {
+        "angle": 112.5,
+        "cover_index": 1
+      },
+      {
+        "angle": 157.5,
+        "cover_index": 2
+      },
+      {
+        "angle": 202.5,
+        "cover_index": 6
+      },
+      {
+        "angle": 247.5,
+        "cover_index": 3
+      },
+      {
+        "angle": 292.5,
+        "cover_index": 4
+      },
+      {
+        "angle": 337.5,
+        "cover_index": 5
+      }
+    ]
+  },
+  "progression": [
+    {
+      "number": "01",
+      "copy_id": "home.hero.progression.0"
+    },
+    {
+      "number": "02",
+      "copy_id": "home.hero.progression.1"
+    },
+    {
+      "number": "03",
+      "copy_id": "home.hero.progression.2"
+    }
+  ],
+  "ticker": [
+    "home.hero.ticker.0",
+    "home.hero.ticker.1",
+    "home.hero.ticker.2",
+    "home.hero.ticker.3",
+    "home.hero.ticker.4",
+    "home.hero.ticker.5"
+  ]
+}

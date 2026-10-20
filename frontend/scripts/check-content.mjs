@@ -1,4 +1,5 @@
 import { checkProcessContent } from './inherited-process-content.mjs'
+import { checkHeroContent } from './inherited-hero-content.mjs'
 import { readFileSync, readdirSync } from 'node:fs'
 import { join, resolve } from 'node:path'
 import { execFileSync } from 'node:child_process'
@@ -13,10 +14,11 @@ const originalRecords=JSON.parse(readFileSync(join(root,'content/ledger.json'),'
 const mediaLedger=JSON.parse(readFileSync(join(root,'content/media-ledger.json'),'utf8'))
 const mediaImages=JSON.parse(readFileSync(join(root,'content/media-images.json'),'utf8'))
 const processContent=JSON.parse(readFileSync(join(root,'content/process.json'),'utf8'))
-const records=[...originalRecords,...processContent.records.map(record=>({...processContent.provenance,...record})),...mediaLedger.records.map(record=>({...mediaLedger.provenance,...record}))]
+const heroContent=JSON.parse(readFileSync(join(root,'content/hero.json'),'utf8'))
+const records=[...originalRecords,...processContent.records.map(record=>({...processContent.provenance,...record})),...heroContent.records.map(record=>({...heroContent.provenance,...record})),...mediaLedger.records.map(record=>({...mediaLedger.provenance,...record}))]
 const ids=new Set()
 const index=new Map()
-const problems=[...checkMediaContent(mediaLedger,mediaImages,originalRecords),...checkProcessContent(processContent)]
+const problems=[...checkMediaContent(mediaLedger,mediaImages,originalRecords),...checkProcessContent(processContent),...checkHeroContent(heroContent,records)]
 const allowedStatuses=new Set(['proposed','founder_approved','implemented_verified','existing_verified','superseded'])
 const allowedDestinations=new Set(['existing_verified','unbuilt'])
 let inheritedHomepageHtml
@@ -68,7 +70,7 @@ for(const record of records){
     problems.push(...inheritedSharedProblems(record,inheritedSharedSources??{bundle:'',html:''}))
   }else if(record.approval_kind==='inherited_published_discovery'){
     problems.push(...inheritedDiscoveryProblems(record,inheritedDiscoveryBundle??''))
-  }else if((record.approval_kind==='inherited_published_media' || record.approval_kind==='inherited_published_process')){
+  }else if((record.approval_kind==='inherited_published_media' || record.approval_kind==='inherited_published_process' || record.approval_kind==='inherited_published_hero')){
     // Exact membership, wording, assets and provenance checked together above.
   }else if(record.public && (!record.approved_on || !record.approval_reference?.startsWith('https://github.com/Storileaf/'))){
     problems.push('Founder approval evidence missing for public copy '+record.id)
