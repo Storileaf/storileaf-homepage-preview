@@ -1,0 +1,2376 @@
+{
+  "repository": "Storileaf/storileaf-homepage-preview",
+  "verifiedAt": "2026-10-20T05:36:26.674Z",
+  "scope": "Retained Group 7 regression evidence and the bounded c736 shared screenshot failure diagnosis. No runtime, harness or threshold changes during this evidence review. Dedicated hero evidence is owned separately.",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "retainedEvidence": {
+    "runId": 39373857698,
+    "jobId": 118467474845,
+    "head": "4124fb24111d3739d535642a02ec3422feb39152",
+    "runUrl": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857698",
+    "artifactId": 12242716660,
+    "artifactName": "homepage-discovery-regressions",
+    "artifactApiUrl": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12242716660",
+    "artifactUrl": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857698/artifacts/12242716660",
+    "sizeBytes": 202022738,
+    "metadataSha256": "f394c0925242a78edb577deee14537a3d22952cb92b2ccc03e6fa0356d23c4a9",
+    "downloadedSha256": "f394c0925242a78edb577deee14537a3d22952cb92b2ccc03e6fa0356d23c4a9",
+    "digestAndSizeVerified": true,
+    "zipEntryCount": 576,
+    "jsonFilesParsed": 23,
+    "reports": [
+      {
+        "relativePath": "frontend/qa/group1/report.json",
+        "sha256": "d879768e3ef68ccde513ade905f72973288c6e33a1b264e216fe598dfb56b364",
+        "result": "pass",
+        "fields": {
+          "completeWidthSet": true,
+          "problems": []
+        },
+        "reportedStatuses": [
+          {
+            "path": "$.qualityFindings[0].status",
+            "value": "Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement."
+          }
+        ],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          600,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": 19,
+        "captureCount": null,
+        "uniqueFilenameReferences": 48,
+        "qualityFindingCount": 1,
+        "inheritedNavigationFindingCount": 0,
+        "browser": "155.0.8059.39",
+        "limits": "Chromium automation, emulated touch and targeted text enlargement. Not native browser zoom, physical device or cross browser certification.",
+        "qualityFindings": [
+          {
+            "id": "gifting-enlarged-text-320",
+            "status": "Inherited baseline limitation. Remains open for Package 4 and a proposed visible refinement."
+          }
+        ]
+      },
+      {
+        "relativePath": "frontend/qa/group2/report.json",
+        "sha256": "204634e71aab14bc06315334d2d620e30880a3c2043134378109c76cb4d3faa2",
+        "result": "pass",
+        "fields": {
+          "completeWidthSet": true,
+          "enlargementMeasurementsComplete": true,
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          600,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": 18,
+        "captureCount": null,
+        "uniqueFilenameReferences": 92,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "browser": "155.0.8059.39",
+        "limits": "Chromium automation, emulated touch and targeted section text enlargement. Not full native browser zoom, cross browser, physical device or accessibility certification. Shared navigation, history and hydration work remain separately scoped.",
+        "qualityFindings": []
+      },
+      {
+        "relativePath": "frontend/qa/shape-foundation/focus-captures.json",
+        "sha256": "cb8046f2683beced7ffe43fa4c596bc6c9fbfe2a77e12bea07864b32ac33f8c1",
+        "result": "focus observations all visible",
+        "fields": {},
+        "reportedStatuses": [],
+        "widths": null,
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "observationCount": 4,
+        "observations": [
+          {
+            "width": 390,
+            "state": "before",
+            "top": 296.015625,
+            "bottom": 683.53125,
+            "headerBottom": 76,
+            "viewportHeight": 900,
+            "radius": "20px",
+            "focusVisible": true
+          },
+          {
+            "width": 390,
+            "state": "after",
+            "top": 295.375,
+            "bottom": 684.25,
+            "headerBottom": 76,
+            "viewportHeight": 900,
+            "radius": "17px",
+            "focusVisible": true
+          },
+          {
+            "width": 1440,
+            "state": "before",
+            "top": 220,
+            "bottom": 780.578125,
+            "headerBottom": 91,
+            "viewportHeight": 900,
+            "radius": "20px",
+            "focusVisible": true
+          },
+          {
+            "width": 1440,
+            "state": "after",
+            "top": 219,
+            "bottom": 780.9375,
+            "headerBottom": 91,
+            "viewportHeight": 900,
+            "radius": "20px",
+            "focusVisible": true
+          }
+        ],
+        "baseline": "a80e7dfd0b5fa18acdfabe34c54ab75492e026da"
+      },
+      {
+        "relativePath": "frontend/qa/shape-foundation/report.json",
+        "sha256": "1ee6d9de8d21268aec824c9b51503308099c6730be6c53d64311d2adf71b677d",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": null,
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "contexts": [
+          {
+            "kind": "source",
+            "widthCount": 9,
+            "stateCount": 10,
+            "runtimeErrors": [],
+            "missingImages": [],
+            "blockedVendorRequests": [],
+            "tabCount": 6,
+            "geometryChangeCount": 0,
+            "autoMarginResolutionDifferenceCount": 0
+          },
+          {
+            "kind": "published",
+            "widthCount": 9,
+            "stateCount": 0,
+            "runtimeErrors": [],
+            "missingImages": [],
+            "blockedVendorRequests": [],
+            "tabCount": 6,
+            "geometryChangeCount": 0,
+            "autoMarginResolutionDifferenceCount": 0
+          }
+        ],
+        "scannedFileCount": 61,
+        "staticReferences": [],
+        "scope": "Original generic primitive CSS only; shared header/footer use the dedicated protected-homepage parity gate. Every node, rectangle and typography value remains asserted after bounded stable sampling. A raw CSSOM auto-margin discrepancy is accepted only for the observed centred craft container when its typed auto declarations, exact parent/child geometry and actual gaps agree; raw values and the proof remain in autoMarginResolutionDifferences."
+      },
+      {
+        "relativePath": "frontend/qa/shared/report.json",
+        "sha256": "36a96c519e69c63a20b7577255f43351979bce9f39320571f58d63bef0013472",
+        "result": "pass",
+        "fields": {
+          "completeWidthSet": true,
+          "enlargementMeasurementsComplete": true,
+          "problems": []
+        },
+        "reportedStatuses": [
+          {
+            "path": "$.qualityFindings[0].status",
+            "value": "Inherited published limitation retained for a separately approved visible refinement."
+          },
+          {
+            "path": "$.qualityFindings[1].status",
+            "value": "Inherited published limitation retained for a separately approved visible refinement."
+          },
+          {
+            "path": "$.inheritedNavigationFindings[0].status",
+            "value": "The protected published Dialog restores trigger focus after hash navigation and moves the target away from its intended offset in emulated touch. The source restores trigger focus with preventScroll and must retain the correct native hash position. The protected page is unchanged."
+          }
+        ],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          600,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": 41,
+        "captureCount": 132,
+        "uniqueFilenameReferences": 198,
+        "qualityFindingCount": 2,
+        "inheritedNavigationFindingCount": 1,
+        "browser": "155.0.8059.39",
+        "limits": "Chromium automation with emulated touch and targeted text enlargement. This is not native browser zoom, cross browser, physical device or accessibility certification. Pricing diagnostic evidence is kept separately; this workflow does not replace the protected pricing preview.",
+        "qualityFindings": [
+          {
+            "id": "shared-enlarged-text-320",
+            "status": "Inherited published limitation retained for a separately approved visible refinement.",
+            "viewport": {
+              "width": 320,
+              "height": 568
+            }
+          },
+          {
+            "id": "shared-enlarged-text-1440",
+            "status": "Inherited published limitation retained for a separately approved visible refinement.",
+            "viewport": {
+              "width": 1440,
+              "height": 900
+            }
+          }
+        ]
+      },
+      {
+        "relativePath": "frontend/qa/source-reference-qa.json",
+        "sha256": "f223d7727f57fd7924765675332b9938e806bcf94d98c4d1b8552922fffacf74",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "observationCount": 4,
+        "verifiedSourceReference": true,
+        "publishedRootUnchanged": true
+      },
+      {
+        "relativePath": "qa/editorial-links/report.json",
+        "sha256": "44891cbd303f10d065024682369e412d9bf0e9323f75a68f98b8deda59ce2af6",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "sourceWidthCount": 9,
+        "loadedFontEntries": 18,
+        "textEnlargement": true,
+        "missingImages": []
+      },
+      {
+        "relativePath": "qa/footer-type/report.json",
+        "sha256": "4ebe6bbb8c1dcbcd8f594a09fc75968e47a70f53e66f73c6153a5161d27b7388",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "checkFieldCount": 7,
+        "sourceWidthCount": 9,
+        "checks": [
+          "Static currency focus and all four selections",
+          "Static currency focus and all four selections",
+          "Short screen heights with reduced motion",
+          "200% desktop zoom reflow equivalent at 720 CSS pixels",
+          "Source currency focus and all four selections",
+          "Source currency focus and all four selections",
+          "Touch control tap and fit"
+        ]
+      },
+      {
+        "relativePath": "qa/homepage-qa-report.json",
+        "sha256": "dee2c81a91ded0f84347d9ef62db7463fa075b9ce95e1f9527ad273d4a9776d1",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": null,
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "observationCount": 48
+      },
+      {
+        "relativePath": "qa/package1-live/report.json",
+        "sha256": "248d5427dc33c38ef4741b40660ddbc786ba0936cb7be933f16d6fe779606a0c",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "expectedCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+        "actualCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+        "hoverControlCount": 4,
+        "mobileNavigationAndPracticeVerified": true
+      },
+      {
+        "relativePath": "qa/package2/report.json",
+        "sha256": "05b61dee00679fe5115e02c7ef89907524dc9fe8218805593b571c1e8fbca5aa",
+        "result": "pass",
+        "fields": {
+          "problems": []
+        },
+        "reportedStatuses": [],
+        "widths": [
+          320,
+          360,
+          390,
+          430,
+          768,
+          820,
+          1024,
+          1280,
+          1440
+        ],
+        "stateCount": null,
+        "captureCount": null,
+        "uniqueFilenameReferences": 0,
+        "qualityFindingCount": 0,
+        "inheritedNavigationFindingCount": 0,
+        "checkFieldCount": 22,
+        "pricingErrors": [
+          "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "pricingBaselineErrors": [
+          "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "pricingErrorsUnchanged": true
+      }
+    ],
+    "auxiliaryGeometryFiles": [
+      {
+        "path": "qa/editorial-links/crops-after-1440.json",
+        "sha256": "31b996f9a253bfc629617c285eeab8f8f23e73058eabda083d832d62fe2f0107",
+        "keys": [
+          ".book-craft",
+          ".resources-section",
+          ".faq-section",
+          ".site-footer"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/editorial-links/crops-after-390.json",
+        "sha256": "0da9492b2f7d7098115fec819b4566b3127a1446402bdfda4d38fd83e625a0b8",
+        "keys": [
+          ".book-craft",
+          ".resources-section",
+          ".faq-section",
+          ".site-footer"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/editorial-links/crops-before-1440.json",
+        "sha256": "b2a827e53b35d0277e85acde5f7fd74728b502c026c5c4e46c3e1047bc688287",
+        "keys": [
+          ".book-craft",
+          ".resources-section",
+          ".faq-section",
+          ".site-footer"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/editorial-links/crops-before-390.json",
+        "sha256": "72b418c795405b1240bbaa837eef8dd4492d225e3643d34c9057d8bcc8da6b7e",
+        "keys": [
+          ".book-craft",
+          ".resources-section",
+          ".faq-section",
+          ".site-footer"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/homepage-after-1440-crop.json",
+        "sha256": "84d479473f7ca258e34967b6b209ee9708753a7264ef8d3a60868603e7e46e7f",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/homepage-after-390-crop.json",
+        "sha256": "207d5919fedbc0dd92f418b4296c702c6f23fcda7c3405145d27fb9883aaff4b",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/homepage-before-1440-crop.json",
+        "sha256": "563a1bc042389f8ca3a2cac8ef9137c07996fdafed3a002124e20f33bc3c1989",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/homepage-before-390-crop.json",
+        "sha256": "3d5af1447689c4486812d76ee4d4c37dce440cc6ed0b0f2db6e788b62116b60e",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/source-after-1440-crop.json",
+        "sha256": "5f94a1c5c64700e835511ca0ac3ba937e3e51305f047ddeaf362c941a97e8eb2",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/source-after-390-crop.json",
+        "sha256": "85376ff00ff4ef22d9fc290f21bd063d107fce6fd3699fe1a4188edcd238cad3",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/source-before-1440-crop.json",
+        "sha256": "7eac77f5a8882801313cb5437fa524a1fae9ec5debf5377419229ce1eaf9f985",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      },
+      {
+        "path": "qa/footer-type/source-before-390-crop.json",
+        "sha256": "0bec7c8d139a4f10c1b4aab87064142c5bae201f16c4f63a74a2fd51e3bf763b",
+        "keys": [
+          "x",
+          "y",
+          "width",
+          "height"
+        ],
+        "status": "parsed auxiliary capture geometry, no independent pass/fail field"
+      }
+    ],
+    "environment": {
+      "runnerVersion": "2.337.0",
+      "provisionerVersion": "20261012.601",
+      "runnerImage": "ubuntu-24.04",
+      "runnerImageVersion": "20261012.334.1",
+      "os": "Ubuntu 24.04.5",
+      "browserVersions": [
+        "155.0.8059.39"
+      ],
+      "node": "22.23.3",
+      "npm": "10.9.9",
+      "playwright": "1.56.1",
+      "proof": {
+        "sourceLogKey": "discoveryLogs",
+        "setupExcerpt": [
+          "Current runner version: '2.337.0'",
+          "##[group]Runner Image Provisioner",
+          "Hosted Compute Agent",
+          "Version: 20261012.601",
+          "Commit: f3dc54e1fb89da6852db922499a0233137369e1d",
+          "Build Date: 2026-10-12T17:48:21Z",
+          "Worker ID: {df740e37-13c5-4ded-9db4-fe2f9e6a2752}",
+          "Region: northcentralus",
+          "Cloud: Azure",
+          "##[endgroup]",
+          "##[group]Operating System",
+          "Ubuntu",
+          "24.04.5",
+          "LTS",
+          "##[endgroup]",
+          "##[group]Runner Image",
+          "Image: ubuntu-24.04",
+          "Version: 20261012.334.1",
+          "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md",
+          "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334",
+          "##[endgroup]",
+          "##[group]GITHUB_TOKEN Permissions",
+          "Contents: read",
+          "Metadata: read",
+          "##[endgroup]"
+        ],
+        "versionExcerpt": [
+          "node: v22.23.3",
+          "npm: 10.9.9"
+        ]
+      }
+    },
+    "directDiscovery": {
+      "reportZipDownloaded": false,
+      "evidence": "Successful direct-discovery job step plus its JSON log summary, not a re-read of its separate report artifact.",
+      "summary": {
+        "browser": "155.0.8059.39",
+        "widthCount": 10,
+        "states": 30,
+        "captures": 168,
+        "panelComparisons": 60,
+        "qualityFindings": 4,
+        "problems": [],
+        "completeWidthSet": true
+      },
+      "artifactId": 12242771463,
+      "artifactName": "homepage-discovery-parity",
+      "artifactMetadataSha256": "6583d054d5cc8ca7094e630af6d8427489cf7082a68c8bd647ccb292ea3177cd"
+    }
+  },
+  "successfulRetainedRunsAt4124": [
+    {
+      "id": 39373856628,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373856628",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474821,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373856628/job/118467474821",
+          "startedAt": "2026-10-20T05:14:51Z",
+          "completedAt": "2026-10-20T05:15:00Z",
+          "durationSeconds": 9,
+          "allStepsSucceeded": true,
+          "stepCount": 5,
+          "nonSuccessfulSteps": []
+        },
+        {
+          "id": 118467534467,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373856628/job/118467534467",
+          "startedAt": "2026-10-20T05:15:03Z",
+          "completedAt": "2026-10-20T05:15:07Z",
+          "durationSeconds": 4,
+          "allStepsSucceeded": true,
+          "stepCount": 3,
+          "nonSuccessfulSteps": []
+        },
+        {
+          "id": 118467534574,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373856628/job/118467534574",
+          "startedAt": "2026-10-20T05:15:04Z",
+          "completedAt": "2026-10-20T05:15:12Z",
+          "durationSeconds": 8,
+          "allStepsSucceeded": true,
+          "stepCount": 3,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857680,
+      "name": "Verify editorial link sizing",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857680",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474587,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857680/job/118467474587",
+          "startedAt": "2026-10-20T05:14:50Z",
+          "completedAt": "2026-10-20T05:15:45Z",
+          "durationSeconds": 55,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857694,
+      "name": "Validate editable StoriLeaf public website source",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857694",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474437,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857694/job/118467474437",
+          "startedAt": "2026-10-20T05:14:50Z",
+          "completedAt": "2026-10-20T05:15:57Z",
+          "durationSeconds": 67,
+          "allStepsSucceeded": true,
+          "stepCount": 16,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857695,
+      "name": "Verify Package 2 foundations",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857695",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474875,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857695/job/118467474875",
+          "startedAt": "2026-10-20T05:14:51Z",
+          "completedAt": "2026-10-20T05:16:03Z",
+          "durationSeconds": 72,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857679,
+      "name": "Verify final footer typography",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857679",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474683,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857679/job/118467474683",
+          "startedAt": "2026-10-20T05:14:51Z",
+          "completedAt": "2026-10-20T05:16:27Z",
+          "durationSeconds": 96,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857636,
+      "name": "Verify React How it works parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857636",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474495,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857636/job/118467474495",
+          "startedAt": "2026-10-20T05:14:50Z",
+          "completedAt": "2026-10-20T05:17:44Z",
+          "durationSeconds": 174,
+          "allStepsSucceeded": true,
+          "stepCount": 13,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857539,
+      "name": "Verify React homepage Group 1 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857539",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467473822,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857539/job/118467473822",
+          "startedAt": "2026-10-20T05:14:50Z",
+          "completedAt": "2026-10-20T05:18:54Z",
+          "durationSeconds": 244,
+          "allStepsSucceeded": true,
+          "stepCount": 19,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857645,
+      "name": "Verify React homepage Group 2 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857645",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474538,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857645/job/118467474538",
+          "startedAt": "2026-10-20T05:14:50Z",
+          "completedAt": "2026-10-20T05:19:48Z",
+          "durationSeconds": 298,
+          "allStepsSucceeded": true,
+          "stepCount": 20,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857623,
+      "name": "Verify React media parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857623",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474438,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857623/job/118467474438",
+          "startedAt": "2026-10-20T05:14:51Z",
+          "completedAt": "2026-10-20T05:19:09Z",
+          "durationSeconds": 258,
+          "allStepsSucceeded": true,
+          "stepCount": 14,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857536,
+      "name": "Verify React shared header and footer parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857536",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474148,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857536/job/118467474148",
+          "startedAt": "2026-10-20T05:14:51Z",
+          "completedAt": "2026-10-20T05:22:09Z",
+          "durationSeconds": 438,
+          "allStepsSucceeded": true,
+          "stepCount": 21,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39373857698,
+      "name": "Verify React six-book discovery parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857698",
+      "head": "4124fb24111d3739d535642a02ec3422feb39152",
+      "jobs": [
+        {
+          "id": 118467474845,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857698/job/118467474845",
+          "startedAt": "2026-10-20T05:14:51Z",
+          "completedAt": "2026-10-20T05:25:08Z",
+          "durationSeconds": 617,
+          "allStepsSucceeded": true,
+          "stepCount": 22,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    }
+  ],
+  "latestCandidateOutcomes": [
+    {
+      "id": 39374684781,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684781",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470059987,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684781/job/118470059987",
+          "startedAt": "2026-10-20T05:24:04Z",
+          "completedAt": "2026-10-20T05:24:12Z",
+          "durationSeconds": 8,
+          "allStepsSucceeded": true,
+          "stepCount": 5,
+          "nonSuccessfulSteps": []
+        },
+        {
+          "id": 118470109805,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684781/job/118470109805",
+          "startedAt": "2026-10-20T05:24:15Z",
+          "completedAt": "2026-10-20T05:24:20Z",
+          "durationSeconds": 5,
+          "allStepsSucceeded": true,
+          "stepCount": 3,
+          "nonSuccessfulSteps": []
+        },
+        {
+          "id": 118470109815,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684781/job/118470109815",
+          "startedAt": "2026-10-20T05:24:16Z",
+          "completedAt": "2026-10-20T05:24:28Z",
+          "durationSeconds": 12,
+          "allStepsSucceeded": true,
+          "stepCount": 3,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684788,
+      "name": "Verify final footer typography",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684788",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056213,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684788/job/118470056213",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:25:33Z",
+          "durationSeconds": 90,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684733,
+      "name": "Verify Package 2 foundations",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684733",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056276,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684733/job/118470056276",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:25:14Z",
+          "durationSeconds": 71,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684769,
+      "name": "Validate editable StoriLeaf public website source",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684769",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056136,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684769/job/118470056136",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:25:18Z",
+          "durationSeconds": 75,
+          "allStepsSucceeded": true,
+          "stepCount": 16,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684663,
+      "name": "Verify React How it works parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684663",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056112,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684663/job/118470056112",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:27:23Z",
+          "durationSeconds": 200,
+          "allStepsSucceeded": true,
+          "stepCount": 13,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684846,
+      "name": "Verify React media parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684846",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056488,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684846/job/118470056488",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:28:35Z",
+          "durationSeconds": 272,
+          "allStepsSucceeded": true,
+          "stepCount": 14,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684772,
+      "name": "Verify React homepage Group 1 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684772",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056596,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684772/job/118470056596",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:28:45Z",
+          "durationSeconds": 282,
+          "allStepsSucceeded": true,
+          "stepCount": 19,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684825,
+      "name": "Verify React hero and motion parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684825",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056167,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684825/job/118470056167",
+          "startedAt": "2026-10-20T05:24:04Z",
+          "completedAt": "2026-10-20T05:28:46Z",
+          "durationSeconds": 282,
+          "allStepsSucceeded": true,
+          "stepCount": 13,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684836,
+      "name": "Verify React homepage Group 2 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684836",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056233,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684836/job/118470056233",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:29:21Z",
+          "durationSeconds": 318,
+          "allStepsSucceeded": true,
+          "stepCount": 20,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684706,
+      "name": "Verify React shared header and footer parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684706",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056214,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684706/job/118470056214",
+          "startedAt": "2026-10-20T05:24:03Z",
+          "completedAt": "2026-10-20T05:31:10Z",
+          "durationSeconds": 427,
+          "allStepsSucceeded": true,
+          "stepCount": 21,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374684826,
+      "name": "Verify React six-book discovery parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684826",
+      "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+      "jobs": [
+        {
+          "id": 118470056263,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684826/job/118470056263",
+          "startedAt": "2026-10-20T05:24:04Z",
+          "completedAt": "2026-10-20T05:34:00Z",
+          "durationSeconds": 596,
+          "allStepsSucceeded": true,
+          "stepCount": 22,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    }
+  ],
+  "middleCandidateOutcomes": [
+    {
+      "id": 39374254369,
+      "name": "Verify React homepage Group 2 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254369",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719085,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254369/job/118468719085",
+          "startedAt": "2026-10-20T05:19:17Z",
+          "completedAt": "2026-10-20T05:24:34Z",
+          "durationSeconds": 317,
+          "allStepsSucceeded": true,
+          "stepCount": 20,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254393,
+      "name": "Verify React six-book discovery parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254393",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719199,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254393/job/118468719199",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:29:39Z",
+          "durationSeconds": 621,
+          "allStepsSucceeded": true,
+          "stepCount": 22,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374253322,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374253322",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719255,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374253322/job/118468719255",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:19:25Z",
+          "durationSeconds": 7,
+          "allStepsSucceeded": true,
+          "stepCount": 5,
+          "nonSuccessfulSteps": []
+        },
+        {
+          "id": 118468766128,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374253322/job/118468766128",
+          "startedAt": "2026-10-20T05:19:29Z",
+          "completedAt": "2026-10-20T05:19:39Z",
+          "durationSeconds": 10,
+          "allStepsSucceeded": true,
+          "stepCount": 3,
+          "nonSuccessfulSteps": []
+        },
+        {
+          "id": 118468766162,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374253322/job/118468766162",
+          "startedAt": "2026-10-20T05:19:28Z",
+          "completedAt": "2026-10-20T05:19:31Z",
+          "durationSeconds": 3,
+          "allStepsSucceeded": true,
+          "stepCount": 3,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254347,
+      "name": "Verify Package 2 foundations",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254347",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719033,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254347/job/118468719033",
+          "startedAt": "2026-10-20T05:19:17Z",
+          "completedAt": "2026-10-20T05:20:28Z",
+          "durationSeconds": 71,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254305,
+      "name": "Validate editable StoriLeaf public website source",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254305",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719385,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254305/job/118468719385",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:20:35Z",
+          "durationSeconds": 77,
+          "allStepsSucceeded": true,
+          "stepCount": 16,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254322,
+      "name": "Verify final footer typography",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254322",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719216,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254322/job/118468719216",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:20:53Z",
+          "durationSeconds": 95,
+          "allStepsSucceeded": true,
+          "stepCount": 11,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254320,
+      "name": "Verify React How it works parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254320",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468718981,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254320/job/118468718981",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:22:17Z",
+          "durationSeconds": 179,
+          "allStepsSucceeded": true,
+          "stepCount": 13,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254301,
+      "name": "Verify React media parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254301",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468718851,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254301/job/118468718851",
+          "startedAt": "2026-10-20T05:19:17Z",
+          "completedAt": "2026-10-20T05:23:23Z",
+          "durationSeconds": 246,
+          "allStepsSucceeded": true,
+          "stepCount": 14,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254338,
+      "name": "Verify React homepage Group 1 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254338",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719310,
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254338/job/118468719310",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:23:27Z",
+          "durationSeconds": 249,
+          "allStepsSucceeded": true,
+          "stepCount": 19,
+          "nonSuccessfulSteps": []
+        }
+      ]
+    },
+    {
+      "id": 39374254329,
+      "name": "Verify React hero and motion parity",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254329",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719194,
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254329/job/118468719194",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:23:50Z",
+          "durationSeconds": 272,
+          "allStepsSucceeded": false,
+          "stepCount": 13,
+          "nonSuccessfulSteps": [
+            {
+              "name": "Compare photographs, ticker, cover motion and adjoining sections",
+              "status": "completed",
+              "conclusion": "failure"
+            },
+            {
+              "name": "Attach isolated preview",
+              "status": "completed",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "skipped"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39374254342,
+      "name": "Verify React shared header and footer parity",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254342",
+      "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+      "jobs": [
+        {
+          "id": 118468719083,
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254342/job/118468719083",
+          "startedAt": "2026-10-20T05:19:18Z",
+          "completedAt": "2026-10-20T05:26:40Z",
+          "durationSeconds": 442,
+          "allStepsSucceeded": false,
+          "stepCount": 21,
+          "nonSuccessfulSteps": [
+            {
+              "name": "Compare shared components, navigation and currency behaviour",
+              "status": "completed",
+              "conclusion": "failure"
+            },
+            {
+              "name": "Attach isolated React preview",
+              "status": "completed",
+              "conclusion": "skipped"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "status": "completed",
+              "conclusion": "skipped"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sourceIdentity": {
+    "comparisons": [
+      {
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/compare/4124fb24111d3739d535642a02ec3422feb39152...c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+        "apiUrl": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/compare/4124fb24111d3739d535642a02ec3422feb39152...c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+        "status": "ahead",
+        "aheadBy": 1,
+        "commits": [
+          "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6"
+        ],
+        "files": [
+          {
+            "filename": "docs/CONTENT_GATE.md",
+            "status": "modified",
+            "sha": "4a5be2fb582976b8c6e2dbd4e4b99ca7d4e8fb28",
+            "changes": 2
+          },
+          {
+            "filename": "docs/PACKAGE_3_GROUP_7_REVIEW.md",
+            "status": "modified",
+            "sha": "71b81f86cbf720f7874d53d805999cd7af3776d3",
+            "changes": 2
+          },
+          {
+            "filename": "docs/PUBLIC_DESIGN_SYSTEM.md",
+            "status": "modified",
+            "sha": "4752707818425bed0f1b6aded8c4ebf5d970448b",
+            "changes": 6
+          },
+          {
+            "filename": "docs/README.md",
+            "status": "modified",
+            "sha": "eb3552adde10c4089948b38ec66729d6be161091",
+            "changes": 2
+          },
+          {
+            "filename": "frontend/scripts/verify-hero-parity.mjs",
+            "status": "modified",
+            "sha": "f6ac31205c33b3270e70dc8e5ff367f667fd6f8b",
+            "changes": 59
+          },
+          {
+            "filename": "qa/hero-migration/2026-10-20/initial-diagnostics.json",
+            "status": "modified",
+            "sha": "f7d5a6e0a5441fb0714ec692ad60e46a755bfac6",
+            "changes": 52
+          }
+        ]
+      },
+      {
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/compare/c736c1b1e0deb5ff4f9dc4429427a446e3f051e6...a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "apiUrl": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/compare/c736c1b1e0deb5ff4f9dc4429427a446e3f051e6...a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "status": "ahead",
+        "aheadBy": 1,
+        "commits": [
+          "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66"
+        ],
+        "files": [
+          {
+            "filename": "frontend/scripts/verify-hero-parity.mjs",
+            "status": "modified",
+            "sha": "76687cf49df7b94d9559424bfcae40caca6fc905",
+            "changes": 18
+          }
+        ]
+      }
+    ],
+    "conclusion": "From 4124 to c736 only five documentation/evidence paths and verify-hero-parity.mjs changed; from c736 to a7 only verify-hero-parity.mjs changed. Runtime src/content/public and retained scripts/workflows stayed byte-identical.",
+    "initialGitTrees": {
+      "frontend/src": "103113584155c693c04d4786bbb4e09d6a38bede",
+      "frontend/content": "4366fcfbe07c4fd9e71072724f16beb7b71030c8",
+      "frontend/public": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22"
+    },
+    "retainedBuildHashes": {
+      "index.html": "91d2e024c60860e82f94c88d16e19e1b64b5c9fe988be32b4f7b14ff80617294",
+      "assets/index-p-diHD0K.js": "f6e0332f525331057ef2490b2028ef3be062bfc879caa65213d317637d381ab9",
+      "assets/index-wK9yQ04y.css": "52f74140b6d750b2acad62ffca3c0cf3bb75c9d61bdb40789ef7216bb5077f90"
+    },
+    "finalSharedBuildHashes": {
+      "index.html": "91d2e024c60860e82f94c88d16e19e1b64b5c9fe988be32b4f7b14ff80617294",
+      "assets/index-p-diHD0K.js": "f6e0332f525331057ef2490b2028ef3be062bfc879caa65213d317637d381ab9",
+      "assets/index-wK9yQ04y.css": "52f74140b6d750b2acad62ffca3c0cf3bb75c9d61bdb40789ef7216bb5077f90"
+    },
+    "failedSharedBuildHashes": {
+      "index.html": "91d2e024c60860e82f94c88d16e19e1b64b5c9fe988be32b4f7b14ff80617294",
+      "assets/index-p-diHD0K.js": "f6e0332f525331057ef2490b2028ef3be062bfc879caa65213d317637d381ab9",
+      "assets/index-wK9yQ04y.css": "52f74140b6d750b2acad62ffca3c0cf3bb75c9d61bdb40789ef7216bb5077f90"
+    },
+    "allThreeBuildHashMapsIdentical": true,
+    "matchesRootVerifiedFinalPreviewCssJs": true,
+    "rootPreviewSummary": "committed-verification.json#/preview"
+  },
+  "inheritedFindings": {
+    "quality": "Gifting clipping at 320 targeted enlargement, footer labels/currency at 320 and desktop header overflow at 1440 under enlargement, discovery long labels under enlargement and diagnosed pricing export/hydration differences remain open as previously recorded. A retained parity pass does not close quality findings.",
+    "navigation": {
+      "id": "published-touch-dialog-anchor-focus",
+      "finding": "Protected native dialog focus restoration after local anchor navigation moves the target. Source already uses preventScroll for intended destination alignment. This is an intentional approved source correction, not a new regression.",
+      "viewport": {
+        "width": 390,
+        "height": 700
+      },
+      "hash": "#resources-activity",
+      "published": {
+        "settled": false,
+        "targetTop": 543.28125,
+        "targetBottom": 934.15625,
+        "scrollY": 6282,
+        "expectedScroll": 6629.28125
+      },
+      "source": {
+        "settled": true,
+        "targetTop": 195.5,
+        "targetBottom": 586.375,
+        "scrollY": 5923,
+        "expectedScroll": 5922.5
+      },
+      "both": "Both menus open independently, dismissed after activation, exactly one local target and visible target."
+    }
+  },
+  "boundedSharedFailure": {
+    "runId": 39374254342,
+    "jobId": 118468719083,
+    "head": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+    "artifactId": 12243106659,
+    "artifactName": "homepage-shared-parity",
+    "artifactMetadataSha256": "bcccf584cbfad33b41efc8039c9dba93008a2263873cbd310677e3ec3d20d9da",
+    "downloadedSha256": "bcccf584cbfad33b41efc8039c9dba93008a2263873cbd310677e3ec3d20d9da",
+    "digestAndSizeVerified": true,
+    "sizeBytes": 44715766,
+    "reportSha256": "b845d2d3c0547822c4eafc83b15d6db483c9304c847a24dbf4bfa5c76e06b77a",
+    "environment": {
+      "runnerVersion": "2.337.0",
+      "provisionerVersion": "20261015.610",
+      "runnerImage": "ubuntu-24.04",
+      "runnerImageVersion": "20261018.339.1",
+      "os": "Ubuntu 24.04.5",
+      "browserVersions": [
+        "155.0.8059.84"
+      ],
+      "node": "22.23.3",
+      "npm": "10.9.9",
+      "playwright": "1.56.1",
+      "proof": {
+        "sourceLogKey": "c736SharedFailureLog",
+        "setupExcerpt": [
+          "Current runner version: '2.337.0'",
+          "##[group]Runner Image Provisioner",
+          "Hosted Compute Agent",
+          "Version: 20261015.610",
+          "Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656",
+          "Build Date: 2026-10-14T17:06:54Z",
+          "Worker ID: {2d6b9c79-fa25-4aec-a0c4-84ce23d7c1c5}",
+          "Region: eastus2",
+          "Cloud: Azure",
+          "##[endgroup]",
+          "##[group]Operating System",
+          "Ubuntu",
+          "24.04.5",
+          "LTS",
+          "##[endgroup]",
+          "##[group]Runner Image",
+          "Image: ubuntu-24.04",
+          "Version: 20261018.339.1",
+          "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md",
+          "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261018.339",
+          "##[endgroup]",
+          "##[group]GITHUB_TOKEN Permissions",
+          "Contents: read",
+          "Metadata: read",
+          "##[endgroup]"
+        ],
+        "versionExcerpt": [
+          "node: v22.23.3",
+          "npm: 10.9.9"
+        ]
+      }
+    },
+    "problems": [
+      "books-comparison-open-1440.png pixels differ 0.06352632179970309"
+    ],
+    "booksComparisons": [
+      {
+        "state": "open",
+        "differences": [],
+        "pixels": {
+          "publishedSize": [
+            630,
+            417
+          ],
+          "sourceSize": [
+            630,
+            417
+          ],
+          "changedPixels": 2288,
+          "changedRatio": 0.008709223097712306,
+          "channelTolerance": 24
+        },
+        "filename": "books-comparison-open-1280.png"
+      },
+      {
+        "state": "open",
+        "differences": [],
+        "pixels": {
+          "publishedSize": [
+            630,
+            417
+          ],
+          "sourceSize": [
+            630,
+            417
+          ],
+          "changedPixels": 16689,
+          "changedRatio": 0.06352632179970309,
+          "channelTolerance": 24
+        },
+        "filename": "books-comparison-open-1440.png"
+      }
+    ],
+    "diagnosisPath": "shared-raster-diagnostics.json",
+    "diagnosis": "Existing fractional menu capture alignment moved retained glyph raster 0 pixels for published +0.46875px and 1 pixel for source +0.53125px. The prepared 1440 comparison therefore has 16689 changed pixels/0.06352632179970309 versus 3650/0.01389365 in a diagnostic common native crop. Raw pre-capture style/relative geometry differences were empty. The native diagnostic is also above the 0.01 gate and is not an alternative pass. Full failure retained.",
+    "causeLimit": "This establishes bounded screenshot preparation sensitivity, not a proven Chrome-version regression: latest .84 shared and discovery shared steps independently passed on the same runner image. No speculative runtime repair, threshold change, assertion removal or retry was made. Planned CI review remains responsible for measurement sensitivity.",
+    "preservedReport": "shared-failed-report.json.gz"
+  },
+  "latestSharedCounterEvidence": {
+    "runId": 39374684706,
+    "jobId": 118470056214,
+    "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+    "artifactId": 12242737374,
+    "artifactName": "homepage-shared-parity",
+    "sizeBytes": 44536936,
+    "artifactMetadataSha256": "c231207e5da3ca5ee484f96cd2f72c8906963a5b73ca3b524eab2e7bc4c59431",
+    "downloadedSha256": "c231207e5da3ca5ee484f96cd2f72c8906963a5b73ca3b524eab2e7bc4c59431",
+    "digestAndSizeVerified": true,
+    "reportSha256": "ef775176e27b779912fec5e5c508b4dc9f012b0de6bb1d108d0cb92e5f0f50c4",
+    "environment": {
+      "runnerVersion": "2.337.0",
+      "provisionerVersion": "20261015.610",
+      "runnerImage": "ubuntu-24.04",
+      "runnerImageVersion": "20261018.339.1",
+      "os": "Ubuntu 24.04.5",
+      "browserVersions": [
+        "155.0.8059.84"
+      ],
+      "node": "22.23.3",
+      "npm": "10.9.9",
+      "playwright": "1.56.1",
+      "proof": {
+        "sourceLogKey": "logs-118470056214",
+        "setupExcerpt": [
+          "Current runner version: '2.337.0'",
+          "##[group]Runner Image Provisioner",
+          "Hosted Compute Agent",
+          "Version: 20261015.610",
+          "Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656",
+          "Build Date: 2026-10-14T17:06:54Z",
+          "Worker ID: {a85f8ed3-37c4-4384-9665-281a822d939f}",
+          "Region: eastus",
+          "Cloud: Azure",
+          "##[endgroup]",
+          "##[group]Operating System",
+          "Ubuntu",
+          "24.04.5",
+          "LTS",
+          "##[endgroup]",
+          "##[group]Runner Image",
+          "Image: ubuntu-24.04",
+          "Version: 20261018.339.1",
+          "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md",
+          "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261018.339",
+          "##[endgroup]",
+          "##[group]GITHUB_TOKEN Permissions",
+          "Contents: read",
+          "Metadata: read",
+          "##[endgroup]"
+        ],
+        "versionExcerpt": [
+          "node: v22.23.3",
+          "npm: 10.9.9"
+        ]
+      }
+    },
+    "stateCount": 41,
+    "captureCount": 132,
+    "widthCount": 10,
+    "problems": [],
+    "booksComparisons": [
+      {
+        "state": "open",
+        "differences": [],
+        "pixels": {
+          "publishedSize": [
+            630,
+            417
+          ],
+          "sourceSize": [
+            630,
+            417
+          ],
+          "changedPixels": 0,
+          "changedRatio": 0,
+          "channelTolerance": 24
+        },
+        "filename": "books-comparison-open-1280.png"
+      },
+      {
+        "state": "open",
+        "differences": [],
+        "pixels": {
+          "publishedSize": [
+            630,
+            417
+          ],
+          "sourceSize": [
+            630,
+            417
+          ],
+          "changedPixels": 0,
+          "changedRatio": 0,
+          "channelTolerance": 24
+        },
+        "filename": "books-comparison-open-1440.png"
+      }
+    ],
+    "books1440Captures": [
+      {
+        "filename": "books-published-open-1440.png",
+        "menuAlignment": {
+          "original": {
+            "left": 430.46875,
+            "top": 84,
+            "width": 630,
+            "height": 416.25
+          },
+          "aligned": {
+            "left": 431,
+            "top": 84,
+            "width": 630,
+            "height": 416.25
+          },
+          "delta": {
+            "x": 0.53125,
+            "y": 0
+          },
+          "before": {
+            "left": {
+              "value": "",
+              "priority": ""
+            },
+            "top": {
+              "value": "",
+              "priority": ""
+            }
+          }
+        },
+        "geometry": {
+          "top": 84,
+          "bottom": 500.25,
+          "left": 431,
+          "right": 1061,
+          "width": 630,
+          "height": 416.25,
+          "viewportHeight": 1000,
+          "viewportWidth": 1440,
+          "headerBottom": 93
+        },
+        "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902"
+      },
+      {
+        "filename": "books-source-open-1440.png",
+        "menuAlignment": {
+          "original": {
+            "left": 430.46875,
+            "top": 84,
+            "width": 630,
+            "height": 416.25
+          },
+          "aligned": {
+            "left": 431,
+            "top": 84,
+            "width": 630,
+            "height": 416.25
+          },
+          "delta": {
+            "x": 0.53125,
+            "y": 0
+          },
+          "before": {
+            "left": {
+              "value": "",
+              "priority": ""
+            },
+            "top": {
+              "value": "",
+              "priority": ""
+            }
+          }
+        },
+        "geometry": {
+          "top": 84,
+          "bottom": 500.25,
+          "left": 431,
+          "right": 1061,
+          "width": 630,
+          "height": 416.25,
+          "viewportHeight": 1000,
+          "viewportWidth": 1440,
+          "headerBottom": 93
+        },
+        "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902"
+      }
+    ],
+    "jobSteps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate approved source and protect the published homepage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install isolated browser testing library",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Serve exact static files and the isolated React build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain source navigation, action shapes and focus checks",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain the complete static homepage regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain the permanent Package 1 live control checks",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Package 2 typography, FAQ and pricing comparison",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain editorial action and footer typography comparisons",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Group 1 editorial section parity",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Group 2 reassurance, FAQs and invitation parity",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Compare shared components, navigation and currency behaviour",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Confirm the published baseline is still unchanged",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Attach shared component comparisons",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Attach retained regression evidence",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Attach isolated React preview",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "preservedReport": "latest-shared-report.json.gz"
+  },
+  "latestDiscovery": {
+    "runId": 39374684826,
+    "jobId": 118470056263,
+    "head": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+    "status": "completed",
+    "conclusion": "success",
+    "durationSeconds": 596,
+    "environment": {
+      "runnerVersion": "2.337.0",
+      "provisionerVersion": "20261015.610",
+      "runnerImage": "ubuntu-24.04",
+      "runnerImageVersion": "20261018.339.1",
+      "os": "Ubuntu 24.04.5",
+      "browserVersions": [
+        "155.0.8059.84"
+      ],
+      "node": "22.23.3",
+      "npm": "10.9.9",
+      "playwright": "1.56.1",
+      "proof": {
+        "sourceLogKey": "latestDiscoveryLog",
+        "setupExcerpt": [
+          "Current runner version: '2.337.0'",
+          "##[group]Runner Image Provisioner",
+          "Hosted Compute Agent",
+          "Version: 20261015.610",
+          "Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656",
+          "Build Date: 2026-10-14T17:06:54Z",
+          "Worker ID: {4303515a-7912-404b-b75c-4ce8d977becc}",
+          "Region: westus",
+          "Cloud: Azure",
+          "##[endgroup]",
+          "##[group]Operating System",
+          "Ubuntu",
+          "24.04.5",
+          "LTS",
+          "##[endgroup]",
+          "##[group]Runner Image",
+          "Image: ubuntu-24.04",
+          "Version: 20261018.339.1",
+          "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md",
+          "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261018.339",
+          "##[endgroup]",
+          "##[group]GITHUB_TOKEN Permissions",
+          "Contents: read",
+          "Metadata: read",
+          "##[endgroup]"
+        ],
+        "versionExcerpt": [
+          "node: v22.23.3",
+          "npm: 10.9.9"
+        ]
+      }
+    },
+    "sharedAndDiscoveryLogSummaries": [
+      {
+        "browser": "155.0.8059.84",
+        "states": 19,
+        "problems": [],
+        "completeWidthSet": true
+      },
+      {
+        "browser": "155.0.8059.84",
+        "states": 18,
+        "qualityFindings": 0,
+        "problems": [],
+        "completeWidthSet": true
+      },
+      {
+        "browser": "155.0.8059.84",
+        "widthCount": 10,
+        "states": 41,
+        "captures": 132,
+        "qualityFindings": 2,
+        "problems": [],
+        "completeWidthSet": true
+      },
+      {
+        "browser": "155.0.8059.84",
+        "widthCount": 10,
+        "states": 30,
+        "captures": 168,
+        "panelComparisons": 60,
+        "qualityFindings": 4,
+        "problems": [],
+        "completeWidthSet": true
+      }
+    ],
+    "jobSteps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Validate approved source and protect the published homepage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Install isolated browser testing library",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Serve exact static files and the isolated React build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain source navigation, action shapes and focus checks",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain the complete static homepage regression",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain the permanent Package 1 live control checks",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Package 2 typography, FAQ and pricing comparison",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain editorial action and footer typography comparisons",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Group 1 editorial section parity",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Group 2 reassurance, FAQs and invitation parity",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Retain Group 3 shared components, navigation and currency parity",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Compare all six book panels, native tabs and Books anchor integration",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Confirm the published baseline is still unchanged",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Attach discovery comparisons and interaction report",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Attach retained regression evidence",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Attach isolated React preview",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "artifactDownloads": "None: source identity plus the final successful job and direct JSON log summaries suffice; retained reference ZIP remains from 4124."
+  },
+  "environmentScope": {
+    "sourceJobs": {
+      "118467474437": {
+        "runnerVersion": "2.337.0",
+        "provisionerVersion": "20261015.610",
+        "runnerImage": "ubuntu-24.04",
+        "runnerImageVersion": "20261018.339.1",
+        "os": "Ubuntu 24.04.5",
+        "browserVersions": [],
+        "node": "22.23.3",
+        "npm": "10.9.9",
+        "playwright": "1.56.1",
+        "proof": {
+          "sourceLogKey": "logs-118467474437",
+          "setupExcerpt": [
+            "Current runner version: '2.337.0'",
+            "##[group]Runner Image Provisioner",
+            "Hosted Compute Agent",
+            "Version: 20261015.610",
+            "Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656",
+            "Build Date: 2026-10-14T17:06:54Z",
+            "Worker ID: {472ec672-4fe0-46fa-a888-3a4cdeaede24}",
+            "Region: southcentralus",
+            "Cloud: Azure",
+            "##[endgroup]",
+            "##[group]Operating System",
+            "Ubuntu",
+            "24.04.5",
+            "LTS",
+            "##[endgroup]",
+            "##[group]Runner Image",
+            "Image: ubuntu-24.04",
+            "Version: 20261018.339.1",
+            "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md",
+            "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261018.339",
+            "##[endgroup]",
+            "##[group]GITHUB_TOKEN Permissions",
+            "Contents: read",
+            "Metadata: read",
+            "##[endgroup]"
+          ],
+          "versionExcerpt": [
+            "node: v22.23.3",
+            "npm: 10.9.9"
+          ]
+        }
+      },
+      "118468719385": {
+        "runnerVersion": "2.337.0",
+        "provisionerVersion": "20261015.610",
+        "runnerImage": "ubuntu-24.04",
+        "runnerImageVersion": "20261018.339.1",
+        "os": "Ubuntu 24.04.5",
+        "browserVersions": [],
+        "node": "22.23.3",
+        "npm": "10.9.9",
+        "playwright": "1.56.1",
+        "proof": {
+          "sourceLogKey": "logs-118468719385",
+          "setupExcerpt": [
+            "Current runner version: '2.337.0'",
+            "##[group]Runner Image Provisioner",
+            "Hosted Compute Agent",
+            "Version: 20261015.610",
+            "Commit: 267fdb4e8bbec4ab5ea31367f3a00d5c480c7656",
+            "Build Date: 2026-10-14T17:06:54Z",
+            "Worker ID: {e4411c7c-4cad-4311-86bc-9cfcab98d4fd}",
+            "Region: eastus2",
+            "Cloud: Azure",
+            "##[endgroup]",
+            "##[group]Operating System",
+            "Ubuntu",
+            "24.04.5",
+            "LTS",
+            "##[endgroup]",
+            "##[group]Runner Image",
+            "Image: ubuntu-24.04",
+            "Version: 20261018.339.1",
+            "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261018.339/images/ubuntu/Ubuntu2404-Readme.md",
+            "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261018.339",
+            "##[endgroup]",
+            "##[group]GITHUB_TOKEN Permissions",
+            "Contents: read",
+            "Metadata: read",
+            "##[endgroup]"
+          ],
+          "versionExcerpt": [
+            "node: v22.23.3",
+            "npm: 10.9.9"
+          ]
+        }
+      }
+    },
+    "middleDiscovery": {
+      "runId": 39374254393,
+      "jobId": 118468719199,
+      "environment": {
+        "runnerVersion": "2.337.0",
+        "provisionerVersion": "20261012.601",
+        "runnerImage": "ubuntu-24.04",
+        "runnerImageVersion": "20261012.334.1",
+        "os": "Ubuntu 24.04.5",
+        "browserVersions": [
+          "155.0.8059.39"
+        ],
+        "node": "22.23.3",
+        "npm": "10.9.9",
+        "playwright": "1.56.1",
+        "proof": {
+          "sourceLogKey": "logs-118468719199",
+          "setupExcerpt": [
+            "Current runner version: '2.337.0'",
+            "##[group]Runner Image Provisioner",
+            "Hosted Compute Agent",
+            "Version: 20261012.601",
+            "Commit: f3dc54e1fb89da6852db922499a0233137369e1d",
+            "Build Date: 2026-10-12T17:48:21Z",
+            "Worker ID: {70451dd4-38bd-48cf-9ca0-9be25625220d}",
+            "Region: westus2",
+            "Cloud: Azure",
+            "##[endgroup]",
+            "##[group]Operating System",
+            "Ubuntu",
+            "24.04.5",
+            "LTS",
+            "##[endgroup]",
+            "##[group]Runner Image",
+            "Image: ubuntu-24.04",
+            "Version: 20261012.334.1",
+            "Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md",
+            "Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334",
+            "##[endgroup]",
+            "##[group]GITHUB_TOKEN Permissions",
+            "Contents: read",
+            "Metadata: read",
+            "##[endgroup]"
+          ],
+          "versionExcerpt": [
+            "node: v22.23.3",
+            "npm: 10.9.9"
+          ]
+        }
+      },
+      "summaries": [
+        {
+          "browser": "155.0.8059.39",
+          "states": 19,
+          "problems": [],
+          "completeWidthSet": true
+        },
+        {
+          "browser": "155.0.8059.39",
+          "states": 18,
+          "qualityFindings": 0,
+          "problems": [],
+          "completeWidthSet": true
+        },
+        {
+          "browser": "155.0.8059.39",
+          "widthCount": 10,
+          "states": 41,
+          "captures": 132,
+          "qualityFindings": 2,
+          "problems": [],
+          "completeWidthSet": true
+        },
+        {
+          "browser": "155.0.8059.39",
+          "widthCount": 10,
+          "states": 30,
+          "captures": 168,
+          "panelComparisons": 60,
+          "qualityFindings": 4,
+          "problems": [],
+          "completeWidthSet": true
+        }
+      ]
+    },
+    "limits": "Browser/runner versions are per job/report. Successful workflow conclusions alone do not prove a shared environment. Source jobs do not report a browser version here. The reusable 4124 all-retained evidence and final hero have Chrome .39/image20261012.334.1; latest shared/discovery have Chrome .84/image20261018.339.1."
+  },
+  "notDownloadedOrNotReread": [
+    "Separate 4124 direct discovery parity ZIP (12242771463): successful direct step and log summary read; report and images not redownloaded.",
+    "Separate process and media parity ZIPs for 4124/c736/a7: job and step outcomes checked; dedicated JSON reports/images not downloaded.",
+    "Separate Group1/Group2/source/foundation/footer/editorial/Package1/Package2 evidence ZIPs: shared 4124 all-retained bundle owns the report review.",
+    "Latest a7 discovery regressions and parity ZIPs: successful steps and JSON log summaries read, full ZIPs not downloaded.",
+    "Final hero/source-preview evidence handled and verified separately by root and hero_verification.",
+    "Only two additional shared parity ZIPs were downloaded to investigate the concrete c736 failed screenshot and verify independent a7 passing counter-evidence; no broad duplicate regression bundle."
+  ],
+  "limits": [
+    "Automated Chromium/Playwright served-page evidence; browser builds .39 and .84 explicitly identified per job.",
+    "Emulated touch, targeted 200% text enlargement and recorded CSS-width zoom/reflow equivalents are not physical-device, native zoom, cross-browser or accessibility certification.",
+    "Package 3 assembly, Group8, Package4 final full-page review, founder rendered acceptance and explicit publication approval remain separate unfinished gates.",
+    "Runtime and retained harness identity justify reuse of the complete 4124 bundle; latest independently triggered retained workflows also passed. Passing does not erase the preserved intermediate failed capture or inherited quality findings."
+  ]
+}

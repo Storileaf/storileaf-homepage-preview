@@ -1,0 +1,1112 @@
+{
+  "package": 3,
+  "group": 7,
+  "authorised_on": "2026-10-20",
+  "verified_on_utc": "2026-10-20",
+  "result": "Hero and motion implemented and browser verified; dedicated checkpoint and all final candidate workflows passed. Founder acceptance and React publication remain separate.",
+  "initial_implementation_commit": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+  "final_runtime_commit": "4124fb24111d3739d535642a02ec3422feb39152",
+  "final_verification_commit": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+  "protected_baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "source_verification": {
+    "source_tests": 65,
+    "passed": 65,
+    "failed": 0,
+    "computed_style_helper_tests": 4,
+    "inherited_hero_content_records": 23,
+    "photographs": 3,
+    "cover_assets": 7,
+    "cover_positions": 14,
+    "typescript_content_destinations_tokens_guard_build": "passed"
+  },
+  "hero": {
+    "sourceCommit": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+    "baseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "browser": "155.0.8059.39",
+    "environment": {
+      "playwrightCore": "1.56.1",
+      "runner": "2.337.0",
+      "os": "Ubuntu 24.04.5 LTS",
+      "runnerImage": "ubuntu-24.04",
+      "runnerImageVersion": "20261012.334.1",
+      "deviceScaleFactor": 1,
+      "browserMode": "headless Chromium",
+      "physicalDevicesTested": [],
+      "nativeZoomTested": false,
+      "textEnlargementMethod": "Targeted CSS font-size and line-height doubling at 320 and 1440px",
+      "touchMethod": "Chromium input emulation at 390x844",
+      "node": "22.23.3",
+      "npm": "10.9.9"
+    },
+    "createdAt": "2026-10-20T05:24:18.553Z",
+    "completedAt": "2026-10-20T05:28:36.614Z",
+    "counts": {
+      "widths": 10,
+      "photographs": 30,
+      "additionalStates": 43,
+      "pairedStates": 57,
+      "captures": 136
+    },
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01,
+      "measuredAutoplayMilliseconds": [
+        7300,
+        8500
+      ]
+    },
+    "normal": {
+      "pixels": {
+        "comparisons": 30,
+        "maximumRatio": 0,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 0
+      },
+      "contextPixels": {
+        "comparisons": 10,
+        "maximumRatio": 0,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 0
+      },
+      "maximumGeometry": 0
+    },
+    "motion": {
+      "pixels": {
+        "comparisons": 8,
+        "maximumRatio": 3.561253561253561e-06,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 6
+      },
+      "contextPixels": {
+        "comparisons": 4,
+        "maximumRatio": 0.006224537037037037,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 10158
+      },
+      "maximumGeometry": 0
+    },
+    "join": {
+      "pixels": {
+        "comparisons": 10,
+        "maximumRatio": 0,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 0
+      },
+      "maximumGeometry": 0,
+      "paintProbeCount": 120,
+      "maximumPaintChannelDifference": 0,
+      "paintProbeFailures": 0
+    },
+    "hover": {
+      "pixels": {
+        "comparisons": 2,
+        "maximumRatio": 0,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 0
+      },
+      "maximumGeometry": 0,
+      "captures": 4,
+      "allBeforeAfterHovered": true,
+      "allBeforeAfterIdentical": true
+    },
+    "focus": {
+      "pixels": {
+        "comparisons": 2,
+        "maximumRatio": 0,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 0
+      },
+      "maximumGeometry": 0,
+      "captures": 4,
+      "allBeforeAfterActiveAndFocusVisible": true
+    },
+    "enlargement": {
+      "pixels": {
+        "comparisons": 2,
+        "maximumRatio": 0,
+        "sizeMismatchCount": 0,
+        "overThresholdCount": 0,
+        "changedPixels": 0
+      },
+      "maximumGeometry": 0
+    },
+    "boundaries": {
+      "states": 13,
+      "maximumGeometry": 0
+    },
+    "allPairedMaximumGeometry": 0,
+    "typedMarginEvidence": {
+      "pairedStates": 57,
+      "allEqual": true,
+      "allNativeAvailable": true,
+      "rawDifferenceStates": [
+        "reduced-320-photo-1",
+        "reduced-390-photo-1",
+        "motion-390-phase-0",
+        "motion-390-phase-17000",
+        "motion-600-phase-0",
+        "motion-820-phase-0",
+        "motion-1440-phase-0",
+        "boundary-600x900"
+      ]
+    },
+    "transformOriginEvidence": {
+      "differentRawValues": 0,
+      "allWithinExistingGeometryGate": true,
+      "maximumCoordinateDifference": 0
+    },
+    "captureHashVerification": {
+      "checked": 136,
+      "errors": []
+    },
+    "preparation": {
+      "records": 128,
+      "headerSuppressionCaptures": 108,
+      "allHeaderElementsHidden": true,
+      "headerContextUnchangedCaptures": 28
+    },
+    "problems": [],
+    "qualityFindings": [
+      {
+        "label": "text-200-320",
+        "kind": "published",
+        "clipped": [
+          {
+            "text": "01 Your memories",
+            "left": -28.515625,
+            "right": 95.46875,
+            "boxLeft": -19.03125,
+            "boxRight": 85.96875
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 227.53125,
+            "right": 345.53125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 246.734375,
+            "right": 326.3125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          }
+        ],
+        "overflow": false,
+        "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+      },
+      {
+        "label": "text-200-320",
+        "kind": "source",
+        "clipped": [
+          {
+            "text": "01 Your memories",
+            "left": -28.515625,
+            "right": 95.46875,
+            "boxLeft": -19.03125,
+            "boxRight": 85.96875
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 227.53125,
+            "right": 345.53125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 246.734375,
+            "right": 326.3125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          }
+        ],
+        "overflow": false,
+        "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+      }
+    ],
+    "harnessHashes": {
+      "scripts/verify-hero-parity.mjs": "c2707e507a9e1666bebb93244ed34ee61c87e3fc76350743408333a8077c5b41",
+      "scripts/browser-readiness.mjs": "ca88d8553d196608652d630b233dfd3f05c3692bea315d31b2f778fa6f58cb91",
+      "scripts/computed-style-parity.mjs": "efbddf441b802d7135986ebed473133a591127cf862b52eab7ce805b3ce2fb1c"
+    },
+    "protectedHashes": {
+      "index.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "assets/index-DhPZyX4z.css": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+      "assets/content-sections-CfrmOVRI.js": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+      "covers/cover-01.jpg": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01",
+      "covers/cover-02.jpg": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4",
+      "covers/cover-03.jpg": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983",
+      "covers/cover-04.jpg": "af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12",
+      "covers/cover-05.jpg": "0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190",
+      "covers/cover-06.jpg": "784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0",
+      "covers/cover-07.jpg": "673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b"
+    },
+    "localSourceComparison": {
+      "files": 48,
+      "differences": []
+    },
+    "localHarnessComparison": {
+      "files": 3,
+      "differences": []
+    },
+    "localProtectedComparison": {
+      "files": 10,
+      "differences": []
+    },
+    "captureMethod": "Real served pages, fonts and decoded photographs. Reduced motion comparisons include every photograph. Motion-enabled comparison captures pause existing native hero animations at a recorded common phase through the Web Animations API, then restore their original state. No animation definition, content, layout rule or baseline is replaced. Isolated hero captures temporarily hide only the sticky header; separate unchanged viewport captures retain it. Hover captures use the native scrolled viewport and re-hover the target, with before/after state assertions. Focus captures assert activeElement and focus-visible before/after. Geometry and section joins are measured without origin alignment.",
+    "computedStyleMethod": "Raw styles remain in every snapshot. Pixel-valued transform-origin coordinates use the unchanged 0.15px geometry gate. Only the identified centred .hero-window can compare differing raw horizontal margins through native typed auto values and independently measured box-to-parent content gaps; both boxes, parent boxes, centring and raw values are checked. Missing typed evidence fails. The observed Chromium zero-versus-used-pixel serialization is recorded, not discarded.",
+    "limitations": "Chromium only. Touch uses browser input emulation. Text enlargement doubles targeted text properties and is not native browser zoom, a physical device test, a screen reader test or accessibility certification. Browser visibility is reported only if the headless browser actually exposes a hidden document.",
+    "hiddenTabVerified": false,
+    "run_id": 39374684825,
+    "job_id": 118470056167,
+    "conclusion": "success",
+    "run_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684825",
+    "artifact_id": 12243415527,
+    "artifact_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684825/artifacts/12243415527",
+    "artifact_sha256": "38c2a9a2684b8c1789fe9d54db251c944ed76fc90c213c1715d8a53c7a28f134",
+    "artifact_size_bytes": 76529476,
+    "downloaded_and_digest_verified": true,
+    "report_sha256": "09506069c0acc60aa0d6637b526b896f6e7a6c34e5c2d1c0b2419a4d82657a9b",
+    "preserved_report": "final-hero-report.json.gz",
+    "pixel_ratio_note": "Changed pixels are counted only when a channel difference exceeds 24. A ratio of 0 is not a claim of byte-identical PNG files.",
+    "selected_source_hashes": {
+      "src/App.tsx": "07376583b1599a587419ce53c835aaf2fcea4e46073097bb57735fe9b953a6ce",
+      "src/components/ActionLink.tsx": "b48d8e8c7e2edc5026b87a9f9c942b6a5b6f6efeb2dc145eea5bb49caeb68c0a",
+      "src/sections/HeroSection.tsx": "70eb6342e54cb98d84e9396b91bf51e8d40657bb22a6e82306cf82d90b551944",
+      "src/styles/homepage-hero.css": "66c6a4af46a9441c76e2cdddef04d63869e5917674edca65c1e23c9b92148cdc",
+      "content/hero.json": "5c88630d6f125372273b358064076dc2678e6f7b04ae8cc4af4a6cba030dc587",
+      "src/styles/foundations.css": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268",
+      "src/styles/tokens.css": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081"
+    },
+    "native_results": [
+      {
+        "label": "native carousel and visibility",
+        "kind": "published",
+        "autoplay": {
+          "before": 0,
+          "after": 1,
+          "elapsedMilliseconds": 7611
+        },
+        "hover": {
+          "before": 1,
+          "after": 1,
+          "elapsedMilliseconds": 8002
+        },
+        "focus": {
+          "before": 1,
+          "after": 1,
+          "elapsedMilliseconds": 8003
+        },
+        "transition": {
+          "direction": "1",
+          "images": [
+            {
+              "previous": true,
+              "name": "image-out",
+              "duration": "0.7s",
+              "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+              "hidden": "true",
+              "alt": ""
+            },
+            {
+              "previous": false,
+              "name": "image-in",
+              "duration": "0.7s",
+              "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+              "hidden": null,
+              "alt": "A family reading an open personal story book together at home"
+            }
+          ]
+        },
+        "keyboard": {
+          "enter": true,
+          "space": true,
+          "focus": true
+        },
+        "manual": {
+          "dots": true,
+          "nextWrap": true,
+          "previousWrap": true
+        },
+        "offscreen_interval": {
+          "before": 2,
+          "after": 2,
+          "elapsedMilliseconds": 8002
+        },
+        "returned_playing": "true",
+        "hidden_tab_limit": "This headless browser keeps the original document visible. Native hidden-tab pausing is not verified by this scenario.",
+        "hidden_tab_verified": false
+      },
+      {
+        "label": "native carousel and visibility",
+        "kind": "source",
+        "autoplay": {
+          "before": 0,
+          "after": 1,
+          "elapsedMilliseconds": 7610
+        },
+        "hover": {
+          "before": 1,
+          "after": 1,
+          "elapsedMilliseconds": 8001
+        },
+        "focus": {
+          "before": 1,
+          "after": 1,
+          "elapsedMilliseconds": 8003
+        },
+        "transition": {
+          "direction": "1",
+          "images": [
+            {
+              "previous": true,
+              "name": "image-out",
+              "duration": "0.7s",
+              "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+              "hidden": "true",
+              "alt": ""
+            },
+            {
+              "previous": false,
+              "name": "image-in",
+              "duration": "0.7s",
+              "easing": "cubic-bezier(0.22, 0.61, 0.36, 1)",
+              "hidden": null,
+              "alt": "A family reading an open personal story book together at home"
+            }
+          ]
+        },
+        "keyboard": {
+          "enter": true,
+          "space": true,
+          "focus": true
+        },
+        "manual": {
+          "dots": true,
+          "nextWrap": true,
+          "previousWrap": true
+        },
+        "offscreen_interval": {
+          "before": 2,
+          "after": 2,
+          "elapsedMilliseconds": 8002
+        },
+        "returned_playing": "true",
+        "hidden_tab_limit": "This headless browser keeps the original document visible. Native hidden-tab pausing is not verified by this scenario.",
+        "hidden_tab_verified": false
+      },
+      {
+        "label": "ticker and live reduced motion",
+        "kind": "published",
+        "states": [
+          {
+            "interaction": "hover",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "false",
+            "tickerLabel": "Pause moving phrases"
+          },
+          {
+            "interaction": "Space hold",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "true",
+            "tickerLabel": "Resume moving phrases"
+          },
+          {
+            "interaction": "blur while held",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "true",
+            "tickerLabel": "Resume moving phrases"
+          },
+          {
+            "interaction": "Enter release",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "false",
+            "tickerLabel": "Pause moving phrases"
+          },
+          {
+            "interaction": "pointer hold",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "true",
+            "tickerLabel": "Resume moving phrases"
+          },
+          {
+            "interaction": "live reduced motion",
+            "active": 0,
+            "playing": "false",
+            "orbitPaused": "true",
+            "tickerPlaying": "false",
+            "tickerHeld": "false",
+            "tickerLabel": "Pause moving phrases"
+          }
+        ],
+        "reduced_interval": {
+          "before": 1,
+          "after": 1,
+          "elapsedMilliseconds": 8002
+        },
+        "restored_playing": "true"
+      },
+      {
+        "label": "ticker and live reduced motion",
+        "kind": "source",
+        "states": [
+          {
+            "interaction": "hover",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "false",
+            "tickerLabel": "Pause moving phrases"
+          },
+          {
+            "interaction": "Space hold",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "true",
+            "tickerLabel": "Resume moving phrases"
+          },
+          {
+            "interaction": "blur while held",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "true",
+            "tickerLabel": "Resume moving phrases"
+          },
+          {
+            "interaction": "Enter release",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "false",
+            "tickerLabel": "Pause moving phrases"
+          },
+          {
+            "interaction": "pointer hold",
+            "active": 0,
+            "playing": "true",
+            "orbitPaused": "false",
+            "tickerPlaying": "false",
+            "tickerHeld": "true",
+            "tickerLabel": "Resume moving phrases"
+          },
+          {
+            "interaction": "live reduced motion",
+            "active": 0,
+            "playing": "false",
+            "orbitPaused": "true",
+            "tickerPlaying": "false",
+            "tickerHeld": "false",
+            "tickerLabel": "Pause moving phrases"
+          }
+        ],
+        "reduced_interval": {
+          "before": 1,
+          "after": 1,
+          "elapsedMilliseconds": 8002
+        },
+        "restored_playing": "true"
+      },
+      {
+        "label": "emulated touch",
+        "kind": "published",
+        "states": [
+          {
+            "interaction": "tap next",
+            "active": 1
+          },
+          {
+            "interaction": "swipe left",
+            "active": 2
+          },
+          {
+            "interaction": "swipe right",
+            "active": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": -40,
+            "dy": 0,
+            "cancel": false,
+            "before": 1,
+            "after": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": -80,
+            "dy": 70,
+            "cancel": false,
+            "before": 1,
+            "after": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": 0,
+            "dy": 100,
+            "cancel": false,
+            "before": 1,
+            "after": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": -100,
+            "dy": 0,
+            "cancel": true,
+            "before": 1,
+            "after": 1
+          }
+        ]
+      },
+      {
+        "label": "emulated touch",
+        "kind": "source",
+        "states": [
+          {
+            "interaction": "tap next",
+            "active": 1
+          },
+          {
+            "interaction": "swipe left",
+            "active": 2
+          },
+          {
+            "interaction": "swipe right",
+            "active": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": -40,
+            "dy": 0,
+            "cancel": false,
+            "before": 1,
+            "after": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": -80,
+            "dy": 70,
+            "cancel": false,
+            "before": 1,
+            "after": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": 0,
+            "dy": 100,
+            "cancel": false,
+            "before": 1,
+            "after": 1
+          },
+          {
+            "interaction": "ignored gesture",
+            "dx": -100,
+            "dy": 0,
+            "cancel": true,
+            "before": 1,
+            "after": 1
+          }
+        ]
+      },
+      {
+        "label": "source hero navigation and history",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "landings": [
+          {
+            "id": "books",
+            "top": 175.71875,
+            "expected": 176,
+            "unique": 1
+          },
+          {
+            "id": "samples",
+            "top": 176.171875,
+            "expected": 176,
+            "unique": 1
+          }
+        ],
+        "history": true,
+        "homeReturn": true
+      },
+      {
+        "label": "source hero navigation and history",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "landings": [
+          {
+            "id": "books",
+            "top": 216.4375,
+            "expected": 216,
+            "unique": 1
+          },
+          {
+            "id": "samples",
+            "top": 215.78125,
+            "expected": 216,
+            "unique": 1
+          }
+        ],
+        "history": true,
+        "homeReturn": true
+      }
+    ]
+  },
+  "preview": {
+    "source_commit": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+    "run_id": 39374684825,
+    "artifact_id": 12242761996,
+    "artifact_sha256": "531fe95c0889bf3b36a257d09bef0292a949acb899ba2ca2c85da11fd2fbd88c",
+    "downloaded_and_digest_verified": true,
+    "files": {
+      "index.html": "91d2e024c60860e82f94c88d16e19e1b64b5c9fe988be32b4f7b14ff80617294",
+      "assets/index-wK9yQ04y.css": "52f74140b6d750b2acad62ffca3c0cf3bb75c9d61bdb40789ef7216bb5077f90",
+      "assets/index-p-diHD0K.js": "f6e0332f525331057ef2490b2028ef3be062bfc879caa65213d317637d381ab9",
+      "covers/cover-04.jpg": "af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12",
+      "covers/cover-03.jpg": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983",
+      "covers/cover-01.jpg": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01",
+      "covers/cover-07.jpg": "673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b",
+      "covers/cover-05.jpg": "0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190",
+      "covers/cover-06.jpg": "784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0",
+      "covers/cover-02.jpg": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4",
+      "gallery/parent-to-child-letters-open-book-placeholder.svg": "378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309",
+      "gallery/relationship-memoir-open-book-placeholder.svg": "93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3",
+      "gallery/travel-memoir-open-book-placeholder.svg": "94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57",
+      "gallery/life-story-open-book-placeholder.svg": "966bb50023e66ca1519a6b8275d75bb189142ed4257b65f867fdae70cbaf11fd",
+      "gallery/founders-memoir-open-book-placeholder.svg": "1358f9c049923f55bc42f83812c71f14560a0cb45886e8646c0da780deb9542b",
+      "gallery/celebrating-occasions-open-book-placeholder.svg": "eba5b671f2f2d0c67e499e646119b24ecfe8cf5f147b96acce04d71dc8228fff"
+    },
+    "file_count": 16,
+    "matches_local_final_runtime_build": true,
+    "local_build_runtime": "Node24.19.0/npm11.9.0",
+    "ci_build_runtime": "Node22.23.3/npm10.9.9",
+    "published": false
+  },
+  "runtime_identity": {
+    "from_commit": "4124fb24111d3739d535642a02ec3422feb39152",
+    "to_commit": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+    "git_diff_all_paths": [
+      "docs/CONTENT_GATE.md",
+      "docs/PACKAGE_3_GROUP_7_REVIEW.md",
+      "docs/PUBLIC_DESIGN_SYSTEM.md",
+      "docs/README.md",
+      "frontend/scripts/verify-hero-parity.mjs",
+      "qa/hero-migration/2026-10-20/initial-diagnostics.json"
+    ],
+    "runtime_paths": {
+      "frontend/src": {
+        "before": "103113584155c693c04d4786bbb4e09d6a38bede",
+        "after": "103113584155c693c04d4786bbb4e09d6a38bede",
+        "identical": true
+      },
+      "frontend/content": {
+        "before": "4366fcfbe07c4fd9e71072724f16beb7b71030c8",
+        "after": "4366fcfbe07c4fd9e71072724f16beb7b71030c8",
+        "identical": true
+      },
+      "frontend/public": {
+        "before": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "after": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "identical": true
+      },
+      "frontend/package.json": {
+        "before": "7a283da17e47647c47a7fa41a372a83c4ca83393",
+        "after": "7a283da17e47647c47a7fa41a372a83c4ca83393",
+        "identical": true
+      },
+      "frontend/package-lock.json": {
+        "before": "4d1b13db02ea4cdb4e1de06838bfb3345bf107ba",
+        "after": "4d1b13db02ea4cdb4e1de06838bfb3345bf107ba",
+        "identical": true
+      },
+      "frontend/vite.config.ts": {
+        "before": "5ff1347e76e179b228bae6c5f1f17a20c9e6a34d",
+        "after": "5ff1347e76e179b228bae6c5f1f17a20c9e6a34d",
+        "identical": true
+      },
+      "frontend/tsconfig.json": {
+        "before": "8bda8ab84f9a8762d7ded05f40d7427d086e68cb",
+        "after": "8bda8ab84f9a8762d7ded05f40d7427d086e68cb",
+        "identical": true
+      },
+      "frontend/index.html": {
+        "before": "42301eab82827a5730736f79277d1d02fa21e833",
+        "after": "42301eab82827a5730736f79277d1d02fa21e833",
+        "identical": true
+      }
+    },
+    "runtime_identical": true,
+    "protected_runtime_diff": []
+  },
+  "retained": {
+    "record": "retained-verification.json",
+    "record_sha256": "09c3724aaee4158afb4b848a9e3b14696e7a59e377bc36cd37c822df83ea5131",
+    "full_reference_run": 39373857698,
+    "full_reference_artifact": 12242716660,
+    "full_reference_digest": "f394c0925242a78edb577deee14537a3d22952cb92b2ccc03e6fa0356d23c4a9",
+    "full_reference_environment": {
+      "browser": "155.0.8059.39",
+      "runner_image": "20261012.334.1"
+    },
+    "latest_shared_run": 39374684706,
+    "latest_shared_artifact": 12242737374,
+    "latest_shared_digest": "c231207e5da3ca5ee484f96cd2f72c8906963a5b73ca3b524eab2e7bc4c59431",
+    "latest_shared_preserved_report": "latest-shared-report.json.gz",
+    "latest_shared_books_1280_1440_changed_ratio": 0,
+    "latest_discovery_run": 39374684826,
+    "latest_shared_and_discovery_environment": {
+      "browser": "155.0.8059.84",
+      "runner_image": "20261018.339.1"
+    },
+    "all_latest_workflows_successful": true,
+    "latest_workflows": [
+      {
+        "run_id": 39374684781,
+        "name": "pages build and deployment",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684781",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684788,
+        "name": "Verify final footer typography",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684788",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684733,
+        "name": "Verify Package 2 foundations",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684733",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684769,
+        "name": "Validate editable StoriLeaf public website source",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684769",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684663,
+        "name": "Verify React How it works parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684663",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684846,
+        "name": "Verify React media parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684846",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684772,
+        "name": "Verify React homepage Group 1 parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684772",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684825,
+        "name": "Verify React hero and motion parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684825",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684836,
+        "name": "Verify React homepage Group 2 parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684836",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684706,
+        "name": "Verify React shared header and footer parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684706",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      },
+      {
+        "run_id": 39374684826,
+        "name": "Verify React six-book discovery parity",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684826",
+        "head_sha": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+        "run_attempt": 1
+      }
+    ],
+    "evidence_reuse_and_not_redownloaded": "See retained-verification.json for exact source/build/harness/environment identities, all inspected reports, inherited findings and the separate artifacts not downloaded again."
+  },
+  "workflow_history": {
+    "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf": {
+      "workflow_count": 12,
+      "all_completed": true,
+      "passed": 7,
+      "failures": [
+        {
+          "run_id": 39372765571,
+          "name": "Verify React hero and motion parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39372765571",
+          "head_sha": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+          "run_attempt": 1
+        },
+        {
+          "run_id": 39372765620,
+          "name": "Verify React shared header and footer parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39372765620",
+          "head_sha": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+          "run_attempt": 1
+        },
+        {
+          "run_id": 39372765523,
+          "name": "Verify React six-book discovery parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39372765523",
+          "head_sha": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+          "run_attempt": 1
+        },
+        {
+          "run_id": 39372765538,
+          "name": "Validate editable StoriLeaf public website source",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39372765538",
+          "head_sha": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+          "run_attempt": 1
+        },
+        {
+          "run_id": 39372765466,
+          "name": "Verify React homepage Group 1 parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39372765466",
+          "head_sha": "c0a9bcc7c536b852af506a49dc9dadeabda0c9cf",
+          "run_attempt": 1
+        }
+      ]
+    },
+    "4124fb24111d3739d535642a02ec3422feb39152": {
+      "workflow_count": 12,
+      "all_completed": true,
+      "passed": 11,
+      "failures": [
+        {
+          "run_id": 39373857873,
+          "name": "Verify React hero and motion parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39373857873",
+          "head_sha": "4124fb24111d3739d535642a02ec3422feb39152",
+          "run_attempt": 1
+        }
+      ]
+    },
+    "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6": {
+      "workflow_count": 11,
+      "all_completed": true,
+      "passed": 9,
+      "failures": [
+        {
+          "run_id": 39374254329,
+          "name": "Verify React hero and motion parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254329",
+          "head_sha": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+          "run_attempt": 1
+        },
+        {
+          "run_id": 39374254342,
+          "name": "Verify React shared header and footer parity",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374254342",
+          "head_sha": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+          "run_attempt": 1
+        }
+      ]
+    },
+    "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66": {
+      "workflow_count": 11,
+      "all_completed": true,
+      "passed": 11,
+      "failures": []
+    }
+  },
+  "diagnostic_records": {
+    "initial_hero": "initial-diagnostics.json",
+    "initial_hero_raw": "initial-hero-report.json.gz",
+    "initial_shape_raw": "initial-shape-report.json",
+    "second_hero": "second-diagnostics.json",
+    "second_hero_raw": "second-hero-report.json.gz",
+    "third_hero": "third-diagnostics.json",
+    "third_hero_raw": "third-hero-report.json.gz",
+    "shared_menu_raster": "shared-raster-diagnostics.json",
+    "shared_failed_raw": "shared-failed-report.json.gz",
+    "thresholds_widened": false,
+    "menu_runtime_or_helper_changed_after_failure": false,
+    "retry_requested_to_obtain_pass": false
+  },
+  "visual_review": {
+    "record": "visual-review.json",
+    "record_sha256": "96020cf89d965af0d235794003ffa0fafc621890a0bade990d0bcc3146227991",
+    "final_pairs": 25,
+    "final_pngs": 50,
+    "coverage": {
+      "native_lower_join": 10,
+      "native_hover": 2,
+      "focus": 2,
+      "normal": 3,
+      "header_context": 3,
+      "motion_snapshot": 3,
+      "targeted_text_enlargement": 2
+    },
+    "conclusion": "No substantive visible migration mismatch was found in the 25 reviewed final pairs. All ten native lower joins visibly paint the outro, ticker, reassurance band and beginning of Books with matching spacing and proportions. Native hover and focus states are visibly present and match. Representative normal, header context and motion snapshots match. The inherited 320px targeted 200% progression clipping remains a quality finding. Coverage is established by the combined captures, not by a claim that every full-hero locator screenshot is completely painted. This review does not grant founder acceptance or publication approval.",
+    "initial_artifact_review": "48 pairs / 96 PNGs, including all 3 photographs at all 10 widths, retained in initial-diagnostics.json. This is not counted as a final artifact reinspection.",
+    "root_additional_review": "Root independently inspected both final 320px and 1440px native lower-join pairs, and both failed 1440px Books-menu PNGs.",
+    "capture_limitations": [
+      "Only the 50 filenames listed in pairs were visually reviewed in this final artifact. The rest of the 136 captures were not manually re-reviewed during this final audit.",
+      "The final representative normal coverage is 320px photograph 1, 820px photograph 2 and 1440px photograph 3. Earlier initial-artifact review of all ten widths and all three photos is separate evidence and is not counted as final-artifact inspection.",
+      "Oversized full-hero locator screenshots can include blank terminal compositor strips. Combined native lower-join and header-context coverage is required; this review does not claim a single fully painted full-page screenshot.",
+      "The reviewed header contexts have a fixed 900px viewport height. They establish header and top-hero relationship, not the reassurance join; those joins have separate native captures.",
+      "Short-screen states at 320x568, 820x500 and 1440x500 have measurements in the report but no dedicated screenshot files. No short-screen visual review is claimed.",
+      "Motion images are snapshots at recorded native animation phases, not a visual examination of continuous motion. Functional and timing assertions belong to report.json.",
+      "Chromium only. Touch was browser input emulation. Targeted text enlargement is not native browser zoom, a physical-device test, a screen-reader test or accessibility certification.",
+      "Founder rendered acceptance, complete homepage parity and approval to replace the published homepage remain separate gates."
+    ]
+  },
+  "live_published_reference_inspection": {
+    "browser": "Connected Chrome; exact version not exposed by the browser tool metadata.",
+    "viewports": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 1440,
+        "height": 1000
+      }
+    ],
+    "scope": "Published homepage visual state and manual carousel controls. Paired protected/source rendering was performed by the versioned CI browser above.",
+    "viewport_override_restored": true
+  },
+  "publication": {
+    "react_cutover_authorised": false,
+    "founder_rendered_acceptance_recorded": false,
+    "private_production_changed": false,
+    "frontend_build_destination": "frontend/dist",
+    "published_guard_baseline_unchanged": true,
+    "protected_runtime_changed_paths": [],
+    "documentation_deployment": "Verify the final documentation commit Pages run separately; this record does not invent a future commit or deployment ID."
+  },
+  "next_group": "Group 8: Writing showcase, existing unsaved practice dialog and complete homepage assembly. Package 3 is not complete.",
+  "open_quality_finding": "Inherited 320px targeted 200 percent hero progression-label clipping in both versions. Separate bounded repair proposal required. Earlier Gifting, shared navigation/footer/currency, discovery enlargement and pricing export findings remain in their owning reviews.",
+  "planned_ci_review": "After assembly, examine duplicate jobs/setup and unreliable measurements, including the retained shared-menu raster preparation sensitivity. No broad CI consolidation or general stability claim is made here.",
+  "preserved_report_files": {
+    "final-hero-report.json.gz": {
+      "compressed_sha256": "76a8d14f7bb5276e554a38cbafcc86800748b98f8a4fbb3aefc8a9522c32a7b2",
+      "compressed_bytes": 815051,
+      "report_sha256": "09506069c0acc60aa0d6637b526b896f6e7a6c34e5c2d1c0b2419a4d82657a9b"
+    },
+    "initial-hero-report.json.gz": {
+      "compressed_sha256": "73e1e460b44d7f4eaeee33138e8c3dc76b0df8ed48c0d4e222414785a768201a",
+      "compressed_bytes": 770462,
+      "report_sha256": "4c2e26cfad1656867fbd36622b58f3ea81125b68dfbb15122f6023519190ee66"
+    },
+    "latest-shared-report.json.gz": {
+      "compressed_sha256": "6202fa6dced2226ec897adfcc6cd0d820a15ccd6fe561958ed900003baf23614",
+      "compressed_bytes": 379539,
+      "report_sha256": "ef775176e27b779912fec5e5c508b4dc9f012b0de6bb1d108d0cb92e5f0f50c4"
+    },
+    "second-hero-report.json.gz": {
+      "compressed_sha256": "2cc23c3fb6858280028e10c8a9d4d09c42fc092b32b8e17cb2fac2611602f24c",
+      "compressed_bytes": 813237,
+      "report_sha256": "733071daac8d79bd0f44886b68ddd1a83176a6bf8a1367dd75198b6216141180"
+    },
+    "shared-failed-report.json.gz": {
+      "compressed_sha256": "f6bb40eca73e5484d2423e8b197a159b48d0c96f386007513f48f23d881f525a",
+      "compressed_bytes": 380406,
+      "report_sha256": "b845d2d3c0547822c4eafc83b15d6db483c9304c847a24dbf4bfa5c76e06b77a"
+    },
+    "third-hero-report.json.gz": {
+      "compressed_sha256": "af0cf3df5ae22f7004cb0812387c71cb04d79c96eb66c0885233962ce1940384",
+      "compressed_bytes": 814412,
+      "report_sha256": "4c1b4de7da795a6415b4c8eec736bdde5e9b29088da892771b4ab787a49c0981"
+    }
+  }
+}

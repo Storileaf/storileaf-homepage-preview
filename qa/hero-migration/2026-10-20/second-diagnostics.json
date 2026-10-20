@@ -1,0 +1,89 @@
+{
+  "source_commit": "4124fb24111d3739d535642a02ec3422feb39152",
+  "run_id": 39373857873,
+  "job_id": 118467475374,
+  "artifact_id": 12242770776,
+  "artifact_sha256": "6d22f0f3062db994073ec5d6615b832b5770c2ad20d57fe0de95f69d0178d7bf",
+  "downloaded_and_digest_verified": true,
+  "report_sha256": "733071daac8d79bd0f44886b68ddd1a83176a6bf8a1367dd75198b6216141180",
+  "result": "Failed three desktop join pixel checks because the intended temporary header suppression did not suppress every painted header descendant. Actual join geometry and content pixels below y100 matched. No runtime repair.",
+  "problems": [
+    "reduced-1024-photo-1 native join pixels {\"ratio\":0.02259364111498258,\"changed\":13280,\"total\":587776,\"size\":[1024,574]}",
+    "reduced-1280-photo-1 native join pixels {\"ratio\":0.03435883620689655,\"changed\":25508,\"total\":742400,\"size\":[1280,580]}",
+    "reduced-1440-photo-1 native join pixels {\"ratio\":0.020791427203065135,\"changed\":17365,\"total\":835200,\"size\":[1440,580]}"
+  ],
+  "browser": "155.0.8059.39",
+  "states": 43,
+  "captures": 136,
+  "all_computed_style_and_functional_checks_passed": true,
+  "hover_capture_limit_still_present": true,
+  "source_runtime_changes_after_this_commit": false,
+  "join_failures": [
+    {
+      "width": 1024,
+      "ratio": 0.02259364111498258,
+      "geometry": [
+        {
+          "region": "outro",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "ticker",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "band",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "books",
+          "maximumGeometry": 0
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "ratio": 0.03435883620689655,
+      "geometry": [
+        {
+          "region": "outro",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "ticker",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "band",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "books",
+          "maximumGeometry": 0
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "ratio": 0.020791427203065135,
+      "geometry": [
+        {
+          "region": "outro",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "ticker",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "band",
+          "maximumGeometry": 0
+        },
+        {
+          "region": "books",
+          "maximumGeometry": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,777 @@
+{
+  "review": "Package 3 Group 7 final artifact visual review",
+  "reviewed_at": "2026-10-20T05:40:14.714502+00:00",
+  "reviewer": "private_reference_review agent",
+  "actions_run_id": "39374684825",
+  "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "source_commit": "a7b4ce1ed74728e569af0fc82c7c9b0adfde5a66",
+  "browser": {
+    "engine": "Chromium",
+    "version": "155.0.8059.39"
+  },
+  "method": "Direct visual inspection of both original PNGs in every listed pair using view_image, supported by read-only RGB pixel comparison. No screenshots were composited, edited or aligned for this review.",
+  "artifact_capture_count": 136,
+  "reviewed_pair_count": 25,
+  "reviewed_file_count": 50,
+  "coverage": {
+    "native_lower_join": 10,
+    "native_hover": 2,
+    "focus": 2,
+    "normal": 3,
+    "header_context": 3,
+    "motion_snapshot": 3,
+    "targeted_text_enlargement": 2
+  },
+  "conclusion": "No substantive visible migration mismatch was found in the 25 reviewed final pairs. All ten native lower joins visibly paint the outro, ticker, reassurance band and beginning of Books with matching spacing and proportions. Native hover and focus states are visibly present and match. Representative normal, header context and motion snapshots match. The inherited 320px targeted 200% progression clipping remains a quality finding. Coverage is established by the combined captures, not by a claim that every full-hero locator screenshot is completely painted. This review does not grant founder acceptance or publication approval.",
+  "pairs": [
+    {
+      "label": "reduced-320-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-320-photo-1-join.png",
+        "source": "source-reduced-320-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "67a77156b53ba8beb7f4d96cb1f8b3cae91f2297096de1f6ca7be47f020c4456",
+        "source": "e3c4aa523f9f479fef0b3c0384b2d49629397ca1719470cab35bdcf271af14ca"
+      },
+      "image_size": [
+        320,
+        766
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 596,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-360-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-360-photo-1-join.png",
+        "source": "source-reduced-360-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "54257cfdbb79ab1ef2ed7c83c1f5812617a237a36f2b1600d70e40c122db3bee",
+        "source": "5384215c8d6bd44a2bce866332f02476ae5ae99888f817eb383f2feed12b944f"
+      },
+      "image_size": [
+        360,
+        706
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 681,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-390-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-390-photo-1-join.png",
+        "source": "source-reduced-390-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "cb1ce48fed40b9e37e14e4e47218abc0e1531ac032c1d75f5fea8ffd3637617e",
+        "source": "5988b7f417c2b4eb560c3ac362d5b3d126add0d5dc87b111dd5eb9d22402fff8"
+      },
+      "image_size": [
+        390,
+        679
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 927,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-430-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-430-photo-1-join.png",
+        "source": "source-reduced-430-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "5f9b3a597c24bd43e2f88c85542319d60ccfc4f54257d3f8278235f90a36da15",
+        "source": "b1390f8dda1f7137ba1398fd9c314a8b688615deea836918053ab92ee4899c71"
+      },
+      "image_size": [
+        430,
+        680
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 852,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-600-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-600-photo-1-join.png",
+        "source": "source-reduced-600-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "9b12dcc8336c3e669235cd91108670a752b50f83b59b2f1539337051f7a4c736",
+        "source": "ce34fa7f8d6fdee81b0c393a0e8990f1e9c8eba1ac294e9a5f04632865183598"
+      },
+      "image_size": [
+        600,
+        660
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 1362,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-768-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-768-photo-1-join.png",
+        "source": "source-reduced-768-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "9665a7212f41a76acb58f27fe496aafdd79782ec9c6e3d3d36e8a2c916245d18",
+        "source": "35e7c2c0a4126c40a8824f85ab980e5e337332c3c60e4fa51e78a34b0a849384"
+      },
+      "image_size": [
+        768,
+        574
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 2043,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-820-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-820-photo-1-join.png",
+        "source": "source-reduced-820-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "a7801a670a632ec820ecc61af40dd0a282e585f01db3bd893d570cd24b2f5ccc",
+        "source": "096f91c2a374a443c8ba885e9ff468d3c33a573d2cede04f7d2715586f43d08a"
+      },
+      "image_size": [
+        820,
+        574
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 1642,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-1024-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-1024-photo-1-join.png",
+        "source": "source-reduced-1024-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "b9fcbd6654edee28bf69210d0f076f49b0553d4cd2f35ac30ff6ee2aa761b0bc",
+        "source": "1e1a56fd7492fa1c21def2ddfd9184e5e42bb4190bdbc04f07b51ce0925b95dc"
+      },
+      "image_size": [
+        1024,
+        574
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 2498,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-1280-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-1280-photo-1-join.png",
+        "source": "source-reduced-1280-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "f81368294ece0180f3781fe74fb3b4d11bef436973454df972239729c55e29b9",
+        "source": "112bbe48ddba42e1f01e789559784171478968c1753fab4ed71fc20e953819f6"
+      },
+      "image_size": [
+        1280,
+        580
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 2991,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "reduced-1440-photo-1-join",
+      "group": "native_lower_join",
+      "files": {
+        "published": "published-reduced-1440-photo-1-join.png",
+        "source": "source-reduced-1440-photo-1-join.png"
+      },
+      "sha256": {
+        "published": "1c05497ea59708c3af3a353f775ab5a5d4876bc40a89ea3663a4ed9e07045454",
+        "source": "c547c7216b6c256990955935c7380b332d01701e1e23ff7690bc5a75e14c003c"
+      },
+      "image_size": [
+        1440,
+        580
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 3259,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The complete description and actions, painted ticker and complete reassurance band are visible, followed immediately by the beginning of Books. Responsive vertical and horizontal arrangements match. No sticky header or descendant ghosts are visible."
+    },
+    {
+      "label": "carousel-pointer-hover-native",
+      "group": "native_hover",
+      "files": {
+        "published": "published-carousel-pointer-hover-native.png",
+        "source": "source-carousel-pointer-hover-native.png"
+      },
+      "sha256": {
+        "published": "4f0f9a6de59d464e46cd66e102bbf3ea6b065ced8171527d3398596caf2731ac",
+        "source": "7ae57f3aa8c5dcec6fde46ba09a36d9fc4ecd53bb0defbeb43b7382c27fe09f9"
+      },
+      "image_size": [
+        1440,
+        900
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 7598,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The right carousel arrow has the active brighter background, distinct from the unhovered left arrow. The state matches across pages; no header descendants leak into the capture."
+    },
+    {
+      "label": "primary-action-hover-native",
+      "group": "native_hover",
+      "files": {
+        "published": "published-primary-action-hover-native.png",
+        "source": "source-primary-action-hover-native.png"
+      },
+      "sha256": {
+        "published": "83dbbb442201fd7e17f35b2720facb26f1b6016fd39b1c4f9ae919340b4345f6",
+        "source": "1e813820d7fd01146dd99fef095b0db30e86665946e43da80066bca7852b8732"
+      },
+      "image_size": [
+        1440,
+        900
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 7598,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Explore the books visibly has its darker teal hover background and shadow. Both pages match and the native viewport includes the ticker and reassurance band without header ghosts."
+    },
+    {
+      "label": "carousel-keyboard-focus",
+      "group": "focus",
+      "files": {
+        "published": "published-carousel-keyboard-focus.png",
+        "source": "source-carousel-keyboard-focus.png"
+      },
+      "sha256": {
+        "published": "f14bec6f692e4886087a73c7de902bdcb68f4e0664de21044b12e48b6f822522",
+        "source": "a97045abfa6045219dca68d96d9bace818efb6fe6f72a66d67bf8c2632a0903f"
+      },
+      "image_size": [
+        1440,
+        1170
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 7625,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The next arrow visibly retains a teal focus outline on both pages. The rest of the captured hero matches."
+    },
+    {
+      "label": "ticker-keyboard-focus-held",
+      "group": "focus",
+      "files": {
+        "published": "published-ticker-keyboard-focus-held.png",
+        "source": "source-ticker-keyboard-focus-held.png"
+      },
+      "sha256": {
+        "published": "010975995f7af1b204380401076e53011d6b46f25a55b1c5651904d815323cef",
+        "source": "f800cbd2d2dfdb61b50bec05789efeeea90a8e652a4a199f511c713c4f9fc3b0"
+      },
+      "image_size": [
+        1440,
+        1170
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 7643,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The held ticker visibly retains its gold inset focus outline on both pages. The rest of the captured hero matches."
+    },
+    {
+      "label": "reduced-320-photo-1",
+      "group": "normal",
+      "files": {
+        "published": "published-reduced-320-photo-1.png",
+        "source": "source-reduced-320-photo-1.png"
+      },
+      "sha256": {
+        "published": "c583a6e7932a86bee8459be1812060506254efe11cd36d4594c1189d2cfed263",
+        "source": "42ae2e2fe44cf70eaa757aba733cac9b8a90f049e79f2431590c9d2a3cb35940"
+      },
+      "image_size": [
+        320,
+        886
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 20563,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Headline wrapping, progression, binding photograph crop, carousel controls, description and vertically arranged actions match. A 63px blank terminal strip remains in both oversized locator captures; this image alone does not establish the ticker. The separately reviewed native 320px join supplies that coverage."
+    },
+    {
+      "label": "reduced-820-photo-2",
+      "group": "normal",
+      "files": {
+        "published": "published-reduced-820-photo-2.png",
+        "source": "source-reduced-820-photo-2.png"
+      },
+      "sha256": {
+        "published": "4f60c1234e8db5c1ebe904db870e834f2c3bef93d46833a2b5fa9065bed7b658",
+        "source": "a8740af06a05e3aad50cfc1bc3e4dbf336667c072a5dbb79178e9866d6a42121"
+      },
+      "image_size": [
+        820,
+        972
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 4684,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Headline, progression, book spread crop, selected second dot, controls, description, actions and visible ticker match. No header ghosts are visible."
+    },
+    {
+      "label": "reduced-1440-photo-3",
+      "group": "normal",
+      "files": {
+        "published": "published-reduced-1440-photo-3.png",
+        "source": "source-reduced-1440-photo-3.png"
+      },
+      "sha256": {
+        "published": "e9dfacdeb48360c84162bdbe882bc5f9fbda567323c6cbaca508d1a6709b26ef",
+        "source": "1ec78151e967a4722dea9f6218c829c54dc0f825a8df903c641e9a1efa98dc2c"
+      },
+      "image_size": [
+        1440,
+        1170
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 23287,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Headline, progression, family photograph crop, selected third dot, controls, description, actions and visible ticker match. No header ghosts are visible."
+    },
+    {
+      "label": "reduced-320-photo-1-context",
+      "group": "header_context",
+      "files": {
+        "published": "published-reduced-320-photo-1-context.png",
+        "source": "source-reduced-320-photo-1-context.png"
+      },
+      "sha256": {
+        "published": "95ea7a1307e3c8bc0f3edd8a6535471806079b097af678a0fba778ac52eee2f8",
+        "source": "bffa2033400f7deb785f602d25458bf8c98bba55f27bcacbd65e7b9121b73c8a"
+      },
+      "image_size": [
+        320,
+        900
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 3603,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The gold logo sits directly against forest green. Mobile header, menu control, top spacing, headline wrap and hero match. The fixed 900px viewport does not include the ticker or reassurance join."
+    },
+    {
+      "label": "reduced-820-photo-1-context",
+      "group": "header_context",
+      "files": {
+        "published": "published-reduced-820-photo-1-context.png",
+        "source": "source-reduced-820-photo-1-context.png"
+      },
+      "sha256": {
+        "published": "d3683853cf96023a63d5eba80c96205fef6fe45689717974701e45b0a2686c44",
+        "source": "606e047137ffdb267ffd7a2f994c4d7cc1d153b02f57eca2d843178dacb34c31"
+      },
+      "image_size": [
+        820,
+        900
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 16276,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Gold logo, forest header, Log in and Start your story actions, menu control, header-to-hero spacing and visible hero match. The fixed 900px viewport ends within the hero description."
+    },
+    {
+      "label": "reduced-1440-photo-1-context",
+      "group": "header_context",
+      "files": {
+        "published": "published-reduced-1440-photo-1-context.png",
+        "source": "source-reduced-1440-photo-1-context.png"
+      },
+      "sha256": {
+        "published": "d383669768c15f7216500f5e1050a3e2fb52938645a20a5b6beaab3586edad62",
+        "source": "0b6ff0538217031e9d738e76d4c131ff47bec58d6f5998f67b83ad96b7f905ca"
+      },
+      "image_size": [
+        1440,
+        900
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 24666,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Gold logo, forest header, desktop link order, account actions, header-to-hero spacing and visible hero match. The fixed 900px viewport ends inside the photograph."
+    },
+    {
+      "label": "motion-390-phase-17000",
+      "group": "motion_snapshot",
+      "files": {
+        "published": "published-motion-390-phase-17000.png",
+        "source": "source-motion-390-phase-17000.png"
+      },
+      "sha256": {
+        "published": "d46a702f7cc35f076a9844fa014fe7e816c35af6585a5a2e273706cc25d005bd",
+        "source": "9c4a5ca694dc8636b7e356ce7fb00f5b6998aa6c908e0693e8e05aae5dc527a9"
+      },
+      "image_size": [
+        390,
+        795
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 3898,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The recorded mobile snapshot matches in static pale covers and the advanced ticker phrase sequence, with matching photograph crop and geometry."
+    },
+    {
+      "label": "motion-1440-phase-0",
+      "group": "motion_snapshot",
+      "files": {
+        "published": "published-motion-1440-phase-0.png",
+        "source": "source-motion-1440-phase-0.png"
+      },
+      "sha256": {
+        "published": "a223045a3c49cc2c091c6a7fa2465e68c2c2e2248e00670860abe7f8399e55a7",
+        "source": "6c5b5806414bb3144ef0ee48e8e3ce8be7078154d8fa7637163c34fa47eb65e2"
+      },
+      "image_size": [
+        1440,
+        1170
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 22700,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The starting orbit cover positions, cover fading, ticker phrase sequence and hero geometry match."
+    },
+    {
+      "label": "motion-1440-phase-17000",
+      "group": "motion_snapshot",
+      "files": {
+        "published": "published-motion-1440-phase-17000.png",
+        "source": "source-motion-1440-phase-17000.png"
+      },
+      "sha256": {
+        "published": "90c95b4d8e4494dda185292f6117f27a808d9125fd6a0b83e09a1bb4a2780b21",
+        "source": "0177531b6006e308fd82d1a589b37812896c221948e60d1a568e410456b5e9e5"
+      },
+      "image_size": [
+        1440,
+        1170
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 56264,
+        "channel_difference_over_24_count": 6,
+        "channel_difference_over_24_ratio": 3.561253561253561e-06,
+        "maximum_channel_difference": 26
+      },
+      "visually_reviewed_both": true,
+      "observation": "The advanced orbit cover positions and ticker phrase sequence match. No migrated layout or crop difference is visible."
+    },
+    {
+      "label": "text-200-320",
+      "group": "targeted_text_enlargement",
+      "files": {
+        "published": "published-text-200-320.png",
+        "source": "source-text-200-320.png"
+      },
+      "sha256": {
+        "published": "1a1a2c7ed724d57e0f53889ac0a8b78eb5237d497462b63f71118850bfbe30ee",
+        "source": "fd32213429d89c966b8370d5df09d4b8f4fc1448491d24cd6fa6ca2b9e1f2390"
+      },
+      "image_size": [
+        320,
+        1641
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 715,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "Both pages visibly clip the outer progression labels beyond the viewport edges: Your memories on the left and A keepsake for life on the right. This inherited quality defect remains open. Other visible hero wrapping, photograph crop and actions match."
+    },
+    {
+      "label": "text-200-1440",
+      "group": "targeted_text_enlargement",
+      "files": {
+        "published": "published-text-200-1440.png",
+        "source": "source-text-200-1440.png"
+      },
+      "sha256": {
+        "published": "36a0b9298b598ea96fb0f94298bc588a21bece2f43c232c57ec063cf569b4f27",
+        "source": "0870481023827745ab2131337712b4f24c1398329b3bbc48d254bb0f8216f86b"
+      },
+      "image_size": [
+        1440,
+        1922
+      ],
+      "comparison": {
+        "raw_changed_pixel_count": 8152,
+        "channel_difference_over_24_count": 0,
+        "channel_difference_over_24_ratio": 0.0,
+        "maximum_channel_difference": 1
+      },
+      "visually_reviewed_both": true,
+      "observation": "The enlarged hero heading, progression, photograph, description, actions and ticker match. No corresponding progression clipping is visible at this width; the header is excluded."
+    }
+  ],
+  "findings": [
+    {
+      "id": "native_lower_join_complete",
+      "kind": "verified_visual_coverage",
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "detail": "All ten published/source native viewport pairs show the complete outro, ticker and reassurance band plus the beginning of Books. No leaked sticky-header descendants are visible. Reassurance remains immediately before Books."
+    },
+    {
+      "id": "native_hover_and_focus_present",
+      "kind": "verified_visual_state",
+      "detail": "Both native hover pairs show the actual active treatment. Both focus pairs show the expected teal carousel or gold ticker outline. Their report records also assert the required state before and after capture."
+    },
+    {
+      "id": "hero_progression_enlargement_clipping",
+      "kind": "inherited_quality_finding",
+      "width": 320,
+      "text_enlargement_percent": 200,
+      "files": [
+        "published-text-200-320.png",
+        "source-text-200-320.png"
+      ],
+      "detail": "Your memories clips beyond the left viewport edge and A keepsake for life beyond the right in both pages. Matching this inherited defect is not a quality pass and no repair approval is inferred."
+    },
+    {
+      "id": "full_hero_terminal_blank_strip",
+      "kind": "capture_limitation",
+      "files": [
+        "published-reduced-320-photo-1.png",
+        "source-reduced-320-photo-1.png"
+      ],
+      "measurement": {
+        "published": {
+          "bottom_uniform_row_count": 63,
+          "colour_rgb": [
+            250,
+            249,
+            247
+          ],
+          "image_height": 886,
+          "first_uniform_row_y": 823
+        },
+        "source": {
+          "bottom_uniform_row_count": 63,
+          "colour_rgb": [
+            249,
+            248,
+            246
+          ],
+          "image_height": 886,
+          "first_uniform_row_y": 823
+        }
+      },
+      "detail": "The final 320px oversized locator screenshots still end with an unpainted pale terminal strip where the lower hero/ticker coverage is incomplete. The separate native-scrolled join screenshots visibly establish the actual ticker and reassurance rendering. This is not accepted UI behaviour."
+    }
+  ],
+  "limits": [
+    "Only the 50 filenames listed in pairs were visually reviewed in this final artifact. The rest of the 136 captures were not manually re-reviewed during this final audit.",
+    "The final representative normal coverage is 320px photograph 1, 820px photograph 2 and 1440px photograph 3. Earlier initial-artifact review of all ten widths and all three photos is separate evidence and is not counted as final-artifact inspection.",
+    "Oversized full-hero locator screenshots can include blank terminal compositor strips. Combined native lower-join and header-context coverage is required; this review does not claim a single fully painted full-page screenshot.",
+    "The reviewed header contexts have a fixed 900px viewport height. They establish header and top-hero relationship, not the reassurance join; those joins have separate native captures.",
+    "Short-screen states at 320x568, 820x500 and 1440x500 have measurements in the report but no dedicated screenshot files. No short-screen visual review is claimed.",
+    "Motion images are snapshots at recorded native animation phases, not a visual examination of continuous motion. Functional and timing assertions belong to report.json.",
+    "Chromium only. Touch was browser input emulation. Targeted text enlargement is not native browser zoom, a physical-device test, a screen-reader test or accessibility certification.",
+    "Founder rendered acceptance, complete homepage parity and approval to replace the published homepage remain separate gates."
+  ],
+  "report_crosscheck": {
+    "problems": [],
+    "short_screen_state_labels": [
+      "boundary-320x568",
+      "boundary-820x500",
+      "boundary-1440x500"
+    ],
+    "short_screen_capture_files": [],
+    "quality_findings": [
+      {
+        "label": "text-200-320",
+        "kind": "published",
+        "clipped": [
+          {
+            "text": "01 Your memories",
+            "left": -28.515625,
+            "right": 95.46875,
+            "boxLeft": -19.03125,
+            "boxRight": 85.96875
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 227.53125,
+            "right": 345.53125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 246.734375,
+            "right": 326.3125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          }
+        ],
+        "overflow": false,
+        "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+      },
+      {
+        "label": "text-200-320",
+        "kind": "source",
+        "clipped": [
+          {
+            "text": "01 Your memories",
+            "left": -28.515625,
+            "right": 95.46875,
+            "boxLeft": -19.03125,
+            "boxRight": 85.96875
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 227.53125,
+            "right": 345.53125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          },
+          {
+            "text": "03 A keepsake for life",
+            "left": 246.734375,
+            "right": 326.3125,
+            "boxLeft": 234.03125,
+            "boxRight": 339.03125
+          }
+        ],
+        "overflow": false,
+        "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+      }
+    ]
+  },
+  "repository_edits": false,
+  "remote_writes": false,
+  "artifact_id": 12243415527,
+  "artifact_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39374684825/artifacts/12243415527"
+}

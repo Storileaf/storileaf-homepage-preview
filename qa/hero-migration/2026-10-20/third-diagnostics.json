@@ -1,0 +1,30 @@
+{
+  "source_commit": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+  "run_id": 39374254329,
+  "artifact_id": 12243131116,
+  "artifact_sha256": "81d1d627023fe8c4023bf69700730e3f7464a0ca9b21511906dcddb93eab1515",
+  "downloaded_and_digest_verified": true,
+  "report_sha256": "4c1b4de7da795a6415b4c8eec736bdde5e9b29088da892771b4ab787a49c0981",
+  "result": "Failed only four native lower-join pixel checks. All differences were confined to incompletely suppressed header descendants; zero differing pixels below y100 at the unchanged channel threshold. No runtime change.",
+  "problems": [
+    "reduced-390-photo-1 native join pixels {\"ratio\":0.033503266492957214,\"changed\":8872,\"total\":264810,\"size\":[390,679]}",
+    "reduced-1024-photo-1 native join pixels {\"ratio\":0.02259364111498258,\"changed\":13280,\"total\":587776,\"size\":[1024,574]}",
+    "reduced-1280-photo-1 native join pixels {\"ratio\":0.022687230603448277,\"changed\":16843,\"total\":742400,\"size\":[1280,580]}",
+    "reduced-1440-photo-1 native join pixels {\"ratio\":0.020791427203065135,\"changed\":17365,\"total\":835200,\"size\":[1440,580]}"
+  ],
+  "browser": "155.0.8059.39",
+  "states": 43,
+  "captures": 136,
+  "all_computed_style_and_functional_checks_passed": true,
+  "corrected_native_hover_and_focus_checks_passed": true,
+  "new_390_capture_difference": {
+    "bounds": [
+      24,
+      19,
+      353,
+      65
+    ],
+    "changed_pixels_below_y100": 0
+  },
+  "source_runtime_changes_after_4124": false
+}

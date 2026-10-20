@@ -1,0 +1,390 @@
+{
+  "scope": "Independent read-only diagnosis of one failed retained Books menu capture; no harness or runtime edits and no retry requested.",
+  "failure": {
+    "run": 39374254342,
+    "job": 118468719083,
+    "sourceCommit": "c736c1b1e0deb5ff4f9dc4429427a446e3f051e6",
+    "browser": "155.0.8059.84",
+    "artifactDirectory": "/tmp/group7-shared-failure-39374254342",
+    "artifactZipSha256": "bcccf584cbfad33b41efc8039c9dba93008a2263873cbd310677e3ec3d20d9da",
+    "reportSha256": "b845d2d3c0547822c4eafc83b15d6db483c9304c847a24dbf4bfa5c76e06b77a",
+    "problems": [
+      "books-comparison-open-1440.png pixels differ 0.06352632179970309"
+    ]
+  },
+  "passingReference": {
+    "sourceCommit": "4124fb24111d3739d535642a02ec3422feb39152",
+    "browser": "155.0.8059.39",
+    "artifactDirectory": "/tmp/group7-final-retained/frontend/qa/shared",
+    "sharedHarnessHashMatches": true,
+    "menuHelperHashMatches": true,
+    "sourceFilesMatch": true,
+    "sourceBuildFilesMatch": true
+  },
+  "method": "Read raw snapshots and capture preparation records; visually inspect original PNGs; compare unmodified PNG arrays at channel threshold24. Diagnostic common-origin crops and one-pixel overlap comparisons were calculated only in memory. No altered screenshots substitute for the retained failed images or their original pixel assertion.",
+  "rawComparison": {
+    "differences": [],
+    "publishedPosition": {
+      "top": 84,
+      "left": 430.53125,
+      "width": 630,
+      "height": 416.25
+    },
+    "sourcePosition": {
+      "top": 84,
+      "left": 430.46875,
+      "width": 630,
+      "height": 416.25
+    },
+    "horizontalOriginDelta": 0.0625,
+    "allDescendantGeometryExactlyEqual": true,
+    "styleDifference": "Only unused fallback font-family lists differ; loaded first family Manrope is the same."
+  },
+  "capturePreparation": [
+    {
+      "filename": "books-published-open-1440.png",
+      "menuAlignment": {
+        "original": {
+          "left": 430.53125,
+          "top": 84,
+          "width": 630,
+          "height": 416.25
+        },
+        "aligned": {
+          "left": 431,
+          "top": 84,
+          "width": 630,
+          "height": 416.25
+        },
+        "delta": {
+          "x": 0.46875,
+          "y": 0
+        },
+        "before": {
+          "left": {
+            "value": "",
+            "priority": ""
+          },
+          "top": {
+            "value": "",
+            "priority": ""
+          }
+        }
+      },
+      "dimensionsUnchanged": true,
+      "geometry": {
+        "top": 84,
+        "bottom": 500.25,
+        "left": 431,
+        "right": 1061,
+        "width": 630,
+        "height": 416.25,
+        "viewportHeight": 1000,
+        "viewportWidth": 1440,
+        "headerBottom": 93
+      }
+    },
+    {
+      "filename": "books-source-open-1440.png",
+      "menuAlignment": {
+        "original": {
+          "left": 430.46875,
+          "top": 84,
+          "width": 630,
+          "height": 416.25
+        },
+        "aligned": {
+          "left": 431,
+          "top": 84,
+          "width": 630,
+          "height": 416.25
+        },
+        "delta": {
+          "x": 0.53125,
+          "y": 0
+        },
+        "before": {
+          "left": {
+            "value": "",
+            "priority": ""
+          },
+          "top": {
+            "value": "",
+            "priority": ""
+          }
+        }
+      },
+      "dimensionsUnchanged": true,
+      "geometry": {
+        "top": 84,
+        "bottom": 500.25,
+        "left": 431,
+        "right": 1061,
+        "width": 630,
+        "height": 416.25,
+        "viewportHeight": 1000,
+        "viewportWidth": 1440,
+        "headerBottom": 93
+      }
+    }
+  ],
+  "alignedGate": {
+    "size": [
+      630,
+      417
+    ],
+    "changedPixels": 16689,
+    "changedRatio": 0.06352632179970309,
+    "changedBounds": [
+      29,
+      36,
+      596,
+      380
+    ],
+    "recorded": {
+      "publishedSize": [
+        630,
+        417
+      ],
+      "sourceSize": [
+        630,
+        417
+      ],
+      "changedPixels": 16689,
+      "changedRatio": 0.06352632179970309,
+      "channelTolerance": 24
+    },
+    "nonTextDifferences": "At the recorded channel threshold24, changed pixels occur at glyphs/icons inside x29..596,y36..380. No thresholded change occurs in the panel border or top35 rows; measured outer dimensions match exactly."
+  },
+  "nativeUnalignedContextDiagnostic": {
+    "commonCrop": {
+      "left": 431,
+      "top": 84,
+      "width": 630,
+      "height": 417
+    },
+    "size": [
+      630,
+      417
+    ],
+    "changedPixels": 3650,
+    "changedRatio": 0.013893646987172168,
+    "changedBounds": [
+      0,
+      0,
+      629,
+      415
+    ],
+    "limitation": "This common-origin crop is diagnostic and includes native fractional edge rasterisation; it is not an alternative passing gate. Its ratio also exceeds .01."
+  },
+  "onePixelOverlapDiagnostic": {
+    "operation": "Compare published columns0..628 with source columns1..629, equivalent to shifting source one pixel left over their common overlap.",
+    "size": [
+      629,
+      417
+    ],
+    "changedPixels": 3558,
+    "changedRatio": 0.013564982672049959,
+    "changedBounds": [
+      0,
+      0,
+      628,
+      415
+    ],
+    "limitation": "Diagnostic only. No output image or gate threshold is changed; residual differences remain."
+  },
+  "exactGlyphShiftProof": {
+    "textRegionsXYXY": [
+      [
+        25,
+        30,
+        300,
+        320
+      ],
+      [
+        330,
+        30,
+        605,
+        320
+      ],
+      [
+        25,
+        360,
+        140,
+        390
+      ]
+    ],
+    "pixelsComparedPerTest": 162950,
+    "records": [
+      {
+        "run": "passing",
+        "kind": "published",
+        "alignedPngSha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+        "tests": [
+          {
+            "unalignedContextCrop": {
+              "left": 430,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 1,
+            "differentTextPixelsAnyChannel": 0,
+            "differentTextPixelsThreshold24": 0
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 431,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 0,
+            "differentTextPixelsAnyChannel": 21413,
+            "differentTextPixelsThreshold24": 17297
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 432,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": -1,
+            "differentTextPixelsAnyChannel": 24523,
+            "differentTextPixelsThreshold24": 20990
+          }
+        ]
+      },
+      {
+        "run": "passing",
+        "kind": "source",
+        "alignedPngSha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+        "tests": [
+          {
+            "unalignedContextCrop": {
+              "left": 430,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 1,
+            "differentTextPixelsAnyChannel": 0,
+            "differentTextPixelsThreshold24": 0
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 431,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 0,
+            "differentTextPixelsAnyChannel": 21413,
+            "differentTextPixelsThreshold24": 17297
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 432,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": -1,
+            "differentTextPixelsAnyChannel": 24523,
+            "differentTextPixelsThreshold24": 20990
+          }
+        ]
+      },
+      {
+        "run": "failed",
+        "kind": "published",
+        "alignedPngSha256": "d9132f64bbdf8910669ad4aa7affd72ef185d27fb5698137a6e4e0067ed558e8",
+        "tests": [
+          {
+            "unalignedContextCrop": {
+              "left": 430,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 1,
+            "differentTextPixelsAnyChannel": 21336,
+            "differentTextPixelsThreshold24": 17134
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 431,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 0,
+            "differentTextPixelsAnyChannel": 0,
+            "differentTextPixelsThreshold24": 0
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 432,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": -1,
+            "differentTextPixelsAnyChannel": 21336,
+            "differentTextPixelsThreshold24": 17134
+          }
+        ]
+      },
+      {
+        "run": "failed",
+        "kind": "source",
+        "alignedPngSha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+        "tests": [
+          {
+            "unalignedContextCrop": {
+              "left": 430,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 1,
+            "differentTextPixelsAnyChannel": 0,
+            "differentTextPixelsThreshold24": 0
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 431,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": 0,
+            "differentTextPixelsAnyChannel": 21413,
+            "differentTextPixelsThreshold24": 17297
+          },
+          {
+            "unalignedContextCrop": {
+              "left": 432,
+              "top": 84,
+              "width": 630,
+              "height": 417
+            },
+            "impliedWholePixelRasterMovement": -1,
+            "differentTextPixelsAnyChannel": 24523,
+            "differentTextPixelsThreshold24": 20990
+          }
+        ]
+      }
+    ]
+  },
+  "finding": "The aligned panel boxes match, but the failed published glyph pixels remain byte-identical to their native unaligned absolute positions while source glyph pixels move exactly one whole pixel. Both passing-reference images show the same one-pixel movement as the failed source, and all three aligned PNGs are byte-identical. Requested horizontal offsets .46875 and .53125 straddle the half-pixel boundary. This shows the current menu preparation can amplify a .0625px native origin difference into different raster displacement.",
+  "inferenceBoundary": "The pixel evidence is consistent with reuse or translation of already rasterised glyph content. It does not identify a browser-internal cause or prove that the Chromium version change caused the failure. The same whole-pixel movement is observed in the earlier Chromium39 passing reference.",
+  "disposition": "Retain the failed pixel assertion and the remaining menu raster-preparation sensitivity for the planned CI review. Do not broaden tolerances, silently accept the failed image or claim general test stability. The later a7b4 retained shared pass is documented separately by the root team.",
+  "changes": {
+    "runtime": false,
+    "harness": false,
+    "thresholds": false,
+    "retryRequested": false
+  }
+}
