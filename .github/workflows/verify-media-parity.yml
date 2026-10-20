@@ -39,6 +39,10 @@ jobs:
         if: ${{ hashFiles('frontend/scripts/verify-media-parity.mjs') != '' }}
         working-directory: frontend
         run: node scripts/verify-media-parity.mjs
+      - name: Compare physical presentation and complete shared field
+        if: ${{ hashFiles('frontend/src/sections/PhysicalBookPresentation.tsx') != '' }}
+        working-directory: frontend
+        run: node scripts/verify-craft-parity.mjs
       - name: Confirm protected runtime
         if: always()
         working-directory: frontend

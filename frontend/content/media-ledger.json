@@ -16,17 +16,22 @@
     {"id":"home.gallery.open.relationship-memoir","copy":"Open Relationship Memoir book image","source_fragment":"SampleGallery sample-open aria-label for relationship-memoir"},
     {"id":"home.gallery.open.founders-memoir","copy":"Open Founder's Memoir book image","source_fragment":"SampleGallery sample-open aria-label for founders-memoir"},
     {"id":"home.gallery.open.parent-to-child-letters","copy":"Open Parent to Child Letters book image","source_fragment":"SampleGallery sample-open aria-label for parent-to-child-letters"},
-    {"id":"home.gallery.open.celebrating-occasions","copy":"Open Celebrating Occasions book image","source_fragment":"SampleGallery sample-open aria-label for celebrating-occasions"}
+    {"id":"home.gallery.open.celebrating-occasions","copy":"Open Celebrating Occasions book image","source_fragment":"SampleGallery sample-open aria-label for celebrating-occasions"},
+    {"id":"home.craft.title","copy":"A book you can come back to.","emphasis":"come back to.","source_fragment":"SampleGallery h3#book-craft-title children"},
+    {"id":"home.craft.intro","copy":"Every package includes a printed book. You review a prepared draft before it goes to print.","source_fragment":"SampleGallery .book-craft-copy introductory paragraph"},
+    {"id":"home.craft.detail.0.heading","copy":"Printed copy","source_fragment":"SampleGallery book-craft-detail 0 heading"},
+    {"id":"home.craft.detail.0.description","copy":"Your words and memories come together in a beautifully printed book, thoughtfully designed to be held, shared and revisited for years.","source_fragment":"SampleGallery book-craft-detail 0 description"},
+    {"id":"home.craft.detail.1.heading","copy":"Binding and finish","source_fragment":"SampleGallery book-craft-detail 1 heading"},
+    {"id":"home.craft.detail.1.description","copy":"A premium hardcover with a cover design chosen by you, personalised with the photographs and details that make the story yours.","source_fragment":"SampleGallery book-craft-detail 1 description"},
+    {"id":"home.craft.detail.2.heading","copy":"Before print","source_fragment":"SampleGallery book-craft-detail 2 heading"},
+    {"id":"home.craft.detail.2.description","copy":"Our editorial team carefully prepares and checks every book. You then review and approve the draft before it goes to print.","source_fragment":"SampleGallery book-craft-detail 2 description"},
+    {"id":"home.craft.cta","copy":"See package details","source_fragment":"SampleGallery .book-craft-copy text-link","href":"https://storileaf.com/pricing/","destination_state":"existing_verified","destination_verified_on":"2026-10-19"},
+    {"id":"home.craft.slideshow","copy":"Finished book photographs","source_fragment":"CraftPhotoSlideshow book-craft-image book-craft-slideshow aria-label"},
+    {"id":"home.craft.indicators","copy":"Choose slideshow image","source_fragment":"CraftPhotoSlideshow book-craft-indicators aria-label"},
+    {"id":"home.craft.slide.0","copy":"Show book image 1 of 4","source_fragment":"CraftPhotoSlideshow indicator 0 aria-label"},
+    {"id":"home.craft.slide.1","copy":"Show book image 2 of 4","source_fragment":"CraftPhotoSlideshow indicator 1 aria-label"},
+    {"id":"home.craft.slide.2","copy":"Show book image 3 of 4","source_fragment":"CraftPhotoSlideshow indicator 2 aria-label"},
+    {"id":"home.craft.slide.3","copy":"Show book image 4 of 4","source_fragment":"CraftPhotoSlideshow indicator 3 aria-label"}
   ],
-  "provenance": {
-    "status": "founder_approved",
-    "public": true,
-    "approval_kind": "inherited_published_media",
-    "migration_group": 5,
-    "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
-    "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/routes-DrwDv2x2.js",
-    "migration_recorded_on": "2026-10-19",
-    "source": "Protected published gallery and exact data at e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
-    "approval_note": "Founder authorised unchanged gallery migration on 19 October 2026. This records retention, not a new original wording approval."
-  }
+  "provenance": {"status":"founder_approved","public":true,"approval_kind":"inherited_published_media","migration_group":5,"baseline_commit":"e9550069d91b5a9b48ade43fcfb0a71bbed2875b","approval_reference":"https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/routes-DrwDv2x2.js","migration_recorded_on":"2026-10-19","source":"Protected published gallery and exact data at e9550069d91b5a9b48ade43fcfb0a71bbed2875b","approval_note":"Founder authorised unchanged gallery migration on 19 October 2026. This records retention, not a new original wording approval."}
 }

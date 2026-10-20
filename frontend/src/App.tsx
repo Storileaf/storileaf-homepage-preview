@@ -1,3 +1,4 @@
+import { PhysicalBookPresentation } from './sections/PhysicalBookPresentation'
 import { NewsletterFooter } from './components/NewsletterFooter'
 import { SiteHeader } from './components/SiteHeader'
 import { previewRoutesForCurrency } from './siteRoutes'
@@ -9,6 +10,7 @@ import { ReassuranceBand } from './sections/ReassuranceBand'
 import { FaqSection } from './sections/FaqSection'
 import { BookGallery } from './sections/BookGallery'
 import './styles/homepage-media.css'
+import './styles/homepage-craft.css'
 import { BookDiscovery } from './sections/BookDiscovery'
 import './styles/homepage-editorial.css'
 import './styles/homepage-questions.css'
@@ -27,7 +29,7 @@ export function App() {
       {/* The hero will precede this band when migrated; no placeholder section is inserted. */}
       <ReassuranceBand />
       <BookDiscovery />
-      <BookGallery />
+      <BookGallery><PhysicalBookPresentation /></BookGallery>
       <GiftingSection />
       <ResourcesSection />
       <FaqSection booksHref={routes.books} />

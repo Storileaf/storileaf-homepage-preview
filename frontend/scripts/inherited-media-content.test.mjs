@@ -28,3 +28,22 @@ test('Source has one owned samples target and preserves the gallery-before-craft
   assert.ok(source.indexOf('{children}')>source.indexOf('sl-sample-rail-outer'))
   assert.ok(!source.includes('aria-current='))
 })
+test('Physical copy and the single pricing action remain bounded to their actual render nodes',()=>{
+  for(const change of [l=>l.records.find(r=>r.id==='home.craft.intro').copy+=' Unlimited support.',l=>l.records.find(r=>r.id==='home.craft.cta').href='https://storileaf.com/gift/',l=>l.records.find(r=>r.id==='home.craft.cta').destination_state='unbuilt']){
+    const altered=structuredClone(ledger);change(altered);assert.ok(validate(altered).length)
+  }
+  for(const changed of [routes.replace('`${LIVE_SITE}/pricing/`','`${LIVE_SITE}/gift/`'),routes.replace('Show book image ','Show sample '),routes.replace('src:images.binding','src:images.gift')])assert.ok(mediaContentProblems(ledger,images,changed,data,original).length)
+})
+test('Physical manifest rejects missing, reordered or revised photographs and labels',()=>{
+  for(const change of [a=>a.pop(),a=>a.reverse(),a=>a[0].src='https://storileaf.com/images/brand/new.webp',a=>a[0].alt='Customer book',a=>a[0].object_position='30% 50%',a=>a[0].labelId='home.gallery.close']){
+    const altered=structuredClone(images);change(altered.craftAssets);assert.ok(validate(ledger,altered).length)
+  }
+})
+test('Physical composition follows the rail and preserves visible-only 6500ms slideshow cleanup',()=>{
+  const app=readFileSync('src/App.tsx','utf8'),source=readFileSync('src/sections/PhysicalBookPresentation.tsx','utf8')
+  assert.ok(app.includes('<BookGallery><PhysicalBookPresentation /></BookGallery>'))
+  assert.ok(source.includes('if (reduced || !visible) return'))
+  assert.ok(source.includes('6500)')&&source.includes('window.clearInterval(timer)')&&source.includes('observer.disconnect()'))
+  assert.ok(source.includes('[active, reduced, visible]'))
+  assert.ok(!source.includes('aria-current='))
+})
