@@ -1,0 +1,134 @@
+name: Stage the verified React homepage review copy
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/stage-react-review.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stage-verified-react-review
+  cancel-in-progress: false
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Require the verified source and unchanged protected homepage
+        run: |
+          test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse 051c69611d8bd685b79268489e5ff04bd64b9ed5:frontend)"
+          test ! -e react-review
+          node frontend/scripts/guard-published.mjs
+      - name: Retrieve the exact successful Writing build
+        uses: actions/download-artifact@v4
+        with:
+          name: homepage-writing-source-preview
+          run-id: 39452392812
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/verified-react-review
+      - name: Validate every byte and create an unreferenced review commit
+        uses: actions/github-script@v7
+        env:
+          REVIEW_BUILD: ${{ runner.temp }}/verified-react-review
+        with:
+          script: |
+            const fs = require('node:fs/promises');
+            const path = require('node:path');
+            const crypto = require('node:crypto');
+            const assert = require('node:assert/strict');
+            const owner = 'Storileaf', repo = 'storileaf-homepage-preview';
+            assert.equal(context.repo.owner.toLowerCase(), owner.toLowerCase());
+            assert.equal(context.repo.repo, repo);
+            assert.equal(context.ref, 'refs/heads/main');
+            const sourceCommit = '051c69611d8bd685b79268489e5ff04bd64b9ed5';
+            const runId = 39452392812, artifactId = 12277649682;
+            const digest = 'sha256:a0f5627081a042be3beb5c2bdbbc798b950973c71c860b7f419ba1549b6e89cc';
+            const run = (await github.rest.actions.getWorkflowRun({owner, repo, run_id: runId})).data;
+            assert.equal(run.head_sha, sourceCommit);
+            assert.equal(run.conclusion, 'success');
+            const artifact = (await github.rest.actions.getArtifact({owner, repo, artifact_id: artifactId})).data;
+            assert.equal(artifact.name, 'homepage-writing-source-preview');
+            assert.equal(artifact.expired, false);
+            assert.equal(artifact.digest, digest);
+            assert.equal(artifact.workflow_run.id, runId);
+            const expected = {
+              'assets/index-07HVzALy.js': '477a735c772b6b168292f0e3ff60ac3c4810dc8d8f65ba230a0405ccf192242d',
+              'assets/index-NU-3HqjY.css': 'f4eb5347d08bb36a101b43662a60a559d21c92b8218a382bef5b6818486b9a18',
+              'covers/cover-01.jpg': '1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01',
+              'covers/cover-02.jpg': 'cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4',
+              'covers/cover-03.jpg': '07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983',
+              'covers/cover-04.jpg': 'af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12',
+              'covers/cover-05.jpg': '0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190',
+              'covers/cover-06.jpg': '784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0',
+              'covers/cover-07.jpg': '673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b',
+              'gallery/celebrating-occasions-open-book-placeholder.svg': 'eba5b671f2f2d0c67e499e646119b24ecfe8cf5f147b96acce04d71dc8228fff',
+              'gallery/founders-memoir-open-book-placeholder.svg': '1358f9c049923f55bc42f83812c71f14560a0cb45886e8646c0da780deb9542b',
+              'gallery/life-story-open-book-placeholder.svg': '966bb50023e66ca1519a6b8275d75bb189142ed4257b65f867fdae70cbaf11fd',
+              'gallery/parent-to-child-letters-open-book-placeholder.svg': '378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309',
+              'gallery/relationship-memoir-open-book-placeholder.svg': '93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3',
+              'gallery/travel-memoir-open-book-placeholder.svg': '94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57',
+              'index.html': '8159bc25ff04dfca5dc517486e929ec8f6ea7fbd46bceab164eeae12bb809c20'
+            };
+            const folder = process.env.REVIEW_BUILD;
+            const files = [];
+            async function walk(relative = '') {
+              for (const entry of await fs.readdir(path.join(folder, relative), {withFileTypes: true})) {
+                const name = relative ? relative + '/' + entry.name : entry.name;
+                assert(!entry.isSymbolicLink(), 'No symlinks in the verified build');
+                if (entry.isDirectory()) await walk(name);
+                else { assert(entry.isFile()); files.push(name); }
+              }
+            }
+            await walk();
+            assert.deepEqual(files.sort(), Object.keys(expected).sort());
+            const bytes = new Map();
+            for (const file of files) {
+              const body = await fs.readFile(path.join(folder, file));
+              assert.equal(crypto.createHash('sha256').update(body).digest('hex'), expected[file], file);
+              bytes.set(file, body);
+            }
+            const head = (await github.rest.git.getRef({owner, repo, ref: 'heads/main'})).data.object.sha;
+            assert.equal(head, context.sha, 'Refuse to prepare against a newer main');
+            const parent = (await github.rest.git.getCommit({owner, repo, commit_sha: head})).data;
+            const original = (await github.rest.git.getTree({owner, repo, tree_sha: parent.tree.sha})).data.tree;
+            assert(!original.some(entry => entry.path === 'react-review'), 'Never overwrite an existing review');
+            const entries = [];
+            for (const file of files) {
+              const blob = (await github.rest.git.createBlob({owner, repo, content: bytes.get(file).toString('base64'), encoding: 'base64'})).data;
+              entries.push({path: 'react-review/' + file, mode: '100644', type: 'blob', sha: blob.sha});
+            }
+            const provenance = {
+              purpose: 'Founder-authorised separate rendered review. Not the root homepage cutover or production release.',
+              sourceCommit, runId, artifactId, artifactDigest: digest, preparedFrom: head,
+              preparedAt: new Date().toISOString(), destination: 'react-review/',
+              protectedBaseline: 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b',
+              sha256: expected,
+              limits: 'Existing Package 4 findings and actual screen-reader acceptance remain open. Review files are byte-identical to the tested artifact.'
+            };
+            entries.push({path: 'react-review/BUILD_PROVENANCE.json', mode: '100644', type: 'blob', content: JSON.stringify(provenance, null, 2) + '\n'});
+            const tree = (await github.rest.git.createTree({owner, repo, base_tree: parent.tree.sha, tree: entries})).data;
+            const candidate = (await github.rest.git.getTree({owner, repo, tree_sha: tree.sha})).data.tree;
+            for (const entry of original) assert.deepEqual(candidate.find(item => item.path === entry.path), entry, 'Existing root entries must remain identical');
+            assert.equal(candidate.length, original.length + 1);
+            const commit = (await github.rest.git.createCommit({owner, repo, message: 'preview: add the exact verified React homepage at react-review only', tree: tree.sha, parents: [head]})).data;
+            const result = {candidateCommit: commit.sha, parentCommit: head, tree: tree.sha, files: entries.map(entry => entry.path), sourceCommit, artifactId};
+            await fs.writeFile(path.join(process.env.RUNNER_TEMP, 'react-review-staging.json'), JSON.stringify(result, null, 2));
+            core.info('REVIEW_CANDIDATE ' + JSON.stringify(result));
+            await core.summary.addHeading('Separate review candidate prepared').addCodeBlock(JSON.stringify(result, null, 2), 'json').addRaw('No branch reference was changed. The connected GitHub publication step must inspect this candidate and advance main without force. Root homepage, pricing and guard are unchanged.').write();
+      - name: Retain the staging identity
+        uses: actions/upload-artifact@v4
+        with:
+          name: react-review-staging
+          path: ${{ runner.temp }}/react-review-staging.json
+          if-no-files-found: error
