@@ -1,0 +1,142 @@
+name: Verify the separate live React review
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'react-review/**'
+      - '.github/workflows/verify-react-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Keep the original homepage and the verified source unchanged
+        run: |
+          node frontend/scripts/guard-published.mjs
+          test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse 051c69611d8bd685b79268489e5ff04bd64b9ed5:frontend)"
+          npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Verify actual served bytes and browser behaviour
+        run: |
+          mkdir -p qa/react-review-live
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict'
+          import fs from 'node:fs/promises'
+          import { createHash } from 'node:crypto'
+          import { execFileSync } from 'node:child_process'
+          import { chromium } from 'playwright-core'
+          const out = 'qa/react-review-live'
+          const root = 'https://storileaf.github.io/storileaf-homepage-preview/'
+          const url = root + 'react-review/'
+          const provenance = JSON.parse(await fs.readFile('react-review/BUILD_PROVENANCE.json', 'utf8'))
+          const hash = bytes => createHash('sha256').update(bytes).digest('hex')
+          const report = { url, createdAt: new Date().toISOString(), commit: process.env.GITHUB_SHA, runId: process.env.GITHUB_RUN_ID, sourceCommit: provenance.sourceCommit, readiness: [], reviewFiles: [], protectedFiles: [], widths: [], problems: [], limits: 'Focused live publication smoke at 320, 390, 820 and 1440 CSS pixels, reduced motion and desktop mouse/keyboard emulation. Prior full parity is reused only because all 16 review files match the tested artifact. No native zoom, physical device, screen-reader speech or other-engine certification.' }
+          let browser
+          async function responseBytes(target) {
+            const response = await fetch(target, { headers: { 'Cache-Control': 'no-cache' }, signal: AbortSignal.timeout(20000) })
+            return { status: response.status, url: response.url, bytes: Buffer.from(await response.arrayBuffer()) }
+          }
+          try {
+            // Deployment readiness polling only. Behavioural failures are never retried.
+            let ready = false
+            for (let attempt = 0; attempt < 20; attempt++) {
+              const response = await responseBytes(url + '?publication-check=' + process.env.GITHUB_SHA + '-' + attempt)
+              ready = response.status === 200 && hash(response.bytes) === provenance.sha256['index.html']
+              report.readiness.push({ attempt, status: response.status, sha256: hash(response.bytes), ready })
+              if (ready) break
+              await new Promise(resolve => setTimeout(resolve, 6000))
+            }
+            assert(ready, 'The review must be served before browser checks')
+            for (const [file, expected] of Object.entries(provenance.sha256)) {
+              const response = await responseBytes(url + file)
+              const item = { file, status: response.status, sha256: hash(response.bytes), matches: hash(response.bytes) === expected }
+              report.reviewFiles.push(item)
+              assert.equal(response.status, 200, file)
+              assert(item.matches, file + ' must match the verified artifact byte for byte')
+            }
+            for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/index-DO3Vh6An.js', 'assets/routes-DrwDv2x2.js', 'assets/content-sections-CfrmOVRI.js', 'pricing/index.html']) {
+              const response = await responseBytes(root + file)
+              const expected = execFileSync('git', ['show', provenance.protectedBaseline + ':' + file])
+              const item = { file, status: response.status, sha256: hash(response.bytes), baselineSha256: hash(expected), matches: response.bytes.equals(expected) }
+              report.protectedFiles.push(item)
+              assert.equal(response.status, 200, file)
+              assert(item.matches, 'Original protected response changed ' + file)
+            }
+            browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', headless: true, args: ['--no-sandbox'] })
+            report.environment = { browser: browser.version(), node: process.version, playwright: '1.56.1', os: await fs.readFile('/etc/os-release', 'utf8'), image: process.env.ImageVersion, dpr: 1 }
+            for (const width of [320, 390, 820, 1440]) {
+              const context = await browser.newContext({ viewport: { width, height: 1000 }, reducedMotion: 'reduce', deviceScaleFactor: 1 })
+              const page = await context.newPage()
+              const errors = []
+              page.on('pageerror', error => errors.push(error.message))
+              const response = await page.goto(url, { waitUntil: 'load' })
+              assert.equal(response.status(), 200)
+              await page.locator('#writing-space').waitFor()
+              await page.evaluate(async () => { await document.fonts.ready })
+              const fonts = await page.evaluate(() => ['Newsreader', 'Manrope'].map(name => ({ name, loaded: [...document.fonts].some(font => font.family.includes(name) && font.status === 'loaded') })))
+              assert(fonts.every(font => font.loaded), 'Real approved fonts must load')
+              const record = { width, fonts, errors }
+              report.widths.push(record)
+              assert.equal(await page.locator('.hero-orbit-square').count(), 14)
+              await page.locator('.hero-orbit-square').evaluateAll(async images => { await Promise.all(images.map(image => image.decode())) })
+              record.landmarks = await page.evaluate(() => ['top', 'main-content', 'books', 'samples', 'how-it-works', 'writing-space', 'resources', 'questions'].map(id => ({ id, count: document.querySelectorAll('[id="' + id + '"]').length })))
+              assert(record.landmarks.every(item => item.count === 1), 'Unique local anchors')
+              record.overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)
+              assert.equal(record.overflow, false)
+              await page.screenshot({ path: out + '/hero-' + width + '.png' })
+              const trigger = page.getByTestId('try-question')
+              await trigger.scrollIntoViewIfNeeded()
+              await trigger.focus()
+              await page.keyboard.press('Enter')
+              const dialog = page.getByTestId('question-dialog')
+              await dialog.waitFor({ state: 'visible' })
+              await page.waitForFunction(() => document.activeElement?.getAttribute('aria-label') === 'Close writing example')
+              record.description = await dialog.getAttribute('aria-describedby')
+              assert.equal(record.description, 'demo-privacy')
+              assert.equal(await page.locator('#demo-privacy').count(), 1)
+              assert.equal(await page.locator('#demo-privacy').innerText(), "This is a practice space. What you write here isn't saved.")
+              assert.equal(await page.getByTestId('demo-answer').getAttribute('aria-describedby'), 'demo-privacy')
+              await page.getByTestId('demo-answer').fill('A room full of stories')
+              assert.equal(await page.locator('.demo-answer-meta>span').innerText(), '5 words')
+              await dialog.screenshot({ path: out + '/practice-' + width + '.png' })
+              await page.keyboard.press('Escape')
+              await dialog.waitFor({ state: 'hidden' })
+              await page.waitForFunction(() => document.activeElement?.getAttribute('data-testid') === 'try-question')
+              await page.keyboard.press('Enter')
+              await dialog.waitFor({ state: 'visible' })
+              assert.equal(await page.getByTestId('demo-answer').inputValue(), '')
+              await page.getByRole('button', { name: 'Close', exact: true }).click()
+              await dialog.waitFor({ state: 'hidden' })
+              record.practice = 'Keyboard opening, privacy references, typing, word count, Escape, focus return, empty reopen and Close passed'
+              assert.equal(errors.length, 0, 'No JavaScript page errors')
+              await context.close()
+            }
+            report.result = 'passed'
+          } catch (error) {
+            report.result = 'failed'; report.problems.push(error.stack || String(error)); process.exitCode = 1
+          } finally {
+            report.finishedAt = new Date().toISOString()
+            await fs.writeFile(out + '/report.json', JSON.stringify(report, null, 2) + '\n')
+            console.log('LIVE_REVIEW_RESULT ' + JSON.stringify(report))
+            await browser?.close()
+          }
+          NODE
+      - name: Retain live publication evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: react-review-live-verification
+          path: qa/react-review-live/
+          if-no-files-found: error
