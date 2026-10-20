@@ -1,4 +1,4 @@
-/* P4-01 through P4-04. Approved 20 October 2026.
+/* P4-01 through P4-04, and the P4-06 follow-on. Approved 20 October 2026.
    Intrinsic text fit only. Canonical typography, colours, spacing and motion
    stay in their owning stylesheets. Normal-size geometry is a regression gate. */
 
@@ -31,6 +31,10 @@
 .hero-progression[data-progression-wrap] { flex-direction: column; }
 .hero-progression[data-progression-wrap] > span { width: 100%; max-width: none; }
 .hero-progression[data-progression-wrap] > i { transform: rotate(90deg); }
+
+/* P4-06. Break a word only when it cannot fit the question's content width.
+   Preserve the approved text, font, size, spacing, balancing and dialog box. */
+.sl-practice-dialog h2 { overflow-wrap: anywhere; }
 
 @media (max-width:900px) {
   .sl-footer-grid { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr); }
