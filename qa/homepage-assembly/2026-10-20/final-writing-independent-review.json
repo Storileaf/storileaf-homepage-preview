@@ -1,0 +1,1047 @@
+{
+  "purpose": "Concise independent review of the complete first-attempt Writing checkpoint after the fixed native device preparation. Detailed capture inventory and raw observations remain in the owning verification and raw report.",
+  "reviewedAtUtc": "2026-10-20T13:17:20.646869+00:00",
+  "run": {
+    "id": 39427950086,
+    "job": 118645170780,
+    "attempt": 1,
+    "commit": "40d1674baa932432f93a4989ea863a2852c110cc",
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950086"
+  },
+  "artifact": {
+    "zipBytes": 21430835,
+    "zipSha256": "ea3c560ad381c826ba897da32376f45a5f83bd04201d974f823d1e0f11f3ca66",
+    "id": 12266643284,
+    "name": "homepage-writing-parity",
+    "downloadedByPrimaryAgent": true,
+    "additionalDownloadsByReviewer": 0
+  },
+  "ownerRecords": [
+    "final-writing-verification.json",
+    "final-writing-report.json.gz",
+    "final-writing-browser-environment.json"
+  ],
+  "reportSha256": "883bbe024b50b7d3906d3901b36479d8a7c25603baeea8f19c6c0b234debf8a8",
+  "browserEnvironmentSha256": "3557c90e92030364f89face1387293c5f2d93f1d6b925f561237fcdaeb103fd4",
+  "method": "Pillow lossless RGB decoding and signed 16-bit channel differences independently reproduce max RGB difference > 24 and the unchanged ratio limit 0.01. Raw geometry is checked against 0.15px. Bounds are right/bottom exclusive. Preparation comparisons remain diagnostic; only the existing final full-section comparisons are the raster gate.",
+  "thresholds": {
+    "geometry": 0.15,
+    "pixelChannel": 24,
+    "pixelRatio": 0.01
+  },
+  "counts": {
+    "widths": 10,
+    "states": 19,
+    "ordinaryCaptures": 120,
+    "allHashedNativeImages": 180,
+    "fixedNativeSets": 12,
+    "preparationImages": 24,
+    "finalPixelComparisons": 60,
+    "geometryComparisons": 58,
+    "sourceHashes": 53,
+    "harnessHashes": 3,
+    "protectedHashes": 4
+  },
+  "inputVerification": {
+    "allRecordedInputHashesMatchImmutableCommit": true,
+    "inputInventoryCanonicalJsonSha256": "eaeb9ee6f8000d7606c5d17c3c5b821bed7bdf478bd2e1ad648b26dbe40aa3e6",
+    "workflowHashMatchesImmutableCommit": true,
+    "frontendTree": "d36470431522c21af906908bd6131f47922e26c0",
+    "harnessSha256": "90600b297af7ceccb5b5247b563378e8dd1cbd395656b803f549c96ff22b90f3",
+    "workflowSha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+  },
+  "nativeImageVerification": {
+    "all180OriginalPngHashesMatch": true,
+    "everyPngIsOpaque": true,
+    "allPngFilesAreCatalogued": true,
+    "imageInventoryCanonicalJsonSha256": "6b89c2966872c4754a9904ae7926257366ad8df68fa4f3327b14b62ff9c0d2b8",
+    "comparisonLimitUnchanged": true,
+    "all60FinalPixelResultsIndependentlyReproduced": true,
+    "maximumChangedPixelRatio": 0.0001923076923076923,
+    "maximumPair": {
+      "files": [
+        "published-native-trigger-hover-390-tile-0.png",
+        "source-native-trigger-hover-390-tile-0.png"
+      ],
+      "changed": 90,
+      "total": 468000,
+      "ratio": 0.0001923076923076923
+    },
+    "901BoundaryChangedPixels": 0
+  },
+  "geometryVerification": {
+    "all58RecordedGeometryComparisonsIndependentlyReproduced": true,
+    "maximumDifference": 0.015625,
+    "strictLimit": 0.15,
+    "reportedStyleGeometryDifferences": 0
+  },
+  "preparationVerification": {
+    "method": "All 24 original preparation images are hash checked and compared as native pixels. Each before-device full section is compared with the exact predetermined final full section. Device-band pixels are compared with the corresponding measured region in both full sections. No screenshot is edited, substituted or selected by agreement. Layers are evidence, not an asserted expected model.",
+    "sets": [
+      {
+        "kind": "published",
+        "label": "section-768",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "published-section-768-tile-0-before-device-preparation.png",
+            "sha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 886
+            }
+          },
+          {
+            "file": "published-section-768-tile-0-device-observation.png",
+            "sha256": "375cb6a0189314eafa4b2842d45bc6cc48acca0d1c930fc97726bd7a7cd7ac9e",
+            "clip": {
+              "x": 0,
+              "y": 342,
+              "width": 768,
+              "height": 353
+            }
+          }
+        ],
+        "finalImage": "published-section-768-tile-0.png",
+        "finalSha256": "649c9f446644313b531bcb82100990284a904453d988573348c01910c3cf2ebd",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          768,
+          1200
+        ],
+        "scroll": [
+          0,
+          5332
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-768",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "source-section-768-tile-0-before-device-preparation.png",
+            "sha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 768,
+              "height": 886
+            }
+          },
+          {
+            "file": "source-section-768-tile-0-device-observation.png",
+            "sha256": "375cb6a0189314eafa4b2842d45bc6cc48acca0d1c930fc97726bd7a7cd7ac9e",
+            "clip": {
+              "x": 0,
+              "y": 342,
+              "width": 768,
+              "height": 353
+            }
+          }
+        ],
+        "finalImage": "source-section-768-tile-0.png",
+        "finalSha256": "0f7bf0d1c7c763cecf011e53bce8a10ee86d6692f28b25e01bee4af18307b954",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          768,
+          1200
+        ],
+        "scroll": [
+          0,
+          5332
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-820",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "published-section-820-tile-0-before-device-preparation.png",
+            "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 911
+            }
+          },
+          {
+            "file": "published-section-820-tile-0-device-observation.png",
+            "sha256": "3148e40d7a38e481e635c4763919e6b4f6ddbf99f22fb603597cc07e567da98f",
+            "clip": {
+              "x": 0,
+              "y": 341,
+              "width": 820,
+              "height": 379
+            }
+          }
+        ],
+        "finalImage": "published-section-820-tile-0.png",
+        "finalSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          820,
+          1200
+        ],
+        "scroll": [
+          0,
+          5399
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 11,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-820",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "source-section-820-tile-0-before-device-preparation.png",
+            "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 820,
+              "height": 911
+            }
+          },
+          {
+            "file": "source-section-820-tile-0-device-observation.png",
+            "sha256": "3148e40d7a38e481e635c4763919e6b4f6ddbf99f22fb603597cc07e567da98f",
+            "clip": {
+              "x": 0,
+              "y": 341,
+              "width": 820,
+              "height": 379
+            }
+          }
+        ],
+        "finalImage": "source-section-820-tile-0.png",
+        "finalSha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          820,
+          1200
+        ],
+        "scroll": [
+          0,
+          5399
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 11,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-1024",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "published-section-1024-tile-0-before-device-preparation.png",
+            "sha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 1002
+            }
+          },
+          {
+            "file": "published-section-1024-tile-0-device-observation.png",
+            "sha256": "c17785d64ecacd04f7b6c3b9ba0ec20763839849288fdf4f7d97cb7d8c5b215b",
+            "clip": {
+              "x": 0,
+              "y": 346,
+              "width": 1024,
+              "height": 465
+            }
+          }
+        ],
+        "finalImage": "published-section-1024-tile-0.png",
+        "finalSha256": "877755492aac456486f154ecaa47a4267539fbdbee819d9179c51f6342bf6d87",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          1024,
+          1200
+        ],
+        "scroll": [
+          0,
+          4429
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-1024",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "source-section-1024-tile-0-before-device-preparation.png",
+            "sha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1024,
+              "height": 1002
+            }
+          },
+          {
+            "file": "source-section-1024-tile-0-device-observation.png",
+            "sha256": "c17785d64ecacd04f7b6c3b9ba0ec20763839849288fdf4f7d97cb7d8c5b215b",
+            "clip": {
+              "x": 0,
+              "y": 346,
+              "width": 1024,
+              "height": 465
+            }
+          }
+        ],
+        "finalImage": "source-section-1024-tile-0.png",
+        "finalSha256": "eb31a438a5e53060056dab19390544ddde16d204b9b6d7bfd6a6a7e5edca0212",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          1024,
+          1200
+        ],
+        "scroll": [
+          0,
+          4429
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-1280",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "published-section-1280-tile-0-before-device-preparation.png",
+            "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 1088
+            }
+          },
+          {
+            "file": "published-section-1280-tile-0-device-observation.png",
+            "sha256": "4a8e771c92e0759a07834070422c489156e3ce3bf63033cec34ea875df29260d",
+            "clip": {
+              "x": 0,
+              "y": 371,
+              "width": 1280,
+              "height": 526
+            }
+          }
+        ],
+        "finalImage": "published-section-1280-tile-0.png",
+        "finalSha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          1280,
+          1200
+        ],
+        "scroll": [
+          0,
+          4680
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-1280",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "source-section-1280-tile-0-before-device-preparation.png",
+            "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 1088
+            }
+          },
+          {
+            "file": "source-section-1280-tile-0-device-observation.png",
+            "sha256": "4a8e771c92e0759a07834070422c489156e3ce3bf63033cec34ea875df29260d",
+            "clip": {
+              "x": 0,
+              "y": 371,
+              "width": 1280,
+              "height": 526
+            }
+          }
+        ],
+        "finalImage": "source-section-1280-tile-0.png",
+        "finalSha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          1280,
+          1200
+        ],
+        "scroll": [
+          0,
+          4680
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 9,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "section-1440",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "published-section-1440-tile-0-before-device-preparation.png",
+            "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1096
+            }
+          },
+          {
+            "file": "published-section-1440-tile-0-device-observation.png",
+            "sha256": "9a158f3a9ff94fd475979cbfac9fafca0b7cd1e256e721abac61d9da0f5f8339",
+            "clip": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          }
+        ],
+        "finalImage": "published-section-1440-tile-0.png",
+        "finalSha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          1440,
+          1200
+        ],
+        "scroll": [
+          0,
+          4765
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 11,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "section-1440",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "source-section-1440-tile-0-before-device-preparation.png",
+            "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1096
+            }
+          },
+          {
+            "file": "source-section-1440-tile-0-device-observation.png",
+            "sha256": "9a158f3a9ff94fd475979cbfac9fafca0b7cd1e256e721abac61d9da0f5f8339",
+            "clip": {
+              "x": 0,
+              "y": 379,
+              "width": 1440,
+              "height": 526
+            }
+          }
+        ],
+        "finalImage": "source-section-1440-tile-0.png",
+        "finalSha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          1440,
+          1200
+        ],
+        "scroll": [
+          0,
+          4765
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 9,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "published",
+        "label": "boundary-901",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "published-boundary-901-tile-0-before-device-preparation.png",
+            "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 888
+            }
+          },
+          {
+            "file": "published-boundary-901-tile-0-device-observation.png",
+            "sha256": "2ac61a9ffca7bf15b087c31485020e710de9465bed686eb9282425d16d693cff",
+            "clip": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          }
+        ],
+        "finalImage": "published-boundary-901-tile-0.png",
+        "finalSha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          901,
+          1000
+        ],
+        "scroll": [
+          0,
+          4465
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "source",
+        "label": "boundary-901",
+        "tile": 0,
+        "preparationImages": [
+          {
+            "file": "source-boundary-901-tile-0-before-device-preparation.png",
+            "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+            "clip": {
+              "x": 0,
+              "y": 0,
+              "width": 901,
+              "height": 888
+            }
+          },
+          {
+            "file": "source-boundary-901-tile-0-device-observation.png",
+            "sha256": "2ac61a9ffca7bf15b087c31485020e710de9465bed686eb9282425d16d693cff",
+            "clip": {
+              "x": 0,
+              "y": 294,
+              "width": 901,
+              "height": 403
+            }
+          }
+        ],
+        "finalImage": "source-boundary-901-tile-0.png",
+        "finalSha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+        "allThreeFixedSamplesByteIdentical": true,
+        "finalImageIsPredeterminedSample2": true,
+        "beforeDeviceFullSectionByteIdenticalToFinal": true,
+        "beforeSectionDeviceBandEqualsDeviceObservation": true,
+        "deviceObservationEqualsFinalSectionDeviceBand": true,
+        "allThreePreparationNativeStatesEqual": true,
+        "allThreeFixedSampleNativeStatesEqual": true,
+        "viewport": [
+          901,
+          1000
+        ],
+        "scroll": [
+          0,
+          4465
+        ],
+        "dpr": 1,
+        "retainedLayerEvents": 10,
+        "droppedLayerEvents": 0,
+        "separateMappedDeviceLayersAtPreparationSnapshots": [
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "environmentComparison": {
+    "controlledRun": 39426209536,
+    "controlledBrowserEnvironmentSha256": "324d5da6730814ce6f7fe74d66aa644d068da35d9dde22e2a6fe5065cd1efc97",
+    "controlledRunner": {
+      "imageVersion": "20261012.334.1",
+      "kernel": "6.17.0-1022-azure",
+      "os": "Linux",
+      "arch": "X64"
+    },
+    "finalRunner": {
+      "imageVersion": "20261018.339.1",
+      "kernel": "7.0.0-1017-azure",
+      "os": "Linux",
+      "arch": "X64"
+    },
+    "chromeVersion": "155.0.8059.84",
+    "archiveSha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc",
+    "executableSha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b",
+    "archiveAndExecutableIdentical": true,
+    "node": "v22.23.3",
+    "playwright": "1.56.1",
+    "launch": {
+      "headless": true,
+      "args": [
+        "--no-sandbox"
+      ]
+    },
+    "qualification": "The runner image and kernel differ from the controlled diagnostic. All 12 before-device full-section PNGs are already byte-identical to their final samples in this run, and all device observations match the corresponding bands. This passing checkpoint shows no new raster transition and does not isolate the preparation effect from the runner change. The underlying Chromium cache decision and the removal of all measurement instability remain unproven."
+  },
+  "visualInspection": {
+    "originalPngsInspected": 20,
+    "pairsInspected": 10,
+    "method": "Original native PNGs opened at original resolution. No composite contact sheet or edited image replaces the originals. Numerical verification covers the complete capture set; visual inspection is limited to the files listed here.",
+    "pairs": [
+      {
+        "files": [
+          {
+            "file": "published-section-1280-tile-0-before-device-preparation.png",
+            "sha256": "34d2c4900c7eead1aefed67f4e5209cf3cc4eef683f2a9ef2606d9cd4a5b53b1",
+            "size": [
+              1280,
+              1088
+            ]
+          },
+          {
+            "file": "source-section-1280-tile-0-before-device-preparation.png",
+            "sha256": "7f2157d94e4eef1b8f58be87e68506971c834e686eb7a81569834c7a48952206",
+            "size": [
+              1280,
+              1088
+            ]
+          }
+        ],
+        "observation": "Before device preparation at 1280px. Both full native section images show the complete headline, support copy, three-device composition and action. No missing paint or displaced composition is visible."
+      },
+      {
+        "files": [
+          {
+            "file": "published-section-1280-tile-0-device-observation.png",
+            "sha256": "4a8e771c92e0759a07834070422c489156e3ce3bf63033cec34ea875df29260d",
+            "size": [
+              1280,
+              526
+            ]
+          },
+          {
+            "file": "source-section-1280-tile-0-device-observation.png",
+            "sha256": "4a8e771c92e0759a07834070422c489156e3ce3bf63033cec34ea875df29260d",
+            "size": [
+              1280,
+              526
+            ]
+          }
+        ],
+        "observation": "Native device-band observation at 1280px. Phone, laptop and tablet are fully painted with matching text, borders, logos, overlap and shadows. This is the original native clipped PNG, not a reassembled crop."
+      },
+      {
+        "files": [
+          {
+            "file": "published-boundary-901-tile-0.png",
+            "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+            "size": [
+              901,
+              888
+            ]
+          },
+          {
+            "file": "source-boundary-901-tile-0.png",
+            "sha256": "a8acec84ae290021472287e17ba07d9bda31dfe20da7939619ed9e15bcb09dcd",
+            "size": [
+              901,
+              888
+            ]
+          }
+        ],
+        "observation": "Final 901px boundary composition. Matching single-line headline and complete three-device field. Independent native pixel comparison has zero changed pixels."
+      },
+      {
+        "files": [
+          {
+            "file": "published-section-820-tile-0.png",
+            "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+            "size": [
+              820,
+              911
+            ]
+          },
+          {
+            "file": "source-section-820-tile-0.png",
+            "sha256": "497174ad59b847bdfb71e46689bca9b7d60aecf49ab8c53d0cd4eb4b720baa33",
+            "size": [
+              820,
+              911
+            ]
+          }
+        ],
+        "observation": "Final 820px composition. Matching two-line headline, scaled device arrangement and action; devices fit the viewport."
+      },
+      {
+        "files": [
+          {
+            "file": "published-section-320-tile-0.png",
+            "sha256": "c67f91ba58aeea7652935887d78889c82ea9836b3d2bc67a8623af852d73d923",
+            "size": [
+              320,
+              773
+            ]
+          },
+          {
+            "file": "source-section-320-tile-0.png",
+            "sha256": "c67f91ba58aeea7652935887d78889c82ea9836b3d2bc67a8623af852d73d923",
+            "size": [
+              320,
+              773
+            ]
+          }
+        ],
+        "observation": "Final 320px mobile composition. The separate single question card replaces the desktop devices. Heading, copy, card and action fit without visible horizontal clipping."
+      },
+      {
+        "files": [
+          {
+            "file": "published-dialog-typed-390-tile-0.png",
+            "sha256": "2aa773d0cdf99468ef892a8755fd28855dbd089274f8270b0256884f1c4dd56d",
+            "size": [
+              358,
+              632
+            ]
+          },
+          {
+            "file": "source-dialog-typed-390-tile-0.png",
+            "sha256": "16e290e946e95659fbfdaa9dd21bc788336f052c79d74023c994b7858d18aa1b",
+            "size": [
+              358,
+              632
+            ]
+          }
+        ],
+        "observation": "Typed 390px dialog. Exact practice wording, two-sentence answer, 11-word count, visible input focus, Clear text and Close controls match."
+      },
+      {
+        "files": [
+          {
+            "file": "published-short-320x568-dialog-top-tile-0.png",
+            "sha256": "7eab616757b26b66671be8b91a8156a8b67724e8ee1d31b25c7352c562c3cb1c",
+            "size": [
+              288,
+              490
+            ]
+          },
+          {
+            "file": "source-short-320x568-dialog-top-tile-0.png",
+            "sha256": "cfb34b7788ded74887035fc3f4dd9fdea6efda088e0ba1a32fb585f083ab6db9",
+            "size": [
+              288,
+              490
+            ]
+          }
+        ],
+        "observation": "Short 320px dialog at its top. Heading, privacy wording and input begin within the same modal viewport. Controls below the visible crop require the existing modal scrolling."
+      },
+      {
+        "files": [
+          {
+            "file": "published-short-320x568-dialog-bottom-tile-0.png",
+            "sha256": "d31c317ee8b2f6be547983841418eec004c8289df251db4e95d18c141f5bed46",
+            "size": [
+              288,
+              490
+            ]
+          },
+          {
+            "file": "source-short-320x568-dialog-bottom-tile-0.png",
+            "sha256": "e270d567b9173a344392f758aaded342a6c04f9267d34fbb2e31f8c7a08c42b6",
+            "size": [
+              288,
+              490
+            ]
+          }
+        ],
+        "observation": "Short 320px dialog after native scrolling. Scrolled input, 108-word count, Clear text and Close are visible. The heading is above the modal crop as expected at this scroll position."
+      },
+      {
+        "files": [
+          {
+            "file": "published-text-200-320-dialog-tile-0.png",
+            "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343",
+            "size": [
+              288,
+              774
+            ]
+          },
+          {
+            "file": "source-text-200-320-dialog-tile-0.png",
+            "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343",
+            "size": [
+              288,
+              774
+            ]
+          }
+        ],
+        "observation": "Targeted 200 percent text enlargement at 320px. The heading extends into the existing dialog padding but visible glyphs remain inside the modal border. This image does not establish native browser zoom or general accessibility compliance."
+      },
+      {
+        "files": [
+          {
+            "file": "published-section-1440-tile-0.png",
+            "sha256": "78eaa71dd3537d74dcbce7f2d09841bebc5874cfa4695c333772eff2722b9f6e",
+            "size": [
+              1440,
+              1096
+            ]
+          },
+          {
+            "file": "source-section-1440-tile-0.png",
+            "sha256": "88f36ce728be882cacadef8e12c1e6cb062b654842bce81ec3035c828b741496",
+            "size": [
+              1440,
+              1096
+            ]
+          }
+        ],
+        "observation": "Final 1440px desktop composition. Full headline, copy, laptop/tablet/phone field and action match, with no missing native paint."
+      }
+    ],
+    "introducedPaintOrLayoutDiscrepanciesObserved": []
+  },
+  "touchLifecycle": {
+    "published": {
+      "unmountObserved": true,
+      "twoAutofocusFramesObserved": true,
+      "observedEventCount": 12,
+      "nativeAutofocusEvents": [
+        {
+          "phase": "unmount-autofocus",
+          "elapsedMilliseconds": 65.89999999999418,
+          "triggerFocused": false
+        },
+        {
+          "phase": "focusin",
+          "elapsedMilliseconds": 66.10000000000582,
+          "triggerFocused": true
+        }
+      ],
+      "afterHidden": {
+        "elapsedMilliseconds": 71.39999999999418,
+        "triggerFocused": true,
+        "dialogConnected": false,
+        "bodyOverflow": "visible",
+        "scroll": [
+          0,
+          5117
+        ]
+      },
+      "final": {
+        "elapsedMilliseconds": 93,
+        "triggerFocused": true,
+        "dialogConnected": false,
+        "bodyOverflow": "visible",
+        "scroll": [
+          0,
+          5117
+        ]
+      },
+      "scrollUnchangedAcrossEveryEvent": true
+    },
+    "source": {
+      "unmountObserved": true,
+      "twoAutofocusFramesObserved": true,
+      "observedEventCount": 12,
+      "nativeAutofocusEvents": [
+        {
+          "phase": "unmount-autofocus",
+          "elapsedMilliseconds": 63.60000000000582,
+          "triggerFocused": false
+        },
+        {
+          "phase": "focusin",
+          "elapsedMilliseconds": 63.80000000001746,
+          "triggerFocused": true
+        }
+      ],
+      "afterHidden": {
+        "elapsedMilliseconds": 69.39999999999418,
+        "triggerFocused": true,
+        "dialogConnected": false,
+        "bodyOverflow": "visible",
+        "scroll": [
+          0,
+          5117
+        ]
+      },
+      "final": {
+        "elapsedMilliseconds": 94.10000000000582,
+        "triggerFocused": true,
+        "dialogConnected": false,
+        "bodyOverflow": "visible",
+        "scroll": [
+          0,
+          5117
+        ]
+      },
+      "scrollUnchangedAcrossEveryEvent": true
+    }
+  },
+  "inheritedQuality": {
+    "reportedObservationCount": 22,
+    "unresolvedDialogDescriptionReference": "The inherited dialog aria-describedby points to an absent generated description element on both implementations. It remains a separately recorded quality finding.",
+    "targeted320TextEnlargement": "The heading right extent is 289.484375px against its own content-box right 279px, a 10.484375px extension into padding. The dialog right edge is 304px. Current inspected glyphs remain inside the border, with no document or modal horizontal overflow."
+  },
+  "conclusions": [
+    "The complete dedicated Writing checkpoint passes in its recorded Chromium environment. Independent verification reproduces all reported final pixel results, native geometry measurements and all recorded image and input hashes.",
+    "All 12 fixed capture sets retain the unchanged 0/250/750ms sequence and predetermined final sample. All three samples are byte-identical in each set. The 24 preparation images and native states remain available as diagnostic evidence.",
+    "The 901px boundary and selected original desktop, mobile, typed, short-screen and enlarged-dialog images contain the expected complete paint without an introduced visible discrepancy.",
+    "Both traced native touch closes dispatch unmount autofocus, return trigger focus, disconnect the modal and release body scrolling. Scroll remains 5117 throughout every recorded event.",
+    "The final pass is not a controlled proof that device preparation alone caused convergence. Exact browser binaries match the diagnostic, but runner images and kernels differ and no transition is visible in this attempt.",
+    "This independent review supports closing the dedicated Writing verification gate after the owning records are complete. Overall Group 8 closure, both handoffs, final deployment verification, founder acceptance and React publication remain separate responsibilities and gates."
+  ],
+  "limits": "One complete first-attempt Chromium checkpoint in the recorded environment. Touch is emulated. Text enlargement is targeted CSS doubling, not native browser zoom. Preparation images precede the final strict gate and remain diagnostic. CDP layer observation does not establish the Chromium cache decision. No general cross-browser guarantee, founder acceptance, publication authority or accessibility certification is inferred.",
+  "verificationErrors": []
+}

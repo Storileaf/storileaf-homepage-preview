@@ -1,6 +1,6 @@
 # Frontend development and publication workflow
 
-Updated 20 October 2026 to keep process and navigation contracts current during Group 8. The founder's 19 October instruction established the leaner process and documentation ownership below.
+Updated 20 October 2026 to keep process and navigation contracts current through Group 8. The founder's 19 October instruction established the leaner process and documentation ownership below.
 
 This is the authoritative public development workflow. It replaces the operational wording of the [previous version](https://github.com/Storileaf/storileaf-homepage-preview/blob/02710ddc940d3472fb7ec99e315a41f49be35fc4/docs/WORKFLOW.md). Historical approvals, implementation evidence and release boundaries remain valid. This document does not itself optimise CI, create page templates or authorise React publication.
 
@@ -14,7 +14,7 @@ Keep frontend/scripts/guard-published.mjs enabled and pinned to e9550069d91b5a9b
 
 ## When the leaner process applies
 
-### Now, during the remaining homepage migration
+### During homepage migration and focused iteration
 
 Use focused development checks and concise documentation immediately. Reuse completed components and existing test helpers. While iterating, inspect representative 390px, 820px and 1440px layouts, add a 320px fit check, and test the actual breakpoints and states affected by the change. These are working checks, not acceptance evidence.
 

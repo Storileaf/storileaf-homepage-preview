@@ -1,0 +1,518 @@
+{
+  "schemaVersion": 1,
+  "package": 3,
+  "group": 8,
+  "authorisedOn": "2026-10-20",
+  "verifiedAtUtc": "2026-10-20T13:21:21.262099+00:00",
+  "result": "IMPLEMENTED_AND_BROWSER_VERIFIED",
+  "scope": "Writing showcase, existing unsaved practice dialog and complete homepage assembly. This closes Package 3 through source implementation and migration verification. Package 4, founder acceptance and React publication remain separate.",
+  "initialImplementationCommit": "95e6271b7943abd25e528751db7b673b9350cc17",
+  "finalRuntimeCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "finalVerificationCommit": "40d1674baa932432f93a4989ea863a2852c110cc",
+  "finalVerificationTree": "eb34d4fa7ac6ddf9596e10043f0723107a2e3c62",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "sourceChecks": {
+    "runId": 39427950216,
+    "testsPassed": 75,
+    "testsFailed": 0,
+    "typescriptContentDestinationsTokensGuardBuild": "passed",
+    "runtimeIdentityOwner": "closing-runtime-identity-verification.json"
+  },
+  "writing": {
+    "runId": 39427950086,
+    "jobId": 118645170780,
+    "attempt": 1,
+    "artifactId": 12266643284,
+    "artifactArchiveSha256": "ea3c560ad381c826ba897da32376f45a5f83bd04201d974f823d1e0f11f3ca66",
+    "previewArtifactId": 12265819768,
+    "previewArchiveSha256": "a89475c9350888dd7a75528e89f5ccc1e6c1efd740346be5719318242dd296bd",
+    "checkpoint": {
+      "focused": false,
+      "requestedWidths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "widthCount": 10,
+      "stateCount": 19,
+      "ordinaryCaptureCount": 120,
+      "nativeSampleCount": 36,
+      "preparationCaptureCount": 24,
+      "totalOriginalPNGCount": 180,
+      "nativeSetCount": 12,
+      "pixelPairCount": 60,
+      "maximumPixelRatio": 0.0001923076923076923,
+      "maximumGeometryDelta": 0.015625,
+      "thresholds": {
+        "geometry": 0.15,
+        "pixelChannel": 24,
+        "pixelRatio": 0.01
+      },
+      "problems": [],
+      "qualityFindingCount": 22
+    },
+    "verifiedOriginalPngs": 180,
+    "independentlyRecomputedPixelPairs": 60,
+    "allNativePreparationStatesUnchanged": true,
+    "allFinalSamplePairsByteStable": true,
+    "selectedOriginalPngs": 24,
+    "buildFilesVerified": 16,
+    "owner": "final-writing-verification.json",
+    "independentOwner": "final-writing-independent-review.json",
+    "rawReport": "final-writing-report.json.gz",
+    "environmentOwner": "final-writing-browser-environment.json",
+    "captureMethod": "One retained full section before device preparation, one unconditional native device-band image, then unchanged fixed full-section samples at 0, 250 and 750ms. Predetermined final sample and unchanged geometry/pixel/stability gates.",
+    "causalLimit": "Final runner image 20261018.339.1 differs from controlled diagnostic 20261012.334.1 while exact Chrome archive and executable hashes match. Every before-device full section already matched its final sample in this passing run. The pass does not demonstrate another transition or isolate the preparation effect from the runner change."
+  },
+  "assembly": {
+    "latestRunId": 39427950061,
+    "latestBrowser": "155.0.8059.84",
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "states": 14,
+    "captures": 292,
+    "combinedJourneysPassed": 10,
+    "combinedJourneysExpected": 10,
+    "freshResult": "passed without reported problems or failed contexts",
+    "freshEvidenceOwner": "closing-retained-verification.json",
+    "detailedArtifactRunId": 39382384349,
+    "detailedArtifactBrowser": "155.0.8059.39",
+    "detailedEvidenceOwner": "assembly-verification.json",
+    "rawReport": "assembly-report.json.gz",
+    "reuseBoundary": "Current workflow/log results are fresh. Earlier detailed geometry, pixel and inspected image evidence remains identified with its own source, harness and browser. The current assembly artifact was not downloaded or visually inspected again."
+  },
+  "candidateWorkflows": [
+    {
+      "id": 39427950216,
+      "name": "Validate editable StoriLeaf public website source",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950216",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950304,
+      "name": "Verify final footer typography",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950304",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427948994,
+      "name": "pages build and deployment",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427948994",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950184,
+      "name": "Verify Package 2 foundations",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950184",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950218,
+      "name": "Verify React media parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950218",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950092,
+      "name": "Verify React homepage Group 1 parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950092",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950074,
+      "name": "Verify React hero and motion parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950074",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950061,
+      "name": "Verify complete React homepage assembly",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950061",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950087,
+      "name": "Verify React homepage Group 2 parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950087",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950086,
+      "name": "Verify React writing showcase and practice parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950086",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950119,
+      "name": "Verify React How it works parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950119",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950100,
+      "name": "Verify React shared header and footer parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950100",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    },
+    {
+      "id": 39427950105,
+      "name": "Verify React six-book discovery parity",
+      "conclusion": "success",
+      "status": "completed",
+      "attempt": 1,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950105",
+      "head": "40d1674baa932432f93a4989ea863a2852c110cc"
+    }
+  ],
+  "evidenceReuse": {
+    "owner": "closing-retained-verification.json",
+    "runtimeOwner": "closing-runtime-identity-verification.json",
+    "unchangedRuntimeInputs": 101,
+    "trackedFrontendFilesMatchingCandidate": 114,
+    "earlierDetailedReportsDigestRechecked": 24,
+    "newWritingArtifactsDownloadedAndVerified": true,
+    "newRetainedOrAssemblyArtifactsDownloaded": false,
+    "freshWritingPreviewFilesVerified": 16,
+    "scope": "Reuse does not relabel earlier captures as current browser evidence. Exact environment differences and unreported versions remain explicit. No local source, build or browser test was rerun solely for the closing identity audit."
+  },
+  "functionalScope": [
+    "Exact retained device and mobile compositions, copy and assets",
+    "Actual practice input, word counts, clearing, maximum length, unsaved state and close resets",
+    "Initial focus, keyboard cycle, both close controls, Escape, outside dismissal, trigger focus return and scroll release",
+    "Native emulated-touch close lifecycle and short-screen dialog scrolling",
+    "Approved section order, absolute positions, joins, document height and overflow",
+    "Combined navigation, currency, anchors, native Back/Forward, menus, gallery, physical slideshow, pinned process, practice and FAQ journeys"
+  ],
+  "historyReconstruction": {
+    "owner": "history-source-verification.json",
+    "reference": "Protected TanStack scroll restoration in assets/Match-CtmL2Hj_.js and activation in assets/index-DO3Vh6An.js",
+    "storageBoundary": "Only numeric window/connected-scroll positions and private history-entry keys are retained. Practice answer text is not read or saved by this helper.",
+    "nativeBFCacheVerified": false
+  },
+  "qualityAndTestingLimits": {
+    "owner": "docs/PACKAGE_3_GROUP_8_REVIEW.md",
+    "inheritedDialogDescriptionTargetMissing": true,
+    "enlarged320HeadingExtent": "10.484375px beyond its own content box into dialog padding; inspected glyphs remain inside the dialog border, with no horizontal document or dialog overflow.",
+    "priorEnlargementAndPricingFindings": "Remain in their owning reviews and require separately scoped repairs. Matching inherited limitations is not a quality pass.",
+    "browserEnginesTested": [
+      "Chromium"
+    ],
+    "physicalDevicesTested": [],
+    "touchMethod": "Chromium input emulation",
+    "enlargementMethod": "Targeted font-size and line-height doubling",
+    "nativeBrowserZoomTested": false,
+    "screenReaderTested": false,
+    "accessibilityCertification": false,
+    "permanentBrowserMeasurementStabilityClaimed": false
+  },
+  "publication": {
+    "reactBuildPublished": false,
+    "rootStillProtectedStaticExport": true,
+    "guardEnabledAndBaselineUnchanged": true,
+    "candidatePagesRunId": 39427948994,
+    "candidatePagesResult": "success",
+    "closingPagesAndPostDeploymentIdentityOwner": "Private design branch website-ux/docs/REPOSITORY_HANDOFF.md records the final documentation/evidence commit, its Pages run and final live byte verification, avoiding a recursive public commit solely to restate its own head.",
+    "privateProductionChanged": false,
+    "founderRenderedAcceptanceGranted": false,
+    "publicationApprovalGranted": false,
+    "broaderCiConsolidationImplemented": false
+  },
+  "evidenceOwners": {
+    "review": "docs/PACKAGE_3_GROUP_8_REVIEW.md",
+    "componentStatus": "docs/COMPONENT_INVENTORY.md",
+    "publicHandoff": "REPOSITORY_HANDOFF.md",
+    "workflow": "docs/WORKFLOW.md",
+    "style": "docs/PUBLIC_DESIGN_SYSTEM.md",
+    "content": "docs/CONTENT_GATE.md"
+  },
+  "permanentEvidenceRecords": [
+    {
+      "path": "qa/homepage-assembly/2026-10-20/assembly-report.json.gz",
+      "bytes": 184646,
+      "sha256": "5b753010aabeea9182e0503de01837791f0179664a8b4306080ce03dc36723c4"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/assembly-verification.json",
+      "bytes": 60589,
+      "sha256": "8ca908882a4f130cb833c7a09f9a3d772d0864e154eb6b8b20e207c865c3d27d"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/closing-retained-verification.json",
+      "bytes": 173221,
+      "sha256": "5414881bdd82b10fd993aa4848b67a083920a4bdb9289fee99523b3c76f5ffc6"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/closing-runtime-identity-verification.json",
+      "bytes": 6731,
+      "sha256": "e9f2928c28ee02c40fa575d507866038c2364548932f62f077ba792fe0d32116"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/diagnostic-images/manifest.json",
+      "bytes": 1594,
+      "sha256": "f9b6740103262fda25a6757d4048a03b803024a3c924888d80475b70a33247fb"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-retained-verification.json",
+      "bytes": 96484,
+      "sha256": "1b040d33f0f7bc2031933df0fc2839916f973b195618b87a46e3ce0998ed181f"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-runtime-identity-verification.json",
+      "bytes": 24329,
+      "sha256": "0268307d3f4f9871dd41742cd4a64233d4186919c637dde7bb98e147a64c250a"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-writing-browser-environment.json",
+      "bytes": 2289,
+      "sha256": "3557c90e92030364f89face1387293c5f2d93f1d6b925f561237fcdaeb103fd4"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-writing-images/manifest.json",
+      "bytes": 9413,
+      "sha256": "7c17884479b85d59e2c375ba8cb093845e5d5e92de9f7fa44b30edda6ba4898e"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-writing-independent-review.json",
+      "bytes": 37272,
+      "sha256": "4db162aa82bfdb1a425877fcadbfdf4c33ce9e97b4c23dfd3c66cc4a6640b214"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-writing-report.json.gz",
+      "bytes": 945048,
+      "sha256": "6038efae20891089b588179dcee3d9304995961eb0c4c6ad78e673929fb15d12"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/final-writing-verification.json",
+      "bytes": 445691,
+      "sha256": "d54a532795875e7f45cc564f1df9a56c11f772dd202dc3f3993de9348f69bb32"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/history-source-verification.json",
+      "bytes": 3439,
+      "sha256": "c7a98f8dff54ae7da6c0a5948f8dade89940ade34487254f10d96a3d3d6b4f16"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/initial-assembly-report.json.gz",
+      "bytes": 86819,
+      "sha256": "052a340cf961d7220b1be42aff0303cfc3acab4348c99658faa11cfb558df619"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/initial-verification.json",
+      "bytes": 7499,
+      "sha256": "9fbab6a0bac79f8c00db5e24def5a2acfeac13351f9d48227a7ba474e611881c"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/initial-writing-report.json.gz",
+      "bytes": 407554,
+      "sha256": "fd2df78a219f8077af95f2e6b1ae8cd1bbbb9af654ef998276237cfe4f8cf558"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-initial-browser-environment.json",
+      "bytes": 2290,
+      "sha256": "288d03d0e1500bed310749beb6d0e8123766e1579a0b788dc748c219e3d6a102"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-initial-writing-report.json.gz",
+      "bytes": 613156,
+      "sha256": "87486ae68916159b4b473582aaa21cbb922741cc5c2b4d1a3e43f80c38babbc5"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-initial-writing-verification.json",
+      "bytes": 95297,
+      "sha256": "d9f2635b4100ee532907264b170c53beefefd205291c5e9b7ce77213003716ff"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-touch-browser-environment.json",
+      "bytes": 2290,
+      "sha256": "f8dce2c107b411a6f393ca6d6a75f639d200b776cdac7e24b896bd21fd754c3b"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-touch-independent-review.json",
+      "bytes": 55038,
+      "sha256": "af4ab738619f178785bf1ae9ae5f514ebd7ac3ca03f334ca77f7ac91e30bd102"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-touch-writing-report.json.gz",
+      "bytes": 614113,
+      "sha256": "4fd22432b88f3b50a169fef4a45511f0939e1c27727f6005389060bc273262a4"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/pinned-touch-writing-verification.json",
+      "bytes": 221625,
+      "sha256": "cff3eeb662b8014ec585b9e1cdf06b0cbd67f76360e86a3979cc9e66935ddce7"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/preparation-browser-environment.json",
+      "bytes": 2719,
+      "sha256": "324d5da6730814ce6f7fe74d66aa644d068da35d9dde22e2a6fe5065cd1efc97"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/preparation-independent-review.json",
+      "bytes": 277152,
+      "sha256": "cfc7dd672e9b4b1839c5d6aa1d48e80c21bdfe81e1dbb8fcc4ad7972436880db"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/preparation-report.json.gz",
+      "bytes": 2495996,
+      "sha256": "e2c3f836ebc66621f0bdbe011cbcfece4af3d61cfaf020dffa565bd77f541e9c"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/preparation-verification.json",
+      "bytes": 576996,
+      "sha256": "dcbe386be7d16d85faf9c11c59b4586555f2f9b3fdf226d83777a162deb143a0"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/published-history-diagnostic.json",
+      "bytes": 2187,
+      "sha256": "3f2ef87d350d406a5a247142958f2bee05ed904042c545d76a4f4fb8186120a7"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/raster-default-report.json.gz",
+      "bytes": 360991,
+      "sha256": "896bcf1f71e37284be3741b839c65bebef435e7eb5d073e9cbc381032b621e25"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/raster-disable-lcd-text-report.json.gz",
+      "bytes": 382948,
+      "sha256": "0e305c0c762e697bd9a842519fe444013e4c8e5672af4459e7a3f5ea254dcad6"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/raster-independent-review.json",
+      "bytes": 88741,
+      "sha256": "fbbe1ac3c21769b258d7ed365174facde4a82322c15727e0a7628824e428e997"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/raster-verification.json.gz",
+      "bytes": 47641,
+      "sha256": "0772719424d04817119d9391389caf3cea91251343a2198003bb22f79cd50c01"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/retained-verification.json",
+      "bytes": 56536,
+      "sha256": "07adab450bed1029eece52ab6836ebfba75201c8478ee7f80117615b669ae57e"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/runtime-identity-verification.json",
+      "bytes": 21688,
+      "sha256": "25c22c9d79b5e2fc5e1ba32ce4de0abd65d6245d2ec0bcd07b12c3061d267bbe"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-assembly-report.json.gz",
+      "bytes": 96116,
+      "sha256": "2554790fc85c33f4ddc1c53d669223dddec61d83e1642a029147be9a28e2940a"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-group1-diagnostics.json",
+      "bytes": 10785,
+      "sha256": "b04cdfe186a5de58b717773caefa49cdc47330222f7717bd0e1879516f844ab0"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-group1-report.json.gz",
+      "bytes": 29716,
+      "sha256": "dc41752dac7924aa8c77c57920618bfc3e2f3f94750bab31e9d63375b31fd504"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-shared-diagnostics.json",
+      "bytes": 22377,
+      "sha256": "70b96bf90e06e8f60107505cb466197f43f77603d59a6d5c0fc583632bac8325"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-shared-group1-report.json.gz",
+      "bytes": 29716,
+      "sha256": "183786cd4dec539a76525e1331d75f73449587854c4a76a5db153a6a4d31d6f9"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-verification.json",
+      "bytes": 47955,
+      "sha256": "4e48f8efe270cd42dc2efc4a699a576983521a825908f3df2e2d826d139e9f8e"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/second-writing-report.json.gz",
+      "bytes": 432163,
+      "sha256": "df0eea7c2e5a2bdfd9b6ad04617431c216cd2ad2718b00aed16476af3b544846"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/source-audit-corrections.json",
+      "bytes": 2545,
+      "sha256": "fa3004b45960c04fda84d39803b24a157850932654fc85a740473ef307cb47dc"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/third-writing-report.json.gz",
+      "bytes": 613358,
+      "sha256": "ce41db8aa74df67c483bb60ee82275b96a5dbf2bb5870dbe4bf17843c08af797"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/third-writing-verification.json",
+      "bytes": 76300,
+      "sha256": "3f3a9ecd1b10a72eb22aa7b1152144d501f4abf0929c1e69d2e8acb06bca17f0"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/third-writing-visual-inspection.json",
+      "bytes": 2471,
+      "sha256": "51dcaac5c4165e0ac62dad3fc21cb2c6d52665c94712da8e0a94fd2fc662173e"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/workflow-history.json",
+      "bytes": 31494,
+      "sha256": "e1e2e2513cd86407ac1620d67ae8ce9cbc2e467d2b984e22e017938b0cc5b78a"
+    },
+    {
+      "path": "qa/homepage-assembly/2026-10-20/writing-raster-analysis.json",
+      "bytes": 125897,
+      "sha256": "1c30abed3d693ecfd5c546675bbd6b42b5b26e79e218bd7470296857f08c81b1"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "purpose": "One exact browser archive and executable for sequential default and disable-lcd-text diagnostic modes in the same job.",
+  "recordedAt": "2026-10-20T12:56:45.495Z",
+  "browser": {
+    "expectedVersion": "155.0.8059.84",
+    "expectedRevision": "1697595",
+    "actualVersion": "155.0.8059.84",
+    "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+    "archive": {
+      "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+      "bytes": 199014491,
+      "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+    },
+    "executable": {
+      "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+      "bytes": 298806600,
+      "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+    },
+    "diagnosticLaunches": [
+      {
+        "mode": "default",
+        "headless": true,
+        "args": [
+          "--no-sandbox"
+        ]
+      },
+      {
+        "mode": "disable-lcd-text",
+        "headless": true,
+        "args": [
+          "--no-sandbox",
+          "--disable-lcd-text"
+        ]
+      }
+    ]
+  },
+  "runner": {
+    "name": "GitHub Actions 1000002965",
+    "os": "Linux",
+    "arch": "X64",
+    "imageOS": "ubuntu24",
+    "imageVersion": "20261012.334.1",
+    "kernel": "6.17.0-1022-azure",
+    "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+  },
+  "runtime": {
+    "node": "v22.23.3",
+    "npm": "10.9.9",
+    "python": "Python 3.12.3",
+    "playwright": "1.56.1"
+  },
+  "run": {
+    "repository": "Storileaf/storileaf-homepage-preview",
+    "id": "39426209536",
+    "attempt": "1",
+    "job": "diagnose",
+    "commit": "4a63fd17f916e0061ac253a7cf7892634a975769"
+  },
+  "runtimeTree": "09740a8614e473d01650211e0795e268aa455f3c",
+  "harness": {
+    "path": "frontend/scripts/verify-writing-parity.mjs",
+    "sha256": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3"
+  },
+  "workflow": {
+    "path": ".github/workflows/diagnose-writing-preparation.yml",
+    "sha256": "00609d2da7778cbbe8114dc846edf7b4f7577834f5d73fd8618dfa55a6b57d3a"
+  },
+  "diagnostic": {
+    "path": "qa/homepage-assembly/2026-10-20/diagnose-writing-preparation.mjs",
+    "sha256": "9efec616b16ea23eb23a37779b5b06085841b5503cc516c31e67c0187881b334"
+  }
+}

@@ -607,5 +607,187 @@
       "created_at": "2026-10-20T12:15:43Z",
       "updated_at": "2026-10-20T12:25:38Z"
     }
+  ],
+  "preparation_diagnostic_workflows": [
+    {
+      "id": 39426209740,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39426209740",
+      "head_sha": "4a63fd17f916e0061ac253a7cf7892634a975769",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T12:56:22Z",
+      "updated_at": "2026-10-20T12:57:26Z"
+    },
+    {
+      "id": 39426209536,
+      "name": "Diagnose Writing capture preparation",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39426209536",
+      "head_sha": "4a63fd17f916e0061ac253a7cf7892634a975769",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T12:56:22Z",
+      "updated_at": "2026-10-20T12:58:00Z"
+    }
+  ],
+  "evidence_milestone_workflows": [
+    {
+      "id": 39426677793,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39426677793",
+      "head_sha": "087a739fafadaea2bcb14903f5f429c02ae8057d",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T12:59:52Z",
+      "updated_at": "2026-10-20T13:00:32Z"
+    }
+  ],
+  "compositor_ready_workflows": [
+    {
+      "id": 39427950216,
+      "name": "Validate editable StoriLeaf public website source",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:01Z",
+      "updated_at": "2026-10-20T13:10:20Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950216"
+    },
+    {
+      "id": 39427950304,
+      "name": "Verify final footer typography",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:01Z",
+      "updated_at": "2026-10-20T13:10:36Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950304"
+    },
+    {
+      "id": 39427950105,
+      "name": "Verify React six-book discovery parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:18:33Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950105"
+    },
+    {
+      "id": 39427948994,
+      "name": "pages build and deployment",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:09:29Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427948994"
+    },
+    {
+      "id": 39427950184,
+      "name": "Verify Package 2 foundations",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:10:09Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950184"
+    },
+    {
+      "id": 39427950086,
+      "name": "Verify React writing showcase and practice parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:11:36Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950086"
+    },
+    {
+      "id": 39427950119,
+      "name": "Verify React How it works parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:12:19Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950119"
+    },
+    {
+      "id": 39427950218,
+      "name": "Verify React media parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:13:37Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950218"
+    },
+    {
+      "id": 39427950092,
+      "name": "Verify React homepage Group 1 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:13:20Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950092"
+    },
+    {
+      "id": 39427950074,
+      "name": "Verify React hero and motion parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:14:01Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950074"
+    },
+    {
+      "id": 39427950061,
+      "name": "Verify complete React homepage assembly",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:14:26Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950061"
+    },
+    {
+      "id": 39427950087,
+      "name": "Verify React homepage Group 2 parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:14:34Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950087"
+    },
+    {
+      "id": 39427950100,
+      "name": "Verify React shared header and footer parity",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "run_attempt": 1,
+      "created_at": "2026-10-20T13:09:00Z",
+      "updated_at": "2026-10-20T13:16:37Z",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950100"
+    }
   ]
 }

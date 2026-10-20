@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-20T13:11:58.392461+00:00",
+  "result": "runtime-and-protected-inputs-identical; prior-byte-verified-build-evidence-reused",
+  "candidateCommit": "40d1674baa932432f93a4989ea863a2852c110cc",
+  "candidateCommitTree": "eb34d4fa7ac6ddf9596e10043f0723107a2e3c62",
+  "verifiedSourceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+  "previousVerifiedCandidate": "8674c0bfd13b4b40311fdf59f95591dcf5383994",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "referenceRecord": {
+    "path": "qa/homepage-assembly/2026-10-20/final-runtime-identity-verification.json",
+    "sha256": "0268307d3f4f9871dd41742cd4a64233d4186919c637dde7bb98e147a64c250a",
+    "sourceManifestSHA256": "9ad8e89c93d600db814649cd6778ab9e06c5ca5304b7b6f5d7ee4fd3072f6bad"
+  },
+  "runtimeInputVerification": {
+    "fileCount": 101,
+    "selection": "frontend/src, frontend/content, frontend/public, frontend index/package/lock/TypeScript/Vite files and published guard; root index/404 plus assets, covers, gallery and pricing trees.",
+    "allImmutableCommitsAndWorkingTreeMatchRecordedSHA256s": true,
+    "mismatches": [],
+    "manifestOwner": "final-runtime-identity-verification.json identityFileSet.files"
+  },
+  "frontendTree": {
+    "verified": "b371048da86b50af9855a2326a6fdf5ecee6f21e",
+    "previous": "09740a8614e473d01650211e0795e268aa455f3c",
+    "candidate": "d36470431522c21af906908bd6131f47922e26c0",
+    "changedFromPrevious": [
+      "frontend/scripts/verify-writing-parity.mjs"
+    ],
+    "trackedFileCount": 114,
+    "workingTreeMismatches": [],
+    "unchangedRuntimeSubtrees": {
+      "frontend/src": {
+        "verified": "23da2d7dadca22651a3e7b5f0b8a3a0c544ceb4d",
+        "previous": "23da2d7dadca22651a3e7b5f0b8a3a0c544ceb4d",
+        "candidate": "23da2d7dadca22651a3e7b5f0b8a3a0c544ceb4d",
+        "match": true
+      },
+      "frontend/content": {
+        "verified": "84db7b9be00e5bed84af1706539b984591ae19e5",
+        "previous": "84db7b9be00e5bed84af1706539b984591ae19e5",
+        "candidate": "84db7b9be00e5bed84af1706539b984591ae19e5",
+        "match": true
+      },
+      "frontend/public": {
+        "verified": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "previous": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "candidate": "eadb9ef57bce6f155a93afd9aa69f38aeee5ca22",
+        "match": true
+      }
+    }
+  },
+  "writingHarness": {
+    "path": "frontend/scripts/verify-writing-parity.mjs",
+    "previousSHA256": "eb8359bce54a7c203ec3edc72b352eea043911dc3609cd3cae72ff0429e411b3",
+    "candidateSHA256": "90600b297af7ceccb5b5247b563378e8dd1cbd395656b803f549c96ff22b90f3",
+    "scope": "One unconditional native device-band screenshot, with unchanged native-state assertions and retained layer observations, precedes the unchanged fixed full-section samples and pixel thresholds. Dedicated Writing verification is owned separately."
+  },
+  "protectedPublished": {
+    "paths": [
+      "index.html",
+      "404.html",
+      "assets/",
+      "covers/",
+      "gallery/",
+      "pricing/",
+      "favicon.svg",
+      "manifest.json",
+      "logo192.png",
+      "logo512.png",
+      "robots.txt",
+      ".nojekyll"
+    ],
+    "committedDifferences": [],
+    "workingTreeDifferences": [],
+    "guardBaselinePresent": true,
+    "guardSHA256": "cb4fcc45b5913f01de83894d59e9d49a1f6b363e1f1f063d29ddda40a8fef5c1"
+  },
+  "buildEvidenceReuse": {
+    "referenceOwner": "final-runtime-identity-verification.json build",
+    "priorVerifiedBuildCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+    "referenceArtifactId": 12245044340,
+    "referenceRunId": 39382384528,
+    "referenceArchiveSHA256": "a1998643404161445200dd1ddd6b984b6b3873cf425c04e355eb9ab15b5cc3a9",
+    "previousVerifiedPreviewArtifact": {
+      "result": "all-16-files-match",
+      "runId": 39420920491,
+      "jobId": 118621341328,
+      "artifactId": 12263473811,
+      "archive": "/tmp/group8-final-source-preview-12263473811.zip",
+      "extracted": "/tmp/group8-final-source-preview-12263473811",
+      "archiveSha256": "dba55a7dea5ad71d0b22cc9b0e50260e6fc07759ba20bba7e1600a943d26a323",
+      "digestVerifiedBeforeExtraction": true,
+      "memberPathsAndSymlinksChecked": true,
+      "fileCount": 16,
+      "matchesVerifiedA2ArtifactAndLocalDist": true
+    },
+    "fileCount": 16,
+    "localDistFileSetMatchesPriorArtifact": true,
+    "localDistByteMismatches": [],
+    "boundary": "Current CI source validation and build results are recorded separately. The 16 exact build-file hashes belong to the previously verified a2 and 8674 preview artifacts and unchanged local dist, not to a freshly downloaded 40d artifact.",
+    "candidateArtifactDownloadedByThisAudit": false,
+    "candidateArtifactByteHashesCheckedByThisAudit": false
+  },
+  "method": [
+    "Compare every previously enumerated runtime/content/dependency/asset/guard file against immutable a2, 8674 and 40d commits and the current working tree.",
+    "Verify all frontend working-tree files match 40d and distinguish the changed Writing harness from unchanged source/content/public subtrees.",
+    "Compare protected Git paths against the fixed baseline and confirm the guard identity without changing or running it locally.",
+    "Recheck unchanged local dist against the earlier manifest of 16 byte-verified files. No build or browser test is rerun locally and no new artifact is downloaded for this identity audit."
+  ],
+  "limitations": [
+    "Fresh CI job outcomes and browser/runner environments have their own closing retained record.",
+    "Previous detailed captures and preview bytes are reused only where their relevant inputs and applicable environment match. Environment differences remain explicit.",
+    "This identity record does not close the dedicated Writing checkpoint, Package 3, founder acceptance, Package 4 or React publication."
+  ],
+  "separateCurrentBuildVerification": {
+    "owner": "final-writing-verification.json",
+    "ownerSHA256": "d54a532795875e7f45cc564f1df9a56c11f772dd202dc3f3993de9348f69bb32",
+    "commit": "40d1674baa932432f93a4989ea863a2852c110cc",
+    "runId": 39427950086,
+    "artifactId": 12265819768,
+    "archiveSHA256": "a89475c9350888dd7a75528e89f5ccc1e6c1efd740346be5719318242dd296bd",
+    "archiveBytes": 198869,
+    "verifiedFileCount": 16,
+    "result": "Writing checkpoint owner downloaded the fresh 40d preview, verified its archive digest and size and all 16 files against frozen runtime/protected identities.",
+    "auditBoundary": "This identity audit checked the owner record and crosslinks it. It did not download or rehash that fresh artifact; its own direct 16-file byte check used the previously verified preview manifest and unchanged local dist."
+  }
+}

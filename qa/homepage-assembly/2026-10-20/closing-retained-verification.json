@@ -1,0 +1,5172 @@
+{
+  "candidate": "40d1674baa932432f93a4989ea863a2852c110cc",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "recordedAt": "2026-10-20T13:19:33.546671+00:00",
+  "result": "12 assigned workflows and 14 jobs passed on their first attempt",
+  "completeAssignedCohort": true,
+  "scope": "Source validation, retained component, complete assembly and Pages workflows automatically triggered by the Writing harness-only correction. Dedicated Writing has its own owner.",
+  "workflows": [
+    {
+      "id": 39427950216,
+      "name": "Validate editable StoriLeaf public website source",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950216",
+      "path": ".github/workflows/validate-public-source.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:01Z",
+      "updatedAt": "2026-10-20T13:10:20Z",
+      "jobs": [
+        {
+          "id": 118645172012,
+          "name": "typecheck-and-build",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 16,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Check React types, approved content, static release guard and component foundations",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build isolated source preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source-only desktop and mobile layout, links and navigation",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify retained shape roles and audit external preview dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Summarise shape and dependency evidence",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "problems": [],
+              "observationCount": 2
+            },
+            {
+              "testedWidths": [
+                {
+                  "kind": "source",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                },
+                {
+                  "kind": "published",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                }
+              ],
+              "problems": []
+            },
+            {
+              "browser": [
+                {
+                  "kind": "source",
+                  "blockedVendorRequests": [],
+                  "requestHosts": [
+                    "127.0.0.1",
+                    "fonts.googleapis.com",
+                    "fonts.gstatic.com",
+                    "storileaf.com"
+                  ],
+                  "runtimeErrors": [],
+                  "missingImages": [],
+                  "tabCount": 6,
+                  "testedWidths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                },
+                {
+                  "kind": "published",
+                  "blockedVendorRequests": [],
+                  "requestHosts": [
+                    "127.0.0.1",
+                    "fonts.googleapis.com",
+                    "fonts.gstatic.com",
+                    "storileaf.com"
+                  ],
+                  "runtimeErrors": [],
+                  "missingImages": [],
+                  "tabCount": 6,
+                  "testedWidths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                }
+              ],
+              "problems": [],
+              "scannedFiles": 65,
+              "staticReferences": []
+            }
+          ],
+          "logSHA256": "7f7210b14946cbaed972d9efc7546b369e6b0cbc7faf000409f56524aaf48fa6",
+          "logBytes": 56146,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12266572542,
+          "name": "public-frontend-source-browser-qa",
+          "runId": 39427950216,
+          "sizeBytes": 21221114,
+          "sha256": "22ab3ef58b7839a765bb0e65b5b268cda6185829d2f46564b38695bd4ebde86f",
+          "createdAt": "2026-10-20T13:10:17Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950216/artifacts/12266572542",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266542697,
+          "name": "public-frontend-source-preview",
+          "runId": 39427950216,
+          "sizeBytes": 198869,
+          "sha256": "ec62b07c911c9592c6c5367d3d138f80134b95627c59820e2d97ead4f6651d4d",
+          "createdAt": "2026-10-20T13:10:17Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950216/artifacts/12266542697",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950304,
+      "name": "Verify final footer typography",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950304",
+      "path": ".github/workflows/verify-footer-type.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:01Z",
+      "updatedAt": "2026-10-20T13:10:36Z",
+      "jobs": [
+        {
+          "id": 118645171668,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 11,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Validate source and protected published files",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare the approved footer correction at nine widths",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify the actual deployed homepage without injected styles",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false,
+              "sourceWidths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "checkCount": 7
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": true,
+              "sourceWidths": [],
+              "checkCount": 5
+            }
+          ],
+          "logSHA256": "9701f8cbc87d62df3b7f69553371df2a92a314ecf6c565ee397ff57b847e05ab",
+          "logBytes": 51341,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12266343982,
+          "name": "footer-type-published-review",
+          "runId": 39427950304,
+          "sizeBytes": 37315460,
+          "sha256": "04ed613d011e721e5dd86ffe04c75b4b237eb90f1e8ae476c99c3702a00f1ebd",
+          "createdAt": "2026-10-20T13:10:33Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950304/artifacts/12266343982",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950105,
+      "name": "Verify React six-book discovery parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950105",
+      "path": ".github/workflows/verify-discovery-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:18:33Z",
+      "jobs": [
+        {
+          "id": 118645170061,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 22,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source navigation, action shapes and focus checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 2 reassurance, FAQs and invitation parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 3 shared components, navigation and currency parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare all six book panels, native tabs and Books anchor integration",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [
+              "155.0.8059.84"
+            ],
+            "browserVersionLimit": null
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "problems": [],
+              "observationCount": 2
+            },
+            {
+              "testedWidths": [
+                {
+                  "kind": "source",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                },
+                {
+                  "kind": "published",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                }
+              ],
+              "problems": []
+            },
+            {
+              "problems": [],
+              "observationCount": 48
+            },
+            {
+              "widths": [
+                {
+                  "width": 320,
+                  "pageWidth": 320,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 360,
+                  "pageWidth": 360,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 390,
+                  "pageWidth": 390,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 430,
+                  "pageWidth": 430,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 768,
+                  "pageWidth": 768,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 820,
+                  "pageWidth": 820,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1024,
+                  "pageWidth": 1024,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1280,
+                  "pageWidth": 1280,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1440,
+                  "pageWidth": 1440,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                }
+              ],
+              "problems": [],
+              "actualCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f"
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "checkCount": 22
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false,
+              "sourceWidths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "checkCount": 7
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 19,
+              "problems": []
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 18,
+              "problems": [],
+              "qualityFindings": 0,
+              "individualExpandedComparisons": 60
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 41,
+              "captures": 132,
+              "problems": [],
+              "qualityFindings": [
+                {
+                  "id": "shared-enlarged-text-320",
+                  "status": "Inherited published limitation retained for a separately approved visible refinement.",
+                  "viewport": {
+                    "width": 320,
+                    "height": 568
+                  },
+                  "published": {
+                    "documentOverflow": false,
+                    "clippedText": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "clippedLines": 1
+                      }
+                    ],
+                    "textOutsideViewport": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "outsideLines": 1
+                      }
+                    ]
+                  },
+                  "source": {
+                    "documentOverflow": false,
+                    "clippedText": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "clippedLines": 1
+                      }
+                    ],
+                    "textOutsideViewport": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "outsideLines": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "shared-enlarged-text-1440",
+                  "status": "Inherited published limitation retained for a separately approved visible refinement.",
+                  "viewport": {
+                    "width": 1440,
+                    "height": 900
+                  },
+                  "published": {
+                    "documentOverflow": true,
+                    "clippedText": [],
+                    "textOutsideViewport": []
+                  },
+                  "source": {
+                    "documentOverflow": true,
+                    "clippedText": [],
+                    "textOutsideViewport": []
+                  }
+                }
+              ],
+              "inheritedNavigationFindings": 1
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 30,
+              "captures": 168,
+              "problems": [],
+              "qualityFindings": 4,
+              "panelComparisons": 60
+            }
+          ],
+          "logSHA256": "37579e70e5a0581943754862492ba4cecb4e686293d2390d6736b87a92158723",
+          "logBytes": 134411,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12268055131,
+          "name": "homepage-discovery-source-preview",
+          "runId": 39427950105,
+          "sizeBytes": 198869,
+          "sha256": "6b82752da413077ded6ab94ed41dce4e6b382c54fc161387dfc243065e8901de",
+          "createdAt": "2026-10-20T13:18:30Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950105/artifacts/12268055131",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12267840629,
+          "name": "homepage-discovery-regressions",
+          "runId": 39427950105,
+          "sizeBytes": 201141904,
+          "sha256": "7df914d3140e99d381540553c6d6a0494d9fa964690fc78861c77cc9308763b5",
+          "createdAt": "2026-10-20T13:18:28Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950105/artifacts/12267840629",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12267471122,
+          "name": "homepage-discovery-parity",
+          "runId": 39427950105,
+          "sizeBytes": 126708999,
+          "sha256": "3918a90eedea4d679f612882b900e50c684497465957de29a21ed2fc87f1011f",
+          "createdAt": "2026-10-20T13:18:22Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950105/artifacts/12267471122",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427948994,
+      "name": "pages build and deployment",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427948994",
+      "path": "dynamic/pages/pages-build-deployment",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:09:29Z",
+      "jobs": [
+        {
+          "id": 118645171987,
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 5,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Checkout",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": null,
+            "npm": null,
+            "playwrightCoreDeclaredBySuccessfulInstallStep": null,
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {},
+          "logSummaries": [],
+          "logSHA256": "3e369c28d62ece95221cbd83d36a409527f2aeb9556bf94bb0bcd2e89bd00124",
+          "logBytes": 46781,
+          "protectedGuardPass": false,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": []
+        },
+        {
+          "id": 118645265705,
+          "name": "report-build-status",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 3,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Report Build Status",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "node": null,
+            "npm": null,
+            "playwrightCoreDeclaredBySuccessfulInstallStep": null,
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {},
+          "logSummaries": [],
+          "logSHA256": "410fea38ccd0e5af50b37bf1ce8f20807bdf5d7cdacf1f9a33ec374dc57b9e0c",
+          "logBytes": 2444,
+          "protectedGuardPass": false,
+          "checkoutShaObservedInLog": false,
+          "builtAssetsObservedInLog": []
+        },
+        {
+          "id": 118645265921,
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 3,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Deploy to GitHub Pages",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": null,
+            "npm": null,
+            "playwrightCoreDeclaredBySuccessfulInstallStep": null,
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {},
+          "logSummaries": [],
+          "logSHA256": "c0dadc9ecc8b4ca20449b94b3cfd55019899063d9983d2a5c9ec290408dfa6c6",
+          "logBytes": 3603,
+          "protectedGuardPass": false,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": []
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12267016909,
+          "name": "github-pages",
+          "runId": 39427948994,
+          "sizeBytes": 29349064,
+          "sha256": "1f7d36fe90c7f1711ea676253e3b83c2b57fd122dbc41e5025017175d8d979c3",
+          "createdAt": "2026-10-20T13:09:11Z",
+          "expiresAt": "2026-10-21T13:09:09Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427948994/artifacts/12267016909",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950184,
+      "name": "Verify Package 2 foundations",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950184",
+      "path": ".github/workflows/review-package2.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:10:09Z",
+      "jobs": [
+        {
+          "id": 118645170744,
+          "name": "review",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 11,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Check published protection, source types, content and shared foundations",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare typography, spacing, FAQ states and preserved pricing appearance",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify actual deployed Pages styling and browser rendering",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "checkCount": 22
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "actualCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f"
+            }
+          ],
+          "logSHA256": "ec6edbd0cd54dad79ebd71989671bf1611cda220e00d98204cfc24a130518cc6",
+          "logBytes": 72913,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12267045884,
+          "name": "package2-published-review",
+          "runId": 39427950184,
+          "sizeBytes": 23931038,
+          "sha256": "880f16ed5c229706afe6725515336bed452684897c571bb46e4937bc8bc8f1ad",
+          "createdAt": "2026-10-20T13:10:06Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950184/artifacts/12267045884",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950119,
+      "name": "Verify React How it works parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950119",
+      "path": ".github/workflows/verify-process-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:12:19Z",
+      "jobs": [
+        {
+          "id": 118645170951,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 13,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare all stages and pinned progression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "widths": 10,
+              "states": 24,
+              "captures": 104,
+              "problems": [],
+              "qualityFindings": []
+            }
+          ],
+          "logSHA256": "2c65f767dd2613c3036fa64a46014d9fc026535ab6343302f612b294b68c85a6",
+          "logBytes": 53097,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12266802474,
+          "name": "homepage-process-parity",
+          "runId": 39427950119,
+          "sizeBytes": 38381211,
+          "sha256": "44b2cdb2601c7827c23a56861bb90c3a01d12e3dbc928c45b4266eb01054aaf9",
+          "createdAt": "2026-10-20T13:12:15Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950119/artifacts/12266802474",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266283132,
+          "name": "homepage-process-source-preview",
+          "runId": 39427950119,
+          "sizeBytes": 198869,
+          "sha256": "ec62b07c911c9592c6c5367d3d138f80134b95627c59820e2d97ead4f6651d4d",
+          "createdAt": "2026-10-20T13:12:16Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950119/artifacts/12266283132",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950218,
+      "name": "Verify React media parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950218",
+      "path": ".github/workflows/verify-media-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:13:37Z",
+      "jobs": [
+        {
+          "id": 118645170753,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 14,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run the current media checkpoint",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare physical presentation and complete shared field",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "widths": 10,
+              "states": 9,
+              "problems": [],
+              "result": "passed"
+            },
+            {
+              "widths": 10,
+              "states": 9,
+              "captures": 84,
+              "problems": [],
+              "qualityFindings": [],
+              "result": "passed"
+            }
+          ],
+          "logSHA256": "8ebd64473fa7f8145b02f3db6992261338dd37100b6cf8c3c4af46374f46ed62",
+          "logBytes": 54497,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12267106332,
+          "name": "homepage-media-source-preview",
+          "runId": 39427950218,
+          "sizeBytes": 198869,
+          "sha256": "a89475c9350888dd7a75528e89f5ccc1e6c1efd740346be5719318242dd296bd",
+          "createdAt": "2026-10-20T13:13:34Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950218/artifacts/12267106332",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266049478,
+          "name": "homepage-media-parity",
+          "runId": 39427950218,
+          "sizeBytes": 106973774,
+          "sha256": "2efd7173967d7b1dbc6cce07b58d60d6cf87de3c40190919ec65cae4e8346ca7",
+          "createdAt": "2026-10-20T13:13:33Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950218/artifacts/12266049478",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950092,
+      "name": "Verify React homepage Group 1 parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950092",
+      "path": ".github/workflows/verify-group1-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:13:20Z",
+      "jobs": [
+        {
+          "id": 118645171104,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 19,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source navigation, action shapes and focus",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare Group 1 against the current static homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [
+              "155.0.8059.84"
+            ],
+            "browserVersionLimit": null
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "problems": [],
+              "observationCount": 2
+            },
+            {
+              "testedWidths": [
+                {
+                  "kind": "source",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                },
+                {
+                  "kind": "published",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                }
+              ],
+              "problems": []
+            },
+            {
+              "problems": [],
+              "observationCount": 48
+            },
+            {
+              "widths": [
+                {
+                  "width": 320,
+                  "pageWidth": 320,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 360,
+                  "pageWidth": 360,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 390,
+                  "pageWidth": 390,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 430,
+                  "pageWidth": 430,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 768,
+                  "pageWidth": 768,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 820,
+                  "pageWidth": 820,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1024,
+                  "pageWidth": 1024,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1280,
+                  "pageWidth": 1280,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1440,
+                  "pageWidth": 1440,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                }
+              ],
+              "problems": [],
+              "actualCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f"
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "checkCount": 22
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false,
+              "sourceWidths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "checkCount": 7
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 19,
+              "problems": []
+            }
+          ],
+          "logSHA256": "d0d8bb03cd1f8d484b725c88fb9ddffaa97b8a71b27f779726f1f088954503a8",
+          "logBytes": 125977,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12267365444,
+          "name": "homepage-group1-parity",
+          "runId": 39427950092,
+          "sizeBytes": 38785006,
+          "sha256": "9fe8e21db5f0a360252fb933836abd048ad0519343af37b15f9e37ce49d42ba8",
+          "createdAt": "2026-10-20T13:13:12Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950092/artifacts/12267365444",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266763455,
+          "name": "homepage-group1-regressions",
+          "runId": 39427950092,
+          "sizeBytes": 101761084,
+          "sha256": "0c7a4e617e8e77dc292e1e48553e029dca529be76e389db400910d712bbf9b66",
+          "createdAt": "2026-10-20T13:13:16Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950092/artifacts/12266763455",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266374571,
+          "name": "homepage-group1-source-preview",
+          "runId": 39427950092,
+          "sizeBytes": 198869,
+          "sha256": "102dae413abf64754f2777f04f68d646bcf5cc801fe08823177b52fc6c4d93b6",
+          "createdAt": "2026-10-20T13:13:17Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950092/artifacts/12266374571",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950074,
+      "name": "Verify React hero and motion parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950074",
+      "path": ".github/workflows/verify-hero-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:14:01Z",
+      "jobs": [
+        {
+          "id": 118645169979,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 13,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare photographs, ticker, cover motion and adjoining sections",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261012.334.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [],
+            "browserVersionLimit": "Current job logs do not print an exact browser version. None is inferred from the runner image."
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "widths": 10,
+              "states": 43,
+              "captures": 136,
+              "problems": [],
+              "qualityFindings": [
+                {
+                  "label": "text-200-320",
+                  "kind": "published",
+                  "clipped": [
+                    {
+                      "text": "01 Your memories",
+                      "left": -28.515625,
+                      "right": 95.46875,
+                      "boxLeft": -19.03125,
+                      "boxRight": 85.96875
+                    },
+                    {
+                      "text": "03 A keepsake for life",
+                      "left": 227.53125,
+                      "right": 345.53125,
+                      "boxLeft": 234.03125,
+                      "boxRight": 339.03125
+                    },
+                    {
+                      "text": "03 A keepsake for life",
+                      "left": 246.734375,
+                      "right": 326.3125,
+                      "boxLeft": 234.03125,
+                      "boxRight": 339.03125
+                    }
+                  ],
+                  "overflow": false,
+                  "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+                },
+                {
+                  "label": "text-200-320",
+                  "kind": "source",
+                  "clipped": [
+                    {
+                      "text": "01 Your memories",
+                      "left": -28.515625,
+                      "right": 95.46875,
+                      "boxLeft": -19.03125,
+                      "boxRight": 85.96875
+                    },
+                    {
+                      "text": "03 A keepsake for life",
+                      "left": 227.53125,
+                      "right": 345.53125,
+                      "boxLeft": 234.03125,
+                      "boxRight": 339.03125
+                    },
+                    {
+                      "text": "03 A keepsake for life",
+                      "left": 246.734375,
+                      "right": 326.3125,
+                      "boxLeft": 234.03125,
+                      "boxRight": 339.03125
+                    }
+                  ],
+                  "overflow": false,
+                  "tickerExcluded": "The ticker intentionally clips its continuous track. Its typography is still compared."
+                }
+              ],
+              "focused": false
+            }
+          ],
+          "logSHA256": "bf16aeeb7140218707bc35db37dc52c54379c79f92fad3bfe52ce90f894ccd1e",
+          "logBytes": 56667,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12267561254,
+          "name": "homepage-hero-source-preview",
+          "runId": 39427950074,
+          "sizeBytes": 198869,
+          "sha256": "cd376e8eca6f6bd779822d53714c6afd0a8e5b17fd79772d15a3d923df5afaf0",
+          "createdAt": "2026-10-20T13:13:57Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950074/artifacts/12267561254",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12267410737,
+          "name": "homepage-hero-parity",
+          "runId": 39427950074,
+          "sizeBytes": 76527111,
+          "sha256": "e77dcb802fa0b306af95eb7e1807198fdbba7a1cb792600aaf912e31cfbb3232",
+          "createdAt": "2026-10-20T13:13:56Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950074/artifacts/12267410737",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950061,
+      "name": "Verify complete React homepage assembly",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950061",
+      "path": ".github/workflows/verify-assembly-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:14:26Z",
+      "jobs": [
+        {
+          "id": 118645171641,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 13,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare complete document positions and combined interactions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [
+              "155.0.8059.84"
+            ],
+            "browserVersionLimit": null
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "completeCheckpoint": true,
+              "stateCoverage": {
+                "completedJourneyAttempts": 10,
+                "requiredJourneyAttempts": 10,
+                "pinnedWidths": [
+                  1024,
+                  1440
+                ],
+                "shortScreens": [
+                  {
+                    "width": 320,
+                    "height": 568
+                  },
+                  {
+                    "width": 820,
+                    "height": 500
+                  },
+                  {
+                    "width": 1440,
+                    "height": 500
+                  }
+                ]
+              },
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 14,
+              "captures": 292,
+              "failedContexts": [],
+              "problems": []
+            }
+          ],
+          "logSHA256": "371d13ced91f00f2aa1802b6b0c700b0284777670566c826f3ad656873bfa8e0",
+          "logBytes": 53345,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12267066438,
+          "name": "homepage-assembly-parity",
+          "runId": 39427950061,
+          "sizeBytes": 52091384,
+          "sha256": "a6f14a4d97ac32e7fc764f10775761bfd757c114afe017dee3977ac566562042",
+          "createdAt": "2026-10-20T13:14:20Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950061/artifacts/12267066438",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266693018,
+          "name": "homepage-assembled-source-preview",
+          "runId": 39427950061,
+          "sizeBytes": 198869,
+          "sha256": "695e64e0ecb123a4b55cdb975924d672d80e44e9a686d0acefb748d412e640bf",
+          "createdAt": "2026-10-20T13:14:22Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950061/artifacts/12266693018",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950087,
+      "name": "Verify React homepage Group 2 parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950087",
+      "path": ".github/workflows/verify-group2-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:14:34Z",
+      "jobs": [
+        {
+          "id": 118645171167,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 20,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source navigation, action shapes and focus",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare Group 2 against the current static homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [
+              "155.0.8059.84"
+            ],
+            "browserVersionLimit": null
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "problems": [],
+              "observationCount": 2
+            },
+            {
+              "testedWidths": [
+                {
+                  "kind": "source",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                },
+                {
+                  "kind": "published",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                }
+              ],
+              "problems": []
+            },
+            {
+              "problems": [],
+              "observationCount": 48
+            },
+            {
+              "widths": [
+                {
+                  "width": 320,
+                  "pageWidth": 320,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 360,
+                  "pageWidth": 360,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 390,
+                  "pageWidth": 390,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 430,
+                  "pageWidth": 430,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 768,
+                  "pageWidth": 768,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 820,
+                  "pageWidth": 820,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1024,
+                  "pageWidth": 1024,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1280,
+                  "pageWidth": 1280,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1440,
+                  "pageWidth": 1440,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                }
+              ],
+              "problems": [],
+              "actualCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f"
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "checkCount": 22
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false,
+              "sourceWidths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "checkCount": 7
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 19,
+              "problems": []
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 18,
+              "problems": [],
+              "qualityFindings": 0,
+              "individualExpandedComparisons": 60
+            }
+          ],
+          "logSHA256": "f077086ed544f4cb2b6308a42a7cfe4b858bad4bc944d59f3a686621a48d828a",
+          "logBytes": 128243,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12266972251,
+          "name": "homepage-group2-source-preview",
+          "runId": 39427950087,
+          "sizeBytes": 198869,
+          "sha256": "aa7d03e1be0243ea039b331f00aa20e6684cddcf0822180060bbe282807a9d23",
+          "createdAt": "2026-10-20T13:14:32Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950087/artifacts/12266972251",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266633146,
+          "name": "homepage-group2-regressions",
+          "runId": 39427950087,
+          "sizeBytes": 140384523,
+          "sha256": "5eefae06b54af38177de7552bc5d66a74e7a20dfb8c915db5d1a14681dea25f3",
+          "createdAt": "2026-10-20T13:14:31Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950087/artifacts/12266633146",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266118779,
+          "name": "homepage-group2-parity",
+          "runId": 39427950087,
+          "sizeBytes": 18065014,
+          "sha256": "0bf8ed0a035e66b3678d327ddb3c0671dcfb83fcb5cb3ab7b2ace9f15bb55690",
+          "createdAt": "2026-10-20T13:14:26Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950087/artifacts/12266118779",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    },
+    {
+      "id": 39427950100,
+      "name": "Verify React shared header and footer parity",
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950100",
+      "path": ".github/workflows/verify-shared-parity.yml",
+      "headSha": "40d1674baa932432f93a4989ea863a2852c110cc",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-20T13:09:00Z",
+      "updatedAt": "2026-10-20T13:16:37Z",
+      "jobs": [
+        {
+          "id": 118645170618,
+          "name": "compare",
+          "status": "completed",
+          "conclusion": "success",
+          "url": null,
+          "startedAt": null,
+          "completedAt": null,
+          "stepCount": 21,
+          "failedSteps": [],
+          "gateSteps": [
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source navigation, action shapes and focus checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 2 reassurance, FAQs and invitation parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare shared components, navigation and currency behaviour",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            }
+          ],
+          "environment": {
+            "runnerVersion": "2.337.0",
+            "os": "Ubuntu 24.04.5 LTS",
+            "runnerImage": "ubuntu-24.04",
+            "runnerImageVersion": "20261018.339.1",
+            "node": "v22.23.3",
+            "npm": "10.9.9",
+            "playwrightCoreDeclaredBySuccessfulInstallStep": "1.56.1",
+            "browserVersionsReportedInLog": [
+              "155.0.8059.84"
+            ],
+            "browserVersionLimit": null
+          },
+          "testCounts": {
+            "tests": 75,
+            "pass": 75,
+            "fail": 0,
+            "cancelled": 0,
+            "skipped": 0,
+            "todo": 0
+          },
+          "logSummaries": [
+            {
+              "problems": [],
+              "observationCount": 2
+            },
+            {
+              "testedWidths": [
+                {
+                  "kind": "source",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                },
+                {
+                  "kind": "published",
+                  "widths": [
+                    320,
+                    360,
+                    390,
+                    430,
+                    768,
+                    820,
+                    1024,
+                    1280,
+                    1440
+                  ]
+                }
+              ],
+              "problems": []
+            },
+            {
+              "problems": [],
+              "observationCount": 48
+            },
+            {
+              "widths": [
+                {
+                  "width": 320,
+                  "pageWidth": 320,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 360,
+                  "pageWidth": 360,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 0,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 390,
+                  "pageWidth": 390,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 430,
+                  "pageWidth": 430,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "17px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 768,
+                  "pageWidth": 768,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 820,
+                  "pageWidth": 820,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1024,
+                  "pageWidth": 1024,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1280,
+                  "pageWidth": 1280,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                },
+                {
+                  "width": 1440,
+                  "pageWidth": 1440,
+                  "controls": [
+                    {
+                      "text": "Start your story",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "See inside",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore this book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Choose a book",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Try answering a question",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore gifting",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Explore the books",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "",
+                      "radius": "6px"
+                    },
+                    {
+                      "text": "Subscribe",
+                      "radius": "6px"
+                    }
+                  ],
+                  "headerHeight": 45,
+                  "covers": 14,
+                  "cards": 2,
+                  "focus": {
+                    "visible": true,
+                    "radius": "20px",
+                    "outline": "3px"
+                  }
+                }
+              ],
+              "problems": [],
+              "actualCssSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f"
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "checkCount": 22
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false
+            },
+            {
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "problems": [],
+              "live": false,
+              "sourceWidths": [
+                320,
+                360,
+                390,
+                430,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "checkCount": 7
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 19,
+              "problems": []
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "testedWidths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 18,
+              "problems": [],
+              "qualityFindings": 0,
+              "individualExpandedComparisons": 60
+            },
+            {
+              "browser": "155.0.8059.84",
+              "completeWidthSet": true,
+              "widths": [
+                320,
+                360,
+                390,
+                430,
+                600,
+                768,
+                820,
+                1024,
+                1280,
+                1440
+              ],
+              "states": 41,
+              "captures": 132,
+              "problems": [],
+              "qualityFindings": [
+                {
+                  "id": "shared-enlarged-text-320",
+                  "status": "Inherited published limitation retained for a separately approved visible refinement.",
+                  "viewport": {
+                    "width": 320,
+                    "height": 568
+                  },
+                  "published": {
+                    "documentOverflow": false,
+                    "clippedText": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "clippedLines": 1
+                      }
+                    ],
+                    "textOutsideViewport": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "outsideLines": 1
+                      }
+                    ]
+                  },
+                  "source": {
+                    "documentOverflow": false,
+                    "clippedText": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "clippedLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "clippedLines": 1
+                      }
+                    ],
+                    "textOutsideViewport": [
+                      {
+                        "group": "ending",
+                        "text": "See inside",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Gift a book",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Resources",
+                        "outsideLines": 1
+                      },
+                      {
+                        "group": "ending",
+                        "text": "Our story",
+                        "outsideLines": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "shared-enlarged-text-1440",
+                  "status": "Inherited published limitation retained for a separately approved visible refinement.",
+                  "viewport": {
+                    "width": 1440,
+                    "height": 900
+                  },
+                  "published": {
+                    "documentOverflow": true,
+                    "clippedText": [],
+                    "textOutsideViewport": []
+                  },
+                  "source": {
+                    "documentOverflow": true,
+                    "clippedText": [],
+                    "textOutsideViewport": []
+                  }
+                }
+              ],
+              "inheritedNavigationFindings": 1
+            }
+          ],
+          "logSHA256": "13acc6f089b8ab65f1b37819ee816780c1c70776a25d3d97dcb66e5f6638b19c",
+          "logBytes": 130558,
+          "protectedGuardPass": true,
+          "checkoutShaObservedInLog": true,
+          "builtAssetsObservedInLog": [
+            "assets/index-C6syLBIa.js",
+            "assets/index-NU-3HqjY.css"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12266987518,
+          "name": "homepage-shared-parity",
+          "runId": 39427950100,
+          "sizeBytes": 42514185,
+          "sha256": "a29fc658cb0926fbc764d7f0d19cd91eb7842cc3dba80088686fd9e93e4953e2",
+          "createdAt": "2026-10-20T13:16:27Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950100/artifacts/12266987518",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266488696,
+          "name": "homepage-shared-regressions",
+          "runId": 39427950100,
+          "sizeBytes": 157921132,
+          "sha256": "7cbc035f78e2fae8adec704faf3fe7c2df95c4f30e83e832449f46fef928068d",
+          "createdAt": "2026-10-20T13:16:33Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950100/artifacts/12266488696",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        },
+        {
+          "id": 12266303797,
+          "name": "homepage-shared-source-preview",
+          "runId": 39427950100,
+          "sizeBytes": 198869,
+          "sha256": "b2d2b7bab13e7eca149dcb8fe68308f6231cd1b18ddd0078a0c83282ed33a796",
+          "createdAt": "2026-10-20T13:16:34Z",
+          "expiresAt": "2027-01-18T13:09:01Z",
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39427950100/artifacts/12266303797",
+          "downloaded": false,
+          "digestLocallyVerified": false
+        }
+      ]
+    }
+  ],
+  "runtimeIdentity": {
+    "record": "closing-runtime-identity-verification.json",
+    "sha256": "e9f2928c28ee02c40fa575d507866038c2364548932f62f077ba792fe0d32116",
+    "verifiedRuntimeCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+    "unchangedInputs": 101,
+    "priorByteVerifiedBuildFiles": 16,
+    "newCandidateArtifactDownloadedByThisAudit": false,
+    "separateCurrentBuildOwner": "final-writing-verification.json (crosslinked in closing-runtime-identity-verification.json)"
+  },
+  "evidenceReuse": {
+    "policy": "Reuse unchanged identified historical details while keeping fresh CI outcomes and actual current environments separate. An unreported browser version is not presumed equal.",
+    "previousRetainedRecord": {
+      "path": "final-retained-verification.json",
+      "sha256": "1b040d33f0f7bc2031933df0fc2839916f973b195618b87a46e3ce0998ed181f"
+    },
+    "detailedRetainedRecord": {
+      "path": "retained-verification.json",
+      "sha256": "07adab450bed1029eece52ab6836ebfba75201c8478ee7f80117615b669ae57e"
+    },
+    "detailedAssemblyRecord": {
+      "path": "assembly-verification.json",
+      "sha256": "8ca908882a4f130cb833c7a09f9a3d772d0864e154eb6b8b20e207c865c3d27d"
+    },
+    "inputVerification": {
+      "reports": [
+        {
+          "report": "/tmp/group8-third-artifact-12246196136/package2-live/report.json",
+          "reportSHA256": "6d5e623c823544dd3c2a0a2ce0c3f3aeb83d8e3b2b2d0d71dc5b9e1f7ccee999",
+          "matchesRecordedReport": true,
+          "runId": 39382384273,
+          "artifactId": 12246196136,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246196136/package2/report.json",
+          "reportSHA256": "3ce6f321924ff0846e2f40c4243592d2ae7f861ac88084cc80ec062d0e397e6f",
+          "matchesRecordedReport": true,
+          "runId": 39382384273,
+          "artifactId": 12246196136,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12245881614/source-reference-qa.json",
+          "reportSHA256": "e8ac32b80b4e34d53f52961252631af55004bdfd626a9a901ff493aed9004aef",
+          "matchesRecordedReport": true,
+          "runId": 39382384528,
+          "artifactId": 12245881614,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": null,
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12245881614/shape-foundation/report.json",
+          "reportSHA256": "fe622339d476a60f23f537dd28f33f7959a937265f3197a87c1f46b545971f91",
+          "matchesRecordedReport": true,
+          "runId": 39382384528,
+          "artifactId": 12245881614,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": null,
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246246042/footer-type/report.json",
+          "reportSHA256": "483f4360c17bb6a047078c28f963fc7f8dfbe77c564ffafbc163f50ab88cd8e4",
+          "matchesRecordedReport": true,
+          "runId": 39382384228,
+          "artifactId": 12246246042,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246246042/footer-type-live/report.json",
+          "reportSHA256": "5a3f9c460708731ab1a3ff9eaf4c17771c523f6741e7eef48461ca9ea7cd89fa",
+          "matchesRecordedReport": true,
+          "runId": 39382384228,
+          "artifactId": 12246246042,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246405916/report.json",
+          "reportSHA256": "dfc8d84ca4207a237f3a2fad293ee7fc28a55d696900beb066ebae1a8567dd4d",
+          "matchesRecordedReport": true,
+          "runId": 39382384392,
+          "artifactId": 12246405916,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceHashes": 53,
+            "harnessHashes": 3,
+            "protectedHashes": 4
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246481161/report.json",
+          "reportSHA256": "893e043d44f1ee331568e78c43bbb6e6402dfafbd1f7f0c5846d6cab60b7d00a",
+          "matchesRecordedReport": true,
+          "runId": 39382384450,
+          "artifactId": 12246481161,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 66,
+            "harnessSha256": 1
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246481161/physical/report.json",
+          "reportSHA256": "a5be61241e53f0829be76ccf3d662cc19a09715e8dce280b25df0169c575c217",
+          "matchesRecordedReport": true,
+          "runId": 39382384450,
+          "artifactId": 12246481161,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceHashes": 53,
+            "harnessHashes": 3,
+            "protectedHashes": 5
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246325826/report.json",
+          "reportSHA256": "078dd48f5a9f493f32aa7963c769b3958f74be15bc494a7f4f86690c1bac71df",
+          "matchesRecordedReport": true,
+          "runId": 39382384378,
+          "artifactId": 12246325826,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 8,
+            "harnessFiles": 1,
+            "publishedFiles": 2
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12245712548/report.json",
+          "reportSHA256": "f3ca0348cbce5bbdbde41f7f5a5a298d99cf703ef2cc88fb407ca117d6ac38f2",
+          "matchesRecordedReport": true,
+          "runId": 39382384344,
+          "artifactId": 12245712548,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceHashes": 53,
+            "harnessHashes": 3,
+            "protectedHashes": 10
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246411476/report.json",
+          "reportSHA256": "c9865bdb4b587df780d536a406d832041f26ce34651c3a045a4b10bf3a009952",
+          "matchesRecordedReport": true,
+          "runId": 39382384401,
+          "artifactId": 12246411476,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 7,
+            "publishedFiles": 2,
+            "harnessSha256": 1
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246406902/report.json",
+          "reportSHA256": "ebb5233d603feef8ac1903d2968c728aa75bca63e926a7d2b0b9833041d91073",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246406902,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 53,
+            "publishedFiles": 5,
+            "harnessSha256": 1,
+            "menuCaptureHelperSha256": 1,
+            "sourceBuildFiles": 3
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/qa/homepage-qa-report.json",
+          "reportSHA256": "0ae81551477ce207ebb3742ffe22457292798517dcad2c794ab7aaaa2911c395",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/qa/footer-type/report.json",
+          "reportSHA256": "483f4360c17bb6a047078c28f963fc7f8dfbe77c564ffafbc163f50ab88cd8e4",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/qa/editorial-links/report.json",
+          "reportSHA256": "77a10920c91381b40400a9168866b9f9998d2d96bd8c5ca0404fa2b729637a5a",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/qa/package1-live/report.json",
+          "reportSHA256": "33f6b3748096c676db9918ae5ca7ad410ee31fb7d30b70e3925568ee6c19bf63",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/qa/package2/report.json",
+          "reportSHA256": "16d1f18a583764014148b4eb7c7b3f3cd3a725477acb912263c9d0912bcdd3c7",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/source-reference-qa.json",
+          "reportSHA256": "75db3ab225822a1d47df3164fed1236ad9aec7b3431cae86a10b973371bb3207",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": null,
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/shape-foundation/report.json",
+          "reportSHA256": "4436d2e11ffc471e86a3d9892a73f629690dea9d34319d808a13ee528accd3fc",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": null,
+          "identityCounts": {}
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/group1/report.json",
+          "reportSHA256": "2620164e265d705114f51598d43c5054ca5e59dd7dff7ea255722fc8d327e86e",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 8,
+            "harnessFiles": 1,
+            "publishedFiles": 2
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246257403/frontend/qa/group2/report.json",
+          "reportSHA256": "30a6b9d8dbe0a9a37ba205c99a8863c85045becb5fdd33610046f560db7d1850",
+          "matchesRecordedReport": true,
+          "runId": 39382384554,
+          "artifactId": 12246257403,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 7,
+            "publishedFiles": 2,
+            "harnessSha256": 1
+          }
+        },
+        {
+          "report": "/tmp/group8-third-artifact-12246655988/report.json",
+          "reportSHA256": "f75168f4938e75255ce9c9e0f294a54e85d8868752cf88107d9cbd2604382ea6",
+          "matchesRecordedReport": true,
+          "runId": 39382384299,
+          "artifactId": 12246655988,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceFiles": 53,
+            "packageFiles": 2,
+            "publishedFiles": 5,
+            "harnessSha256": 1,
+            "sourceBuildFiles": 3
+          }
+        },
+        {
+          "report": "/tmp/assembly-third-39382384349/report.json",
+          "reportSHA256": "cd7be854f619acc702d29f1927855c18cfa3c121c5af5846df3df84de19fc7a9",
+          "matchesRecordedReport": true,
+          "runId": 39382384349,
+          "artifactId": 12246655390,
+          "containsChangedWritingHarnessPath": false,
+          "sourceEvidenceCommit": "a2d1ee14a793581a08a0e11dd64002e9360eaf66",
+          "identityCounts": {
+            "sourceHashes": 57,
+            "harnessHashes": 2,
+            "protectedHashes": 5
+          }
+        }
+      ],
+      "committedRelevantChanges": [
+        ".github/workflows/diagnose-writing-preparation.yml",
+        ".github/workflows/diagnose-writing-raster.yml",
+        ".github/workflows/verify-writing-parity.yml",
+        "frontend/scripts/verify-writing-parity.mjs"
+      ],
+      "errors": []
+    },
+    "environmentComparisons": [
+      {
+        "workflow": "Validate editable StoriLeaf public website source",
+        "job": "typecheck-and-build",
+        "priorRun": 39382384528,
+        "candidateRun": 39427950216,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261018.339.1",
+            "candidate": "20261012.334.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify final footer typography",
+        "job": "verify",
+        "priorRun": 39382384228,
+        "candidateRun": 39427950304,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React six-book discovery parity",
+        "job": "compare",
+        "priorRun": 39382384299,
+        "candidateRun": 39427950105,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [
+          "155.0.8059.84"
+        ],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "pages build and deployment",
+        "job": "build",
+        "priorRun": 39382383859,
+        "candidateRun": 39427948994,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "pages build and deployment",
+        "job": "report-build-status",
+        "priorRun": 39382383859,
+        "candidateRun": 39427948994,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261018.339.1",
+            "candidate": "20261012.334.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "pages build and deployment",
+        "job": "deploy",
+        "priorRun": 39382383859,
+        "candidateRun": 39427948994,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify Package 2 foundations",
+        "job": "review",
+        "priorRun": 39382384273,
+        "candidateRun": 39427950184,
+        "runnerEnvironmentDifferences": {},
+        "priorRecordedBrowserVersions": [],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React How it works parity",
+        "job": "compare",
+        "priorRun": 39382384392,
+        "candidateRun": 39427950119,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React media parity",
+        "job": "compare",
+        "priorRun": 39382384450,
+        "candidateRun": 39427950218,
+        "runnerEnvironmentDifferences": {},
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React homepage Group 1 parity",
+        "job": "compare",
+        "priorRun": 39382384378,
+        "candidateRun": 39427950092,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [
+          "155.0.8059.84"
+        ],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React hero and motion parity",
+        "job": "compare",
+        "priorRun": 39382384344,
+        "candidateRun": 39427950074,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261018.339.1",
+            "candidate": "20261012.334.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.84"
+        ],
+        "candidateBrowserVersionsReportedInLog": [],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify complete React homepage assembly",
+        "job": "compare",
+        "priorRun": 39382384349,
+        "candidateRun": 39427950061,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [
+          "155.0.8059.84"
+        ],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React homepage Group 2 parity",
+        "job": "compare",
+        "priorRun": 39382384401,
+        "candidateRun": 39427950087,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [
+          "155.0.8059.84"
+        ],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      },
+      {
+        "workflow": "Verify React shared header and footer parity",
+        "job": "compare",
+        "priorRun": 39382384554,
+        "candidateRun": 39427950100,
+        "runnerEnvironmentDifferences": {
+          "runnerImageVersion": {
+            "prior": "20261012.334.1",
+            "candidate": "20261018.339.1"
+          }
+        },
+        "priorRecordedBrowserVersions": [
+          "155.0.8059.39"
+        ],
+        "candidateBrowserVersionsReportedInLog": [
+          "155.0.8059.84"
+        ],
+        "exactBrowserMatchEstablished": false,
+        "limit": "Historical captures remain identified as historical. Current CI outcome is fresh; no new capture bundle was downloaded or visually inspected."
+      }
+    ],
+    "downloadedCurrentArtifacts": [],
+    "notRepeated": [
+      "No implementation, build or browser test was run locally. All current workflows executed automatically in CI.",
+      "This retained audit did not download a new retained/assembly screenshot bundle, raw report or source preview artifact. Current artifact digests are GitHub metadata, not independently rehashed downloads.",
+      "Previously verified a2 detailed captures and 16-file preview bytes remain historical evidence. They are not relabelled as captures or byte checks from 40d."
+    ]
+  },
+  "knownOpenQualityFindings": [
+    {
+      "subject": "Gifting",
+      "detail": "320px targeted 200 percent text enlargement still clips inherited heading and paragraph lines."
+    },
+    {
+      "subject": "Shared shell",
+      "detail": "Inherited 320px footer/currency clipping and 1440px desktop navigation overflow under targeted enlargement remain recorded."
+    },
+    {
+      "subject": "Discovery",
+      "detail": "Relationship Memoir and Celebrating Occasions tab labels extend outside their tabs at 320px and 1440px under targeted enlargement."
+    },
+    {
+      "subject": "Hero",
+      "detail": "Inherited progression labels clip at 320px under targeted 200 percent text enlargement; both protected and source measurements match."
+    }
+  ],
+  "separateProtectedPricingFindings": "The three known export mismatches remain unresolved; these runs do not repair or accept them.",
+  "separateWriting": {
+    "id": 39427950086,
+    "status": "completed",
+    "conclusion": "success",
+    "owner": "final-writing-verification.json",
+    "note": "This record reports the workflow outcome only. Its full artifact verification is separately owned and is not inferred here."
+  },
+  "notTriggered": {
+    "workflow": ".github/workflows/review-editorial-links.yml",
+    "reason": "Candidate changes do not match workflow path filter; its comparison is retained explicitly in the shared workflow."
+  },
+  "limitations": [
+    "Current outcomes, counts and reported environment values come from exact run/job/step metadata and decoded job logs.",
+    "Exact browser versions are recorded only where the current logs report them. No version is inferred from a runner image.",
+    "Browser/runner differences or unavailable exact versions limit historical-capture reuse claims; current CI pass evidence stays separate.",
+    "Source preview filenames reported by current CI match the earlier build names. This retained audit did not download or compare current artifact bytes; final-writing-verification.json separately owns the fresh 40d preview archive and its 16 verified files.",
+    "This retained record alone does not close Group 8, Package 3, Package 4, founder acceptance or React publication."
+  ]
+}
