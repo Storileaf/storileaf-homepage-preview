@@ -1,6 +1,6 @@
 # Public website content creation and approval gate
 
-Updated 20 October 2026 for authorised Package 3 Groups 1 through 7. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
+Updated 20 October 2026 for authorised Package 3 Groups 1 through 8. Required for ALL new and revised public text, navigation labels, image captions, headings, FAQs, metadata, forms and conversion copy. A technical check cannot replace founder editorial approval.
 
 ## Product fact sources
 
@@ -27,7 +27,7 @@ Where facts conflict, identify the discrepancy. Never invent a capability, price
 
 Use existing_verified for proven existing wording, proposed for suggestions, founder_approved for explicitly accepted final text, implemented_verified for built and tested material, superseded for historical alternatives. A build or passing browser test never grants editorial approval.
 
-The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json, process.json and hero.json extensions with source references and flags for whether a record may be published. All feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
+The editable React source uses frontend/content/ledger.json and the bounded media-ledger.json, process.json, hero.json and writing.json extensions with source references and flags for whether a record may be published. All feed the same runtime lookup and content gate. The automated check rejects marked-for-publication text without an approved state and a provenance entry. It cannot determine whether a product claim is true. Human source review is still mandatory.
 
 ## Language and claims
 
@@ -120,3 +120,16 @@ Cover records retain `covers/cover-01.jpg` through `cover-07.jpg`, 240 by 240 di
 Explore the books and See inside retain the canonical published destinations `https://storileaf.github.io/storileaf-homepage-preview/#books` and `https://storileaf.github.io/storileaf-homepage-preview/#samples`. They may bind to the already rendered unique local Books and Samples sections without adding a query, changing the destination or introducing current page semantics on section links. No new route is created by Group 7.
 
 The [Group 7 review](PACKAGE_3_GROUP_7_REVIEW.md) owns rendered and functional evidence and its checkpoint result; the public design system owns geometry and motion rules. Neither source implementation nor this inherited content allowance constitutes founder rendered acceptance, a new exact wording approval or permission to publish the isolated React page.
+
+
+## Group 8 writing and practice content
+
+The authorised reconstruction adds exactly 25 inherited text records and one decorative logo identity in frontend/content/writing.json. The approval kind is inherited_published_writing, migration group 8, recorded on 20 October 2026 against protected baseline e9550069d91b5a9b48ade43fcfb0a71bbed2875b. This records permission to retain the published material. It is not a new exact wording approval, a standalone practice page decision or authority to change the customer application.
+
+The explicit allowlist in frontend/scripts/inherited-writing-content.mjs covers the heading and emphasis, introduction, editor labels and four chapter names, static sample answer, shared question and helper, Try answering a question, privacy note, input label and placeholder, singular and plural word count forms, Clear text and close controls. A matching prefix does not authorise another record. The illustrated Continue label remains noninteractive.
+
+The parser reads only the named device-showcase.tsx region, EditorScreen and DeviceShowcase functions in the protected assets/routes-DrwDv2x2.js bundle and the actual logo binding in the protected homepage data region. It treats source as inert tokens and never executes compiled JavaScript or templates. Exact membership, full strings, emphasis, repeated question and helper occurrences, source fragments and the existing input attributes must agree. Mutation checks reject extra records, changed wording or question occurrences, altered limits or privacy references, invented approval dates and changed logo identity.
+
+The logo retains https://storileaf.com/logo.png, empty alternative text, 80 by 20 declared dimensions and lazy loading inside the decorative device illustration. Its rights status remains pending_final_production_check. No new photography or copied cover assets are introduced. The standalone source document title retains the exact protected homepage title while its existing noindex directive remains in place.
+
+Preserve the existing privacy wording and unsaved behaviour. The temporary dialog clears on close and does not save, submit or attach an answer to an account. Wider device labels do not establish real application functionality. The [Group 8 review](PACKAGE_3_GROUP_8_REVIEW.md) owns browser and assembly evidence, including the inherited dialog description issue. The design system owns retained geometry and interaction styling. Founder rendered acceptance and React publication remain separate gates.

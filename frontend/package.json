@@ -15,7 +15,9 @@
     "verify:group2": "node scripts/verify-group2-parity.mjs",
     "verify:shared": "node scripts/verify-shared-parity.mjs",
     "verify:discovery": "node scripts/verify-discovery-parity.mjs",
-    "verify:hero": "node scripts/verify-hero-parity.mjs"
+    "verify:hero": "node scripts/verify-hero-parity.mjs",
+    "verify:writing": "node scripts/verify-writing-parity.mjs",
+    "verify:assembly": "node scripts/verify-assembly-parity.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.2.0",

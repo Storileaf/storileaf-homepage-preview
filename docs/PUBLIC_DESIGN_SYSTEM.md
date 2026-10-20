@@ -1,6 +1,6 @@
 # StoriLeaf public website design system
 
-Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 7. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
+Version 2.1 foundation. Established 18 October 2026, consolidated in Package 2. Updated 20 October 2026 for Package 3 source migration Groups 1 through 8. This is the ACTIVE style authority for the new PUBLIC WEBSITE ONLY. The private customer/account and admin systems will be considered later, with smaller, denser component rules.
 
 ## Philosophy
 
@@ -311,3 +311,24 @@ Keep the motion systems independent. General playback pauses for reduced motion,
 | Reduced motion | Disable autoplay, orbit animation, image transitions and breathing. Keep manual photograph controls usable and the ticker visible but static. The decorative orbit opacity becomes .28, including on narrow screens. Honour live preference changes and preserve listener, observer and timer cleanup. |
 
 These rules reconstruct the current published settings. They do not finalise deferred orbit aesthetics or motion preferences, accept inherited accessibility limitations, grant founder rendered acceptance or authorise replacing the published homepage. Complete page assembly and Package 4 remain separate work.
+
+
+## Group 8 writing composition and practice preservation
+
+WritingShowcase follows HowItWorks and precedes Gifting. It reuses Container, Heading and Text with scoped rules in frontend/src/styles/homepage-writing.css. PracticeDialog preserves the temporary unsaved question interaction. The [Group 8 review](PACKAGE_3_GROUP_8_REVIEW.md) owns dedicated and assembled verification. Exact words and the decorative logo belong in writing.json and the content gate.
+
+Retain the existing laptop, tablet and phone composition on wider screens, and the separate question and helper card on phones. Device answers are static illustration content with a small cursor mark. Their Continue labels are decorative, not working product controls. Do not invent an automatic typing effect, persistence or customer application behaviour.
+
+| Element | Retained rule |
+| --- | --- |
+| Section | 112px top and 118px bottom padding, becoming 84px and 96px at 720px and below. Preserve the published paper and sage field and device floor. |
+| Heading and lead | Canonical feature heading with 430 weight teal italic emphasis. Lead 16px with 1.75 leading, becoming 15px at 720px and below. Keep the original centred text measures and wrapping. |
+| Device stage | Maximum 1050px, aspect ratio 2, 56px top margin. Preserve the laptop 70%, tablet 27% and phone 15% widths, original positions, perspective, corners, shadows and container relative illustration type. These are illustration dimensions, not interface typography defaults. |
+| Narrow layout | At720px and below hide the multi device composition and show the existing single question view. The additional bordered white card treatment applies at 480px and below. Preserve its existing text, spacing and height. |
+| Entrance | Retain the one time IntersectionObserver threshold .12, original entrance definitions and delays, and reduced motion treatment. The unsaved dialog is independent of this illustration entrance. |
+| Practice dialog | Width min(660px, viewport minus 32px), maximum 85dvh capped at 850px, padding 30px/45px/35px. At480px and below use 20px/24px/27px padding and 86dvh maximum. Short desktop screens retain 90dvh. Keep native internal overflow scrolling, overlay and existing corners. |
+| Dialog text | Question 33px, becoming 30px at 480px and below. Textarea 20px, becoming 18px at 480px and below. Preserve the 6 row field, 180px minimum height then 150px on phones, original line heights and resize behaviour. |
+| Controls | Keep the current outlined trigger, filled Close action, top close icon and Clear text control. Preserve their typography, hover, focus, dimensions and canonical 6px action corners. Do not turn illustration labels into buttons. |
+| Practice behaviour | Maximum 2000 characters. Count words separated by whitespace, retain singular and plural labels, clear on every dismissal, restore trigger focus and release body scroll. No submission, success message, storage or account association. |
+
+Preserve the current description relationship for migration comparison and record its inherited missing dialog description target in the Group 8 review. Matching that defect is not accessibility acceptance. A separately reviewed repair must address it before the final release gate. The original reassurance, hero motion and temporary media decisions remain unchanged.

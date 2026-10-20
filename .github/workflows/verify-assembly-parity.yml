@@ -1,0 +1,57 @@
+name: Verify complete React homepage assembly
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend/**'
+      - '.github/workflows/verify-assembly-parity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source and preserve the published runtime
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund && npm run check && npm run build
+      - name: Install isolated browser harness
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1
+      - name: Serve baseline and source
+        run: |
+          mkdir -p "$RUNNER_TEMP/assembly-baseline/storileaf-homepage-preview"
+          cp -a index.html 404.html assets covers gallery pricing "$RUNNER_TEMP/assembly-baseline/storileaf-homepage-preview/"
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/assembly-baseline" > "$RUNNER_TEMP/assembly-baseline.log" 2>&1 &
+          python3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > "$RUNNER_TEMP/assembly-source.log" 2>&1 &
+          sleep 2
+      - name: Compare complete document positions and combined interactions
+        working-directory: frontend
+        run: node scripts/verify-assembly-parity.mjs
+      - name: Confirm protected runtime
+        if: always()
+        working-directory: frontend
+        run: npm run guard:published
+      - name: Attach complete assembly evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-assembly-parity
+          path: frontend/qa/assembly/
+          if-no-files-found: warn
+      - name: Attach isolated assembled homepage
+        uses: actions/upload-artifact@v4
+        with:
+          name: homepage-assembled-source-preview
+          path: frontend/dist/
+          if-no-files-found: error

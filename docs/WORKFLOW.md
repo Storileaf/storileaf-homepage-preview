@@ -6,7 +6,7 @@ This is the authoritative public development workflow. It replaces the operation
 
 ## Workspace and protection
 
-Public Storileaf/storileaf-homepage-preview main is the frontend workspace. GitHub Pages serves root index.html, 404.html, assets, covers, gallery and pricing. The separate frontend directory contains editable React, TypeScript and Vite source, building into frontend/dist. It remains incomplete and must not replace the published homepage.
+Public Storileaf/storileaf-homepage-preview main is the frontend workspace. GitHub Pages serves root index.html, 404.html, assets, covers, gallery and pricing. The separate frontend directory contains editable React, TypeScript and Vite source, building into frontend/dist. It must not replace the published homepage before complete parity, founder rendered acceptance and explicit publication approval. The component inventory and current batch review own its actual implementation and verification status.
 
 Private Storileaf/storiYoceFj6IRAleaf main is read only and authoritative for product capabilities, packages, pricing, commercial terms and customer application behaviour. Website decisions and handoff pointers are maintained on design/storileaf-website-ux. The repositories do not synchronise automatically. Use the connected GitHub app and Storileaf account. Inspect current heads before editing and reject stale writes rather than overwriting newer work.
 

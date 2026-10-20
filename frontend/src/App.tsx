@@ -2,6 +2,8 @@ import { HeroSection } from './sections/HeroSection'
 import './styles/homepage-hero.css'
 import { HowItWorks } from './sections/HowItWorks'
 import './styles/homepage-process.css'
+import { WritingShowcase } from './sections/WritingShowcase'
+import './styles/homepage-writing.css'
 import { PhysicalBookPresentation } from './sections/PhysicalBookPresentation'
 import { NewsletterFooter } from './components/NewsletterFooter'
 import { SiteHeader } from './components/SiteHeader'
@@ -20,8 +22,8 @@ import './styles/homepage-editorial.css'
 import './styles/homepage-questions.css'
 import './styles/homepage-discovery.css'
 
-// This is a source-driven component reference, NOT the full published homepage.
-// Do not deploy this in place of the current GitHub Pages root until parity.
+// The complete source composition remains isolated from the published export.
+// Publication requires full verification and explicit founder approval.
 export function App() {
   const [currency, setCurrency] = usePreviewCurrency()
   // Only migrated, uniquely rendered targets can use local native anchors.
@@ -35,6 +37,7 @@ export function App() {
       <BookDiscovery />
       <BookGallery><PhysicalBookPresentation /></BookGallery>
       <HowItWorks booksHref={routes.books} />
+      <WritingShowcase />
       <GiftingSection />
       <ResourcesSection />
       <FaqSection booksHref={routes.books} />

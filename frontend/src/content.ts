@@ -2,9 +2,10 @@ import ledger from '../content/ledger.json'
 import mediaLedger from '../content/media-ledger.json'
 import processContent from '../content/process.json'
 import heroContent from '../content/hero.json'
+import writingContent from '../content/writing.json'
 
 type RecordValue = { id: string; copy: string; status: string; public: boolean; source: string; href?: string | null; destination_state?: string }
-const entries = new Map<string, RecordValue>([...ledger.records, ...processContent.records.map(record => ({...processContent.provenance, ...record})), ...heroContent.records.map(record => ({...heroContent.provenance, ...record})), ...mediaLedger.records.map(record => ({...mediaLedger.provenance, ...record}))].map(record => [record.id, record]))
+const entries = new Map<string, RecordValue>([...ledger.records, ...processContent.records.map(record => ({...processContent.provenance, ...record})), ...heroContent.records.map(record => ({...heroContent.provenance, ...record})), ...writingContent.records.map(record => ({...writingContent.provenance, ...record})), ...mediaLedger.records.map(record => ({...mediaLedger.provenance, ...record}))].map(record => [record.id, record]))
 
 export function approvedCopy(id: string): string {
   const item = entries.get(id)

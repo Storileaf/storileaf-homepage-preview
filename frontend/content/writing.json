@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "provenance": {
+    "approval_kind": "inherited_published_writing",
+    "migration_group": 8,
+    "baseline_commit": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "source": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/routes-DrwDv2x2.js",
+    "approval_reference": "https://github.com/Storileaf/storileaf-homepage-preview/blob/e9550069d91b5a9b48ade43fcfb0a71bbed2875b/assets/routes-DrwDv2x2.js",
+    "migration_recorded_on": "2026-10-20",
+    "status": "founder_approved",
+    "public": true,
+    "approval_note": "The founder authorised unchanged Writing showcase and unsaved practice dialog reconstruction on 20 October 2026. Exact published wording is retained under inherited provenance. No original wording approval date, product capability, persistence, final visual acceptance or publication approval is inferred."
+  },
+  "records": [
+    {
+      "id": "home.writing.title",
+      "copy": "Write a little. Come back when you are ready.",
+      "emphasis": "Come back when you are ready.",
+      "source_fragment": "DeviceShowcase h2#devices-title children"
+    },
+    {
+      "id": "home.writing.intro",
+      "copy": "Each question gives you somewhere to start. Add a few lines now, return later, and build the story in manageable pieces.",
+      "source_fragment": "DeviceShowcase p.section-lead children"
+    },
+    {
+      "id": "home.writing.editor.avatar",
+      "copy": "S",
+      "source_fragment": "EditorScreen .editor-avatar children"
+    },
+    {
+      "id": "home.writing.editor.title",
+      "copy": "Your life story",
+      "source_fragment": "EditorScreen .editor-sidebar strong children"
+    },
+    {
+      "id": "home.writing.editor.chapters",
+      "copy": "Your chapters",
+      "source_fragment": "EditorScreen .screen-sidebar-label children"
+    },
+    {
+      "id": "home.writing.editor.chapter.0",
+      "copy": "The early years",
+      "source_fragment": "EditorScreen .screen-active-chapter children"
+    },
+    {
+      "id": "home.writing.editor.chapter.1",
+      "copy": "People and places",
+      "source_fragment": "EditorScreen .editor-sidebar unclassified span[0] children"
+    },
+    {
+      "id": "home.writing.editor.chapter.2",
+      "copy": "Work and adventures",
+      "source_fragment": "EditorScreen .editor-sidebar unclassified span[1] children"
+    },
+    {
+      "id": "home.writing.editor.chapter.3",
+      "copy": "What matters to you",
+      "source_fragment": "EditorScreen .editor-sidebar unclassified span[2] children"
+    },
+    {
+      "id": "home.writing.editor.aside",
+      "copy": "A little at a time.",
+      "source_fragment": "EditorScreen .screen-sidebar-bottom children"
+    },
+    {
+      "id": "home.writing.editor.draft",
+      "copy": "Draft",
+      "source_fragment": "EditorScreen .screen-draft children"
+    },
+    {
+      "id": "home.writing.question",
+      "copy": "What do you remember about the home you grew up in?",
+      "source_fragment": "EditorScreen h3; DeviceShowcase mobile h3 and DialogTitle children"
+    },
+    {
+      "id": "home.writing.helper",
+      "copy": "Think about a room, a sound or someone who was always there.",
+      "source_fragment": "EditorScreen p.screen-helper and DeviceShowcase mobile p children"
+    },
+    {
+      "id": "home.writing.editor.answer",
+      "copy": "The kitchen was the smallest room in our home. Somehow, it was where everyone ended up.",
+      "source_fragment": "EditorScreen .screen-answer first child"
+    },
+    {
+      "id": "home.writing.editor.reminder",
+      "copy": "Your words, your story.",
+      "source_fragment": "EditorScreen .screen-bottom first span children"
+    },
+    {
+      "id": "home.writing.editor.continue",
+      "copy": "Continue",
+      "source_fragment": "EditorScreen .screen-next first child"
+    },
+    {
+      "id": "home.writing.try",
+      "copy": "Try answering a question",
+      "source_fragment": "DeviceShowcase button[data-testid=try-question] children"
+    },
+    {
+      "id": "home.writing.close_label",
+      "copy": "Close writing example",
+      "source_fragment": "DeviceShowcase icon DialogClose aria-label"
+    },
+    {
+      "id": "home.writing.privacy",
+      "copy": "This is a practice space. What you write here isn't saved.",
+      "source_fragment": "DeviceShowcase DialogDescription#demo-privacy children"
+    },
+    {
+      "id": "home.writing.answer_label",
+      "copy": "Your example answer",
+      "source_fragment": "DeviceShowcase label.demo-label children"
+    },
+    {
+      "id": "home.writing.placeholder",
+      "copy": "A familiar room, a sound, a person who was always there…",
+      "source_fragment": "DeviceShowcase textarea#demo-answer placeholder"
+    },
+    {
+      "id": "home.writing.word",
+      "copy": "word",
+      "source_fragment": "DeviceShowcase .demo-answer-meta singular word count"
+    },
+    {
+      "id": "home.writing.words",
+      "copy": "words",
+      "source_fragment": "DeviceShowcase .demo-answer-meta plural word count"
+    },
+    {
+      "id": "home.writing.clear",
+      "copy": "Clear text",
+      "source_fragment": "DeviceShowcase button.subtle-button children"
+    },
+    {
+      "id": "home.writing.close",
+      "copy": "Close",
+      "source_fragment": "DeviceShowcase final DialogClose children"
+    }
+  ],
+  "assets": [
+    {
+      "id": "logo",
+      "src": "https://storileaf.com/logo.png",
+      "alt": "",
+      "width": 80,
+      "height": 20,
+      "loading": "lazy",
+      "role": "decorative",
+      "source_fragment": "EditorScreen img and homepage logo binding",
+      "origin": "https://storileaf.com/logo.png",
+      "rights_review": "pending_final_production_check"
+    }
+  ]
+}
