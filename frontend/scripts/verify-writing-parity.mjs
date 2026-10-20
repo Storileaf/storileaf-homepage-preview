@@ -295,6 +295,67 @@ async function closeDialog(p, method = 'escape') {
   await p.waitForFunction(() => document.activeElement?.getAttribute('data-testid') === 'try-question' && getComputedStyle(document.body).overflow !== 'hidden')
   return p.getByTestId('try-question').evaluate(e => ({ focus: document.activeElement === e, expanded: e.getAttribute('aria-expanded'), scrollY, top: e.getBoundingClientRect().top, bodyOverflow: getComputedStyle(document.body).overflow }))
 }
+async function closeTouchDialog(p) {
+  const result = { method: 'single-native-tap', afterHidden: null, trace: null, errors: [] }
+  try {
+    await p.evaluate(() => {
+      const dialog = document.querySelector('[data-testid="question-dialog"]'), trigger = document.querySelector('[data-testid="try-question"]')
+      const started = performance.now(), events = []
+      let stopped = false, previousOverflow = getComputedStyle(document.body).overflow, firstFrame, secondFrame
+      const describe = e => e instanceof Element ? { tag: e.tagName, id: e.id || null, testId: e.getAttribute('data-testid'), label: e.getAttribute('aria-label'), text: e.tagName === 'BUTTON' ? e.textContent.trim() : null } : e ? { node: e.nodeName || 'window' } : null
+      const trace = { unmountObserved: false, afterAutofocusFrames: false }
+      const record = (phase, event) => {
+        const state = { phase, elapsedMilliseconds: performance.now() - started, focus: describe(document.activeElement), triggerFocused: document.activeElement === trigger, expanded: trigger.getAttribute('aria-expanded'), dialogConnected: dialog.isConnected, bodyOverflow: getComputedStyle(document.body).overflow, scroll: [scrollX, scrollY], eventTarget: describe(event?.target) }
+        if (!stopped) events.push(state)
+        return state
+      }
+      const onFocus = event => record(event.type, event)
+      const onScroll = event => record('scroll', event)
+      // Radix dispatches this non-bubbling event on the detached dialog inside
+      // its deferred unmount callback. Observe it directly without cancelling it.
+      const onUnmount = event => {
+        trace.unmountObserved = true; record('unmount-autofocus', event)
+        queueMicrotask(() => record('unmount-autofocus-microtask'))
+        firstFrame = requestAnimationFrame(() => {
+          record('unmount-autofocus-frame-1')
+          secondFrame = requestAnimationFrame(() => { record('unmount-autofocus-frame-2'); trace.afterAutofocusFrames = true })
+        })
+      }
+      const observer = new MutationObserver(() => {
+        const overflow = getComputedStyle(document.body).overflow
+        if (overflow !== previousOverflow) { record('body-overflow-change'); previousOverflow = overflow }
+      })
+      dialog.addEventListener('focusScope.autoFocusOnUnmount', onUnmount, { once: true })
+      document.addEventListener('focusin', onFocus, { passive: true })
+      document.addEventListener('focusout', onFocus, { passive: true })
+      window.addEventListener('scroll', onScroll, { passive: true })
+      observer.observe(document.body, { attributes: true, attributeFilter: ['style', 'class', 'data-scroll-locked'], childList: true })
+      observer.observe(document.head, { childList: true })
+      trace.record = record
+      trace.stop = () => {
+        const final = record('final'); stopped = true
+        dialog.removeEventListener('focusScope.autoFocusOnUnmount', onUnmount)
+        document.removeEventListener('focusin', onFocus); document.removeEventListener('focusout', onFocus)
+        window.removeEventListener('scroll', onScroll); observer.disconnect()
+        cancelAnimationFrame(firstFrame); cancelAnimationFrame(secondFrame)
+        delete window.__slTouchCloseTrace
+        return { unmountObserved: trace.unmountObserved, afterAutofocusFrames: trace.afterAutofocusFrames, events, final }
+      }
+      window.__slTouchCloseTrace = trace; record('before-tap')
+    })
+    await p.getByRole('button', { name: 'Close', exact: true }).tap()
+    await p.getByTestId('question-dialog').waitFor({ state: 'hidden' })
+    result.afterHidden = await p.evaluate(() => window.__slTouchCloseTrace.record('after-hidden'))
+    await p.waitForFunction(() => window.__slTouchCloseTrace.unmountObserved && window.__slTouchCloseTrace.afterAutofocusFrames)
+    // Use the same settled close contract as the other dismissal paths above.
+    await p.waitForFunction(() => document.activeElement?.getAttribute('data-testid') === 'try-question' && getComputedStyle(document.body).overflow !== 'hidden')
+  } catch (error) { result.errors.push(String(error)) }
+  finally {
+    try { result.trace = await p.evaluate(() => window.__slTouchCloseTrace?.stop() || null) }
+    catch (error) { result.errors.push('Trace collection: ' + String(error)) }
+  }
+  return result
+}
 async function typing(p, text) {
   await p.getByTestId('demo-answer').fill(text)
   const expected = text.trim() ? text.trim().split(/\s+/).length : 0
@@ -417,7 +478,15 @@ try {
     }
     {
       const ps = await pages({ width: 390, height: 844 }, 'reduce', true), entry = { label: 'emulated-touch-practice' }
-      for (const [kind, p] of Object.entries(ps)) { await openDialog(p, 'tap'); entry[kind] = await typing(p, 'A room full of stories'); await p.getByRole('button', { name: 'Clear text', exact: true }).tap(); check(await p.getByTestId('demo-answer').inputValue() === '', kind + ' touch clear'); await p.getByRole('button', { name: 'Close', exact: true }).tap(); await p.getByTestId('question-dialog').waitFor({ state: 'hidden' }); check(await p.getByTestId('try-question').evaluate(e => document.activeElement === e), kind + ' touch close returns focus') }
+      for (const [kind, p] of Object.entries(ps)) {
+        await openDialog(p, 'tap'); entry[kind] = await typing(p, 'A room full of stories')
+        await p.getByRole('button', { name: 'Clear text', exact: true }).tap()
+        check(await p.getByTestId('demo-answer').inputValue() === '', kind + ' touch clear')
+        const closed = await closeTouchDialog(p); entry[kind].close = closed
+        check(!closed.errors.length && closed.trace?.unmountObserved && closed.trace?.afterAutofocusFrames, kind + ' touch unmount autofocus lifecycle completes')
+        check(closed.trace?.final.triggerFocused === true, kind + ' touch close returns focus')
+        check(closed.trace?.final.dialogConnected === false && closed.trace?.final.bodyOverflow !== 'hidden', kind + ' touch close dismisses and releases scroll lock')
+      }
       report.states.push(entry); await close(ps)
     }
     for (const width of [390, 1440]) {
