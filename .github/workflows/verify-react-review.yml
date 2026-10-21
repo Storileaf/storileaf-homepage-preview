@@ -26,7 +26,9 @@ jobs:
       - name: Keep the original homepage and the verified source unchanged
         run: |
           node frontend/scripts/guard-published.mjs
-          test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse 9bf877954e1b4fc6091b93e79de67f0ec6394eab:frontend)"
+          # The authorised P4 07 export correction changes only the guard within frontend.
+          git diff --exit-code 9bf877954e1b4fc6091b93e79de67f0ec6394eab HEAD -- frontend ':(exclude)frontend/scripts/guard-published.mjs'
+          test "$(git rev-parse HEAD:frontend/scripts/guard-published.mjs)" = "f2e0c29e4ca96238df50481339ba5654ca4f3524"
           npm install --no-save --no-package-lock playwright-core@1.56.1
       - name: Verify actual served bytes and browser behaviour
         run: |
@@ -41,9 +43,12 @@ jobs:
           const root = 'https://storileaf.github.io/storileaf-homepage-preview/'
           const url = root + 'react-review/'
           const provenance = JSON.parse(await fs.readFile('react-review/BUILD_PROVENANCE.json', 'utf8'))
+          // Keep the review's original provenance. Only pricing uses the separately approved export baseline.
+          const pricingBaseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'
+          const expectedPricing = execFileSync('git', ['show', pricingBaseline + ':pricing/index.html'])
           assert.equal(provenance.sourceCommit, '9bf877954e1b4fc6091b93e79de67f0ec6394eab', 'Verify the exact reflow candidate')
           const hash = bytes => createHash('sha256').update(bytes).digest('hex')
-          const report = { url, createdAt: new Date().toISOString(), commit: process.env.GITHUB_SHA, runId: process.env.GITHUB_RUN_ID, sourceCommit: provenance.sourceCommit, readiness: [], reviewFiles: [], protectedFiles: [], widths: [], problems: [], limits: 'Focused live publication smoke at 320, 390, 820 and 1440 CSS pixels, reduced motion and desktop mouse/keyboard emulation. Prior full parity is reused only because all 16 review files match the tested artifact. No native zoom, physical device, screen-reader speech or other-engine certification.' }
+          const report = { url, createdAt: new Date().toISOString(), commit: process.env.GITHUB_SHA, runId: process.env.GITHUB_RUN_ID, sourceCommit: provenance.sourceCommit, pricingBaseline, readiness: [], reviewFiles: [], protectedFiles: [], widths: [], problems: [], limits: 'Focused live publication smoke at 320, 390, 820 and 1440 CSS pixels, reduced motion and desktop mouse/keyboard emulation. Prior full parity is reused only because all 16 review files match the tested artifact. Pricing HTML uses its separately authorised P4 07 export baseline; the other original responses retain the historical baseline. No native zoom, physical device, screen-reader speech or other-engine certification.' }
           let browser
           async function responseBytes(target) {
             const response = await fetch(target, { headers: { 'Cache-Control': 'no-cache' }, signal: AbortSignal.timeout(20000) })
@@ -53,13 +58,18 @@ jobs:
             // Deployment readiness polling only. Behavioural failures are never retried.
             let ready = false
             for (let attempt = 0; attempt < 20; attempt++) {
-              const response = await responseBytes(url + '?publication-check=' + process.env.GITHUB_SHA + '-' + attempt)
-              ready = response.status === 200 && hash(response.bytes) === provenance.sha256['index.html']
-              report.readiness.push({ attempt, status: response.status, sha256: hash(response.bytes), ready })
+              const [response, pricingResponse] = await Promise.all([
+                responseBytes(url + '?publication-check=' + process.env.GITHUB_SHA + '-' + attempt),
+                responseBytes(root + 'pricing/?publication-check=' + process.env.GITHUB_SHA + '-' + attempt)
+              ])
+              const reviewReady = response.status === 200 && hash(response.bytes) === provenance.sha256['index.html']
+              const pricingReady = pricingResponse.status === 200 && pricingResponse.bytes.equals(expectedPricing)
+              ready = reviewReady && pricingReady
+              report.readiness.push({ attempt, status: response.status, sha256: hash(response.bytes), reviewReady, pricing: { status: pricingResponse.status, sha256: hash(pricingResponse.bytes), expectedSha256: hash(expectedPricing), ready: pricingReady }, ready })
               if (ready) break
               await new Promise(resolve => setTimeout(resolve, 6000))
             }
-            assert(ready, 'The review must be served before browser checks')
+            assert(ready, 'The unchanged review and approved pricing document must be served before browser checks')
             for (const [file, expected] of Object.entries(provenance.sha256)) {
               const response = await responseBytes(url + file)
               const item = { file, status: response.status, sha256: hash(response.bytes), matches: hash(response.bytes) === expected }
@@ -69,11 +79,12 @@ jobs:
             }
             for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/index-DO3Vh6An.js', 'assets/routes-DrwDv2x2.js', 'assets/content-sections-CfrmOVRI.js', 'pricing/index.html']) {
               const response = await responseBytes(root + file)
-              const expected = execFileSync('git', ['show', provenance.protectedBaseline + ':' + file])
-              const item = { file, status: response.status, sha256: hash(response.bytes), baselineSha256: hash(expected), matches: response.bytes.equals(expected) }
+              const comparisonBaseline = file === 'pricing/index.html' ? pricingBaseline : provenance.protectedBaseline
+              const expected = execFileSync('git', ['show', comparisonBaseline + ':' + file])
+              const item = { file, comparisonBaseline, status: response.status, sha256: hash(response.bytes), baselineSha256: hash(expected), matches: response.bytes.equals(expected) }
               report.protectedFiles.push(item)
               assert.equal(response.status, 200, file)
-              assert(item.matches, 'Original protected response changed ' + file)
+              assert(item.matches, 'Protected response differs from its recorded baseline ' + file)
             }
             browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', headless: true, args: ['--no-sandbox'] })
             report.environment = { browser: browser.version(), node: process.version, playwright: '1.56.1', os: await fs.readFile('/etc/os-release', 'utf8'), image: process.env.ImageVersion, dpr: 1 }
@@ -141,3 +152,4 @@ jobs:
           name: react-review-live-verification
           path: qa/react-review-live/
           if-no-files-found: error
+

@@ -1,14 +1,24 @@
 # Pricing hydration investigation
 
-## Status and immutable checkpoints
+## Authorised default footer correction
 
-Investigated on 19 October 2026 during the authorised shared header, newsletter, footer and navigation migration. The warning is diagnosed and remains unresolved in the protected static export. This record does not approve or implement a pricing runtime change.
+On 20 October 2026, America/Toronto, the founder authorised only correcting the saved default pricing footer and completing its original/candidate comparison, retained geometry, direct loading and refresh verification. The exact change removes the obsolete arrow span and preceding space from pricing/index.html, a 36 byte removal. Every other byte of that document and all other protected runtime files remain unchanged.
+
+[Candidate run 39525643936](https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39525643936), attempt 1 at 95da225fb2e2d2e3400f6f84f3b6747df0125e1b, passed all ten required widths. Its 60 observations contain 20 original loads/reloads, 20 candidate loads/reloads and 20 saved-document renders with JavaScript disabled. All 50 geometry and 14 pixel comparisons passed with zero difference. All 20 original runtime observations reproduced React 418; all 20 candidate observations had no page error. Saved original/candidate footers were visually inspected at 320, 390, 820 and 1440px. The candidate saved footer images match their settled images byte for byte. The complete 1440px pricing capture was also inspected.
+
+The exact [static repair](https://github.com/Storileaf/storileaf-homepage-preview/commit/a9e6e6cf8ae078376837f91651a1ac9a3f1a9164) supplies the deliberate new protection baseline a9e6e6cf8ae078376837f91651a1ac9a3f1a9164. The enabled guard retains every protected path. The original e9550069d91b5a9b48ade43fcfb0a71bbed2875b remains the homepage and migration reference. The fixed React review and its original build provenance are unchanged.
+
+Publication and live verification are pending at this implementation checkpoint. The two remaining pricing export defects below are not repaired or authorised by this correction. The original/candidate reports, inspected captures, failed readiness diagnostic and final publication results will be retained in the durable footer record before closure. No new pages, root homepage replacement or private production changes are included.
+
+## Historical investigation and immutable checkpoints
+
+The following investigation was completed on 19 October 2026 during the authorised shared header, newsletter, footer and navigation migration. At that checkpoint all three saved-document defects remained unresolved and no pricing runtime change was authorised. The separate default-footer correction above supersedes that status only for the generic pricing footer.
 
 The public source checkpoint is [e4458092ae64749350ac1339c97ac7f83c9ce65c](https://github.com/Storileaf/storileaf-homepage-preview/commit/e4458092ae64749350ac1339c97ac7f83c9ce65c). The protected published baseline remains [e9550069d91b5a9b48ade43fcfb0a71bbed2875b](https://github.com/Storileaf/storileaf-homepage-preview/commit/e9550069d91b5a9b48ade43fcfb0a71bbed2875b). The inspected homepage, pricing HTML and compiled runtime are unchanged between those checkpoints. Private production code and product terms were not changed or redefined by this investigation.
 
 [React describes error 418](https://react.dev/errors/418) as a mismatch between saved server HTML and the first client render. React can recover by rebuilding the affected tree. The [hydration reference](https://react.dev/reference/react-dom/client/hydrateRoot) requires those initial outputs to agree and treats mismatches as bugs. Successful recovery does not make the saved export correct.
 
-## Reproduced entry paths
+## Historical reproduced entry paths
 
 The following are paths beneath [the published preview](https://storileaf.github.io/storileaf-homepage-preview/).
 
@@ -90,12 +100,12 @@ An initial flow probe addressed a tab role, while pricing uses buttons with aria
 
 These checks do not certify other browser engines, physical devices, native zoom, complete visual parity, checkout, payments or customer application behaviour. Recovery to the expected pricing screen is not a claim that the whole preview is error free.
 
-## Bounded next steps requiring a proposal
+## Remaining bounded work and retained proposal
 
-A concrete [default footer correction patch](../qa/pricing-hydration/2026-10-19/default-footer-proposal.patch) is prepared for review. It removes only the stale arrow span from the saved pricing HTML and is deliberately not applied. The response only experiment above supplies the diagnostic evidence. This patch does not repair currency entry documents or query selected views, and would require the separately approved validation and baseline update below before publication.
+The historical [default footer proposal](../qa/pricing-hydration/2026-10-19/default-footer-proposal.patch) is retained. Its before and after payloads match the authorised correction, but its single-line diff lacked the required separators and no-newline markers. The new verification records retain a valid patch generated from those exact bytes. No broader export change is included.
 
-1. Propose the one span default pricing HTML correction as an isolated static bug fix. Its expected settled appearance is the existing approved footer without an arrow. Verify direct loading and reloading, the complete footer and retained pricing geometry before a deliberate protected baseline update.
-2. Propose a static export or route entry strategy for all four currency paths. It must preserve current URLs, prices, package text and client behaviour while returning the correct initial document. A published React homepage replacement is not a prerequisite or authorised shortcut.
+1. The default footer correction is handled by the separately authorised checkpoint above. Its complete footer, retained pricing geometry, direct load and reload evidence does not close the following two problems.
+2. Propose a static export or route entry strategy for all four currency paths. Preserve current URLs, prices, package text, storage and client behaviour while returning the correct initial document. Root homepage replacement is not authorised by this work.
 3. Propose how keepsake query selection becomes consistent with the saved initial render. Test every supported book, currency selection, direct entry, reload, client navigation and history. The default footer correction alone does not close this item.
 
-No protected pricing change, guard modification or baseline repin belongs to the current shared reference migration. Present a concrete bounded proposal and obtain explicit founder approval before those publication changes. Keep the [frontend workflow](WORKFLOW.md), content gate and separate React cutover boundary in force.
+The two remaining repairs require their own concrete proposal and explicit founder approval before protected pricing or route-document edits. Keep the [frontend workflow](WORKFLOW.md), content gate and separate React cutover boundary in force. P4-08 wider verification and final whole website screen reader acceptance remain separate.

@@ -7,6 +7,7 @@ on:
       - 'pricing/index.html'
       - 'frontend/scripts/guard-published.mjs'
       - '.github/scripts/verify-pricing-footer.mjs'
+      - '.github/scripts/verify-pricing-footer-live.mjs'
       - '.github/workflows/verify-pricing-footer.yml'
   workflow_dispatch:
 
@@ -31,6 +32,8 @@ jobs:
         run: npm install --no-save --no-package-lock playwright-core@1.56.1 pngjs@7.0.0
       - name: Compare original and exact candidate documents
         run: node .github/scripts/verify-pricing-footer.mjs
+      - name: Verify the published default pricing document
+        run: node .github/scripts/verify-pricing-footer-live.mjs
       - name: Retain complete pricing footer evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -38,3 +41,10 @@ jobs:
           name: pricing-footer-verification
           path: qa/pricing-footer-candidate/
           if-no-files-found: error
+      - name: Retain live pricing footer evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-footer-live-verification
+          path: qa/pricing-footer-live/
+          if-no-files-found: warn
