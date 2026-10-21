@@ -27,15 +27,15 @@ assert.equal(originalText.split(stale).length - 1, 1, 'Exactly one approved save
 const candidate = Buffer.from(originalText.replace(stale, corrected))
 const repositoryBytes = await fs.readFile(htmlPath)
 assert(repositoryBytes.equals(original) || repositoryBytes.equals(candidate), 'Reject an unrelated pricing change')
-const deployedCandidate = repositoryBytes.equals(candidate)
+const repositoryContainsCandidate = repositoryBytes.equals(candidate)
 const report = {
   scope: 'P4 07 default saved pricing footer only',
   originalBaseline, sourceCommit: git('rev-parse', 'HEAD').toString().trim(),
   runId: process.env.GITHUB_RUN_ID, runAttempt: process.env.GITHUB_RUN_ATTEMPT,
-  startedAt: new Date().toISOString(), deployedCandidate,
+  startedAt: new Date().toISOString(), repositoryContainsCandidate,
   input: { originalSha256: sha256(original), candidateSha256: sha256(candidate), originalBytes: original.length, candidateBytes: candidate.length, removedBytes: original.length - candidate.length, trailingNewline: originalText.endsWith('\n'), exactSingleReplacement: true },
   thresholds: { geometryTolerance, channelThreshold, pixelRatioLimit },
-  protectedFiles: [], observations: [], comparisons: [], screenshots: [], problems: [],
+  protectedFiles: [], observations: [], comparisons: [], screenshots: [], checkpoints: [], problems: [],
   limits: 'Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. No currency route or book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance.'
 }
 const sections = '.site-header,main>section,.pricing-plan-grid,.pricing-plan-card,.pricing-comparison table,.site-footer,.footer-grid,.footer-bottom'
@@ -47,7 +47,7 @@ await fs.writeFile(output + '/default-footer.patch', '--- a/pricing/index.html\n
 // Complete protected file identity, allowing only the exact authorised document correction.
 const protectedPaths = ['index.html','404.html','assets/','covers/','gallery/','pricing/','favicon.svg','manifest.json','logo192.png','logo512.png','robots.txt','.nojekyll']
 const changed = git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths).toString().trim().split('\n').filter(Boolean)
-assert.deepEqual(changed, deployedCandidate ? [htmlPath] : [])
+assert.deepEqual(changed, repositoryContainsCandidate ? [htmlPath] : [])
 for (const file of ['index.html','404.html','assets/index-DO3Vh6An.js','assets/index-DhPZyX4z.css','assets/content-sections-CfrmOVRI.js',htmlPath]) {
   const bytes = await fs.readFile(file)
   const before = git('show', originalBaseline + ':' + file)
@@ -71,18 +71,35 @@ async function serve(html) {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve))
   return { server, url: 'http://127.0.0.1:' + server.address().port + prefix + 'pricing/' }
 }
-async function settle(page) {
+async function checkedStep(label, operation) {
+  const checkpoint = { label, startedAt:new Date().toISOString() }
+  report.checkpoints.push(checkpoint)
+  await fs.writeFile(output + '/progress.json', JSON.stringify(report, null, 2) + '\n')
+  console.log('PRICING_FOOTER_STEP ' + label)
+  let timer
+  try {
+    const result = await Promise.race([operation(), new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Timed out after 30 seconds at ' + label)), 30000) })])
+    checkpoint.result = 'passed'
+    return result
+  } catch (error) { checkpoint.result = 'failed'; checkpoint.error = error.message; throw error }
+  finally { clearTimeout(timer); checkpoint.finishedAt = new Date().toISOString() }
+}
+async function settle(page, label) {
   await page.locator('[data-testid="pricing-page"]').waitFor()
-  await page.evaluate(async () => {
+  await checkedStep(label + ' fonts', () => page.evaluate(async () => {
     await document.fonts.ready
     await Promise.all([document.fonts.load('600 15px Manrope'), document.fonts.load('450 64px Newsreader'), document.fonts.load('italic 400 64px Newsreader')])
     await document.fonts.ready
+  }))
+  await checkedStep(label + ' images', () => page.evaluate(async () => {
     // Force actual approved image loading before measurements or screenshots.
     for (const image of document.images) image.loading = 'eager'
     await Promise.all([...document.images].map(image => image.decode()))
+  }))
+  await checkedStep(label + ' rendering frames', () => page.evaluate(async () => {
     scrollTo({top:0,behavior:'instant'})
     await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
-  })
+  }))
   const fonts = await page.evaluate(() => ['Newsreader','Manrope'].map(name => ({ name, loaded: [...document.fonts].some(font => font.family.includes(name) && font.status === 'loaded') })))
   assert(fonts.every(font => font.loaded), 'Approved fonts loaded')
   return fonts
@@ -183,7 +200,7 @@ try {
         assert.equal(response.status(),200,name+' '+action+' HTTP response')
         const body=await response.body()
         assert.equal(sha256(body),name==='original'?sha256(original):sha256(candidate),'Exact document served')
-        const fonts=await settle(page), metrics=await measure(page)
+        const fonts=await settle(page,`${name} ${action} ${width}`), metrics=await measure(page)
         validateDefault(metrics,errors,name==='original'?1:0)
         const row={name,width,action,status:response.status(),responseSha256:sha256(body),fonts,errors:[...errors],metrics}
         report.observations.push(row);records[name][action]=row
@@ -204,7 +221,7 @@ try {
       const context=await browser.newContext({ viewport:{width,height:1000},deviceScaleFactor:1,reducedMotion:'reduce',javaScriptEnabled:false })
       const page=await context.newPage()
       assert.equal((await page.goto(url,{waitUntil:'networkidle'})).status(),200)
-      await settle(page)
+      await settle(page,`${name} saved ${width}`)
       saved[name]=await measure(page)
       report.observations.push({name,width,action:'saved document without JavaScript',metrics:saved[name]})
       if([320,390,820,1440].includes(width))await capture(page,`${name}-saved-footer-${width}.png`)
