@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 1,
+  "task": "P4 07 four currency documents",
+  "sourceCommit": "848633b1f1cb6c460e11ca680b50aeb65cb0d7f3",
+  "mode": "write",
+  "node": "v22.23.3",
+  "inputs": {
+    "pricing/index.html": {
+      "bytes": 49149,
+      "sha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+      "gitBlob": "7949e157abda3673d102e5ba50a746916d533743"
+    },
+    "assets/pricing-page-eOuxT0Kj.js": {
+      "bytes": 52443,
+      "sha256": "6933843cad74c1e867b84d543394c8070251ca7d6777dea894efd011963f2027",
+      "gitBlob": "798de6a0f652087ab3a1f0f396eba8ed5dcaed7e"
+    },
+    "assets/index-DO3Vh6An.js": {
+      "bytes": 581961,
+      "sha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "gitBlob": "01c31acbfc4f30190f2ba4a78905a639ecd872e0"
+    },
+    "assets/pricing._currency-D7ELIB-1.js": {
+      "bytes": 1228,
+      "sha256": "089170d20cfcde4c33e3ed5bfa40e1480974eb32b56fa6a8165f1c4ad6b70709",
+      "gitBlob": "4ae9def0aaad1097f5b7922915fbe4d507c43bef"
+    },
+    "assets/pricing.index-DWapM0Qb.js": {
+      "bytes": 1118,
+      "sha256": "95c713a17b15694b277e4cd600b99e29a1f21377278ce32c61a45637298ad741",
+      "gitBlob": "5f4b27a97b877c20595157a32c52fc9046c9ba64"
+    },
+    "assets/pricing-DQxYQr2Q.js": {
+      "bytes": 356,
+      "sha256": "27b0cdd8d6f4694f41080de64251c41c8b440eeef91f04958c3976449245ab34",
+      "gitBlob": "0523019d0eb6c6c32407f9e44ba41529b3fa2116"
+    },
+    "assets/content-sections-CfrmOVRI.js": {
+      "bytes": 290203,
+      "sha256": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+      "gitBlob": "0c75ca324df6f1bc5a8b3fb5c461175baffb8dad"
+    },
+    "assets/link-CrvydYrW.js": {
+      "bytes": 17589,
+      "sha256": "2d261759e4c13f2b1ffa433ffcddcbb2053aea4a386a17a151da4c3f6da863c9",
+      "gitBlob": "a46ff535c5375376d6e82b23fde3bd15722c12db"
+    },
+    "assets/index-DhPZyX4z.css": {
+      "bytes": 321166,
+      "sha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+      "gitBlob": "0d87f309286d201030bde73aec65dbd19a94ff48"
+    }
+  },
+  "extraction": "Exact hash-pinned public pricing data, no private source and no compiled asset changes.",
+  "preservation": "All bounded substitutions reversed to the original default HTML byte for byte; original SSR IDs and all other bytes retained.",
+  "defaultPricingDocumentUnchanged": true,
+  "selectedBookInitialRender": "Life Story retained. Query-selected initial rendering remains a separate unresolved export problem.",
+  "browserAndHttpAcceptance": "Not provided by this generator. Independent rendered, hydration, behaviour, redirect and live-response checks are required.",
+  "outputs": {
+    "pricing/inr/index.html": {
+      "bytes": 49303,
+      "sha256": "80a11555dbc15a5b8250aea7d64fb5d78da1a38235a21f3a433af40d2c66dc40",
+      "gitBlob": "67a470d2131180b60ad2eb0614fba7ec718d037f",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/inr",
+      "title": "StoriLeaf | INR book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 8700,
+          "displayed": "₹8,700"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 11400,
+          "displayed": "₹11,400"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 16800,
+          "displayed": "₹16,800"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    },
+    "pricing/usd/index.html": {
+      "bytes": 49294,
+      "sha256": "58cc963da4b611727beff1e7e5d62df2b66d4179b3864c22d452d4ec78cc56ba",
+      "gitBlob": "1b08c1073d092852c7e698984aacd81c4b9f438e",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/usd",
+      "title": "StoriLeaf | USD book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 99,
+          "displayed": "US$99"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 129,
+          "displayed": "US$129"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 189,
+          "displayed": "US$189"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    },
+    "pricing/cad/index.html": {
+      "bytes": 49292,
+      "sha256": "0c9149e4b87e1b2cb07aaa3d7abc60fc0b6d1129354a74bed2cb5c34de74834b",
+      "gitBlob": "071a0b73663e95d71991b6b81b705cf1c9270fdb",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/cad",
+      "title": "StoriLeaf | CAD book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 139,
+          "displayed": "C$139"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 179,
+          "displayed": "C$179"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 259,
+          "displayed": "C$259"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    },
+    "pricing/gbp/index.html": {
+      "bytes": 49290,
+      "sha256": "eca77670149233c2727fe43870d79dcdfc7dd937cdfc3353823cbf13d9e8f246",
+      "gitBlob": "6a929fc18b96338f2a79416ddebfdfb57ab5f271",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/gbp",
+      "title": "StoriLeaf | GBP book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 79,
+          "displayed": "£79"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 99,
+          "displayed": "£99"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 139,
+          "displayed": "£139"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    }
+  }
+}

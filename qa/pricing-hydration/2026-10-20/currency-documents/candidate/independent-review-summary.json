@@ -1,0 +1,117 @@
+{
+  "sourceCommit": "151430150e3b3242974ef423b7346a2a05df4813",
+  "run": {
+    "id": "39532676727",
+    "attempt": "1",
+    "workflow": "Verify the authorised pricing currency documents",
+    "job": "compare"
+  },
+  "result": "passed within the authorised currency-document scope",
+  "artifactDigest": "8f1611b0f0c90ade352953ed8bff131836db066585d88c9ee9296d89ec3756b2",
+  "defaultMatrix": {
+    "currencies": [
+      "inr",
+      "usd",
+      "cad",
+      "gbp"
+    ],
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "observations": 200,
+    "complete": true,
+    "candidateEnabledJavaScriptObservations": 80,
+    "candidateEnabledJavaScriptErrors": 0,
+    "savedJavaScriptDisabledObservations": 40,
+    "savedBlockedRequests": "Exactly eight declared modulepreloads with errorText csp per observation; no additional failure"
+  },
+  "declaredAssetChecks": {
+    "count": 32,
+    "exactCompleteMatrix": true,
+    "allHTTP200": true,
+    "allExactProtectedBytes": true
+  },
+  "queryMatrix": {
+    "currencies": [
+      "inr",
+      "usd",
+      "cad",
+      "gbp"
+    ],
+    "books": [
+      "life-story",
+      "travel-memoir",
+      "relationship-memoir",
+      "founders-memoir",
+      "parent-to-child-letters",
+      "celebrating-occasions"
+    ],
+    "observations": 96,
+    "complete": true,
+    "queriesPreserved": true,
+    "settledSelectionsAndPricesCorrect": true,
+    "candidateNonDefaultBookHydration418Observations": 40,
+    "selectedBookInitialMismatch": "Retained and deferred; not repaired or accepted by this currency-document gate"
+  },
+  "comparisons": {
+    "total": 312,
+    "geometry": 232,
+    "pixels": 80,
+    "maxGeometryDelta": 0,
+    "maxChangedPixelRatio": 0.001385062637745041,
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "worstPixelComparison": {
+      "label": "cad 320 complete original/candidate pricing page",
+      "width": 320,
+      "height": 8621,
+      "changedPixels": 3821,
+      "changedPixelRatio": 0.001385062637745041,
+      "pixelPassed": true
+    }
+  },
+  "interactions": {
+    "journeys": 4,
+    "checkpointsPerJourney": 13,
+    "parityComparisons": [
+      {
+        "width": 390,
+        "passed": true,
+        "checkpoints": 13
+      },
+      {
+        "width": 1440,
+        "passed": true,
+        "checkpoints": 13
+      }
+    ],
+    "allPassed": true,
+    "interactionPhaseErrors": 0
+  },
+  "environment": {
+    "browser": "155.0.8059.84",
+    "executable": "/home/runner/work/_temp/currency-browser/chrome-linux64/chrome",
+    "node": "v22.23.3",
+    "playwright": "1.56.1",
+    "pngjs": "7.0.0",
+    "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "runnerImage": "20261012.334.1",
+    "viewportHeight": 1000,
+    "dpr": 1,
+    "reducedMotion": "reduce",
+    "tlsVerification": true
+  },
+  "remainingLiveGate": "Actual Pages HTTP responses, redirects, served byte identity and query preservation remain a separate publication gate."
+}

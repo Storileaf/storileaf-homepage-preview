@@ -1,0 +1,17 @@
+{
+  "note": "Raw reports preserve their original in-run file names. This map gives durable repository locations relative to this directory. Signed download URLs and connector-internal file IDs are not retained. ZIPs are identity-verified acquisition records; their selected raw reports/images are committed directly.",
+  "prepublicationCurrencyReport": "candidate/verification.json.gz",
+  "publicationCurrencyCandidateReport": "publication/candidate-report.json.gz",
+  "publicationCurrencyLiveReport": "publication/live-report.json.gz",
+  "standaloneSharedFailureReport": "shared-menu-diagnostic/failed/report.json.gz",
+  "priorStandaloneSharedSuccessReport": "shared-menu-diagnostic/prior-success/report.json.gz",
+  "concurrentSharedSuccessReport": "shared-menu-diagnostic/concurrent-success/report.json.gz",
+  "sharedFailureImages": "shared-menu-diagnostic/failed/",
+  "concurrentSharedImages": "shared-menu-diagnostic/concurrent-success/",
+  "priorSharedImages": "shared-menu-diagnostic/prior-success/",
+  "sourceValidationSummary": "regressions/source-validation-summary.json",
+  "defaultFooterCandidateReport": "regressions/default-footer-candidate-report.json.gz",
+  "defaultFooterLiveReport": "regressions/default-footer-live-report.json.gz",
+  "fixedReviewLiveReport": "regressions/react-review-live-report.json.gz",
+  "regressionRuns": "regressions/final-runs.json"
+}

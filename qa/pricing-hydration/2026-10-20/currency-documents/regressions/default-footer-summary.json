@@ -1,0 +1,72 @@
+{
+  "head": "29ac24f9357327560bde70c9864638dccbf5bed6",
+  "runId": "39533492142",
+  "runAttempt": "1",
+  "candidate": {
+    "report": "pricing-footer-verification/report.json",
+    "reportSHA256": "3b91359df9038d7c1741a1163f3345c951f0c496a27f5fe61dd8866e68e5abfd",
+    "result": "passed",
+    "observations": 60,
+    "geometryComparisons": 50,
+    "pixelComparisons": 14,
+    "maxGeometryDelta": 0,
+    "maxChangedPixelRatio": 0,
+    "readinessCheckpoints": 180,
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "environment": {
+      "browser": "155.0.8059.84",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "pngjs": "7.0.0",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "20261018.339.1",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce"
+    },
+    "problems": [],
+    "currencyBaseline": "27706615edc5859e535478c69247f1d8c096f554",
+    "footerProtectionBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164"
+  },
+  "live": {
+    "report": "pricing-footer-live-verification/report.json",
+    "reportSHA256": "23c27d1f63371d2fef215bdfd4c856ed5917a41bf4de68a8f6ae7cf508092235",
+    "result": "passed",
+    "observations": 8,
+    "geometryComparisons": 4,
+    "repositoryProtectedFiles": 39,
+    "servedProtectedFiles": 38,
+    "allServedProtectedFilesMatch": true,
+    "reviewFilesIncludingProvenance": 17,
+    "allReviewFilesMatch": true,
+    "startedAt": "2026-10-21T02:33:16.235Z",
+    "finishedAt": "2026-10-21T02:33:26.648Z",
+    "environment": {
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "platform": "linux",
+      "architecture": "x64",
+      "kernel": "7.0.0-1017-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "ubuntu24",
+      "runnerImageVersion": "20261018.339.1",
+      "browserExecutable": "/usr/bin/google-chrome",
+      "headless": true,
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "widths": [
+        320,
+        390,
+        820,
+        1440
+      ],
+      "browser": "155.0.8059.84"
+    },
+    "problems": []
+  }
+}

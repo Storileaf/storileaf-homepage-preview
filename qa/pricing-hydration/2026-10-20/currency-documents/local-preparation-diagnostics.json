@@ -1,0 +1,74 @@
+{
+  "scope": "Preparatory local route probe only, not final browser acceptance",
+  "environment": {
+    "browser": "Chrome for Testing 155.0.8059.84",
+    "playwright": "1.56.1",
+    "node": "v24.19.0",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "headless": true,
+    "reducedMotion": "reduce"
+  },
+  "firstProbe": {
+    "source": "exact original runtime from public848633b1",
+    "currencies": [
+      "inr",
+      "usd",
+      "cad",
+      "gbp"
+    ],
+    "allDocumentStatus": 404,
+    "knownReact418PerCurrency": 1,
+    "issue": "External images/fonts were rejected with net::ERR_CERT_AUTHORITY_INVALID by local Chrome. Font family loading was empty. This probe is not rendered or geometry acceptance evidence."
+  },
+  "candidateDiagnostic": {
+    "script": "probe-diagnostic.mjs",
+    "ignoreHTTPSErrors": true,
+    "reason": "Isolate route and hydration behaviour from the container browser certificate-trust issue",
+    "currencies": [
+      {
+        "currency": "inr",
+        "status": 200,
+        "prices": [
+          "₹8,700",
+          "₹11,400",
+          "₹16,800"
+        ]
+      },
+      {
+        "currency": "usd",
+        "status": 200,
+        "prices": [
+          "US$99",
+          "US$129",
+          "US$189"
+        ]
+      },
+      {
+        "currency": "cad",
+        "status": 200,
+        "prices": [
+          "C$139",
+          "C$179",
+          "C$259"
+        ]
+      },
+      {
+        "currency": "gbp",
+        "status": 200,
+        "prices": [
+          "£79",
+          "£99",
+          "£139"
+        ]
+      }
+    ],
+    "allPageErrors": [],
+    "allConsoleErrors": [],
+    "allFailedRequests": [],
+    "titlesAndBothSelectorsMatched": true,
+    "boundary": "TLS bypass applies only to this scratch preparation. Committed candidate, interaction and live gates use normal certificate validation. No HTTPS security or final visual acceptance is claimed by this diagnostic."
+  }
+}

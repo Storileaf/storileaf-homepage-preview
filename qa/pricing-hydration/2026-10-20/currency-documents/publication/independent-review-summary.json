@@ -1,0 +1,111 @@
+{
+  "reviewedAt": "2026-10-21T02:44:28.821962+00:00",
+  "sourceCommit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+  "method": "Independent local inspection of retained reports, exact observation matrices, catalogue prices, query preservation, file hashes and byte counts. No additional browser, HTTP or CI executions.",
+  "result": "passed within the authorised four-currency-document scope",
+  "candidate": {
+    "counts": {
+      "defaultObservations": 200,
+      "queryObservations": 96,
+      "comparisons": 312,
+      "retainedScreenshots": 36
+    },
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "previousProtectedFilesUnchanged": 35,
+    "declaredPreloadExactHttpAndBytesChecks": 32,
+    "interactionJourneys": 4,
+    "stepsPerJourney": 13,
+    "environment": {
+      "browser": "155.0.8059.84",
+      "executable": "/home/runner/work/_temp/currency-browser/chrome-linux64/chrome",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "pngjs": "7.0.0",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "20261012.334.1",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "tlsVerification": true
+    }
+  },
+  "publication": {
+    "currencyBaseline": "27706615edc5859e535478c69247f1d8c096f554",
+    "documents": {
+      "cad": {
+        "file": "pricing/cad/index.html",
+        "sha256": "0c9149e4b87e1b2cb07aaa3d7abc60fc0b6d1129354a74bed2cb5c34de74834b",
+        "bytes": 49292,
+        "reference": "27706615edc5859e535478c69247f1d8c096f554"
+      },
+      "gbp": {
+        "file": "pricing/gbp/index.html",
+        "sha256": "eca77670149233c2727fe43870d79dcdfc7dd937cdfc3353823cbf13d9e8f246",
+        "bytes": 49290,
+        "reference": "27706615edc5859e535478c69247f1d8c096f554"
+      },
+      "inr": {
+        "file": "pricing/inr/index.html",
+        "sha256": "80a11555dbc15a5b8250aea7d64fb5d78da1a38235a21f3a433af40d2c66dc40",
+        "bytes": 49303,
+        "reference": "27706615edc5859e535478c69247f1d8c096f554"
+      },
+      "usd": {
+        "file": "pricing/usd/index.html",
+        "sha256": "58cc963da4b611727beff1e7e5d62df2b66d4179b3864c22d452d4ec78cc56ba",
+        "bytes": 49294,
+        "reference": "27706615edc5859e535478c69247f1d8c096f554"
+      }
+    },
+    "repositoryProtectedFilesMatchedLocal": 39,
+    "servedProtectedFilesExact200": 38,
+    "fixedReviewFilesExact200": 17,
+    "httpChains": 56,
+    "httpStatusSequences": {
+      "(301, 200)": 28,
+      "(200,)": 28
+    },
+    "queryPreservedAtEveryHop": true,
+    "defaultDirectAndReloadObservationsClean": 32,
+    "selectedBookFinalSelectionsAndPricesPassed": 48,
+    "knownNonDefaultInitialRenderMismatchObservationsRetained": 40,
+    "knownReact418ErrorsRetained": 40,
+    "verifiedRetainedPngFiles": 44,
+    "environment": {
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "platform": "linux",
+      "architecture": "x64",
+      "kernel": "6.17.0-1022-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "ubuntu24",
+      "runnerImageVersion": "20261012.334.1",
+      "browserExecutable": "/home/runner/work/_temp/currency-browser/chrome-linux64/chrome",
+      "headless": true,
+      "tls": "default certificate verification; no ignoreHTTPSErrors or certificate bypass flags",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "defaultWidths": [
+        320,
+        390,
+        820,
+        1440
+      ],
+      "selectedBookWidth": 390,
+      "browser": "155.0.8059.84"
+    }
+  },
+  "limits": {
+    "candidate": "Recorded headless Chromium/Linux environment, ten CSS widths, normal text, reduced motion and DPR 1. Saved/no-JavaScript, direct and refreshed default currency pages. Query preservation and final selected views are verified separately from the retained non-default-book initial hydration mismatch. No pricing redesign, query initial-render repair, native zoom, other engines, physical devices or spoken screen-reader acceptance. Local redirects are a model; actual Pages HTTP is a separate live gate.",
+    "live": "Recorded Linux headless Chromium, real default TLS, normal text, reduced motion, DPR 1 and height 1000. Default currency direct entry/reload at 320, 390, 820 and 1440 CSS pixels; selected-book direct entry/reload at 390 pixels. HTTP checks include both slash forms and all six keepsake queries with a benign extra query. No native zoom, other browser engines, physical devices, payments, complete page accessibility acceptance or spoken screen reader testing. Only exact four-document deployment readiness is polled; behavioural observations have no retries. The .nojekyll marker is checked in Git only.",
+    "knownLimitations": [
+      "A static currency document initially contains the default Life Story view. The five non-default keepsake queries still receive that saved book view before the client selects the requested book. This separate selected-book initial-render mismatch is retained, not repaired or accepted as passed.",
+      "Observed React 418 hydration errors are recorded individually and tolerated only for a non-default selected-book query with independently confirmed saved-versus-requested book mismatch. Every other runtime, console, network and HTTP error fails this gate."
+    ]
+  }
+}

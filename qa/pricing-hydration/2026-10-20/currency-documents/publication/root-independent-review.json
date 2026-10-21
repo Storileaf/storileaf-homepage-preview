@@ -1,0 +1,42 @@
+{
+  "reviewer": "root independent report and image review",
+  "result": "passed within currency-document scope",
+  "sourceCommit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+  "candidate": {
+    "defaultObservations": 200,
+    "queryObservations": 96,
+    "declaredAssetResponses": 32,
+    "geometryComparisons": 232,
+    "maximumGeometryDelta": 0,
+    "pixelComparisons": 80,
+    "maximumChangedPixelRatio": 0,
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "interactionJourneys": 4,
+    "checkpointsPerJourney": 13,
+    "retainedScreenshotsVerified": 36
+  },
+  "live": {
+    "httpChains": 56,
+    "noSlash301Then200": 28,
+    "slashDirect200": 28,
+    "selectedBookAndExtraQueryPreserved": true,
+    "defaultObservations": 32,
+    "selectedBookObservations": 48,
+    "retainedInitialBookMismatches": 40,
+    "retainedKnownReact418Errors": 40,
+    "protectedGitFiles": 39,
+    "protectedServedFiles": 38,
+    "reviewAndProvenanceServedFiles": 17,
+    "retainedScreenshotsVerified": 8
+  },
+  "inspectedLiveCaptures": [
+    "live/live-cad-default-390.png",
+    "live/live-usd-default-1440.png"
+  ],
+  "visualObservation": "Correct currency selector and original regional amounts visible, retained book choices and package layout, no visible clipping in these inspected captures. This is not inspection of every capture or wider accessibility acceptance.",
+  "limits": "The failed standalone shared-menu regression is a separate investigation and is not dismissed by this currency pass. Non-default selected-book initial rendering remains unrepaired; no other-engine, physical-device, native zoom or spoken screen-reader result is claimed."
+}

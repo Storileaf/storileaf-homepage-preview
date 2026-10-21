@@ -1,0 +1,31 @@
+{
+  "commit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+  "runId": "39533492048",
+  "sourceCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+  "pricingBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+  "createdAt": "2026-10-21T02:31:40.304Z",
+  "finishedAt": "2026-10-21T02:31:55.311Z",
+  "result": "passed",
+  "problems": [],
+  "environment": {
+    "browser": "155.0.8059.39",
+    "node": "v22.23.3",
+    "playwright": "1.56.1",
+    "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "image": "20261012.334.1",
+    "dpr": 1
+  },
+  "limits": "Focused live publication smoke at 320, 390, 820 and 1440 CSS pixels, reduced motion and desktop mouse/keyboard emulation. Prior full parity is reused only because all 16 review files match the tested artifact. Pricing HTML uses its separately authorised P4 07 export baseline; the other original responses retain the historical baseline. No native zoom, physical device, screen-reader speech or other-engine certification.",
+  "report": "artifact/report.json",
+  "reportSHA256": "fe2fe2cad331a7e650c8e00a5077ce56b47b245236685f5eb4935d3c41055bf8",
+  "reviewFiles": 16,
+  "allReviewFilesMatch": true,
+  "protectedFiles": 6,
+  "allProtectedFilesMatch": true,
+  "widths": [
+    320,
+    390,
+    820,
+    1440
+  ]
+}

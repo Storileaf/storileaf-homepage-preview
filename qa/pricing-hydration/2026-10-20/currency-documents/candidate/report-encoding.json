@@ -1,0 +1,7 @@
+{
+  "path": "verification.json.gz",
+  "encoding": "gzip",
+  "uncompressedBytes": 10607603,
+  "uncompressedSHA256": "134a2ec46b9a0cf1f8392239c8ba53cb511a7379e60db834112cccf3350cf8bc",
+  "purpose": "Lossless compression of the exact raw successful candidate report; no fields removed."
+}

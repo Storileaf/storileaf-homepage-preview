@@ -1,0 +1,23 @@
+{
+  "scope": "Generator safeguard tests, not browser or HTTP acceptance",
+  "node": "v24.19.0",
+  "tests": [
+    {
+      "test": "changed default HTML is rejected before any output write",
+      "passed": true,
+      "exitCode": 1
+    },
+    {
+      "test": "changed public price data is rejected before any output write",
+      "passed": true,
+      "exitCode": 1
+    },
+    {
+      "test": "check mode rejects a changed output without repairing or overwriting it",
+      "passed": true,
+      "exitCode": 1
+    }
+  ],
+  "originalInputsUnchanged": true,
+  "generatedCandidatesUnchanged": true
+}

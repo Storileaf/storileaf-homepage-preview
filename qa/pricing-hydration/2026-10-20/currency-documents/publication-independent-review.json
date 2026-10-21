@@ -1,0 +1,894 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-21T02:35:00.576Z",
+  "result": "passed",
+  "scope": "Independent read-only GitHub publication tree and six verification compatibility file review. No GitHub writes, CI runs, Pages HTTP requests or browser matrix were performed.",
+  "repositories": {
+    "public": "Storileaf/storileaf-homepage-preview",
+    "private": "Storileaf/storiYoceFj6IRAleaf",
+    "privateDocumentationBranch": "design/storileaf-website-ux",
+    "account": "Storileaf"
+  },
+  "references": {
+    "previousPublic": "848633b1f1cb6c460e11ca680b50aeb65cb0d7f3",
+    "publishedPublic": "29ac24f9357327560bde70c9864638dccbf5bed6",
+    "currencyBaseline": "27706615edc5859e535478c69247f1d8c096f554",
+    "previousFooterBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+    "originalHomepage": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "fixedReview": "6434c11105abfd3122982cf65c227e9507dfb5ba",
+    "preparedPublicationManifest": "p407-currency/publication/manifest.json"
+  },
+  "heads": {
+    "publicMain": {
+      "expected": "29ac24f9357327560bde70c9864638dccbf5bed6",
+      "initial": "29ac24f9357327560bde70c9864638dccbf5bed6",
+      "final": "29ac24f9357327560bde70c9864638dccbf5bed6",
+      "unchangedAndExpected": true
+    },
+    "privateMain": {
+      "expected": "19d5683380fd6a8c503684750ebbba77dd7910b2",
+      "initial": "19d5683380fd6a8c503684750ebbba77dd7910b2",
+      "final": "19d5683380fd6a8c503684750ebbba77dd7910b2",
+      "unchangedAndExpected": true
+    },
+    "privateDesign": {
+      "expected": "89bf3fd209925fbe95511e3100292b3da28b1032",
+      "initial": "89bf3fd209925fbe95511e3100292b3da28b1032",
+      "final": "89bf3fd209925fbe95511e3100292b3da28b1032",
+      "unchangedAndExpected": true
+    }
+  },
+  "gitTreeReads": [
+    {
+      "ref": "848633b1f1cb6c460e11ca680b50aeb65cb0d7f3",
+      "entries": 668,
+      "truncated": false
+    },
+    {
+      "ref": "29ac24f9357327560bde70c9864638dccbf5bed6",
+      "entries": 681,
+      "truncated": false
+    },
+    {
+      "ref": "27706615edc5859e535478c69247f1d8c096f554",
+      "entries": 680,
+      "truncated": false
+    },
+    {
+      "ref": "6434c11105abfd3122982cf65c227e9507dfb5ba",
+      "entries": 562,
+      "truncated": false
+    }
+  ],
+  "summary": {
+    "previousProtectedFiles": 35,
+    "unchangedPreviousProtectedFiles": 35,
+    "authorisedAddedProtectedFiles": 4,
+    "totalProtectedFiles": 39,
+    "protectedDifferenceFromCurrencyBaseline": 0,
+    "fixedReviewFiles": 16,
+    "unchangedReviewProvenanceFiles": 1,
+    "preparedVerificationFiles": 6,
+    "preparedVerificationFilesMatchingPublished": 6,
+    "preparedCurrencyDocumentsMatchingPublished": 4,
+    "changedFilesFromPreviousPublic": 13,
+    "onlyExpectedChangedFiles": true,
+    "frontendChanges": [
+      "frontend/scripts/guard-published.mjs"
+    ]
+  },
+  "protectedEntries": [
+    {
+      "path": ".nojekyll",
+      "previousBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "publishedBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "currencyBaselineBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644",
+      "bytes": 0,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "404.html",
+      "previousBlob": "c79ee47485fce87b5c96c50a542df15e32d65889",
+      "publishedBlob": "c79ee47485fce87b5c96c50a542df15e32d65889",
+      "currencyBaselineBlob": "c79ee47485fce87b5c96c50a542df15e32d65889",
+      "mode": "100644",
+      "bytes": 65926,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/Match-CtmL2Hj_.js",
+      "previousBlob": "bc0ea0dbb5a557fcc34232fb0f276ecbc2f3fec7",
+      "publishedBlob": "bc0ea0dbb5a557fcc34232fb0f276ecbc2f3fec7",
+      "currencyBaselineBlob": "bc0ea0dbb5a557fcc34232fb0f276ecbc2f3fec7",
+      "mode": "100644",
+      "bytes": 108521,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/content-sections-CfrmOVRI.js",
+      "previousBlob": "0c75ca324df6f1bc5a8b3fb5c461175baffb8dad",
+      "publishedBlob": "0c75ca324df6f1bc5a8b3fb5c461175baffb8dad",
+      "currencyBaselineBlob": "0c75ca324df6f1bc5a8b3fb5c461175baffb8dad",
+      "mode": "100644",
+      "bytes": 290203,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/index-DO3Vh6An.js",
+      "previousBlob": "01c31acbfc4f30190f2ba4a78905a639ecd872e0",
+      "publishedBlob": "01c31acbfc4f30190f2ba4a78905a639ecd872e0",
+      "currencyBaselineBlob": "01c31acbfc4f30190f2ba4a78905a639ecd872e0",
+      "mode": "100644",
+      "bytes": 581961,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/index-DhPZyX4z.css",
+      "previousBlob": "0d87f309286d201030bde73aec65dbd19a94ff48",
+      "publishedBlob": "0d87f309286d201030bde73aec65dbd19a94ff48",
+      "currencyBaselineBlob": "0d87f309286d201030bde73aec65dbd19a94ff48",
+      "mode": "100644",
+      "bytes": 321166,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/link-CrvydYrW.js",
+      "previousBlob": "a46ff535c5375376d6e82b23fde3bd15722c12db",
+      "publishedBlob": "a46ff535c5375376d6e82b23fde3bd15722c12db",
+      "currencyBaselineBlob": "a46ff535c5375376d6e82b23fde3bd15722c12db",
+      "mode": "100644",
+      "bytes": 17589,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/matchContext-DFjqCKIt.js",
+      "previousBlob": "851d8ba87257805d4dffcad00c78eb69aa46b773",
+      "publishedBlob": "851d8ba87257805d4dffcad00c78eb69aa46b773",
+      "currencyBaselineBlob": "851d8ba87257805d4dffcad00c78eb69aa46b773",
+      "mode": "100644",
+      "bytes": 2649,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/pricing-DQxYQr2Q.js",
+      "previousBlob": "0523019d0eb6c6c32407f9e44ba41529b3fa2116",
+      "publishedBlob": "0523019d0eb6c6c32407f9e44ba41529b3fa2116",
+      "currencyBaselineBlob": "0523019d0eb6c6c32407f9e44ba41529b3fa2116",
+      "mode": "100644",
+      "bytes": 356,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/pricing-page-eOuxT0Kj.js",
+      "previousBlob": "798de6a0f652087ab3a1f0f396eba8ed5dcaed7e",
+      "publishedBlob": "798de6a0f652087ab3a1f0f396eba8ed5dcaed7e",
+      "currencyBaselineBlob": "798de6a0f652087ab3a1f0f396eba8ed5dcaed7e",
+      "mode": "100644",
+      "bytes": 52443,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/pricing._currency-D7ELIB-1.js",
+      "previousBlob": "4ae9def0aaad1097f5b7922915fbe4d507c43bef",
+      "publishedBlob": "4ae9def0aaad1097f5b7922915fbe4d507c43bef",
+      "currencyBaselineBlob": "4ae9def0aaad1097f5b7922915fbe4d507c43bef",
+      "mode": "100644",
+      "bytes": 1228,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/pricing.index-DWapM0Qb.js",
+      "previousBlob": "5f4b27a97b877c20595157a32c52fc9046c9ba64",
+      "publishedBlob": "5f4b27a97b877c20595157a32c52fc9046c9ba64",
+      "currencyBaselineBlob": "5f4b27a97b877c20595157a32c52fc9046c9ba64",
+      "mode": "100644",
+      "bytes": 1118,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/routes-DrwDv2x2.js",
+      "previousBlob": "6326d678330b28e01287ff7b635f6713c1c62c43",
+      "publishedBlob": "6326d678330b28e01287ff7b635f6713c1c62c43",
+      "currencyBaselineBlob": "6326d678330b28e01287ff7b635f6713c1c62c43",
+      "mode": "100644",
+      "bytes": 33967,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "assets/useStore-DY_dpydU.js",
+      "previousBlob": "39c6267b5cfa5bda42ba7326cf29a3bf2ccbde4b",
+      "publishedBlob": "39c6267b5cfa5bda42ba7326cf29a3bf2ccbde4b",
+      "currencyBaselineBlob": "39c6267b5cfa5bda42ba7326cf29a3bf2ccbde4b",
+      "mode": "100644",
+      "bytes": 71416,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-01.jpg",
+      "previousBlob": "b0efee8d14695a62cc69109e9dd6ee05bfe9eacc",
+      "publishedBlob": "b0efee8d14695a62cc69109e9dd6ee05bfe9eacc",
+      "currencyBaselineBlob": "b0efee8d14695a62cc69109e9dd6ee05bfe9eacc",
+      "mode": "100644",
+      "bytes": 10248,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-02.jpg",
+      "previousBlob": "879b26b794beefad5cd9072f80472ac65ef7263b",
+      "publishedBlob": "879b26b794beefad5cd9072f80472ac65ef7263b",
+      "currencyBaselineBlob": "879b26b794beefad5cd9072f80472ac65ef7263b",
+      "mode": "100644",
+      "bytes": 8477,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-03.jpg",
+      "previousBlob": "ccf84df85df9f7acb7c2ed05cbe9c2105f5090e6",
+      "publishedBlob": "ccf84df85df9f7acb7c2ed05cbe9c2105f5090e6",
+      "currencyBaselineBlob": "ccf84df85df9f7acb7c2ed05cbe9c2105f5090e6",
+      "mode": "100644",
+      "bytes": 9714,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-04.jpg",
+      "previousBlob": "443b3191764c41a7d25f59d2ef9636c7e5d03c60",
+      "publishedBlob": "443b3191764c41a7d25f59d2ef9636c7e5d03c60",
+      "currencyBaselineBlob": "443b3191764c41a7d25f59d2ef9636c7e5d03c60",
+      "mode": "100644",
+      "bytes": 11616,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-05.jpg",
+      "previousBlob": "6a26689e4a6ed60369badd5f810e46d142db24c5",
+      "publishedBlob": "6a26689e4a6ed60369badd5f810e46d142db24c5",
+      "currencyBaselineBlob": "6a26689e4a6ed60369badd5f810e46d142db24c5",
+      "mode": "100644",
+      "bytes": 9124,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-06.jpg",
+      "previousBlob": "3caef347c989052958dc8e677d611290f7d23d8f",
+      "publishedBlob": "3caef347c989052958dc8e677d611290f7d23d8f",
+      "currencyBaselineBlob": "3caef347c989052958dc8e677d611290f7d23d8f",
+      "mode": "100644",
+      "bytes": 7843,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "covers/cover-07.jpg",
+      "previousBlob": "d22427ee1c4a594744e4cb0f1c0ccb9435faaf11",
+      "publishedBlob": "d22427ee1c4a594744e4cb0f1c0ccb9435faaf11",
+      "currencyBaselineBlob": "d22427ee1c4a594744e4cb0f1c0ccb9435faaf11",
+      "mode": "100644",
+      "bytes": 8214,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "favicon.svg",
+      "previousBlob": "ae99f5fdf04606e3cc9c0828715419ca60ad65fd",
+      "publishedBlob": "ae99f5fdf04606e3cc9c0828715419ca60ad65fd",
+      "currencyBaselineBlob": "ae99f5fdf04606e3cc9c0828715419ca60ad65fd",
+      "mode": "100644",
+      "bytes": 10625,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/README.md",
+      "previousBlob": "4f69020a33786c571f2348744e2fa23ff6f9ae9c",
+      "publishedBlob": "4f69020a33786c571f2348744e2fa23ff6f9ae9c",
+      "currencyBaselineBlob": "4f69020a33786c571f2348744e2fa23ff6f9ae9c",
+      "mode": "100644",
+      "bytes": 967,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/celebrating-occasions-open-book-placeholder.svg",
+      "previousBlob": "54b339c87ef254399d4c7b4ae37e132b7bacec5e",
+      "publishedBlob": "54b339c87ef254399d4c7b4ae37e132b7bacec5e",
+      "currencyBaselineBlob": "54b339c87ef254399d4c7b4ae37e132b7bacec5e",
+      "mode": "100644",
+      "bytes": 1761,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/founders-memoir-open-book-placeholder.svg",
+      "previousBlob": "9c738cd76c290456414f1f54039ea61495c19225",
+      "publishedBlob": "9c738cd76c290456414f1f54039ea61495c19225",
+      "currencyBaselineBlob": "9c738cd76c290456414f1f54039ea61495c19225",
+      "mode": "100644",
+      "bytes": 1761,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/life-story-open-book-placeholder.svg",
+      "previousBlob": "b1b9d4d4d648e65046bcbe0f682cb4ede82a9e39",
+      "publishedBlob": "b1b9d4d4d648e65046bcbe0f682cb4ede82a9e39",
+      "currencyBaselineBlob": "b1b9d4d4d648e65046bcbe0f682cb4ede82a9e39",
+      "mode": "100644",
+      "bytes": 1761,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/parent-to-child-letters-open-book-placeholder.svg",
+      "previousBlob": "be9779f80950dca9e383a1ff8e70589c2f88d74c",
+      "publishedBlob": "be9779f80950dca9e383a1ff8e70589c2f88d74c",
+      "currencyBaselineBlob": "be9779f80950dca9e383a1ff8e70589c2f88d74c",
+      "mode": "100644",
+      "bytes": 1761,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/relationship-memoir-open-book-placeholder.svg",
+      "previousBlob": "59f525c23f4c9ec4435fdcff8aae592776d421db",
+      "publishedBlob": "59f525c23f4c9ec4435fdcff8aae592776d421db",
+      "currencyBaselineBlob": "59f525c23f4c9ec4435fdcff8aae592776d421db",
+      "mode": "100644",
+      "bytes": 1761,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "gallery/travel-memoir-open-book-placeholder.svg",
+      "previousBlob": "a6342ca15222004a1031bb7c2a75aa81d15f96f4",
+      "publishedBlob": "a6342ca15222004a1031bb7c2a75aa81d15f96f4",
+      "currencyBaselineBlob": "a6342ca15222004a1031bb7c2a75aa81d15f96f4",
+      "mode": "100644",
+      "bytes": 1761,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "index.html",
+      "previousBlob": "c79ee47485fce87b5c96c50a542df15e32d65889",
+      "publishedBlob": "c79ee47485fce87b5c96c50a542df15e32d65889",
+      "currencyBaselineBlob": "c79ee47485fce87b5c96c50a542df15e32d65889",
+      "mode": "100644",
+      "bytes": 65926,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "logo192.png",
+      "previousBlob": "339073485d5fd7accb05e00d45d1d45153181c19",
+      "publishedBlob": "339073485d5fd7accb05e00d45d1d45153181c19",
+      "currencyBaselineBlob": "339073485d5fd7accb05e00d45d1d45153181c19",
+      "mode": "100644",
+      "bytes": 52997,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "logo512.png",
+      "previousBlob": "47c2e32852d740adb31c59047aaa0cc3c4fb11fc",
+      "publishedBlob": "47c2e32852d740adb31c59047aaa0cc3c4fb11fc",
+      "currencyBaselineBlob": "47c2e32852d740adb31c59047aaa0cc3c4fb11fc",
+      "mode": "100644",
+      "bytes": 277952,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "manifest.json",
+      "previousBlob": "59b9197030053f0be0c8ff500839d9cb739ffaf8",
+      "publishedBlob": "59b9197030053f0be0c8ff500839d9cb739ffaf8",
+      "currencyBaselineBlob": "59b9197030053f0be0c8ff500839d9cb739ffaf8",
+      "mode": "100644",
+      "bytes": 467,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "pricing/cad/index.html",
+      "previousBlob": null,
+      "publishedBlob": "071a0b73663e95d71991b6b81b705cf1c9270fdb",
+      "currencyBaselineBlob": "071a0b73663e95d71991b6b81b705cf1c9270fdb",
+      "mode": "100644",
+      "bytes": 49292,
+      "change": "authorised addition",
+      "matchesExpected": true
+    },
+    {
+      "path": "pricing/gbp/index.html",
+      "previousBlob": null,
+      "publishedBlob": "6a929fc18b96338f2a79416ddebfdfb57ab5f271",
+      "currencyBaselineBlob": "6a929fc18b96338f2a79416ddebfdfb57ab5f271",
+      "mode": "100644",
+      "bytes": 49290,
+      "change": "authorised addition",
+      "matchesExpected": true
+    },
+    {
+      "path": "pricing/index.html",
+      "previousBlob": "7949e157abda3673d102e5ba50a746916d533743",
+      "publishedBlob": "7949e157abda3673d102e5ba50a746916d533743",
+      "currencyBaselineBlob": "7949e157abda3673d102e5ba50a746916d533743",
+      "mode": "100644",
+      "bytes": 49149,
+      "change": "unchanged",
+      "matchesExpected": true
+    },
+    {
+      "path": "pricing/inr/index.html",
+      "previousBlob": null,
+      "publishedBlob": "67a470d2131180b60ad2eb0614fba7ec718d037f",
+      "currencyBaselineBlob": "67a470d2131180b60ad2eb0614fba7ec718d037f",
+      "mode": "100644",
+      "bytes": 49303,
+      "change": "authorised addition",
+      "matchesExpected": true
+    },
+    {
+      "path": "pricing/usd/index.html",
+      "previousBlob": null,
+      "publishedBlob": "1b08c1073d092852c7e698984aacd81c4b9f438e",
+      "currencyBaselineBlob": "1b08c1073d092852c7e698984aacd81c4b9f438e",
+      "mode": "100644",
+      "bytes": 49294,
+      "change": "authorised addition",
+      "matchesExpected": true
+    },
+    {
+      "path": "robots.txt",
+      "previousBlob": "1f53798bb4fe33c86020be7f10c44f29486fd190",
+      "publishedBlob": "1f53798bb4fe33c86020be7f10c44f29486fd190",
+      "currencyBaselineBlob": "1f53798bb4fe33c86020be7f10c44f29486fd190",
+      "mode": "100644",
+      "bytes": 26,
+      "change": "unchanged",
+      "matchesExpected": true
+    }
+  ],
+  "preparedVerificationManifestChecks": [
+    {
+      "path": ".github/scripts/verify-pricing-footer.mjs",
+      "bytes": 19947,
+      "sha256": "c477189dde150ed27a0f91f343e6d825b2f852123d9d66a3c2da216a4d5a3fa3",
+      "sha": "d45956ae59059fc119a272da2aed81605d8b3d16",
+      "actualBytes": 19947,
+      "actualSha256": "c477189dde150ed27a0f91f343e6d825b2f852123d9d66a3c2da216a4d5a3fa3",
+      "actualGitBlob": "d45956ae59059fc119a272da2aed81605d8b3d16",
+      "matchesPreparedManifest": true,
+      "publishedBlob": "d45956ae59059fc119a272da2aed81605d8b3d16",
+      "publishedBytes": 19947,
+      "remoteReadBlob": "d45956ae59059fc119a272da2aed81605d8b3d16",
+      "matchesPublished": true
+    },
+    {
+      "path": ".github/scripts/verify-pricing-footer-live.mjs",
+      "bytes": 20388,
+      "sha256": "a79afd4499e6e289576283985e5417a285c47e255d462ad07e2b9636ebb86790",
+      "sha": "c446bf3b5c594c1af51975d8bdfa1f1146b5af48",
+      "actualBytes": 20388,
+      "actualSha256": "a79afd4499e6e289576283985e5417a285c47e255d462ad07e2b9636ebb86790",
+      "actualGitBlob": "c446bf3b5c594c1af51975d8bdfa1f1146b5af48",
+      "matchesPreparedManifest": true,
+      "publishedBlob": "c446bf3b5c594c1af51975d8bdfa1f1146b5af48",
+      "publishedBytes": 20388,
+      "remoteReadBlob": "c446bf3b5c594c1af51975d8bdfa1f1146b5af48",
+      "matchesPublished": true
+    },
+    {
+      "path": "frontend/scripts/guard-published.mjs",
+      "bytes": 1354,
+      "sha256": "7e7ef526b3327e89e2766d978e126c0c89cc35a24b615f7193fb5c2e27726411",
+      "sha": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+      "actualBytes": 1354,
+      "actualSha256": "7e7ef526b3327e89e2766d978e126c0c89cc35a24b615f7193fb5c2e27726411",
+      "actualGitBlob": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+      "matchesPreparedManifest": true,
+      "publishedBlob": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+      "publishedBytes": 1354,
+      "remoteReadBlob": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+      "matchesPublished": true
+    },
+    {
+      "path": ".github/workflows/verify-react-review.yml",
+      "bytes": 11176,
+      "sha256": "0bda0c48150a2784dfb0281cda1df3dc1d094e12244e716d6df04a773b3633aa",
+      "sha": "e339f0eacd6a076e33aa5f00db6962ef90bc7abc",
+      "actualBytes": 11176,
+      "actualSha256": "0bda0c48150a2784dfb0281cda1df3dc1d094e12244e716d6df04a773b3633aa",
+      "actualGitBlob": "e339f0eacd6a076e33aa5f00db6962ef90bc7abc",
+      "matchesPreparedManifest": true,
+      "publishedBlob": "e339f0eacd6a076e33aa5f00db6962ef90bc7abc",
+      "publishedBytes": 11176,
+      "remoteReadBlob": "e339f0eacd6a076e33aa5f00db6962ef90bc7abc",
+      "matchesPublished": true
+    },
+    {
+      "path": ".github/workflows/verify-pricing-currency.yml",
+      "bytes": 2456,
+      "sha256": "fb80765da9f11c8b850f56d8ab3542f03d7058b06a77667452c42a17b81cd855",
+      "sha": "b1e86ed18ac735df2e113636c8021e485f013a05",
+      "actualBytes": 2456,
+      "actualSha256": "fb80765da9f11c8b850f56d8ab3542f03d7058b06a77667452c42a17b81cd855",
+      "actualGitBlob": "b1e86ed18ac735df2e113636c8021e485f013a05",
+      "matchesPreparedManifest": true,
+      "publishedBlob": "b1e86ed18ac735df2e113636c8021e485f013a05",
+      "publishedBytes": 2456,
+      "remoteReadBlob": "b1e86ed18ac735df2e113636c8021e485f013a05",
+      "matchesPublished": true
+    },
+    {
+      "path": ".github/scripts/verify-pricing-currency-live.mjs",
+      "bytes": 35802,
+      "sha256": "3a5edab13dffb98fa73346c146d03e73b2a6551b8a378b498a1d85e94d0564d6",
+      "sha": "0a7548b4b16fe92cfec6235b64586e2dc6d1a868",
+      "actualBytes": 35802,
+      "actualSha256": "3a5edab13dffb98fa73346c146d03e73b2a6551b8a378b498a1d85e94d0564d6",
+      "actualGitBlob": "0a7548b4b16fe92cfec6235b64586e2dc6d1a868",
+      "matchesPreparedManifest": true,
+      "publishedBlob": "0a7548b4b16fe92cfec6235b64586e2dc6d1a868",
+      "publishedBytes": 35802,
+      "remoteReadBlob": "0a7548b4b16fe92cfec6235b64586e2dc6d1a868",
+      "matchesPublished": true
+    }
+  ],
+  "preparedCurrencyDocumentChecks": [
+    {
+      "path": "pricing/cad/index.html",
+      "actualBytes": 49292,
+      "actualSha256": "0c9149e4b87e1b2cb07aaa3d7abc60fc0b6d1129354a74bed2cb5c34de74834b",
+      "actualGitBlob": "071a0b73663e95d71991b6b81b705cf1c9270fdb",
+      "publishedBlob": "071a0b73663e95d71991b6b81b705cf1c9270fdb",
+      "publishedBytes": 49292,
+      "remoteReadBlob": null,
+      "matchesPublished": true
+    },
+    {
+      "path": "pricing/gbp/index.html",
+      "actualBytes": 49290,
+      "actualSha256": "eca77670149233c2727fe43870d79dcdfc7dd937cdfc3353823cbf13d9e8f246",
+      "actualGitBlob": "6a929fc18b96338f2a79416ddebfdfb57ab5f271",
+      "publishedBlob": "6a929fc18b96338f2a79416ddebfdfb57ab5f271",
+      "publishedBytes": 49290,
+      "remoteReadBlob": null,
+      "matchesPublished": true
+    },
+    {
+      "path": "pricing/inr/index.html",
+      "actualBytes": 49303,
+      "actualSha256": "80a11555dbc15a5b8250aea7d64fb5d78da1a38235a21f3a433af40d2c66dc40",
+      "actualGitBlob": "67a470d2131180b60ad2eb0614fba7ec718d037f",
+      "publishedBlob": "67a470d2131180b60ad2eb0614fba7ec718d037f",
+      "publishedBytes": 49303,
+      "remoteReadBlob": null,
+      "matchesPublished": true
+    },
+    {
+      "path": "pricing/usd/index.html",
+      "actualBytes": 49294,
+      "actualSha256": "58cc963da4b611727beff1e7e5d62df2b66d4179b3864c22d452d4ec78cc56ba",
+      "actualGitBlob": "1b08c1073d092852c7e698984aacd81c4b9f438e",
+      "publishedBlob": "1b08c1073d092852c7e698984aacd81c4b9f438e",
+      "publishedBytes": 49294,
+      "remoteReadBlob": null,
+      "matchesPublished": true
+    }
+  ],
+  "reviewEntries": [
+    {
+      "path": "react-review/BUILD_PROVENANCE.json",
+      "fixedCheckpointBlob": "af56121e9010cac1143f1dc1c0a4fb69431f7a1c",
+      "previousBlob": "af56121e9010cac1143f1dc1c0a4fb69431f7a1c",
+      "publishedBlob": "af56121e9010cac1143f1dc1c0a4fb69431f7a1c",
+      "manifestSha256": null,
+      "unchanged": true
+    },
+    {
+      "path": "react-review/index.html",
+      "fixedCheckpointBlob": "e51a8908a66035df898a719b8192e9cbf5c4d5ec",
+      "previousBlob": "e51a8908a66035df898a719b8192e9cbf5c4d5ec",
+      "publishedBlob": "e51a8908a66035df898a719b8192e9cbf5c4d5ec",
+      "manifestSha256": "b22028eea157f7e810a89285a275398c85be0b96cc545cc6f655c3b835a5a641",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/assets/index-DwSiyyhZ.js",
+      "fixedCheckpointBlob": "efdbadf45ce18c9556ba76a5380f8861e49d5b90",
+      "previousBlob": "efdbadf45ce18c9556ba76a5380f8861e49d5b90",
+      "publishedBlob": "efdbadf45ce18c9556ba76a5380f8861e49d5b90",
+      "manifestSha256": "fd5871fc762bfed6d5b20c9e1d3df84949c4550775ac65ab8aab7c4a6f3867dd",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/assets/index-VANhAaMv.css",
+      "fixedCheckpointBlob": "c835d2e5e9a74062902429ee0eb2a57d30d4fa8a",
+      "previousBlob": "c835d2e5e9a74062902429ee0eb2a57d30d4fa8a",
+      "publishedBlob": "c835d2e5e9a74062902429ee0eb2a57d30d4fa8a",
+      "manifestSha256": "86b684dcd23b9c3afa315aea4b3c98752c129ccae504322039dbb676c0cf1032",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-02.jpg",
+      "fixedCheckpointBlob": "879b26b794beefad5cd9072f80472ac65ef7263b",
+      "previousBlob": "879b26b794beefad5cd9072f80472ac65ef7263b",
+      "publishedBlob": "879b26b794beefad5cd9072f80472ac65ef7263b",
+      "manifestSha256": "cac3c66a1d22dc96ee670499a6190221b0df2582881cb2f30f03b695cef435c4",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-01.jpg",
+      "fixedCheckpointBlob": "b0efee8d14695a62cc69109e9dd6ee05bfe9eacc",
+      "previousBlob": "b0efee8d14695a62cc69109e9dd6ee05bfe9eacc",
+      "publishedBlob": "b0efee8d14695a62cc69109e9dd6ee05bfe9eacc",
+      "manifestSha256": "1cfd68e6332da4332a60ba20cb000e9abb8c0183f9af098cd515b10ed3435d01",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-05.jpg",
+      "fixedCheckpointBlob": "6a26689e4a6ed60369badd5f810e46d142db24c5",
+      "previousBlob": "6a26689e4a6ed60369badd5f810e46d142db24c5",
+      "publishedBlob": "6a26689e4a6ed60369badd5f810e46d142db24c5",
+      "manifestSha256": "0f38bfa7ddaff6e52ee3d01a29407ccd1860b9c92cab14fc2398a80e5e83f190",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-06.jpg",
+      "fixedCheckpointBlob": "3caef347c989052958dc8e677d611290f7d23d8f",
+      "previousBlob": "3caef347c989052958dc8e677d611290f7d23d8f",
+      "publishedBlob": "3caef347c989052958dc8e677d611290f7d23d8f",
+      "manifestSha256": "784457b10bccf14e1dce258a07a870b90d67fa27b749e67e673461d94607a1b0",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-04.jpg",
+      "fixedCheckpointBlob": "443b3191764c41a7d25f59d2ef9636c7e5d03c60",
+      "previousBlob": "443b3191764c41a7d25f59d2ef9636c7e5d03c60",
+      "publishedBlob": "443b3191764c41a7d25f59d2ef9636c7e5d03c60",
+      "manifestSha256": "af0d663dff275b9651f73966889e31c92524bb285024ceba0d3b1f8573524d12",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-07.jpg",
+      "fixedCheckpointBlob": "d22427ee1c4a594744e4cb0f1c0ccb9435faaf11",
+      "previousBlob": "d22427ee1c4a594744e4cb0f1c0ccb9435faaf11",
+      "publishedBlob": "d22427ee1c4a594744e4cb0f1c0ccb9435faaf11",
+      "manifestSha256": "673ceb6f45cae3332cc41796a4bfcc71365ff3a0f2bcf6107943fa2937a7a94b",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/covers/cover-03.jpg",
+      "fixedCheckpointBlob": "ccf84df85df9f7acb7c2ed05cbe9c2105f5090e6",
+      "previousBlob": "ccf84df85df9f7acb7c2ed05cbe9c2105f5090e6",
+      "publishedBlob": "ccf84df85df9f7acb7c2ed05cbe9c2105f5090e6",
+      "manifestSha256": "07937d8119166b6b8754b5caa00cf973cd7bb738ca06d35b25f0dd388afcd983",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/gallery/celebrating-occasions-open-book-placeholder.svg",
+      "fixedCheckpointBlob": "54b339c87ef254399d4c7b4ae37e132b7bacec5e",
+      "previousBlob": "54b339c87ef254399d4c7b4ae37e132b7bacec5e",
+      "publishedBlob": "54b339c87ef254399d4c7b4ae37e132b7bacec5e",
+      "manifestSha256": "eba5b671f2f2d0c67e499e646119b24ecfe8cf5f147b96acce04d71dc8228fff",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/gallery/travel-memoir-open-book-placeholder.svg",
+      "fixedCheckpointBlob": "a6342ca15222004a1031bb7c2a75aa81d15f96f4",
+      "previousBlob": "a6342ca15222004a1031bb7c2a75aa81d15f96f4",
+      "publishedBlob": "a6342ca15222004a1031bb7c2a75aa81d15f96f4",
+      "manifestSha256": "94043640a62430136896e4b345fcb84e30dc0b1beeb7abcb83d88dbb59d5dd57",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/gallery/life-story-open-book-placeholder.svg",
+      "fixedCheckpointBlob": "b1b9d4d4d648e65046bcbe0f682cb4ede82a9e39",
+      "previousBlob": "b1b9d4d4d648e65046bcbe0f682cb4ede82a9e39",
+      "publishedBlob": "b1b9d4d4d648e65046bcbe0f682cb4ede82a9e39",
+      "manifestSha256": "966bb50023e66ca1519a6b8275d75bb189142ed4257b65f867fdae70cbaf11fd",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/gallery/relationship-memoir-open-book-placeholder.svg",
+      "fixedCheckpointBlob": "59f525c23f4c9ec4435fdcff8aae592776d421db",
+      "previousBlob": "59f525c23f4c9ec4435fdcff8aae592776d421db",
+      "publishedBlob": "59f525c23f4c9ec4435fdcff8aae592776d421db",
+      "manifestSha256": "93e0cdd7e18db950a7390e5360dda947708aa25875402b9a61f5d5cb83a755c3",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/gallery/parent-to-child-letters-open-book-placeholder.svg",
+      "fixedCheckpointBlob": "be9779f80950dca9e383a1ff8e70589c2f88d74c",
+      "previousBlob": "be9779f80950dca9e383a1ff8e70589c2f88d74c",
+      "publishedBlob": "be9779f80950dca9e383a1ff8e70589c2f88d74c",
+      "manifestSha256": "378f13bcb952d0b51e26fb7c3b9fb7aeb52d7ddf770a1e94d1f4947413c2c309",
+      "unchanged": true
+    },
+    {
+      "path": "react-review/gallery/founders-memoir-open-book-placeholder.svg",
+      "fixedCheckpointBlob": "9c738cd76c290456414f1f54039ea61495c19225",
+      "previousBlob": "9c738cd76c290456414f1f54039ea61495c19225",
+      "publishedBlob": "9c738cd76c290456414f1f54039ea61495c19225",
+      "manifestSha256": "1358f9c049923f55bc42f83812c71f14560a0cb45886e8646c0da780deb9542b",
+      "unchanged": true
+    }
+  ],
+  "defaultFooter": {
+    "path": "pricing/index.html",
+    "originalBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "originalBlob": "69c7b18cea84b8634cde999ae3b7c709aab327d7",
+    "previousBlob": "7949e157abda3673d102e5ba50a746916d533743",
+    "publishedBlob": "7949e157abda3673d102e5ba50a746916d533743",
+    "originalBytes": 49185,
+    "publishedBytes": 49149,
+    "removedBytes": 36,
+    "originalTargetCount": 1,
+    "publishedStaleTargetCount": 0,
+    "exactOriginalSingleCorrection": true,
+    "unchangedFromPrevious": true
+  },
+  "pinsAndThresholds": {
+    "guardBlob": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+    "expectedGuardBlob": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+    "guardOnlyBaselineAndScopeCommentChanged": true,
+    "reviewWorkflowOnlyGuardPinChanged": true,
+    "processParity": {
+      "blob": "93daa5c14e2d79bb82273e205f25b6562762db38",
+      "expected": "93daa5c14e2d79bb82273e205f25b6562762db38",
+      "workflowPinned": true
+    },
+    "craftParity": {
+      "blob": "0e62e81ef4546650a2808252d3d58b811407403d",
+      "expected": "0e62e81ef4546650a2808252d3d58b811407403d",
+      "workflowPinned": true
+    },
+    "thresholds": {
+      "geometryTolerance": {
+        "before": "0.15",
+        "published": "0.15",
+        "unchanged": true
+      },
+      "channelThreshold": {
+        "before": "24",
+        "published": "24",
+        "unchanged": true
+      },
+      "pixelRatioLimit": {
+        "before": "0.01",
+        "published": "0.01",
+        "unchanged": true
+      }
+    }
+  },
+  "sourceReview": [
+    {
+      "path": ".github/scripts/verify-pricing-footer.mjs",
+      "finding": "Preserves the exact single original-to-candidate footer replacement, all rendered comparison logic and all three thresholds. Adds immutable footer/currency baseline checks, requires exactly four currency additions and checks all 39 protected file identities.",
+      "diff": "...\n  import { PNG } from 'pngjs'\n  \n  const originalBaseline = 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b'\n+ const footerProtectionBaseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'\n+ const currencyBaseline = '27706615edc5859e535478c69247f1d8c096f554'\n+ const currencyPaths = ['pricing/cad/index.html', 'pricing/gbp/index.html', 'pricing/inr/index.html', 'pricing/usd/index.html']\n  const htmlPath = 'pricing/index.html'\n  const stale = 'Get in touch <span aria-hidden=\"true\">↗</span>'\n  const corrected = 'Get in touch'\n...\n  const repositoryContainsCandidate = repositoryBytes.equals(candidate)\n  const report = {\n    scope: 'P4 07 default saved pricing footer only',\n+   originalBaseline, footerProtectionBaseline, currencyBaseline, currencyPaths, sourceCommit: git('rev-parse', 'HEAD').toString().trim(),\n-   originalBaseline, sourceCommit: git('rev-parse', 'HEAD').toString().trim(),\n    runId: process.env.GITHUB_RUN_ID, runAttempt: process.env.GITHUB_RUN_ATTEMPT,\n    startedAt: new Date().toISOString(), repositoryContainsCandidate,\n    input: { originalSha256: sha256(original), candidateSha256: sha256(candidate), originalBytes: original.length, candidateBytes: candidate.length, removedBytes: original.length - candidate.length, trailingNewline: originalText.endsWith('\\n'), exactSingleReplacement: true },\n    thresholds: { geometryTolerance, channelThreshold, pixelRatioLimit },\n+   protectedFiles: [], protectedBaselineFiles: [], observations: [], comparisons: [], screenshots: [], checkpoints: [], problems: [],\n+   limits: 'Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. The four currency documents are checked only for protected byte identity here; currency behaviour has a separate gate. No book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance.'\n-   protectedFiles: [], observations: [], comparisons: [], screenshots: [], checkpoints: [], problems: [],\n-   limits: 'Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. No currency route or book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance.'\n  }\n  const sections = '.site-header,main>section,.pricing-plan-grid,.pricing-plan-card,.pricing-comparison table,.site-footer,.footer-grid,.footer-bottom'\n  await fs.mkdir(output, { recursive: true })\n...\n  await fs.writeFile(output + '/candidate-pricing.html', candidate)\n  await fs.writeFile(output + '/default-footer.patch', '--- a/pricing/index.html\\n+++ b/pricing/index.html\\n@@ -1 +1 @@\\n-' + originalText + '\\n\\\\ No newline at end of file\\n+' + candidate.toString('utf8') + '\\n\\\\ No newline at end of file\\n')\n  \n+ // Retain the exact footer correction and admit only the four reviewed currency documents.\n- // Complete protected file identity, allowing only the exact authorised document correction.\n  const protectedPaths = ['index.html','404.html','assets/','covers/','gallery/','pricing/','favicon.svg','manifest.json','logo192.png','logo512.png','robots.txt','.nojekyll']\n+ const lines = bytes => bytes.toString('utf8').trim().split('\\n').filter(Boolean)\n+ assert.deepEqual(lines(git('diff', '--name-status', footerProtectionBaseline, currencyBaseline, '--', ...protectedPaths)), currencyPaths.map(file => 'A\\t' + file), 'The currency baseline adds exactly four documents without changing any existing protected file')\n+ const changed = lines(git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths))\n+ assert.deepEqual(changed, [htmlPath, ...currencyPaths].sort(), 'Only the exact footer correction and four currency documents differ from the original')\n+ assert.deepEqual(lines(git('diff', '--name-only', currencyBaseline, 'HEAD', '--', ...protectedPaths)), [], 'Protected files match the immutable currency baseline')\n+ assert.deepEqual(lines(git('diff', '--name-only', 'HEAD', '--', ...protectedPaths)), [], 'Protected working files match the checked out commit')\n+ for (const file of lines(git('ls-tree', '-r', '--name-only', currencyBaseline, '--', ...protectedPaths))) {\n+   const expected = git('show', currencyBaseline + ':' + file)\n+   const bytes = await fs.readFile(file)\n+   assert(bytes.equals(expected), file + ' retains its expected protected bytes')\n+   report.protectedBaselineFiles.push({ file, sha256: sha256(bytes), bytes: bytes.length, matches: true, authorisedCurrencyDocument: currencyPaths.includes(file) })\n+ }\n- const changed = git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths).toString().trim().split('\\n').filter(Boolean)\n- assert.deepEqual(changed, repositoryContainsCandidate ? [htmlPath] : [])\n  for (const file of ['index.html','404.html','assets/index-DO3Vh6An.js','assets/index-DhPZyX4z.css','assets/content-sections-CfrmOVRI.js',htmlPath]) {\n    const bytes = await fs.readFile(file)\n    const before = git('show', originalBaseline + ':' + file)"
+    },
+    {
+      "path": ".github/scripts/verify-pricing-footer-live.mjs",
+      "finding": "Preserves original footer replacement, direct/reload behaviour, geometry and error assertions. Extends protected-file coverage to the four exact currency documents and deployment readiness to their byte hashes. Currency behaviour remains a separate gate.",
+      "diff": "...\n  import { chromium } from 'playwright-core'\n  \n  const originalBaseline = 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b'\n+ const footerProtectionBaseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'\n+ const currencyBaseline = '27706615edc5859e535478c69247f1d8c096f554'\n+ const currencyPaths = ['pricing/cad/index.html', 'pricing/gbp/index.html', 'pricing/inr/index.html', 'pricing/usd/index.html']\n  const reviewCheckpoint = '6434c11105abfd3122982cf65c227e9507dfb5ba'\n  const published = 'https://storileaf.github.io/storileaf-homepage-preview/'\n  const pricingPath = 'pricing/index.html'\n...\n  const require = createRequire(import.meta.url)\n  const report = {\n    scope: 'Live verification of the authorised P4 07 default saved pricing footer correction only',\n+   originalBaseline, footerProtectionBaseline, currencyBaseline, currencyPaths, reviewCheckpoint, published, pricingUrl,\n-   originalBaseline, reviewCheckpoint, published, pricingUrl,\n    startedAt: new Date().toISOString(),\n    run: { id: process.env.GITHUB_RUN_ID, attempt: process.env.GITHUB_RUN_ATTEMPT, job: process.env.GITHUB_JOB, workflow: process.env.GITHUB_WORKFLOW, repository: process.env.GITHUB_REPOSITORY, githubSha: process.env.GITHUB_SHA },\n    deploymentPolling: { maximumMilliseconds: 120000, intervalMilliseconds: 5000, attempts: [] },\n    repositoryProtectedFiles: [], servedProtectedFiles: [], reviewFiles: [], observations: [], screenshots: [], comparisons: [], problems: [],\n+   limits: 'Headless Chromium on the recorded Linux runner. Four CSS viewport widths, height 1000, DPR 1, normal text and reduced motion. Generic pricing direct entry and reload only. The four currency documents are checked only for repository and served byte identity here; currency behaviour has a separate gate. No selected book query repair, native zoom, other browser engines, physical devices, payment flow or spoken screen reader acceptance. The .nojekyll deployment marker is checked in Git, not treated as a public page. Only deployment byte readiness is polled. Behavioural checks are performed once without retries.'\n-   limits: 'Headless Chromium on the recorded Linux runner. Four CSS viewport widths, height 1000, DPR 1, normal text and reduced motion. Generic pricing direct entry and reload only. No currency route or selected book query repair, native zoom, other browser engines, physical devices, payment flow or spoken screen reader acceptance. The .nojekyll deployment marker is checked in Git, not treated as a public page. Only deployment byte readiness is polled. Behavioural checks are performed once without retries.'\n  }\n  \n  await fs.mkdir(output, { recursive: true })\n...\n    return { bytes, status: response.status, url: response.url, contentType: response.headers.get('content-type'), sha256: sha256(bytes) }\n  }\n  \n+ async function awaitDeployment(candidateHash, currencyDocuments) {\n- async function awaitDeployment(candidateHash) {\n    const started = Date.now()\n    const deadline = started + report.deploymentPolling.maximumMilliseconds\n    while (Date.now() < deadline) {\n...\n      try {\n        const response = await fetchBytes(pricingUrl, Math.max(1, Math.min(20000, deadline - Date.now())))\n        Object.assign(observation, { status: response.status, url: response.url, sha256: response.sha256, bytes: response.bytes.length })\n+       const outcomes = await Promise.allSettled(currencyDocuments.map(async item => {\n+         const currencyResponse = await fetchBytes(published + item.file, Math.max(1, Math.min(20000, deadline - Date.now())))\n+         return { file: item.file, status: currencyResponse.status, url: currencyResponse.url, sha256: currencyResponse.sha256, expectedSha256: item.sha256, bytes: currencyResponse.bytes.length, matches: currencyResponse.status === 200 && currencyResponse.sha256 === item.sha256 }\n+       }))\n+       observation.currencyDocuments = outcomes.map((outcome, index) => outcome.status === 'fulfilled' ? outcome.value : { file: currencyDocuments[index].file, expectedSha256: currencyDocuments[index].sha256, matches: false, error: outcome.reason?.message || String(outcome.reason) })\n+       observation.matchesCandidate = response.status === 200 && response.sha256 === candidateHash && observation.currencyDocuments.every(item => item.matches)\n-       observation.matchesCandidate = response.status === 200 && response.sha256 === candidateHash\n        report.deploymentPolling.attempts.push(observation)\n        if (observation.matchesCandidate) {\n          report.deploymentPolling.elapsedMilliseconds = Date.now() - started\n+         report.deploymentPolling.result = 'exact candidate and currency document responses available'\n-         report.deploymentPolling.result = 'exact candidate response available'\n          return\n        }\n      } catch (error) {\n...\n    }\n    report.deploymentPolling.elapsedMilliseconds = Date.now() - started\n    report.deploymentPolling.result = 'timed out'\n+   throw new Error('The exact authorised pricing responses did not become available within the deployment byte polling window')\n-   throw new Error('The exact authorised pricing response did not become available within the deployment byte polling window')\n  }\n  \n  async function verifyServedFiles(items, destination) {\n...\n    assert.equal(originalText.split(stale).length - 1, 1, 'Exactly one approved footer target')\n    const candidate = Buffer.from(originalText.replace(stale, corrected))\n    assert((await fs.readFile(pricingPath)).equals(candidate), 'Live verification is allowed only after the exact candidate is committed')\n+   assert.deepEqual(lines(git('diff', '--name-status', footerProtectionBaseline, currencyBaseline, '--', ...protectedPaths)), currencyPaths.map(file => 'A\\t' + file), 'The currency baseline adds exactly four documents without changing any existing protected file')\n+   assert.deepEqual(lines(git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths)), [pricingPath, ...currencyPaths].sort(), 'Only the exact footer correction and four currency documents differ from the original')\n+   assert.deepEqual(lines(git('diff', '--name-only', currencyBaseline, 'HEAD', '--', ...protectedPaths)), [], 'Protected files match the immutable currency baseline')\n-   assert.deepEqual(lines(git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths)), [pricingPath], 'Only the authorised pricing document changed')\n    assert.deepEqual(lines(git('diff', '--name-only', 'HEAD', '--', ...protectedPaths)), [], 'Protected working files match the checked out commit')\n    assert.deepEqual(lines(git('diff', '--name-only', reviewCheckpoint, 'HEAD', '--', 'react-review/')), [], 'The separate review snapshot is unchanged')\n    report.input = { originalSha256: sha256(original), candidateSha256: sha256(candidate), originalBytes: original.length, candidateBytes: candidate.length, removedBytes: original.length - candidate.length, exactSingleReplacement: true, trailingNewline: candidate.toString('utf8').endsWith('\\n') }\n  \n+   const protectedFiles = lines(git('ls-tree', '-r', '--name-only', currencyBaseline, '--', ...protectedPaths))\n-   const protectedFiles = lines(git('ls-tree', '-r', '--name-only', originalBaseline, '--', ...protectedPaths))\n    for (const file of protectedFiles) {\n+     const authorisedCurrencyDocument = currencyPaths.includes(file)\n+     const expected = file === pricingPath ? candidate : git('show', (authorisedCurrencyDocument ? currencyBaseline : originalBaseline) + ':' + file)\n+     assert(expected.equals(git('show', currencyBaseline + ':' + file)), file + ' retains its expected baseline bytes')\n-     const expected = file === pricingPath ? candidate : git('show', originalBaseline + ':' + file)\n      const bytes = await fs.readFile(file)\n      assert(bytes.equals(expected), file + ' retains its expected protected bytes')\n+     report.repositoryProtectedFiles.push({ file, sha256: sha256(bytes), bytes: bytes.length, matches: true, authorisedCorrection: file === pricingPath, authorisedCurrencyDocument })\n-     report.repositoryProtectedFiles.push({ file, sha256: sha256(bytes), bytes: bytes.length, matches: true, authorisedCorrection: file === pricingPath })\n    }\n    const manifestBytes = await fs.readFile(reviewManifestPath)\n    assert(manifestBytes.equals(git('show', reviewCheckpoint + ':' + reviewManifestPath)), 'Review provenance itself is unchanged')\n...\n    }\n    report.reviewProvenance = { path: reviewManifestPath, sha256: sha256(manifestBytes), sourceCommit: provenance.sourceCommit, runtimeCommit: provenance.runtimeCommit, fileCount: reviewEntries.length }\n  \n+   await awaitDeployment(report.input.candidateSha256, report.repositoryProtectedFiles.filter(item => item.authorisedCurrencyDocument))\n-   await awaitDeployment(report.input.candidateSha256)\n    await verifyServedFiles(report.repositoryProtectedFiles.filter(item => item.file !== '.nojekyll'), report.servedProtectedFiles)\n    await verifyServedFiles([\n      { file: reviewManifestPath, sha256: sha256(manifestBytes) },"
+    },
+    {
+      "path": "frontend/scripts/guard-published.mjs",
+      "finding": "Only the scope comment and deliberate baseline SHA change. The protected path list and guard logic remain unchanged.",
+      "diff": "...\n  import { resolve } from 'node:path'\n  \n  const repo = resolve(import.meta.dirname, '../..')\n+ // Founder-authorised P4 07 default footer correction and four currency documents. Existing protected bytes, root homepage and React cutover remain protected.\n+ const baseline = '27706615edc5859e535478c69247f1d8c096f554'\n- // Founder-authorised P4 07 default pricing footer correction only. Root homepage and React cutover remain protected.\n- const baseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'\n  const protectedPaths = [\n    'index.html', '404.html', 'assets/', 'covers/', 'gallery/', 'pricing/',\n    'favicon.svg', 'manifest.json', 'logo192.png', 'logo512.png',"
+    },
+    {
+      "path": ".github/workflows/verify-react-review.yml",
+      "finding": "Only the exact guard blob pin changes. The 9bf8779 frontend comparison, exact process/craft compatibility pins and all remaining workflow content are unchanged.",
+      "diff": "...\n            node frontend/scripts/guard-published.mjs\n            # The authorised P4 07 export correction changes only these exact verification files within frontend.\n            git diff --exit-code 9bf877954e1b4fc6091b93e79de67f0ec6394eab HEAD -- frontend ':(exclude)frontend/scripts/guard-published.mjs' ':(exclude)frontend/scripts/verify-process-parity.mjs' ':(exclude)frontend/scripts/verify-craft-parity.mjs'\n+           test \"$(git rev-parse HEAD:frontend/scripts/guard-published.mjs)\" = \"2c2f76f2092da2f1eb98c927f50f4a7964a331f0\"\n-           test \"$(git rev-parse HEAD:frontend/scripts/guard-published.mjs)\" = \"f2e0c29e4ca96238df50481339ba5654ca4f3524\"\n            test \"$(git rev-parse HEAD:frontend/scripts/verify-process-parity.mjs)\" = \"93daa5c14e2d79bb82273e205f25b6562762db38\"\n            test \"$(git rev-parse HEAD:frontend/scripts/verify-craft-parity.mjs)\" = \"0e62e81ef4546650a2808252d3d58b811407403d\"\n            npm install --no-save --no-package-lock playwright-core@1.56.1"
+    },
+    {
+      "path": ".github/workflows/verify-pricing-currency.yml",
+      "finding": "Read-only contents permission; full checkout without persisted credentials; guard runs first; Playwright 1.56.1 and Chrome 155.0.8059.84 archive SHA256 are pinned; candidate and live gates run once in order; raw artifacts are retained. The new immutable currency baseline is supplied explicitly to the live gate."
+    },
+    {
+      "path": ".github/scripts/verify-pricing-currency-live.mjs",
+      "finding": "Exact published source matches the prepared manifest. Retains real TLS, four-document byte-readiness polling only, manual 56-chain query-preserving redirect inspection, 32 default observations, 48 selected-book observations, independent saved-DOM inspection and explicit known initial-render reporting. Exactly one React 418 is required for each non-default book query and zero otherwise; other errors fail. Existing protected files and all fixed review/provenance responses are checked. This source review does not assert that the live run has passed."
+    }
+  ],
+  "allChangedFiles": [
+    {
+      "path": ".github/scripts/generate-pricing-currency-documents.mjs",
+      "status": "added",
+      "after": "dbd344d6bd0d141de8f6dc42fec10171be18a780"
+    },
+    {
+      "path": ".github/scripts/verify-pricing-currency-interactions.mjs",
+      "status": "added",
+      "after": "3eee83cd658bff76aed356318281bb7333cb96eb"
+    },
+    {
+      "path": ".github/scripts/verify-pricing-currency-live.mjs",
+      "status": "added",
+      "after": "0a7548b4b16fe92cfec6235b64586e2dc6d1a868"
+    },
+    {
+      "path": ".github/scripts/verify-pricing-currency.mjs",
+      "status": "added",
+      "after": "4c630f9051094639688472a1fdc9a54a66a07645"
+    },
+    {
+      "path": ".github/scripts/verify-pricing-footer-live.mjs",
+      "status": "modified",
+      "before": "e1b84a92989e1691745c12f42a7faa28ee98dbab",
+      "after": "c446bf3b5c594c1af51975d8bdfa1f1146b5af48"
+    },
+    {
+      "path": ".github/scripts/verify-pricing-footer.mjs",
+      "status": "modified",
+      "before": "da50c3f57f44013ba87d842a22d48c410e1aab27",
+      "after": "d45956ae59059fc119a272da2aed81605d8b3d16"
+    },
+    {
+      "path": ".github/workflows/verify-pricing-currency.yml",
+      "status": "added",
+      "after": "b1e86ed18ac735df2e113636c8021e485f013a05"
+    },
+    {
+      "path": ".github/workflows/verify-react-review.yml",
+      "status": "modified",
+      "before": "df01d7c8cd9e9658730df5db2691390d12bfdfea",
+      "after": "e339f0eacd6a076e33aa5f00db6962ef90bc7abc"
+    },
+    {
+      "path": "frontend/scripts/guard-published.mjs",
+      "status": "modified",
+      "before": "f2e0c29e4ca96238df50481339ba5654ca4f3524",
+      "after": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0"
+    },
+    {
+      "path": "pricing/cad/index.html",
+      "status": "added",
+      "after": "071a0b73663e95d71991b6b81b705cf1c9270fdb"
+    },
+    {
+      "path": "pricing/gbp/index.html",
+      "status": "added",
+      "after": "6a929fc18b96338f2a79416ddebfdfb57ab5f271"
+    },
+    {
+      "path": "pricing/inr/index.html",
+      "status": "added",
+      "after": "67a470d2131180b60ad2eb0614fba7ec718d037f"
+    },
+    {
+      "path": "pricing/usd/index.html",
+      "status": "added",
+      "after": "1b08c1073d092852c7e698984aacd81c4b9f438e"
+    }
+  ],
+  "limits": [
+    "This review uses immutable Git blob identities from fresh connected Storileaf GitHub reads. Local prepared files were independently hashed for byte length, SHA256 and Git blob identity before comparing to the published tree.",
+    "Existing protected file identity is compared with the previous public checkpoint; the default pricing file is additionally compared with the immutable original and proved to retain exactly the earlier 36-byte single replacement.",
+    "The three added generator/candidate/interaction verifier files are accounted for in the full changed-path set but are outside this six-file compatibility source review.",
+    "No live deployment, HTTP response, rendered image, browser behaviour, CI result, screen reader speech or physical device result is inferred by this report."
+  ],
+  "problems": []
+}
+

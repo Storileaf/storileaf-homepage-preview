@@ -1,0 +1,201 @@
+{
+  "sourceCommit": "2920571c5bdaa4267a7de2457615a7598b5172ad",
+  "runId": 39532263499,
+  "runAttempt": 1,
+  "jobId": 119000677494,
+  "runUrl": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39532263499",
+  "artifact": {
+    "id": 12316285171,
+    "name": "pricing-currency-candidate",
+    "size_in_bytes": 1792433,
+    "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316285171",
+    "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316285171/zip",
+    "expired": false,
+    "created_at": "2026-10-21T02:18:38Z",
+    "expires_at": "2027-01-19T02:18:17Z",
+    "updated_at": "2026-10-21T02:18:38Z",
+    "digest": "sha256:92f9ea77eeca5cd5daf8f101ec9c5abfac3e36dc415d9888ad4e38dd1b017b3a",
+    "workflow_run": {
+      "id": 39532263499,
+      "repository_id": 1422795677,
+      "head_repository_id": 1422795677,
+      "head_branch": "main",
+      "head_sha": "2920571c5bdaa4267a7de2457615a7598b5172ad"
+    }
+  },
+  "downloadedThrough": "connected Storileaf GitHub app",
+  "currencyJobs": {
+    "jobs": [
+      {
+        "id": 119000677494,
+        "name": "compare",
+        "status": "completed",
+        "conclusion": "failure",
+        "run_id": 39532263499,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Check the protected export",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Install isolated verification dependencies",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Install the pinned Chrome for Testing browser",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Compare original and candidate currency pages",
+            "status": "completed",
+            "conclusion": "failure",
+            "number": 7
+          },
+          {
+            "name": "Retain currency comparison evidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "skipped",
+            "number": 15
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 16
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          }
+        ]
+      }
+    ]
+  },
+  "pagesJobsAtRead": {
+    "jobs": [
+      {
+        "id": 119000681362,
+        "name": "build",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39532263637,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Checkout",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Upload artifact",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Post Checkout",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          }
+        ]
+      },
+      {
+        "id": 119000750716,
+        "name": "deploy",
+        "status": "in_progress",
+        "conclusion": null,
+        "run_id": 39532263637,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Deploy to GitHub Pages",
+            "status": "in_progress",
+            "conclusion": null,
+            "number": 2
+          }
+        ]
+      },
+      {
+        "id": 119000750799,
+        "name": "report-build-status",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39532263637,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Report Build Status",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          }
+        ]
+      }
+    ]
+  }
+}

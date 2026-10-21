@@ -1,0 +1,48 @@
+{
+  "scope": "Targeted scratch-only extra-query preparatory diagnostic",
+  "limitations": {
+    "ignoreHTTPSErrors": true,
+    "notFinalTlsOrBrowserAcceptance": true
+  },
+  "browser": "155.0.8059.84",
+  "output": {
+    "currency": "cad",
+    "status": 200,
+    "errors": [
+      "Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+    ],
+    "consoleErrors": [],
+    "failed": [],
+    "metrics": {
+      "title": "StoriLeaf | CAD book packages",
+      "root": "DIV",
+      "currencies": [
+        "cad",
+        "cad"
+      ],
+      "prices": [
+        "C$99",
+        "C$189"
+      ],
+      "url": "http://127.0.0.1:33955/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir&currency-check=retained",
+      "fonts": [
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Manrope",
+        "Newsreader",
+        "Newsreader",
+        "Newsreader",
+        "Newsreader"
+      ],
+      "state": "ready"
+    }
+  },
+  "result": "Selected book and benign query preserved; the single separate selected-book text mismatch remains"
+}

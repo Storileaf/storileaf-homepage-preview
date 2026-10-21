@@ -1,0 +1,148 @@
+{
+  "scope": "All fields of every retained INR 320 original/candidate direct and reload metric record",
+  "comparisonCount": 4,
+  "comparisons": [
+    {
+      "action": "direct",
+      "metricKeys": [
+        "title",
+        "description",
+        "viewport",
+        "pageWidth",
+        "pageHeight",
+        "sectionCount",
+        "elements",
+        "mainText",
+        "footerText",
+        "links",
+        "contact",
+        "currencies",
+        "books",
+        "packageCount",
+        "prices",
+        "images",
+        "typography"
+      ],
+      "differences": [
+        {
+          "path": "$.description",
+          "original": "Guided questions, thoughtful preparation and a printed book. Find the StoriLeaf book for your life story, travels, relationship, business, letters or celebration.",
+          "candidate": "Compare fixed regional prices, writing time, printed books and guidance across all six StoriLeaf books."
+        }
+      ]
+    },
+    {
+      "action": "reload",
+      "metricKeys": [
+        "title",
+        "description",
+        "viewport",
+        "pageWidth",
+        "pageHeight",
+        "sectionCount",
+        "elements",
+        "mainText",
+        "footerText",
+        "links",
+        "contact",
+        "currencies",
+        "books",
+        "packageCount",
+        "prices",
+        "images",
+        "typography"
+      ],
+      "differences": [
+        {
+          "path": "$.description",
+          "original": "Guided questions, thoughtful preparation and a printed book. Find the StoriLeaf book for your life story, travels, relationship, business, letters or celebration.",
+          "candidate": "Compare fixed regional prices, writing time, printed books and guidance across all six StoriLeaf books."
+        }
+      ]
+    },
+    {
+      "variant": "original",
+      "comparison": "direct to reload",
+      "differences": []
+    },
+    {
+      "variant": "candidate",
+      "comparison": "direct to reload",
+      "differences": []
+    }
+  ],
+  "observations": [
+    {
+      "name": "original",
+      "currency": "inr",
+      "width": 320,
+      "action": "direct",
+      "status": 404,
+      "diagnostics": {
+        "errors": [
+          "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "http://127.0.0.1:42597/storileaf-homepage-preview/pricing/inr",
+            "status": 404,
+            "type": "document"
+          }
+        ]
+      }
+    },
+    {
+      "name": "original",
+      "currency": "inr",
+      "width": 320,
+      "action": "reload",
+      "status": 404,
+      "diagnostics": {
+        "errors": [
+          "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ],
+        "failedRequests": [],
+        "httpErrors": [
+          {
+            "url": "http://127.0.0.1:42597/storileaf-homepage-preview/pricing/inr",
+            "status": 404,
+            "type": "document"
+          }
+        ]
+      }
+    },
+    {
+      "name": "candidate",
+      "currency": "inr",
+      "width": 320,
+      "action": "direct",
+      "status": 200,
+      "diagnostics": {
+        "errors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      }
+    },
+    {
+      "name": "candidate",
+      "currency": "inr",
+      "width": 320,
+      "action": "reload",
+      "status": 200,
+      "diagnostics": {
+        "errors": [],
+        "consoleErrors": [],
+        "failedRequests": [],
+        "httpErrors": []
+      }
+    }
+  ]
+}

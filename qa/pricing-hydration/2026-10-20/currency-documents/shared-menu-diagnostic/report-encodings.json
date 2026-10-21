@@ -1,0 +1,14 @@
+[
+  {
+    "file": "failed/report.json.gz",
+    "uncompressedBytes": 10652126,
+    "uncompressedSHA256": "f74c34cac16f81d7e3d754498c5e51ae842aa87436ccf3d22c5d5030f1df83f3",
+    "compressedSHA256": "c67d75f7a18b72334b974ea4b61f9988efc563362c943c2cbc770ae5b3aecb28"
+  },
+  {
+    "file": "concurrent-success/report.json.gz",
+    "uncompressedBytes": 10651411,
+    "uncompressedSHA256": "0a6c7f3882f49d843e789590e3b6fa1aa546f7d92382fe45a4c980a25f5a9fc8",
+    "compressedSHA256": "4bde6f0eb333c6c663dbb618abae22e7d19f765b7535124a00a7f0ad4ad3d35b"
+  }
+]

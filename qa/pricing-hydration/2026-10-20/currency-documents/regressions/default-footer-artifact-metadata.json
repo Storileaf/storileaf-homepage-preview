@@ -1,0 +1,58 @@
+{
+  "head": "29ac24f9357327560bde70c9864638dccbf5bed6",
+  "runId": 39533492142,
+  "runAttempt": 1,
+  "artifacts": [
+    {
+      "id": 12316157367,
+      "node_id": "MDg6QXJ0aWZhY3QxMjMxNjE1NzM2Nw==",
+      "name": "pricing-footer-verification",
+      "size_in_bytes": 11403074,
+      "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316157367",
+      "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316157367/zip",
+      "expired": false,
+      "digest": "sha256:24d23ac243c566637317dbbd7cfefb109ab2a7e61637e5b7c529b725a4686539",
+      "created_at": "2026-10-21T02:33:28Z",
+      "updated_at": "2026-10-21T02:33:28Z",
+      "expires_at": "2027-01-19T02:31:28Z",
+      "workflow_run": {
+        "id": 39533492142,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "29ac24f9357327560bde70c9864638dccbf5bed6"
+      }
+    },
+    {
+      "id": 12316147368,
+      "node_id": "MDg6QXJ0aWZhY3QxMjMxNjE0NzM2OA==",
+      "name": "pricing-footer-live-verification",
+      "size_in_bytes": 324625,
+      "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316147368",
+      "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316147368/zip",
+      "expired": false,
+      "digest": "sha256:e92bcf59e5a5eac7d97992ff8034ab5f51e1734df952d656882c1b07e6fefb1d",
+      "created_at": "2026-10-21T02:33:29Z",
+      "updated_at": "2026-10-21T02:33:29Z",
+      "expires_at": "2027-01-19T02:31:28Z",
+      "workflow_run": {
+        "id": 39533492142,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "29ac24f9357327560bde70c9864638dccbf5bed6"
+      }
+    }
+  ],
+  "downloadedThrough": "connected Storileaf GitHub app",
+  "downloads": [
+    {
+      "artifactId": 12316157367,
+      "archive": "pricing-footer-verification.zip"
+    },
+    {
+      "artifactId": 12316147368,
+      "archive": "pricing-footer-live-verification.zip"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "timezone": "America/Toronto",
+  "reviewer": "root",
+  "prepublicationCurrencyInspection": {
+    "sourceCommit": "151430150e3b3242974ef423b7346a2a05df4813",
+    "fullPages": [
+      "candidate/candidate-inr-page-390.png",
+      "candidate/candidate-cad-page-1440.png",
+      "candidate/candidate-usd-page-1440.png",
+      "candidate/candidate-gbp-page-1440.png"
+    ],
+    "footers": [
+      "candidate/candidate-gbp-footer-390.png"
+    ],
+    "counterpartIdentity": "Their retained original/candidate counterpart files are byte-identical; saved 390px counterparts match their corresponding original/candidate full page files.",
+    "finding": "Correct regional selectors and default prices, original Life Story presentation, responsive package composition and corrected footer. No visible new clipping in these inspected images."
+  },
+  "publishedCurrencyInspection": {
+    "sourceCommit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+    "captures": [
+      "publication/live/live-cad-default-390.png",
+      "publication/live/live-usd-default-1440.png"
+    ],
+    "finding": "Correct original CAD and USD amounts and selector values, retained six-book choices, wording and package layout."
+  },
+  "failedCandidateInspection": {
+    "image": "failed-metadata/failure-candidate-inr-page-320.png",
+    "counterpartIdentity": "Exact same bytes as failed-metadata/failure-original-inr-page-320.png",
+    "finding": "The observed failure was the named meta-description transition; the retained page images are identical."
+  },
+  "sharedMenuInspection": {
+    "captures": [
+      "shared-menu-diagnostic/failed/books-published-open-1440.png",
+      "shared-menu-diagnostic/failed/books-source-open-1440.png",
+      "shared-menu-diagnostic/failed/books-comparison-open-1440.png"
+    ],
+    "finding": "Same visible words and menu composition; genuine screenshot assertion failure retained. Full metrics/content/style checks passed. The separately retained complete concurrent shared suite has identical source/build/published/harness/browser/threshold identities and byte-identical original/source menu images.",
+    "disposition": "Use already completed equivalent same-head verification. No manual replay, runtime repair or threshold change. No exclusive cause or permanent screenshot-stability claim."
+  },
+  "limits": [
+    "Only the named captures were visually inspected. Other retained capture identities were verified, not all manually inspected.",
+    "The six nonzero prepublication pixel comparisons at 320/360/600px retain metrics and capture hashes; their image files were not retained or visually inspected.",
+    "Publication comparison ratios are zero at the existing channel threshold24. This does not imply every PNG or pixel is byte-identical.",
+    "Original INR1440 publication versus prepublication PNGs differ in48 pixels, maximum channel delta5 and0pixels exceeding24. The full exact images are retained in both sets.",
+    "No other engine, physical device, new native zoom or spoken screen-reader acceptance is established."
+  ]
+}

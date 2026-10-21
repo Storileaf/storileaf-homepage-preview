@@ -1,0 +1,1462 @@
+{
+  "scope": "One preparatory execution of the unchanged complete interaction module against existing original/candidate runtime directories.",
+  "startedAt": "2026-10-21T02:20:45.070Z",
+  "limitations": [
+    "Scratch diagnostic only. Every browser context is explicitly wrapped with ignoreHTTPSErrors:true because of the container certificate trust limitation.",
+    "This run supplies no normal-TLS or HTTPS acceptance evidence. CI must run the unchanged module with normal certificate verification.",
+    "The raw module report declares its intended default ignoreHTTPSErrors:false. The effective scratch context setting is true and is recorded separately here.",
+    "Local directory/redirect behaviour follows probe.mjs. Actual GitHub Pages responses are a separate gate."
+  ],
+  "effectiveBrowserContextOverrides": {
+    "ignoreHTTPSErrors": true
+  },
+  "modulePath": "implementation/.github/scripts/verify-pricing-currency-interactions.mjs",
+  "moduleSHA256": "10d5b050bd176e0bffdd11b4899818738e5b04e17766ad03297c1f2f618c7f1b",
+  "contextRecords": [
+    {
+      "index": 1,
+      "createdAt": "2026-10-21T02:20:45.243Z",
+      "effectiveOptions": {
+        "viewport": {
+          "width": 390,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "reducedMotion": "reduce",
+        "storageState": {
+          "cookies": [],
+          "origins": [
+            {
+              "origin": "http://127.0.0.1:37131",
+              "localStorage": [
+                {
+                  "name": "storileaf.preview.currency",
+                  "value": "usd"
+                }
+              ]
+            }
+          ]
+        },
+        "ignoreHTTPSErrors": true
+      }
+    },
+    {
+      "index": 2,
+      "createdAt": "2026-10-21T02:20:48.683Z",
+      "effectiveOptions": {
+        "viewport": {
+          "width": 390,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "reducedMotion": "reduce",
+        "storageState": {
+          "cookies": [],
+          "origins": [
+            {
+              "origin": "http://127.0.0.1:43285",
+              "localStorage": [
+                {
+                  "name": "storileaf.preview.currency",
+                  "value": "usd"
+                }
+              ]
+            }
+          ]
+        },
+        "ignoreHTTPSErrors": true
+      }
+    },
+    {
+      "index": 3,
+      "createdAt": "2026-10-21T02:20:51.303Z",
+      "effectiveOptions": {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "reducedMotion": "reduce",
+        "storageState": {
+          "cookies": [],
+          "origins": [
+            {
+              "origin": "http://127.0.0.1:37131",
+              "localStorage": [
+                {
+                  "name": "storileaf.preview.currency",
+                  "value": "usd"
+                }
+              ]
+            }
+          ]
+        },
+        "ignoreHTTPSErrors": true
+      }
+    },
+    {
+      "index": 4,
+      "createdAt": "2026-10-21T02:20:53.986Z",
+      "effectiveOptions": {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "reducedMotion": "reduce",
+        "storageState": {
+          "cookies": [],
+          "origins": [
+            {
+              "origin": "http://127.0.0.1:43285",
+              "localStorage": [
+                {
+                  "name": "storileaf.preview.currency",
+                  "value": "usd"
+                }
+              ]
+            }
+          ]
+        },
+        "ignoreHTTPSErrors": true
+      }
+    }
+  ],
+  "candidateDocuments": {
+    "inr": {
+      "bytes": 49303,
+      "sha256": "80a11555dbc15a5b8250aea7d64fb5d78da1a38235a21f3a433af40d2c66dc40"
+    },
+    "usd": {
+      "bytes": 49294,
+      "sha256": "58cc963da4b611727beff1e7e5d62df2b66d4179b3864c22d452d4ec78cc56ba"
+    },
+    "cad": {
+      "bytes": 49292,
+      "sha256": "0c9149e4b87e1b2cb07aaa3d7abc60fc0b6d1129354a74bed2cb5c34de74834b"
+    },
+    "gbp": {
+      "bytes": 49290,
+      "sha256": "eca77670149233c2727fe43870d79dcdfc7dd937cdfc3353823cbf13d9e8f246"
+    }
+  },
+  "browser": "155.0.8059.84",
+  "node": "v24.19.0",
+  "rawModuleReport": {
+    "scope": "Focused preservation of existing currency, book, storage, keyboard select and navigation behaviour",
+    "catalogue": {
+      "path": "assets/pricing-page-eOuxT0Kj.js",
+      "sha256": "6933843cad74c1e867b84d543394c8070251ca7d6777dea894efd011963f2027"
+    },
+    "environment": {
+      "widths": [
+        390,
+        1440
+      ],
+      "height": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "ignoreHTTPSErrors": false,
+      "touch": false
+    },
+    "limits": "Identical Chromium journeys at two CSS viewport widths. Keyboard operation uses the native select after explicit focus. This is neither physical touch testing nor screen reader acceptance. The original direct currency 404 and hydration error 418 are retained as initial diagnostics. No selected-book initial-render repair is asserted.",
+    "journeys": [
+      {
+        "variant": "original",
+        "width": 390,
+        "steps": [
+          {
+            "label": "explicit CAD wins stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "C$139",
+              "C$179",
+              "C$259"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "book selection preserves CAD and storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "keyboard currency selection preserves book and writes GBP storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "gbp",
+            "keyboard": {
+              "key": "End",
+              "name": "View prices in",
+              "focusRetained": true
+            }
+          },
+          {
+            "label": "footer currency selection preserves book and writes USD storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores GBP and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores CAD and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores GBP and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores USD and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "mobile Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "desktopHref": "/storileaf-homepage-preview/pricing/usd",
+            "navigationHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "prepare selected book for footer link",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "footer Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "footerHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "homepage reads the stored USD preference",
+            "relativeUrl": "/storileaf-homepage-preview#top",
+            "currency": null,
+            "footerCurrency": "usd",
+            "book": null,
+            "selectedBook": null,
+            "selectedCount": 0,
+            "planNames": [],
+            "prices": [],
+            "storedCurrency": "usd",
+            "homepageHeaderHref": "/storileaf-homepage-preview/pricing/usd",
+            "homepageFooterHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "generic default remains INR with stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing",
+            "currency": "inr",
+            "footerCurrency": "inr",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "₹8,700",
+              "₹11,400",
+              "₹16,800"
+            ],
+            "storedCurrency": "usd"
+          }
+        ],
+        "events": [
+          {
+            "phase": "initial",
+            "type": "http",
+            "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+            "status": 404,
+            "resourceType": "document"
+          },
+          {
+            "phase": "initial",
+            "type": "console",
+            "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+            "location": {
+              "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          },
+          {
+            "phase": "initial",
+            "type": "pageerror",
+            "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+          },
+          {
+            "phase": "interaction",
+            "type": "requestfailed",
+            "url": "https://storileaf.com/favicon.png",
+            "resourceType": "other",
+            "message": "net::ERR_ABORTED"
+          },
+          {
+            "phase": "interaction",
+            "type": "requestfailed",
+            "url": "https://storileaf.com/favicon.png",
+            "resourceType": "other",
+            "message": "net::ERR_ABORTED"
+          }
+        ],
+        "problems": [
+          {
+            "message": "Unexpected errors occurred during the journey",
+            "events": [
+              {
+                "phase": "interaction",
+                "type": "requestfailed",
+                "url": "https://storileaf.com/favicon.png",
+                "resourceType": "other",
+                "message": "net::ERR_ABORTED"
+              },
+              {
+                "phase": "interaction",
+                "type": "requestfailed",
+                "url": "https://storileaf.com/favicon.png",
+                "resourceType": "other",
+                "message": "net::ERR_ABORTED"
+              }
+            ]
+          }
+        ],
+        "initialResponse": {
+          "requestedUrl": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+          "finalUrl": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+          "status": 404
+        },
+        "errorClassification": {
+          "expectedOriginal": [
+            {
+              "phase": "initial",
+              "type": "http",
+              "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+              "status": 404,
+              "resourceType": "document",
+              "classification": "existing missing currency document"
+            },
+            {
+              "phase": "initial",
+              "type": "console",
+              "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+              "location": {
+                "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+                "lineNumber": 0,
+                "columnNumber": 0
+              },
+              "classification": "existing missing currency document"
+            },
+            {
+              "phase": "initial",
+              "type": "pageerror",
+              "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+              "classification": "existing missing-document hydration recovery"
+            }
+          ],
+          "unexpected": [
+            {
+              "phase": "interaction",
+              "type": "requestfailed",
+              "url": "https://storileaf.com/favicon.png",
+              "resourceType": "other",
+              "message": "net::ERR_ABORTED"
+            },
+            {
+              "phase": "interaction",
+              "type": "requestfailed",
+              "url": "https://storileaf.com/favicon.png",
+              "resourceType": "other",
+              "message": "net::ERR_ABORTED"
+            }
+          ]
+        },
+        "passed": false
+      },
+      {
+        "variant": "candidate",
+        "width": 390,
+        "steps": [
+          {
+            "label": "explicit CAD wins stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "C$139",
+              "C$179",
+              "C$259"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "book selection preserves CAD and storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "keyboard currency selection preserves book and writes GBP storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "gbp",
+            "keyboard": {
+              "key": "End",
+              "name": "View prices in",
+              "focusRetained": true
+            }
+          },
+          {
+            "label": "footer currency selection preserves book and writes USD storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores GBP and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores CAD and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores GBP and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores USD and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "mobile Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "desktopHref": "/storileaf-homepage-preview/pricing/usd",
+            "navigationHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "prepare selected book for footer link",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "footer Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "footerHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "homepage reads the stored USD preference",
+            "relativeUrl": "/storileaf-homepage-preview#top",
+            "currency": null,
+            "footerCurrency": "usd",
+            "book": null,
+            "selectedBook": null,
+            "selectedCount": 0,
+            "planNames": [],
+            "prices": [],
+            "storedCurrency": "usd",
+            "homepageHeaderHref": "/storileaf-homepage-preview/pricing/usd",
+            "homepageFooterHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "generic default remains INR with stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing",
+            "currency": "inr",
+            "footerCurrency": "inr",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "₹8,700",
+              "₹11,400",
+              "₹16,800"
+            ],
+            "storedCurrency": "usd"
+          }
+        ],
+        "events": [],
+        "problems": [],
+        "initialResponse": {
+          "requestedUrl": "http://127.0.0.1:43285/storileaf-homepage-preview/pricing/cad",
+          "finalUrl": "http://127.0.0.1:43285/storileaf-homepage-preview/pricing/cad/",
+          "status": 200
+        },
+        "errorClassification": {
+          "expectedOriginal": [],
+          "unexpected": []
+        },
+        "passed": true
+      },
+      {
+        "variant": "original",
+        "width": 1440,
+        "steps": [
+          {
+            "label": "explicit CAD wins stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "C$139",
+              "C$179",
+              "C$259"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "book selection preserves CAD and storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "keyboard currency selection preserves book and writes GBP storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "gbp",
+            "keyboard": {
+              "key": "End",
+              "name": "View prices in",
+              "focusRetained": true
+            }
+          },
+          {
+            "label": "footer currency selection preserves book and writes USD storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores GBP and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores CAD and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores GBP and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores USD and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "header Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "desktopHref": "/storileaf-homepage-preview/pricing/usd",
+            "navigationHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "prepare selected book for footer link",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "footer Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "footerHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "homepage reads the stored USD preference",
+            "relativeUrl": "/storileaf-homepage-preview#top",
+            "currency": null,
+            "footerCurrency": "usd",
+            "book": null,
+            "selectedBook": null,
+            "selectedCount": 0,
+            "planNames": [],
+            "prices": [],
+            "storedCurrency": "usd",
+            "homepageHeaderHref": "/storileaf-homepage-preview/pricing/usd",
+            "homepageFooterHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "generic default remains INR with stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing",
+            "currency": "inr",
+            "footerCurrency": "inr",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "₹8,700",
+              "₹11,400",
+              "₹16,800"
+            ],
+            "storedCurrency": "usd"
+          }
+        ],
+        "events": [
+          {
+            "phase": "initial",
+            "type": "http",
+            "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+            "status": 404,
+            "resourceType": "document"
+          },
+          {
+            "phase": "initial",
+            "type": "console",
+            "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+            "location": {
+              "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+              "lineNumber": 0,
+              "columnNumber": 0
+            }
+          },
+          {
+            "phase": "initial",
+            "type": "pageerror",
+            "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+          },
+          {
+            "phase": "interaction",
+            "type": "requestfailed",
+            "url": "https://storileaf.com/favicon.png",
+            "resourceType": "other",
+            "message": "net::ERR_ABORTED"
+          }
+        ],
+        "problems": [
+          {
+            "message": "Unexpected errors occurred during the journey",
+            "events": [
+              {
+                "phase": "interaction",
+                "type": "requestfailed",
+                "url": "https://storileaf.com/favicon.png",
+                "resourceType": "other",
+                "message": "net::ERR_ABORTED"
+              }
+            ]
+          }
+        ],
+        "initialResponse": {
+          "requestedUrl": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+          "finalUrl": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+          "status": 404
+        },
+        "errorClassification": {
+          "expectedOriginal": [
+            {
+              "phase": "initial",
+              "type": "http",
+              "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+              "status": 404,
+              "resourceType": "document",
+              "classification": "existing missing currency document"
+            },
+            {
+              "phase": "initial",
+              "type": "console",
+              "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+              "location": {
+                "url": "http://127.0.0.1:37131/storileaf-homepage-preview/pricing/cad",
+                "lineNumber": 0,
+                "columnNumber": 0
+              },
+              "classification": "existing missing currency document"
+            },
+            {
+              "phase": "initial",
+              "type": "pageerror",
+              "message": "Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+              "classification": "existing missing-document hydration recovery"
+            }
+          ],
+          "unexpected": [
+            {
+              "phase": "interaction",
+              "type": "requestfailed",
+              "url": "https://storileaf.com/favicon.png",
+              "resourceType": "other",
+              "message": "net::ERR_ABORTED"
+            }
+          ]
+        },
+        "passed": false
+      },
+      {
+        "variant": "candidate",
+        "width": 1440,
+        "steps": [
+          {
+            "label": "explicit CAD wins stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "C$139",
+              "C$179",
+              "C$259"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "book selection preserves CAD and storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "keyboard currency selection preserves book and writes GBP storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "gbp",
+            "keyboard": {
+              "key": "End",
+              "name": "View prices in",
+              "focusRetained": true
+            }
+          },
+          {
+            "label": "footer currency selection preserves book and writes USD storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores GBP and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "back restores CAD and book without rewriting storage",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+            "currency": "cad",
+            "footerCurrency": "cad",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "C$99",
+              "C$189"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores GBP and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+            "currency": "gbp",
+            "footerCurrency": "gbp",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "£59",
+              "£105"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "forward restores USD and book",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "header Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "desktopHref": "/storileaf-homepage-preview/pricing/usd",
+            "navigationHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "prepare selected book for footer link",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Travel Memoir",
+            "selectedBook": "travel-memoir",
+            "selectedCount": 1,
+            "planNames": [
+              "Single Trip",
+              "Multiple Trips"
+            ],
+            "prices": [
+              "US$75",
+              "US$139"
+            ],
+            "storedCurrency": "usd"
+          },
+          {
+            "label": "footer Pricing clears query and preserves USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing/usd",
+            "currency": "usd",
+            "footerCurrency": "usd",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "US$99",
+              "US$129",
+              "US$189"
+            ],
+            "storedCurrency": "usd",
+            "footerHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "homepage reads the stored USD preference",
+            "relativeUrl": "/storileaf-homepage-preview#top",
+            "currency": null,
+            "footerCurrency": "usd",
+            "book": null,
+            "selectedBook": null,
+            "selectedCount": 0,
+            "planNames": [],
+            "prices": [],
+            "storedCurrency": "usd",
+            "homepageHeaderHref": "/storileaf-homepage-preview/pricing/usd",
+            "homepageFooterHref": "/storileaf-homepage-preview/pricing/usd"
+          },
+          {
+            "label": "generic default remains INR with stored USD",
+            "relativeUrl": "/storileaf-homepage-preview/pricing",
+            "currency": "inr",
+            "footerCurrency": "inr",
+            "book": "Life Story",
+            "selectedBook": "life-story",
+            "selectedCount": 1,
+            "planNames": [
+              "Memories Treasure",
+              "Legacy",
+              "Family Heritage"
+            ],
+            "prices": [
+              "₹8,700",
+              "₹11,400",
+              "₹16,800"
+            ],
+            "storedCurrency": "usd"
+          }
+        ],
+        "events": [],
+        "problems": [],
+        "initialResponse": {
+          "requestedUrl": "http://127.0.0.1:43285/storileaf-homepage-preview/pricing/cad",
+          "finalUrl": "http://127.0.0.1:43285/storileaf-homepage-preview/pricing/cad/",
+          "status": 200
+        },
+        "errorClassification": {
+          "expectedOriginal": [],
+          "unexpected": []
+        },
+        "passed": true
+      }
+    ],
+    "comparisons": [
+      {
+        "width": 390,
+        "passed": false,
+        "originalCheckpoints": 13,
+        "candidateCheckpoints": 13,
+        "message": "Both complete journeys must pass"
+      },
+      {
+        "width": 1440,
+        "passed": false,
+        "originalCheckpoints": 13,
+        "candidateCheckpoints": 13,
+        "message": "Both complete journeys must pass"
+      }
+    ],
+    "problems": [
+      {
+        "variant": "original",
+        "width": 390,
+        "message": "Unexpected errors occurred during the journey",
+        "events": [
+          {
+            "phase": "interaction",
+            "type": "requestfailed",
+            "url": "https://storileaf.com/favicon.png",
+            "resourceType": "other",
+            "message": "net::ERR_ABORTED"
+          },
+          {
+            "phase": "interaction",
+            "type": "requestfailed",
+            "url": "https://storileaf.com/favicon.png",
+            "resourceType": "other",
+            "message": "net::ERR_ABORTED"
+          }
+        ]
+      },
+      {
+        "width": 390,
+        "message": "Both complete journeys must pass"
+      },
+      {
+        "variant": "original",
+        "width": 1440,
+        "message": "Unexpected errors occurred during the journey",
+        "events": [
+          {
+            "phase": "interaction",
+            "type": "requestfailed",
+            "url": "https://storileaf.com/favicon.png",
+            "resourceType": "other",
+            "message": "net::ERR_ABORTED"
+          }
+        ]
+      },
+      {
+        "width": 1440,
+        "message": "Both complete journeys must pass"
+      }
+    ],
+    "passed": false
+  },
+  "result": "failed preparatory diagnostic",
+  "moduleUnchanged": true,
+  "finishedAt": "2026-10-21T02:20:56.841Z"
+}

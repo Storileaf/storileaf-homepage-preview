@@ -1,0 +1,3093 @@
+{
+  "schemaVersion": 1,
+  "scope": "Original live currency HTTP responses before currency-document publication; no browser rendering.",
+  "sourceCommit": "848633b1f1cb6c460e11ca680b50aeb65cb0d7f3",
+  "startedAt": "2026-10-21T02:02:01.458609+00:00",
+  "finishedAt": "2026-10-21T02:02:02.387361+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "ssl": "OpenSSL 3.5.8 25 Aug 2026",
+    "certificateVerification": "ssl.create_default_context; CERT_REQUIRED; hostname verification enabled",
+    "automaticRedirects": false,
+    "httpRetries": 0,
+    "maximumParallelRequests": 6
+  },
+  "initialSandboxProbe": {
+    "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+    "result": "URLError: [Errno 1] Operation not permitted",
+    "httpResponseReceived": false,
+    "note": "The sandbox denied the network operation. This is retained separately from the approved network run; no TLS bypass was used."
+  },
+  "localOriginalSHA256": {
+    "index.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+    "404.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+    "pricing/index.html": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89"
+  },
+  "baselineResponses": {
+    "homepage": {
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "startedAt": "2026-10-21T02:02:01.458623+00:00",
+      "finishedAt": "2026-10-21T02:02:01.589143+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/",
+          "status": 200,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": "Wed, 21 Oct 2026 01:36:05 GMT",
+            "Cache-Control": "max-age=600",
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      }
+    },
+    "404Document": {
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/404.html",
+      "startedAt": "2026-10-21T02:02:01.589194+00:00",
+      "finishedAt": "2026-10-21T02:02:01.644475+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/404.html",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/404.html",
+          "status": 200,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": "Wed, 21 Oct 2026 01:36:05 GMT",
+            "Cache-Control": "max-age=600",
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/404.html",
+      "finalStatus": 200,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      }
+    }
+  },
+  "queryVariants": [
+    {
+      "label": "no-query",
+      "query": ""
+    },
+    {
+      "label": "life-story",
+      "query": "keepsake=life-story"
+    },
+    {
+      "label": "travel-memoir",
+      "query": "keepsake=travel-memoir"
+    },
+    {
+      "label": "relationship-memoir",
+      "query": "keepsake=relationship-memoir"
+    },
+    {
+      "label": "founders-memoir",
+      "query": "keepsake=founders-memoir"
+    },
+    {
+      "label": "parent-to-child-letters",
+      "query": "keepsake=parent-to-child-letters"
+    },
+    {
+      "label": "celebrating-occasions",
+      "query": "keepsake=celebrating-occasions"
+    },
+    {
+      "label": "selected-book-plus-benign-query",
+      "query": "keepsake=travel-memoir&verification=currency-documents"
+    }
+  ],
+  "caseCount": 64,
+  "results": [
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+      "startedAt": "2026-10-21T02:02:01.644941+00:00",
+      "finishedAt": "2026-10-21T02:02:01.745016+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:01.645749+00:00",
+      "finishedAt": "2026-10-21T02:02:01.732714+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:01.646445+00:00",
+      "finishedAt": "2026-10-21T02:02:01.737717+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:01.647999+00:00",
+      "finishedAt": "2026-10-21T02:02:01.740300+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:01.649456+00:00",
+      "finishedAt": "2026-10-21T02:02:01.743848+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:01.652276+00:00",
+      "finishedAt": "2026-10-21T02:02:01.739533+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:01.732761+00:00",
+      "finishedAt": "2026-10-21T02:02:01.771791+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": false,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:01.737770+00:00",
+      "finishedAt": "2026-10-21T02:02:01.764487+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/",
+      "startedAt": "2026-10-21T02:02:01.739584+00:00",
+      "finishedAt": "2026-10-21T02:02:01.816903+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:01.740336+00:00",
+      "finishedAt": "2026-10-21T02:02:01.809182+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:01.743873+00:00",
+      "finishedAt": "2026-10-21T02:02:01.824463+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:01.745057+00:00",
+      "finishedAt": "2026-10-21T02:02:01.820484+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:01.764547+00:00",
+      "finishedAt": "2026-10-21T02:02:01.821644+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:01.771876+00:00",
+      "finishedAt": "2026-10-21T02:02:01.822143+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:01.809228+00:00",
+      "finishedAt": "2026-10-21T02:02:01.846376+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "inr",
+      "trailingSlash": true,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:01.816962+00:00",
+      "finishedAt": "2026-10-21T02:02:01.844188+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/inr/?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+      "startedAt": "2026-10-21T02:02:01.820520+00:00",
+      "finishedAt": "2026-10-21T02:02:01.930186+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:01.821679+00:00",
+      "finishedAt": "2026-10-21T02:02:01.931243+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:01.822169+00:00",
+      "finishedAt": "2026-10-21T02:02:01.932688+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:01.824513+00:00",
+      "finishedAt": "2026-10-21T02:02:01.942526+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:01.844274+00:00",
+      "finishedAt": "2026-10-21T02:02:01.928872+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:01.846518+00:00",
+      "finishedAt": "2026-10-21T02:02:01.941831+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:01.928919+00:00",
+      "finishedAt": "2026-10-21T02:02:01.960172+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": false,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:01.930232+00:00",
+      "finishedAt": "2026-10-21T02:02:01.956918+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:01 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/",
+      "startedAt": "2026-10-21T02:02:01.931275+00:00",
+      "finishedAt": "2026-10-21T02:02:02.024858+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:01.932726+00:00",
+      "finishedAt": "2026-10-21T02:02:02.020952+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:01.941921+00:00",
+      "finishedAt": "2026-10-21T02:02:02.016191+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:01.942558+00:00",
+      "finishedAt": "2026-10-21T02:02:02.026575+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:01.956960+00:00",
+      "finishedAt": "2026-10-21T02:02:02.022304+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:01.960222+00:00",
+      "finishedAt": "2026-10-21T02:02:02.021646+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:02.016254+00:00",
+      "finishedAt": "2026-10-21T02:02:02.046186+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "usd",
+      "trailingSlash": true,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:02.020985+00:00",
+      "finishedAt": "2026-10-21T02:02:02.042507+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/usd/?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "startedAt": "2026-10-21T02:02:02.021674+00:00",
+      "finishedAt": "2026-10-21T02:02:02.095070+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:02.022329+00:00",
+      "finishedAt": "2026-10-21T02:02:02.082981+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:02.024893+00:00",
+      "finishedAt": "2026-10-21T02:02:02.099022+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:02.026617+00:00",
+      "finishedAt": "2026-10-21T02:02:02.092913+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:02.042544+00:00",
+      "finishedAt": "2026-10-21T02:02:02.098065+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:02.046226+00:00",
+      "finishedAt": "2026-10-21T02:02:02.088939+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:02.083023+00:00",
+      "finishedAt": "2026-10-21T02:02:02.121379+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": false,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:02.089089+00:00",
+      "finishedAt": "2026-10-21T02:02:02.118524+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/",
+      "startedAt": "2026-10-21T02:02:02.094503+00:00",
+      "finishedAt": "2026-10-21T02:02:02.212655+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:02.095110+00:00",
+      "finishedAt": "2026-10-21T02:02:02.184144+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:02.098087+00:00",
+      "finishedAt": "2026-10-21T02:02:02.210940+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:02.099134+00:00",
+      "finishedAt": "2026-10-21T02:02:02.191622+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:02.118567+00:00",
+      "finishedAt": "2026-10-21T02:02:02.198756+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:02.121460+00:00",
+      "finishedAt": "2026-10-21T02:02:02.190831+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:02.184232+00:00",
+      "finishedAt": "2026-10-21T02:02:02.231462+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "cad",
+      "trailingSlash": true,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:02.190871+00:00",
+      "finishedAt": "2026-10-21T02:02:02.213570+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/cad/?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+      "startedAt": "2026-10-21T02:02:02.191643+00:00",
+      "finishedAt": "2026-10-21T02:02:02.276023+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:02.198781+00:00",
+      "finishedAt": "2026-10-21T02:02:02.288781+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:02.210975+00:00",
+      "finishedAt": "2026-10-21T02:02:02.284145+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:02.212687+00:00",
+      "finishedAt": "2026-10-21T02:02:02.286702+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:02.213661+00:00",
+      "finishedAt": "2026-10-21T02:02:02.290246+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:02.231520+00:00",
+      "finishedAt": "2026-10-21T02:02:02.287253+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:02.276085+00:00",
+      "finishedAt": "2026-10-21T02:02:02.309291+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": false,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:02.284176+00:00",
+      "finishedAt": "2026-10-21T02:02:02.307568+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "no-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/",
+      "startedAt": "2026-10-21T02:02:02.286725+00:00",
+      "finishedAt": "2026-10-21T02:02:02.357948+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "MISS"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "life-story",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=life-story",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=life-story",
+      "startedAt": "2026-10-21T02:02:02.287274+00:00",
+      "finishedAt": "2026-10-21T02:02:02.366715+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=life-story",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=life-story",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=life-story",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "travel-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir",
+      "startedAt": "2026-10-21T02:02:02.288818+00:00",
+      "finishedAt": "2026-10-21T02:02:02.372815+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "relationship-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=relationship-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=relationship-memoir",
+      "startedAt": "2026-10-21T02:02:02.290278+00:00",
+      "finishedAt": "2026-10-21T02:02:02.358585+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=relationship-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=relationship-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=relationship-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "founders-memoir",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=founders-memoir",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=founders-memoir",
+      "startedAt": "2026-10-21T02:02:02.307615+00:00",
+      "finishedAt": "2026-10-21T02:02:02.372886+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=founders-memoir",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=founders-memoir",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=founders-memoir",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "parent-to-child-letters",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=parent-to-child-letters",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=parent-to-child-letters",
+      "startedAt": "2026-10-21T02:02:02.309376+00:00",
+      "finishedAt": "2026-10-21T02:02:02.366005+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=parent-to-child-letters",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=parent-to-child-letters",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=parent-to-child-letters",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "celebrating-occasions",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=celebrating-occasions",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=celebrating-occasions",
+      "startedAt": "2026-10-21T02:02:02.358004+00:00",
+      "finishedAt": "2026-10-21T02:02:02.386687+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=celebrating-occasions",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=celebrating-occasions",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=celebrating-occasions",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    },
+    {
+      "currency": "gbp",
+      "trailingSlash": true,
+      "queryVariant": "selected-book-plus-benign-query",
+      "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir&verification=currency-documents",
+      "requestURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir&verification=currency-documents",
+      "startedAt": "2026-10-21T02:02:02.358608+00:00",
+      "finishedAt": "2026-10-21T02:02:02.380777+00:00",
+      "hops": [
+        {
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir&verification=currency-documents",
+          "responseURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir&verification=currency-documents",
+          "status": 404,
+          "location": null,
+          "contentType": "text/html; charset=utf-8",
+          "bodyBytes": 65926,
+          "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+          "headers": {
+            "Server": "envoy",
+            "Date": "Wed, 21 Oct 2026 02:02:02 GMT",
+            "ETag": "\"6ad81705-10186\"",
+            "Last-Modified": null,
+            "Cache-Control": null,
+            "Age": "0",
+            "X-Cache": "HIT"
+          }
+        }
+      ],
+      "finalURL": "https://storileaf.github.io/storileaf-homepage-preview/pricing/gbp/?keepsake=travel-memoir&verification=currency-documents",
+      "finalStatus": 404,
+      "contentType": "text/html; charset=utf-8",
+      "bodySHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "bodyBytes": 65926,
+      "redirectCount": 0,
+      "queryPreservedExactly": true,
+      "matchesLocalOriginal": {
+        "index.html": true,
+        "404.html": true,
+        "pricing/index.html": false
+      },
+      "matchesLiveBaseline": {
+        "homepage": true,
+        "404Document": true
+      },
+      "isOriginalHomepageOr404Fallback": true
+    }
+  ],
+  "summary": {
+    "httpResults": 64,
+    "transportOrRedirectErrors": 0,
+    "statusCounts": {
+      "404": 64
+    },
+    "fallbackResults": 64,
+    "exactQueryPreservation": 64
+  }
+}

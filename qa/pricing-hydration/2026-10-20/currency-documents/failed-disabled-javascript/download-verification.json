@@ -1,0 +1,20 @@
+{
+  "bytes": 3528159,
+  "sha256": "937aa74b40ccf56372bb51c95a13151596f49c241008fbfea84396d8c85d2305",
+  "matchesGitHubDigest": true,
+  "zipCRC": "passed",
+  "files": [
+    "failure-active-page.png",
+    "failure-failure-active-page.png",
+    "failure-candidate-inr-page-320.png",
+    "failure-original-inr-page-320.png",
+    "generated/pricing/cad/index.html",
+    "generated/pricing/gbp/index.html",
+    "generated/pricing/inr/index.html",
+    "generated/pricing/usd/index.html",
+    "generation-stdout.txt",
+    "generation.json",
+    "progress.json",
+    "verification.json"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-21T02:38:33.807Z",
+  "result": "passed",
+  "scope": "Numerical preservation contract comparison using the immutable sources already read during this task. Identities, counts and limitations only; no private source or catalogue values copied.",
+  "privateAuthority": {
+    "repository": "Storileaf/storiYoceFj6IRAleaf",
+    "branch": "main",
+    "commit": "19d5683380fd6a8c503684750ebbba77dd7910b2",
+    "sourcePath": "apps/www/src/content/pricing-snapshot.json",
+    "blob": "29fcf3e41e7644feda86a9c58169630133d92a72"
+  },
+  "publicContract": {
+    "repository": "Storileaf/storileaf-homepage-preview",
+    "commit": "848633b1f1cb6c460e11ca680b50aeb65cb0d7f3",
+    "sourcePath": "assets/pricing-page-eOuxT0Kj.js",
+    "blob": "798de6a0f652087ab3a1f0f396eba8ed5dcaed7e",
+    "preservedAtPublicationCommit": "29ac24f9357327560bde70c9864638dccbf5bed6"
+  },
+  "method": "The completed retained comparison joins each public book and plan to the private committed snapshot and compares the numeric amount separately in INR, USD, CAD and GBP. All six books, 12 plans and 48 currency amounts match. No browser or HTTP test was substituted for source comparison.",
+  "counts": {
+    "books": 6,
+    "plans": 12,
+    "currencies": 4,
+    "currencyAmounts": 48,
+    "matchingCurrencyAmounts": 48,
+    "mismatchedCurrencyAmounts": 0
+  },
+  "limitations": [
+    "Private main is authoritative. This check compares its committed pricing snapshot, not live database state.",
+    "The private website can obtain pricing through its API; the production database or a live pricing API response was not queried by this check. No claim is made that current production prices were independently revalidated.",
+    "The check establishes numerical parity of the existing public catalogue with the committed private snapshot. It does not approve new commercial terms, package wording, checkout, payment or customer application behaviour.",
+    "Private implementation was read only. No private source, catalogue payload or implementation was copied into public code or this report.",
+    "This report reuses the already completed source comparison and its immutable blob identities. It does not claim a new product research or production verification run."
+  ]
+}
+

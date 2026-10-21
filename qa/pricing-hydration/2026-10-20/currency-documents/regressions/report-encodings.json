@@ -1,0 +1,23 @@
+[
+  {
+    "path": "default-footer-candidate-report.json.gz",
+    "encoding": "gzip",
+    "uncompressedBytes": 1734764,
+    "uncompressedSHA256": "3b91359df9038d7c1741a1163f3345c951f0c496a27f5fe61dd8866e68e5abfd",
+    "compressedSHA256": "92dcb8f910f2e6d566c4f2cc2b7c4e0f392a94db23e4bd3a5f1f320fd49c2626"
+  },
+  {
+    "path": "default-footer-live-report.json.gz",
+    "encoding": "gzip",
+    "uncompressedBytes": 113527,
+    "uncompressedSHA256": "23c27d1f63371d2fef215bdfd4c856ed5917a41bf4de68a8f6ae7cf508092235",
+    "compressedSHA256": "33c0f92d552c608d93e84b6bca8a98031c34b217bad453b60699160cd275578c"
+  },
+  {
+    "path": "react-review-live-report.json.gz",
+    "encoding": "gzip",
+    "uncompressedBytes": 11146,
+    "uncompressedSHA256": "fe2fe2cad331a7e650c8e00a5077ce56b47b245236685f5eb4935d3c41055bf8",
+    "compressedSHA256": "60dfebbbb09f99e177eb879fc168883f9f542e8cda454dd7cdab882b75d40a69"
+  }
+]

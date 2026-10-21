@@ -1,0 +1,1724 @@
+{
+  "schemaVersion": 1,
+  "checkpoint": "P4 07 four missing currency documents",
+  "date": "2026-10-20",
+  "timeZone": "America/Toronto",
+  "recordedAt": "2026-10-21T02:48:48.209038+00:00",
+  "disposition": "Implemented, verified and published for the four-currency-document scope. A failed standalone shared screenshot workflow remains recorded; equivalent full same-head shared coverage passed concurrently and is explicitly reused. Package 4 and selected-book initial-render repair remain open.",
+  "authorisation": {
+    "scope": "Provide proper pricing documents for existing INR, USD, CAD and GBP addresses; correct saved currency view, router information and assets; verify actual responses, redirects and selected-book query preservation.",
+    "preservation": "Existing prices, package wording, selectors, links, storage and history. No root homepage replacement, React review refresh, new page design, private production change, or selected-book initial-render repair."
+  },
+  "commits": {
+    "originalHomepageAndMigrationReference": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "completedFooterBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+    "previousPublicMain": "848633b1f1cb6c460e11ca680b50aeb65cb0d7f3",
+    "preparation": "2920571c5bdaa4267a7de2457615a7598b5172ad",
+    "metadataHarnessCorrection": "20940e9ee27b3a7f04b56b620ae85abd53e833d0",
+    "verifiedCandidate": "151430150e3b3242974ef423b7346a2a05df4813",
+    "runtimeAdditionAndProtectionBaseline": "27706615edc5859e535478c69247f1d8c096f554",
+    "publicationAndVerification": "29ac24f9357327560bde70c9864638dccbf5bed6"
+  },
+  "documents": {
+    "pricing/inr/index.html": {
+      "bytes": 49303,
+      "sha256": "80a11555dbc15a5b8250aea7d64fb5d78da1a38235a21f3a433af40d2c66dc40",
+      "gitBlob": "67a470d2131180b60ad2eb0614fba7ec718d037f",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/inr",
+      "title": "StoriLeaf | INR book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 8700,
+          "displayed": "\u20b98,700"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 11400,
+          "displayed": "\u20b911,400"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 16800,
+          "displayed": "\u20b916,800"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": false
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    },
+    "pricing/usd/index.html": {
+      "bytes": 49294,
+      "sha256": "58cc963da4b611727beff1e7e5d62df2b66d4179b3864c22d452d4ec78cc56ba",
+      "gitBlob": "1b08c1073d092852c7e698984aacd81c4b9f438e",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/usd",
+      "title": "StoriLeaf | USD book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 99,
+          "displayed": "US$99"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 129,
+          "displayed": "US$129"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 189,
+          "displayed": "US$189"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    },
+    "pricing/cad/index.html": {
+      "bytes": 49292,
+      "sha256": "0c9149e4b87e1b2cb07aaa3d7abc60fc0b6d1129354a74bed2cb5c34de74834b",
+      "gitBlob": "071a0b73663e95d71991b6b81b705cf1c9270fdb",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/cad",
+      "title": "StoriLeaf | CAD book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 139,
+          "displayed": "C$139"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 179,
+          "displayed": "C$179"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 259,
+          "displayed": "C$259"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    },
+    "pricing/gbp/index.html": {
+      "bytes": 49290,
+      "sha256": "eca77670149233c2727fe43870d79dcdfc7dd937cdfc3353823cbf13d9e8f246",
+      "gitBlob": "6a929fc18b96338f2a79416ddebfdfb57ab5f271",
+      "routeId": "/pricing/$currency",
+      "matchId": "/pricing/$currency/pricing/gbp",
+      "title": "StoriLeaf | GBP book packages",
+      "selectedBook": "life-story",
+      "planPrices": [
+        {
+          "slug": "memories-treasure",
+          "name": "Memories Treasure",
+          "amount": 79,
+          "displayed": "\u00a379"
+        },
+        {
+          "slug": "legacy",
+          "name": "Legacy",
+          "amount": 99,
+          "displayed": "\u00a399"
+        },
+        {
+          "slug": "family-heritage",
+          "name": "Family Heritage",
+          "amount": 139,
+          "displayed": "\u00a3139"
+        }
+      ],
+      "selectedCurrencyCount": 2,
+      "pricingLinkCount": 2,
+      "changes": [
+        {
+          "label": "regional title",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional description",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional leaf preloads",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "regional manifest route",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "regional saved match and lastMatchId",
+          "count": 2,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "selected currency",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for memories-treasure",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for legacy",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "public price for family-heritage",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        },
+        {
+          "label": "existing Pricing link and active state",
+          "count": 1,
+          "changed": true
+        }
+      ]
+    }
+  },
+  "generation": {
+    "script": ".github/scripts/generate-pricing-currency-documents.mjs",
+    "sha256": "9e0dcf42501a8f1a01548fe424b09bf2803ef428371aa0fd4f090aaceb686184",
+    "gitBlob": "dbd344d6bd0d141de8f6dc42fec10171be18a780",
+    "pinnedInputCount": 9,
+    "record": "currency-documents/publication/generation.json",
+    "preservation": "All bounded substitutions reversed to the original default HTML byte for byte; original SSR IDs and all other bytes retained.",
+    "negativeChecks": "currency-documents/generator-safeguard-tests.json",
+    "privateAuthorityContract": "currency-documents/contract-verification.json",
+    "privateAuthorityLimit": "All 48 existing public amounts matched the committed private snapshot across six books and 12 plans. This is not a fresh live-production database or API verification."
+  },
+  "originalLiveFailure": {
+    "report": "currency-documents/original-live-http.json",
+    "actualRequests": 64,
+    "allStatuses": 404,
+    "allResponseBytes": 65926,
+    "allResponseSHA256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+    "scope": "Four currencies, both slash forms, no query, six keepsake queries and Travel Memoir with one additional benign query. Normal TLS; no HTTP retries. Original and live matrices have different explicitly retained query scopes."
+  },
+  "prepublication": {
+    "sourceCommit": "151430150e3b3242974ef423b7346a2a05df4813",
+    "run": {
+      "id": "39532676727",
+      "attempt": "1",
+      "workflow": "Verify the authorised pricing currency documents",
+      "job": "compare"
+    },
+    "runUrl": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39532676727",
+    "startedAt": "2026-10-21T02:23:04.520Z",
+    "finishedAt": "2026-10-21T02:30:22.944Z",
+    "report": "currency-documents/candidate/verification.json.gz",
+    "result": "passed within the authorised currency-document scope",
+    "environment": {
+      "browser": "155.0.8059.84",
+      "executable": "/home/runner/work/_temp/currency-browser/chrome-linux64/chrome",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "pngjs": "7.0.0",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "20261012.334.1",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "tlsVerification": true
+    },
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "defaultObservations": 200,
+    "selectedBookObservations": 96,
+    "declaredAssetResponses": 32,
+    "geometryComparisons": 232,
+    "maxGeometryDelta": 0,
+    "pixelComparisons": 80,
+    "maxChangedPixelRatio": 0.001385062637745041,
+    "nonzeroPixelComparisons": [
+      {
+        "label": "inr 360 complete saved/settled pricing page",
+        "changedPixels": 3956,
+        "changedPixelRatio": 0.0013125763125763127
+      },
+      {
+        "label": "usd 600 complete original/candidate pricing page",
+        "changedPixels": 4483,
+        "changedPixelRatio": 0.0009033571111917141
+      },
+      {
+        "label": "usd 600 complete saved/settled pricing page",
+        "changedPixels": 4483,
+        "changedPixelRatio": 0.0009033571111917141
+      },
+      {
+        "label": "cad 320 complete original/candidate pricing page",
+        "changedPixels": 3821,
+        "changedPixelRatio": 0.001385062637745041
+      },
+      {
+        "label": "gbp 360 complete original/candidate pricing page",
+        "changedPixels": 3967,
+        "changedPixelRatio": 0.0013162260444869141
+      },
+      {
+        "label": "gbp 360 complete saved/settled pricing page",
+        "changedPixels": 3967,
+        "changedPixelRatio": 0.0013162260444869141
+      }
+    ],
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "interactionJourneys": 4,
+    "checkpointsPerJourney": 13,
+    "interactionParity": [
+      {
+        "width": 390,
+        "passed": true,
+        "checkpoints": 13
+      },
+      {
+        "width": 1440,
+        "passed": true,
+        "checkpoints": 13
+      }
+    ],
+    "captureIdentities": 136,
+    "retainedPNGFiles": 36,
+    "knownNonDefaultBookInitialMismatchObservations": 40,
+    "limits": "Recorded headless Chromium/Linux environment, ten CSS widths, normal text, reduced motion and DPR 1. Saved/no-JavaScript, direct and refreshed default currency pages. Query preservation and final selected views are verified separately from the retained non-default-book initial hydration mismatch. No pricing redesign, query initial-render repair, native zoom, other engines, physical devices or spoken screen-reader acceptance. Local redirects are a model; actual Pages HTTP is a separate live gate."
+  },
+  "publicationCandidate": {
+    "sourceCommit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+    "run": {
+      "id": "39533492017",
+      "attempt": "1",
+      "workflow": "Verify the authorised pricing currency documents",
+      "job": "compare"
+    },
+    "runUrl": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39533492017",
+    "startedAt": "2026-10-21T02:31:42.146Z",
+    "finishedAt": "2026-10-21T02:38:48.862Z",
+    "report": "currency-documents/publication/candidate-report.json.gz",
+    "result": "passed within the authorised currency-document scope",
+    "environment": {
+      "browser": "155.0.8059.84",
+      "executable": "/home/runner/work/_temp/currency-browser/chrome-linux64/chrome",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "pngjs": "7.0.0",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "20261012.334.1",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "tlsVerification": true
+    },
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "defaultObservations": 200,
+    "selectedBookObservations": 96,
+    "declaredAssetResponses": 32,
+    "geometryComparisons": 232,
+    "maxGeometryDelta": 0,
+    "pixelComparisons": 80,
+    "maxChangedPixelRatio": 0,
+    "nonzeroPixelComparisons": [],
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "interactionJourneys": 4,
+    "checkpointsPerJourney": 13,
+    "interactionParity": [
+      {
+        "width": 390,
+        "passed": true,
+        "checkpoints": 13
+      },
+      {
+        "width": 1440,
+        "passed": true,
+        "checkpoints": 13
+      }
+    ],
+    "captureIdentities": 136,
+    "retainedPNGFiles": 36,
+    "knownNonDefaultBookInitialMismatchObservations": 40,
+    "limits": "Recorded headless Chromium/Linux environment, ten CSS widths, normal text, reduced motion and DPR 1. Saved/no-JavaScript, direct and refreshed default currency pages. Query preservation and final selected views are verified separately from the retained non-default-book initial hydration mismatch. No pricing redesign, query initial-render repair, native zoom, other engines, physical devices or spoken screen-reader acceptance. Local redirects are a model; actual Pages HTTP is a separate live gate."
+  },
+  "publication": {
+    "sourceCommit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+    "pagesRun": 39533491682,
+    "pagesAttempt": 1,
+    "pagesResult": "success",
+    "currencyRun": 39533492017,
+    "currencyAttempt": 1,
+    "currencyResult": "success",
+    "workflowRecords": "currency-documents/publication/final-runs.json",
+    "artifactMetadata": "currency-documents/publication/artifact-metadata.json",
+    "archiveVerification": "currency-documents/publication/download-verification.json"
+  },
+  "live": {
+    "report": "currency-documents/publication/live-report.json.gz",
+    "startedAt": "2026-10-21T02:38:49.246Z",
+    "finishedAt": "2026-10-21T02:40:05.918Z",
+    "result": "passed",
+    "environment": {
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "platform": "linux",
+      "architecture": "x64",
+      "kernel": "6.17.0-1022-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "ubuntu24",
+      "runnerImageVersion": "20261012.334.1",
+      "browserExecutable": "/home/runner/work/_temp/currency-browser/chrome-linux64/chrome",
+      "headless": true,
+      "tls": "default certificate verification; no ignoreHTTPSErrors or certificate bypass flags",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "defaultWidths": [
+        320,
+        390,
+        820,
+        1440
+      ],
+      "selectedBookWidth": 390,
+      "browser": "155.0.8059.84"
+    },
+    "httpChains": 56,
+    "noSlash301Then200": 28,
+    "slashDirect200": 28,
+    "intermediateOrFinal404s": 0,
+    "queryPreservation": "All six keepsake values and benign currency-check=retained parameter preserved through every recorded redirect hop.",
+    "defaultDirectReloadObservations": 32,
+    "defaultWidths": [
+      320,
+      390,
+      820,
+      1440
+    ],
+    "selectedBookDirectReloadObservations": 48,
+    "selectedBookWidth": 390,
+    "acceptance": {
+      "fourExactCurrencyDocuments": "passed",
+      "manualHttpRedirectChains": "passed",
+      "defaultDirectAndReload": "passed",
+      "selectedBookFinalSelectionAndPrices": "passed",
+      "selectedBookInitialRender": "known mismatch retained for non-default books; not repaired or accepted",
+      "knownSelectedBookInitialRenderMismatchObservations": 40,
+      "previousProtectedRuntimeAndFixedReview": "unchanged in Git and live responses",
+      "observedKnownReact418Errors": 40
+    },
+    "retainedPNGFiles": 8,
+    "behaviourRetries": 0,
+    "deploymentReadinessAttempts": 1,
+    "protectedGitFiles": 39,
+    "protectedServedResponses": 38,
+    "reviewAndProvenanceResponses": 17,
+    "independentReview": "currency-documents/publication/root-independent-review.json"
+  },
+  "protection": {
+    "activeBaseline": "27706615edc5859e535478c69247f1d8c096f554",
+    "guardBlob": "2c2f76f2092da2f1eb98c927f50f4a7964a331f0",
+    "existingProtectedFilesUnchanged": 35,
+    "newProtectedDocuments": 4,
+    "defaultPricingSHA256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+    "fixedReviewSnapshot": "6434c11105abfd3122982cf65c227e9507dfb5ba",
+    "fixedReviewBuildSource": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+    "reviewFilesUnchanged": 16,
+    "reviewProvenanceUnchanged": true,
+    "independentGitReview": "currency-documents/publication-independent-review.json",
+    "compatibility": "Only the enabled guard baseline/scope comment, exact review guard pin, dedicated currency publication verification and narrowly aligned footer verifiers changed. All earlier runtime bytes and assertions/thresholds remain protected. CI consolidation is not implemented."
+  },
+  "regressions": {
+    "runs": "currency-documents/regressions/final-runs.json",
+    "summary": "currency-documents/regressions/final-summary.json",
+    "actualWorkflowResults": {
+      "total": 16,
+      "success": 15,
+      "failure": 1,
+      "pending": 0,
+      "allAttempts": 1,
+      "failedRun": 39533492009,
+      "failedAssertion": "books-comparison-open-1440.png pixels differ 0.06352632179970309"
+    },
+    "sourceTests": {
+      "run": 39533492143,
+      "tests": 91,
+      "passed": 91,
+      "failed": 0
+    },
+    "defaultFooterRun": 39533492142,
+    "fixedReviewRun": 39533492048,
+    "sharedFailure": {
+      "run": 39533492009,
+      "attempt": 1,
+      "job": 119004628584,
+      "result": "failure retained",
+      "changedPixels": 16689,
+      "changedRatio": 0.06352632179970309,
+      "limit": 0.01,
+      "report": "currency-documents/shared-menu-diagnostic/failed/report.json.gz",
+      "diagnosis": "currency-documents/shared-menu-diagnostic/diagnosis.json"
+    },
+    "equivalentCompleteSharedSuccess": {
+      "run": 39533492292,
+      "attempt": 1,
+      "job": 119004630409,
+      "sourceCommit": "29ac24f9357327560bde70c9864638dccbf5bed6",
+      "comparisons": 74,
+      "states": 41,
+      "captures": 132,
+      "widths": [
+        320,
+        360,
+        390,
+        430,
+        600,
+        768,
+        820,
+        1024,
+        1280,
+        1440
+      ],
+      "report": "currency-documents/shared-menu-diagnostic/concurrent-success/report.json.gz",
+      "identityProof": "currency-documents/shared-menu-diagnostic/concurrent-equivalence.json",
+      "failedAndSuccessfulReportsInspected": true,
+      "publishedAndSourceBooks1440PNGsha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902"
+    },
+    "disposition": "Reuse the complete independently triggered same-head successful shared suite. Do not rerun the failed standalone workflow. Its failed conclusion and uncertainty remain retained.",
+    "manualReplays": 0,
+    "limits": "Fifteen workflows passed and one standalone shared workflow failed. Equivalent full shared coverage passed independently in the concurrent discovery workflow. Do not claim all workflows passed. No rerun, threshold adjustment, shared runtime repair or permanent raster stability claim is made. Native zoom scope remains limited to separately recorded practice evidence. These regressions do not close P4 08, physical-device, other-engine or actual screen-reader acceptance."
+  },
+  "retainedFailures": [
+    {
+      "run": 39532263499,
+      "attempt": 1,
+      "result": "failure",
+      "report": "currency-documents/failed-metadata/verification.json.gz",
+      "diagnosis": "Only original homepage metadata versus correct regional metadata differed; exact descriptions are now required for that named transition. Rendering thresholds unchanged."
+    },
+    {
+      "run": 39532477320,
+      "attempt": 1,
+      "result": "failure",
+      "report": "currency-documents/failed-disabled-javascript/verification.json.gz",
+      "diagnosis": "Exactly eight declared head modulepreloads were policy-blocked with csp in deliberately JavaScript-disabled contexts. The harness classifies exactly that condition and independently verifies every preload HTTP 200/hash. Enabled-JavaScript and other request failures remain prohibited."
+    },
+    {
+      "kind": "preparatory local interaction diagnostic",
+      "result": "failed diagnostic, not acceptance",
+      "report": "currency-documents/interaction-preparatory-diagnostic.json",
+      "diagnosis": "Local trust limitations required a scratch-only TLS bypass; original journeys retained three aborted favicon requests. Correct step parity and later normal-TLS CI passes do not erase this failure or prove its cause."
+    },
+    {
+      "run": 39533492009,
+      "attempt": 1,
+      "result": "failure retained",
+      "report": "currency-documents/shared-menu-diagnostic/failed/report.json.gz",
+      "diagnosis": "Isolated Books-menu raster failure with matching content/style/geometry assertions. Full equivalent same-head coverage passed concurrently; no manual replay or repair. Cause and permanent capture stability are not established."
+    }
+  ],
+  "visualInspection": "currency-documents/visual-inspection.json",
+  "evidenceLocations": "currency-documents/evidence-locations.json",
+  "evidenceFiles": [
+    {
+      "path": "currency-documents/candidate/artifact-metadata.json",
+      "bytes": 5740,
+      "sha256": "d5322c126d8224dbbbb72982f5994c3a11b1e5865e3a15a2a35138b5da6d064c",
+      "gitBlob": "28515502f0726a3c787087f5d10431160222f8ff"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-cad-footer-1440.png",
+      "bytes": 45319,
+      "sha256": "d26f27f8d7a98a7384237b867c3507d05859ec060482a4929215d71455774998",
+      "gitBlob": "7a1083b08640a628fb46fdfcfc62e8bb84c43157"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-cad-footer-390.png",
+      "bytes": 42537,
+      "sha256": "64363fe78eef9107a1834552967f50ee6169085c75c859d7f88c2d4d3193944f",
+      "gitBlob": "69c59c32739161b80b7e718fcd606585ee0bb48b"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-cad-page-1440.png",
+      "bytes": 1854131,
+      "sha256": "0bc3fc37cf747e23ac22214d15da628edd345db1a0452d421882678c55d8a254",
+      "gitBlob": "201356141cc5e40508e37a24e662cfa94be8e4d3"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-cad-page-390.png",
+      "bytes": 1066662,
+      "sha256": "689592bd22bf356a837778dfdaba771efdef32f2c4d8de89ea606e4dde323a32",
+      "gitBlob": "60f9db87aad5c3123fa875ebe66b7ee19a72ade5"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-cad-saved-390.png",
+      "bytes": 1066662,
+      "sha256": "689592bd22bf356a837778dfdaba771efdef32f2c4d8de89ea606e4dde323a32",
+      "gitBlob": "60f9db87aad5c3123fa875ebe66b7ee19a72ade5"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-gbp-footer-1440.png",
+      "bytes": 44962,
+      "sha256": "d1a2adb4c4edb7be571ff45368b739b15819398c4bfb86d54cb75d20072e248f",
+      "gitBlob": "a8c55aa66ba8c1e215e39fb0ceb7ceddffd56051"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-gbp-footer-390.png",
+      "bytes": 42427,
+      "sha256": "8324a469cbd4061397c41e3a98f5246c86772aaac2670170217881627b936375",
+      "gitBlob": "80e11293dfbb2ab04261ec63b461dd0f02a3435f"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-gbp-page-1440.png",
+      "bytes": 1847521,
+      "sha256": "b0290b78c3d9f312bc9fc61b795368daebe19405f601eb455cb95b4ba9c5a32d",
+      "gitBlob": "4e197bd789d4812c22a6d91d61b2769a828202e8"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-gbp-page-390.png",
+      "bytes": 1061335,
+      "sha256": "eeea06d4973679c76175d93db2e945ca7f56d068bfdb4ef8699a04670e16117c",
+      "gitBlob": "d66a7aec9579f438a7a4fa6ae79b3396e6eea50e"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-gbp-saved-390.png",
+      "bytes": 1061335,
+      "sha256": "eeea06d4973679c76175d93db2e945ca7f56d068bfdb4ef8699a04670e16117c",
+      "gitBlob": "d66a7aec9579f438a7a4fa6ae79b3396e6eea50e"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-inr-footer-1440.png",
+      "bytes": 44862,
+      "sha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+      "gitBlob": "3502c89f7eb8250293fd2dca31b0d04f8d55a8da"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-inr-footer-390.png",
+      "bytes": 42302,
+      "sha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+      "gitBlob": "a1b4e956a94e96dbbe6efb162750a48b47e30987"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-inr-page-1440.png",
+      "bytes": 1851724,
+      "sha256": "73056f267c732dd71aacc7f30e66d792a215cf53d115ce7dfab1caeed30b4f18",
+      "gitBlob": "7b4e64e151ad48bb6e765cb3e2ea55ecb9b0074e"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-inr-page-390.png",
+      "bytes": 1064480,
+      "sha256": "126d507e19cf9d45551555e7745ee1eba655fe602b7e828dc690cd3bd887ef02",
+      "gitBlob": "0bcc803922e9def9a2baba8fb06ffe14b05b36fc"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-inr-saved-390.png",
+      "bytes": 1064480,
+      "sha256": "126d507e19cf9d45551555e7745ee1eba655fe602b7e828dc690cd3bd887ef02",
+      "gitBlob": "0bcc803922e9def9a2baba8fb06ffe14b05b36fc"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-usd-footer-1440.png",
+      "bytes": 45350,
+      "sha256": "1c536518ad287139a1cb065e98b796bf4d70d08d8513bf842fd6a4a9be49eccb",
+      "gitBlob": "6613861e35eca17eb8521e9034a7436c9b6de207"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-usd-footer-390.png",
+      "bytes": 42713,
+      "sha256": "3257d9501f36207ae139071c878ab64b3e509f5e6ed766eca12ba0807bab01d9",
+      "gitBlob": "abae08395e3206728052aca12212254a3b8a87b4"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-usd-page-1440.png",
+      "bytes": 1854145,
+      "sha256": "5b88b0586514d8434248e23d4120cb22e1f4057e1c9df9daa52ebfae053372c2",
+      "gitBlob": "5d9d55a084456f8f50314c646dc3162778fee0ed"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-usd-page-390.png",
+      "bytes": 1068577,
+      "sha256": "ed7c7bf9eb016bbdda76641109860993e888726cab88eb34c90c08a90e9abc64",
+      "gitBlob": "cd4b3c625c64ff870f6f4d399ef9de6b3e8e3a62"
+    },
+    {
+      "path": "currency-documents/candidate/candidate-usd-saved-390.png",
+      "bytes": 1068577,
+      "sha256": "ed7c7bf9eb016bbdda76641109860993e888726cab88eb34c90c08a90e9abc64",
+      "gitBlob": "cd4b3c625c64ff870f6f4d399ef9de6b3e8e3a62"
+    },
+    {
+      "path": "currency-documents/candidate/download-verification.json",
+      "bytes": 1692,
+      "sha256": "0f0a716130692f91cbbfd3412a1eddfdb0c225f3839fe71863b19f7e15484e63",
+      "gitBlob": "2bef490bca84df38aa6ac8f7db8ef9d09d4c6b2e"
+    },
+    {
+      "path": "currency-documents/candidate/generation.json",
+      "bytes": 12134,
+      "sha256": "45cff3344988dce23b8f3aa88f5f741f4e50b1a55ff4b95ee18f8ef3df513022",
+      "gitBlob": "7a6d0d376b4715ee3df8e7968b5606b146302b20"
+    },
+    {
+      "path": "currency-documents/candidate/independent-review-summary.json",
+      "bytes": 3458,
+      "sha256": "570cc9dc8b1fb01fc53835d1342d2e8c653a1c46bf8401dff3e9181b8623940c",
+      "gitBlob": "ed75ff15c0def6f5332728b62698482b2a38a2af"
+    },
+    {
+      "path": "currency-documents/candidate/original-cad-footer-1440.png",
+      "bytes": 45319,
+      "sha256": "d26f27f8d7a98a7384237b867c3507d05859ec060482a4929215d71455774998",
+      "gitBlob": "7a1083b08640a628fb46fdfcfc62e8bb84c43157"
+    },
+    {
+      "path": "currency-documents/candidate/original-cad-footer-390.png",
+      "bytes": 42537,
+      "sha256": "64363fe78eef9107a1834552967f50ee6169085c75c859d7f88c2d4d3193944f",
+      "gitBlob": "69c59c32739161b80b7e718fcd606585ee0bb48b"
+    },
+    {
+      "path": "currency-documents/candidate/original-cad-page-1440.png",
+      "bytes": 1854131,
+      "sha256": "0bc3fc37cf747e23ac22214d15da628edd345db1a0452d421882678c55d8a254",
+      "gitBlob": "201356141cc5e40508e37a24e662cfa94be8e4d3"
+    },
+    {
+      "path": "currency-documents/candidate/original-cad-page-390.png",
+      "bytes": 1066662,
+      "sha256": "689592bd22bf356a837778dfdaba771efdef32f2c4d8de89ea606e4dde323a32",
+      "gitBlob": "60f9db87aad5c3123fa875ebe66b7ee19a72ade5"
+    },
+    {
+      "path": "currency-documents/candidate/original-gbp-footer-1440.png",
+      "bytes": 44962,
+      "sha256": "d1a2adb4c4edb7be571ff45368b739b15819398c4bfb86d54cb75d20072e248f",
+      "gitBlob": "a8c55aa66ba8c1e215e39fb0ceb7ceddffd56051"
+    },
+    {
+      "path": "currency-documents/candidate/original-gbp-footer-390.png",
+      "bytes": 42427,
+      "sha256": "8324a469cbd4061397c41e3a98f5246c86772aaac2670170217881627b936375",
+      "gitBlob": "80e11293dfbb2ab04261ec63b461dd0f02a3435f"
+    },
+    {
+      "path": "currency-documents/candidate/original-gbp-page-1440.png",
+      "bytes": 1847521,
+      "sha256": "b0290b78c3d9f312bc9fc61b795368daebe19405f601eb455cb95b4ba9c5a32d",
+      "gitBlob": "4e197bd789d4812c22a6d91d61b2769a828202e8"
+    },
+    {
+      "path": "currency-documents/candidate/original-gbp-page-390.png",
+      "bytes": 1061335,
+      "sha256": "eeea06d4973679c76175d93db2e945ca7f56d068bfdb4ef8699a04670e16117c",
+      "gitBlob": "d66a7aec9579f438a7a4fa6ae79b3396e6eea50e"
+    },
+    {
+      "path": "currency-documents/candidate/original-inr-footer-1440.png",
+      "bytes": 44862,
+      "sha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+      "gitBlob": "3502c89f7eb8250293fd2dca31b0d04f8d55a8da"
+    },
+    {
+      "path": "currency-documents/candidate/original-inr-footer-390.png",
+      "bytes": 42302,
+      "sha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+      "gitBlob": "a1b4e956a94e96dbbe6efb162750a48b47e30987"
+    },
+    {
+      "path": "currency-documents/candidate/original-inr-page-1440.png",
+      "bytes": 1851724,
+      "sha256": "73056f267c732dd71aacc7f30e66d792a215cf53d115ce7dfab1caeed30b4f18",
+      "gitBlob": "7b4e64e151ad48bb6e765cb3e2ea55ecb9b0074e"
+    },
+    {
+      "path": "currency-documents/candidate/original-inr-page-390.png",
+      "bytes": 1064480,
+      "sha256": "126d507e19cf9d45551555e7745ee1eba655fe602b7e828dc690cd3bd887ef02",
+      "gitBlob": "0bcc803922e9def9a2baba8fb06ffe14b05b36fc"
+    },
+    {
+      "path": "currency-documents/candidate/original-usd-footer-1440.png",
+      "bytes": 45350,
+      "sha256": "1c536518ad287139a1cb065e98b796bf4d70d08d8513bf842fd6a4a9be49eccb",
+      "gitBlob": "6613861e35eca17eb8521e9034a7436c9b6de207"
+    },
+    {
+      "path": "currency-documents/candidate/original-usd-footer-390.png",
+      "bytes": 42713,
+      "sha256": "3257d9501f36207ae139071c878ab64b3e509f5e6ed766eca12ba0807bab01d9",
+      "gitBlob": "abae08395e3206728052aca12212254a3b8a87b4"
+    },
+    {
+      "path": "currency-documents/candidate/original-usd-page-1440.png",
+      "bytes": 1854145,
+      "sha256": "5b88b0586514d8434248e23d4120cb22e1f4057e1c9df9daa52ebfae053372c2",
+      "gitBlob": "5d9d55a084456f8f50314c646dc3162778fee0ed"
+    },
+    {
+      "path": "currency-documents/candidate/original-usd-page-390.png",
+      "bytes": 1068577,
+      "sha256": "ed7c7bf9eb016bbdda76641109860993e888726cab88eb34c90c08a90e9abc64",
+      "gitBlob": "cd4b3c625c64ff870f6f4d399ef9de6b3e8e3a62"
+    },
+    {
+      "path": "currency-documents/candidate/report-encoding.json",
+      "bytes": 286,
+      "sha256": "d97d7717bf85df00d0c14b8bed5f58cafa9cf6f06d840522fe5a7e1d896d0b1f",
+      "gitBlob": "270a11096b8780809d2dc54ca0c66f074c098597"
+    },
+    {
+      "path": "currency-documents/candidate/verification.json.gz",
+      "bytes": 1234275,
+      "sha256": "583b3e2efd4905263d00d1dd21383bb8fb508a09afa8e423329b3ffc40c0b6dd",
+      "gitBlob": "d87af3ec32f547b92e69f5157b2629be47441ba8"
+    },
+    {
+      "path": "currency-documents/capture-original-live-http.py",
+      "bytes": 7972,
+      "sha256": "c2e1a6984dfacec01a1c57207c5cd2b49fe229378877134337fd51a593b94596",
+      "gitBlob": "32fae473ac2975ffb230048e4ab06412b62e0408"
+    },
+    {
+      "path": "currency-documents/compiled-router-probe.json",
+      "bytes": 14986,
+      "sha256": "94cdcef68473e4663cdc79fe87982733f8dc4ac0862e9efe105de11565068ba8",
+      "gitBlob": "f24537084aef122f5fcfd13b78488f77a1d1afea"
+    },
+    {
+      "path": "currency-documents/contract-verification.json",
+      "bytes": 2290,
+      "sha256": "57deb2bc1d1095777511a14412706817303166aae8bcf7e808b48c67089bd96e",
+      "gitBlob": "5d397899acb8a9c1a8498509bb611749dd24137e"
+    },
+    {
+      "path": "currency-documents/evidence-locations.json",
+      "bytes": 1377,
+      "sha256": "f92bd2d7e9504e4d177c7822a85673f13d556f8f026863e4b755f39ce85da023",
+      "gitBlob": "cdb6fef4b81f134039f64524c33671a1c8b004b2"
+    },
+    {
+      "path": "currency-documents/extra-query-preparatory-diagnostic.json",
+      "bytes": 1304,
+      "sha256": "3b09fe1e639cba8166a63247dbba0d239bcea06158b0a30c7b1f1973e463528d",
+      "gitBlob": "28a2adc640c3b2407f12b48cda75c58fc55d747e"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/artifact-metadata.json",
+      "bytes": 5739,
+      "sha256": "4c53d610672161865b51dcabc96fe14f6f98047256012961bdf8a7c2a76ef1f9",
+      "gitBlob": "6263f34d81d702084abc299d1d3769d53ef37050"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/download-verification.json",
+      "bytes": 584,
+      "sha256": "d084790df011a9f6394f89ffda4aba779e386b47b66aa4084efe0cc293ee3786",
+      "gitBlob": "512292ba9fe583b0d9e9c5b75682e7e2e5650f3e"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/failure-active-page.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "gitBlob": "b8d606877f3d05073159bd58ca3b4fba951de30c"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/failure-candidate-inr-page-320.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "gitBlob": "b8d606877f3d05073159bd58ca3b4fba951de30c"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/failure-failure-active-page.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "gitBlob": "b8d606877f3d05073159bd58ca3b4fba951de30c"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/failure-original-inr-page-320.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "gitBlob": "b8d606877f3d05073159bd58ca3b4fba951de30c"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/final-runs.json",
+      "bytes": 815,
+      "sha256": "0dc455f04e8f30ee07bc000538c5bad70aff660311e48e7be8944872c7479348",
+      "gitBlob": "e7c404d79b8a35e0abc5724e6dc47ef8fbb7d22a"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/generation.json",
+      "bytes": 12134,
+      "sha256": "45cff3344988dce23b8f3aa88f5f741f4e50b1a55ff4b95ee18f8ef3df513022",
+      "gitBlob": "7a6d0d376b4715ee3df8e7968b5606b146302b20"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/no-javascript-failure-review.json",
+      "bytes": 2385,
+      "sha256": "374c6db262d38980fcce1cbc3406c5bc1a9df9debf84df51952ca1b2a48f5dd7",
+      "gitBlob": "5aa720094ab34e68fbe6b9605bc7740d86756df4"
+    },
+    {
+      "path": "currency-documents/failed-disabled-javascript/verification.json.gz",
+      "bytes": 35483,
+      "sha256": "534baffcdc5ec5a5def1d1267e11dc51a7cc596286a21a5b7f5db2eef4d8a5cd",
+      "gitBlob": "adc6c2d572f3ef3e06453966e8593110fafcd5da"
+    },
+    {
+      "path": "currency-documents/failed-metadata/artifact-metadata.json",
+      "bytes": 5576,
+      "sha256": "46ecab254348c1cc9b8a6bc2532ba82178c933dac4a1cbdf701d6b0028413574",
+      "gitBlob": "d6dba2cae43552fa43508eca241f7bb49b980525"
+    },
+    {
+      "path": "currency-documents/failed-metadata/download-verification.json",
+      "bytes": 514,
+      "sha256": "914a72fde6affb6646036c50abefb79b6cb9808e06c2d1e16fac082b9f25f7de",
+      "gitBlob": "e416205e87d2452bc742712c55d2763bd1697d4d"
+    },
+    {
+      "path": "currency-documents/failed-metadata/failure-candidate-inr-page-320.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "gitBlob": "b8d606877f3d05073159bd58ca3b4fba951de30c"
+    },
+    {
+      "path": "currency-documents/failed-metadata/failure-original-inr-page-320.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "gitBlob": "b8d606877f3d05073159bd58ca3b4fba951de30c"
+    },
+    {
+      "path": "currency-documents/failed-metadata/final-runs.json",
+      "bytes": 815,
+      "sha256": "d2b43414af346de79b2b46b79fac26cff2908692246f723025a4f26e05d251d3",
+      "gitBlob": "15d65864454891893109643acef480c6b9692a45"
+    },
+    {
+      "path": "currency-documents/failed-metadata/generation.json",
+      "bytes": 12134,
+      "sha256": "45cff3344988dce23b8f3aa88f5f741f4e50b1a55ff4b95ee18f8ef3df513022",
+      "gitBlob": "7a6d0d376b4715ee3df8e7968b5606b146302b20"
+    },
+    {
+      "path": "currency-documents/failed-metadata/image-identity-review.json",
+      "bytes": 462,
+      "sha256": "d43cab1e1e99bce715acdcffc006ee0cd9149d6ec3696709ddd43d78dd76061b",
+      "gitBlob": "a9e62b74f1cffb985ed11b2dcd75aedd8e343ba1"
+    },
+    {
+      "path": "currency-documents/failed-metadata/metric-field-review.json",
+      "bytes": 4075,
+      "sha256": "1d59a1317187b0cd7d77e67f9bd1accee4884647167ff26ab58d235864130974",
+      "gitBlob": "d6f2c9166e4c644c5377c961d4cbffe405150c81"
+    },
+    {
+      "path": "currency-documents/failed-metadata/verification.json.gz",
+      "bytes": 25541,
+      "sha256": "5b73a112c24da91141ca33334b7e2d685ac9250507ebfef7e18824413f6c0d4f",
+      "gitBlob": "2a7686834241242149f1f964ef8298770b6af70f"
+    },
+    {
+      "path": "currency-documents/generator-safeguard-tests.json",
+      "bytes": 596,
+      "sha256": "cb5af535f6c3b15bf4fb393a31ea1c749da0adc4d643421f25a70c9141515a61",
+      "gitBlob": "4d9552227a76902bec2e6fad4656e6e0d16824e4"
+    },
+    {
+      "path": "currency-documents/interaction-preparatory-diagnostic.json",
+      "bytes": 48209,
+      "sha256": "666a7fe16a0c72be8c8b9bb494d976defd9f2300b91f60b783c790534bb0efcb",
+      "gitBlob": "e8956cf17940db837330b25a83246bea72820c3d"
+    },
+    {
+      "path": "currency-documents/local-preparation-diagnostics.json",
+      "bytes": 1961,
+      "sha256": "bd7c7260a239b29da9a0927ef7f01d931ffebc9ecf814288476832afa1d02e48",
+      "gitBlob": "33f5f5611974122b9f12527a9e763cf677376d70"
+    },
+    {
+      "path": "currency-documents/original-live-http.json",
+      "bytes": 125676,
+      "sha256": "ea5be09347e489a6fd4bf1d054244f0bc78a6790b26467d059d928fcb855c503",
+      "gitBlob": "31a63407c9307d888c048d8b1f75fa83d69c7963"
+    },
+    {
+      "path": "currency-documents/publication/artifact-metadata.json",
+      "bytes": 7318,
+      "sha256": "a6fd340849f1887d74783d21e744586b618726950205bbe5f99978ac7582c716",
+      "gitBlob": "8ec79927915370ee532ef347567870e03420e587"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-cad-footer-1440.png",
+      "bytes": 45319,
+      "sha256": "d26f27f8d7a98a7384237b867c3507d05859ec060482a4929215d71455774998",
+      "gitBlob": "7a1083b08640a628fb46fdfcfc62e8bb84c43157"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-cad-footer-390.png",
+      "bytes": 42537,
+      "sha256": "64363fe78eef9107a1834552967f50ee6169085c75c859d7f88c2d4d3193944f",
+      "gitBlob": "69c59c32739161b80b7e718fcd606585ee0bb48b"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-cad-page-1440.png",
+      "bytes": 1854131,
+      "sha256": "0bc3fc37cf747e23ac22214d15da628edd345db1a0452d421882678c55d8a254",
+      "gitBlob": "201356141cc5e40508e37a24e662cfa94be8e4d3"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-cad-page-390.png",
+      "bytes": 1066662,
+      "sha256": "689592bd22bf356a837778dfdaba771efdef32f2c4d8de89ea606e4dde323a32",
+      "gitBlob": "60f9db87aad5c3123fa875ebe66b7ee19a72ade5"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-cad-saved-390.png",
+      "bytes": 1066662,
+      "sha256": "689592bd22bf356a837778dfdaba771efdef32f2c4d8de89ea606e4dde323a32",
+      "gitBlob": "60f9db87aad5c3123fa875ebe66b7ee19a72ade5"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-gbp-footer-1440.png",
+      "bytes": 44962,
+      "sha256": "d1a2adb4c4edb7be571ff45368b739b15819398c4bfb86d54cb75d20072e248f",
+      "gitBlob": "a8c55aa66ba8c1e215e39fb0ceb7ceddffd56051"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-gbp-footer-390.png",
+      "bytes": 42427,
+      "sha256": "8324a469cbd4061397c41e3a98f5246c86772aaac2670170217881627b936375",
+      "gitBlob": "80e11293dfbb2ab04261ec63b461dd0f02a3435f"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-gbp-page-1440.png",
+      "bytes": 1847521,
+      "sha256": "b0290b78c3d9f312bc9fc61b795368daebe19405f601eb455cb95b4ba9c5a32d",
+      "gitBlob": "4e197bd789d4812c22a6d91d61b2769a828202e8"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-gbp-page-390.png",
+      "bytes": 1061335,
+      "sha256": "eeea06d4973679c76175d93db2e945ca7f56d068bfdb4ef8699a04670e16117c",
+      "gitBlob": "d66a7aec9579f438a7a4fa6ae79b3396e6eea50e"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-gbp-saved-390.png",
+      "bytes": 1061335,
+      "sha256": "eeea06d4973679c76175d93db2e945ca7f56d068bfdb4ef8699a04670e16117c",
+      "gitBlob": "d66a7aec9579f438a7a4fa6ae79b3396e6eea50e"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-inr-footer-1440.png",
+      "bytes": 44862,
+      "sha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+      "gitBlob": "3502c89f7eb8250293fd2dca31b0d04f8d55a8da"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-inr-footer-390.png",
+      "bytes": 42302,
+      "sha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+      "gitBlob": "a1b4e956a94e96dbbe6efb162750a48b47e30987"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-inr-page-1440.png",
+      "bytes": 1851724,
+      "sha256": "73056f267c732dd71aacc7f30e66d792a215cf53d115ce7dfab1caeed30b4f18",
+      "gitBlob": "7b4e64e151ad48bb6e765cb3e2ea55ecb9b0074e"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-inr-page-390.png",
+      "bytes": 1064480,
+      "sha256": "126d507e19cf9d45551555e7745ee1eba655fe602b7e828dc690cd3bd887ef02",
+      "gitBlob": "0bcc803922e9def9a2baba8fb06ffe14b05b36fc"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-inr-saved-390.png",
+      "bytes": 1064480,
+      "sha256": "126d507e19cf9d45551555e7745ee1eba655fe602b7e828dc690cd3bd887ef02",
+      "gitBlob": "0bcc803922e9def9a2baba8fb06ffe14b05b36fc"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-usd-footer-1440.png",
+      "bytes": 45350,
+      "sha256": "1c536518ad287139a1cb065e98b796bf4d70d08d8513bf842fd6a4a9be49eccb",
+      "gitBlob": "6613861e35eca17eb8521e9034a7436c9b6de207"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-usd-footer-390.png",
+      "bytes": 42713,
+      "sha256": "3257d9501f36207ae139071c878ab64b3e509f5e6ed766eca12ba0807bab01d9",
+      "gitBlob": "abae08395e3206728052aca12212254a3b8a87b4"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-usd-page-1440.png",
+      "bytes": 1854145,
+      "sha256": "5b88b0586514d8434248e23d4120cb22e1f4057e1c9df9daa52ebfae053372c2",
+      "gitBlob": "5d9d55a084456f8f50314c646dc3162778fee0ed"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-usd-page-390.png",
+      "bytes": 1068577,
+      "sha256": "ed7c7bf9eb016bbdda76641109860993e888726cab88eb34c90c08a90e9abc64",
+      "gitBlob": "cd4b3c625c64ff870f6f4d399ef9de6b3e8e3a62"
+    },
+    {
+      "path": "currency-documents/publication/candidate/candidate-usd-saved-390.png",
+      "bytes": 1068577,
+      "sha256": "ed7c7bf9eb016bbdda76641109860993e888726cab88eb34c90c08a90e9abc64",
+      "gitBlob": "cd4b3c625c64ff870f6f4d399ef9de6b3e8e3a62"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-cad-footer-1440.png",
+      "bytes": 45319,
+      "sha256": "d26f27f8d7a98a7384237b867c3507d05859ec060482a4929215d71455774998",
+      "gitBlob": "7a1083b08640a628fb46fdfcfc62e8bb84c43157"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-cad-footer-390.png",
+      "bytes": 42537,
+      "sha256": "64363fe78eef9107a1834552967f50ee6169085c75c859d7f88c2d4d3193944f",
+      "gitBlob": "69c59c32739161b80b7e718fcd606585ee0bb48b"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-cad-page-1440.png",
+      "bytes": 1854131,
+      "sha256": "0bc3fc37cf747e23ac22214d15da628edd345db1a0452d421882678c55d8a254",
+      "gitBlob": "201356141cc5e40508e37a24e662cfa94be8e4d3"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-cad-page-390.png",
+      "bytes": 1066662,
+      "sha256": "689592bd22bf356a837778dfdaba771efdef32f2c4d8de89ea606e4dde323a32",
+      "gitBlob": "60f9db87aad5c3123fa875ebe66b7ee19a72ade5"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-gbp-footer-1440.png",
+      "bytes": 44962,
+      "sha256": "d1a2adb4c4edb7be571ff45368b739b15819398c4bfb86d54cb75d20072e248f",
+      "gitBlob": "a8c55aa66ba8c1e215e39fb0ceb7ceddffd56051"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-gbp-footer-390.png",
+      "bytes": 42427,
+      "sha256": "8324a469cbd4061397c41e3a98f5246c86772aaac2670170217881627b936375",
+      "gitBlob": "80e11293dfbb2ab04261ec63b461dd0f02a3435f"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-gbp-page-1440.png",
+      "bytes": 1847521,
+      "sha256": "b0290b78c3d9f312bc9fc61b795368daebe19405f601eb455cb95b4ba9c5a32d",
+      "gitBlob": "4e197bd789d4812c22a6d91d61b2769a828202e8"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-gbp-page-390.png",
+      "bytes": 1061335,
+      "sha256": "eeea06d4973679c76175d93db2e945ca7f56d068bfdb4ef8699a04670e16117c",
+      "gitBlob": "d66a7aec9579f438a7a4fa6ae79b3396e6eea50e"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-inr-footer-1440.png",
+      "bytes": 44862,
+      "sha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+      "gitBlob": "3502c89f7eb8250293fd2dca31b0d04f8d55a8da"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-inr-footer-390.png",
+      "bytes": 42302,
+      "sha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+      "gitBlob": "a1b4e956a94e96dbbe6efb162750a48b47e30987"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-inr-page-1440.png",
+      "bytes": 1851720,
+      "sha256": "04dde8c985e2827afc123fb3783f0c0d31f0789937a230d7b9942ff6ea26b0d3",
+      "gitBlob": "5a18af0dfae7eb9ceb31199154937f3938d8bc8a"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-inr-page-390.png",
+      "bytes": 1064480,
+      "sha256": "126d507e19cf9d45551555e7745ee1eba655fe602b7e828dc690cd3bd887ef02",
+      "gitBlob": "0bcc803922e9def9a2baba8fb06ffe14b05b36fc"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-usd-footer-1440.png",
+      "bytes": 45350,
+      "sha256": "1c536518ad287139a1cb065e98b796bf4d70d08d8513bf842fd6a4a9be49eccb",
+      "gitBlob": "6613861e35eca17eb8521e9034a7436c9b6de207"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-usd-footer-390.png",
+      "bytes": 42713,
+      "sha256": "3257d9501f36207ae139071c878ab64b3e509f5e6ed766eca12ba0807bab01d9",
+      "gitBlob": "abae08395e3206728052aca12212254a3b8a87b4"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-usd-page-1440.png",
+      "bytes": 1854145,
+      "sha256": "5b88b0586514d8434248e23d4120cb22e1f4057e1c9df9daa52ebfae053372c2",
+      "gitBlob": "5d9d55a084456f8f50314c646dc3162778fee0ed"
+    },
+    {
+      "path": "currency-documents/publication/candidate/original-usd-page-390.png",
+      "bytes": 1068577,
+      "sha256": "ed7c7bf9eb016bbdda76641109860993e888726cab88eb34c90c08a90e9abc64",
+      "gitBlob": "cd4b3c625c64ff870f6f4d399ef9de6b3e8e3a62"
+    },
+    {
+      "path": "currency-documents/publication/candidate-report.json.gz",
+      "bytes": 1233869,
+      "sha256": "40e17e33d3763a4d8eec70b0cdbf99f0e4bd1132207d689b0e85587f5004a817",
+      "gitBlob": "36ebd26de88b6dd7c188716363b962efee39de68"
+    },
+    {
+      "path": "currency-documents/publication/download-verification.json",
+      "bytes": 2505,
+      "sha256": "4c3a2ba0824455791b18f983bbfe66ab89b719484fb73811f80d99a42abab05d",
+      "gitBlob": "21a593f156501487dcab08b0e93d5f660ebff554"
+    },
+    {
+      "path": "currency-documents/publication/final-runs.json",
+      "bytes": 31876,
+      "sha256": "2c89848242b41072f1889ab351454962cce78f21ae7b75b91a6eb6bf3ba9ad1a",
+      "gitBlob": "3ea1b5fedffc7844f02089568a960da744eb1ff1"
+    },
+    {
+      "path": "currency-documents/publication/generation.json",
+      "bytes": 12134,
+      "sha256": "45cff3344988dce23b8f3aa88f5f741f4e50b1a55ff4b95ee18f8ef3df513022",
+      "gitBlob": "7a6d0d376b4715ee3df8e7968b5606b146302b20"
+    },
+    {
+      "path": "currency-documents/publication/independent-review-summary.json",
+      "bytes": 6154,
+      "sha256": "54d2a39ccfe6f2de46d2e7c520192c29850b1124b9fd95fb96bec0a904338918",
+      "gitBlob": "c6c990ee4f81108785b3d8f9b79814cdf4383809"
+    },
+    {
+      "path": "currency-documents/publication/live/live-cad-default-1440.png",
+      "bytes": 427790,
+      "sha256": "7db78d1379860feaaeb19590ebc48f94eecd5588a1ffeeaa77119720d2d1a9d2",
+      "gitBlob": "064f74101f720ce5491cc38f07a302479c37c038"
+    },
+    {
+      "path": "currency-documents/publication/live/live-cad-default-390.png",
+      "bytes": 386753,
+      "sha256": "7aa1871b15c591d05acd3f11fcbc18cdcd87e06fefd45c0a5d9a8efc48c6a600",
+      "gitBlob": "6c8eeb11f9763048975fd6f9513528d7487e7c6e"
+    },
+    {
+      "path": "currency-documents/publication/live/live-gbp-default-1440.png",
+      "bytes": 421273,
+      "sha256": "73b176b7a9e2d79d40f1a4a9be6e120772ab1a3b38d2add3dabded0b4ba73076",
+      "gitBlob": "48b9d8e53d9d978400441aebaed064306d8809b1"
+    },
+    {
+      "path": "currency-documents/publication/live/live-gbp-default-390.png",
+      "bytes": 381728,
+      "sha256": "30fa89ba48375ac602cded6a80cfcdd4c6c5d68caf2ce767bc1123173b253f78",
+      "gitBlob": "333a1e1efb9886c30ffe1c4442df6b9cc5060e54"
+    },
+    {
+      "path": "currency-documents/publication/live/live-inr-default-1440.png",
+      "bytes": 425752,
+      "sha256": "d0e14cbc183a4eb104b50c070b64ee4d4f978ef192faaccb7f5bb7fe42a78251",
+      "gitBlob": "ad2dea7c8cf84f643cf439c81518d7d0555c3dbd"
+    },
+    {
+      "path": "currency-documents/publication/live/live-inr-default-390.png",
+      "bytes": 384916,
+      "sha256": "8f720a24c71e751991c4ef78aba24322111ac01ce7b09728ddfaecaf217927b2",
+      "gitBlob": "a856747a23582b0152e455f3b6d63819a5945c26"
+    },
+    {
+      "path": "currency-documents/publication/live/live-usd-default-1440.png",
+      "bytes": 427766,
+      "sha256": "b534fa9bb4227a4d4f6e132b3ed40f41fe51ddd4ede4318f98ee75c856f52c17",
+      "gitBlob": "5bfee6b7682ecb162edfbd9aeebb3dbca4c6e826"
+    },
+    {
+      "path": "currency-documents/publication/live/live-usd-default-390.png",
+      "bytes": 388454,
+      "sha256": "1e55f76f414d564b22cd92c209be339c6d2e84d10c0411c73043beae37c44b33",
+      "gitBlob": "1b7c5cafad5db196272d02761021cb1f3ea002b3"
+    },
+    {
+      "path": "currency-documents/publication/live-report.json.gz",
+      "bytes": 34695,
+      "sha256": "c24584b2117d847d078707572cf0fbc64b3948550da2f8b644d844e8d0344e46",
+      "gitBlob": "b8b83de26fca589960db9de056938a000625bdfe"
+    },
+    {
+      "path": "currency-documents/publication/report-encodings.json",
+      "bytes": 583,
+      "sha256": "0e4372455ccda8b57e714b4c1de34ad25258062e177fce74da47e80c72915c7d",
+      "gitBlob": "d01fbec7d0ae6432530e677c08f9ab34393fa825"
+    },
+    {
+      "path": "currency-documents/publication/root-independent-review.json",
+      "bytes": 1719,
+      "sha256": "a41d5549d6ba35b3280cd15cc22ed7648d7dd91b2beb9070547b3c82b7446070",
+      "gitBlob": "9996b0545a9f9438fd5c357282622e265e9778fd"
+    },
+    {
+      "path": "currency-documents/publication-independent-review.json",
+      "bytes": 52336,
+      "sha256": "8c394942ecc2555edffbdd5561984e96a8c8d653ca45ca63878d577924cd80bd",
+      "gitBlob": "7f15c2a96e451d7663e9c383eea8af59519c7546"
+    },
+    {
+      "path": "currency-documents/regressions/default-footer-artifact-metadata.json",
+      "bytes": 2187,
+      "sha256": "b1c635908edd934c7bee796aefe784a92a5c13f1d6cd2467d7d6b85566d09ef3",
+      "gitBlob": "b9930ffe18940f3f08b3114d362773873f3e0aaa"
+    },
+    {
+      "path": "currency-documents/regressions/default-footer-candidate-report.json.gz",
+      "bytes": 35089,
+      "sha256": "92dcb8f910f2e6d566c4f2cc2b7c4e0f392a94db23e4bd3a5f1f320fd49c2626",
+      "gitBlob": "f920dd0f61ee3f31fe48f363be66c557dae5fe6f"
+    },
+    {
+      "path": "currency-documents/regressions/default-footer-live-report.json.gz",
+      "bytes": 8602,
+      "sha256": "33c0f92d552c608d93e84b6bca8a98031c34b217bad453b60699160cd275578c",
+      "gitBlob": "bf701cdb2a4f3cf5347ee26d8065462f9d9a0c42"
+    },
+    {
+      "path": "currency-documents/regressions/default-footer-summary.json",
+      "bytes": 2970,
+      "sha256": "04c2351f2c88212a3c8cccda3ba0de810fa21400ae5df9f38c0e15a0bcc2daf7",
+      "gitBlob": "63d16adf2e12f744ed6b19dc6be623328d576882"
+    },
+    {
+      "path": "currency-documents/regressions/final-runs.json",
+      "bytes": 58477,
+      "sha256": "8ba401eac4bd59c7735a010274a739f5f0a2e9a5c304e8ad3cb558cf0884836a",
+      "gitBlob": "c9ff6b8be20f73ef58c26cb1db96fe5fe9921c9e"
+    },
+    {
+      "path": "currency-documents/regressions/final-summary.json",
+      "bytes": 3782,
+      "sha256": "dfafa97e7eca5ca76a839e840e530e17e3404dfccd375e012f546800d4dccebc",
+      "gitBlob": "aeb11c305d7fa0c0ff79920b1749b9a288b0353e"
+    },
+    {
+      "path": "currency-documents/regressions/react-review-artifact-metadata.json",
+      "bytes": 1075,
+      "sha256": "1c89cfdf87396876150356e08c33ba3585660708d6ca511dcc20c7a42fbfd923",
+      "gitBlob": "db5d85f0ae0be1903290c436afed4fe9513149f1"
+    },
+    {
+      "path": "currency-documents/regressions/react-review-live-report.json.gz",
+      "bytes": 2645,
+      "sha256": "60dfebbbb09f99e177eb879fc168883f9f542e8cda454dd7cdab882b75d40a69",
+      "gitBlob": "750ecbde5f287d28537f48eb83e170a724e4c567"
+    },
+    {
+      "path": "currency-documents/regressions/react-review-summary.json",
+      "bytes": 1658,
+      "sha256": "d0d52de184e623b115938dcf24454050f835092570fc09407107f00f5f82d712",
+      "gitBlob": "50063f66d19b30cb476283372df3da80db8a2761"
+    },
+    {
+      "path": "currency-documents/regressions/report-encodings.json",
+      "bytes": 909,
+      "sha256": "e0ef4aa7a65daa6460020d4c38fca38db73b653c6d9138d550ae2ab8d04b1a34",
+      "gitBlob": "77424bf358358602ba1d1784b2fd3552c1a36609"
+    },
+    {
+      "path": "currency-documents/regressions/source-validation-summary.json",
+      "bytes": 479,
+      "sha256": "93dce68cd59bdf805d10825dff1b46923154d615bead71406fc6bd1699fa307b",
+      "gitBlob": "7ed08821bc2361975a20c74128e0666534788026"
+    },
+    {
+      "path": "currency-documents/regressions/source-validation.log.gz",
+      "bytes": 15153,
+      "sha256": "b04a07ef80b2171a94b35d1d0d83506fce2862f1e78e5c6f068907fea2cc89be",
+      "gitBlob": "b31061edb0ee593bec7b3c31ddbb137b55afdf73"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-equivalence.json",
+      "bytes": 6743,
+      "sha256": "a309557b0bb002d859d16d2d6700fa32d1c867895e069e519fcaaa69274a18b3",
+      "gitBlob": "783668b9e2b45741f619da69eb9026d090fe7e7c"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-success/books-comparison-open-1440.png",
+      "bytes": 74634,
+      "sha256": "a6ed58806064e1a44773c0594e0eb83d5c7fe074c15e3b1847882a34844ec716",
+      "gitBlob": "50d2505ddce97a4292d911c3e91366f3643111e8"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-success/books-published-open-1440-unaligned-context.png",
+      "bytes": 1068309,
+      "sha256": "52c81ec3ccf6f018305c47c3db535c068da9954cf2e611c4020d6052a8435b0c",
+      "gitBlob": "1b512407a52681126575ebc804824b3c3ed84ba8"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-success/books-published-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+      "gitBlob": "d48a5ee77c7a71f6df2cc933edb6efdc9847d59a"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-success/books-source-open-1440-unaligned-context.png",
+      "bytes": 1068345,
+      "sha256": "22ef2813a79737cf43a66914c10edbcfe68186d0b520e434692c599979702bfd",
+      "gitBlob": "397f69d85f7aa35673cd8f9662bf2c052a7765ed"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-success/books-source-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+      "gitBlob": "d48a5ee77c7a71f6df2cc933edb6efdc9847d59a"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/concurrent-success/report.json.gz",
+      "bytes": 382158,
+      "sha256": "4bde6f0eb333c6c663dbb618abae22e7d19f765b7535124a00a7f0ad4ad3d35b",
+      "gitBlob": "d61f480a3b62e469799247f07db49f9b6a582877"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/diagnosis.json",
+      "bytes": 19110,
+      "sha256": "37364d575e60a024a48a4d0176eb414fbc4a7dc6d352d3354750b703d42d296e",
+      "gitBlob": "6a917326264926c181041abb9cf04d9ba55f8a22"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/failed/books-comparison-open-1440.png",
+      "bytes": 93492,
+      "sha256": "8783fabaa152291864a8030fc1278f97b5c33e9742d001fd731783cd79d91d02",
+      "gitBlob": "c60d1395ac0f82b77390a6da7b75a9cc4620da23"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/failed/books-published-open-1440-unaligned-context.png",
+      "bytes": 1068309,
+      "sha256": "52c81ec3ccf6f018305c47c3db535c068da9954cf2e611c4020d6052a8435b0c",
+      "gitBlob": "1b512407a52681126575ebc804824b3c3ed84ba8"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/failed/books-published-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+      "gitBlob": "d48a5ee77c7a71f6df2cc933edb6efdc9847d59a"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/failed/books-source-open-1440-unaligned-context.png",
+      "bytes": 1068170,
+      "sha256": "810b9136e2b320c1185adfd30d82948ba635a87ce4d6853a2261906c6a4fa35d",
+      "gitBlob": "4a3f82ec76be88ac6140b8ed3d1b106e98041d20"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/failed/books-source-open-1440.png",
+      "bytes": 42666,
+      "sha256": "d9132f64bbdf8910669ad4aa7affd72ef185d27fb5698137a6e4e0067ed558e8",
+      "gitBlob": "aedc43d125f30f0a80966ea7a6642f876c4fec83"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/failed/report.json.gz",
+      "bytes": 382994,
+      "sha256": "c67d75f7a18b72334b974ea4b61f9988efc563362c943c2cbc770ae5b3aecb28",
+      "gitBlob": "9a80eb07e1c6368fae814236453d418009956e06"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/prior-success/books-comparison-open-1440.png",
+      "bytes": 74634,
+      "sha256": "a6ed58806064e1a44773c0594e0eb83d5c7fe074c15e3b1847882a34844ec716",
+      "gitBlob": "50d2505ddce97a4292d911c3e91366f3643111e8"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/prior-success/books-published-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+      "gitBlob": "d48a5ee77c7a71f6df2cc933edb6efdc9847d59a"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/prior-success/books-source-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902",
+      "gitBlob": "d48a5ee77c7a71f6df2cc933edb6efdc9847d59a"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/prior-success/report-encoding.json",
+      "bytes": 240,
+      "sha256": "c9c78da227fe15ddce39ba333b42758f635f69a6f00f8d2114bffced01ea3b99",
+      "gitBlob": "6781a0779fd37aca1b1b599f20998d2ae570de3f"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/prior-success/report.json.gz",
+      "bytes": 382189,
+      "sha256": "72e8c4eec1be99ec614543f04b69fe26d870fe098b32bd2e0ea7acd2527e2f2b",
+      "gitBlob": "f3af460b2196193992b40ec375edc083f69001e6"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/report-encodings.json",
+      "bytes": 547,
+      "sha256": "3288bf359db25341b47be1c16e5181d1b7dcc0604920472561c0d7d11251956f",
+      "gitBlob": "a755ba04dd6977c30cfa0bc65ae84772a156a8a7"
+    },
+    {
+      "path": "currency-documents/shared-menu-diagnostic/source-record.json",
+      "bytes": 148091,
+      "sha256": "5087e9c751e52934a5e2107b86cde5a716eba5260984248525e1ef35d5dc2743",
+      "gitBlob": "cece0a5c62ba9eb61a543991253f6b7f4c0c9294"
+    },
+    {
+      "path": "currency-documents/visual-inspection.json",
+      "bytes": 3079,
+      "sha256": "a89dd76166e21d8607c72aa7d0ac12bb30f54348043e395458dd3e179b99669b",
+      "gitBlob": "56a90bc49b829bf074b38d4124b54f521f1cf53e"
+    }
+  ],
+  "remaining": {
+    "selectedBookInitialRender": "Open and requires separate repair approval. Each currency document intentionally saves Life Story; 40 non-default query observations per relevant candidate/live collection retain the mismatch and React 418 before recovery.",
+    "widerVerification": "P4 08 remains open for applicable wider page, other-engine and physical-device checks. Existing P4 06 native practice evidence is retained only for its recorded scope.",
+    "screenReader": "Actual spoken acceptance remains deferred to the founder\u2019s final whole website review of every completed page and relevant state.",
+    "release": "Founder acceptance of final rendering, root homepage replacement and private production release are separate decisions."
+  },
+  "closureRecord": {
+    "owner": "Private design branch website-ux/docs/REPOSITORY_HANDOFF.md",
+    "expectedRecord": "website-ux/docs/qa/2026-10-20/pricing-currency-final-publication.json",
+    "scope": "After the final public evidence/documentation commit deploys, independently verify the new evidence index then 38 protected and 17 review/provenance served hashes. Record the actual closing public commit, Pages run and results in the private handoff. The documentation commit does not rerun browser rendering or change the verified runtime."
+  }
+}

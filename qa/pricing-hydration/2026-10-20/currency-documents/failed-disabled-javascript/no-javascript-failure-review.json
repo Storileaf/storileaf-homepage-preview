@@ -1,0 +1,66 @@
+{
+  "scope": "Retained first INR 320 candidate saved document with JavaScript disabled",
+  "savedDocumentSha256": "80a11555dbc15a5b8250aea7d64fb5d78da1a38235a21f3a433af40d2c66dc40",
+  "modulePreloads": [
+    "/storileaf-homepage-preview/assets/index-DO3Vh6An.js",
+    "/storileaf-homepage-preview/assets/useStore-DY_dpydU.js",
+    "/storileaf-homepage-preview/assets/link-CrvydYrW.js",
+    "/storileaf-homepage-preview/assets/Match-CtmL2Hj_.js",
+    "/storileaf-homepage-preview/assets/matchContext-DFjqCKIt.js",
+    "/storileaf-homepage-preview/assets/pricing-DQxYQr2Q.js",
+    "/storileaf-homepage-preview/assets/pricing._currency-D7ELIB-1.js",
+    "/storileaf-homepage-preview/assets/pricing-page-eOuxT0Kj.js"
+  ],
+  "failedRequestPaths": [
+    "/storileaf-homepage-preview/assets/index-DO3Vh6An.js",
+    "/storileaf-homepage-preview/assets/useStore-DY_dpydU.js",
+    "/storileaf-homepage-preview/assets/link-CrvydYrW.js",
+    "/storileaf-homepage-preview/assets/Match-CtmL2Hj_.js",
+    "/storileaf-homepage-preview/assets/matchContext-DFjqCKIt.js",
+    "/storileaf-homepage-preview/assets/pricing-DQxYQr2Q.js",
+    "/storileaf-homepage-preview/assets/pricing._currency-D7ELIB-1.js",
+    "/storileaf-homepage-preview/assets/pricing-page-eOuxT0Kj.js"
+  ],
+  "failedRequestsExactlyMatchEightHeadModulePreloads": true,
+  "allRequestErrors": "csp",
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "fontsEqual": true,
+  "fonts": [
+    {
+      "name": "Newsreader",
+      "loaded": true
+    },
+    {
+      "name": "Manrope",
+      "loaded": true
+    }
+  ],
+  "allSavedVersusSettledMetricDifferences": [],
+  "imagesEqual": true,
+  "allImagesComplete": true,
+  "imageCount": 10,
+  "retainedPNGFiles": [
+    {
+      "file": "failure-active-page.png",
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "bytes": 884400
+    },
+    {
+      "file": "failure-candidate-inr-page-320.png",
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "bytes": 884400
+    },
+    {
+      "file": "failure-failure-active-page.png",
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "bytes": 884400
+    },
+    {
+      "file": "failure-original-inr-page-320.png",
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "bytes": 884400
+    }
+  ]
+}

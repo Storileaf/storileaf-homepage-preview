@@ -1,0 +1,16 @@
+[
+  {
+    "file": "candidate-report.json.gz",
+    "encoding": "gzip",
+    "uncompressedBytes": 10607466,
+    "uncompressedSHA256": "c7fdf833e38dd27291261db10b2f776140f80f6fcb1487a86628c561ca823721",
+    "compressedSHA256": "40e17e33d3763a4d8eec70b0cdbf99f0e4bd1132207d689b0e85587f5004a817"
+  },
+  {
+    "file": "live-report.json.gz",
+    "encoding": "gzip",
+    "uncompressedBytes": 1262821,
+    "uncompressedSHA256": "f7964ce62798ce5f106b40aa515641d138248b7bd1995bf97b276e4b0927037a",
+    "compressedSHA256": "c24584b2117d847d078707572cf0fbc64b3948550da2f8b644d844e8d0344e46"
+  }
+]

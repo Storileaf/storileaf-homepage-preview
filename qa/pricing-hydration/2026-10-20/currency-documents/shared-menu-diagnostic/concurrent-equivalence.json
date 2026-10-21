@@ -1,0 +1,150 @@
+{
+  "failedStandaloneRun": 39533492009,
+  "failedStandaloneJob": 119004628584,
+  "failedAttempt": 1,
+  "successfulConcurrentRun": 39533492292,
+  "successfulConcurrentJob": 119004630409,
+  "successfulAttempt": 1,
+  "head": "29ac24f9357327560bde70c9864638dccbf5bed6",
+  "actualResultsPreserved": true,
+  "disposition": "Reuse the complete independently triggered same-head successful shared suite. Do not rerun the failed standalone workflow. Its failed conclusion and uncertainty remain retained.",
+  "identitiesEqual": {
+    "sourceCommit": true,
+    "browser": true,
+    "harnessSha256": true,
+    "menuCaptureHelperSha256": true,
+    "thresholds": true,
+    "publishedFiles": true,
+    "sourceFiles": true,
+    "sourceBuildFiles": true,
+    "requestedWidths": true,
+    "completeWidthSet": true,
+    "enlargementMeasurementsComplete": true,
+    "loadedSourceAssets": true
+  },
+  "workflowComparison": {
+    "sharedCommandIdentical": true,
+    "setupAndCommandsEquivalent": true,
+    "onlySetupDifference": "Temporary server directory and log basenames use storileaf-shared in the standalone workflow and storileaf-discovery in the discovery workflow. Served input files, ports, server commands, browser dependency, build and preceding commands are otherwise identical.",
+    "exactDiff": [
+      "--- standalone\n",
+      "+++ concurrent-discovery\n",
+      "@@ -21,7 +21,7 @@\n",
+      "     \"run\": \"npm install --no-save --no-package-lock playwright-core@1.56.1\"",
+      "   },",
+      "   {",
+      "-    \"run\": \"mkdir -p \\\"$RUNNER_TEMP/storileaf-shared/storileaf-homepage-preview\\\"\\ncp -a index.html 404.html assets covers gallery pricing \\\"$RUNNER_TEMP/storileaf-shared/storileaf-homepage-preview/\\\"\\npython3 -m http.server 4173 --bind 127.0.0.1 --directory \\\"$RUNNER_TEMP/storileaf-shared\\\" > \\\"$RUNNER_TEMP/storileaf-shared-static.log\\\" 2>&1 &\\npython3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > \\\"$RUNNER_TEMP/storileaf-shared-source.log\\\" 2>&1 &\\nsleep 2\\n\"",
+      "+    \"run\": \"mkdir -p \\\"$RUNNER_TEMP/storileaf-discovery/storileaf-homepage-preview\\\"\\ncp -a index.html 404.html assets covers gallery pricing \\\"$RUNNER_TEMP/storileaf-discovery/storileaf-homepage-preview/\\\"\\npython3 -m http.server 4173 --bind 127.0.0.1 --directory \\\"$RUNNER_TEMP/storileaf-discovery\\\" > \\\"$RUNNER_TEMP/storileaf-discovery-static.log\\\" 2>&1 &\\npython3 -m http.server 4180 --bind 127.0.0.1 --directory frontend/dist > \\\"$RUNNER_TEMP/storileaf-discovery-source.log\\\" 2>&1 &\\nsleep 2\\n\"",
+      "   },",
+      "   {",
+      "     \"working-directory\": \"frontend\","
+    ],
+    "standaloneWorkflowSHA256": "a9e7662af8e0c7ac3d3e18a2ff276a056138d450102669c883f6894c45ad988f",
+    "discoveryWorkflowSHA256": "8cd9fde341108d2bd2d83aab6bf22fd1b7b27394cd931b1d262921b26b10cfad"
+  },
+  "environment": {
+    "browser": "155.0.8059.39",
+    "os": "Ubuntu 24.04.5",
+    "runnerImage": "20261012.334.1",
+    "node": "22.23.3",
+    "npm": "10.9.9",
+    "playwrightCore": "1.56.1"
+  },
+  "completeSuccessfulScope": {
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "comparisons": 74,
+    "states": 41,
+    "captures": 132,
+    "qualityFindings": 2,
+    "inheritedNavigationFindings": 1,
+    "completeWidthSet": true,
+    "enlargementMeasurementsComplete": true,
+    "problems": []
+  },
+  "books1440": {
+    "group": "books",
+    "state": "open",
+    "differences": [],
+    "pixels": {
+      "publishedSize": [
+        630,
+        417
+      ],
+      "sourceSize": [
+        630,
+        417
+      ],
+      "changedPixels": 0,
+      "changedRatio": 0,
+      "channelTolerance": 24,
+      "equalityRequired": true
+    },
+    "filename": "books-comparison-open-1440.png",
+    "authorisedReflow": null
+  },
+  "artifact": {
+    "id": 12316557891,
+    "node_id": "MDg6QXJ0aWZhY3QxMjMxNjU1Nzg5MQ==",
+    "name": "homepage-discovery-regressions",
+    "size_in_bytes": 201244319,
+    "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316557891",
+    "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12316557891/zip",
+    "expired": false,
+    "digest": "sha256:29b0fc6ccae74f08a21b9aa3fe38b687b84612858c176e10153461b5c504f3bd",
+    "created_at": "2026-10-21T02:40:44Z",
+    "updated_at": "2026-10-21T02:40:44Z",
+    "expires_at": "2027-01-19T02:31:28Z",
+    "workflow_run": {
+      "id": 39533492292,
+      "repository_id": 1422795677,
+      "head_repository_id": 1422795677,
+      "head_branch": "main",
+      "head_sha": "29ac24f9357327560bde70c9864638dccbf5bed6"
+    }
+  },
+  "artifactChecksumVerified": true,
+  "files": [
+    {
+      "path": "p407-currency/regressions/shared-failure/concurrent-discovery-artifact/frontend/qa/shared/report.json",
+      "bytes": 10651411,
+      "sha256": "0a6c7f3882f49d843e789590e3b6fa1aa546f7d92382fe45a4c980a25f5a9fc8"
+    },
+    {
+      "path": "p407-currency/regressions/shared-failure/concurrent-discovery-artifact/frontend/qa/shared/books-published-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902"
+    },
+    {
+      "path": "p407-currency/regressions/shared-failure/concurrent-discovery-artifact/frontend/qa/shared/books-source-open-1440.png",
+      "bytes": 42467,
+      "sha256": "6dd8191d5c9917dcdb9b572272b9b6f7b406f1489094194b8bceb35ade66b902"
+    },
+    {
+      "path": "p407-currency/regressions/shared-failure/concurrent-discovery-artifact/frontend/qa/shared/books-comparison-open-1440.png",
+      "bytes": 74634,
+      "sha256": "a6ed58806064e1a44773c0594e0eb83d5c7fe074c15e3b1847882a34844ec716"
+    },
+    {
+      "path": "p407-currency/regressions/shared-failure/concurrent-discovery-artifact/frontend/qa/shared/books-published-open-1440-unaligned-context.png",
+      "bytes": 1068309,
+      "sha256": "52c81ec3ccf6f018305c47c3db535c068da9954cf2e611c4020d6052a8435b0c"
+    },
+    {
+      "path": "p407-currency/regressions/shared-failure/concurrent-discovery-artifact/frontend/qa/shared/books-source-open-1440-unaligned-context.png",
+      "bytes": 1068345,
+      "sha256": "22ef2813a79737cf43a66914c10edbcfe68186d0b520e434692c599979702bfd"
+    }
+  ],
+  "limits": "The standalone run remains failed. Its report, exact image pair and comparison are retained. Equivalent complete successful shared evidence comes from the independently triggered discovery workflow on the same head, not a retry. No runtime repair, relaxed threshold, suppressed assertion, sole causal explanation or permanent capture stability is claimed. No diagnostic replay has been performed."
+}

@@ -1,0 +1,17 @@
+{
+  "images": [
+    {
+      "file": "failure-original-inr-page-320.png",
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "bytes": 884400,
+      "matchesReport": true
+    },
+    {
+      "file": "failure-candidate-inr-page-320.png",
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87",
+      "bytes": 884400,
+      "matchesReport": true
+    }
+  ],
+  "originalCandidateByteIdentical": true
+}

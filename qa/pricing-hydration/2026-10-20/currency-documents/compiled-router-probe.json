@@ -1,0 +1,617 @@
+{
+  "node": "v24.19.0",
+  "purpose": "Read-only compiled route matcher with injected inert history. No browser/rendering acceptance.",
+  "options": {
+    "basepath": "/storileaf-homepage-preview"
+  },
+  "observations": [
+    {
+      "pathname": "/pricing/inr",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/inr",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/inr",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000inr"
+    },
+    {
+      "pathname": "/pricing/inr",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/inr",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/inr",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000inr"
+    },
+    {
+      "pathname": "/pricing/inr/",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/inr",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/inr",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000inr"
+    },
+    {
+      "pathname": "/pricing/inr/",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/inr",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/inr",
+          "params": {
+            "currency": "inr"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000inr"
+    },
+    {
+      "pathname": "/pricing/usd",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/usd",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/usd",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000usd"
+    },
+    {
+      "pathname": "/pricing/usd",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/usd",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/usd",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000usd"
+    },
+    {
+      "pathname": "/pricing/usd/",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/usd",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/usd",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000usd"
+    },
+    {
+      "pathname": "/pricing/usd/",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/usd",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/usd",
+          "params": {
+            "currency": "usd"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000usd"
+    },
+    {
+      "pathname": "/pricing/cad",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/cad",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/cad",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000cad"
+    },
+    {
+      "pathname": "/pricing/cad",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/cad",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/cad",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000cad"
+    },
+    {
+      "pathname": "/pricing/cad/",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/cad",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/cad",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000cad"
+    },
+    {
+      "pathname": "/pricing/cad/",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/cad",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/cad",
+          "params": {
+            "currency": "cad"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000cad"
+    },
+    {
+      "pathname": "/pricing/gbp",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/gbp",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/gbp",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000gbp"
+    },
+    {
+      "pathname": "/pricing/gbp",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/gbp",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/gbp",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000gbp"
+    },
+    {
+      "pathname": "/pricing/gbp/",
+      "search": {},
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {}
+        },
+        {
+          "id": "/pricing/$currency/pricing/gbp",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/gbp",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {}
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000gbp"
+    },
+    {
+      "pathname": "/pricing/gbp/",
+      "search": {
+        "keepsake": "travel-memoir"
+      },
+      "matches": [
+        {
+          "id": "__root__/",
+          "routeId": "__root__",
+          "pathname": "/",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/pricing",
+          "routeId": "/pricing",
+          "pathname": "/pricing",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        },
+        {
+          "id": "/pricing/$currency/pricing/gbp",
+          "routeId": "/pricing/$currency",
+          "pathname": "/pricing/gbp",
+          "params": {
+            "currency": "gbp"
+          },
+          "search": {
+            "keepsake": "travel-memoir"
+          }
+        }
+      ],
+      "compressedMatchId": "\u0000pricing\u0000$currency\u0000pricing\u0000gbp"
+    }
+  ]
+}
