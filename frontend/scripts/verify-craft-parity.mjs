@@ -7,11 +7,13 @@ import { settledSnapshot } from './browser-readiness.mjs'
 
 const root=path.resolve('..'),out=process.env.CRAFT_QA_OUT||'qa/media/physical'
 const baseline='e9550069d91b5a9b48ade43fcfb0a71bbed2875b'
+// Only the authorised default pricing footer uses the corrected export baseline.
+const pricingBaseline='a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'
 const widths=[320,360,390,430,600,768,820,1024,1280,1440]
 const hash=b=>createHash('sha256').update(b).digest('hex')
 const c=(kind,name)=>'.'+(kind==='source'?'sl-':'')+name
 const problems=[],qualityFindings=[]
-const report={checkpoint:'Physical book and complete shared samples section',baseline,sourceCommit:process.env.GITHUB_SHA||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),createdAt:new Date().toISOString(),thresholds:{geometry:.15,pixelChannel:24,pixelRatio:.01},widths:[],states:[],captures:[],problems,qualityFindings}
+const report={checkpoint:'Physical book and complete shared samples section',baseline,pricingBaseline,sourceCommit:process.env.GITHUB_SHA||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),createdAt:new Date().toISOString(),thresholds:{geometry:.15,pixelChannel:24,pixelRatio:.01},widths:[],states:[],captures:[],problems,qualityFindings}
 const check=(ok,message)=>{if(!ok)problems.push(message)}
 await fs.mkdir(out,{recursive:true})
 report.sourceHashes={}
@@ -23,7 +25,7 @@ report.harnessHashes={}
 for(const file of ['scripts/verify-craft-parity.mjs','scripts/browser-readiness.mjs','scripts/verify-media-parity.mjs'])report.harnessHashes[file]=hash(await fs.readFile(file))
 report.protectedHashes={}
 for(const file of ['index.html','assets/index-DhPZyX4z.css','assets/routes-DrwDv2x2.js','assets/content-sections-CfrmOVRI.js','pricing/index.html']){
-  const bytes=await fs.readFile(path.join(root,file)),protectedBytes=execFileSync('git',['show',baseline+':'+file])
+  const bytes=await fs.readFile(path.join(root,file)),protectedBytes=execFileSync('git',['show',(file==='pricing/index.html'?pricingBaseline:baseline)+':'+file])
   check(bytes.equals(protectedBytes),'Protected file differs '+file);report.protectedHashes[file]=hash(bytes)
 }
 const styleKeys=['fontFamily','fontSize','fontWeight','fontStyle','lineHeight','letterSpacing','color','backgroundColor','backgroundImage','borderTopWidth','borderTopColor','borderRadius','paddingTop','paddingRight','paddingBottom','paddingLeft','marginTop','marginBottom','gap','objectFit','objectPosition','display','position','alignItems','alignSelf','aspectRatio','opacity','strokeWidth','textDecorationLine']

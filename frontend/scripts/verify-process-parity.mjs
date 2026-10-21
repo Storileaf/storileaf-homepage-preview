@@ -8,11 +8,13 @@ import { settledSnapshot } from './browser-readiness.mjs'
 const out = 'qa/process'
 const widths = process.env.PROCESS_WIDTHS?.split(',').map(Number) || [320,360,390,430,600,768,820,1024,1280,1440]
 const baseline = 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b'
+// Only the authorised default pricing footer uses the corrected export baseline.
+const pricingBaseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'
 const urls = { published: process.env.STORILEAF_BASELINE_URL || 'http://127.0.0.1:4173/storileaf-homepage-preview/', source: process.env.STORILEAF_SOURCE_URL || 'http://127.0.0.1:4180/' }
 const content = JSON.parse(await fs.readFile('content/process.json','utf8'))
 const problems = [], qualityFindings = []
 const hash = bytes => createHash('sha256').update(bytes).digest('hex')
-const report = { checkpoint: 'Package 3 Group 6 How it works', sourceCommit: process.env.GITHUB_SHA || execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(), baseline, createdAt: new Date().toISOString(), thresholds:{ geometry:.15, pixelChannel:24, pixelRatio:.01 }, widths:[], states:[], captures:[], preparation:[], sourceHashes:{}, problems, qualityFindings, limits:'Actual served static and React pages in Chromium. Touch is emulated and enlargement is targeted text doubling, not native zoom, physical device, other engine or accessibility certification.', captureMethod:'Align the section document origin by less than one CSS pixel of body padding, asserting unchanged section dimensions. No target CSS or scroll formula is replaced. Clean captures hide only the unrelated fixed header. Context captures retain it. Native rendering, fonts, image decoding and real scroll events remain in use.' }
+const report = { checkpoint: 'Package 3 Group 6 How it works', sourceCommit: process.env.GITHUB_SHA || execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(), baseline, pricingBaseline, createdAt: new Date().toISOString(), thresholds:{ geometry:.15, pixelChannel:24, pixelRatio:.01 }, widths:[], states:[], captures:[], preparation:[], sourceHashes:{}, problems, qualityFindings, limits:'Actual served static and React pages in Chromium. Touch is emulated and enlargement is targeted text doubling, not native zoom, physical device, other engine or accessibility certification.', captureMethod:'Align the section document origin by less than one CSS pixel of body padding, asserting unchanged section dimensions. No target CSS or scroll formula is replaced. Clean captures hide only the unrelated fixed header. Context captures retain it. Native rendering, fonts, image decoding and real scroll events remain in use.' }
 const check = (ok,message) => { if (!ok) problems.push(message) }
 const cls = (kind,name) => '.' + (kind === 'source' ? 'sl-' : '') + name
 await fs.mkdir(out,{recursive:true})
@@ -25,7 +27,7 @@ for (const file of ['scripts/verify-process-parity.mjs','scripts/browser-readine
 report.protectedHashes={}
 for (const file of ['index.html','assets/index-DhPZyX4z.css','assets/content-sections-CfrmOVRI.js','pricing/index.html']) {
   const bytes=await fs.readFile('../'+file)
-  check(bytes.equals(execFileSync('git',['show',baseline+':'+file])),'Protected baseline changed '+file)
+  check(bytes.equals(execFileSync('git',['show',(file==='pricing/index.html'?pricingBaseline:baseline)+':'+file])),'Protected baseline changed '+file)
   report.protectedHashes[file]=hash(bytes)
 }
 const styleKeys=['fontFamily','fontSize','fontWeight','fontStyle','lineHeight','letterSpacing','color','backgroundColor','borderTopWidth','borderBottomWidth','borderColor','borderRadius','paddingTop','paddingRight','paddingBottom','paddingLeft','marginTop','marginBottom','gap','rowGap','columnGap','objectFit','objectPosition','display','position','alignItems','alignSelf','justifySelf','boxShadow','opacity','outlineWidth','outlineStyle','outlineColor','outlineOffset']
