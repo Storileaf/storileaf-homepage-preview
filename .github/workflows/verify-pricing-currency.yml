@@ -1,0 +1,50 @@
+name: Verify the authorised pricing currency documents
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pricing/**'
+      - 'assets/**'
+      - '404.html'
+      - 'frontend/scripts/guard-published.mjs'
+      - '.github/scripts/generate-pricing-currency-documents.mjs'
+      - '.github/scripts/verify-pricing-currency*.mjs'
+      - '.github/workflows/verify-pricing-currency.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check the protected export
+        run: node frontend/scripts/guard-published.mjs
+      - name: Install isolated verification dependencies
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1 pngjs@7.0.0
+      - name: Install the pinned Chrome for Testing browser
+        shell: bash
+        run: |
+          curl --fail --location --output "$RUNNER_TEMP/currency-chrome.zip" 'https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip'
+          printf '%s  %s\n' 'cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc' "$RUNNER_TEMP/currency-chrome.zip" | sha256sum --check
+          unzip -q "$RUNNER_TEMP/currency-chrome.zip" -d "$RUNNER_TEMP/currency-browser"
+          printf 'CURRENCY_CHROME_PATH=%s\n' "$RUNNER_TEMP/currency-browser/chrome-linux64/chrome" >> "$GITHUB_ENV"
+      - name: Compare original and candidate currency pages
+        run: node .github/scripts/verify-pricing-currency.mjs
+      - name: Retain currency comparison evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-currency-candidate
+          path: qa/pricing-currency-candidate/
+          if-no-files-found: error
