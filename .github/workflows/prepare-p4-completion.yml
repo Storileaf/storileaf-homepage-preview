@@ -15,68 +15,47 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - name: Preserve the repaired runtime and protected original
+      - name: Preserve runtime and protected original
         run: |
           node frontend/scripts/guard-published.mjs
-          test "$(git rev-parse HEAD:frontend/src)" = "$(git rev-parse 78d15276578b671cc072ab51032b7c67375f7b40:frontend/src)"
+          test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse 9bf877954e1b4fc6091b93e79de67f0ec6394eab:frontend)"
           mkdir -p qa/p406-contract
-      - name: Load the inspected bounded contract and mutation tests
+      - name: Load the inspected native capture helper
         uses: actions/github-script@v7
         with:
           script: |
             const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
-            for(const [file,sha] of [['frontend/scripts/practice-heading-raster-contract.mjs','e567977e12e677caaf8c524ed3108594e2ad161b'],['frontend/scripts/practice-heading-raster-contract.test.mjs','af269fb6f9384278e75e6a4c4994e85deff5e9dd']]) {
-              assert(!fs.existsSync(file));const blob=(await github.rest.git.getBlob({...context.repo,file_sha:sha})).data;assert.equal(blob.encoding,'base64');fs.writeFileSync(file,Buffer.from(blob.content,'base64'));assert.equal(cp.execFileSync('git',['hash-object',file],{encoding:'utf8'}).trim(),sha);
-            }
-      - name: Patch only the named enlarged question capture comparison
+            const file='scripts/p4-practice-heading/native-capture.py',sha='41dd4071abb0a9f589a91f88b4fce487bc88cea0';assert(!fs.existsSync(file));
+            const blob=(await github.rest.git.getBlob({...context.repo,file_sha:sha})).data;assert.equal(blob.encoding,'base64');fs.writeFileSync(file,Buffer.from(blob.content,'base64'));assert.equal(cp.execFileSync('git',['hash-object',file],{encoding:'utf8'}).trim(),sha);
+      - name: Use native-window capture without changing page rendering
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import hashlib
-          p=Path('frontend/scripts/verify-writing-parity.mjs');b=p.read_bytes()
-          assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()=='00ee790cd53fc986015eabbdacbfbaa13c4aca20'
+          p=Path('scripts/p4-practice-heading/verify.mjs');b=p.read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()=='8c21da27aa741a33a8cbaf530f00e82f18b07c80'
           s=b.decode()
           def replace(a,b):
               global s
-              assert s.count(a)==1,a[:120]
+              assert s.count(a)==1,a[:100]
               s=s.replace(a,b)
-          replace("import { comparePracticeReferences, verifyPracticeDescription } from './practice-description-contract.mjs'", "import { comparePracticeReferences, verifyPracticeDescription } from './practice-description-contract.mjs'\nimport { measurePracticeHeadingPair } from './practice-heading-raster-contract.mjs'")
-          replace("'scripts/practice-description-contract.mjs']) report.harnessHashes", "'scripts/practice-description-contract.mjs', 'scripts/practice-heading-raster-contract.mjs']) report.harnessHashes")
-          replace('async function pixelCompare(files, label) {','async function pixelCompare(files, label, headingReflow = null) {')
-          replace('const pixels = await p.evaluate(async sources => {','const pixels = await p.evaluate(async ({ sources, region }) => {')
-          replace('''    let changed = 0
-              for (let i = 0; i < one.length; i += 4) if (Math.max(Math.abs(one[i] - two[i]), Math.abs(one[i + 1] - two[i + 1]), Math.abs(one[i + 2] - two[i + 2])) > 24) changed++
-              return { ratio: changed / (a.width * a.height), changed, total: a.width * a.height, size: [a.width, a.height] }
-            }, data)
-            await p.close(); check(pixels.ratio !== null && pixels.ratio <= .01, label + ' pixels ' + JSON.stringify(pixels)); return pixels''','''    let changed = 0, unaffectedChanged = 0, unaffectedTotal = 0, authorisedChanged = 0
-              for (let i = 0; i < one.length; i += 4) {
-                const x = (i / 4) % a.width, y = Math.floor(i / 4 / a.width)
-                const inside = region && x >= region.x && x < region.x + region.width && y >= region.y && y < region.y + region.height
-                if (!inside) unaffectedTotal++
-                if (Math.max(Math.abs(one[i] - two[i]), Math.abs(one[i + 1] - two[i + 1]), Math.abs(one[i + 2] - two[i + 2])) > 24) { changed++; if (inside) authorisedChanged++; else unaffectedChanged++ }
-              }
-              return { ratio: changed / (a.width * a.height), changed, total: a.width * a.height, size: [a.width, a.height], unaffectedChanged, unaffectedTotal, unaffectedRatio: unaffectedChanged / unaffectedTotal, authorisedChanged }
-            }, { sources: data, region: headingReflow?.region || null })
-            await p.close()
-            if (headingReflow) check(label === 'text-200-320-dialog tile 0' && pixels.unaffectedTotal > 0, 'Only the measured approved P4-06 capture may use a local raster distinction')
-            const testedRatio = headingReflow ? pixels.unaffectedRatio : pixels.ratio
-            check(pixels.ratio !== null && testedRatio <= .01, label + ' pixels ' + JSON.stringify(pixels))
-            return { ...pixels, comparisonScope: headingReflow ? 'P4-06 question reflow; unchanged pixels outside its measured text region' : 'full image', headingReflow }
-          ''')
-          replace("  const pairs = []\n  for (const [tile, offset] of offsets.entries()) {", "  const pairs = []\n  const headingReflow = dialog && label === 'text-200-320-dialog' ? await measurePracticeHeadingPair(ps, label) : null\n  for (const [tile, offset] of offsets.entries()) {")
-          replace("pixels: await pixelCompare(files, label + ' tile ' + tile)", "pixels: await pixelCompare(files, label + ' tile ' + tile, headingReflow)")
-          replace("checkpoint: 'Package 4 P4-05 description repair with retained Group 8 Writing and practice gates'", "checkpoint: 'Package 4 P4-05 description and P4-06 heading repair with retained Group 8 Writing and practice gates'")
+          helper='''async function screenshot(p, file) {
+            if (p.viewportSize() !== null) return p.screenshot({path:file})
+            await p.bringToFront();await frames(p);await p.waitForTimeout(100)
+            const observed={viewport:await viewport(p),heading:await p.locator('.sl-practice-dialog h2').boundingBox()}
+            const metadata=JSON.parse(execFileSync('python3',['scripts/p4-practice-heading/native-capture.py',file,JSON.stringify(observed)],{encoding:'utf8'}))
+            report.nativeCaptures ||= [];report.nativeCaptures.push({file:path.basename(file),...metadata})
+          }
+          '''
+          replace('async function observe(p,label,meta={},stress=false){',helper+'async function observe(p,label,meta={},stress=false){')
+          replace("await p.screenshot({path:out+'/'+image})","await screenshot(p,out+'/'+image)")
+          replace("await p.screenshot({path:out+'/'+bottom})","await screenshot(p,out+'/'+bottom)")
+          replace("const out='qa/practice-heading', url='http://127.0.0.1:4180/'","const out='qa/practice-heading', url='http://127.0.0.1:4180/'\n// Native images use X11 window pixels with a fixed 100ms presentation interval.\n// CDP zoom screenshots previously returned a uniform background and are not visual evidence.")
           p.write_text(s)
           PY
-          node --check frontend/scripts/verify-writing-parity.mjs
-      - name: Validate the prepared source and retain the real diff
-        run: |
-          set -o pipefail
-          (cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build) | tee qa/p406-contract/check.log
-          git add frontend/scripts/verify-writing-parity.mjs frontend/scripts/practice-heading-raster-contract.mjs frontend/scripts/practice-heading-raster-contract.test.mjs
+          python3 -m py_compile scripts/p4-practice-heading/native-capture.py
+          node --check scripts/p4-practice-heading/verify.mjs
+          git add scripts/p4-practice-heading/native-capture.py scripts/p4-practice-heading/verify.mjs
           git diff --cached --check
           git diff --cached > qa/p406-contract/candidate.patch
       - name: Prepare a commit for connected-app inspection without advancing main
@@ -84,18 +63,15 @@ jobs:
         with:
           script: |
             const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
-            const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();
-            assert.equal((await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha,context.sha);
-            const files=['frontend/scripts/verify-writing-parity.mjs','frontend/scripts/practice-heading-raster-contract.mjs','frontend/scripts/practice-heading-raster-contract.test.mjs'];
-            assert.deepEqual(git('diff','--cached','--name-only').split('\n').sort(),[...files].sort());
+            const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();assert.equal((await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha,context.sha);
+            const files=['scripts/p4-practice-heading/native-capture.py','scripts/p4-practice-heading/verify.mjs'];assert.deepEqual(git('diff','--cached','--name-only').split('\n').sort(),[...files].sort());
             const entries=[];for(const file of files){const blob=(await github.rest.git.createBlob({...context.repo,content:fs.readFileSync(file,'utf8'),encoding:'utf-8'})).data;entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});}
             const tree=(await github.rest.git.createTree({...context.repo,base_tree:git('rev-parse','HEAD^{tree}'),tree:entries})).data;
-            const commit=(await github.rest.git.createCommit({...context.repo,message:'test: verify the exact P4-06 heading reflow while preserving surrounding raster and geometry gates',tree:tree.sha,parents:[context.sha]})).data;
-            const result={parent:context.sha,commit:commit.sha,tree:tree.sha,files:entries,runtimeSource:'78d15276578b671cc072ab51032b7c67375f7b40',scope:'Three verification files only. No runtime, protected export, review publication or branch reference changed.'};
-            fs.writeFileSync('qa/p406-contract/candidate.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+            const commit=(await github.rest.git.createCommit({...context.repo,message:'test: retain real native zoom window images and reject blank rendering evidence',tree:tree.sha,parents:[context.sha]})).data;
+            const result={parent:context.sha,commit:commit.sha,tree:tree.sha,files:entries,runtimeSource:'78d15276578b671cc072ab51032b7c67375f7b40',scope:'Native screenshot harness only. Frontend and all published files remain unchanged. No branch reference advanced.'};fs.writeFileSync('qa/p406-contract/candidate.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: p406-contract-candidate
+          name: p406-native-capture-candidate
           path: qa/p406-contract/
           if-no-files-found: error
