@@ -1,4 +1,4 @@
-name: Prepare bounded P4 verification update
+name: Prepare verified P4 closure records
 on:
   push:
     branches: [main]
@@ -6,72 +6,95 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: read
 jobs:
   prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Preserve runtime and protected original
+      - name: Preserve the verified frontend and protected original
         run: |
           node frontend/scripts/guard-published.mjs
           test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse 9bf877954e1b4fc6091b93e79de67f0ec6394eab:frontend)"
-          mkdir -p qa/p406-contract
-      - name: Load the inspected native capture helper
+      - name: Collect exact completed checkpoints without rerunning browser tests
         uses: actions/github-script@v7
         with:
           script: |
-            const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
-            const file='scripts/p4-practice-heading/native-capture.py',sha='41dd4071abb0a9f589a91f88b4fce487bc88cea0';assert(!fs.existsSync(file));
-            const blob=(await github.rest.git.getBlob({...context.repo,file_sha:sha})).data;assert.equal(blob.encoding,'base64');fs.writeFileSync(file,Buffer.from(blob.content,'base64'));assert.equal(cp.execFileSync('git',['hash-object',file],{encoding:'utf8'}).trim(),sha);
-      - name: Use native-window capture without changing page rendering
+            const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),cp=require('node:child_process'),assert=require('node:assert/strict');
+            assert.equal(context.repo.owner,'Storileaf');assert.equal(context.repo.repo,'storileaf-homepage-preview');assert.equal(context.ref,'refs/heads/main');
+            const source='9bf877954e1b4fc6091b93e79de67f0ec6394eab',out=path.join(process.env.RUNNER_TEMP,'p406-close');fs.mkdirSync(out,{recursive:true});core.exportVariable('P406_CLOSE',out);
+            let runs=[];
+            // Wait only for the already running, investigated shared diagnostic replay.
+            // Never restart a failed job or turn a failing result into success here.
+            for(let i=0;i<40;i++){
+              runs=(await github.rest.actions.listWorkflowRunsForRepo({...context.repo,head_sha:source,event:'push',per_page:100})).data.workflow_runs;
+              assert.equal(runs.length,13,'All triggered candidate workflows must be retained');
+              if(runs.every(r=>r.status==='completed'))break;
+              await new Promise(resolve=>setTimeout(resolve,10000));
+            }
+            assert(runs.every(r=>r.status==='completed'&&r.conclusion==='success'),'Candidate verification must pass before preparing closure');
+            const required=['validate-public-source.yml','verify-footer-type.yml','verify-group1-parity.yml','verify-group2-parity.yml','verify-discovery-parity.yml','verify-shared-parity.yml','verify-media-parity.yml','verify-process-parity.yml','verify-hero-parity.yml','verify-writing-parity.yml','verify-assembly-parity.yml','verify-p4-reflow.yml','review-package2.yml'];
+            assert.deepEqual(runs.map(r=>path.basename(r.path)).sort(),required.sort());
+            const slim=r=>({id:r.id,name:r.name,path:r.path,head_sha:r.head_sha,status:r.status,conclusion:r.conclusion,run_attempt:r.run_attempt,html_url:r.html_url,created_at:r.created_at,updated_at:r.updated_at});
+            const checks={sourceCommit:source,createdAt:new Date().toISOString(),runs:runs.map(slim),artifacts:[],editorialCoverage:'Standalone editorial run 39518460752 passed on identical runtime 78d1527. It did not trigger for the final test-only frontend change. Its unchanged command is retained in Group 1 and shared suites on the final candidate.'};
+            const native=(await github.rest.actions.getWorkflowRun({...context.repo,run_id:39520323484})).data;assert.equal(native.conclusion,'success');assert.equal(native.head_sha,'3ea705789a0a63a2292cdc46bce126049e6af5b5');checks.native=slim(native);
+            for(const r of runs){const jobs=(await github.rest.actions.listJobsForWorkflowRun({...context.repo,run_id:r.id,per_page:100})).data.jobs;checks.runs.find(x=>x.id===r.id).jobs=jobs.map(j=>({id:j.id,name:j.name,conclusion:j.conclusion,steps:j.steps.map(s=>({name:s.name,conclusion:s.conclusion}))}));}
+            const getArtifact=async(id,expected,folder)=>{
+              const m=(await github.rest.actions.getArtifact({...context.repo,artifact_id:id})).data;assert(!m.expired);if(expected)assert.equal(m.digest,'sha256:'+expected);
+              const response=await github.rest.actions.downloadArtifact({...context.repo,artifact_id:id,archive_format:'zip'});const bytes=Buffer.from(response.data),digest=crypto.createHash('sha256').update(bytes).digest('hex');assert.equal('sha256:'+digest,m.digest);
+              const zip=path.join(out,folder+'.zip');fs.writeFileSync(zip,bytes);
+              cp.execFileSync('python3',['-c','import zipfile,sys,pathlib; z=zipfile.ZipFile(sys.argv[1]); assert all(not n.startswith("/") and ".." not in pathlib.PurePosixPath(n).parts for n in z.namelist()); z.extractall(sys.argv[2])',zip,path.join(out,folder)]);
+              checks.artifacts.push({id:m.id,name:m.name,folder,digest:m.digest,workflow_run:m.workflow_run,created_at:m.created_at,expires_at:m.expires_at});
+            };
+            await getArtifact(12309823841,'5d9b1b809360ca32799956ac5f3dbbd9a367639b7db2d148fd2fd4fe387656d1','native');
+            await getArtifact(12310396809,'cd8fca68b5de4712678e13bc2a2df97253e62b7b2b1448698e3b36e36879bdff','writing');
+            await getArtifact(12310866621,'5af9c59a063048cf6d5ee11dfc365262097def3782daff8aeb6047da487d5433','build');
+            await getArtifact(12310552367,'7dd0de28fe1c4e15194a6f4ced192657e87c6f83d7eb02bf8317c0d88c0bbdaa','shared-failed');
+            for(const [workflow,name,folder] of [['verify-assembly-parity.yml','homepage-assembly-parity','assembly'],['verify-shared-parity.yml','homepage-shared-parity','shared']]){
+              const run=runs.find(r=>r.path.endsWith('/'+workflow));const list=(await github.rest.actions.listWorkflowRunArtifacts({...context.repo,run_id:run.id,per_page:100})).data.artifacts;
+              const artifact=list.filter(a=>a.name===name&&!a.expired).sort((a,b)=>b.created_at.localeCompare(a.created_at))[0];assert(artifact);await getArtifact(artifact.id,null,folder);
+            }
+            fs.writeFileSync(path.join(out,'checks.json'),JSON.stringify(checks,null,2));
+            const script=(await github.rest.git.getBlob({...context.repo,file_sha:'eb56e81d91988451ca9516ed17fc486a2b7d35c6'})).data;assert.equal(script.encoding,'base64');fs.writeFileSync(path.join(out,'close-records.py'),Buffer.from(script.content,'base64'));
+      - name: Prepare current records and exact review without changing the root
         run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import hashlib
-          p=Path('scripts/p4-practice-heading/verify.mjs');b=p.read_bytes()
-          assert hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()=='8c21da27aa741a33a8cbaf530f00e82f18b07c80'
-          s=b.decode()
-          def replace(a,b):
-              global s
-              assert s.count(a)==1,a[:100]
-              s=s.replace(a,b)
-          helper='''async function screenshot(p, file) {
-            if (p.viewportSize() !== null) return p.screenshot({path:file})
-            await p.bringToFront();await frames(p);await p.waitForTimeout(100)
-            const observed={viewport:await viewport(p),heading:await p.locator('.sl-practice-dialog h2').boundingBox()}
-            const metadata=JSON.parse(execFileSync('python3',['scripts/p4-practice-heading/native-capture.py',file,JSON.stringify(observed)],{encoding:'utf8'}))
-            report.nativeCaptures ||= [];report.nativeCaptures.push({file:path.basename(file),...metadata})
-          }
-          '''
-          replace('async function observe(p,label,meta={},stress=false){',helper+'async function observe(p,label,meta={},stress=false){')
-          replace("await p.screenshot({path:out+'/'+image})","await screenshot(p,out+'/'+image)")
-          replace("await p.screenshot({path:out+'/'+bottom})","await screenshot(p,out+'/'+bottom)")
-          replace("const out='qa/practice-heading', url='http://127.0.0.1:4180/'","const out='qa/practice-heading', url='http://127.0.0.1:4180/'\n// Native images use X11 window pixels with a fixed 100ms presentation interval.\n// CDP zoom screenshots previously returned a uniform background and are not visual evidence.")
-          p.write_text(s)
-          PY
-          python3 -m py_compile scripts/p4-practice-heading/native-capture.py
-          node --check scripts/p4-practice-heading/verify.mjs
-          git add scripts/p4-practice-heading/native-capture.py scripts/p4-practice-heading/verify.mjs
+          python3 "$P406_CLOSE/close-records.py"
+          node frontend/scripts/guard-published.mjs
+          test "$(git rev-parse HEAD:frontend)" = "$(git rev-parse 9bf877954e1b4fc6091b93e79de67f0ec6394eab:frontend)"
+          git add docs/PACKAGE_4_QUALITY_AUDIT.md docs/PUBLIC_DESIGN_SYSTEM.md docs/COMPONENT_INVENTORY.md REPOSITORY_HANDOFF.md qa/package-4/2026-10-20/p4-06 qa/package-4/2026-10-20/p4-06-verification.json react-review
           git diff --cached --check
-          git diff --cached > qa/p406-contract/candidate.patch
-      - name: Prepare a commit for connected-app inspection without advancing main
+          git diff --cached --stat > "$P406_CLOSE/changes.txt"
+          git diff --cached -- docs REPOSITORY_HANDOFF.md > "$P406_CLOSE/records.patch"
+      - name: Create a scoped candidate tree for connected-app review without advancing main
         uses: actions/github-script@v7
         with:
           script: |
-            const fs=require('node:fs'),cp=require('node:child_process'),assert=require('node:assert/strict');
+            const fs=require('node:fs'),path=require('node:path'),cp=require('node:child_process'),assert=require('node:assert/strict');
             const git=(...args)=>cp.execFileSync('git',args,{encoding:'utf8'}).trim();assert.equal((await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha,context.sha);
-            const files=['scripts/p4-practice-heading/native-capture.py','scripts/p4-practice-heading/verify.mjs'];assert.deepEqual(git('diff','--cached','--name-only').split('\n').sort(),[...files].sort());
-            const entries=[];for(const file of files){const blob=(await github.rest.git.createBlob({...context.repo,content:fs.readFileSync(file,'utf8'),encoding:'utf-8'})).data;entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});}
+            const out=process.env.P406_CLOSE,files=git('diff','--cached','--name-only').split('\n');
+            assert(files.every(f=>f==='REPOSITORY_HANDOFF.md'||f.startsWith('docs/')||f.startsWith('qa/package-4/2026-10-20/')||f.startsWith('react-review/')));
+            const entries=[];
+            for(const file of files){if(!fs.existsSync(file)){entries.push({path:file,mode:'100644',type:'blob',sha:null});continue;}const blob=(await github.rest.git.createBlob({...context.repo,content:fs.readFileSync(file).toString('base64'),encoding:'base64'})).data;entries.push({path:file,mode:'100644',type:'blob',sha:blob.sha});}
             const tree=(await github.rest.git.createTree({...context.repo,base_tree:git('rev-parse','HEAD^{tree}'),tree:entries})).data;
-            const commit=(await github.rest.git.createCommit({...context.repo,message:'test: retain real native zoom window images and reject blank rendering evidence',tree:tree.sha,parents:[context.sha]})).data;
-            const result={parent:context.sha,commit:commit.sha,tree:tree.sha,files:entries,runtimeSource:'78d15276578b671cc072ab51032b7c67375f7b40',scope:'Native screenshot harness only. Frontend and all published files remain unchanged. No branch reference advanced.'};fs.writeFileSync('qa/p406-contract/candidate.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));
-      - uses: actions/upload-artifact@v4
+            const workflowEntries=[];for(const name of ['verify-react-review.yml','verify-practice-heading.yml']){const bytes=fs.readFileSync(path.join(out,'workflow-updates',name));const blob=(await github.rest.git.createBlob({...context.repo,content:bytes.toString('base64'),encoding:'base64'})).data;workflowEntries.push({path:'.github/workflows/'+name,mode:'100644',type:'blob',sha:blob.sha});}
+            const result={parent:context.sha,tree:tree.sha,files:entries,workflowEntries,verifiedFrontend:'9bf877954e1b4fc6091b93e79de67f0ec6394eab',nativeSource:'3ea705789a0a63a2292cdc46bce126049e6af5b5',scope:'Current records, durable evidence and exact separate review only. Workflow blobs require the connected app. Original root, pricing, source and branch refs unchanged.'};
+            fs.writeFileSync(path.join(out,'candidate.json'),JSON.stringify(result,null,2));
+            fs.mkdirSync(path.join(out,'prepared'),{recursive:true});for(const file of files.filter(f=>f.endsWith('.md')||f.endsWith('p4-06-verification.json'))){const dest=path.join(out,'prepared',file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(file,dest);}
+      - name: Retain closure inputs for inspection
         if: always()
+        uses: actions/upload-artifact@v4
         with:
-          name: p406-native-capture-candidate
-          path: qa/p406-contract/
-          if-no-files-found: error
+          name: p406-closure-candidate
+          path: |
+            ${{ runner.temp }}/p406-close/candidate.json
+            ${{ runner.temp }}/p406-close/checks.json
+            ${{ runner.temp }}/p406-close/changes.txt
+            ${{ runner.temp }}/p406-close/records.patch
+            ${{ runner.temp }}/p406-close/prepared/
+            ${{ runner.temp }}/p406-close/workflow-updates/
+          include-hidden-files: true
+          if-no-files-found: warn
