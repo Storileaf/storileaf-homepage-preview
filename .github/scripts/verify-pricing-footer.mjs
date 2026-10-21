@@ -137,6 +137,10 @@ function compareGeometry(before, after, label, saved = false) {
   return { label, maxGeometryDelta:maxDelta, geometryPassed:true }
 }
 async function capture(page, file, fullPage = false) {
+  if (fullPage) {
+    await page.evaluate(async () => { scrollTo({top:0,behavior:'instant'}); await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))) })
+    assert.equal(await page.evaluate(() => scrollY), 0, 'Full page captures start at the top')
+  }
   const bytes = fullPage ? await page.screenshot({ fullPage:true, animations:'disabled' }) : await page.locator('.site-footer').screenshot({ animations:'disabled' })
   await fs.writeFile(output + '/' + file, bytes)
   report.screenshots.push({ file, sha256:sha256(bytes), bytes:bytes.length })
@@ -207,6 +211,7 @@ try {
       await context.close()
     }
     report.comparisons.push(compareGeometry(saved.original,saved.candidate,'saved document '+width,true))
+    report.comparisons.push(compareGeometry(saved.candidate,records.candidate.direct.metrics,'candidate saved versus settled '+width))
   }
   report.result='passed'
 } catch(error) { report.result='failed';report.problems.push(error.stack||String(error));process.exitCode=1 }
