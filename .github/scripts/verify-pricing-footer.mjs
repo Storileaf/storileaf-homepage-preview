@@ -84,7 +84,7 @@ async function checkedStep(label, operation) {
   } catch (error) { checkpoint.result = 'failed'; checkpoint.error = error.message; throw error }
   finally { clearTimeout(timer); checkpoint.finishedAt = new Date().toISOString() }
 }
-async function settle(page, label) {
+async function settle(page, label, saved = false) {
   await page.locator('[data-testid="pricing-page"]').waitFor()
   await checkedStep(label + ' fonts', () => page.evaluate(async () => {
     await document.fonts.ready
@@ -96,10 +96,35 @@ async function settle(page, label) {
     for (const image of document.images) image.loading = 'eager'
     await Promise.all([...document.images].map(image => image.decode()))
   }))
-  await checkedStep(label + ' rendering frames', () => page.evaluate(async () => {
-    scrollTo({top:0,behavior:'instant'})
-    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
-  }))
+  if (saved) {
+    // Page animation callbacks do not run with site JavaScript disabled.
+    // Preserve that mode and verify stability from the host after fonts/images complete.
+    await checkedStep(label + ' stable saved layout', async () => {
+      await page.evaluate(() => scrollTo({top:0,behavior:'instant'}))
+      const snapshot = () => page.evaluate(selectors => ({
+        scrollY, width:document.documentElement.scrollWidth, height:document.documentElement.scrollHeight,
+        boxes:[...document.querySelectorAll(selectors)].map(element => {
+          const box=element.getBoundingClientRect()
+          return { className:element.className, x:box.x, y:box.y, width:box.width, height:box.height }
+        })
+      }), sections)
+      let previous=await snapshot(), stable=0
+      for(let attempt=0;attempt<100;attempt++) {
+        await new Promise(resolve => setTimeout(resolve,100))
+        const next=await snapshot()
+        assert.equal(next.scrollY,0,'Saved document measurements start at the top')
+        stable=JSON.stringify(next)===JSON.stringify(previous)?stable+1:0
+        if(stable===3)return
+        previous=next
+      }
+      throw new Error('Saved layout did not reach three identical consecutive samples')
+    })
+  } else {
+    await checkedStep(label + ' rendering frames', () => page.evaluate(async () => {
+      scrollTo({top:0,behavior:'instant'})
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+    }))
+  }
   const fonts = await page.evaluate(() => ['Newsreader','Manrope'].map(name => ({ name, loaded: [...document.fonts].some(font => font.family.includes(name) && font.status === 'loaded') })))
   assert(fonts.every(font => font.loaded), 'Approved fonts loaded')
   return fonts
@@ -221,7 +246,7 @@ try {
       const context=await browser.newContext({ viewport:{width,height:1000},deviceScaleFactor:1,reducedMotion:'reduce',javaScriptEnabled:false })
       const page=await context.newPage()
       assert.equal((await page.goto(url,{waitUntil:'networkidle'})).status(),200)
-      await settle(page,`${name} saved ${width}`)
+      await settle(page,`${name} saved ${width}`,true)
       saved[name]=await measure(page)
       report.observations.push({name,width,action:'saved document without JavaScript',metrics:saved[name]})
       if([320,390,820,1440].includes(width))await capture(page,`${name}-saved-footer-${width}.png`)
