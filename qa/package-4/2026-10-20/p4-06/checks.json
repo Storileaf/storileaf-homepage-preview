@@ -1,0 +1,1180 @@
+{
+  "sourceCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+  "createdAt": "2026-10-21T00:25:50.894Z",
+  "runs": [
+    {
+      "id": 39519487875,
+      "name": "Verify authorised P4 text reflow",
+      "path": ".github/workflows/verify-p4-reflow.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487875",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:10:59Z",
+      "jobs": [
+        {
+          "id": 118959551233,
+          "name": "verify",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate source and preserve the original homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve the prior review and the candidate without publishing either",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare normal layouts and verify enlarged text fit",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected export and fixed review are unchanged",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487829,
+      "name": "Verify React writing showcase and practice parity",
+      "path": ".github/workflows/verify-writing-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487829",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:11:11Z",
+      "jobs": [
+        {
+          "id": 118959551218,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser harness",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install and record exact Chrome for Testing",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve baseline and source",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare writing composition and unsaved practice behaviour",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach rendered writing evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487854,
+      "name": "Verify React How it works parity",
+      "path": ".github/workflows/verify-process-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487854",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:11:18Z",
+      "jobs": [
+        {
+          "id": 118959551163,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser harness",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve baseline and source",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare all stages and pinned progression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach rendered process evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487937,
+      "name": "Verify React homepage Group 1 parity",
+      "path": ".github/workflows/verify-group1-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487937",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:13:00Z",
+      "jobs": [
+        {
+          "id": 118959551796,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser testing library",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve exact static files and the isolated React build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source navigation, action shapes and focus",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare Group 1 against the current static homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach Group 1 section comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach retained regression evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated React preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487883,
+      "name": "Verify React media parity",
+      "path": ".github/workflows/verify-media-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487883",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:13:13Z",
+      "jobs": [
+        {
+          "id": 118959551285,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser harness",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve baseline and source",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run the current media checkpoint",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare physical presentation and complete shared field",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach rendered media evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487824,
+      "name": "Verify React homepage Group 2 parity",
+      "path": ".github/workflows/verify-group2-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487824",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:13:22Z",
+      "jobs": [
+        {
+          "id": 118959551315,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser testing library",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve exact static files and the isolated React build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source navigation, action shapes and focus",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare Group 2 against the current static homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach Group 2 section comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach retained regression evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated React preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487864,
+      "name": "Verify React hero and motion parity",
+      "path": ".github/workflows/verify-hero-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487864",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:13:32Z",
+      "jobs": [
+        {
+          "id": 118959551400,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser harness",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve baseline and source",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare photographs, ticker, cover motion and adjoining sections",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach rendered hero evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487975,
+      "name": "Verify complete React homepage assembly",
+      "path": ".github/workflows/verify-assembly-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487975",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:14:19Z",
+      "jobs": [
+        {
+          "id": 118959551768,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source and preserve the published runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser harness",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve baseline and source",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare complete document positions and combined interactions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm protected runtime",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach complete assembly evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated assembled homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487850,
+      "name": "Verify Package 2 foundations",
+      "path": ".github/workflows/review-package2.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487850",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:09:43Z",
+      "jobs": [
+        {
+          "id": 118959551095,
+          "name": "review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check published protection, source types, content and shared foundations",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser library and serve exact committed files",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare typography, spacing, FAQ states and preserved pricing appearance",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify actual deployed Pages styling and browser rendering",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487735,
+      "name": "Verify final footer typography",
+      "path": ".github/workflows/verify-footer-type.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487735",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:09:53Z",
+      "jobs": [
+        {
+          "id": 118959550705,
+          "name": "verify",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate source and protected published files",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve the committed homepage and isolated source",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare the approved footer correction at nine widths",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify the actual deployed homepage without injected styles",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/upload-artifact@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487981,
+      "name": "Validate editable StoriLeaf public website source",
+      "path": ".github/workflows/validate-public-source.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487981",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:09:53Z",
+      "jobs": [
+        {
+          "id": 118959551634,
+          "name": "typecheck-and-build",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install locked dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check React types, approved content, static release guard and component foundations",
+              "conclusion": "success"
+            },
+            {
+              "name": "Build isolated source preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser testing library",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve isolated source build for browser checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check source-only desktop and mobile layout, links and navigation",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify retained shape roles and audit external preview dependencies",
+              "conclusion": "success"
+            },
+            {
+              "name": "Summarise shape and dependency evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach source-reference screenshots and QA report",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach source-driven preview for design review",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487944,
+      "name": "Verify React six-book discovery parity",
+      "path": ".github/workflows/verify-discovery-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487944",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:19:14Z",
+      "jobs": [
+        {
+          "id": 118959551417,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser testing library",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve exact static files and the isolated React build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source navigation, action shapes and focus checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 2 reassurance, FAQs and invitation parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 3 shared components, navigation and currency parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare all six book panels, native tabs and Books anchor integration",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach discovery comparisons and interaction report",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach retained regression evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated React preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39519487933,
+      "name": "Verify React shared header and footer parity",
+      "path": ".github/workflows/verify-shared-parity.yml",
+      "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 2,
+      "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487933",
+      "created_at": "2026-10-21T00:08:33Z",
+      "updated_at": "2026-10-21T00:25:20Z",
+      "jobs": [
+        {
+          "id": 118962812977,
+          "name": "compare",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate approved source and protect the published homepage",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install isolated browser testing library",
+              "conclusion": "success"
+            },
+            {
+              "name": "Serve exact static files and the isolated React build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain source navigation, action shapes and focus checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the complete static homepage regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain the permanent Package 1 live control checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Package 2 typography, FAQ and pricing comparison",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain editorial action and footer typography comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 1 editorial section parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retain Group 2 reassurance, FAQs and invitation parity",
+              "conclusion": "success"
+            },
+            {
+              "name": "Compare shared components, navigation and currency behaviour",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm the published baseline is still unchanged",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach shared component comparisons",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach retained regression evidence",
+              "conclusion": "success"
+            },
+            {
+              "name": "Attach isolated React preview",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12309823841,
+      "name": "practice-heading-zoom-spacing",
+      "folder": "native",
+      "digest": "sha256:5d9b1b809360ca32799956ac5f3dbbd9a367639b7db2d148fd2fd4fe387656d1",
+      "workflow_run": {
+        "id": 39520323484,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "3ea705789a0a63a2292cdc46bce126049e6af5b5"
+      },
+      "created_at": "2026-10-21T00:18:46Z",
+      "expires_at": "2027-01-19T00:16:30Z"
+    },
+    {
+      "id": 12310396809,
+      "name": "homepage-writing-parity",
+      "folder": "writing",
+      "digest": "sha256:cd8fca68b5de4712678e13bc2a2df97253e62b7b2b1448698e3b36e36879bdff",
+      "workflow_run": {
+        "id": 39519487829,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab"
+      },
+      "created_at": "2026-10-21T00:11:06Z",
+      "expires_at": "2027-01-19T00:08:33Z"
+    },
+    {
+      "id": 12310866621,
+      "name": "homepage-writing-source-preview",
+      "folder": "build",
+      "digest": "sha256:5af9c59a063048cf6d5ee11dfc365262097def3782daff8aeb6047da487d5433",
+      "workflow_run": {
+        "id": 39519487829,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab"
+      },
+      "created_at": "2026-10-21T00:11:07Z",
+      "expires_at": "2027-01-19T00:08:33Z"
+    },
+    {
+      "id": 12310552367,
+      "name": "homepage-shared-parity",
+      "folder": "shared-failed",
+      "digest": "sha256:7dd0de28fe1c4e15194a6f4ced192657e87c6f83d7eb02bf8317c0d88c0bbdaa",
+      "workflow_run": {
+        "id": 39519487933,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab"
+      },
+      "created_at": "2026-10-21T00:15:03Z",
+      "expires_at": "2027-01-19T00:08:33Z"
+    },
+    {
+      "id": 12310582291,
+      "name": "homepage-assembly-parity",
+      "folder": "assembly",
+      "digest": "sha256:4a74473ee077ad34e80576c3d9635d4c22b75310f9b75b9a47eed4129a058e15",
+      "workflow_run": {
+        "id": 39519487975,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab"
+      },
+      "created_at": "2026-10-21T00:14:15Z",
+      "expires_at": "2027-01-19T00:08:34Z"
+    },
+    {
+      "id": 12310254460,
+      "name": "homepage-shared-parity",
+      "folder": "shared",
+      "digest": "sha256:3bceb92c166de4d48045a6abc5fab5f195043669e832fc516c09ec5593c9782e",
+      "workflow_run": {
+        "id": 39519487933,
+        "repository_id": 1422795677,
+        "head_repository_id": 1422795677,
+        "head_branch": "main",
+        "head_sha": "9bf877954e1b4fc6091b93e79de67f0ec6394eab"
+      },
+      "created_at": "2026-10-21T00:25:07Z",
+      "expires_at": "2027-01-19T00:18:00Z"
+    }
+  ],
+  "editorialCoverage": "Standalone editorial run 39518460752 passed on identical runtime 78d1527. It did not trigger for the final test-only frontend change. Its unchanged command is retained in Group 1 and shared suites on the final candidate.",
+  "native": {
+    "id": 39520323484,
+    "name": "Verify P4 practice heading zoom and spacing",
+    "path": ".github/workflows/verify-practice-heading.yml",
+    "head_sha": "3ea705789a0a63a2292cdc46bce126049e6af5b5",
+    "status": "completed",
+    "conclusion": "success",
+    "run_attempt": 1,
+    "html_url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39520323484",
+    "created_at": "2026-10-21T00:16:30Z",
+    "updated_at": "2026-10-21T00:18:50Z"
+  }
+}

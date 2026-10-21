@@ -26,15 +26,14 @@ jobs:
           node-version: 22
       - name: Validate current source and protect the published original
         run: cd frontend && npm ci --no-audit --no-fund && npm run check && npm run build
-      - name: Retain the original diagnostic input at its verified identity
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs=require('node:fs'),crypto=require('node:crypto'),cp=require('node:child_process'),assert=require('node:assert/strict');
-            const response=await github.rest.actions.downloadArtifact({...context.repo,artifact_id:12308507130,archive_format:'zip'});
-            const bytes=Buffer.from(response.data);assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),'c74b3f8ae1c3b32ed5740fed7e0260ebc01ea5a7c04f00452ac9d029b7a1413d');
-            const archive=process.env.RUNNER_TEMP+'/p406-before.zip';fs.writeFileSync(archive,bytes);
-            cp.execFileSync('python3',['-c','import zipfile,sys,pathlib; z=zipfile.ZipFile(sys.argv[1]); assert all(not n.startswith("/") and ".." not in pathlib.PurePosixPath(n).parts for n in z.namelist()); z.extractall("qa/practice-heading/before")',archive]);
+      - name: Use the durable original ordinary-dialog comparison evidence
+        run: |
+          python3 - <<'PYBASE'
+          import gzip,pathlib,shutil
+          source=pathlib.Path('qa/package-4/2026-10-20/p4-06/baseline');dest=pathlib.Path('qa/practice-heading/before');dest.mkdir(parents=True,exist_ok=True)
+          (dest/'report.json').write_bytes(gzip.decompress((source/'report.json.gz').read_bytes()))
+          for file in source.glob('normal-*.png'):shutil.copyfile(file,dest/file.name)
+          PYBASE
       - name: Prepare the native browser display
         run: |
           npm install --no-save --no-package-lock playwright-core@1.56.1

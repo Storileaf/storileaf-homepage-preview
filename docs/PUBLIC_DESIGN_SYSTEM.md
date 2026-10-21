@@ -348,3 +348,8 @@ Discovery tabs use min-content inside their existing horizontal rail. Keep the s
 Hero progression measures each step according to its actual number/word row or column layout. Stack the existing steps only when the row or existing narrow label cap cannot fit; turn the existing separators downwards. Return to the ordinary row when fit allows. Do not alter carousel, ticker or covers.
 
 Observers use actual dimensions and font readiness, batch updates into frames and clean up on teardown. They do not detect artificial test flags, rewrite copy or persist customer text. These are homepage exceptions, not private-interface defaults.
+
+
+## Practice question overflow exception
+
+P4-06, authorised 20 October 2026, adds overflow-wrap: anywhere only to .sl-practice-dialog h2 in homepage-reflow.css. A long word may break when user text enlargement and spacing make it wider than the content box. Preserve the exact question, Newsreader face, weight, size, tracking, line height, balanced wrapping, padding and dialog dimensions. Do not shrink text, hide it or generalise this to unrelated headings. Ordinary-size geometry and rendered appearance remain regression gates. The Package 4 review owns native zoom evidence and the bounded enlarged-state difference. Screen reader acceptance timing belongs to Workflow, not this style rule.

@@ -1,0 +1,328 @@
+{
+  "checkpoint": "P4-06 practice heading repair and native zoom verification",
+  "approvedDateToronto": "2026-10-20",
+  "runtimeCommit": "78d15276578b671cc072ab51032b7c67375f7b40",
+  "verifiedFrontendCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+  "nativeHarnessCommit": "3ea705789a0a63a2292cdc46bce126049e6af5b5",
+  "status": "Implemented and verified for the recorded scope. Separate review snapshot only. Not full Package 4 or whole website accessibility clearance.",
+  "protectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "sourceTests": 91,
+  "candidateWorkflows": 13,
+  "checks": "p4-06/checks.json",
+  "native": {
+    "runId": 39520323484,
+    "artifactId": 12309823841,
+    "archiveSha256": "5d9b1b809360ca32799956ac5f3dbbd9a367639b7db2d148fd2fd4fe387656d1",
+    "states": 66,
+    "headedStates": 26,
+    "realWindowImages": 31,
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "environment": {
+      "browser": "155.0.8059.39",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "image": "20261012.334.1",
+      "display": "Xvfb :99 3600x2400x24",
+      "headed": true
+    },
+    "method": "Native headed Chrome UI Ctrl+0 and Ctrl+= via X11 XTest on Xvfb. Native zoom independently checked from devicePixelRatio and unchanged outer window with inverse inner width/height. No CSS zoom, pinch scale or CDP device emulation in native tests. Targeted font/line-height doubling and text-spacing overrides are labelled separately.",
+    "screenshots": "Actual X11 Chrome window pixels, including browser chrome, not the invalid earlier CDP native captures. Blank content and visible-heading captures fail.",
+    "normalComparisons": [
+      {
+        "label": "normal-320",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 16,
+            "y": 156,
+            "width": 288,
+            "height": 688
+          },
+          "changed": 137,
+          "ratio": 0.0006914163436692506
+        }
+      },
+      {
+        "label": "normal-360",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 16,
+            "y": 173,
+            "width": 328,
+            "height": 654
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-390",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 16,
+            "y": 184,
+            "width": 358,
+            "height": 632
+          },
+          "changed": 148,
+          "ratio": 0.0006541262994130542
+        }
+      },
+      {
+        "label": "normal-430",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 16,
+            "y": 184,
+            "width": 398,
+            "height": 632
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-600",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 16,
+            "y": 179,
+            "width": 568,
+            "height": 642
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-768",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 54,
+            "y": 179,
+            "width": 660,
+            "height": 642
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-820",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 80,
+            "y": 179,
+            "width": 660,
+            "height": 642
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-1024",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 182,
+            "y": 179,
+            "width": 660,
+            "height": 642
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-1280",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 310,
+            "y": 179,
+            "width": 660,
+            "height": 642
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      },
+      {
+        "label": "normal-1440",
+        "geometryDifferences": [],
+        "pixels": {
+          "sameSize": true,
+          "clip": {
+            "x": 390,
+            "y": 179,
+            "width": 660,
+            "height": 642
+          },
+          "changed": 0,
+          "ratio": 0
+        }
+      }
+    ],
+    "maximumHeadingExtentOutsideDialog": 0
+  },
+  "writing": {
+    "runId": 39519487829,
+    "artifactId": 12310396809,
+    "archiveSha256": "cd8fca68b5de4712678e13bc2a2df97253e62b7b2b1448698e3b36e36879bdff",
+    "fullImageComparisons": 59,
+    "boundedApprovedHeadingComparisons": 1,
+    "maximumFullChangedPixelRatio": 0.0001923076923076923,
+    "approvedHeadingFullRatio": 0.059059180304335344,
+    "approvedHeadingUnaffectedRatio": 6.607139486153324e-05,
+    "region": {
+      "x": 24,
+      "y": 82,
+      "width": 251,
+      "height": 466
+    },
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01
+    }
+  },
+  "diagnostics": [
+    {
+      "runId": 39517469281,
+      "finding": "Missing runner xwininfo. Failed before browser checks; replaced dependency with direct X11 access."
+    },
+    {
+      "runId": 39517670372,
+      "finding": "Legacy window title/root-only lookup failed before observations. Corrected UTF-8 name and window-tree lookup."
+    },
+    {
+      "runId": 39517842813,
+      "finding": "Original native metrics and individual spacing passed; combined doubled text plus spacing clipped at 320/360px. The green diagnostic job retained these as stress findings, not quality passes."
+    },
+    {
+      "runId": 39518460528,
+      "finding": "Repair passed 66 conditions and ordinary parity, but inspection found blank CDP captures at native 200%. These images are invalid visual evidence; later real-window captures supersede them without discarding valid recorded DOM metrics."
+    },
+    {
+      "runId": 39518460789,
+      "finding": "One enlarged heading screenshot differed because of the intended word wrapping. All geometry comparisons passed. Exact state/text/typography/glyph-fit checks now bound that one text region; all remaining image pixels and all ordinary comparisons keep existing gates."
+    },
+    {
+      "runId": 39519487933,
+      "attempt": 1,
+      "artifactId": 12310552367,
+      "archiveSha256": "7dd0de28fe1c4e15194a6f4ced192657e87c6f83d7eb02bf8317c0d88c0bbdaa",
+      "finding": "One 1440px Books menu raster differed by 0.06352632179970309 despite unchanged measured bounds. Original fractional origins differed by 0.0625px; both captures were aligned to x431. Inspection showed a text raster displacement. A single unchanged diagnostic replay followed localisation, without runtime, assertion or threshold changes. Passing replay does not establish a permanent fix or causal certainty."
+    }
+  ],
+  "manualInspection": {
+    "images": [
+      {
+        "file": "images/native-native-200-320.png",
+        "sha256": "9d006812f4836ded0768bc75b1aed72caf2dc30d04b3b7ba975cb3cc5049b2b6"
+      },
+      {
+        "file": "images/native-native-200-spacing-320.png",
+        "sha256": "f86fbbdd88ccb39ece7336a90dd97d0b9451e9136fda6d657d1e4b4a96742b15"
+      },
+      {
+        "file": "images/native-native-200-short-spacing.png",
+        "sha256": "a9779e50ade290179130e356a763dca964f95c24581e1c8c661a0b946c8b3ccb"
+      },
+      {
+        "file": "images/native-native-200-short-spacing-bottom.png",
+        "sha256": "b15dd70876cdce0abe704fc1a9a3a52f37ed4b35df485e76abf18b90c4a89724"
+      },
+      {
+        "file": "images/native-native-200-spacing-1440.png",
+        "sha256": "a1a4f6b6f16b2e97ae1f63f5abee48c65bd5a252442674325f8daa711387d21c"
+      },
+      {
+        "file": "images/native-double-spacing-320.png",
+        "sha256": "9f1cf9053a539bcf9efa0f8b43cfa4dec585e37f314e2d2e3ce7109206ff541c"
+      },
+      {
+        "file": "images/native-double-spacing-320-bottom.png",
+        "sha256": "cd5c7a248dac7caaa86cd92c8c1a02b5a6739fa463c0db7be498b82dc0b3a698"
+      },
+      {
+        "file": "images/native-double-spacing-360.png",
+        "sha256": "df8e63d74def273b7db1993fc4a295a453787cbbd140eaa07df99481d3bf0f94"
+      },
+      {
+        "file": "images/native-double-320.png",
+        "sha256": "94fe32f3b617f40998d846e1d40f26672b85eeb5f512961907ad666d473cd3a5"
+      },
+      {
+        "file": "images/native-normal-320.png",
+        "sha256": "961035593330bcb5355e55072e6f567dde2c9cd6054c767138ae7f9dde0f2672"
+      },
+      {
+        "file": "images/native-normal-1440.png",
+        "sha256": "01811486ac002380e64ada11596dfd73af2ac96e85941cd92373c870cba36053"
+      },
+      {
+        "file": "images/native-before-double-spacing-320.png",
+        "sha256": "0a2a24b67a99a75bb68a5b9d0a1b20945f3f8ae32144537f0f6c1243ce2ffebc"
+      },
+      {
+        "file": "images/native-before-double-spacing-360.png",
+        "sha256": "9f4edc1f7afb18a25daead3bc9cb0b2ae152c96b4e96fd36f587f3d11372b189"
+      },
+      {
+        "file": "images/native-before-double-320.png",
+        "sha256": "15bcde19f4434edfdc975add1d140e0c85aa2d8cd46175d0d3de19fe96fd1869"
+      },
+      {
+        "file": "images/writing-published-text-200-320-dialog-tile-0.png",
+        "sha256": "97ee6b31090c7cbfd5e9b099eb04ef874e7014ef48214adbd3495bafcd101343"
+      },
+      {
+        "file": "images/writing-source-text-200-320-dialog-tile-0.png",
+        "sha256": "997d43757054d02f9a7b89471b6ebea85dc8b9af74c78c859e5d156949baef72"
+      },
+      {
+        "file": "images/shared-failed-books-comparison-open-1440.png",
+        "sha256": "9d9ab292a5fc90cb40e5c624c8b04baf79121ac9f41119888b15f450598d9164"
+      }
+    ],
+    "scope": "Representative originals inspected for actual heading text, borders, native zoom, short-screen controls and normal appearance. Not every screenshot was independently visually reviewed."
+  },
+  "screenReaderDecision": "Founder will perform actual spoken-announcement acceptance on every completed page at the final whole website review. P4-05 speech is deferred, not passed or waived. Ongoing semantic and keyboard checks continue. WORKFLOW.md owns this timing decision.",
+  "remaining": [
+    "P4-07 separately authorised protected pricing export repairs",
+    "P4-08 wider browser and physical-device verification; practice-only native zoom does not certify other pages",
+    "Final whole website screen reader review",
+    "Founder review and separate root replacement or production release authority"
+  ],
+  "publication": "Exact tested build is staged only for react-review. The private design handoff records the final public commit, Pages and live verification.",
+  "artifactRetention": "Original full capture archives expire as recorded in checks. Raw reports, selected captures and ordinary baseline images are retained here; no font files are committed."
+}
