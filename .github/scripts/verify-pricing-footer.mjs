@@ -8,6 +8,9 @@ import { chromium } from 'playwright-core'
 import { PNG } from 'pngjs'
 
 const originalBaseline = 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b'
+const footerProtectionBaseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'
+const currencyBaseline = '27706615edc5859e535478c69247f1d8c096f554'
+const currencyPaths = ['pricing/cad/index.html', 'pricing/gbp/index.html', 'pricing/inr/index.html', 'pricing/usd/index.html']
 const htmlPath = 'pricing/index.html'
 const stale = 'Get in touch <span aria-hidden="true">↗</span>'
 const corrected = 'Get in touch'
@@ -30,13 +33,13 @@ assert(repositoryBytes.equals(original) || repositoryBytes.equals(candidate), 'R
 const repositoryContainsCandidate = repositoryBytes.equals(candidate)
 const report = {
   scope: 'P4 07 default saved pricing footer only',
-  originalBaseline, sourceCommit: git('rev-parse', 'HEAD').toString().trim(),
+  originalBaseline, footerProtectionBaseline, currencyBaseline, currencyPaths, sourceCommit: git('rev-parse', 'HEAD').toString().trim(),
   runId: process.env.GITHUB_RUN_ID, runAttempt: process.env.GITHUB_RUN_ATTEMPT,
   startedAt: new Date().toISOString(), repositoryContainsCandidate,
   input: { originalSha256: sha256(original), candidateSha256: sha256(candidate), originalBytes: original.length, candidateBytes: candidate.length, removedBytes: original.length - candidate.length, trailingNewline: originalText.endsWith('\n'), exactSingleReplacement: true },
   thresholds: { geometryTolerance, channelThreshold, pixelRatioLimit },
-  protectedFiles: [], observations: [], comparisons: [], screenshots: [], checkpoints: [], problems: [],
-  limits: 'Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. No currency route or book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance.'
+  protectedFiles: [], protectedBaselineFiles: [], observations: [], comparisons: [], screenshots: [], checkpoints: [], problems: [],
+  limits: 'Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. The four currency documents are checked only for protected byte identity here; currency behaviour has a separate gate. No book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance.'
 }
 const sections = '.site-header,main>section,.pricing-plan-grid,.pricing-plan-card,.pricing-comparison table,.site-footer,.footer-grid,.footer-bottom'
 await fs.mkdir(output, { recursive: true })
@@ -44,10 +47,20 @@ await fs.writeFile(output + '/original-pricing.html', original)
 await fs.writeFile(output + '/candidate-pricing.html', candidate)
 await fs.writeFile(output + '/default-footer.patch', '--- a/pricing/index.html\n+++ b/pricing/index.html\n@@ -1 +1 @@\n-' + originalText + '\n\\ No newline at end of file\n+' + candidate.toString('utf8') + '\n\\ No newline at end of file\n')
 
-// Complete protected file identity, allowing only the exact authorised document correction.
+// Retain the exact footer correction and admit only the four reviewed currency documents.
 const protectedPaths = ['index.html','404.html','assets/','covers/','gallery/','pricing/','favicon.svg','manifest.json','logo192.png','logo512.png','robots.txt','.nojekyll']
-const changed = git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths).toString().trim().split('\n').filter(Boolean)
-assert.deepEqual(changed, repositoryContainsCandidate ? [htmlPath] : [])
+const lines = bytes => bytes.toString('utf8').trim().split('\n').filter(Boolean)
+assert.deepEqual(lines(git('diff', '--name-status', footerProtectionBaseline, currencyBaseline, '--', ...protectedPaths)), currencyPaths.map(file => 'A\t' + file), 'The currency baseline adds exactly four documents without changing any existing protected file')
+const changed = lines(git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths))
+assert.deepEqual(changed, [htmlPath, ...currencyPaths].sort(), 'Only the exact footer correction and four currency documents differ from the original')
+assert.deepEqual(lines(git('diff', '--name-only', currencyBaseline, 'HEAD', '--', ...protectedPaths)), [], 'Protected files match the immutable currency baseline')
+assert.deepEqual(lines(git('diff', '--name-only', 'HEAD', '--', ...protectedPaths)), [], 'Protected working files match the checked out commit')
+for (const file of lines(git('ls-tree', '-r', '--name-only', currencyBaseline, '--', ...protectedPaths))) {
+  const expected = git('show', currencyBaseline + ':' + file)
+  const bytes = await fs.readFile(file)
+  assert(bytes.equals(expected), file + ' retains its expected protected bytes')
+  report.protectedBaselineFiles.push({ file, sha256: sha256(bytes), bytes: bytes.length, matches: true, authorisedCurrencyDocument: currencyPaths.includes(file) })
+}
 for (const file of ['index.html','404.html','assets/index-DO3Vh6An.js','assets/index-DhPZyX4z.css','assets/content-sections-CfrmOVRI.js',htmlPath]) {
   const bytes = await fs.readFile(file)
   const before = git('show', originalBaseline + ':' + file)

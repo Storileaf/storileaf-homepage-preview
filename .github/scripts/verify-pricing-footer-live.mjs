@@ -8,6 +8,9 @@ import { createRequire } from 'node:module'
 import { chromium } from 'playwright-core'
 
 const originalBaseline = 'e9550069d91b5a9b48ade43fcfb0a71bbed2875b'
+const footerProtectionBaseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'
+const currencyBaseline = '27706615edc5859e535478c69247f1d8c096f554'
+const currencyPaths = ['pricing/cad/index.html', 'pricing/gbp/index.html', 'pricing/inr/index.html', 'pricing/usd/index.html']
 const reviewCheckpoint = '6434c11105abfd3122982cf65c227e9507dfb5ba'
 const published = 'https://storileaf.github.io/storileaf-homepage-preview/'
 const pricingPath = 'pricing/index.html'
@@ -25,12 +28,12 @@ const lines = bytes => bytes.toString('utf8').trim().split('\n').filter(Boolean)
 const require = createRequire(import.meta.url)
 const report = {
   scope: 'Live verification of the authorised P4 07 default saved pricing footer correction only',
-  originalBaseline, reviewCheckpoint, published, pricingUrl,
+  originalBaseline, footerProtectionBaseline, currencyBaseline, currencyPaths, reviewCheckpoint, published, pricingUrl,
   startedAt: new Date().toISOString(),
   run: { id: process.env.GITHUB_RUN_ID, attempt: process.env.GITHUB_RUN_ATTEMPT, job: process.env.GITHUB_JOB, workflow: process.env.GITHUB_WORKFLOW, repository: process.env.GITHUB_REPOSITORY, githubSha: process.env.GITHUB_SHA },
   deploymentPolling: { maximumMilliseconds: 120000, intervalMilliseconds: 5000, attempts: [] },
   repositoryProtectedFiles: [], servedProtectedFiles: [], reviewFiles: [], observations: [], screenshots: [], comparisons: [], problems: [],
-  limits: 'Headless Chromium on the recorded Linux runner. Four CSS viewport widths, height 1000, DPR 1, normal text and reduced motion. Generic pricing direct entry and reload only. No currency route or selected book query repair, native zoom, other browser engines, physical devices, payment flow or spoken screen reader acceptance. The .nojekyll deployment marker is checked in Git, not treated as a public page. Only deployment byte readiness is polled. Behavioural checks are performed once without retries.'
+  limits: 'Headless Chromium on the recorded Linux runner. Four CSS viewport widths, height 1000, DPR 1, normal text and reduced motion. Generic pricing direct entry and reload only. The four currency documents are checked only for repository and served byte identity here; currency behaviour has a separate gate. No selected book query repair, native zoom, other browser engines, physical devices, payment flow or spoken screen reader acceptance. The .nojekyll deployment marker is checked in Git, not treated as a public page. Only deployment byte readiness is polled. Behavioural checks are performed once without retries.'
 }
 
 await fs.mkdir(output, { recursive: true })
@@ -46,7 +49,7 @@ async function fetchBytes(url, timeoutMilliseconds = 30000) {
   return { bytes, status: response.status, url: response.url, contentType: response.headers.get('content-type'), sha256: sha256(bytes) }
 }
 
-async function awaitDeployment(candidateHash) {
+async function awaitDeployment(candidateHash, currencyDocuments) {
   const started = Date.now()
   const deadline = started + report.deploymentPolling.maximumMilliseconds
   while (Date.now() < deadline) {
@@ -54,11 +57,16 @@ async function awaitDeployment(candidateHash) {
     try {
       const response = await fetchBytes(pricingUrl, Math.max(1, Math.min(20000, deadline - Date.now())))
       Object.assign(observation, { status: response.status, url: response.url, sha256: response.sha256, bytes: response.bytes.length })
-      observation.matchesCandidate = response.status === 200 && response.sha256 === candidateHash
+      const outcomes = await Promise.allSettled(currencyDocuments.map(async item => {
+        const currencyResponse = await fetchBytes(published + item.file, Math.max(1, Math.min(20000, deadline - Date.now())))
+        return { file: item.file, status: currencyResponse.status, url: currencyResponse.url, sha256: currencyResponse.sha256, expectedSha256: item.sha256, bytes: currencyResponse.bytes.length, matches: currencyResponse.status === 200 && currencyResponse.sha256 === item.sha256 }
+      }))
+      observation.currencyDocuments = outcomes.map((outcome, index) => outcome.status === 'fulfilled' ? outcome.value : { file: currencyDocuments[index].file, expectedSha256: currencyDocuments[index].sha256, matches: false, error: outcome.reason?.message || String(outcome.reason) })
+      observation.matchesCandidate = response.status === 200 && response.sha256 === candidateHash && observation.currencyDocuments.every(item => item.matches)
       report.deploymentPolling.attempts.push(observation)
       if (observation.matchesCandidate) {
         report.deploymentPolling.elapsedMilliseconds = Date.now() - started
-        report.deploymentPolling.result = 'exact candidate response available'
+        report.deploymentPolling.result = 'exact candidate and currency document responses available'
         return
       }
     } catch (error) {
@@ -70,7 +78,7 @@ async function awaitDeployment(candidateHash) {
   }
   report.deploymentPolling.elapsedMilliseconds = Date.now() - started
   report.deploymentPolling.result = 'timed out'
-  throw new Error('The exact authorised pricing response did not become available within the deployment byte polling window')
+  throw new Error('The exact authorised pricing responses did not become available within the deployment byte polling window')
 }
 
 async function verifyServedFiles(items, destination) {
@@ -178,17 +186,21 @@ try {
   assert.equal(originalText.split(stale).length - 1, 1, 'Exactly one approved footer target')
   const candidate = Buffer.from(originalText.replace(stale, corrected))
   assert((await fs.readFile(pricingPath)).equals(candidate), 'Live verification is allowed only after the exact candidate is committed')
-  assert.deepEqual(lines(git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths)), [pricingPath], 'Only the authorised pricing document changed')
+  assert.deepEqual(lines(git('diff', '--name-status', footerProtectionBaseline, currencyBaseline, '--', ...protectedPaths)), currencyPaths.map(file => 'A\t' + file), 'The currency baseline adds exactly four documents without changing any existing protected file')
+  assert.deepEqual(lines(git('diff', '--name-only', originalBaseline, 'HEAD', '--', ...protectedPaths)), [pricingPath, ...currencyPaths].sort(), 'Only the exact footer correction and four currency documents differ from the original')
+  assert.deepEqual(lines(git('diff', '--name-only', currencyBaseline, 'HEAD', '--', ...protectedPaths)), [], 'Protected files match the immutable currency baseline')
   assert.deepEqual(lines(git('diff', '--name-only', 'HEAD', '--', ...protectedPaths)), [], 'Protected working files match the checked out commit')
   assert.deepEqual(lines(git('diff', '--name-only', reviewCheckpoint, 'HEAD', '--', 'react-review/')), [], 'The separate review snapshot is unchanged')
   report.input = { originalSha256: sha256(original), candidateSha256: sha256(candidate), originalBytes: original.length, candidateBytes: candidate.length, removedBytes: original.length - candidate.length, exactSingleReplacement: true, trailingNewline: candidate.toString('utf8').endsWith('\n') }
 
-  const protectedFiles = lines(git('ls-tree', '-r', '--name-only', originalBaseline, '--', ...protectedPaths))
+  const protectedFiles = lines(git('ls-tree', '-r', '--name-only', currencyBaseline, '--', ...protectedPaths))
   for (const file of protectedFiles) {
-    const expected = file === pricingPath ? candidate : git('show', originalBaseline + ':' + file)
+    const authorisedCurrencyDocument = currencyPaths.includes(file)
+    const expected = file === pricingPath ? candidate : git('show', (authorisedCurrencyDocument ? currencyBaseline : originalBaseline) + ':' + file)
+    assert(expected.equals(git('show', currencyBaseline + ':' + file)), file + ' retains its expected baseline bytes')
     const bytes = await fs.readFile(file)
     assert(bytes.equals(expected), file + ' retains its expected protected bytes')
-    report.repositoryProtectedFiles.push({ file, sha256: sha256(bytes), bytes: bytes.length, matches: true, authorisedCorrection: file === pricingPath })
+    report.repositoryProtectedFiles.push({ file, sha256: sha256(bytes), bytes: bytes.length, matches: true, authorisedCorrection: file === pricingPath, authorisedCurrencyDocument })
   }
   const manifestBytes = await fs.readFile(reviewManifestPath)
   assert(manifestBytes.equals(git('show', reviewCheckpoint + ':' + reviewManifestPath)), 'Review provenance itself is unchanged')
@@ -201,7 +213,7 @@ try {
   }
   report.reviewProvenance = { path: reviewManifestPath, sha256: sha256(manifestBytes), sourceCommit: provenance.sourceCommit, runtimeCommit: provenance.runtimeCommit, fileCount: reviewEntries.length }
 
-  await awaitDeployment(report.input.candidateSha256)
+  await awaitDeployment(report.input.candidateSha256, report.repositoryProtectedFiles.filter(item => item.authorisedCurrencyDocument))
   await verifyServedFiles(report.repositoryProtectedFiles.filter(item => item.file !== '.nojekyll'), report.servedProtectedFiles)
   await verifyServedFiles([
     { file: reviewManifestPath, sha256: sha256(manifestBytes) },

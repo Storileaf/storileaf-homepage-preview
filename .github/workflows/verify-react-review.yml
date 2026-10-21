@@ -28,7 +28,7 @@ jobs:
           node frontend/scripts/guard-published.mjs
           # The authorised P4 07 export correction changes only these exact verification files within frontend.
           git diff --exit-code 9bf877954e1b4fc6091b93e79de67f0ec6394eab HEAD -- frontend ':(exclude)frontend/scripts/guard-published.mjs' ':(exclude)frontend/scripts/verify-process-parity.mjs' ':(exclude)frontend/scripts/verify-craft-parity.mjs'
-          test "$(git rev-parse HEAD:frontend/scripts/guard-published.mjs)" = "f2e0c29e4ca96238df50481339ba5654ca4f3524"
+          test "$(git rev-parse HEAD:frontend/scripts/guard-published.mjs)" = "2c2f76f2092da2f1eb98c927f50f4a7964a331f0"
           test "$(git rev-parse HEAD:frontend/scripts/verify-process-parity.mjs)" = "93daa5c14e2d79bb82273e205f25b6562762db38"
           test "$(git rev-parse HEAD:frontend/scripts/verify-craft-parity.mjs)" = "0e62e81ef4546650a2808252d3d58b811407403d"
           npm install --no-save --no-package-lock playwright-core@1.56.1

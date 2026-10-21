@@ -41,6 +41,11 @@ jobs:
           printf 'CURRENCY_CHROME_PATH=%s\n' "$RUNNER_TEMP/currency-browser/chrome-linux64/chrome" >> "$GITHUB_ENV"
       - name: Compare original and candidate currency pages
         run: node .github/scripts/verify-pricing-currency.mjs
+      - name: Verify published currency responses and selections
+        env:
+          CURRENCY_BASELINE_COMMIT: 27706615edc5859e535478c69247f1d8c096f554
+          CHROME_BIN: ${{ env.CURRENCY_CHROME_PATH }}
+        run: node .github/scripts/verify-pricing-currency-live.mjs
       - name: Retain currency comparison evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -48,3 +53,10 @@ jobs:
           name: pricing-currency-candidate
           path: qa/pricing-currency-candidate/
           if-no-files-found: error
+      - name: Retain live currency evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-currency-live
+          path: qa/pricing-currency-live/
+          if-no-files-found: warn

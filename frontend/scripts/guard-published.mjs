@@ -2,8 +2,8 @@ import { spawnSync } from 'node:child_process'
 import { resolve } from 'node:path'
 
 const repo = resolve(import.meta.dirname, '../..')
-// Founder-authorised P4 07 default pricing footer correction only. Root homepage and React cutover remain protected.
-const baseline = 'a9e6e6cf8ae078376837f91651a1ac9a3f1a9164'
+// Founder-authorised P4 07 default footer correction and four currency documents. Existing protected bytes, root homepage and React cutover remain protected.
+const baseline = '27706615edc5859e535478c69247f1d8c096f554'
 const protectedPaths = [
   'index.html', '404.html', 'assets/', 'covers/', 'gallery/', 'pricing/',
   'favicon.svg', 'manifest.json', 'logo192.png', 'logo512.png',
