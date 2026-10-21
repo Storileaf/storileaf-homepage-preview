@@ -1,0 +1,40 @@
+name: Verify the authorised default pricing footer correction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pricing/index.html'
+      - 'frontend/scripts/guard-published.mjs'
+      - '.github/scripts/verify-pricing-footer.mjs'
+      - '.github/workflows/verify-pricing-footer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check the protected export
+        run: node frontend/scripts/guard-published.mjs
+      - name: Install isolated verification dependencies
+        run: npm install --no-save --no-package-lock playwright-core@1.56.1 pngjs@7.0.0
+      - name: Compare original and exact candidate documents
+        run: node .github/scripts/verify-pricing-footer.mjs
+      - name: Retain complete pricing footer evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pricing-footer-verification
+          path: qa/pricing-footer-candidate/
+          if-no-files-found: error
