@@ -29,7 +29,7 @@ const report = {
   sourceCommit: git('rev-parse','HEAD').toString().trim(),
   run: { id:process.env.GITHUB_RUN_ID, attempt:process.env.GITHUB_RUN_ATTEMPT, workflow:process.env.GITHUB_WORKFLOW, job:process.env.GITHUB_JOB },
   startedAt:new Date().toISOString(), thresholds:{ geometryTolerance,channelThreshold,pixelRatioLimit },
-  protectedFiles:[], observations:[], queryObservations:[], comparisons:[], screenshots:[], checkpoints:[], problems:[],
+  protectedFiles:[], declaredAssetChecks:[], observations:[], queryObservations:[], comparisons:[], screenshots:[], checkpoints:[], problems:[],
   limits:'Recorded headless Chromium/Linux environment, ten CSS widths, normal text, reduced motion and DPR 1. Saved/no-JavaScript, direct and refreshed default currency pages. Query preservation and final selected views are verified separately from the retained non-default-book initial hydration mismatch. No pricing redesign, query initial-render repair, native zoom, other engines, physical devices or spoken screen-reader acceptance. Local redirects are a model; actual Pages HTTP is a separate live gate.'
 }
 await fs.mkdir(output,{recursive:true})
@@ -38,6 +38,8 @@ report.generation = JSON.parse(await fs.readFile(output+'/generation.json','utf8
 await fs.writeFile(output+'/generation-stdout.txt',generationOutput)
 const documents = new Map()
 for (const currency of currencies) documents.set(currency, await fs.readFile(`${output}/generated/pricing/${currency}/index.html`))
+const declaredPreloads=new Map(currencies.map(currency=>[currency,[...documents.get(currency).toString('utf8').matchAll(/<link rel="modulepreload" href="([^"]+)"/g)].map(match=>match[1]).sort()]))
+for(const preloads of declaredPreloads.values())assert.equal(new Set(preloads).size,8,'Eight distinct existing route preloads')
 const changes = lines(git('diff','--name-status',originalCheckpoint,'HEAD','--',...protectedPaths))
 assert(changes.length===0 || JSON.stringify(changes)===JSON.stringify(currencyPaths.map(file=>'A\t'+file)), 'Only the exact four authorised currency additions may alter the protected export')
 for (const file of lines(git('ls-tree','-r','--name-only',originalCheckpoint,'--',...protectedPaths))) {
@@ -192,7 +194,15 @@ function validate(metrics,diagnostic,currency,book,kind) {
   const expectedErrors=kind==='original'||(kind==='candidate'&&book!=='life-story')?1:0
   assert.equal(diagnostic.errors.length,expectedErrors,'Exact expected hydration error count')
   assert(diagnostic.errors.every(error=>error.includes('#418')),'Only known React 418 mismatches')
-  assert.equal(diagnostic.failedRequests.length,0,'No failed asset requests')
+  if(kind==='saved') {
+    // Chromium reports its deliberate JavaScript-disabled preload policy as
+    // "csp". Require exactly the declared eight scripts, independently served
+    // with HTTP 200 and exact bytes below. Images, fonts and all other failures
+    // remain prohibited; enabled-JavaScript observations still require zero.
+    assert(diagnostic.failedRequests.every(item=>item.error?.errorText==='csp'),'Only the recorded disabled-JavaScript policy blocks')
+    assert.deepEqual(diagnostic.failedRequests.map(item=>new URL(item.url).pathname).sort(),declaredPreloads.get(currency),'Exactly the eight declared modulepreloads are blocked when JavaScript is disabled')
+    assert(report.declaredAssetChecks.filter(item=>item.currency===currency).every(item=>item.matches),'Declared script responses were independently verified')
+  }else assert.equal(diagnostic.failedRequests.length,0,'No failed asset requests with JavaScript enabled')
   if(kind==='original') {
     assert.equal(diagnostic.httpErrors.length,1,'Only original missing document 404')
     assert(diagnostic.httpErrors.every(item=>item.status===404&&item.type==='document'))
@@ -205,6 +215,16 @@ try {
   browser=await chromium.launch({executablePath:process.env.CURRENCY_CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']})
   report.environment={browser:browser.version(),executable:process.env.CURRENCY_CHROME_PATH||'/usr/bin/google-chrome',node:process.version,playwright:'1.56.1',pngjs:'7.0.0',os:await fs.readFile('/etc/os-release','utf8'),runnerImage:process.env.ImageVersion,viewportHeight:1000,dpr:1,reducedMotion:'reduce',tlsVerification:true}
   for(const candidate of [false,true])servers.push(await serve(candidate))
+  for(const currency of currencies) {
+    const outcomes=await Promise.allSettled(declaredPreloads.get(currency).map(async href=>{
+      const response=await fetch(new URL(href,servers[1].base),{signal:AbortSignal.timeout(10000)})
+      const bytes=Buffer.from(await response.arrayBuffer()),expected=await fs.readFile(href.slice(prefix.length))
+      return {currency,href,status:response.status,contentType:response.headers.get('content-type'),sha256:sha256(bytes),expectedSha256:sha256(expected),matches:response.status===200&&bytes.equals(expected)&&/javascript/.test(response.headers.get('content-type')||'')}
+    }))
+    report.declaredAssetChecks.push(...outcomes.map((result,index)=>result.status==='fulfilled'?result.value:{currency,href:declaredPreloads.get(currency)[index],matches:false,error:result.reason?.message||String(result.reason)}))
+  }
+  assert.equal(report.declaredAssetChecks.length,32)
+  assert(report.declaredAssetChecks.every(item=>item.matches),'All declared regional script assets return HTTP 200 with their exact protected bytes')
   for(const currency of currencies)for(const width of widths)await checkedStep(`${currency} ${width} saved/direct/reload comparison`,async()=>{
     const records={}
     for(const {name,base} of servers) {
