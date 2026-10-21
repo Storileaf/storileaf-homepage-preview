@@ -6,6 +6,7 @@ import { chromium } from 'playwright-core'
 import { settledSnapshot } from './browser-readiness.mjs'
 import { comparePixelCoordinates, compareAutoMargins } from './computed-style-parity.mjs'
 import { comparePracticeReferences, verifyPracticeDescription } from './practice-description-contract.mjs'
+import { measurePracticeHeadingPair } from './practice-heading-raster-contract.mjs'
 
 // Development can narrow WRITING_WIDTHS and set WRITING_FOCUSED=1. A completed
 // checkpoint requires the default matrix and the full interaction suite.
@@ -24,7 +25,7 @@ const hash = bytes => createHash('sha256').update(bytes).digest('hex')
 const check = (ok, message) => { if (!ok) problems.push(message) }
 const animationNames = { 'sl-writing-arrive': 'arrive', 'sl-writing-device-enter': 'device-enter', 'sl-writing-phone-enter': 'phone-enter', 'sl-practice-overlay-in': 'overlay-in' }
 const report = {
-  checkpoint: 'Package 4 P4-05 description repair with retained Group 8 Writing and practice gates', baseline,
+  checkpoint: 'Package 4 P4-05 description and P4-06 heading repair with retained Group 8 Writing and practice gates', baseline,
   sourceCommit: process.env.GITHUB_SHA || execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(),
   createdAt: new Date().toISOString(), focused, requestedWidths: widths,
   thresholds: { geometry: .15, pixelChannel: 24, pixelRatio: .01 }, widths: [], states: [], captures: [], nativePaint: [], preparation: [], sourceHashes: {}, problems, qualityFindings,
@@ -47,7 +48,7 @@ for (const dir of ['src', 'content']) {
   await walk(dir)
 }
 report.harnessHashes = {}
-for (const file of ['scripts/verify-writing-parity.mjs', 'scripts/browser-readiness.mjs', 'scripts/computed-style-parity.mjs', 'scripts/practice-description-contract.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
+for (const file of ['scripts/verify-writing-parity.mjs', 'scripts/browser-readiness.mjs', 'scripts/computed-style-parity.mjs', 'scripts/practice-description-contract.mjs', 'scripts/practice-heading-raster-contract.mjs']) report.harnessHashes[file] = hash(await fs.readFile(file))
 report.protectedHashes = {}
 for (const file of ['index.html', 'assets/index-DhPZyX4z.css', 'assets/routes-DrwDv2x2.js', 'assets/content-sections-CfrmOVRI.js']) {
   const bytes = await fs.readFile('../' + file)
@@ -218,21 +219,31 @@ async function hiddenHeader(p) {
   check(await p.locator('.site-header,.site-header *,.sl-header,.sl-header *').evaluateAll(es => es.length > 0 && es.every(e => getComputedStyle(e).visibility === 'hidden')), 'Complete temporary header suppression')
   return style
 }
-async function pixelCompare(files, label) {
+async function pixelCompare(files, label, headingReflow = null) {
   const data = await Promise.all(files.map(async file => 'data:image/png;base64,' + (await fs.readFile(path.join(out, file))).toString('base64')))
   const p = await browser.newPage()
-  const pixels = await p.evaluate(async sources => {
+  const pixels = await p.evaluate(async ({ sources, region }) => {
     const images = await Promise.all(sources.map(async src => { const image = new Image(); image.src = src; await image.decode(); return image }))
     const [a, b] = images
     if (a.width !== b.width || a.height !== b.height) return { ratio: null, before: [a.width, a.height], after: [b.width, b.height] }
     const canvas = document.createElement('canvas'); canvas.width = a.width; canvas.height = a.height
     const context = canvas.getContext('2d', { willReadFrequently: true }); context.drawImage(a, 0, 0); const one = context.getImageData(0, 0, a.width, a.height).data
     context.clearRect(0, 0, a.width, a.height); context.drawImage(b, 0, 0); const two = context.getImageData(0, 0, a.width, a.height).data
-    let changed = 0
-    for (let i = 0; i < one.length; i += 4) if (Math.max(Math.abs(one[i] - two[i]), Math.abs(one[i + 1] - two[i + 1]), Math.abs(one[i + 2] - two[i + 2])) > 24) changed++
-    return { ratio: changed / (a.width * a.height), changed, total: a.width * a.height, size: [a.width, a.height] }
-  }, data)
-  await p.close(); check(pixels.ratio !== null && pixels.ratio <= .01, label + ' pixels ' + JSON.stringify(pixels)); return pixels
+    let changed = 0, unaffectedChanged = 0, unaffectedTotal = 0, authorisedChanged = 0
+    for (let i = 0; i < one.length; i += 4) {
+      const x = (i / 4) % a.width, y = Math.floor(i / 4 / a.width)
+      const inside = region && x >= region.x && x < region.x + region.width && y >= region.y && y < region.y + region.height
+      if (!inside) unaffectedTotal++
+      if (Math.max(Math.abs(one[i] - two[i]), Math.abs(one[i + 1] - two[i + 1]), Math.abs(one[i + 2] - two[i + 2])) > 24) { changed++; if (inside) authorisedChanged++; else unaffectedChanged++ }
+    }
+    return { ratio: changed / (a.width * a.height), changed, total: a.width * a.height, size: [a.width, a.height], unaffectedChanged, unaffectedTotal, unaffectedRatio: unaffectedChanged / unaffectedTotal, authorisedChanged }
+  }, { sources: data, region: headingReflow?.region || null })
+  await p.close()
+  if (headingReflow) check(label === 'text-200-320-dialog tile 0' && pixels.unaffectedTotal > 0, 'Only the measured approved P4-06 capture may use a local raster distinction')
+  const testedRatio = headingReflow ? pixels.unaffectedRatio : pixels.ratio
+  check(pixels.ratio !== null && testedRatio <= .01, label + ' pixels ' + JSON.stringify(pixels))
+  return { ...pixels, comparisonScope: headingReflow ? 'P4-06 question reflow; unchanged pixels outside its measured text region' : 'full image', headingReflow }
+
 }
 async function prepareNativePaint(p, evidence, clip) {
   const preparation = { captures: [], states: [], layerEvents: [], droppedLayerEvents: 0, layerNodes: {} }, started = Date.now()
@@ -321,6 +332,7 @@ async function capture(ps, label, { dialog = false, context = false, assertState
   const height = await first.locator(selector).evaluate(e => e.getBoundingClientRect().height)
   const offsets = dialog || context ? [0] : [...new Set(Array.from({ length: Math.max(1, Math.ceil(height / (viewport.height - 64))) }, (_, i) => Math.min(i * (viewport.height - 64), Math.max(0, Math.ceil(height - viewport.height + 2)))))]
   const pairs = []
+  const headingReflow = dialog && label === 'text-200-320-dialog' ? await measurePracticeHeadingPair(ps, label) : null
   for (const [tile, offset] of offsets.entries()) {
     const files = []
     for (const [kind, p] of Object.entries(ps)) {
@@ -338,7 +350,7 @@ async function capture(ps, label, { dialog = false, context = false, assertState
       report.captures.push({ kind, file, viewport, clip, offset, context, dialog, sha256: hash(await fs.readFile(path.join(out, file))) }); files.push(file)
       if (header) await header.evaluate(e => e.remove())
     }
-    pairs.push({ offset, files, pixels: await pixelCompare(files, label + ' tile ' + tile) })
+    pairs.push({ offset, files, pixels: await pixelCompare(files, label + ' tile ' + tile, headingReflow) })
   }
   return pairs
 }
