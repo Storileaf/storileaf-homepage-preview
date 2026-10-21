@@ -1,0 +1,2114 @@
+{
+  "schemaVersion": 1,
+  "record": "P4 07 authorised default saved pricing footer correction",
+  "recordDate": "2026-10-20",
+  "recordTimezone": "America/Toronto",
+  "compiledAtUtc": "2026-10-21T01:26:51.147699+00:00",
+  "repository": "Storileaf/storileaf-homepage-preview",
+  "scopeStatus": {
+    "defaultSavedPricingFooter": "Implemented, original/candidate verified, published and live verified.",
+    "package4": "Open.",
+    "remainingPricingExportProblems": "Separate and not repaired by this change.",
+    "documentationClosure": "The commit containing this record publishes the complete evidence and updated public owners. The private design handoff records its final public commit, closing Pages outcome and post-deployment byte check after verification."
+  },
+  "authorisation": {
+    "status": "Explicit founder authorisation recorded in the active task.",
+    "allowed": "Correct only the obsolete arrow in the default saved pricing footer, verify original and candidate footer and complete page geometry, direct loading and reload, publish the exact static repair with a deliberate guard baseline update, and verify the live result.",
+    "protectedRuntimePath": "pricing/index.html",
+    "notAuthorisedByThisChange": [
+      "Currency route export repair",
+      "Selected book query initial render repair",
+      "Shared client bundle or router repair",
+      "Homepage root replacement",
+      "Private production changes",
+      "New public page construction",
+      "Whole Package 4 or production release acceptance"
+    ]
+  },
+  "exactChange": {
+    "path": "pricing/index.html",
+    "oldText": "Get in touch <span aria-hidden=\"true\">↗</span>",
+    "newText": "Get in touch",
+    "uniqueReplacementCount": 1,
+    "removedBytes": 36,
+    "originalBytes": 49185,
+    "candidateBytes": 49149,
+    "originalSha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+    "candidateSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+    "exactSingleReplacementVerified": true,
+    "allOtherPricingBytesUnchanged": true,
+    "originalEndsWithNewline": false,
+    "candidateEndsWithNewline": false,
+    "preserved": [
+      "Prices and package wording",
+      "Currency and book controls",
+      "Links and destinations",
+      "Storage and history code",
+      "All compiled JavaScript and CSS",
+      "Images",
+      "All other protected published root files",
+      "Fixed React review snapshot"
+    ]
+  },
+  "sourceAndProtection": {
+    "originalProtectedBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "newProtectedBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+    "pricingRepairCommit": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+    "publicationCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "guardPath": "frontend/scripts/guard-published.mjs",
+    "guardBlob": "f2e0c29e4ca96238df50481339ba5654ca4f3524",
+    "guardRemainsEnabled": true,
+    "onlyProtectedPathChangedFromOriginalBaseline": "pricing/index.html",
+    "reviewCheckpointBeforeRepair": "6434c11105abfd3122982cf65c227e9507dfb5ba",
+    "reviewSourceCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+    "reviewRuntimeCommit": "78d15276578b671cc072ab51032b7c67375f7b40",
+    "reviewProvenance": {
+      "path": "react-review/BUILD_PROVENANCE.json",
+      "sha256": "515df8050236e0c08bda5dcbce76951aa6143b26eccff37852e8d28f5f250b86",
+      "sourceCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "runtimeCommit": "78d15276578b671cc072ab51032b7c67375f7b40",
+      "fileCount": 16
+    },
+    "laterTestOnlyAlignmentCommit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+    "laterTestOnlyAlignmentEvidence": "Exact three-file compatibility diff and final run outcomes are recorded in widerAutomaticChecks and retained legacy diagnostics. No homepage runtime, stylesheet, threshold or assertion was changed.",
+    "frontendIdentityAtPublication": {
+      "commit": "30b2b6479387e0d00bdc7163242743d277d86516",
+      "verifiedSource": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "onlyDifference": "frontend/scripts/guard-published.mjs",
+      "guardBlob": "f2e0c29e4ca96238df50481339ba5654ca4f3524"
+    },
+    "frontendIdentityAfterVerificationAlignment": {
+      "commit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+      "verifiedSource": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+      "allRuntimeStyleContentDependencyBuildFilesIdentical": true,
+      "onlyExactVerificationExceptions": {
+        "frontend/scripts/guard-published.mjs": "f2e0c29e4ca96238df50481339ba5654ca4f3524",
+        "frontend/scripts/verify-process-parity.mjs": "93daa5c14e2d79bb82273e205f25b6562762db38",
+        "frontend/scripts/verify-craft-parity.mjs": "0e62e81ef4546650a2808252d3d58b811407403d"
+      },
+      "liveReviewWorkflowBlob": "df01d7c8cd9e9658730df5db2691390d12bfdfea",
+      "proof": "Live review verification requires every other frontend file to equal 9bf8779 and independently checks each exact exception blob. All 16 fixed review files and original provenance remain unchanged."
+    }
+  },
+  "comparisonMethod": {
+    "cssWidths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ],
+    "height": 1000,
+    "devicePixelRatio": 1,
+    "reducedMotion": "reduce",
+    "normalText": true,
+    "thresholds": {
+      "geometryTolerance": 0.15,
+      "channelThreshold": 24,
+      "pixelRatioLimit": 0.01
+    },
+    "thresholdsUnchangedAcrossDiagnosticAndPassingRuns": true,
+    "conditionsPerWidth": [
+      "Original direct load",
+      "Original reload",
+      "Candidate direct load",
+      "Candidate reload",
+      "Original saved document with JavaScript disabled",
+      "Candidate saved document with JavaScript disabled"
+    ],
+    "geometry": [
+      "All six pricing sections",
+      "Header",
+      "Plan grid and three cards",
+      "Comparison table",
+      "Footer and its layout containers",
+      "Page width and height"
+    ],
+    "contentAssertions": [
+      "Pricing main text",
+      "Package prices",
+      "Book and currency state",
+      "Images",
+      "Fonts and typography",
+      "Footer links and destination"
+    ],
+    "savedFooterException": "The original saved arrow and its text are deliberately removed. The saved comparison treats the contact label rectangle as part of that intended text change, while preserving measured page and footer container geometry, other content, links and typography. Settled original/candidate and candidate saved/settled contact geometry are compared exactly.",
+    "pixelComparisons": "Complete settled footer at all ten widths and complete settled pricing page at 320, 390, 820 and 1440. Saved original/candidate footer captures retain the intended arrow removal separately.",
+    "fontAndImageReadiness": "Fonts explicitly loaded and all images decoded before measuring and capturing."
+  },
+  "preparationAndFailures": {
+    "cancelledAttempts": [
+      {
+        "run": {
+          "id": 39524530512,
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39524530512",
+          "attempt": 1,
+          "head": "46351363c9eb0f7c0a7f8cba778057d8b2a4897d",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "startedAt": "2026-10-21T00:58:29Z",
+          "updatedAt": "2026-10-21T01:18:52Z"
+        },
+        "artifact": {
+          "id": 12313631987,
+          "name": "pricing-footer-verification",
+          "bytes": 1795199,
+          "sha256": "6762bfa5c0f915abe1d6a0b15c37628bb0581d6806dcb92635d06444aaeed796",
+          "downloadedDigestVerified": true,
+          "expiresAt": "2027-01-19T00:58:29Z"
+        },
+        "reportProduced": false,
+        "resultInterpretation": "Incomplete historical attempt, not a passed checkpoint.",
+        "logObservation": "The compare step ended with The operation was canceled at 2026-10-21T01:18:47.7246850Z. It had begun at 00:58:39.5538304Z, approximately the configured twenty minute job limit. The API says cancelled. No manual cancellation was performed by this agent.",
+        "configuredJobTimeoutMinutes": 20,
+        "fullPageCaptureLimitation": "Incomplete historical attempt. Its full page screenshots were taken after the footer screenshot had scrolled the page and are excluded from final full page evidence. No completed report exists. Subsequent bounded diagnostic run 39525455006 established a saved document rendering-frame wait stall, repaired in the verifier without changing page code, stylesheet, thresholds or assertions.",
+        "retainedFiles": [
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/artifact-metadata.json",
+            "bytes": 762,
+            "sha256": "2bab6a5b4aa2b55756248d9fdc5832f82d9ea1156813cb30faed71d2e73e9115"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/inspection-summary.json",
+            "bytes": 1594,
+            "sha256": "6f8a82705654fa7a51a75e3c36b9a65c0807cd10ced27f3fbe1bac798f36d5e4"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/job-metadata.json",
+            "bytes": 1838,
+            "sha256": "5fac078fdba9ba909ab4a83714f5c1ca32bbbbc195d4ee0113f9ffa5e711bb59"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/job.log.gz",
+            "bytes": 4372,
+            "sha256": "576a84a078bfabf26a95b9fb015104286db36b29ccb66e4a7547a20cb59442d4",
+            "uncompressedBytes": 16143,
+            "uncompressedSha256": "c6ef3bf0132243cc1bc62297b257167f5ebda8d259a1d491378981810cd679f9"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/run-metadata.json",
+            "bytes": 15015,
+            "sha256": "b7081a9c6dbb0920c5dabe5566c96ce53b9cce712da01131617e3d339c3a7055"
+          }
+        ],
+        "partialScreenshotHashes": [
+          {
+            "file": "candidate-footer-320.png",
+            "bytes": 38236,
+            "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+          },
+          {
+            "file": "candidate-page-320.png",
+            "bytes": 867068,
+            "sha256": "0e1737e5c208b30590c7aa1fa40f5cdd371f467d78c288171b592c229a0a8d5c"
+          },
+          {
+            "file": "original-footer-320.png",
+            "bytes": 38236,
+            "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+          },
+          {
+            "file": "original-page-320.png",
+            "bytes": 867068,
+            "sha256": "0e1737e5c208b30590c7aa1fa40f5cdd371f467d78c288171b592c229a0a8d5c"
+          }
+        ]
+      },
+      {
+        "run": {
+          "id": 39524834346,
+          "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39524834346",
+          "attempt": 1,
+          "head": "ff77c8509348511c78c8fe5dad51da19690198ef",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "startedAt": "2026-10-21T01:01:20Z",
+          "updatedAt": "2026-10-21T01:21:41Z"
+        },
+        "artifact": {
+          "id": 12313177632,
+          "name": "pricing-footer-verification",
+          "bytes": 1828803,
+          "sha256": "64537fa33780f7e65baa3a80a2be7b38015d602573d1aa5c0109520970838afb",
+          "downloadedDigestVerified": true,
+          "expiresAt": "2027-01-19T01:01:20Z"
+        },
+        "reportProduced": false,
+        "resultInterpretation": "Incomplete historical attempt, not a passed checkpoint.",
+        "logObservation": "The compare step began at 2026-10-21T01:01:30.9797963Z and ended with The operation was canceled at 01:21:38.2441622Z, approximately the configured twenty minute job limit. The API says cancelled. No manual cancellation was performed by this agent.",
+        "configuredJobTimeoutMinutes": 20,
+        "fullPageCaptureLimitation": "Incomplete historical attempt. Full page capture corrected to start at zero scroll in this commit. No completed report exists. Subsequent bounded diagnostic run 39525455006 established a saved document rendering-frame wait stall. It was repaired in the verifier without changing page code, stylesheet, thresholds or assertions. These partial observations are retained as historical evidence, not a complete passing checkpoint.",
+        "retainedFiles": [
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/artifact-metadata.json",
+            "bytes": 762,
+            "sha256": "3bf340949ea137597f410841b1b048538889967c52e10281c73eb50c9ec8051c"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/inspection-summary.json",
+            "bytes": 1629,
+            "sha256": "9b8d3d683a9ba8a2e267fea0b60675f8cb13547bd65b7657c6baf478dd0aeaca"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/job-metadata.json",
+            "bytes": 1838,
+            "sha256": "24aad9225499bf3de7a02aaa1053f137aba681dd9e7b4e0facf63620c028c97a"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/job.log.gz",
+            "bytes": 4374,
+            "sha256": "d82b40a5bdc9d410a499a6cf6c1768c9392d6d33dfa6b1406a6b4864e6986f7d",
+            "uncompressedBytes": 16142,
+            "uncompressedSha256": "0135948b027fab692de3932728320149dd5496dfac7ff682062cee2f21fb4c8e"
+          },
+          {
+            "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/run-metadata.json",
+            "bytes": 15016,
+            "sha256": "66dee7c8db2215719f6d1fd71141ff48a38d5257e0ad023dcd0f68ae83268428"
+          }
+        ],
+        "partialScreenshotHashes": [
+          {
+            "file": "candidate-footer-320.png",
+            "bytes": 38236,
+            "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+          },
+          {
+            "file": "candidate-page-320.png",
+            "bytes": 884400,
+            "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87"
+          },
+          {
+            "file": "original-footer-320.png",
+            "bytes": 38236,
+            "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+          },
+          {
+            "file": "original-page-320.png",
+            "bytes": 884400,
+            "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87"
+          }
+        ]
+      }
+    ],
+    "boundedDiagnostic": {
+      "runId": 39525455006,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39525455006",
+      "attempt": 1,
+      "head": "420a23ffe252781aed9a71a6b69f06fa1d53c04f",
+      "result": "failed",
+      "artifact": {
+        "id": 12312850875,
+        "name": "pricing-footer-verification",
+        "bytes": 1845145,
+        "sha256": "06559c5405658656ff333a3b9f92381f63e7ba1c686c88b876b6137a5df686f8",
+        "downloadedDigestVerified": true,
+        "expiresAt": "2027-01-19T01:07:25Z"
+      },
+      "report": {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/failed-readiness-report.json.gz",
+        "rawReportBytes": 120056,
+        "rawReportSha256": "a79aa6f8e927184623abbb66129ffba0f8cab7620b66c83c330fd392e23a00f4",
+        "compressedBytes": 8007,
+        "compressedSha256": "48a8fc485c020fa52902518da98f813d3d663bd8f349032edb34015f33ff69e5",
+        "losslessCompressionVerified": true
+      },
+      "environment": {
+        "browser": "155.0.8059.39",
+        "node": "v22.23.3",
+        "playwright": "1.56.1",
+        "pngjs": "7.0.0",
+        "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+        "runnerImage": "20261012.334.1",
+        "viewportHeight": 1000,
+        "dpr": 1,
+        "reducedMotion": "reduce"
+      },
+      "observationsCompleted": 4,
+      "comparisonsCompleted": 5,
+      "checkpointsRecorded": 15,
+      "failedCheckpoint": {
+        "label": "original saved 320 rendering frames",
+        "startedAt": "2026-10-21T01:07:49.088Z",
+        "result": "failed",
+        "error": "Timed out after 30 seconds at original saved 320 rendering frames",
+        "finishedAt": "2026-10-21T01:08:19.089Z"
+      },
+      "problems": [
+        "Error: Timed out after 30 seconds at original saved 320 rendering frames\n    at Timeout.<anonymous> (file:///home/runner/work/storileaf-homepage-preview/storileaf-homepage-preview/.github/scripts/verify-pricing-footer.mjs:81:114)\n    at listOnTimeout (node:internal/timers:585:17)\n    at process.processTimers (node:internal/timers:521:7)"
+      ],
+      "finding": "Font loading and image decoding passed in the JavaScript-disabled saved document. The subsequent rendering-frame promise did not finish within its 30 second bound. This isolated the readiness harness stall."
+    },
+    "correction": {
+      "commit": "95da225fb2e2d2e3400f6f84f3b6747df0125e1b",
+      "scope": "Verification harness only.",
+      "method": "Retain the real JavaScript-disabled browser context and the existing font and image prerequisites. Scroll synchronously, then sample the complete measured layout from the host at 100 millisecond intervals. Require three consecutive identical geometry samples within the bounded stage.",
+      "preserved": [
+        "Original and candidate HTML",
+        "Client scripts and styles",
+        "All original geometry, content and pixel assertions",
+        "All thresholds",
+        "No-JavaScript saved document conditions"
+      ],
+      "progress": "Each readiness stage has a 30 second limit and writes a progress checkpoint.",
+      "fullPageCaptureCorrection": "Full page screenshots explicitly start at zero scroll; the earlier 46351363 full page captures remain excluded."
+    }
+  },
+  "prepublicationVerification": {
+    "run": {
+      "id": 39525643936,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39525643936",
+      "attempt": 1,
+      "head": "95da225fb2e2d2e3400f6f84f3b6747df0125e1b",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-21T01:09:19Z",
+      "updatedAt": "2026-10-21T01:11:01Z"
+    },
+    "artifact": {
+      "id": 12313126369,
+      "name": "pricing-footer-verification",
+      "bytes": 11397901,
+      "sha256": "d674da09d9edd125e516806d33684a0bd9d653be908be7b8b5a7d2930b273752",
+      "downloadedDigestVerified": true,
+      "expiresAt": "2027-01-19T01:09:20Z"
+    },
+    "report": {
+      "path": "qa/pricing-hydration/2026-10-20/default-footer/prepublication-report.json.gz",
+      "rawReportBytes": 1725509,
+      "rawReportSha256": "294f942716c00987b94f1017266bc0e6a304a3b1ecb9abec1c32892dfe52706b",
+      "compressedBytes": 32309,
+      "compressedSha256": "d0f19a8ed08374c7c6927875cc9e74da5f0160f167a2ddfce63d2be8fae6773f",
+      "losslessCompressionVerified": true
+    },
+    "result": "passed",
+    "startedAt": "2026-10-21T01:09:30.391Z",
+    "finishedAt": "2026-10-21T01:10:56.770Z",
+    "environment": {
+      "browser": "155.0.8059.39",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "pngjs": "7.0.0",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "20261012.334.1",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce"
+    },
+    "repositoryContainsCandidate": false,
+    "observations": 60,
+    "observationGroups": {
+      "original / direct": 10,
+      "original / reload": 10,
+      "candidate / direct": 10,
+      "candidate / reload": 10,
+      "original / saved document without JavaScript": 10,
+      "candidate / saved document without JavaScript": 10
+    },
+    "geometryComparisons": 50,
+    "allGeometryComparisonsPassed": true,
+    "maximumMeasuredGeometryDelta": 0,
+    "pixelComparisons": 14,
+    "allPixelComparisonsPassed": true,
+    "zeroPixelComparisons": 14,
+    "nonzeroPixelComparisons": [],
+    "readinessCheckpoints": 180,
+    "allReadinessCheckpointsPassed": true,
+    "originalRuntimeObservations": 20,
+    "originalObservedRuntimeErrors": 20,
+    "originalErrorMeaning": "One existing React 418 hydration error per settled original direct or reload observation.",
+    "candidateRuntimeObservations": 20,
+    "candidateObservedRuntimeErrors": 0,
+    "screenshots": 36,
+    "problems": [],
+    "limits": "Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. No currency route or book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance."
+  },
+  "publicationCandidateVerification": {
+    "run": {
+      "id": 39526082447,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082447",
+      "attempt": 1,
+      "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-21T01:13:48Z",
+      "updatedAt": "2026-10-21T01:15:32Z"
+    },
+    "artifact": {
+      "id": 12312761947,
+      "name": "pricing-footer-verification",
+      "bytes": 11397936,
+      "sha256": "de597549ed10ed9e62c5722fe58aaf29284b76e780b431efbb1212e09b49e485",
+      "downloadedDigestVerified": true,
+      "expiresAt": "2027-01-19T01:13:48Z"
+    },
+    "report": {
+      "path": "qa/pricing-hydration/2026-10-20/default-footer/candidate-report.json.gz",
+      "rawReportBytes": 1725531,
+      "rawReportSha256": "d3a6e22bce810f54d5fbb5b3a0122d36ef8a73fd2379d98a718a20d1d97d353c",
+      "compressedBytes": 32361,
+      "compressedSha256": "1f07579efd51a924134c4d6beb6e30b109d30a8ea7a48b3940d17980db5e55b0",
+      "losslessCompressionVerified": true
+    },
+    "result": "passed",
+    "startedAt": "2026-10-21T01:13:58.013Z",
+    "finishedAt": "2026-10-21T01:15:18.403Z",
+    "environment": {
+      "browser": "155.0.8059.84",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "pngjs": "7.0.0",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "20261018.339.1",
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce"
+    },
+    "repositoryContainsCandidate": true,
+    "observations": 60,
+    "observationGroups": {
+      "original / direct": 10,
+      "original / reload": 10,
+      "candidate / direct": 10,
+      "candidate / reload": 10,
+      "original / saved document without JavaScript": 10,
+      "candidate / saved document without JavaScript": 10
+    },
+    "geometryComparisons": 50,
+    "allGeometryComparisonsPassed": true,
+    "maximumMeasuredGeometryDelta": 0,
+    "pixelComparisons": 14,
+    "allPixelComparisonsPassed": true,
+    "zeroPixelComparisons": 13,
+    "nonzeroPixelComparisons": [
+      {
+        "label": "complete settled footer 1024",
+        "width": 1024,
+        "height": 415,
+        "changedPixels": 27,
+        "changedPixelRatio": 6.353539156626506e-05,
+        "pixelPassed": true
+      }
+    ],
+    "readinessCheckpoints": 180,
+    "allReadinessCheckpointsPassed": true,
+    "originalRuntimeObservations": 20,
+    "originalObservedRuntimeErrors": 20,
+    "originalErrorMeaning": "One existing React 418 hydration error per settled original direct or reload observation.",
+    "candidateRuntimeObservations": 20,
+    "candidateObservedRuntimeErrors": 0,
+    "screenshots": 36,
+    "problems": [],
+    "limits": "Chromium on the recorded Linux runner. Normal text and reduced motion at ten widths. Saved documents and settled default INR Life Story, direct load and reload. No currency route or book query repair, native zoom, other engines, physical devices or spoken screen reader acceptance.",
+    "pixelDifferenceAt1024": {
+      "changedPixels": 27,
+      "changedPixelRatio": 6.353539156626506e-05,
+      "threshold": 0.01,
+      "locations": {
+        "The books": {
+          "count": 16,
+          "bbox": [
+            435,
+            65,
+            441,
+            69
+          ]
+        },
+        "Here to help": {
+          "count": 11,
+          "bbox": [
+            865,
+            65,
+            871,
+            69
+          ]
+        }
+      },
+      "retainedPair": [
+        "qa/pricing-hydration/2026-10-20/default-footer/images/original-footer-1024.png",
+        "qa/pricing-hydration/2026-10-20/default-footer/images/candidate-footer-1024.png"
+      ],
+      "interpretation": "The 27 pixels above the unchanged channel threshold are confined to The books and Here to help gold headings. All measured geometry is identical. This passed result does not establish the raster cause or permanent screenshot stability. No replay was performed.",
+      "manualInspection": "The evidence agent viewed the two unchanged 1024px PNGs. This statement does not claim that the agent visually inspected every screenshot."
+    }
+  },
+  "livePricingVerification": {
+    "run": {
+      "id": 39526082447,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082447",
+      "attempt": 1,
+      "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-21T01:13:48Z",
+      "updatedAt": "2026-10-21T01:15:32Z"
+    },
+    "artifact": {
+      "id": 12313456591,
+      "name": "pricing-footer-live-verification",
+      "bytes": 323972,
+      "sha256": "8fc0c961d1b9f9b994b4a0001cbed9fd1aad132ea1da24ccd757f58b893615d6",
+      "downloadedDigestVerified": true,
+      "expiresAt": "2027-01-19T01:13:48Z"
+    },
+    "report": {
+      "path": "qa/pricing-hydration/2026-10-20/default-footer/live-report.json.gz",
+      "rawReportBytes": 107003,
+      "rawReportSha256": "5fd9d0f2d9e0551050243a92faa9e637d94780cf91d91563560961fe2841b549",
+      "compressedBytes": 7956,
+      "compressedSha256": "02a3ee07f820363de58ab7cf480bd57dd6b5df8eee61e60eded5609d4b4e110b",
+      "losslessCompressionVerified": true
+    },
+    "result": "passed",
+    "startedAt": "2026-10-21T01:15:18.737Z",
+    "finishedAt": "2026-10-21T01:15:27.726Z",
+    "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+    "environment": {
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "platform": "linux",
+      "architecture": "x64",
+      "kernel": "7.0.0-1017-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "runnerImage": "ubuntu24",
+      "runnerImageVersion": "20261018.339.1",
+      "browserExecutable": "/usr/bin/google-chrome",
+      "headless": true,
+      "viewportHeight": 1000,
+      "dpr": 1,
+      "reducedMotion": "reduce",
+      "widths": [
+        320,
+        390,
+        820,
+        1440
+      ],
+      "browser": "155.0.8059.84"
+    },
+    "deploymentReadiness": {
+      "maximumMilliseconds": 120000,
+      "intervalMilliseconds": 5000,
+      "attempts": [
+        {
+          "at": "2026-10-21T01:15:18.898Z",
+          "status": 200,
+          "url": "https://storileaf.github.io/storileaf-homepage-preview/pricing/",
+          "sha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+          "bytes": 49149,
+          "matchesCandidate": true
+        }
+      ],
+      "elapsedMilliseconds": 75,
+      "result": "exact candidate response available"
+    },
+    "behaviouralRetries": 0,
+    "observations": 8,
+    "observationWidths": [
+      320,
+      390,
+      820,
+      1440
+    ],
+    "actions": [
+      "direct",
+      "reload"
+    ],
+    "allObservationsPassed": true,
+    "errorCounts": {
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "failedRequests": 0,
+      "httpErrors": 0
+    },
+    "defaultState": "INR and Life Story, all six pricing sections and three packages.",
+    "footer": "Exactly one Get in touch link to the existing contact destination, with no descendant span.",
+    "fontsLoaded": true,
+    "imagesLoaded": true,
+    "noHorizontalOverflow": true,
+    "directReloadComparisons": [
+      {
+        "width": 320,
+        "directVersusReloadGeometry": "identical"
+      },
+      {
+        "width": 390,
+        "directVersusReloadGeometry": "identical"
+      },
+      {
+        "width": 820,
+        "directVersusReloadGeometry": "identical"
+      },
+      {
+        "width": 1440,
+        "directVersusReloadGeometry": "identical"
+      }
+    ],
+    "repositoryProtectedFiles": 35,
+    "servedProtectedResponses": 34,
+    "servedProtectedBytes": 2082454,
+    "allServedProtectedResponsesMatch": true,
+    "reviewResponsesIncludingProvenance": 17,
+    "reviewResponseBytes": 615587,
+    "allReviewResponsesMatch": true,
+    "nojekyllNote": "The .nojekyll marker is verified in Git and is not treated as a served public page.",
+    "screenshots": 8,
+    "liveScreenshotsMatchSavedAndSettledCandidate": [
+      {
+        "width": 320,
+        "action": "direct",
+        "liveSha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 320,
+        "action": "reload",
+        "liveSha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 390,
+        "action": "direct",
+        "liveSha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 390,
+        "action": "reload",
+        "liveSha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 820,
+        "action": "direct",
+        "liveSha256": "148027ee28c4bcc10cb9c7dd300ef46e67df602d0e1914e081f72643dd79b248",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 820,
+        "action": "reload",
+        "liveSha256": "148027ee28c4bcc10cb9c7dd300ef46e67df602d0e1914e081f72643dd79b248",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 1440,
+        "action": "direct",
+        "liveSha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      },
+      {
+        "width": 1440,
+        "action": "reload",
+        "liveSha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+        "matchesSettledCandidate": true,
+        "matchesSavedCandidate": true
+      }
+    ],
+    "problems": [],
+    "limits": "Headless Chromium on the recorded Linux runner. Four CSS viewport widths, height 1000, DPR 1, normal text and reduced motion. Generic pricing direct entry and reload only. No currency route or selected book query repair, native zoom, other browser engines, physical devices, payment flow or spoken screen reader acceptance. The .nojekyll deployment marker is checked in Git, not treated as a public page. Only deployment byte readiness is polled. Behavioural checks are performed once without retries."
+  },
+  "separateReactReviewVerification": {
+    "run": {
+      "id": 39526082528,
+      "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082528",
+      "name": "Verify the separate live React review",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "createdAt": "2026-10-21T01:13:48Z",
+      "updatedAt": "2026-10-21T01:14:25Z"
+    },
+    "artifact": {
+      "id": 12313452002,
+      "name": "react-review-live-verification",
+      "size_in_bytes": 2549265,
+      "digest": "sha256:9bdeb2765baddffb3bf80749148befeabdcef49140a4b5f89be7d051bd4b9451",
+      "advertisedDigestVerified": true
+    },
+    "report": {
+      "path": "qa/pricing-hydration/2026-10-20/default-footer/review-live-report.json.gz",
+      "rawReportBytes": 12466,
+      "rawReportSha256": "5dd719ede43bc014a33968ab5406781a99610a9d64582f160be43f64f106fc4d",
+      "compressedBytes": 2723,
+      "compressedSha256": "de885144e71fa256ec0bfead650e82144ae861a28808312e55412c9bdb41f0fb",
+      "losslessCompressionVerified": true
+    },
+    "result": "passed",
+    "publicationCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "sourceCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+    "pricingBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+    "environment": {
+      "browser": "155.0.8059.84",
+      "node": "v22.23.3",
+      "playwright": "1.56.1",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "image": "20261018.339.1",
+      "dpr": 1
+    },
+    "widths": [
+      320,
+      390,
+      820,
+      1440
+    ],
+    "reviewFileResponses": 16,
+    "protectedResponses": 6,
+    "allReviewAndProtectedResponsesMatch": true,
+    "deploymentReadiness": [
+      {
+        "attempt": 0,
+        "status": 200,
+        "sha256": "b22028eea157f7e810a89285a275398c85be0b96cc545cc6f655c3b835a5a641",
+        "reviewReady": true,
+        "pricing": {
+          "status": 200,
+          "sha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+          "expectedSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+          "ready": false
+        },
+        "ready": false
+      },
+      {
+        "attempt": 1,
+        "status": 200,
+        "sha256": "b22028eea157f7e810a89285a275398c85be0b96cc545cc6f655c3b835a5a641",
+        "reviewReady": true,
+        "pricing": {
+          "status": 200,
+          "sha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+          "expectedSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+          "ready": false
+        },
+        "ready": false
+      },
+      {
+        "attempt": 2,
+        "status": 200,
+        "sha256": "b22028eea157f7e810a89285a275398c85be0b96cc545cc6f655c3b835a5a641",
+        "reviewReady": true,
+        "pricing": {
+          "status": 200,
+          "sha256": "9c1b86e5fec16b7b26904b81032b62573f312d8fbde98b5ee150b9f860ce6d14",
+          "expectedSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+          "ready": false
+        },
+        "ready": false
+      },
+      {
+        "attempt": 3,
+        "status": 200,
+        "sha256": "b22028eea157f7e810a89285a275398c85be0b96cc545cc6f655c3b835a5a641",
+        "reviewReady": true,
+        "pricing": {
+          "status": 200,
+          "sha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+          "expectedSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+          "ready": true
+        },
+        "ready": true
+      }
+    ],
+    "observations": [
+      {
+        "width": 320,
+        "fonts": [
+          {
+            "name": "Newsreader",
+            "loaded": true
+          },
+          {
+            "name": "Manrope",
+            "loaded": true
+          }
+        ],
+        "errors": [],
+        "landmarks": [
+          {
+            "id": "top",
+            "count": 1
+          },
+          {
+            "id": "main-content",
+            "count": 1
+          },
+          {
+            "id": "books",
+            "count": 1
+          },
+          {
+            "id": "samples",
+            "count": 1
+          },
+          {
+            "id": "how-it-works",
+            "count": 1
+          },
+          {
+            "id": "writing-space",
+            "count": 1
+          },
+          {
+            "id": "resources",
+            "count": 1
+          },
+          {
+            "id": "questions",
+            "count": 1
+          }
+        ],
+        "overflow": false,
+        "description": "demo-privacy",
+        "practice": "Keyboard opening, privacy references, typing, word count, Escape, focus return, empty reopen and Close passed"
+      },
+      {
+        "width": 390,
+        "fonts": [
+          {
+            "name": "Newsreader",
+            "loaded": true
+          },
+          {
+            "name": "Manrope",
+            "loaded": true
+          }
+        ],
+        "errors": [],
+        "landmarks": [
+          {
+            "id": "top",
+            "count": 1
+          },
+          {
+            "id": "main-content",
+            "count": 1
+          },
+          {
+            "id": "books",
+            "count": 1
+          },
+          {
+            "id": "samples",
+            "count": 1
+          },
+          {
+            "id": "how-it-works",
+            "count": 1
+          },
+          {
+            "id": "writing-space",
+            "count": 1
+          },
+          {
+            "id": "resources",
+            "count": 1
+          },
+          {
+            "id": "questions",
+            "count": 1
+          }
+        ],
+        "overflow": false,
+        "description": "demo-privacy",
+        "practice": "Keyboard opening, privacy references, typing, word count, Escape, focus return, empty reopen and Close passed"
+      },
+      {
+        "width": 820,
+        "fonts": [
+          {
+            "name": "Newsreader",
+            "loaded": true
+          },
+          {
+            "name": "Manrope",
+            "loaded": true
+          }
+        ],
+        "errors": [],
+        "landmarks": [
+          {
+            "id": "top",
+            "count": 1
+          },
+          {
+            "id": "main-content",
+            "count": 1
+          },
+          {
+            "id": "books",
+            "count": 1
+          },
+          {
+            "id": "samples",
+            "count": 1
+          },
+          {
+            "id": "how-it-works",
+            "count": 1
+          },
+          {
+            "id": "writing-space",
+            "count": 1
+          },
+          {
+            "id": "resources",
+            "count": 1
+          },
+          {
+            "id": "questions",
+            "count": 1
+          }
+        ],
+        "overflow": false,
+        "description": "demo-privacy",
+        "practice": "Keyboard opening, privacy references, typing, word count, Escape, focus return, empty reopen and Close passed"
+      },
+      {
+        "width": 1440,
+        "fonts": [
+          {
+            "name": "Newsreader",
+            "loaded": true
+          },
+          {
+            "name": "Manrope",
+            "loaded": true
+          }
+        ],
+        "errors": [],
+        "landmarks": [
+          {
+            "id": "top",
+            "count": 1
+          },
+          {
+            "id": "main-content",
+            "count": 1
+          },
+          {
+            "id": "books",
+            "count": 1
+          },
+          {
+            "id": "samples",
+            "count": 1
+          },
+          {
+            "id": "how-it-works",
+            "count": 1
+          },
+          {
+            "id": "writing-space",
+            "count": 1
+          },
+          {
+            "id": "resources",
+            "count": 1
+          },
+          {
+            "id": "questions",
+            "count": 1
+          }
+        ],
+        "overflow": false,
+        "description": "demo-privacy",
+        "practice": "Keyboard opening, privacy references, typing, word count, Escape, focus return, empty reopen and Close passed"
+      }
+    ],
+    "problems": [],
+    "limits": "Focused live publication smoke at 320, 390, 820 and 1440 CSS pixels, reduced motion and desktop mouse/keyboard emulation. Prior full parity is reused only because all 16 review files match the tested artifact. Pricing HTML uses its separately authorised P4 07 export baseline; the other original responses retain the historical baseline. No native zoom, physical device, screen-reader speech or other-engine certification.",
+    "evidenceScope": "The independent review agent supplied the raw report and metadata. This index verifies the report hash and records its conclusions, without claiming a new visual inspection of the review images.",
+    "laterExactPinVerification": {
+      "run": 39526983741,
+      "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+      "attempt": 1,
+      "result": "success",
+      "evidence": "qa/pricing-hydration/2026-10-20/default-footer/review-alignment/index.json",
+      "report": "qa/pricing-hydration/2026-10-20/default-footer/review-alignment/report.json.gz",
+      "rawReportSha256": "ad68c414e766143f76c79a3a90fa1b3135148e5ddb5e7b44e71e4d0c8963b929",
+      "browser": "155.0.8059.39",
+      "runnerImage": "20261012.334.1",
+      "reviewResponses": 16,
+      "protectedResponses": 6,
+      "widths": [
+        320,
+        390,
+        820,
+        1440
+      ],
+      "scope": "All checks passed. The three exact verification exceptions are pinned independently; all other frontend files and the fixed review remain unchanged."
+    }
+  },
+  "integrityAndRetention": {
+    "prepublicationPngHashesVerified": 36,
+    "publicationCandidatePngHashesVerified": 36,
+    "livePricingPngHashesVerified": 8,
+    "imagesEdited": false,
+    "compressedReportsLossless": true,
+    "historicalLogsLossless": true,
+    "rawReportPaths": {
+      "diagnostic": {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/failed-readiness-report.json.gz",
+        "rawReportBytes": 120056,
+        "rawReportSha256": "a79aa6f8e927184623abbb66129ffba0f8cab7620b66c83c330fd392e23a00f4",
+        "compressedBytes": 8007,
+        "compressedSha256": "48a8fc485c020fa52902518da98f813d3d663bd8f349032edb34015f33ff69e5",
+        "losslessCompressionVerified": true
+      },
+      "prepublication": {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/prepublication-report.json.gz",
+        "rawReportBytes": 1725509,
+        "rawReportSha256": "294f942716c00987b94f1017266bc0e6a304a3b1ecb9abec1c32892dfe52706b",
+        "compressedBytes": 32309,
+        "compressedSha256": "d0f19a8ed08374c7c6927875cc9e74da5f0160f167a2ddfce63d2be8fae6773f",
+        "losslessCompressionVerified": true
+      },
+      "publicationCandidate": {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/candidate-report.json.gz",
+        "rawReportBytes": 1725531,
+        "rawReportSha256": "d3a6e22bce810f54d5fbb5b3a0122d36ef8a73fd2379d98a718a20d1d97d353c",
+        "compressedBytes": 32361,
+        "compressedSha256": "1f07579efd51a924134c4d6beb6e30b109d30a8ea7a48b3940d17980db5e55b0",
+        "losslessCompressionVerified": true
+      },
+      "livePricing": {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/live-report.json.gz",
+        "rawReportBytes": 107003,
+        "rawReportSha256": "5fd9d0f2d9e0551050243a92faa9e637d94780cf91d91563560961fe2841b549",
+        "compressedBytes": 7956,
+        "compressedSha256": "02a3ee07f820363de58ab7cf480bd57dd6b5df8eee61e60eded5609d4b4e110b",
+        "losslessCompressionVerified": true
+      },
+      "liveReview": {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/review-live-report.json.gz",
+        "rawReportBytes": 12466,
+        "rawReportSha256": "5dd719ede43bc014a33968ab5406781a99610a9d64582f160be43f64f106fc4d",
+        "compressedBytes": 2723,
+        "compressedSha256": "de885144e71fa256ec0bfead650e82144ae861a28808312e55412c9bdb41f0fb",
+        "losslessCompressionVerified": true
+      }
+    },
+    "retainedFiles": [
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/candidate-report.json.gz",
+        "bytes": 32361,
+        "sha256": "1f07579efd51a924134c4d6beb6e30b109d30a8ea7a48b3940d17980db5e55b0",
+        "blob": "973bd8548aaff33404deadb6c1d207e35ceb0f57",
+        "uncompressedBytes": 1725531,
+        "uncompressedSha256": "d3a6e22bce810f54d5fbb5b3a0122d36ef8a73fd2379d98a718a20d1d97d353c"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/default-footer.patch",
+        "bytes": 98456,
+        "sha256": "df614256a095b66f39c5eb34ec5b28bf1a8cd5efd335f51f7ab1dffaa89d9a97",
+        "blob": "da5a677a94a18c6ed81326f0312d78edf4fa828c"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/failed-readiness-report.json.gz",
+        "bytes": 8007,
+        "sha256": "48a8fc485c020fa52902518da98f813d3d663bd8f349032edb34015f33ff69e5",
+        "blob": "389687a622685289cd751e0254ea7f44f0906f0c",
+        "uncompressedBytes": 120056,
+        "uncompressedSha256": "a79aa6f8e927184623abbb66129ffba0f8cab7620b66c83c330fd392e23a00f4"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/artifact-metadata.json",
+        "bytes": 762,
+        "sha256": "2bab6a5b4aa2b55756248d9fdc5832f82d9ea1156813cb30faed71d2e73e9115",
+        "blob": "409d5ead8506df080023c857667be656e3bf2fd5"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/inspection-summary.json",
+        "bytes": 1594,
+        "sha256": "6f8a82705654fa7a51a75e3c36b9a65c0807cd10ced27f3fbe1bac798f36d5e4",
+        "blob": "809ff6386165c129033281fba644b149e601655a"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/job-metadata.json",
+        "bytes": 1838,
+        "sha256": "5fac078fdba9ba909ab4a83714f5c1ca32bbbbc195d4ee0113f9ffa5e711bb59",
+        "blob": "582c5ace4f08f4f1aa0431de90dcb8d4ce20549d"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/job.log.gz",
+        "bytes": 4372,
+        "sha256": "576a84a078bfabf26a95b9fb015104286db36b29ccb66e4a7547a20cb59442d4",
+        "blob": "ac2f24cfa0540245f27f26839b5445f550418b16",
+        "uncompressedBytes": 16143,
+        "uncompressedSha256": "c6ef3bf0132243cc1bc62297b257167f5ebda8d259a1d491378981810cd679f9"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/46351363/run-metadata.json",
+        "bytes": 15015,
+        "sha256": "b7081a9c6dbb0920c5dabe5566c96ce53b9cce712da01131617e3d339c3a7055",
+        "blob": "0b23c3c6ac7bee87ebafeb852e45b038ad5323dc"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/artifact-metadata.json",
+        "bytes": 762,
+        "sha256": "3bf340949ea137597f410841b1b048538889967c52e10281c73eb50c9ec8051c",
+        "blob": "95c127ddaf12c1aff0131d8827c21ec80e9ce8ce"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/inspection-summary.json",
+        "bytes": 1629,
+        "sha256": "9b8d3d683a9ba8a2e267fea0b60675f8cb13547bd65b7657c6baf478dd0aeaca",
+        "blob": "094c3072d6a42bb6bb9722c62ebe2e3571063322"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/job-metadata.json",
+        "bytes": 1838,
+        "sha256": "24aad9225499bf3de7a02aaa1053f137aba681dd9e7b4e0facf63620c028c97a",
+        "blob": "b298a658fa021ed1a4c3bc9d8001f3a1d0ee99c5"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/job.log.gz",
+        "bytes": 4374,
+        "sha256": "d82b40a5bdc9d410a499a6cf6c1768c9392d6d33dfa6b1406a6b4864e6986f7d",
+        "blob": "0a33b99b6261a847948799a020cd25f7a83dad26",
+        "uncompressedBytes": 16142,
+        "uncompressedSha256": "0135948b027fab692de3932728320149dd5496dfac7ff682062cee2f21fb4c8e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/historical/ff77c850/run-metadata.json",
+        "bytes": 15016,
+        "sha256": "66dee7c8db2215719f6d1fd71141ff48a38d5257e0ad023dcd0f68ae83268428",
+        "blob": "58d0a64d2223449408bdfd3fa9e4592ad1d2d747"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/candidate-footer-1024.png",
+        "bytes": 43208,
+        "sha256": "10cde7ab7d977d2908a5fc24ab4dc061a3eda259d7a767228b88a5dda8a0f794",
+        "blob": "d84431fa955af077f08a4985764d841569ed71c7"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/candidate-saved-footer-1440.png",
+        "bytes": 44862,
+        "sha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+        "blob": "3502c89f7eb8250293fd2dca31b0d04f8d55a8da"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/candidate-saved-footer-320.png",
+        "bytes": 38236,
+        "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576",
+        "blob": "757aaaa905918a9a68833958abd6fc0a07cc229e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/candidate-saved-footer-390.png",
+        "bytes": 42302,
+        "sha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+        "blob": "a1b4e956a94e96dbbe6efb162750a48b47e30987"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/candidate-saved-footer-820.png",
+        "bytes": 43898,
+        "sha256": "148027ee28c4bcc10cb9c7dd300ef46e67df602d0e1914e081f72643dd79b248",
+        "blob": "e53ada589dc1d3d07d2ec1cf9b67b424938eea20"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/live-footer-1440-direct.png",
+        "bytes": 44862,
+        "sha256": "657dd47ab043367a52ab136b0e078329c8064f49d175ae6e2da44da61aca8adb",
+        "blob": "3502c89f7eb8250293fd2dca31b0d04f8d55a8da"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/live-footer-320-direct.png",
+        "bytes": 38236,
+        "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576",
+        "blob": "757aaaa905918a9a68833958abd6fc0a07cc229e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/live-footer-390-direct.png",
+        "bytes": 42302,
+        "sha256": "7be758ef7ecb417022906e5467fbdb42de714d7956c1b617d4fbf455a9072af4",
+        "blob": "a1b4e956a94e96dbbe6efb162750a48b47e30987"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/live-footer-820-direct.png",
+        "bytes": 43898,
+        "sha256": "148027ee28c4bcc10cb9c7dd300ef46e67df602d0e1914e081f72643dd79b248",
+        "blob": "e53ada589dc1d3d07d2ec1cf9b67b424938eea20"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/original-footer-1024.png",
+        "bytes": 43297,
+        "sha256": "e163fc24528ac430d3a9efbc50806f46f01a6a10f8d43f1f57441bdaa1594211",
+        "blob": "6011e19196f279e18343c596d9e7bad14e3ae968"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/original-saved-footer-1440.png",
+        "bytes": 44874,
+        "sha256": "b6bc183698c83f36434e89f24e5549a248bc2c8617f02feca9c38256ad8be267",
+        "blob": "b5425e030de44cffd1dde8506d3be9bfb3f75bfa"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/original-saved-footer-320.png",
+        "bytes": 38330,
+        "sha256": "2f4c800241e3a919747a0d9e0e2a49d3e3bf10b10679ddc8d7c50249a254c686",
+        "blob": "125e80cf8329a56a7dd72cb4c7289005216436aa"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/original-saved-footer-390.png",
+        "bytes": 42398,
+        "sha256": "fc3ba13baab5f6102f45063b6e6f18ce4679a69aa344392cfd3ac7f5f455e344",
+        "blob": "110edf841602698f2fe0c1b837c65b8d230423e4"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/original-saved-footer-820.png",
+        "bytes": 43917,
+        "sha256": "c8445e2867eeebad6637a1b2b933f7a24ea96e445bf6a82840ba8a2bd5ae8127",
+        "blob": "37722d34789a240b1400a8cd5867c932fc146b9e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/images/settled-pricing-1440.png",
+        "bytes": 1851724,
+        "sha256": "73056f267c732dd71aacc7f30e66d792a215cf53d115ce7dfab1caeed30b4f18",
+        "blob": "7b4e64e151ad48bb6e765cb3e2ea55ecb9b0074e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/artifact-inventory.json",
+        "bytes": 53410,
+        "sha256": "906c794d7dd05401c4fe1b890900af65b8394cc707acc3057bd13fbe3f5f99bb",
+        "blob": "cf23a32c45b1940d71af74409c3a8c6e4a7c1081"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/artifact-metadata.json",
+        "bytes": 758,
+        "sha256": "a42dae9e8b5e542d0ca451f89a3f792b3827d3c63351be4ab10ee6d0cb21b212",
+        "blob": "6e61301c0dbdfc57b18c4891078ce06e3fe99d35"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/gallery-report.json.gz",
+        "bytes": 83397,
+        "sha256": "bceb6bc31e45d71e4cb6b756eaa31dd592024837cc6ffde373880259353070b8",
+        "blob": "89ed234f8572dac38265ccb62dcd10725306a08d",
+        "uncompressedBytes": 3350534,
+        "uncompressedSha256": "9214c1b597f2d9100727ad5722f8375591ab588dda8deba208c7b8940a410056"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/index.json",
+        "bytes": 3652,
+        "sha256": "b66b4e353a054ccf062541acec2149829cfee6dead9346528ec6906d10b223d6",
+        "blob": "3548a30b33713581a0b41ead19e927c30aa24a6e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/job.log.gz",
+        "bytes": 13518,
+        "sha256": "3855c444fc6e8f47c9702ed9ab033ca33714e86b10f7b804380ca1afb385a139",
+        "blob": "be517387c48e109bc10ab0324ba1687b6cd983ed",
+        "uncompressedBytes": 58454,
+        "uncompressedSha256": "6e31e9679fb0f17c11e61398c1ff2497ba45858841fd84e4253c8a65c4cca054"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/jobs-metadata.json",
+        "bytes": 3368,
+        "sha256": "76fa0350f0de525855e0eb6778ea0c29ea877ecc12f6fea391c2d21a62df2759",
+        "blob": "2f5c6f88641317ade524796db16d6597b10bc736"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/physical-report.json.gz",
+        "bytes": 200650,
+        "sha256": "ad8f5d10882f886ffa1ca17f61a0d6523c19b9c56766ba138a2ad59c0c4b12c4",
+        "blob": "07a589b48fdbd76124bb7749522870446cfd725b",
+        "uncompressedBytes": 5865030,
+        "uncompressedSha256": "5392a1bfbab54c7bbb99f191f8eb79b1c9fef3fcfd64bf450349065657475f31"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/run-metadata.json",
+        "bytes": 14351,
+        "sha256": "98a344b485da2e7d82d25b8caa03980b97b00afbf71c1cc2a187ea0c5af9daf5",
+        "blob": "0433eb71f6e8142fec9e5b470b1c896a3d9e78c5"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/artifact-inventory.json",
+        "bytes": 15441,
+        "sha256": "d578556a2e375a3457edb5fe6720040382e12d825795305988ad6b85abc758d0",
+        "blob": "d0606a79fb2eaa6caae8bf9e21a1744685c0a4c9"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/artifact-metadata.json",
+        "bytes": 759,
+        "sha256": "b4eb2da306ffb0dc948031fc65c87baa609609602b83d52ea473afa09ca18005",
+        "blob": "c77dd9fb665800a58fb0b9f59b98e9e2234c4e07"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/index.json",
+        "bytes": 2802,
+        "sha256": "a80d832d4e047b96d8fa988aeaab5cd956e34b3bfc9cfada251c5b402699b211",
+        "blob": "b2e1af2492221d22073a27b43cbcc1c26d616d34"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/job.log.gz",
+        "bytes": 13265,
+        "sha256": "f62260d1cf4f68aba38ee6cdcc1cbaa562a1cec074a4c9f97756cc27364dd8ad",
+        "blob": "a0fc048f596060eecebf1052f56308e04474fb59",
+        "uncompressedBytes": 57144,
+        "uncompressedSha256": "73f37a9a5e58df6723014cc3957049a7c58fe8aa4c0b40bbdc60b867b1348474"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/jobs-metadata.json",
+        "bytes": 3189,
+        "sha256": "c1b786d71f4d2e37fa2c0efdb1e3b3cd438d9a8bcfe2444c1d69e8c7c20f6314",
+        "blob": "8eb03084000254c0fb6ba908e9c8c6549397f822"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/report.json.gz",
+        "bytes": 219478,
+        "sha256": "7971ac8ef7b6258be42ffb0a1eed5b278422fd69814457b26b1da20b7f8ef79c",
+        "blob": "7fd644401dc5bede9ee70bdc6cfd61f4a57ae844",
+        "uncompressedBytes": 6198736,
+        "uncompressedSha256": "5150ab1b09972ce11f034dc4b416e3bac7bf921e92399d2b80f3723039b66a86"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/run-metadata.json",
+        "bytes": 14360,
+        "sha256": "ff1544bce9f7ce3ac77a64bbb7fbf7d9da76ff7ecdc9f0285faf8ae0edff12c6",
+        "blob": "6afb12c59ad837a8ef5576e6a37ea3a6a9a22ed5"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/artifact-inventory.json",
+        "bytes": 53410,
+        "sha256": "d50e2df33686f5514894b3c0b493f6bad5e8701de265bdbb4a57db958b7b0360",
+        "blob": "cf18abcd44efe31d5c4ce5e2b93242325822d0a8"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/artifact-metadata.json",
+        "bytes": 758,
+        "sha256": "62e7609962ca8a5ed961d07c8fc2160726cd66ac203d5de203b47336a211cd43",
+        "blob": "b0f029e1d8ddc583d935a0d3217999960aadc3be"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/gallery-report.json.gz",
+        "bytes": 83434,
+        "sha256": "684ef5e611d65212a3f50ad8e43c8f21de6859f22aaf1e89f3e5b0d5269eded6",
+        "blob": "3fe6b753594bc0a26be6fe35492bd7ca6a2651b8",
+        "uncompressedBytes": 3350629,
+        "uncompressedSha256": "e462d395cab3938a105b9c447fbfe10b144aa0a3e85e632d3dbeb71caee864e1"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/index.json",
+        "bytes": 4814,
+        "sha256": "52473678c46f3d9a73050055b511c26e051c4686aacfacb6646cac5e2964f2a1",
+        "blob": "c99835f3319641134994d38efc0989d65975850b"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/job.log.gz",
+        "bytes": 13927,
+        "sha256": "e0fa8be1e4513988dbb61ba99acb975ec41c3066581caf51e31a762080f1a2f9",
+        "blob": "bb7b297b2048f79e38463fc4a85e0b0069901d54",
+        "uncompressedBytes": 60676,
+        "uncompressedSha256": "38045222c4637f62ed65de89d0a68d537363ad69510f4b59b0aa93e8916358ca"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/jobs-metadata.json",
+        "bytes": 3368,
+        "sha256": "6a805c3e7c97a76c9f919c013023e5f7fad47ce7ae110059babd565efef62214",
+        "blob": "ca9b1c02e1453c8d309bdd398b9fbcb5846775b0"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/physical-report.json.gz",
+        "bytes": 200656,
+        "sha256": "4d4d9ed1c8a76aa6e60eca938b64f2eeb8b20dab44a51c767b47618aa5297417",
+        "blob": "683eb4299542a2719138433dd224ae9c251527c5",
+        "uncompressedBytes": 5865034,
+        "uncompressedSha256": "9ae726502fe365d0b67f74952297495a5e7234a4772aeccb1cf8bc9aedfc69b9"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/run-metadata.json",
+        "bytes": 13784,
+        "sha256": "e64e902d3ed0ea9531381328c8bbd87226231906056f59415a20a399d0880c8f",
+        "blob": "ce8b0a120c983ea834af9e2c4aa892acbbe22cd4"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/artifact-inventory.json",
+        "bytes": 15441,
+        "sha256": "599cde2eeb4e114b80224a71942393efff3b14a720638b2190ec9e05a12a66b0",
+        "blob": "5a270f25c0961ec6d38e2471c3899e270ed30ecb"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/artifact-metadata.json",
+        "bytes": 759,
+        "sha256": "bd4f33036be5eb375e69967c959f0ee7cb670bff53f4c2a176d51c82ca543677",
+        "blob": "583f3d2929deffb1a2d66b9a568c34a6a60097be"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/index.json",
+        "bytes": 3616,
+        "sha256": "0f94eddd819fc11da3522ded7940fbb9db91ed0020f27c2d583e890537c4c5d5",
+        "blob": "e0444a48ebab0176c6aeb3891beaa310ab2481f5"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/job.log.gz",
+        "bytes": 13604,
+        "sha256": "1dfa2aa1c47c6515f2ed1a12d79d724b532e2b5073c13372ceb617bdce4f9efb",
+        "blob": "2fab2e52b7cbb6b5fbf7f992083c121632468088",
+        "uncompressedBytes": 59276,
+        "uncompressedSha256": "ac2a1748d285a092c574a3f279ddc55ec1430d5006268e8480835cd64dc41256"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/jobs-metadata.json",
+        "bytes": 3189,
+        "sha256": "a6def2fc72e3aedb54924ebd5e7ae8964610ad4964297df22461d83bf9da1def",
+        "blob": "dba9deb7100e45bc7ce25a6f161833e13c738775"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/report.json.gz",
+        "bytes": 219496,
+        "sha256": "12ffa0aa95aa2dff4af95462556053f4a0803f8b6994ce0feee12488761bad52",
+        "blob": "7e31ab233d9c58737dead76db53cb71a6d6469d2",
+        "uncompressedBytes": 6198738,
+        "uncompressedSha256": "e538fd6cf9e725ea9b09bbcf87b63915297ce32c85254f3f76d93022aab55896"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/run-metadata.json",
+        "bytes": 13793,
+        "sha256": "2eca24bc52d6ed659fc952600a918f31033c8027f45be403de36b8c283f04c68",
+        "blob": "4e57577ecded746bff54d2c612130f2a9aa1c9b0"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/index.json",
+        "bytes": 7982,
+        "sha256": "2eda94b9b3fa42419f6510212f615cb3b14471405915ab282a0691330f7c9074",
+        "blob": "992aacdec4b5b4503a37e99ff84c9f7c0e83a375"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/live-report.json.gz",
+        "bytes": 7956,
+        "sha256": "02a3ee07f820363de58ab7cf480bd57dd6b5df8eee61e60eded5609d4b4e110b",
+        "blob": "373e3058e87a4565183f04bd8e6c8634c3fd81a0",
+        "uncompressedBytes": 107003,
+        "uncompressedSha256": "5fd9d0f2d9e0551050243a92faa9e637d94780cf91d91563560961fe2841b549"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/prepublication-report.json.gz",
+        "bytes": 32309,
+        "sha256": "d0f19a8ed08374c7c6927875cc9e74da5f0160f167a2ddfce63d2be8fae6773f",
+        "blob": "423fc9503679deb7d9835a4bcc6b4f352a6252ab",
+        "uncompressedBytes": 1725509,
+        "uncompressedSha256": "294f942716c00987b94f1017266bc0e6a304a3b1ecb9abec1c32892dfe52706b"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/review-alignment/index.json",
+        "bytes": 9789,
+        "sha256": "8af6e0d94564fb1921b5d446e70c234c41ff5128a164b685b2869ac92a66b5f2",
+        "blob": "7ff122bd1b017a8510cff91510b78422d495be26"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/review-alignment/report.json.gz",
+        "bytes": 2645,
+        "sha256": "ebd5a51b9cc534f199c5bf1a4d579fff33c4caf7a47c34c460e1ffbe69c5f196",
+        "blob": "3e19ad679d2351ea498ae0b8b4f81c3abd8de62c",
+        "uncompressedBytes": 11146,
+        "uncompressedSha256": "ad68c414e766143f76c79a3a90fa1b3135148e5ddb5e7b44e71e4d0c8963b929"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/review-live-report.json.gz",
+        "bytes": 2723,
+        "sha256": "de885144e71fa256ec0bfead650e82144ae861a28808312e55412c9bdb41f0fb",
+        "blob": "b3d4992258d1d685a1e5021c365189db2014ed58",
+        "uncompressedBytes": 12466,
+        "uncompressedSha256": "5dd719ede43bc014a33968ab5406781a99610a9d64582f160be43f64f106fc4d"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/browser-environment.json",
+        "bytes": 2289,
+        "sha256": "4cd432cef90b8b6b4eb78f333c7f62e48fee2b7763f1d3e3578f9ad8140d5cbb",
+        "blob": "9d1452ee0e372214e8ae9e91c9a0f8c7d430037a"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/images/published-native-trigger-focus-1440-tile-0.png",
+        "bytes": 588357,
+        "sha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+        "blob": "d9a6a0ce8bc4f7308b7b3592a8e0a84e98df0f65"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/images/published-native-trigger-hover-1440-tile-0.png",
+        "bytes": 275166,
+        "sha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+        "blob": "14c01142b4a3e6b002af3e3ccbe99853e9777a99"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/images/source-native-trigger-focus-1440-tile-0.png",
+        "bytes": 585426,
+        "sha256": "ae6a032a2a70c92b93fd96ad0ec5366ac00d40fc27ec49682a178faf537bfbd1",
+        "blob": "bd9eefd5efd20025c457a14578f177d3b82404d3"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/images/source-native-trigger-hover-1440-tile-0.png",
+        "bytes": 272653,
+        "sha256": "677c95363721fd928b658f9717db8161467a674e9fcba9f0b46c9cb9e3f173a8",
+        "blob": "c8a052aa1bdb3cf7b33626e7899b9aa6ba89dd6e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/index.json",
+        "bytes": 21230,
+        "sha256": "2b3fa8dcb3fefc107232f16d8c37f9f4bb92ce7968c8fe65916ba5922aafafe9",
+        "blob": "c2d9ac990c5dad3145984c430ebba1992d123585"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/job.log.gz",
+        "bytes": 15182,
+        "sha256": "b994a929eff79845ff3d95d0b01a1a11006ca8193aabf4f1e321037746c5977b",
+        "blob": "5a15a5de93684086b108126425827655ad1181d3",
+        "uncompressedBytes": 63934,
+        "uncompressedSha256": "39901ad58e507681d850f5d923647161720b3c65635d03c1428facf3c1d564c8"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/report.json.gz",
+        "bytes": 962444,
+        "sha256": "d06fe25adee055e516fa6f7611eee4a1d7f9cfb41ba9b217974d700564d14975",
+        "blob": "0109ca9abbc00991712c0b5fcbdbb562ee02b836",
+        "uncompressedBytes": 35194385,
+        "uncompressedSha256": "43739d29de39c0ae54198d8b427241400c1d0a5202de80d3f43fbde72b4edff8"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/source-and-capture-comparison.json",
+        "bytes": 4050,
+        "sha256": "0cddc5dfa00d36dbe0b2f16903cb948ae97c9f554f0c3a659b2cda7142464173",
+        "blob": "9733070224b3918779496f8fce6ce8d189b8ad6e"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/state-and-font-comparison.json",
+        "bytes": 59657,
+        "sha256": "f62a3f536fa7724a16899b5351d08734f5f4d0df435494c4198c73cd0d2a9601",
+        "blob": "a504a0c2338b19d17fbebb5116f02d195ac4d7b5"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/browser-environment.json",
+        "bytes": 2289,
+        "sha256": "4692ce7b7340e865c4dab86f532dc9560abd121ae83e4993f15857171f2de3dc",
+        "blob": "484f79a7e6abd434fc638488bfe3cccb59e46f67"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/comparison-with-failed-attempt.json",
+        "bytes": 4909,
+        "sha256": "957d04d546f20adf31e701d70dc7cfeca0ff5871671f2978a4a3ea3972252878",
+        "blob": "490d3f4b4da233e9b9cc9f5eba3ca718ae1c8fa6"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/images/published-native-trigger-focus-1440-tile-0.png",
+        "bytes": 588357,
+        "sha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+        "blob": "d9a6a0ce8bc4f7308b7b3592a8e0a84e98df0f65"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/images/published-native-trigger-hover-1440-tile-0.png",
+        "bytes": 275166,
+        "sha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+        "blob": "14c01142b4a3e6b002af3e3ccbe99853e9777a99"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/images/source-native-trigger-focus-1440-tile-0.png",
+        "bytes": 587145,
+        "sha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+        "blob": "cb0c9146d5046f70596811176d16bb92aa1c9f86"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/images/source-native-trigger-hover-1440-tile-0.png",
+        "bytes": 274364,
+        "sha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+        "blob": "a933c8eef1e1ba7f463e9f1d25fc1307f04ed768"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/index.json",
+        "bytes": 25741,
+        "sha256": "3ba39dc1e264af148fe9c4a334aca7f6d8972418ab2d6a0b9d828af3b4ccaae5",
+        "blob": "62f0bdb4ee57efde3e4e8c937c036fb191c66d04"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/job.log.gz",
+        "bytes": 15076,
+        "sha256": "962b70a7b84105b005139fa652ce31709198b4c02b2f2bbad570602f334330f6",
+        "blob": "22ca07fe22ebf4da723098eab91e80b849213350",
+        "uncompressedBytes": 65809,
+        "uncompressedSha256": "b8ba5f671ad1f65eb8dd8de026cb2fc9682fd352049ac8ca86bbab840dbd2d98"
+      },
+      {
+        "path": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/report.json.gz",
+        "bytes": 962398,
+        "sha256": "87e7c5e29f6b1b3119df04b6d96173cceeb01f271bfc86872719e06fd311a5f6",
+        "blob": "b5a2b616cb54e8d9e8aa9347a4e774e03b326743",
+        "uncompressedBytes": 35173657,
+        "uncompressedSha256": "0cfff5bc827f9eb0363826c8b703e8dc77941b322d08ca2f9fcda45856856b99"
+      }
+    ],
+    "retentionState": "The files listed in retainedFiles are committed beside this index. Their hashes were verified locally and their exact Git blob identities were checked in the final public evidence tree. The private design handoff records the closing public revision and deployment checks.",
+    "actionsArtifactReliance": "Full raw reports, selected unchanged PNGs, the correction patch, historical metadata and lossless historical logs are staged for permanent retention. Full artifact archives retain additional captures and are separately identified by digest and expiry.",
+    "retainedFileCount": 83,
+    "retainedBytes": 9504118
+  },
+  "remainingScope": {
+    "currencyRoutes": "INR, USD, CAD and GBP direct pricing export documents remain a separate unapproved repair.",
+    "selectedBookQuery": "Selected book query first-response mismatch remains a separate unapproved repair.",
+    "p408": "Wider page verification and applicable checks remain open.",
+    "otherBrowserEngines": "Not certified by this checkpoint.",
+    "physicalDevices": "Not tested by this checkpoint.",
+    "nativeZoom": "Not tested here. The prior P4 06 practice-specific native zoom evidence remains valid within its recorded scope.",
+    "screenReaderAcceptance": "Deferred by founder decision to the final whole website review of every completed page and relevant state. P4 05 speech acceptance remains deferred, not passed or waived.",
+    "homepageRootReplacement": "Not authorised or performed.",
+    "privateProduction": "Not changed.",
+    "finalRenderingAcceptance": "Separate founder acceptance remains required after applicable remaining work.",
+    "productionRelease": "Separate explicit decision required."
+  },
+  "widerAutomaticChecks": {
+    "publicationHead": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "alignmentHead": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+    "publicationRuns": [
+      {
+        "id": 39526082577,
+        "name": "Validate editable StoriLeaf public website source",
+        "path": ".github/workflows/validate-public-source.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082577",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:15:11Z"
+      },
+      {
+        "id": 39526082473,
+        "name": "Verify editorial link sizing",
+        "path": ".github/workflows/review-editorial-links.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082473",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:14:48Z"
+      },
+      {
+        "id": 39526082528,
+        "name": "Verify the separate live React review",
+        "path": ".github/workflows/verify-react-review.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082528",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:14:25Z"
+      },
+      {
+        "id": 39526082435,
+        "name": "Verify Package 2 foundations",
+        "path": ".github/workflows/review-package2.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082435",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:15:01Z"
+      },
+      {
+        "id": 39526082567,
+        "name": "Verify final footer typography",
+        "path": ".github/workflows/verify-footer-type.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082567",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:15:30Z"
+      },
+      {
+        "id": 39526082447,
+        "name": "Verify the authorised default pricing footer correction",
+        "path": ".github/workflows/verify-pricing-footer.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082447",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:15:32Z"
+      },
+      {
+        "id": 39526082523,
+        "name": "Verify authorised P4 text reflow",
+        "path": ".github/workflows/verify-p4-reflow.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082523",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:16:04Z"
+      },
+      {
+        "id": 39526082495,
+        "name": "Verify React How it works parity",
+        "path": ".github/workflows/verify-process-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "failure",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082495",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:16:36Z"
+      },
+      {
+        "id": 39526082594,
+        "name": "Verify React writing showcase and practice parity",
+        "path": ".github/workflows/verify-writing-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "failure",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082594",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:16:25Z"
+      },
+      {
+        "id": 39526082452,
+        "name": "Verify React homepage Group 1 parity",
+        "path": ".github/workflows/verify-group1-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082452",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:17:56Z"
+      },
+      {
+        "id": 39526082609,
+        "name": "Verify React media parity",
+        "path": ".github/workflows/verify-media-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "failure",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082609",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:17:56Z"
+      },
+      {
+        "id": 39526082576,
+        "name": "Verify React hero and motion parity",
+        "path": ".github/workflows/verify-hero-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082576",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:18:46Z"
+      },
+      {
+        "id": 39526082573,
+        "name": "Verify complete React homepage assembly",
+        "path": ".github/workflows/verify-assembly-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082573",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:19:37Z"
+      },
+      {
+        "id": 39526082727,
+        "name": "Verify React homepage Group 2 parity",
+        "path": ".github/workflows/verify-group2-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082727",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:19:36Z"
+      },
+      {
+        "id": 39526082439,
+        "name": "Verify React shared header and footer parity",
+        "path": ".github/workflows/verify-shared-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082439",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:20:30Z"
+      },
+      {
+        "id": 39526082430,
+        "name": "Verify React six-book discovery parity",
+        "path": ".github/workflows/verify-discovery-parity.yml",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082430",
+        "createdAt": "2026-10-21T01:13:48Z",
+        "updatedAt": "2026-10-21T01:24:23Z"
+      },
+      {
+        "id": 39526081873,
+        "name": "pages build and deployment",
+        "path": "dynamic/pages/pages-build-deployment",
+        "head": "30b2b6479387e0d00bdc7163242743d277d86516",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526081873",
+        "createdAt": "2026-10-21T01:13:47Z",
+        "updatedAt": "2026-10-21T01:14:16Z"
+      }
+    ],
+    "alignmentRuns": [
+      {
+        "id": 39526983146,
+        "name": "pages build and deployment",
+        "path": "dynamic/pages/pages-build-deployment",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983146",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:23:34Z"
+      },
+      {
+        "id": 39526983741,
+        "name": "Verify the separate live React review",
+        "path": ".github/workflows/verify-react-review.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983741",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:23:28Z"
+      },
+      {
+        "id": 39526983658,
+        "name": "Verify Package 2 foundations",
+        "path": ".github/workflows/review-package2.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983658",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:24:07Z"
+      },
+      {
+        "id": 39526983653,
+        "name": "Validate editable StoriLeaf public website source",
+        "path": ".github/workflows/validate-public-source.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983653",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:24:06Z"
+      },
+      {
+        "id": 39526983680,
+        "name": "Verify React writing showcase and practice parity",
+        "path": ".github/workflows/verify-writing-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983680",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:25:17Z"
+      },
+      {
+        "id": 39526983648,
+        "name": "Verify final footer typography",
+        "path": ".github/workflows/verify-footer-type.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983648",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:24:28Z"
+      },
+      {
+        "id": 39526983694,
+        "name": "Verify authorised P4 text reflow",
+        "path": ".github/workflows/verify-p4-reflow.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983694",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:25:29Z"
+      },
+      {
+        "id": 39526983706,
+        "name": "Verify React How it works parity",
+        "path": ".github/workflows/verify-process-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983706",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:26:05Z"
+      },
+      {
+        "id": 39526983649,
+        "name": "Verify React homepage Group 1 parity",
+        "path": ".github/workflows/verify-group1-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983649",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:27:06Z"
+      },
+      {
+        "id": 39526983666,
+        "name": "Verify React hero and motion parity",
+        "path": ".github/workflows/verify-hero-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983666",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:27:54Z"
+      },
+      {
+        "id": 39526983656,
+        "name": "Verify React media parity",
+        "path": ".github/workflows/verify-media-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983656",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:28:17Z"
+      },
+      {
+        "id": 39526983629,
+        "name": "Verify complete React homepage assembly",
+        "path": ".github/workflows/verify-assembly-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983629",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:28:34Z"
+      },
+      {
+        "id": 39526983730,
+        "name": "Verify React homepage Group 2 parity",
+        "path": ".github/workflows/verify-group2-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983730",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:28:24Z"
+      },
+      {
+        "id": 39526983693,
+        "name": "Verify React shared header and footer parity",
+        "path": ".github/workflows/verify-shared-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983693",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:30:17Z"
+      },
+      {
+        "id": 39526983724,
+        "name": "Verify React six-book discovery parity",
+        "path": ".github/workflows/verify-discovery-parity.yml",
+        "head": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+        "attempt": 1,
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983724",
+        "createdAt": "2026-10-21T01:22:58Z",
+        "updatedAt": "2026-10-21T01:32:54Z"
+      }
+    ],
+    "legacyReferences": {
+      "failureReports": [
+        "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/media/index.json",
+        "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/failure-30b2/process/index.json"
+      ],
+      "finding": "Only the pricing protected-file assertions still expected the old footer. Gallery/lightbox, Physical book and How it works rendering and quality observations otherwise passed. Both failed workflow conclusions remain retained.",
+      "correction": "Only the exact pricing path now compares with a9e6e6c. Every other reference remains e9550069; strict byte checks and all rendering assertions/thresholds are preserved.",
+      "finalReports": [
+        "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/media/index.json",
+        "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/final-6d8594/process/index.json"
+      ],
+      "index": "qa/pricing-hydration/2026-10-20/default-footer/legacy-diagnostics/index.json",
+      "actualBrowsers": {
+        "failedMediaAndProcess": "155.0.8059.84",
+        "finalMedia": "155.0.8059.84",
+        "finalProcess": "155.0.8059.39"
+      }
+    },
+    "writingDiagnostic": {
+      "failedRun": 39526082594,
+      "failedAttempt": 1,
+      "failedEvidence": "qa/pricing-hydration/2026-10-20/default-footer/writing-diagnostic/index.json",
+      "replayRun": 39526983680,
+      "replayAttempt": 1,
+      "replayEvidence": "qa/pricing-hydration/2026-10-20/default-footer/writing-replay/index.json",
+      "replayResult": "success",
+      "reasonForSingleReplay": "The failure was investigated before publishing unrelated test-only pricing references. That commit naturally triggered one unchanged Writing comparison; no manual rerun was issued. Exact Writing runtime, harness, workflow, browser and threshold identities were verified.",
+      "observation": "The two 1440px hover/focus device-region image failures had identical measured state and source identities. The replay passes all 60 comparisons and the two formerly failing comparisons contain zero changed pixels.",
+      "uncertainty": "No cause is established and no permanent screenshot stability or shared runtime fix is claimed. The failed pair, raw report, exact browser provenance and both comparison analyses remain durable."
+    },
+    "noCIConsolidation": true,
+    "reuse": "Dedicated pricing candidate/live checks from30b2 are reused after6d8594 because its only differences are the two pricing-specific verification references and exact live-review pins. The pricing document, compiled assets, homepage, fixed React review and pricing harnesses are byte unchanged. Native P4 06 zoom and final screen reader acceptance were not rerun.",
+    "finalSummary": {
+      "verificationWorkflows": 14,
+      "pagesDeployments": 1,
+      "allFinalTriggeredWorkflowsPassed": true,
+      "attempt": 1,
+      "sourceTestCount": 91,
+      "publicationFailuresRetained": 3,
+      "dedicatedPricingAndEditorialNotRetriggered": "Reused at30b2 with identical relevant source, runtime and harness identities."
+    }
+  },
+  "closure": {
+    "publicEvidenceRevision": "The Git commit containing this record and its retainedFiles. The exact closing public SHA is recorded in the private design handoff after publishing and checking this evidence commit.",
+    "privateHandoff": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/REPOSITORY_HANDOFF.md",
+    "privateStatus": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/STATUS.md",
+    "publicOwners": [
+      "REPOSITORY_HANDOFF.md",
+      "docs/PRICING_HYDRATION_REVIEW.md",
+      "docs/PACKAGE_4_QUALITY_AUDIT.md",
+      "docs/WORKFLOW.md",
+      "docs/COMPONENT_INVENTORY.md"
+    ],
+    "runtimePublicationAlreadyVerified": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "verificationAlignmentPagesRun": 39526983146,
+    "verificationAlignmentPagesResult": "success",
+    "finalPublicCommitAndDeploymentRecordOwner": "The private design handoff is updated after final Pages completion and served-byte verification, avoiding a self-referential public commit or repeated browser reruns for documentation-only edits.",
+    "scopeDisposition": "Default saved footer implemented, browser verified and published. Package4, the two other pricing defects, wider P408, final screen reader acceptance and production release remain separate.",
+    "finalServedByteRecord": "https://github.com/Storileaf/storiYoceFj6IRAleaf/blob/design/storileaf-website-ux/website-ux/docs/qa/2026-10-20/pricing-footer-final-publication.json"
+  }
+}

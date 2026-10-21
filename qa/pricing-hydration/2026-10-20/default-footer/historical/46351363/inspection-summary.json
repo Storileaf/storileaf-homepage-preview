@@ -1,0 +1,32 @@
+{
+  "runId": 39524530512,
+  "head": "46351363c9eb0f7c0a7f8cba778057d8b2a4897d",
+  "conclusion": "cancelled",
+  "artifactId": 12313631987,
+  "artifactSha256": "6762bfa5c0f915abe1d6a0b15c37628bb0581d6806dcb92635d06444aaeed796",
+  "rawReportPresent": false,
+  "logObservation": "The compare step ended with The operation was canceled at 2026-10-21T01:18:47.7246850Z. It had begun at 00:58:39.5538304Z, approximately the configured twenty minute job limit. The API says cancelled. No manual cancellation was performed by this agent.",
+  "limits": "Incomplete historical attempt. Its full page screenshots were taken after the footer screenshot had scrolled the page and are excluded from final full page evidence. No completed report exists. Subsequent bounded diagnostic run 39525455006 established a saved document rendering-frame wait stall, repaired in the verifier without changing page code, stylesheet, thresholds or assertions.",
+  "screenshots": [
+    {
+      "file": "candidate-footer-320.png",
+      "bytes": 38236,
+      "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+    },
+    {
+      "file": "candidate-page-320.png",
+      "bytes": 867068,
+      "sha256": "0e1737e5c208b30590c7aa1fa40f5cdd371f467d78c288171b592c229a0a8d5c"
+    },
+    {
+      "file": "original-footer-320.png",
+      "bytes": 38236,
+      "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+    },
+    {
+      "file": "original-page-320.png",
+      "bytes": 867068,
+      "sha256": "0e1737e5c208b30590c7aa1fa40f5cdd371f467d78c288171b592c229a0a8d5c"
+    }
+  ]
+}

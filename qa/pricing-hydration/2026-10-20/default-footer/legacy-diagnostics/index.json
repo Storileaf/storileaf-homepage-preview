@@ -1,0 +1,196 @@
+{
+  "scope": "Compact lossless evidence for the pricing-only reference alignment in the retained How it works and Physical book parity verifiers. Original failed runs and final successful runs are retained separately.",
+  "approvedPricingBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+  "pricingSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+  "unchangedHomepageBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+  "failureCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+  "finalCommit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+  "candidateVerifiers": [
+    {
+      "path": "frontend/scripts/verify-craft-parity.mjs",
+      "expectedOriginalBlob": "76fc12b53e49a983612e50c7425a9a2b0be2a719",
+      "candidateBlob": "0e62e81ef4546650a2808252d3d58b811407403d",
+      "originalSha256": "6e73a8aa6248fa6b58e73badb177c0ad504f2e773c5d33419dfb995cdc9ae712",
+      "candidateSha256": "e9ff0fcf6a036157c85fc760ae581afe7a770c88c1812566aa34dadd879c64d3",
+      "originalBytes": 19436,
+      "candidateBytes": 19645,
+      "addedPricingReference": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+      "unchangedHomepageReference": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b"
+    },
+    {
+      "path": "frontend/scripts/verify-process-parity.mjs",
+      "expectedOriginalBlob": "3da12c74465038ef822e3a3a9141368edb871e23",
+      "candidateBlob": "93daa5c14e2d79bb82273e205f25b6562762db38",
+      "originalSha256": "6f1e3820a0b8d95b00e724e95a5d5ba8857407a0823962808c2f0af99dc32515",
+      "candidateSha256": "5cc1c78adfce75dd3300240293c10bf008a02a40eeb472931a25c1539a8c71e4",
+      "originalBytes": 23321,
+      "candidateBytes": 23533,
+      "addedPricingReference": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+      "unchangedHomepageReference": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b"
+    }
+  ],
+  "alignment": "Each verifier selects the approved pricing commit only for the exact path pricing/index.html. Its original baseline remains in use for every other path. Strict byte comparisons and rendering assertions remain intact.",
+  "verification": {
+    "allRetainedFileHashesChecked": true,
+    "gzipDecompressionReproducesExactOriginalBytes": true,
+    "finalGitHubScriptBlobsMatchCandidates": true,
+    "geometryToleranceCssPixels": 0.15,
+    "pixelChannelThreshold": 24,
+    "pixelRatioThreshold": 0.01,
+    "thresholdsIdenticalAcrossFailureAndFinal": true,
+    "recordedApplicationSourceHashesUnchanged": true,
+    "recordedProtectedHashesUnchanged": true
+  },
+  "browserEnvironment": "Failed Media and Process runs used Chromium 155.0.8059.84. Final Media used 155.0.8059.84; final Process used 155.0.8059.39. These browser versions are recorded separately and are not claimed identical. Full job logs retain runner details.",
+  "entries": [
+    {
+      "phase": "failure-30b2",
+      "suite": "media",
+      "index": "failure-30b2/media/index.json",
+      "indexSha256": "b66b4e353a054ccf062541acec2149829cfee6dead9346528ec6906d10b223d6",
+      "runId": 39526082609,
+      "runAttempt": 1,
+      "runConclusion": "failure",
+      "jobId": 118980927697,
+      "sourceCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+      "artifact": {
+        "id": 12313497484,
+        "name": "homepage-media-parity",
+        "bytes": 106991460,
+        "sha256": "feb15e1b2e3c90f26b7d6338404178efb5a890e2d646c3eea8a0b27fa9928042",
+        "downloadHashMatches": true,
+        "fileCount": 345
+      },
+      "reports": [
+        {
+          "path": "gallery-report.json.gz",
+          "rawSha256": "9214c1b597f2d9100727ad5722f8375591ab588dda8deba208c7b8940a410056",
+          "problems": [],
+          "qualityFindings": [],
+          "browser": "155.0.8059.84",
+          "widthCount": 10,
+          "stateCount": 9,
+          "captureCount": 172
+        },
+        {
+          "path": "physical-report.json.gz",
+          "rawSha256": "5392a1bfbab54c7bbb99f191f8eb79b1c9fef3fcfd64bf450349065657475f31",
+          "problems": [
+            "Protected file differs pricing/index.html"
+          ],
+          "qualityFindings": [],
+          "browser": "155.0.8059.84",
+          "widthCount": 10,
+          "stateCount": 9,
+          "captureCount": 84
+        }
+      ]
+    },
+    {
+      "phase": "failure-30b2",
+      "suite": "process",
+      "index": "failure-30b2/process/index.json",
+      "indexSha256": "a80d832d4e047b96d8fa988aeaab5cd956e34b3bfc9cfada251c5b402699b211",
+      "runId": 39526082495,
+      "runAttempt": 1,
+      "runConclusion": "failure",
+      "jobId": 118980927647,
+      "sourceCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+      "artifact": {
+        "id": 12312977341,
+        "name": "homepage-process-parity",
+        "bytes": 38381577,
+        "sha256": "b56945aed83587a590a99b836fb5132c10492eb68839067d54e43ba21802dfaf",
+        "downloadHashMatches": true,
+        "fileCount": 102
+      },
+      "reports": [
+        {
+          "path": "report.json.gz",
+          "rawSha256": "5150ab1b09972ce11f034dc4b416e3bac7bf921e92399d2b80f3723039b66a86",
+          "problems": [
+            "Protected baseline changed pricing/index.html"
+          ],
+          "qualityFindings": [],
+          "browser": "155.0.8059.84",
+          "widthCount": 10,
+          "stateCount": 24,
+          "captureCount": 104
+        }
+      ]
+    },
+    {
+      "phase": "final-6d8594",
+      "suite": "media",
+      "index": "final-6d8594/media/index.json",
+      "indexSha256": "52473678c46f3d9a73050055b511c26e051c4686aacfacb6646cac5e2964f2a1",
+      "runId": 39526983656,
+      "runAttempt": 1,
+      "runConclusion": "success",
+      "jobId": 118983841836,
+      "sourceCommit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+      "artifact": {
+        "id": 12313239138,
+        "name": "homepage-media-parity",
+        "bytes": 106998006,
+        "sha256": "721608ab9395d3202f5dcd637c431491ed0508580fd180490afb8262d1b4cb32",
+        "downloadHashMatches": true,
+        "fileCount": 345
+      },
+      "reports": [
+        {
+          "path": "gallery-report.json.gz",
+          "rawSha256": "e462d395cab3938a105b9c447fbfe10b144aa0a3e85e632d3dbeb71caee864e1",
+          "problems": [],
+          "qualityFindings": [],
+          "browser": "155.0.8059.84",
+          "widthCount": 10,
+          "stateCount": 9,
+          "captureCount": 172
+        },
+        {
+          "path": "physical-report.json.gz",
+          "rawSha256": "9ae726502fe365d0b67f74952297495a5e7234a4772aeccb1cf8bc9aedfc69b9",
+          "problems": [],
+          "qualityFindings": [],
+          "browser": "155.0.8059.84",
+          "widthCount": 10,
+          "stateCount": 9,
+          "captureCount": 84
+        }
+      ]
+    },
+    {
+      "phase": "final-6d8594",
+      "suite": "process",
+      "index": "final-6d8594/process/index.json",
+      "indexSha256": "0f94eddd819fc11da3522ded7940fbb9db91ed0020f27c2d583e890537c4c5d5",
+      "runId": 39526983706,
+      "runAttempt": 1,
+      "runConclusion": "success",
+      "jobId": 118983842362,
+      "sourceCommit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+      "artifact": {
+        "id": 12313693038,
+        "name": "homepage-process-parity",
+        "bytes": 38381502,
+        "sha256": "9407959f5d639b4348b1c81ae6a432d1db2be1059e06736807c46c354af3b752",
+        "downloadHashMatches": true,
+        "fileCount": 102
+      },
+      "reports": [
+        {
+          "path": "report.json.gz",
+          "rawSha256": "e538fd6cf9e725ea9b09bbcf87b63915297ce32c85254f3f76d93022aab55896",
+          "problems": [],
+          "qualityFindings": [],
+          "browser": "155.0.8059.39",
+          "widthCount": 10,
+          "stateCount": 24,
+          "captureCount": 104
+        }
+      ]
+    }
+  ],
+  "limits": "The two original workflow failures remain recorded as failures. Their only reported defects were obsolete pricing baseline references. No further runtime repair is inferred. Evidence is Chromium automation with emulated touch, not physical-device or screen-reader acceptance."
+}

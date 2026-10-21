@@ -1,0 +1,251 @@
+{
+  "schemaVersion": 1,
+  "checkpoint": "Final separate live React review after exact approved guard and two legacy verifier file pins",
+  "status": "Passed for the recorded live publication scope.",
+  "run": {
+    "id": 39526983741,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983741",
+    "name": "Verify the separate live React review",
+    "commit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+    "attempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "createdAt": "2026-10-21T01:22:58Z",
+    "updatedAt": "2026-10-21T01:23:28Z"
+  },
+  "jobs": [
+    {
+      "id": 118983842139,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "run_id": 39526983741,
+      "logs_url": null,
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3
+        },
+        {
+          "name": "Keep the original homepage and the verified source unchanged",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4
+        },
+        {
+          "name": "Verify actual served bytes and browser behaviour",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5
+        },
+        {
+          "name": "Retain live publication evidence",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13
+        }
+      ]
+    }
+  ],
+  "artifact": {
+    "id": 12313792545,
+    "name": "react-review-live-verification",
+    "size_in_bytes": 2542468,
+    "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12313792545",
+    "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12313792545/zip",
+    "expired": false,
+    "created_at": "2026-10-21T01:23:25Z",
+    "expires_at": "2027-01-19T01:22:59Z",
+    "updated_at": "2026-10-21T01:23:25Z",
+    "digest": "sha256:1d4776cb2aa7f9e7c33221dabf7a319dba020a5cd9239762eb2cc71ee4100cdc",
+    "workflow_run": {
+      "id": 39526983741,
+      "repository_id": 1422795677,
+      "head_repository_id": 1422795677,
+      "head_branch": "main",
+      "head_sha": "6d8594dd637df666564c4475a8cbe5a2d995305b"
+    },
+    "advertisedArchiveDigestVerified": true
+  },
+  "report": {
+    "path": "report.json.gz",
+    "createdAt": "2026-10-21T01:23:08.804Z",
+    "finishedAt": "2026-10-21T01:23:24.558Z",
+    "rawBytes": 11146,
+    "rawSha256": "ad68c414e766143f76c79a3a90fa1b3135148e5ddb5e7b44e71e4d0c8963b929",
+    "compressedBytes": 2645,
+    "compressedSha256": "ebd5a51b9cc534f199c5bf1a4d579fff33c4caf7a47c34c460e1ffbe69c5f196",
+    "encoding": "Lossless deterministic gzip of the original artifact report.json"
+  },
+  "environment": {
+    "browser": "155.0.8059.39",
+    "node": "v22.23.3",
+    "playwright": "1.56.1",
+    "os": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "image": "20261012.334.1",
+    "dpr": 1
+  },
+  "workflow": {
+    "path": ".github/workflows/verify-react-review.yml",
+    "blob": "df01d7c8cd9e9658730df5db2691390d12bfdfea",
+    "commit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+    "exactFilePins": [
+      {
+        "path": "frontend/scripts/guard-published.mjs",
+        "blob": "f2e0c29e4ca96238df50481339ba5654ca4f3524"
+      },
+      {
+        "path": "frontend/scripts/verify-process-parity.mjs",
+        "blob": "93daa5c14e2d79bb82273e205f25b6562762db38"
+      },
+      {
+        "path": "frontend/scripts/verify-craft-parity.mjs",
+        "blob": "0e62e81ef4546650a2808252d3d58b811407403d"
+      }
+    ]
+  },
+  "sourceIdentity": {
+    "sourceCommit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+    "provenanceBlob": "af56121e9010cac1143f1dc1c0a4fb69431f7a1c",
+    "assertion": "The successful source-preservation workflow step compares frontend to 9bf8779 excluding exactly the three pinned files, then checks each excluded file against its immutable blob. The original build provenance remains unchanged.",
+    "evidence": "Workflow source at this immutable commit and successful job step, plus actual 16-file served-byte comparison."
+  },
+  "independentReportChecks": {
+    "passed": true,
+    "reviewResponseCount": 16,
+    "allReviewResponsesHttp200": true,
+    "allReviewHashesMatchOriginalBuildProvenance": true,
+    "protectedResponseCount": 6,
+    "allProtectedResponsesHttp200": true,
+    "onlyPricingUsesApprovedNewBaseline": true,
+    "allProtectedHashesMatchBaselines": true,
+    "allProtectedResponsesEqualPriorPublicationVerification": true,
+    "widths": [
+      320,
+      390,
+      820,
+      1440
+    ],
+    "fontsLoadedAtEveryWidth": true,
+    "uniqueLandmarksAtEveryWidth": true,
+    "noOverflowAtEveryWidth": true,
+    "noJavaScriptErrorsAtEveryWidth": true,
+    "privacyAndPracticeChecksPassedAtEveryWidth": true
+  },
+  "protectedBaselines": {
+    "original": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+    "pricing": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164"
+  },
+  "protectedResponses": [
+    {
+      "file": "index.html",
+      "comparisonBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "status": 200,
+      "sha256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "baselineSha256": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "matches": true
+    },
+    {
+      "file": "assets/index-DhPZyX4z.css",
+      "comparisonBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "status": 200,
+      "sha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+      "baselineSha256": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+      "matches": true
+    },
+    {
+      "file": "assets/index-DO3Vh6An.js",
+      "comparisonBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "status": 200,
+      "sha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "baselineSha256": "07748aee103f4f4bc55a9b0479941b858c44ff62bfa835eeebad8f963f5b36a7",
+      "matches": true
+    },
+    {
+      "file": "assets/routes-DrwDv2x2.js",
+      "comparisonBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "status": 200,
+      "sha256": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+      "baselineSha256": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+      "matches": true
+    },
+    {
+      "file": "assets/content-sections-CfrmOVRI.js",
+      "comparisonBaseline": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b",
+      "status": 200,
+      "sha256": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+      "baselineSha256": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e",
+      "matches": true
+    },
+    {
+      "file": "pricing/index.html",
+      "comparisonBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+      "status": 200,
+      "sha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+      "baselineSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+      "matches": true
+    }
+  ],
+  "browserScope": {
+    "viewportHeight": 1000,
+    "dpr": 1,
+    "reducedMotion": true,
+    "interaction": "Desktop mouse and keyboard emulation",
+    "practice": "Keyboard opening, privacy references, typing, word count, Escape, focus return, empty reopen and Close passed",
+    "widths": [
+      320,
+      390,
+      820,
+      1440
+    ]
+  },
+  "readiness": [
+    {
+      "attempt": 0,
+      "status": 200,
+      "sha256": "b22028eea157f7e810a89285a275398c85be0b96cc545cc6f655c3b835a5a641",
+      "reviewReady": true,
+      "pricing": {
+        "status": 200,
+        "sha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+        "expectedSha256": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+        "ready": true
+      },
+      "ready": true
+    }
+  ],
+  "limits": "Focused live publication smoke at 320, 390, 820 and 1440 CSS pixels, reduced motion and desktop mouse/keyboard emulation. Prior full parity is reused only because all 16 review files match the tested artifact. Pricing HTML uses its separately authorised P4 07 export baseline; the other original responses retain the historical baseline. No native zoom, physical device, screen-reader speech or other-engine certification.",
+  "collection": "Read-only collection and verification of the completed workflow artifact. No new browser captures, manual reruns or GitHub writes. The raw report is retained losslessly; the artifact archive digest was independently checked."
+}

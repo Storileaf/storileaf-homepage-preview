@@ -1,0 +1,75 @@
+{
+  "sourceCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+  "runId": 39526082495,
+  "runAttempt": 1,
+  "runConclusion": "failure",
+  "jobId": 118980927647,
+  "jobConclusion": "failure",
+  "artifact": {
+    "id": 12312977341,
+    "name": "homepage-process-parity",
+    "bytes": 38381577,
+    "sha256": "b56945aed83587a590a99b836fb5132c10492eb68839067d54e43ba21802dfaf",
+    "downloadHashMatches": true,
+    "fileCount": 102
+  },
+  "reports": [
+    {
+      "artifactPath": "report.json",
+      "retainedPath": "report.json.gz",
+      "rawBytes": 6198736,
+      "rawSha256": "5150ab1b09972ce11f034dc4b416e3bac7bf921e92399d2b80f3723039b66a86",
+      "retainedBytes": 219478,
+      "retainedSha256": "7971ac8ef7b6258be42ffb0a1eed5b278422fd69814457b26b1da20b7f8ef79c",
+      "result": null,
+      "problems": [
+        "Protected baseline changed pricing/index.html"
+      ],
+      "qualityFindings": [],
+      "widthCount": 10,
+      "stateCount": 24,
+      "captureCount": 104,
+      "browser": "155.0.8059.84",
+      "protectedPricingHash": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89"
+    }
+  ],
+  "failureConclusion": "The only reported failure is the obsolete pricing byte-reference assertion. All rendering and quality checks represented by these reports recorded no additional problems. Both reports measured the exact authorised candidate pricing SHA256.",
+  "limitations": "Chromium automation, not physical device or screen reader acceptance. This collection does not declare the failed workflow passed.",
+  "scope": "Lossless compact retention of the original failed run. No rerun or result replacement.",
+  "files": [
+    {
+      "path": "report.json.gz",
+      "bytes": 219478,
+      "sha256": "7971ac8ef7b6258be42ffb0a1eed5b278422fd69814457b26b1da20b7f8ef79c",
+      "rawBytes": 6198736,
+      "rawSha256": "5150ab1b09972ce11f034dc4b416e3bac7bf921e92399d2b80f3723039b66a86"
+    },
+    {
+      "path": "run-metadata.json",
+      "bytes": 14360,
+      "sha256": "ff1544bce9f7ce3ac77a64bbb7fbf7d9da76ff7ecdc9f0285faf8ae0edff12c6"
+    },
+    {
+      "path": "jobs-metadata.json",
+      "bytes": 3189,
+      "sha256": "c1b786d71f4d2e37fa2c0efdb1e3b3cd438d9a8bcfe2444c1d69e8c7c20f6314"
+    },
+    {
+      "path": "artifact-metadata.json",
+      "bytes": 759,
+      "sha256": "b4eb2da306ffb0dc948031fc65c87baa609609602b83d52ea473afa09ca18005"
+    },
+    {
+      "path": "artifact-inventory.json",
+      "bytes": 15441,
+      "sha256": "d578556a2e375a3457edb5fe6720040382e12d825795305988ad6b85abc758d0"
+    },
+    {
+      "path": "job.log.gz",
+      "bytes": 13265,
+      "sha256": "f62260d1cf4f68aba38ee6cdcc1cbaa562a1cec074a4c9f97756cc27364dd8ad",
+      "rawBytes": 57144,
+      "rawSha256": "73f37a9a5e58df6723014cc3957049a7c58fe8aa4c0b40bbdc60b867b1348474"
+    }
+  ]
+}

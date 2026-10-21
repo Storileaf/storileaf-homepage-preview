@@ -20,7 +20,7 @@ The [frontend workspace](frontend/) uses Vite, React and TypeScript for staged h
 
 Packages 1 and 2 remain complete in source and the published homepage. Current section milestones, remaining work and detailed migration reviews are maintained in the component inventory and handoff linked above. Passing comparisons do not supply founder rendered acceptance. This README does not maintain a second list of group completion states.
 
-The complete React homepage remains unfinished. The output remains under frontend/dist and is not published automatically. A complete publishing switch requires full visual and functional parity and explicit founder approval.
+The complete React homepage is assembled and verified for its recorded scopes. Source output remains under frontend/dist. The separately authorised react-review address contains a fixed verified snapshot and does not update automatically. Root replacement still requires complete applicable verification, founder rendered acceptance and explicit approval.
 
 For local development, use Node 22 and the existing commands.
 
@@ -34,7 +34,7 @@ For local development, use Node 22 and the existing commands.
 
 The [homepage QA workflow](.github/workflows/verify-homepage-ui.yml) checks the published static UI. Source and migration workflows retain their own scoped comparisons. Automated Chromium checks and emulated touch are not native zoom, other browser, physical device or accessibility certification.
 
-The [pricing investigation](docs/PRICING_HYDRATION_REVIEW.md) records three unresolved export mismatches. Existing enlargement findings remain in their owning reviews. The protected pricing preview is unchanged. The [gallery guidance](gallery/README.md) records temporary image slots and replacement photography work.
+The [pricing investigation](docs/PRICING_HYDRATION_REVIEW.md) records the verified and published default saved footer correction. Currency route documents and selected book query snapshots remain unresolved and require separate repair approval. Existing enlargement findings remain in their owning reviews. The [gallery guidance](gallery/README.md) records temporary image slots and replacement photography work.
 
 Leaner documentation preserves full detail with one maintained owner per subject. The complete preceding README remains at [its immutable revision](https://github.com/Storileaf/storileaf-homepage-preview/blob/46cd1e7ef9aadb1b07fa68b4f137a3d24dffc403/README.md), and the [Group 5 closure README](https://github.com/Storileaf/storileaf-homepage-preview/blob/4c8fa3b6c25f29ae0e3f18bf5d7fbb8d03501cec/README.md) preserves its former milestone summary. Historical test records identify their tested source; the Pages run attached to each commit is the authority for that commit's deployment outcome. A successful documentation deployment does not publish the isolated React build.
 

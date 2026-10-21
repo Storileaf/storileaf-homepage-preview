@@ -1,0 +1,156 @@
+{
+  "sourceHashChanges": {},
+  "harnessHashChanges": {},
+  "protectedHashChanges": {},
+  "thresholdsUnchanged": true,
+  "browserChanges": {},
+  "runtimeChanges": {},
+  "runnerChanges": {
+    "kernel": {
+      "previous": "6.17.0-1022-azure",
+      "current": "7.0.0-1017-azure"
+    },
+    "imageVersion": {
+      "previous": "20261012.334.1",
+      "current": "20261018.339.1"
+    },
+    "name": {
+      "previous": "GitHub Actions 1000003239",
+      "current": "GitHub Actions 1000003303"
+    }
+  },
+  "workflowIdentical": true,
+  "previousProblems": [],
+  "imageComparisons": [
+    {
+      "state": "hover",
+      "kind": "published",
+      "file": "published-native-trigger-hover-1440-tile-0.png",
+      "oldSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "newSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "changed": 0,
+      "ratio": 0.0,
+      "bbox": null
+    },
+    {
+      "state": "hover",
+      "kind": "source",
+      "file": "source-native-trigger-hover-1440-tile-0.png",
+      "oldSha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+      "newSha256": "677c95363721fd928b658f9717db8161467a674e9fcba9f0b46c9cb9e3f173a8",
+      "changed": 25296,
+      "ratio": 0.014638888888888889,
+      "bbox": [
+        194,
+        419,
+        1233,
+        886
+      ]
+    },
+    {
+      "state": "focus",
+      "kind": "published",
+      "file": "published-native-trigger-focus-1440-tile-0.png",
+      "oldSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "newSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "changed": 0,
+      "ratio": 0.0,
+      "bbox": null
+    },
+    {
+      "state": "focus",
+      "kind": "source",
+      "file": "source-native-trigger-focus-1440-tile-0.png",
+      "oldSha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+      "newSha256": "ae6a032a2a70c92b93fd96ad0ec5366ac00d40fc27ec49682a178faf537bfbd1",
+      "changed": 25295,
+      "ratio": 0.014638310185185185,
+      "bbox": [
+        194,
+        116,
+        1233,
+        583
+      ]
+    }
+  ],
+  "previousFailedStateObservations": [
+    {
+      "label": "native-trigger-hover-1440",
+      "maximumGeometry": 0.015625,
+      "differences": [],
+      "origins": {
+        "published": [
+          0,
+          4765.21875
+        ],
+        "source": [
+          0,
+          4765.21875
+        ]
+      },
+      "rendered": [
+        {
+          "offset": 0,
+          "files": [
+            "published-native-trigger-hover-1440-tile-0.png",
+            "source-native-trigger-hover-1440-tile-0.png"
+          ],
+          "pixels": {
+            "ratio": 0,
+            "changed": 0,
+            "total": 1728000,
+            "size": [
+              1440,
+              1200
+            ],
+            "unaffectedChanged": 0,
+            "unaffectedTotal": 1728000,
+            "unaffectedRatio": 0,
+            "authorisedChanged": 0,
+            "comparisonScope": "full image",
+            "headingReflow": null
+          }
+        }
+      ]
+    },
+    {
+      "label": "native-trigger-focus-1440",
+      "maximumGeometry": 0.015625,
+      "differences": [],
+      "origins": {
+        "published": [
+          0,
+          4765.21875
+        ],
+        "source": [
+          0,
+          4765.21875
+        ]
+      },
+      "rendered": [
+        {
+          "offset": 0,
+          "files": [
+            "published-native-trigger-focus-1440-tile-0.png",
+            "source-native-trigger-focus-1440-tile-0.png"
+          ],
+          "pixels": {
+            "ratio": 0,
+            "changed": 0,
+            "total": 1728000,
+            "size": [
+              1440,
+              1200
+            ],
+            "unaffectedChanged": 0,
+            "unaffectedTotal": 1728000,
+            "unaffectedRatio": 0,
+            "authorisedChanged": 0,
+            "comparisonScope": "full image",
+            "headingReflow": null
+          }
+        }
+      ]
+    }
+  ]
+}

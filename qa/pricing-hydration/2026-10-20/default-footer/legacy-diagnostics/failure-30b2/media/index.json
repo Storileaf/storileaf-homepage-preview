@@ -1,0 +1,98 @@
+{
+  "sourceCommit": "30b2b6479387e0d00bdc7163242743d277d86516",
+  "runId": 39526082609,
+  "runAttempt": 1,
+  "runConclusion": "failure",
+  "jobId": 118980927697,
+  "jobConclusion": "failure",
+  "artifact": {
+    "id": 12313497484,
+    "name": "homepage-media-parity",
+    "bytes": 106991460,
+    "sha256": "feb15e1b2e3c90f26b7d6338404178efb5a890e2d646c3eea8a0b27fa9928042",
+    "downloadHashMatches": true,
+    "fileCount": 345
+  },
+  "reports": [
+    {
+      "artifactPath": "report.json",
+      "retainedPath": "gallery-report.json.gz",
+      "rawBytes": 3350534,
+      "rawSha256": "9214c1b597f2d9100727ad5722f8375591ab588dda8deba208c7b8940a410056",
+      "retainedBytes": 83397,
+      "retainedSha256": "bceb6bc31e45d71e4cb6b756eaa31dd592024837cc6ffde373880259353070b8",
+      "result": "passed",
+      "problems": [],
+      "qualityFindings": [],
+      "widthCount": 10,
+      "stateCount": 9,
+      "captureCount": 172,
+      "browser": "155.0.8059.84",
+      "protectedPricingHash": null
+    },
+    {
+      "artifactPath": "physical/report.json",
+      "retainedPath": "physical-report.json.gz",
+      "rawBytes": 5865030,
+      "rawSha256": "5392a1bfbab54c7bbb99f191f8eb79b1c9fef3fcfd64bf450349065657475f31",
+      "retainedBytes": 200650,
+      "retainedSha256": "ad8f5d10882f886ffa1ca17f61a0d6523c19b9c56766ba138a2ad59c0c4b12c4",
+      "result": "failed",
+      "problems": [
+        "Protected file differs pricing/index.html"
+      ],
+      "qualityFindings": [],
+      "widthCount": 10,
+      "stateCount": 9,
+      "captureCount": 84,
+      "browser": "155.0.8059.84",
+      "protectedPricingHash": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89"
+    }
+  ],
+  "failureConclusion": "The only reported failure is the obsolete pricing byte-reference assertion. All rendering and quality checks represented by these reports recorded no additional problems. Both reports measured the exact authorised candidate pricing SHA256.",
+  "limitations": "Chromium automation, not physical device or screen reader acceptance. This collection does not declare the failed workflow passed.",
+  "scope": "Lossless compact retention of the original failed run. No rerun or result replacement.",
+  "files": [
+    {
+      "path": "gallery-report.json.gz",
+      "bytes": 83397,
+      "sha256": "bceb6bc31e45d71e4cb6b756eaa31dd592024837cc6ffde373880259353070b8",
+      "rawBytes": 3350534,
+      "rawSha256": "9214c1b597f2d9100727ad5722f8375591ab588dda8deba208c7b8940a410056"
+    },
+    {
+      "path": "physical-report.json.gz",
+      "bytes": 200650,
+      "sha256": "ad8f5d10882f886ffa1ca17f61a0d6523c19b9c56766ba138a2ad59c0c4b12c4",
+      "rawBytes": 5865030,
+      "rawSha256": "5392a1bfbab54c7bbb99f191f8eb79b1c9fef3fcfd64bf450349065657475f31"
+    },
+    {
+      "path": "run-metadata.json",
+      "bytes": 14351,
+      "sha256": "98a344b485da2e7d82d25b8caa03980b97b00afbf71c1cc2a187ea0c5af9daf5"
+    },
+    {
+      "path": "jobs-metadata.json",
+      "bytes": 3368,
+      "sha256": "76fa0350f0de525855e0eb6778ea0c29ea877ecc12f6fea391c2d21a62df2759"
+    },
+    {
+      "path": "artifact-metadata.json",
+      "bytes": 758,
+      "sha256": "a42dae9e8b5e542d0ca451f89a3f792b3827d3c63351be4ab10ee6d0cb21b212"
+    },
+    {
+      "path": "artifact-inventory.json",
+      "bytes": 53410,
+      "sha256": "906c794d7dd05401c4fe1b890900af65b8394cc707acc3057bd13fbe3f5f99bb"
+    },
+    {
+      "path": "job.log.gz",
+      "bytes": 13518,
+      "sha256": "3855c444fc6e8f47c9702ed9ab033ca33714e86b10f7b804380ca1afb385a139",
+      "rawBytes": 58454,
+      "rawSha256": "6e31e9679fb0f17c11e61398c1ff2497ba45858841fd84e4253c8a65c4cca054"
+    }
+  ]
+}

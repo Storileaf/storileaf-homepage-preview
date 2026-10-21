@@ -1,0 +1,19 @@
+{
+  "id": 12313693038,
+  "name": "homepage-process-parity",
+  "size_in_bytes": 38381502,
+  "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12313693038",
+  "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12313693038/zip",
+  "expired": false,
+  "created_at": "2026-10-21T01:26:02Z",
+  "expires_at": "2027-01-19T01:22:59Z",
+  "updated_at": "2026-10-21T01:26:02Z",
+  "digest": "sha256:9407959f5d639b4348b1c81ae6a432d1db2be1059e06736807c46c354af3b752",
+  "workflow_run": {
+    "id": 39526983706,
+    "repository_id": 1422795677,
+    "head_repository_id": 1422795677,
+    "head_branch": "main",
+    "head_sha": "6d8594dd637df666564c4475a8cbe5a2d995305b"
+  }
+}

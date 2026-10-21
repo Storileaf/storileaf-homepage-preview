@@ -1,0 +1,567 @@
+{
+  "schemaVersion": 1,
+  "checkpoint": "One unchanged Writing diagnostic replay following the retained 30b2b647 failure",
+  "status": "Passed for the recorded checkpoint. The earlier failed attempt is preserved separately; no permanent raster stability or causal certainty is claimed.",
+  "run": {
+    "id": 39526983680,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526983680",
+    "commit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+    "attempt": 1,
+    "status": "completed",
+    "conclusion": "success",
+    "createdAt": "2026-10-21T01:22:58Z",
+    "updatedAt": "2026-10-21T01:25:17Z",
+    "jobs": [
+      {
+        "id": 118983841983,
+        "name": "compare",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 39526983680,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Check source and preserve the published runtime",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Install isolated browser harness",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Install and record exact Chrome for Testing",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Serve baseline and source",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Compare writing composition and unsaved practice behaviour",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Confirm protected runtime",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Attach rendered writing evidence",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 10
+          },
+          {
+            "name": "Attach isolated preview",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 21
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 22
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 23
+          }
+        ]
+      }
+    ]
+  },
+  "artifact": {
+    "id": 12313428037,
+    "name": "homepage-writing-parity",
+    "size_in_bytes": 21449089,
+    "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12313428037",
+    "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12313428037/zip",
+    "expired": false,
+    "created_at": "2026-10-21T01:25:12Z",
+    "expires_at": "2027-01-19T01:22:59Z",
+    "updated_at": "2026-10-21T01:25:12Z",
+    "digest": "sha256:3f46f6e471a92b67e215930aafa1c9d3615b601d1db771484634277764c6e905",
+    "workflow_run": {
+      "id": 39526983680,
+      "repository_id": 1422795677,
+      "head_repository_id": 1422795677,
+      "head_branch": "main",
+      "head_sha": "6d8594dd637df666564c4475a8cbe5a2d995305b"
+    },
+    "advertisedArchiveDigestVerified": true
+  },
+  "report": {
+    "createdAt": "2026-10-21T01:23:18.174Z",
+    "finishedAt": "2026-10-21T01:25:10.281Z",
+    "sourceCommit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+    "rawSha256": "0cfff5bc827f9eb0363826c8b703e8dc77941b322d08ca2f9fcda45856856b99",
+    "problems": []
+  },
+  "failedRun": {
+    "id": 39526082594,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082594",
+    "commit": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "attempt": 1,
+    "status": "completed",
+    "conclusion": "failure",
+    "createdAt": "2026-10-21T01:13:48Z",
+    "updatedAt": "2026-10-21T01:16:25Z",
+    "jobId": 118980927794
+  },
+  "failedArtifact": {
+    "id": 12312837019,
+    "name": "homepage-writing-parity",
+    "size_in_bytes": 21445928,
+    "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12312837019",
+    "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12312837019/zip",
+    "expired": false,
+    "created_at": "2026-10-21T01:16:22Z",
+    "expires_at": "2027-01-19T01:13:48Z",
+    "updated_at": "2026-10-21T01:16:22Z",
+    "digest": "sha256:9163a20c308900d80df568fe4037967288cba6729f76bc7271c9b84b82327931",
+    "workflow_run": {
+      "id": 39526082594,
+      "repository_id": 1422795677,
+      "head_repository_id": 1422795677,
+      "head_branch": "main",
+      "head_sha": "30b2b6479387e0d00bdc7163242743d277d86516"
+    },
+    "advertisedDigestVerified": true
+  },
+  "failedRawReportSha256": "43739d29de39c0ae54198d8b427241400c1d0a5202de80d3f43fbde72b4edff8",
+  "priorSuccessfulP406Run": {
+    "id": 39519487829,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487829",
+    "commit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+    "attempt": 1,
+    "conclusion": "success",
+    "artifactId": 12310396809,
+    "advertisedSha256": "cd8fca68b5de4712678e13bc2a2df97253e62b7b2b1448698e3b36e36879bdff",
+    "advertisedDigestVerified": true
+  },
+  "identityVerification": {
+    "sourceHashes": {
+      "src/App.tsx": "97010e342e0977003877de3368fe0cd0767ec6324b95cc6d5b4f0560e3818347",
+      "src/components/ActionLink.tsx": "b48d8e8c7e2edc5026b87a9f9c942b6a5b6f6efeb2dc145eea5bb49caeb68c0a",
+      "src/components/EditorialHeading.tsx": "7bbda62ee6d411a7f77e3a37e915bb871faf128bdf6001314f8c6e9a85112cdb",
+      "src/components/Layout.tsx": "2c37f54870ac5a894abe809a09eaa1e74f773cd73a50adead97e515c0beb13d0",
+      "src/components/NewsletterFooter.tsx": "6cef6bcc508deae1ea4c94e658fcde9f89d8cce01bc42309eabd90be87d8e4d7",
+      "src/components/ResourceCategoryCard.tsx": "3a08697f3d1619565c7f03ddb10ec9261d837e52bf076be9187b05f15480eb47",
+      "src/components/ResponsiveImage.tsx": "4d1e3181e30a63e6408c718ecc6ba9c6fa086b3d24b99011e4aba3f90f0df5fc",
+      "src/components/SiteHeader.tsx": "a4b349fab2cc692d4ac838b2761fa61c292848ea316091530742c8e30772b3e8",
+      "src/components/Typography.tsx": "e05b1008187370bf37b56a3fc4fc34f1b9100027614e6c7c9cb8634f62e9de33",
+      "src/components/useFooterCurrencyWrap.ts": "45e48bddce7c62abafdf949ae22fb5814f44f1354e4ba5b1131378cd0e63397a",
+      "src/content.ts": "a7cded91fccec79530673df1ce2a54e42886e233b7eb989afaec63a65b7338fd",
+      "src/homepageScrollRestoration.ts": "4135dc8a0acadc933e6d6fea69588dbf2b10f6936d32ea19d6c697bcb944c871",
+      "src/intrinsicTextFit.ts": "e18402edf09b138553687bbef07c42fa23948bd2a653531c472ddc000d143cc9",
+      "src/main.tsx": "1473d7bbe06a38064a4dccabeeb629fda6815970bc0554bb3f511ebe77420baa",
+      "src/sections/BookDiscovery.tsx": "352f712303cc3fd51a421fa2cb87238cf1fdf1f1430f11768d0e8e250d224f9c",
+      "src/sections/BookGallery.tsx": "021c551fbffc847e5e583155ee4e16045ff0eed6439526c4d308199cfeccf96a",
+      "src/sections/FaqSection.tsx": "e645c8856c9b60e19751115a2504d90f6a79ff5ff4d292be1ee883b1f0705866",
+      "src/sections/FinalInvitation.tsx": "95f0c629bf4da5c39f2c8320ca0e5833f06c539621161c6207a4a2d95135eb2a",
+      "src/sections/GiftingSection.tsx": "3f22b423f746474bb584a0d6c0e631c126a6282fdccc794590d623807ce111c6",
+      "src/sections/HeroSection.tsx": "74442bdd474c7595ab32541b3c8aaa2a78489f0609c3c1a6d06e3ffeaf11f94c",
+      "src/sections/homepageDiscoveryContent.ts": "0344b2b251997a9faf387861e6b89d0f8975429fad68ba0cf1dc85f8e3d7524b",
+      "src/sections/homepageEditorialContent.ts": "43f048508164811a8cbb2d507f1bedcb50ee25ce83b68789ec95be9ff9bfb4f1",
+      "src/sections/homepageMediaContent.ts": "cc12a7c87dff83df9bd3c7de5b1e8f532cc9190a48585a8c7748aa702386927e",
+      "src/sections/homepageQuestionsContent.ts": "e660d3e75f4ea8b1dd344200260759c95d5e3d7c8f29367d81ba18d59213d65d",
+      "src/sections/HowItWorks.tsx": "280747e6c6e5d610931d598745fc1b9b67aeec291aefeed6e12e37d5b8ba3154",
+      "src/sections/PhysicalBookPresentation.tsx": "c54976988eab7918d500046360d752087cdd92a5bc6dc0b332f8c33fbd8566cb",
+      "src/sections/PracticeDialog.tsx": "d8a927d5a2a2e2f22f3ff4e12c015bbe16fc5deafeac80e65002dfae0b9341b3",
+      "src/sections/processProgress.ts": "17f2008a08e856e94edfa0b30b437b0d0a9ca2a2114e68583a65a6ef0bc377d5",
+      "src/sections/ReassuranceBand.tsx": "56febe6b3829e48ea5e22a5ac3cd2fc48fce26b2c371cb94b5900f07f6787242",
+      "src/sections/ResourcesSection.tsx": "e640acb7abcd1dd3eab68f994e0e1ff3e78460994d22bd071adb597f96a23403",
+      "src/sections/useDiscoveryTextFit.ts": "8ef8b7c7109d8d83c2adbe905e6268d0ad9213dd4e0198093c8a8f0d461d0473",
+      "src/sections/useMediaReducedMotion.ts": "de6885e91b5a77adc56532926a9fd043539453784ac292b5e918e8ca50123ab2",
+      "src/sections/useProgressionTextFit.ts": "5eb3fc69ed03ed01890839e0a01ddfeed6346fc713bcac634d5f1464698e3b2a",
+      "src/sections/WritingShowcase.tsx": "b5f2a0637ba298152d3b5bee6d34ea420def50335cccb1ddf1d8bf42a226bb2c",
+      "src/siteRoutes.ts": "5e714d61a0f4e50de472a0c65b76fe67936f043e935f63c4d88e53480051ba6e",
+      "src/styles/components.css": "c1dee5ba708a2cb87072de87e1f87c43e0f77d842e27a4b0c6cdd1d98106d971",
+      "src/styles/foundations.css": "fd0ba5d60fb8e9e6eda4df3ba1451cb61bf1bb8d8c740003a4a09355df517268",
+      "src/styles/homepage-craft.css": "fffb03c76f35637dd95ed6fc1a484411228e1723a39d7b8adfe3c898d9ffe8de",
+      "src/styles/homepage-discovery.css": "24bde0aee654721675b57d9c3b09cd26ef854f023dce188bdb9ed071b96f2efe",
+      "src/styles/homepage-editorial.css": "bdb2c696d56cba8dd16bfc8098883b93c2b8e6cd866d27b515681e9e8d35d85a",
+      "src/styles/homepage-hero.css": "66c6a4af46a9441c76e2cdddef04d63869e5917674edca65c1e23c9b92148cdc",
+      "src/styles/homepage-media.css": "47baf5bca2a34c3635b876eb1bfa5bc0ae208c7c8d716b28aba168018dc3f400",
+      "src/styles/homepage-process.css": "3d05706aea2c61e07420c3028ab6def8cc2345f24d95751f9840c4b04d121379",
+      "src/styles/homepage-questions.css": "e972beb4b142600443687ea9d382eae94fe60fc1dc1ddc7e3282b6841211f3da",
+      "src/styles/homepage-reflow.css": "48df7bfa61bc7ec65881e134da8a9938fa748c976f24c6818986dec9c02ecdd3",
+      "src/styles/homepage-writing.css": "d7c7d096a6509a965ba4963a9452545e1f0632d2a95871defa29538ba22f860d",
+      "src/styles/shared-footer.css": "5c02e6ce6ffc3dc418e696f1474e31244fdfc4e811d6f1e16f3bea0a8e710467",
+      "src/styles/shared-header.css": "98dc7bf867dd848a16b7f51f27abcd4af16a1884e7b72b0554015cfc2f336464",
+      "src/styles/tokens.css": "20183913246f3375f0b8df5c89872eb73d734aace575e9871711c34d280a0081",
+      "src/styles/typography.css": "faf05e6601df7e528380f4f74a0e6232e0d2c216bb8fcd491f30a4112902e655",
+      "src/usePreviewCurrency.ts": "763fe027ed3e6ffcec144394be365dba0d343594e6028d655b3d826470b16ba4",
+      "content/hero.json": "5c88630d6f125372273b358064076dc2678e6f7b04ae8cc4af4a6cba030dc587",
+      "content/images.json": "3063a8d9ed41376682a1ff036b1ec7b93a9f5496ea724e5ff82b072512805426",
+      "content/ledger.json": "c00a403216cab6e5bebd3f5c81d3836a9f15a01c5a56d3bd56f437fca5952e58",
+      "content/media-images.json": "62e2f1df2ad5f1ca7062017ead9234ecc4d7f1e5916586ff320cfee65cb81b52",
+      "content/media-ledger.json": "77c4bf6b0c4dddd6c8e35f287d851f41f35144c13661a0f7b158612b3265e2f3",
+      "content/process.json": "6f378edc2a12f397f99fd20dcb4e1a1238975c4e050444b769ab9ddf9bc2bef7",
+      "content/writing.json": "3f96a49530b2d2e9133e25140e17f1e3161adf994be83f8c24fbd8a8f38ec565"
+    },
+    "sourceHashesIdenticalToFailed": true,
+    "harnessHashes": {
+      "scripts/verify-writing-parity.mjs": "51c212b3493dd7be566c62e849d60f303992ea4ab378c4e09603fef38816aa6b",
+      "scripts/browser-readiness.mjs": "ca88d8553d196608652d630b233dfd3f05c3692bea315d31b2f778fa6f58cb91",
+      "scripts/computed-style-parity.mjs": "efbddf441b802d7135986ebed473133a591127cf862b52eab7ce805b3ce2fb1c",
+      "scripts/practice-description-contract.mjs": "40e141dafffd9cd4b449137a39c65402ce6d35f437f710b97c0d68f1c1013fee",
+      "scripts/practice-heading-raster-contract.mjs": "a9479b0fb41a9845fa1f3089255688198d2fb09ccb8d4194705a03377192f02c"
+    },
+    "harnessHashesIdenticalToFailed": true,
+    "protectedHashes": {
+      "index.html": "76e803f92a7621bc46cb5807b743516b773af1c73e1b01f5c487d6438e49ea81",
+      "assets/index-DhPZyX4z.css": "75e1550fc2a24edf5ce47f856ba7e849f1624c9526f1a4a304442bbcf74e325f",
+      "assets/routes-DrwDv2x2.js": "80b5c23eb20aa4ca80ce347f309d58a143ffaaeb068144736ee859ab36d01c85",
+      "assets/content-sections-CfrmOVRI.js": "932f30a6bac0620d6632ef017303b9303e85df7166c9a5473a1bdf429155674e"
+    },
+    "protectedHashesIdenticalToFailed": true,
+    "workflow": {
+      "path": ".github/workflows/verify-writing-parity.yml",
+      "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19",
+      "gitBlob": "68aa198930fc8ad231a2a5826891d4ae3a5787d9",
+      "previousGitBlob": "68aa198930fc8ad231a2a5826891d4ae3a5787d9",
+      "identical": true
+    },
+    "browserProvenanceIdenticalToFailed": true,
+    "runtimeVersionsIdenticalToFailed": true,
+    "thresholdsIdenticalToFailed": true,
+    "runnerChanges": {
+      "name": {
+        "failedAttempt": "GitHub Actions 1000003303",
+        "replay": "GitHub Actions 1000003325"
+      }
+    },
+    "explanation": "The publication commit differs because unrelated pricing test references and live-review pins were corrected. All Writing source hashes, five imported harness hashes, Writing workflow, exact browser archive/executable and thresholds match the failed attempt. Runner image, kernel and runtime versions also match; runner instance name differs."
+  },
+  "environment": {
+    "purpose": "Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.",
+    "recordedAt": "2026-10-21T01:23:15.551Z",
+    "browser": {
+      "expectedVersion": "155.0.8059.84",
+      "expectedRevision": "1697595",
+      "actualVersion": "155.0.8059.84",
+      "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+      "archive": {
+        "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+        "bytes": 199014491,
+        "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+      },
+      "executable": {
+        "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+        "bytes": 298806600,
+        "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+      },
+      "checkpointLaunch": {
+        "headless": true,
+        "args": [
+          "--no-sandbox"
+        ]
+      }
+    },
+    "runner": {
+      "name": "GitHub Actions 1000003325",
+      "os": "Linux",
+      "arch": "X64",
+      "imageOS": "ubuntu24",
+      "imageVersion": "20261018.339.1",
+      "kernel": "7.0.0-1017-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+    },
+    "runtime": {
+      "node": "v22.23.3",
+      "npm": "10.9.9",
+      "python": "Python 3.12.3",
+      "playwright": "1.56.1"
+    },
+    "run": {
+      "repository": "Storileaf/storileaf-homepage-preview",
+      "id": "39526983680",
+      "attempt": "1",
+      "job": "compare",
+      "commit": "6d8594dd637df666564c4475a8cbe5a2d995305b"
+    },
+    "runtimeTree": "927fda04dcf8fad22326ed1e49e687a856cb25af",
+    "harness": {
+      "path": "frontend/scripts/verify-writing-parity.mjs",
+      "sha256": "51c212b3493dd7be566c62e849d60f303992ea4ab378c4e09603fef38816aa6b"
+    },
+    "workflow": {
+      "path": ".github/workflows/verify-writing-parity.yml",
+      "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+    }
+  },
+  "comparisonSummary": {
+    "total": 60,
+    "fullImages": 59,
+    "boundedHeading": 1,
+    "aboveUnchangedThreshold": [],
+    "maximumFullImageRatio": 0.0001923076923076923,
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01
+    },
+    "widths": [
+      320,
+      360,
+      390,
+      430,
+      600,
+      768,
+      820,
+      1024,
+      1280,
+      1440
+    ]
+  },
+  "relevantStates": [
+    {
+      "label": "native-trigger-hover-1440",
+      "maximumGeometry": 0.015625,
+      "differences": [],
+      "origins": {
+        "published": [
+          0,
+          4765.21875
+        ],
+        "source": [
+          0,
+          4765.21875
+        ]
+      },
+      "snapshotIdenticalToFailed": {
+        "published": true,
+        "source": true
+      },
+      "rendered": [
+        {
+          "offset": 0,
+          "files": [
+            "published-native-trigger-hover-1440-tile-0.png",
+            "source-native-trigger-hover-1440-tile-0.png"
+          ],
+          "pixels": {
+            "ratio": 0,
+            "changed": 0,
+            "total": 1728000,
+            "size": [
+              1440,
+              1200
+            ],
+            "unaffectedChanged": 0,
+            "unaffectedTotal": 1728000,
+            "unaffectedRatio": 0,
+            "authorisedChanged": 0,
+            "comparisonScope": "full image",
+            "headingReflow": null
+          }
+        }
+      ]
+    },
+    {
+      "label": "native-trigger-focus-1440",
+      "maximumGeometry": 0.015625,
+      "differences": [],
+      "origins": {
+        "published": [
+          0,
+          4765.21875
+        ],
+        "source": [
+          0,
+          4765.21875
+        ]
+      },
+      "snapshotIdenticalToFailed": {
+        "published": true,
+        "source": true
+      },
+      "rendered": [
+        {
+          "offset": 0,
+          "files": [
+            "published-native-trigger-focus-1440-tile-0.png",
+            "source-native-trigger-focus-1440-tile-0.png"
+          ],
+          "pixels": {
+            "ratio": 0,
+            "changed": 0,
+            "total": 1728000,
+            "size": [
+              1440,
+              1200
+            ],
+            "unaffectedChanged": 0,
+            "unaffectedTotal": 1728000,
+            "unaffectedRatio": 0,
+            "authorisedChanged": 0,
+            "comparisonScope": "full image",
+            "headingReflow": null
+          }
+        }
+      ]
+    }
+  ],
+  "captureComparisons": [
+    {
+      "file": "published-native-trigger-hover-1440-tile-0.png",
+      "failedSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "replaySha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "previousP406Sha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "changedFromFailed": 0,
+      "ratioChangedFromFailed": 0.0,
+      "changedBounds": null
+    },
+    {
+      "file": "source-native-trigger-hover-1440-tile-0.png",
+      "failedSha256": "677c95363721fd928b658f9717db8161467a674e9fcba9f0b46c9cb9e3f173a8",
+      "replaySha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+      "previousP406Sha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+      "changedFromFailed": 25296,
+      "ratioChangedFromFailed": 0.014638888888888889,
+      "changedBounds": [
+        194,
+        419,
+        1233,
+        886
+      ]
+    },
+    {
+      "file": "published-native-trigger-focus-1440-tile-0.png",
+      "failedSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "replaySha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "previousP406Sha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "changedFromFailed": 0,
+      "ratioChangedFromFailed": 0.0,
+      "changedBounds": null
+    },
+    {
+      "file": "source-native-trigger-focus-1440-tile-0.png",
+      "failedSha256": "ae6a032a2a70c92b93fd96ad0ec5366ac00d40fc27ec49682a178faf537bfbd1",
+      "replaySha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+      "previousP406Sha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+      "changedFromFailed": 25295,
+      "ratioChangedFromFailed": 0.014638310185185185,
+      "changedBounds": [
+        194,
+        116,
+        1233,
+        583
+      ]
+    }
+  ],
+  "interpretation": {
+    "observed": "Both previously failing 1440px hover and focus comparisons have zero changed pixels at the existing channel threshold. All four relevant screenshot files are byte-identical to the successful P4 06 counterparts. Both recorded state snapshots are also identical to the failed attempt.",
+    "inference": "A transient source device paint discrepancy is consistent with the combined observations. The specific cause remains unproven.",
+    "limits": "The passing replay does not erase the prior failure and does not prove permanent screenshot stability. No runtime or Writing capture-harness repair was made."
+  },
+  "visualReview": "Relevant replay image identities and existing pixel comparisons were independently checked. No new screenshot transformation or threshold was introduced.",
+  "files": [
+    {
+      "path": "report.json.gz",
+      "bytes": 962398,
+      "sha256": "87e7c5e29f6b1b3119df04b6d96173cceeb01f271bfc86872719e06fd311a5f6",
+      "rawName": "report.json",
+      "rawBytes": 35173657,
+      "rawSha256": "0cfff5bc827f9eb0363826c8b703e8dc77941b322d08ca2f9fcda45856856b99"
+    },
+    {
+      "path": "job.log.gz",
+      "bytes": 15076,
+      "sha256": "962b70a7b84105b005139fa652ce31709198b4c02b2f2bbad570602f334330f6",
+      "rawName": "job.log",
+      "rawBytes": 65809,
+      "rawSha256": "b8ba5f671ad1f65eb8dd8de026cb2fc9682fd352049ac8ca86bbab840dbd2d98"
+    },
+    {
+      "path": "browser-environment.json",
+      "bytes": 2289,
+      "sha256": "4692ce7b7340e865c4dab86f532dc9560abd121ae83e4993f15857171f2de3dc",
+      "rawName": "browser-environment.json",
+      "rawBytes": 2289,
+      "rawSha256": "4692ce7b7340e865c4dab86f532dc9560abd121ae83e4993f15857171f2de3dc"
+    },
+    {
+      "path": "comparison-with-failed-attempt.json",
+      "bytes": 4909,
+      "sha256": "957d04d546f20adf31e701d70dc7cfeca0ff5871671f2978a4a3ea3972252878",
+      "rawName": "comparison-with-failed-attempt.json",
+      "rawBytes": 4909,
+      "rawSha256": "957d04d546f20adf31e701d70dc7cfeca0ff5871671f2978a4a3ea3972252878"
+    },
+    {
+      "path": "images/published-native-trigger-hover-1440-tile-0.png",
+      "bytes": 275166,
+      "sha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "rawName": "published-native-trigger-hover-1440-tile-0.png",
+      "rawBytes": 275166,
+      "rawSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769"
+    },
+    {
+      "path": "images/source-native-trigger-hover-1440-tile-0.png",
+      "bytes": 274364,
+      "sha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+      "rawName": "source-native-trigger-hover-1440-tile-0.png",
+      "rawBytes": 274364,
+      "rawSha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f"
+    },
+    {
+      "path": "images/published-native-trigger-focus-1440-tile-0.png",
+      "bytes": 588357,
+      "sha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "rawName": "published-native-trigger-focus-1440-tile-0.png",
+      "rawBytes": 588357,
+      "rawSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640"
+    },
+    {
+      "path": "images/source-native-trigger-focus-1440-tile-0.png",
+      "bytes": 587145,
+      "sha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+      "rawName": "source-native-trigger-focus-1440-tile-0.png",
+      "rawBytes": 587145,
+      "rawSha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd"
+    }
+  ],
+  "retention": "Raw report and job log are compressed losslessly with deterministic gzip. All four original relevant screenshots are retained. Full archive was downloaded and hash checked before this index was prepared.",
+  "limits": "Chromium only. Touch is emulated. Enlargement doubles targeted font size and line height, not native browser zoom. No physical device, other engine, screen reader or accessibility certification is claimed. Device sample answers are static in the protected runtime; this suite does not invent an automatic typing animation.",
+  "mutations": "Local evidence retention and analysis only. No GitHub writes, manual reruns, runtime changes, harness changes or threshold changes by this reviewer."
+}

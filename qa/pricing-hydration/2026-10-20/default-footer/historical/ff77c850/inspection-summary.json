@@ -1,0 +1,32 @@
+{
+  "runId": 39524834346,
+  "head": "ff77c8509348511c78c8fe5dad51da19690198ef",
+  "conclusion": "cancelled",
+  "artifactId": 12313177632,
+  "artifactSha256": "64537fa33780f7e65baa3a80a2be7b38015d602573d1aa5c0109520970838afb",
+  "rawReportPresent": false,
+  "logObservation": "The compare step began at 2026-10-21T01:01:30.9797963Z and ended with The operation was canceled at 01:21:38.2441622Z, approximately the configured twenty minute job limit. The API says cancelled. No manual cancellation was performed by this agent.",
+  "limits": "Incomplete historical attempt. Full page capture corrected to start at zero scroll in this commit. No completed report exists. Subsequent bounded diagnostic run 39525455006 established a saved document rendering-frame wait stall. It was repaired in the verifier without changing page code, stylesheet, thresholds or assertions. These partial observations are retained as historical evidence, not a complete passing checkpoint.",
+  "screenshots": [
+    {
+      "file": "candidate-footer-320.png",
+      "bytes": 38236,
+      "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+    },
+    {
+      "file": "candidate-page-320.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87"
+    },
+    {
+      "file": "original-footer-320.png",
+      "bytes": 38236,
+      "sha256": "5460a37b73d0744a2c8e9f54887efa3c8d38b560469bfed494485931fcde8576"
+    },
+    {
+      "file": "original-page-320.png",
+      "bytes": 884400,
+      "sha256": "200a0f31564a923d77889756672e4e8dc88828149bf42bab76185e877723aa87"
+    }
+  ]
+}

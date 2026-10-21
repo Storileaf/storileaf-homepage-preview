@@ -1,0 +1,57 @@
+{
+  "purpose": "Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.",
+  "recordedAt": "2026-10-21T01:23:15.551Z",
+  "browser": {
+    "expectedVersion": "155.0.8059.84",
+    "expectedRevision": "1697595",
+    "actualVersion": "155.0.8059.84",
+    "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+    "archive": {
+      "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+      "bytes": 199014491,
+      "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+    },
+    "executable": {
+      "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+      "bytes": 298806600,
+      "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+    },
+    "checkpointLaunch": {
+      "headless": true,
+      "args": [
+        "--no-sandbox"
+      ]
+    }
+  },
+  "runner": {
+    "name": "GitHub Actions 1000003325",
+    "os": "Linux",
+    "arch": "X64",
+    "imageOS": "ubuntu24",
+    "imageVersion": "20261018.339.1",
+    "kernel": "7.0.0-1017-azure",
+    "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+  },
+  "runtime": {
+    "node": "v22.23.3",
+    "npm": "10.9.9",
+    "python": "Python 3.12.3",
+    "playwright": "1.56.1"
+  },
+  "run": {
+    "repository": "Storileaf/storileaf-homepage-preview",
+    "id": "39526983680",
+    "attempt": "1",
+    "job": "compare",
+    "commit": "6d8594dd637df666564c4475a8cbe5a2d995305b"
+  },
+  "runtimeTree": "927fda04dcf8fad22326ed1e49e687a856cb25af",
+  "harness": {
+    "path": "frontend/scripts/verify-writing-parity.mjs",
+    "sha256": "51c212b3493dd7be566c62e849d60f303992ea4ab378c4e09603fef38816aa6b"
+  },
+  "workflow": {
+    "path": ".github/workflows/verify-writing-parity.yml",
+    "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+  }
+}

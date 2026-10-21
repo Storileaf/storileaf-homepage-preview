@@ -1,0 +1,127 @@
+{
+  "scope": "Successful final verification after exact pricing-only reference alignment. Original failed reports remain in failure-30b2. No rendering logic, assertion or threshold was relaxed.",
+  "sourceCommit": "6d8594dd637df666564c4475a8cbe5a2d995305b",
+  "runId": 39526983656,
+  "runAttempt": 1,
+  "runConclusion": "success",
+  "jobId": 118983841836,
+  "jobConclusion": "success",
+  "candidateVerifier": {
+    "path": "frontend/scripts/verify-craft-parity.mjs",
+    "expectedOriginalBlob": "76fc12b53e49a983612e50c7425a9a2b0be2a719",
+    "candidateBlob": "0e62e81ef4546650a2808252d3d58b811407403d",
+    "originalSha256": "6e73a8aa6248fa6b58e73badb177c0ad504f2e773c5d33419dfb995cdc9ae712",
+    "candidateSha256": "e9ff0fcf6a036157c85fc760ae581afe7a770c88c1812566aa34dadd879c64d3",
+    "originalBytes": 19436,
+    "candidateBytes": 19645,
+    "addedPricingReference": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+    "unchangedHomepageReference": "e9550069d91b5a9b48ade43fcfb0a71bbed2875b"
+  },
+  "candidateBlobIndependentlyReadFromGitHub": true,
+  "artifact": {
+    "id": 12313239138,
+    "name": "homepage-media-parity",
+    "bytes": 106998006,
+    "sha256": "721608ab9395d3202f5dcd637c431491ed0508580fd180490afb8262d1b4cb32",
+    "downloadHashMatches": true,
+    "fileCount": 345
+  },
+  "reports": [
+    {
+      "path": "gallery-report.json.gz",
+      "artifactPath": "report.json",
+      "bytes": 83434,
+      "sha256": "684ef5e611d65212a3f50ad8e43c8f21de6859f22aaf1e89f3e5b0d5269eded6",
+      "rawBytes": 3350629,
+      "rawSha256": "e462d395cab3938a105b9c447fbfe10b144aa0a3e85e632d3dbeb71caee864e1",
+      "previousRawSha256": "9214c1b597f2d9100727ad5722f8375591ab588dda8deba208c7b8940a410056",
+      "problems": [],
+      "qualityFindings": [],
+      "thresholds": {
+        "geometry": 0.15,
+        "channelDifference": 24,
+        "pixelRatio": 0.01
+      },
+      "thresholdsUnchanged": true,
+      "recordedSourceHashesUnchanged": true,
+      "recordedSourceFileCount": 71,
+      "protectedHashesUnchanged": null,
+      "pricingBaseline": null,
+      "protectedPricingHash": null,
+      "browser": "155.0.8059.84",
+      "widthCount": 10,
+      "stateCount": 9,
+      "captureCount": 172
+    },
+    {
+      "path": "physical-report.json.gz",
+      "artifactPath": "physical/report.json",
+      "bytes": 200656,
+      "sha256": "4d4d9ed1c8a76aa6e60eca938b64f2eeb8b20dab44a51c767b47618aa5297417",
+      "rawBytes": 5865034,
+      "rawSha256": "9ae726502fe365d0b67f74952297495a5e7234a4772aeccb1cf8bc9aedfc69b9",
+      "previousRawSha256": "5392a1bfbab54c7bbb99f191f8eb79b1c9fef3fcfd64bf450349065657475f31",
+      "problems": [],
+      "qualityFindings": [],
+      "thresholds": {
+        "geometry": 0.15,
+        "pixelChannel": 24,
+        "pixelRatio": 0.01
+      },
+      "thresholdsUnchanged": true,
+      "recordedSourceHashesUnchanged": true,
+      "recordedSourceFileCount": 58,
+      "protectedHashesUnchanged": true,
+      "pricingBaseline": "a9e6e6cf8ae078376837f91651a1ac9a3f1a9164",
+      "protectedPricingHash": "1f2477abf7a8ad451228d0f25cb1a8516dcd322aae57dec261e8f0c18ce75f89",
+      "browser": "155.0.8059.84",
+      "widthCount": 10,
+      "stateCount": 9,
+      "captureCount": 84
+    }
+  ],
+  "files": [
+    {
+      "path": "gallery-report.json.gz",
+      "bytes": 83434,
+      "sha256": "684ef5e611d65212a3f50ad8e43c8f21de6859f22aaf1e89f3e5b0d5269eded6",
+      "rawBytes": 3350629,
+      "rawSha256": "e462d395cab3938a105b9c447fbfe10b144aa0a3e85e632d3dbeb71caee864e1"
+    },
+    {
+      "path": "physical-report.json.gz",
+      "bytes": 200656,
+      "sha256": "4d4d9ed1c8a76aa6e60eca938b64f2eeb8b20dab44a51c767b47618aa5297417",
+      "rawBytes": 5865034,
+      "rawSha256": "9ae726502fe365d0b67f74952297495a5e7234a4772aeccb1cf8bc9aedfc69b9"
+    },
+    {
+      "path": "run-metadata.json",
+      "bytes": 13784,
+      "sha256": "e64e902d3ed0ea9531381328c8bbd87226231906056f59415a20a399d0880c8f"
+    },
+    {
+      "path": "jobs-metadata.json",
+      "bytes": 3368,
+      "sha256": "6a805c3e7c97a76c9f919c013023e5f7fad47ce7ae110059babd565efef62214"
+    },
+    {
+      "path": "artifact-metadata.json",
+      "bytes": 758,
+      "sha256": "62e7609962ca8a5ed961d07c8fc2160726cd66ac203d5de203b47336a211cd43"
+    },
+    {
+      "path": "job.log.gz",
+      "bytes": 13927,
+      "sha256": "e0fa8be1e4513988dbb61ba99acb975ec41c3066581caf51e31a762080f1a2f9",
+      "rawBytes": 60676,
+      "rawSha256": "38045222c4637f62ed65de89d0a68d537363ad69510f4b59b0aa93e8916358ca"
+    },
+    {
+      "path": "artifact-inventory.json",
+      "bytes": 53410,
+      "sha256": "d50e2df33686f5514894b3c0b493f6bad5e8701de265bdbb4a57db958b7b0360"
+    }
+  ],
+  "limits": "Actual served Chromium automation. Touch is emulated. No claim of physical-device, other-engine or screen-reader speech verification."
+}

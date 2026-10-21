@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "checkpoint": "Unchanged Writing checkpoint diagnostic after P4 07 default pricing footer publication",
+  "status": "Failed attempt retained and investigated. No runtime change, threshold change or replay performed by this reviewer.",
+  "failedRun": {
+    "id": 39526082594,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39526082594",
+    "commit": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "attempt": 1,
+    "status": "completed",
+    "conclusion": "failure",
+    "createdAt": "2026-10-21T01:13:48Z",
+    "updatedAt": "2026-10-21T01:16:25Z",
+    "jobId": 118980927794
+  },
+  "failedArtifact": {
+    "id": 12312837019,
+    "name": "homepage-writing-parity",
+    "size_in_bytes": 21445928,
+    "url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12312837019",
+    "archive_download_url": "https://api.github.com/repos/Storileaf/storileaf-homepage-preview/actions/artifacts/12312837019/zip",
+    "expired": false,
+    "created_at": "2026-10-21T01:16:22Z",
+    "expires_at": "2027-01-19T01:13:48Z",
+    "updated_at": "2026-10-21T01:16:22Z",
+    "digest": "sha256:9163a20c308900d80df568fe4037967288cba6729f76bc7271c9b84b82327931",
+    "workflow_run": {
+      "id": 39526082594,
+      "repository_id": 1422795677,
+      "head_repository_id": 1422795677,
+      "head_branch": "main",
+      "head_sha": "30b2b6479387e0d00bdc7163242743d277d86516"
+    },
+    "advertisedDigestVerified": true
+  },
+  "rawReportSha256": "43739d29de39c0ae54198d8b427241400c1d0a5202de80d3f43fbde72b4edff8",
+  "rawJobLogSha256": "39901ad58e507681d850f5d923647161720b3c65635d03c1428facf3c1d564c8",
+  "previousSuccessfulRun": {
+    "id": 39519487829,
+    "url": "https://github.com/Storileaf/storileaf-homepage-preview/actions/runs/39519487829",
+    "commit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab",
+    "attempt": 1,
+    "conclusion": "success",
+    "artifactId": 12310396809,
+    "advertisedSha256": "cd8fca68b5de4712678e13bc2a2df97253e62b7b2b1448698e3b36e36879bdff",
+    "advertisedDigestVerified": true
+  },
+  "previousCommittedEvidence": {
+    "comparison": "Decompressed committed report and browser environment are byte-identical to the previous successful artifact files.",
+    "ref": "30b2b6479387e0d00bdc7163242743d277d86516",
+    "report": {
+      "path": "qa/package-4/2026-10-20/p4-06/writing-report.json.gz",
+      "blob": "f7dc98a7579e6de115ec502d832b966d474f24fd"
+    },
+    "environment": {
+      "path": "qa/package-4/2026-10-20/p4-06/writing-browser-environment.json.gz",
+      "blob": "846095c8b4f2ee9a0984185d7d53717959827d07"
+    }
+  },
+  "currentEnvironment": {
+    "purpose": "Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.",
+    "recordedAt": "2026-10-21T01:14:06.733Z",
+    "browser": {
+      "expectedVersion": "155.0.8059.84",
+      "expectedRevision": "1697595",
+      "actualVersion": "155.0.8059.84",
+      "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+      "archive": {
+        "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+        "bytes": 199014491,
+        "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+      },
+      "executable": {
+        "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+        "bytes": 298806600,
+        "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+      },
+      "checkpointLaunch": {
+        "headless": true,
+        "args": [
+          "--no-sandbox"
+        ]
+      }
+    },
+    "runner": {
+      "name": "GitHub Actions 1000003303",
+      "os": "Linux",
+      "arch": "X64",
+      "imageOS": "ubuntu24",
+      "imageVersion": "20261018.339.1",
+      "kernel": "7.0.0-1017-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+    },
+    "runtime": {
+      "node": "v22.23.3",
+      "npm": "10.9.9",
+      "python": "Python 3.12.3",
+      "playwright": "1.56.1"
+    },
+    "run": {
+      "repository": "Storileaf/storileaf-homepage-preview",
+      "id": "39526082594",
+      "attempt": "1",
+      "job": "compare",
+      "commit": "30b2b6479387e0d00bdc7163242743d277d86516"
+    },
+    "runtimeTree": "3455a397e12dca094423273dbd5921f22fb67290",
+    "harness": {
+      "path": "frontend/scripts/verify-writing-parity.mjs",
+      "sha256": "51c212b3493dd7be566c62e849d60f303992ea4ab378c4e09603fef38816aa6b"
+    },
+    "workflow": {
+      "path": ".github/workflows/verify-writing-parity.yml",
+      "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+    }
+  },
+  "previousEnvironment": {
+    "purpose": "Exact browser provenance for the unchanged Writing checkpoint; default rendering with no LCD flag.",
+    "recordedAt": "2026-10-21T00:08:53.332Z",
+    "browser": {
+      "expectedVersion": "155.0.8059.84",
+      "expectedRevision": "1697595",
+      "actualVersion": "155.0.8059.84",
+      "versionOutput": "Google Chrome for Testing 155.0.8059.84",
+      "archive": {
+        "url": "https://storage.googleapis.com/chrome-for-testing-public/155.0.8059.84/linux64/chrome-linux64.zip",
+        "bytes": 199014491,
+        "sha256": "cf0f049892dea22e6a6db26d47ed0d7776b7158edcbec4634086633df8bafcbc"
+      },
+      "executable": {
+        "path": "/home/runner/work/_temp/chrome-for-testing-155.0.8059.84/chrome-linux64/chrome",
+        "bytes": 298806600,
+        "sha256": "b866a2964538c825538c454de4867973b926650da57ec12dc3328807d768247b"
+      },
+      "checkpointLaunch": {
+        "headless": true,
+        "args": [
+          "--no-sandbox"
+        ]
+      }
+    },
+    "runner": {
+      "name": "GitHub Actions 1000003239",
+      "os": "Linux",
+      "arch": "X64",
+      "imageOS": "ubuntu24",
+      "imageVersion": "20261012.334.1",
+      "kernel": "6.17.0-1022-azure",
+      "osRelease": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n"
+    },
+    "runtime": {
+      "node": "v22.23.3",
+      "npm": "10.9.9",
+      "python": "Python 3.12.3",
+      "playwright": "1.56.1"
+    },
+    "run": {
+      "repository": "Storileaf/storileaf-homepage-preview",
+      "id": "39519487829",
+      "attempt": "1",
+      "job": "compare",
+      "commit": "9bf877954e1b4fc6091b93e79de67f0ec6394eab"
+    },
+    "runtimeTree": "74d31027f6d5ebcb75cc1d4fe15f8af69e3ff7b4",
+    "harness": {
+      "path": "frontend/scripts/verify-writing-parity.mjs",
+      "sha256": "51c212b3493dd7be566c62e849d60f303992ea4ab378c4e09603fef38816aa6b"
+    },
+    "workflow": {
+      "path": ".github/workflows/verify-writing-parity.yml",
+      "sha256": "ee6955272ed2f5667537de75f6e9e277e44ec895b8ffc3c81c403f655f4cdc19"
+    }
+  },
+  "findings": {
+    "totalRenderedComparisons": 60,
+    "fullImageComparisons": 59,
+    "boundedApprovedHeadingComparisons": 1,
+    "failedComparisons": 2,
+    "failures": [
+      {
+        "label": "native-trigger-hover-1440",
+        "changedPixels": 25296,
+        "totalPixels": 1728000,
+        "ratio": 0.014638888888888889,
+        "changedPixelBounds": [
+          194,
+          419,
+          1233,
+          886
+        ]
+      },
+      {
+        "label": "native-trigger-focus-1440",
+        "changedPixels": 25295,
+        "totalPixels": 1728000,
+        "ratio": 0.014638310185185185,
+        "changedPixelBounds": [
+          194,
+          116,
+          1233,
+          583
+        ]
+      }
+    ],
+    "thresholds": {
+      "geometry": 0.15,
+      "pixelChannel": 24,
+      "pixelRatio": 0.01,
+      "changed": false
+    },
+    "localisation": "Changed pixels are confined to the device mock-up area. The focus context has scrolled 303 CSS pixels relative to the hover context. The trigger, header and other non-device content match at the existing pixel threshold.",
+    "geometry": "Both comparisons have no geometry/style differences and maximum geometry deviation 0.015625 CSS pixels. Both section origins match at [0,4765.21875].",
+    "previousComparison": "P4 06 had zero changed pixels in these two published/source comparisons. Current published capture bytes exactly match P4 06. Current source captures differ only inside the device raster bounds.",
+    "snapshotIdentity": "Both failed-state published and source snapshots, including geometry, styles, text and measured glyph data, exactly match their P4 06 snapshots.",
+    "codeIdentity": "All reported source, harness and protected response hashes match P4 06. The Writing workflow Git blob also matches. The only frontend identity change in publication is the separately approved guard baseline, independently verified in the separate review investigation.",
+    "browserAndRuntimeIdentity": "Browser archive and executable hashes, Chrome 155.0.8059.84, Node v22.23.3, Python 3.12.3 and Playwright 1.56.1 match P4 06.",
+    "runnerDifference": "Runner image changed from 20261012.334.1 to 20261018.339.1 and kernel from 6.17.0-1022-azure to 7.0.0-1017-azure. This prevents a claim of identical full environment and does not prove cause.",
+    "fonts": "All 54 recorded font resource sets match. A separate published 1440px/900px enlarged-state preparation record requested ordinary rather than doubled font sizes in one pass; that difference is retained in state-and-font-comparison.json. It is outside these failed-state contexts, whose recorded snapshots exactly match.",
+    "sourceChecksAndGuard": "Successful according to retained run logs; failed workflow result comes from the two image comparisons."
+  },
+  "independentComparisons": {
+    "sourceHashesIdentical": true,
+    "harnessHashesIdentical": true,
+    "protectedHashesIdentical": true,
+    "workflowIdentical": true,
+    "thresholdsIdentical": true,
+    "browserProvenanceIdentical": true,
+    "runtimeVersionsIdentical": true,
+    "runnerChanges": {
+      "kernel": {
+        "previous": "6.17.0-1022-azure",
+        "current": "7.0.0-1017-azure"
+      },
+      "imageVersion": {
+        "previous": "20261012.334.1",
+        "current": "20261018.339.1"
+      },
+      "name": {
+        "previous": "GitHub Actions 1000003239",
+        "current": "GitHub Actions 1000003303"
+      }
+    },
+    "bothFailedStateSnapshotsIdenticalToPrior": true,
+    "fontResourceSetsIdentical": true,
+    "unrelatedFontPreparationDifference": [
+      {
+        "index": 44,
+        "kind": "published",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "changes": [
+          {
+            "path": "[0].loaded[0].font",
+            "old": "normal 450 128px Newsreader, Georgia, serif",
+            "new": "normal 450 64px Newsreader, Georgia, serif"
+          },
+          {
+            "path": "[0].loaded[1].font",
+            "old": "italic 430 128px Newsreader, Georgia, serif",
+            "new": "italic 430 64px Newsreader, Georgia, serif"
+          },
+          {
+            "path": "[0].loaded[2].font",
+            "old": "normal 400 32px Manrope, sans-serif",
+            "new": "normal 400 16px Manrope, sans-serif"
+          }
+        ]
+      }
+    ],
+    "captures": [
+      {
+        "state": "hover",
+        "kind": "published",
+        "file": "published-native-trigger-hover-1440-tile-0.png",
+        "oldSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+        "newSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+        "changed": 0,
+        "ratio": 0.0,
+        "bbox": null
+      },
+      {
+        "state": "hover",
+        "kind": "source",
+        "file": "source-native-trigger-hover-1440-tile-0.png",
+        "oldSha256": "2e55a410c9aff2c773915b7000aa6f5c927e7f9c4ff51011d7070b6661d2551f",
+        "newSha256": "677c95363721fd928b658f9717db8161467a674e9fcba9f0b46c9cb9e3f173a8",
+        "changed": 25296,
+        "ratio": 0.014638888888888889,
+        "bbox": [
+          194,
+          419,
+          1233,
+          886
+        ]
+      },
+      {
+        "state": "focus",
+        "kind": "published",
+        "file": "published-native-trigger-focus-1440-tile-0.png",
+        "oldSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+        "newSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+        "changed": 0,
+        "ratio": 0.0,
+        "bbox": null
+      },
+      {
+        "state": "focus",
+        "kind": "source",
+        "file": "source-native-trigger-focus-1440-tile-0.png",
+        "oldSha256": "d82a13ab0ed6bdd1b331d3c4df033f32ad1657ebb5871e235bc7169170a063cd",
+        "newSha256": "ae6a032a2a70c92b93fd96ad0ec5366ac00d40fc27ec49682a178faf537bfbd1",
+        "changed": 25295,
+        "ratio": 0.014638310185185185,
+        "bbox": [
+          194,
+          116,
+          1233,
+          583
+        ]
+      }
+    ],
+    "previousStateResults": [
+      {
+        "label": "native-trigger-hover-1440",
+        "maximumGeometry": 0.015625,
+        "differences": [],
+        "origins": {
+          "published": [
+            0,
+            4765.21875
+          ],
+          "source": [
+            0,
+            4765.21875
+          ]
+        },
+        "rendered": [
+          {
+            "offset": 0,
+            "files": [
+              "published-native-trigger-hover-1440-tile-0.png",
+              "source-native-trigger-hover-1440-tile-0.png"
+            ],
+            "pixels": {
+              "ratio": 0,
+              "changed": 0,
+              "total": 1728000,
+              "size": [
+                1440,
+                1200
+              ],
+              "unaffectedChanged": 0,
+              "unaffectedTotal": 1728000,
+              "unaffectedRatio": 0,
+              "authorisedChanged": 0,
+              "comparisonScope": "full image",
+              "headingReflow": null
+            }
+          }
+        ]
+      },
+      {
+        "label": "native-trigger-focus-1440",
+        "maximumGeometry": 0.015625,
+        "differences": [],
+        "origins": {
+          "published": [
+            0,
+            4765.21875
+          ],
+          "source": [
+            0,
+            4765.21875
+          ]
+        },
+        "rendered": [
+          {
+            "offset": 0,
+            "files": [
+              "published-native-trigger-focus-1440-tile-0.png",
+              "source-native-trigger-focus-1440-tile-0.png"
+            ],
+            "pixels": {
+              "ratio": 0,
+              "changed": 0,
+              "total": 1728000,
+              "size": [
+                1440,
+                1200
+              ],
+              "unaffectedChanged": 0,
+              "unaffectedTotal": 1728000,
+              "unaffectedRatio": 0,
+              "authorisedChanged": 0,
+              "comparisonScope": "full image",
+              "headingReflow": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "visualInspection": {
+    "inspected": [
+      "published-native-trigger-hover-1440-tile-0.png",
+      "source-native-trigger-hover-1440-tile-0.png",
+      "published-native-trigger-focus-1440-tile-0.png",
+      "source-native-trigger-focus-1440-tile-0.png",
+      "previous-p406/published-native-trigger-hover-1440-tile-0.png"
+    ],
+    "observation": "Paired failures show a changed rendering of device text/edges while the structure and trigger styling remain aligned. This is consistent with a raster or compositing difference; exact cause is not established.",
+    "coverage": "Only the named images were visually inspected. All archive files are retained."
+  },
+  "diagnosticReplay": {
+    "justified": true,
+    "reason": "Prior success and current failure share runtime/harness/browser identities and identical measured state, with byte-identical published captures and a bounded source-only raster difference. One unchanged replay can test reproducibility without changing the test's acceptance criteria.",
+    "plannedByParent": "A test-only commit correcting unrelated legacy pricing references will naturally trigger Writing with unchanged Writing runtime, harness, workflow, browser pin and thresholds. No manual rerun is required.",
+    "conditions": [
+      "Verify the next run independently retains the same Writing source, harness, workflow and exact browser identities",
+      "Retain this failed attempt and actual original pairs regardless of later result",
+      "Keep all runtime, assertions and thresholds unchanged",
+      "If it recurs, stop and investigate instead of retrying again"
+    ],
+    "noReplayClaim": "No replay result is recorded here. A later passing result would not establish permanent rendering stability or causal certainty."
+  },
+  "files": [
+    {
+      "path": "report.json.gz",
+      "bytes": 962444,
+      "sha256": "d06fe25adee055e516fa6f7611eee4a1d7f9cfb41ba9b217974d700564d14975",
+      "rawName": "report.json",
+      "rawBytes": 35194385,
+      "rawSha256": "43739d29de39c0ae54198d8b427241400c1d0a5202de80d3f43fbde72b4edff8"
+    },
+    {
+      "path": "job.log.gz",
+      "bytes": 15182,
+      "sha256": "b994a929eff79845ff3d95d0b01a1a11006ca8193aabf4f1e321037746c5977b",
+      "rawName": "job.log",
+      "rawBytes": 63934,
+      "rawSha256": "39901ad58e507681d850f5d923647161720b3c65635d03c1428facf3c1d564c8"
+    },
+    {
+      "path": "browser-environment.json",
+      "bytes": 2289,
+      "sha256": "4cd432cef90b8b6b4eb78f333c7f62e48fee2b7763f1d3e3578f9ad8140d5cbb",
+      "rawName": "browser-environment.json",
+      "rawBytes": 2289,
+      "rawSha256": "4cd432cef90b8b6b4eb78f333c7f62e48fee2b7763f1d3e3578f9ad8140d5cbb"
+    },
+    {
+      "path": "source-and-capture-comparison.json",
+      "bytes": 4050,
+      "sha256": "0cddc5dfa00d36dbe0b2f16903cb948ae97c9f554f0c3a659b2cda7142464173",
+      "rawName": "source-and-capture-comparison.json",
+      "rawBytes": 4050,
+      "rawSha256": "0cddc5dfa00d36dbe0b2f16903cb948ae97c9f554f0c3a659b2cda7142464173"
+    },
+    {
+      "path": "state-and-font-comparison.json",
+      "bytes": 59657,
+      "sha256": "f62a3f536fa7724a16899b5351d08734f5f4d0df435494c4198c73cd0d2a9601",
+      "rawName": "state-and-font-comparison.json",
+      "rawBytes": 59657,
+      "rawSha256": "f62a3f536fa7724a16899b5351d08734f5f4d0df435494c4198c73cd0d2a9601"
+    },
+    {
+      "path": "images/published-native-trigger-hover-1440-tile-0.png",
+      "bytes": 275166,
+      "sha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769",
+      "rawName": "published-native-trigger-hover-1440-tile-0.png",
+      "rawBytes": 275166,
+      "rawSha256": "48bd460ffc79381ccbcd71c40d15cce8e454614c60b207c2eeb6ac7746c4c769"
+    },
+    {
+      "path": "images/source-native-trigger-hover-1440-tile-0.png",
+      "bytes": 272653,
+      "sha256": "677c95363721fd928b658f9717db8161467a674e9fcba9f0b46c9cb9e3f173a8",
+      "rawName": "source-native-trigger-hover-1440-tile-0.png",
+      "rawBytes": 272653,
+      "rawSha256": "677c95363721fd928b658f9717db8161467a674e9fcba9f0b46c9cb9e3f173a8"
+    },
+    {
+      "path": "images/published-native-trigger-focus-1440-tile-0.png",
+      "bytes": 588357,
+      "sha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640",
+      "rawName": "published-native-trigger-focus-1440-tile-0.png",
+      "rawBytes": 588357,
+      "rawSha256": "63afb757830251235fa99109227401ed8b02550edd72620447e097f142c57640"
+    },
+    {
+      "path": "images/source-native-trigger-focus-1440-tile-0.png",
+      "bytes": 585426,
+      "sha256": "ae6a032a2a70c92b93fd96ad0ec5366ac00d40fc27ec49682a178faf537bfbd1",
+      "rawName": "source-native-trigger-focus-1440-tile-0.png",
+      "rawBytes": 585426,
+      "rawSha256": "ae6a032a2a70c92b93fd96ad0ec5366ac00d40fc27ec49682a178faf537bfbd1"
+    }
+  ],
+  "fullArchiveRetention": "The complete failed artifact was downloaded and its advertised digest verified before any replay. GitHub artifact 12312837019 retains the full capture archive until its recorded expiry. This durable package preserves the raw report and job log losslessly, browser metadata, both derived analyses and both actual failed image pairs; it does not depend on the expiring archive for these findings.",
+  "limits": "This is the existing headless Chromium Writing checkpoint. Native in these labels refers to existing pointer/focus states, not a new native zoom acceptance. No other-engine, physical-device or screen-reader acceptance is claimed.",
+  "mutations": "Local evidence retention and derived analysis only. No GitHub writes, runtime changes, assertion changes, threshold changes or workflow reruns."
+}
