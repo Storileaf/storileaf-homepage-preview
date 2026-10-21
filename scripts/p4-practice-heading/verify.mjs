@@ -5,6 +5,8 @@ import {createHash} from 'node:crypto'
 import {chromium} from 'playwright-core'
 
 const out='qa/practice-heading', url='http://127.0.0.1:4180/'
+// Native images use X11 window pixels with a fixed 100ms presentation interval.
+// CDP zoom screenshots previously returned a uniform background and are not visual evidence.
 const widths=[320,360,390,430,600,768,820,1024,1280,1440]
 const hash=b=>createHash('sha256').update(b).digest('hex')
 const report={checkpoint:'P4-06 practice heading',sourceCommit:process.env.GITHUB_SHA,frontendTree:execFileSync('git',['rev-parse','HEAD:frontend'],{encoding:'utf8'}).trim(),createdAt:new Date().toISOString(),states:[],failures:[],stressFindings:[],buildHashes:{},method:'Native headed Chrome UI Ctrl+0 and Ctrl+= via X11 XTest on Xvfb. Native zoom independently checked from devicePixelRatio and unchanged outer window with inverse inner width/height. No CSS zoom, pinch scale or CDP device emulation in native tests. Targeted font/line-height doubling and text-spacing overrides are labelled separately.',limits:'Linux Chromium only. Xvfb is a virtual desktop, not a physical device. No actual screen-reader speech. Scoped practice-heading diagnosis, not whole-website accessibility certification.'}
@@ -31,10 +33,17 @@ async function measure(p){return p.evaluate(()=>{
   const maxRight=Math.max(...lines.map(r=>r.right)),minLeft=Math.min(...lines.map(r=>r.left)),control=d.querySelector('.dialog-topline').getBoundingClientRect(),pb=box(privacy)
   return{heading:h.textContent,title:document.querySelector('[aria-labelledby="'+h.id+'"]')!==null,fonts:[...document.fonts].filter(f=>f.status==='loaded').map(f=>f.family),dialog:db,headingBox:hb,textLines:lines,font:hs.font,letterSpacing:hs.letterSpacing,wordSpacing:hs.wordSpacing,headingContentBoxIntrusion:Math.max(0,maxRight-hb.right,hb.left-minLeft),headingOutsideDialog:Math.max(0,maxRight-clip.right,clip.left-minLeft),headingVisibleAtTop:lines.every(r=>r.top>=clip.top-1&&r.bottom<=clip.bottom+1),overlapsPrivacy:Math.max(...lines.map(r=>r.bottom))>pb.top+1,overlapsClose:Math.min(...lines.map(r=>r.top))<control.bottom-1,dialogScrollWidth:d.scrollWidth,dialogClientWidth:d.clientWidth,documentOverflow:document.documentElement.scrollWidth>innerWidth+1,dialogOverflow:d.scrollWidth>d.clientWidth+1,clip,privacy:pb,scrollTop:d.scrollTop,scrollHeight:d.scrollHeight,clientHeight:d.clientHeight,domOrder:[...d.children].map(e=>e.tagName+':'+(e.getAttribute('id')||e.className)),description:d.getAttribute('aria-describedby'),inputDescription:d.querySelector('textarea').getAttribute('aria-describedby')}
 })}
+async function screenshot(p, file) {
+  if (p.viewportSize() !== null) return p.screenshot({path:file})
+  await p.bringToFront();await frames(p);await p.waitForTimeout(100)
+  const observed={viewport:await viewport(p),heading:await p.locator('.sl-practice-dialog h2').boundingBox()}
+  const metadata=JSON.parse(execFileSync('python3',['scripts/p4-practice-heading/native-capture.py',file,JSON.stringify(observed)],{encoding:'utf8'}))
+  report.nativeCaptures ||= [];report.nativeCaptures.push({file:path.basename(file),...metadata})
+}
 async function observe(p,label,meta={},stress=false){
   await p.getByTestId('question-dialog').evaluate(e=>e.scrollTop=0);await frames(p)
   const m=await measure(p),row={label,...meta,viewport:await viewport(p),measurement:m,captures:[]}
-  const image=label+'.png';await p.screenshot({path:out+'/'+image});row.captures.push({file:image,sha256:hash(await fs.readFile(out+'/'+image))})
+  const image=label+'.png';await screenshot(p,out+'/'+image);row.captures.push({file:image,sha256:hash(await fs.readFile(out+'/'+image))})
   const problems=[]
   if(m.headingOutsideDialog>1)problems.push('heading extends beyond dialog clipping boundary')
   if(m.overlapsPrivacy||m.overlapsClose)problems.push('heading overlaps adjacent content')
@@ -48,7 +57,7 @@ async function observe(p,label,meta={},stress=false){
   const close=p.getByRole('button',{name:'Close',exact:true});await close.scrollIntoViewIfNeeded();await frames(p)
   row.bottomControls=await close.evaluate(e=>{const b=e.getBoundingClientRect(),d=e.closest('[role="dialog"]').getBoundingClientRect();return{visible:b.top>=d.top&&b.bottom<=d.bottom+1&&b.left>=d.left&&b.right<=d.right+1}})
   expect(row.bottomControls.visible,label+' bottom Close reachable')
-  if([320,390].includes(Math.round(row.viewport.innerWidth))){const bottom=label+'-bottom.png';await p.screenshot({path:out+'/'+bottom});row.captures.push({file:bottom,sha256:hash(await fs.readFile(out+'/'+bottom))})}
+  if([320,390].includes(Math.round(row.viewport.innerWidth))){const bottom=label+'-bottom.png';await screenshot(p,out+'/'+bottom);row.captures.push({file:bottom,sha256:hash(await fs.readFile(out+'/'+bottom))})}
   await p.keyboard.press('Escape');await p.getByTestId('question-dialog').waitFor({state:'hidden'});await p.waitForFunction(()=>document.activeElement?.getAttribute('data-testid')==='try-question')
   await p.keyboard.press('Enter');await p.getByTestId('question-dialog').waitFor();expect(await p.getByTestId('demo-answer').inputValue()==='',label+' empty reopen');await p.getByRole('button',{name:'Close',exact:true}).click();await p.getByTestId('question-dialog').waitFor({state:'hidden'});row.keyboard='Opening, initial focus, typing, word count, bottom control reachability, Escape, focus return, empty reopening and Close passed'
   console.log(label,JSON.stringify({findings:problems,viewport:row.viewport,headingOutsideDialog:m.headingOutsideDialog,contentBoxIntrusion:m.headingContentBoxIntrusion}))
