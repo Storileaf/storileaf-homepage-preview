@@ -135,8 +135,14 @@ async function measure(page) {
     }
   },sections)
 }
-function compareGeometry(before,after,label) {
-  for(const key of ['title','description','viewport','pageWidth','pageHeight','sectionCount','mainText','footerText','links','contact','currencies','books','packageCount','prices','images','typography'])assert.deepEqual(after[key],before[key],label+' '+key)
+function compareGeometry(before,after,label,regionalMetadataRepair=false) {
+  let metadataTransition
+  if(regionalMetadataRepair) {
+    assert.equal(before.description,'Guided questions, thoughtful preparation and a printed book. Find the StoriLeaf book for your life story, travels, relationship, business, letters or celebration.','Original 404 recovery retains the recorded homepage description')
+    assert.equal(after.description,'Compare fixed regional prices, writing time, printed books and guidance across all six StoriLeaf books.','The new document supplies the exact existing regional route description')
+    metadataTransition={before:before.description,after:after.description,scope:'Exact regional metadata replaces the stale homepage fallback description'}
+  }else assert.equal(after.description,before.description,label+' description')
+  for(const key of ['title','viewport','pageWidth','pageHeight','sectionCount','mainText','footerText','links','contact','currencies','books','packageCount','prices','images','typography'])assert.deepEqual(after[key],before[key],label+' '+key)
   assert.equal(before.sectionCount,6,'Six pricing sections')
   assert.equal(before.elements.length,after.elements.length)
   let maxDelta=0
@@ -147,7 +153,7 @@ function compareGeometry(before,after,label) {
       assert(delta<=geometryTolerance,label+' '+before.elements[index].className+' '+key+' '+delta)
     }
   }
-  return {label,maxGeometryDelta:maxDelta,geometryPassed:true}
+  return {label,maxGeometryDelta:maxDelta,geometryPassed:true,...(metadataTransition?{metadataTransition}:{})}
 }
 function comparePixels(before,after,label) {
   const a=PNG.sync.read(before),b=PNG.sync.read(after)
@@ -222,7 +228,7 @@ try {
       await ctx.close()
       activePage=undefined;activeDiagnostics=undefined
     }
-    report.comparisons.push(compareGeometry(records.original.direct.metrics,records.candidate.direct.metrics,`${currency} ${width} original/candidate`))
+    report.comparisons.push(compareGeometry(records.original.direct.metrics,records.candidate.direct.metrics,`${currency} ${width} original/candidate`,true))
     report.comparisons.push(comparePixels(records.original.image,records.candidate.image,`${currency} ${width} complete original/candidate pricing page`))
     const ctx=await browser.newContext({viewport:{width,height:1000},deviceScaleFactor:1,reducedMotion:'reduce',javaScriptEnabled:false})
     const page=await ctx.newPage(),diagnostic=diagnostics(page);activePage=page;activeDiagnostics=diagnostic.value
@@ -257,7 +263,7 @@ try {
       await ctx.close()
       activePage=undefined;activeDiagnostics=undefined
     }
-    report.comparisons.push(compareGeometry(records.original.direct.metrics,records.candidate.direct.metrics,`${currency} ${book} original/candidate selected view`))
+    report.comparisons.push(compareGeometry(records.original.direct.metrics,records.candidate.direct.metrics,`${currency} ${book} original/candidate selected view`,true))
   })
   report.interactions=await verifyInteractions({browser,originalBase:servers[0].base,candidateBase:servers[1].base})
   assert.equal(report.interactions.passed,true,'All original/candidate interaction journeys pass')
